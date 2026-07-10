@@ -7,9 +7,9 @@ your engine and workflow.
 
 ## 🔀 Two ways to convert
 
-### 1. In-editor (Unity, Godot)
+### 1. Automatic - no external tool (Unity, Godot, Ren'Py)
 
-Engines with a development editor embed `libssconverter` directly, so conversion happens
+These players embed `libssconverter` and run it for you, so conversion happens
 in-place - **no external tool required**:
 
 - **Unity** - the built-in Importer converts on drag & drop.
@@ -21,11 +21,11 @@ in-place - **no external tool required**:
 For engines without an editor integration, for CI/CD pipelines, or for the Web collection,
 convert with one of the standalone front-ends:
 
-| Tool | Best for | Link |
+| Tool | Best for | Links |
 |---|---|---|
-| **SsConverterGUI** | Desktop, no CLI needed | [Overview](../players/converter.md) | [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
+| **SsConverterGUI** | Desktop, no CLI needed | [Overview](../players/converter.md) · [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
 | **`ssconverter-cli`** | Batch / CI-CD automation | [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/cli) |
-| **`ssconverter-web`** | In the browser, fully client-side | [Latest](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) | [Package](https://github.com/cri-middleware/SSPlayerForWeb/tree/main/packages/ssconverter-web) |
+| **`ssconverter-web`** | In the browser, fully client-side | [Latest](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) · [Package](https://github.com/cri-middleware/SSPlayerForWeb/tree/main/packages/ssconverter-web) |
 
 !!! tip "ssconverter-web - versioned by `.ssab` schema"
     [ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) converts

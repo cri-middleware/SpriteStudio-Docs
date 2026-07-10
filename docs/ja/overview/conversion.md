@@ -7,9 +7,9 @@
 
 ## 🔀 変換の 2 つの方法
 
-### 1. エディタ内蔵（Unity・Godot）
+### 1. 自動変換 - 外部ツール不要（Unity・Godot・Ren'Py）
 
-開発エディタを持つエンジンは `libssconverter` を内蔵しているため、その場で変換されます。
+これらの Player は `libssconverter` を内蔵し、自動で実行するため、その場で変換されます。
 **外部ツールは不要**です。
 
 - **Unity** - 内蔵の Importer がドラッグ&ドロップで変換。
@@ -23,9 +23,9 @@
 
 | ツール | 向いている用途 | リンク |
 |---|---|---|
-| **SsConverterGUI** | デスクトップ、CLI 不要 | [概要](../players/converter.md) | [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
+| **SsConverterGUI** | デスクトップ、CLI 不要 | [概要](../players/converter.md) · [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
 | **`ssconverter-cli`** | バッチ／CI・CD 自動化 | [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/cli) |
-| **`ssconverter-web`** | ブラウザ上・完全クライアントサイド | [最新版](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) | [パッケージ](https://github.com/cri-middleware/SSPlayerForWeb/tree/main/packages/ssconverter-web) |
+| **`ssconverter-web`** | ブラウザ上・完全クライアントサイド | [最新版](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) · [パッケージ](https://github.com/cri-middleware/SSPlayerForWeb/tree/main/packages/ssconverter-web) |
 
 !!! tip "ssconverter-web - `.ssab` スキーマ版ごとに公開"
     [ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) は

@@ -10,7 +10,7 @@ This page summarizes them; the **canonical, field-level specs live in the SDK**:
 
 `.ssab` (**S**prite**S**tudio **A**nime **B**inary) and `.ssqb` (Sequence Binary) are the
 converted, play-ready assets produced by `libssconverter` from the XML-based `ss*e` sources
-(`ssae` / `ssce` / `ssee` / `ssse` / `fnt`).
+(`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`).
 
 | | `ss*e` (XML) | `.ssab` / `.ssqb` (binary) |
 |---|---|---|

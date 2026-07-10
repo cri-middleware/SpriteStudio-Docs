@@ -15,7 +15,7 @@ SpriteStudio's animation math.
 
 ```mermaid
 graph LR
-    SS[" .sspj (+ .ssae/.ssce/.ssee/.ssqe)<br/>+ Images "]
+    SS[" .sspj (+ .ssae/.ssce/.ssee/.ssse/.fnt/.ssqe)<br/>+ Images "]
     CLI[[" ssconverter-cli / GUI / web "]]
     CONV(" libssconverter ")
     BIN[" .ssab / .ssqb "]
@@ -41,11 +41,11 @@ bone matrices, mesh deformation, and hierarchical color/opacity, then emits a cr
 the primitives. Because every renderer consumes the *same* `DrawBatch` plan, engine-specific
 visual drift is structurally eliminated. (See [Porting a Player](./porting.md).)
 
-## 📚 Libraries & tool
+## 📚 Libraries & tools
 
 | Component | Role |
 |---|---|
-| [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/sspj) | Parses `.sspj` projects (`ssae` / `ssce` / `ssee` / `ssse` / charmap). |
+| [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/sspj) | Parses `.sspj` projects (`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`). |
 | [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssab) | Reads/writes the `.ssab` / `.ssqb` binary (FlatBuffers). |
 | [`libssinterpolate`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssinterpolate) | Platform-agnostic interpolation math. |
 | [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssconverter) | Converts `.sspj` projects into `.ssab`. |

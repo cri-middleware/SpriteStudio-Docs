@@ -15,7 +15,7 @@
 
 ```mermaid
 graph LR
-    SS[" .sspj (+ .ssae/.ssce/.ssee/.ssqe)<br/>+ 画像 "]
+    SS[" .sspj (+ .ssae/.ssce/.ssee/.ssse/.fnt/.ssqe)<br/>+ 画像 "]
     CLI[[" ssconverter-cli / GUI / web "]]
     CONV(" libssconverter ")
     BIN[" .ssab / .ssqb "]
@@ -45,7 +45,7 @@ graph LR
 
 | コンポーネント | 役割 |
 |---|---|
-| [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/sspj) | `.sspj` プロジェクト（`ssae` / `ssce` / `ssee` / `ssse` / charmap）の解析。 |
+| [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/sspj) | `.sspj` プロジェクト（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）の解析。 |
 | [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssab) | `.ssab` / `.ssqb` バイナリの読み書き（FlatBuffers）。 |
 | [`libssinterpolate`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssinterpolate) | プラットフォーム非依存の補間演算。 |
 | [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssconverter) | `.sspj` を `.ssab` へ変換。 |

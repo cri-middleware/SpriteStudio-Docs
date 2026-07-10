@@ -112,8 +112,8 @@ markdown_extensions:
 extra:
   alternate:
     - name: English
-      link: ./
+      link: /SpriteStudio-Docs/
       lang: en
     - name: 日本語
-      link: ./ja/
+      link: /SpriteStudio-Docs/ja/
       lang: ja

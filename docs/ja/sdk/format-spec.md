@@ -9,7 +9,7 @@ SDK は 2 つのバイナリ形式（いずれも **FlatBuffers** ベース）�
 ## 🗄️ SSAB / SSQB - アセットバイナリ
 
 `.ssab`（**S**prite**S**tudio **A**nime **B**inary）と `.ssqb`（Sequence Binary）は、
-XML ベースの `ss*e`（`ssae` / `ssce` / `ssee` / `ssse` / `fnt`）から `libssconverter` が
+XML ベースの `ss*e`（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）から `libssconverter` が
 生成する、再生可能な変換済みアセットです。
 
 | | `ss*e`（XML） | `.ssab` / `.ssqb`（バイナリ） |
