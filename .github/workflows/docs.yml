@@ -15,15 +15,17 @@ on:
       - '.github/workflows/docs.yml'
   workflow_dispatch:
 
-# Needed by `mkdocs gh-deploy` to push the built site to the gh-pages branch.
-# Fork PRs receive a read-only token regardless; the deploy step is skipped for PRs anyway.
+# Least privilege: the site is published via the Pages deployment API (OIDC),
+# not by pushing to a branch, so no `contents: write` is needed.
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
-# Never let two doc builds push to gh-pages at the same time.
+# One concurrent deployment at a time; don't cancel an in-flight production deploy.
 concurrency:
-  group: docs-${{ github.ref }}
-  cancel-in-progress: true
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -55,12 +57,22 @@ jobs:
       - name: Build docs (strict validation)
         run: mkdocs build --strict
 
-      - name: Configure Git Credentials
+      # Only the production branch produces a deployable artifact.
+      - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
 
-      - name: Deploy docs
-        if: github.event_name != 'pull_request'
-        run: mkdocs gh-deploy --force
+  deploy:
+    # Deploy only on pushes to main (and manual dispatch), never on PRs.
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
