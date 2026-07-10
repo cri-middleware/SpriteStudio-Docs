@@ -1,0 +1,107 @@
+site_name: SpriteStudio Docs
+site_description: "Documentation portal for the SpriteStudio SDK and its official players"
+site_author: "CRI Middleware Co., Ltd."
+site_url: "https://cri-middleware.github.io/SpriteStudio-Docs/"
+repo_name: "cri-middleware/SpriteStudio-Docs"
+repo_url: "https://github.com/cri-middleware/SpriteStudio-Docs"
+edit_uri: "edit/main/docs/"
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+
+plugins:
+  - search
+  - callouts
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: ja
+          name: 日本語
+          build: true
+          nav_translations:
+            Home: ホーム
+            Overview: 概要
+            Ecosystem: エコシステム
+            Choose Your Platform: プラットフォームの選び方
+            SDK Core: 共通コア SDK
+            Concepts: コンセプト
+            Format Specification: フォーマット仕様
+            Players & Tools: プレイヤー・ツール
+            Unity: Unity
+            Web (Player Collection): Web（Player コレクション）
+            Godot: Godot
+            Ren'Py: Ren'Py
+            Converter GUI: コンバーター GUI
+            License: ライセンス
+
+nav:
+  - Home: index.md
+  - Overview:
+      - Ecosystem: overview/ecosystem.md
+      - Choose Your Platform: overview/choose-your-platform.md
+  - SDK Core:
+      - Concepts: sdk/concepts.md
+      - Format Specification: sdk/format-spec.md
+  - Players & Tools:
+      - Unity: players/unity.md
+      - Web (Player Collection): players/web.md
+      - Godot: players/godot.md
+      - Ren'Py: players/renpy.md
+      - Converter GUI: players/converter.md
+  - License: license.md
+
+markdown_extensions:
+  - toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path:
+        - .
+      check_paths: true
+
+extra:
+  alternate:
+    - name: English
+      link: ./
+      lang: en
+    - name: 日本語
+      link: ./ja/
+      lang: ja

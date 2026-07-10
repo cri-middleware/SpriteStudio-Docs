@@ -1,0 +1,80 @@
+# SpriteStudio Docs
+
+**SpriteStudio SDK** と公式プレイヤー群のドキュメントポータルです。
+
+[OPTPiX SpriteStudio 7](https://www.webtech.co.jp/spritestudio/) は 2D アニメーション制作ツールです。
+このポータルは、SpriteStudio アニメーションを再生するすべての公式ランタイム・ツールへの入口です。
+これらはすべて共通の Rust コア **SpriteStudio-SDK** の上に構築されています。
+
+どれを使うか迷ったら [プラットフォームの選び方](./overview/choose-your-platform.md) を、
+全体像は [エコシステム](./overview/ecosystem.md) をご覧ください。
+
+## プレイヤー・ツール
+
+<div class="grid cards" markdown>
+
+-   :material-unity: __Unity__
+
+    ---
+
+    Unity Engine 上で SpriteStudio 7 アニメーションを再生。Job System で高速動作します。
+
+    [:octicons-arrow-right-24: 概要](./players/unity.md) ·
+    [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/) ·
+    [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
+
+-   :material-web: __Web（Player コレクション）__
+
+    ---
+
+    ブラウザ向け Player 群（PixiJS・スタンドアロン WebGL・TyranoScript）と、
+    クライアントサイド変換ツール（ssconverter-web）のコレクション。
+
+    [:octicons-arrow-right-24: 概要](./players/web.md) ·
+    [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/) ·
+    [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
+
+-   :simple-godotengine: __Godot__
+
+    ---
+
+    Godot でネイティブに描画する GDExtension。
+
+    [:octicons-arrow-right-24: 概要](./players/godot.md) ·
+    [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/) ·
+    [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
+
+-   :material-drama-masks: __Ren'Py__
+
+    ---
+
+    Ren'Py 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。
+
+    [:octicons-arrow-right-24: 概要](./players/renpy.md) ·
+    [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/) ·
+    [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
+
+-   :material-file-swap: __コンバーター GUI__
+
+    ---
+
+    `.sspj` プロジェクトをランタイム用アセットへ変換するデスクトップアプリ。
+
+    [:octicons-arrow-right-24: 概要](./players/converter.md) ·
+    [GitHub](https://github.com/cri-middleware/SsConverterGUI)
+
+-   :material-cog: __SpriteStudio-SDK__
+
+    ---
+
+    全プレイヤーの基盤となる共通 Rust コア（`libssruntime` / `libssconverter`）。
+
+    [:octicons-arrow-right-24: コンセプト](./sdk/concepts.md) ·
+    [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
+
+</div>
+
+!!! note "このポータルについて"
+    各プレイヤーの詳細ドキュメントは、それぞれのリポジトリで管理されています。このポータルは
+    それらのサイトへ誘導するとともに、どのプレイヤーにも属さない**横断的な情報**（エコシステム
+    概要・SDK コンセプト・データフォーマット仕様・共通ライセンス）を集約します。

@@ -1,0 +1,81 @@
+# SpriteStudio Docs
+
+The documentation portal for the **SpriteStudio SDK** and its official players.
+
+[OPTPiX SpriteStudio 7](https://www.webtech.co.jp/spritestudio/) is a 2D animation tool.
+This portal is the single entry point to every official runtime and tool that plays back
+SpriteStudio animations — all powered by the shared Rust core, **SpriteStudio-SDK**.
+
+Not sure where to start? See [Choose Your Platform](./overview/choose-your-platform.md),
+or read [how the pieces fit together](./overview/ecosystem.md).
+
+## Players & Tools
+
+<div class="grid cards" markdown>
+
+-   :material-unity: __Unity__
+
+    ---
+
+    Play back SpriteStudio 7 animations in the Unity Engine, accelerated by the Job System.
+
+    [:octicons-arrow-right-24: Overview](./players/unity.md) ·
+    [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) ·
+    [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
+
+-   :material-web: __Web (Player Collection)__
+
+    ---
+
+    A collection of browser players — PixiJS, standalone WebGL, TyranoScript — plus a
+    client-side converter (ssconverter-web).
+
+    [:octicons-arrow-right-24: Overview](./players/web.md) ·
+    [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) ·
+    [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
+
+-   :simple-godotengine: __Godot__
+
+    ---
+
+    A GDExtension that renders SpriteStudio animations natively in Godot.
+
+    [:octicons-arrow-right-24: Overview](./players/godot.md) ·
+    [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) ·
+    [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
+
+-   :material-drama-masks: __Ren'Py__
+
+    ---
+
+    Bring SpriteStudio characters into Ren'Py visual novels.
+
+    [:octicons-arrow-right-24: Overview](./players/renpy.md) ·
+    [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) ·
+    [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
+
+-   :material-file-swap: __Converter GUI__
+
+    ---
+
+    A desktop app for converting `.sspj` projects into runtime-ready assets.
+
+    [:octicons-arrow-right-24: Overview](./players/converter.md) ·
+    [GitHub](https://github.com/cri-middleware/SsConverterGUI)
+
+-   :material-cog: __SpriteStudio-SDK__
+
+    ---
+
+    The shared Rust core (`libssruntime` / `libssconverter`) every player builds on.
+
+    [:octicons-arrow-right-24: Concepts](./sdk/concepts.md) ·
+    [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
+
+</div>
+
+!!! note "About this portal"
+    Each player keeps its own detailed documentation in its own repository. This portal
+    links out to those sites and hosts the **cross-cutting** material that belongs to no
+    single player: the ecosystem overview, SDK concepts, the data format specification,
+    and shared licensing.
