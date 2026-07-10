@@ -1,4 +1,4 @@
-# SsConverterGUI
+# 🖥️ SsConverterGUI
 
 A cross-platform **desktop app** (Tauri) that wraps `libssconverter`, so you can convert
 `.sspj` projects into runtime-ready assets without touching the CLI.

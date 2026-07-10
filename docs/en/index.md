@@ -1,15 +1,15 @@
-# SpriteStudio Docs
+# 🎬 SpriteStudio Docs
 
 The documentation portal for the **SpriteStudio SDK** and its official players.
 
 [OPTPiX SpriteStudio 7](https://www.webtech.co.jp/spritestudio/) is a 2D animation tool.
 This portal is the single entry point to every official runtime and tool that plays back
-SpriteStudio animations — all powered by the shared Rust core, **SpriteStudio-SDK**.
+SpriteStudio animations - all powered by the shared Rust core, **SpriteStudio-SDK**.
 
 Not sure where to start? See [Choose Your Platform](./overview/choose-your-platform.md),
 or read [how the pieces fit together](./overview/ecosystem.md).
 
-## Players & Tools
+## 🎮 Players & Tools
 
 <div class="grid cards" markdown>
 
@@ -19,29 +19,29 @@ or read [how the pieces fit together](./overview/ecosystem.md).
 
     Play back SpriteStudio 7 animations in the Unity Engine, accelerated by the Job System.
 
-    [:octicons-arrow-right-24: Overview](./players/unity.md) ·
-    [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) ·
+    [:octicons-arrow-right-24: Overview](./players/unity.md) |
+    [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
 
 -   :material-web: __Web (Player Collection)__
 
     ---
 
-    A collection of browser players — PixiJS, standalone WebGL, TyranoScript — plus a
+    A collection of browser players - PixiJS, standalone WebGL, TyranoScript - plus a
     client-side converter (ssconverter-web).
 
-    [:octicons-arrow-right-24: Overview](./players/web.md) ·
-    [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) ·
+    [:octicons-arrow-right-24: Overview](./players/web.md) |
+    [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
 
 -   :simple-godotengine: __Godot__
 
     ---
 
-    A GDExtension that renders SpriteStudio animations natively in Godot.
+    Render SpriteStudio animations natively in Godot - available as both a GDExtension and a custom module.
 
-    [:octicons-arrow-right-24: Overview](./players/godot.md) ·
-    [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) ·
+    [:octicons-arrow-right-24: Overview](./players/godot.md) |
+    [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
 
 -   :material-drama-masks: __Ren'Py__
@@ -50,8 +50,8 @@ or read [how the pieces fit together](./overview/ecosystem.md).
 
     Bring SpriteStudio characters into Ren'Py visual novels.
 
-    [:octicons-arrow-right-24: Overview](./players/renpy.md) ·
-    [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) ·
+    [:octicons-arrow-right-24: Overview](./players/renpy.md) |
+    [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
 -   :material-file-swap: __Converter GUI__
@@ -60,7 +60,7 @@ or read [how the pieces fit together](./overview/ecosystem.md).
 
     A desktop app for converting `.sspj` projects into runtime-ready assets.
 
-    [:octicons-arrow-right-24: Overview](./players/converter.md) ·
+    [:octicons-arrow-right-24: Overview](./players/converter.md) |
     [GitHub](https://github.com/cri-middleware/SsConverterGUI)
 
 -   :material-cog: __SpriteStudio-SDK__
@@ -68,14 +68,20 @@ or read [how the pieces fit together](./overview/ecosystem.md).
     ---
 
     The shared Rust core (`libssruntime` / `libssconverter`) every player builds on.
+    Includes a full **Player Porting Guide** for new engines.
 
-    [:octicons-arrow-right-24: Concepts](./sdk/concepts.md) ·
+    [:octicons-arrow-right-24: Concepts](./sdk/concepts.md) |
+    [Porting](./sdk/porting.md) |
     [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
 
 </div>
 
 !!! note "About this portal"
-    Each player keeps its own detailed documentation in its own repository. This portal
-    links out to those sites and hosts the **cross-cutting** material that belongs to no
-    single player: the ecosystem overview, SDK concepts, the data format specification,
-    and shared licensing.
+    **Using a player?** Start above - [Choose Your Platform](./overview/choose-your-platform.md)
+    points you to the right one, and each player links out to its own detailed docs.
+
+    **Using the SDK directly, or building a new player?** See
+    [SDK & Development](./sdk/concepts.md).
+
+    Each player keeps its detailed documentation in its own repository; this portal is the
+    entry point plus the **cross-cutting** material that belongs to no single player.

@@ -1,4 +1,4 @@
-# License
+# ⚖️ License
 
 Each repository ships its own `LICENSE.md` and third-party notices. Refer to the license in
 the repository you use:
@@ -13,5 +13,5 @@ the repository you use:
 | SsConverterGUI | [LICENSE](https://github.com/cri-middleware/SsConverterGUI/blob/main/LICENSE.md) |
 
 !!! note
-    OPTPiX SpriteStudio itself is a product of [Web Technology Corp.](https://www.webtech.co.jp/spritestudio/)
+    OPTPiX SpriteStudio itself is a product of [CRI Middleware Co., Ltd.](https://www.webtech.co.jp/spritestudio/)
     and is licensed separately from these players and SDK.

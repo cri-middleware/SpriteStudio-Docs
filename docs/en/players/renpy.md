@@ -1,4 +1,4 @@
-# SSPlayerForRenPy
+# 🎭 SSPlayerForRenPy
 
 Bring SpriteStudio characters into **Ren'Py** visual novels, backed by `libssruntime`.
 A playable Web demo ships with each release.

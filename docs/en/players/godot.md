@@ -1,7 +1,10 @@
-# SSPlayerForGodot
+# 🕹️ SSPlayerForGodot
 
-A **GDExtension** that renders SpriteStudio animations natively in the **Godot Engine**,
-backed by `libssruntime`.
+Renders SpriteStudio animations natively in the **Godot Engine**, backed by `libssruntime`.
+It ships in two forms:
+
+- **GDExtension** - drop-in binary add-on; no engine rebuild required.
+- **Custom module** - compiled into a custom Godot build for tighter integration.
 
 - **Documentation:** <https://cri-middleware.github.io/SSPlayerForGodot/>
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForGodot>

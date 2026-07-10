@@ -1,6 +1,6 @@
-# SpriteStudio Docs
+# 🎬 SpriteStudio Docs
 
-**SpriteStudio SDK** と公式プレイヤー群のドキュメントポータルです。
+**SpriteStudio SDK** と公式 Player 群のドキュメントポータルです。
 
 [OPTPiX SpriteStudio 7](https://www.webtech.co.jp/spritestudio/) は 2D アニメーション制作ツールです。
 このポータルは、SpriteStudio アニメーションを再生するすべての公式ランタイム・ツールへの入口です。
@@ -9,7 +9,7 @@
 どれを使うか迷ったら [プラットフォームの選び方](./overview/choose-your-platform.md) を、
 全体像は [エコシステム](./overview/ecosystem.md) をご覧ください。
 
-## プレイヤー・ツール
+## 🎮 Player ・ツール
 
 <div class="grid cards" markdown>
 
@@ -19,8 +19,8 @@
 
     Unity Engine 上で SpriteStudio 7 アニメーションを再生。Job System で高速動作します。
 
-    [:octicons-arrow-right-24: 概要](./players/unity.md) ·
-    [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/) ·
+    [:octicons-arrow-right-24: 概要](./players/unity.md) |
+    [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
 
 -   :material-web: __Web（Player コレクション）__
@@ -30,18 +30,18 @@
     ブラウザ向け Player 群（PixiJS・スタンドアロン WebGL・TyranoScript）と、
     クライアントサイド変換ツール（ssconverter-web）のコレクション。
 
-    [:octicons-arrow-right-24: 概要](./players/web.md) ·
-    [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/) ·
+    [:octicons-arrow-right-24: 概要](./players/web.md) |
+    [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
 
 -   :simple-godotengine: __Godot__
 
     ---
 
-    Godot でネイティブに描画する GDExtension。
+    Godot でネイティブに描画。GDExtension とカスタムモジュールの両方で提供。
 
-    [:octicons-arrow-right-24: 概要](./players/godot.md) ·
-    [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/) ·
+    [:octicons-arrow-right-24: 概要](./players/godot.md) |
+    [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
 
 -   :material-drama-masks: __Ren'Py__
@@ -50,8 +50,8 @@
 
     Ren'Py 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。
 
-    [:octicons-arrow-right-24: 概要](./players/renpy.md) ·
-    [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/) ·
+    [:octicons-arrow-right-24: 概要](./players/renpy.md) |
+    [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
 -   :material-file-swap: __コンバーター GUI__
@@ -60,21 +60,28 @@
 
     `.sspj` プロジェクトをランタイム用アセットへ変換するデスクトップアプリ。
 
-    [:octicons-arrow-right-24: 概要](./players/converter.md) ·
+    [:octicons-arrow-right-24: 概要](./players/converter.md) |
     [GitHub](https://github.com/cri-middleware/SsConverterGUI)
 
 -   :material-cog: __SpriteStudio-SDK__
 
     ---
 
-    全プレイヤーの基盤となる共通 Rust コア（`libssruntime` / `libssconverter`）。
+    全 Player の基盤となる共通 Rust コア（`libssruntime` / `libssconverter`）。
+    新規エンジン向けの **Player 移植ガイド**を同梱。
 
-    [:octicons-arrow-right-24: コンセプト](./sdk/concepts.md) ·
+    [:octicons-arrow-right-24: コンセプト](./sdk/concepts.md) |
+    [移植](./sdk/porting.md) |
     [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
 
 </div>
 
 !!! note "このポータルについて"
-    各プレイヤーの詳細ドキュメントは、それぞれのリポジトリで管理されています。このポータルは
-    それらのサイトへ誘導するとともに、どのプレイヤーにも属さない**横断的な情報**（エコシステム
-    概要・SDK コンセプト・データフォーマット仕様・共通ライセンス）を集約します。
+    **Player を使う方**は上のカードから。[プラットフォームの選び方](./overview/choose-your-platform.md)
+    で最適な Player が分かり、各 Player は自身の詳細ドキュメントへリンクします。
+
+    **SDK を直接使う方・新しい Player を作る方**は
+    [SDK・開発者向け](./sdk/concepts.md) を参照してください。
+
+    各 Player の詳細ドキュメントはそれぞれのリポジトリで管理されています。このポータルは
+    その入口であり、どの Player にも属さない**横断的な情報**を集約します。

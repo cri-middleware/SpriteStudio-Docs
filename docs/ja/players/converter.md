@@ -1,4 +1,4 @@
-# SsConverterGUI
+# 🖥️ SsConverterGUI
 
 `libssconverter` をラップしたクロスプラットフォームの **デスクトップアプリ**（Tauri）です。
 CLI を使わずに `.sspj` プロジェクトをランタイム用アセットへ変換できます。

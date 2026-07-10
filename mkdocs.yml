@@ -44,36 +44,40 @@ plugins:
           name: 日本語
           build: true
           nav_translations:
-            Home: ホーム
-            Overview: 概要
+            🏠 Home: 🏠 ホーム
+            🗺️ Overview: 🗺️ 概要
             Ecosystem: エコシステム
             Choose Your Platform: プラットフォームの選び方
-            SDK Core: 共通コア SDK
+            Converting Assets: アセットの変換
+            🛠️ SDK & Development: 🛠️ SDK・開発者向け
             Concepts: コンセプト
             Format Specification: フォーマット仕様
-            Players & Tools: プレイヤー・ツール
+            Porting a Player: Player の移植
+            🎮 Players & Tools: 🎮 Player・ツール
             Unity: Unity
             Web (Player Collection): Web（Player コレクション）
             Godot: Godot
             Ren'Py: Ren'Py
             Converter GUI: コンバーター GUI
-            License: ライセンス
+            ⚖️ License: ⚖️ ライセンス
 
 nav:
-  - Home: index.md
-  - Overview:
+  - 🏠 Home: index.md
+  - 🗺️ Overview:
       - Ecosystem: overview/ecosystem.md
       - Choose Your Platform: overview/choose-your-platform.md
-  - SDK Core:
-      - Concepts: sdk/concepts.md
-      - Format Specification: sdk/format-spec.md
-  - Players & Tools:
+      - Converting Assets: overview/conversion.md
+  - 🎮 Players & Tools:
       - Unity: players/unity.md
       - Web (Player Collection): players/web.md
       - Godot: players/godot.md
       - Ren'Py: players/renpy.md
       - Converter GUI: players/converter.md
-  - License: license.md
+  - 🛠️ SDK & Development:
+      - Concepts: sdk/concepts.md
+      - Format Specification: sdk/format-spec.md
+      - Porting a Player: sdk/porting.md
+  - ⚖️ License: license.md
 
 markdown_extensions:
   - toc:
@@ -81,6 +85,14 @@ markdown_extensions:
         kwds:
           case: lower
   - admonition
+  # Required by Material's "grid cards" (index.md) - the `markdown` attr on the
+  # wrapping <div> and the `{ .card }`-style attributes both need these two.
+  - attr_list
+  - md_in_html
+  # Renders the :material-*: / :octicons-*: / :simple-*: icon shortcodes as SVGs.
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:

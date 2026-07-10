@@ -2,7 +2,7 @@
 
 Documentation **portal** for the SpriteStudio SDK and its official players.
 
-This repository is a lightweight hub. It does **not** re-host each player's docs — every
+This repository is a lightweight hub. It does **not** re-host each player's docs - every
 player keeps its own site in its own repository. This portal provides the unified entry
 point and hosts the cross-cutting material that belongs to no single player:
 

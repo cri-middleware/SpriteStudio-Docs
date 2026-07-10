@@ -1,39 +1,54 @@
-# Ecosystem
+# 🌐 Ecosystem
 
 Every official player shares one Rust core, **SpriteStudio-SDK**. A SpriteStudio project
 (`.sspj`) is converted once into a compact runtime format, then played back through
 `libssruntime` regardless of the target engine.
 
-```mermaid
-flowchart TD
-    SSPJ[".sspj project<br/>(OPTPiX SpriteStudio 7)"] --> CONV
+The value of this portal's view is showing that **one shared SDK powers many players
+(one-to-many)**: the same SDK - both conversion and playback - is embedded in every official
+player. (Each player's own docs zoom into its specific convert/import workflow.)
 
-    subgraph SDK["SpriteStudio-SDK (shared Rust core)"]
-        CONV["libssconverter<br/>convert / pack"]
-        RT["libssruntime<br/>playback engine"]
+```mermaid
+graph LR
+    SS[" .sspj / Images<br/>(SpriteStudio 7) "]
+
+    subgraph SDK ["SpriteStudio-SDK - shared core, embedded in every player"]
+        CONV(" libssconverter<br/>convert ")
+        RT(" libssruntime<br/>play back ")
     end
 
-    CONV --> ASSET["runtime assets"]
-    ASSET --> RT
+    PLAYER[[" Any official player<br/>(see Players &amp; Tools) "]]
+    SCREEN{{" Screen / Canvas "}}
 
-    RT --> UNITY["SSPlayerForUnity"]
-    RT --> WEB["SSPlayerForWeb"]
-    RT --> GODOT["SSPlayerForGodot"]
-    RT --> RENPY["SSPlayerForRenPy"]
+    SS --> CONV
+    CONV -. ".ssab / .ssqb" .-> RT
+    RT -- "1-to-N players" --> PLAYER --> SCREEN
 
-    CONV --> GUI["SsConverterGUI<br/>(desktop convert tool)"]
+    classDef sdk fill:#eef2ff,stroke:#818cf8,color:#1e1b4b;
+    class CONV,RT sdk;
 ```
 
-## The pieces
+<small>The highlighted **SpriteStudio-SDK** core (`libssconverter` + `libssruntime`) is what
+every player builds on; the dashed hand-off is the generated **`.ssab / .ssqb`** asset. One
+core drives *every* player - the current list lives in
+[Players &amp; Tools](../players/unity.md), so this diagram never needs editing when a new
+player ships.</small>
+
+Conversion can happen **in the engine editor** (Unity, Godot) or via a **standalone tool**
+(SsConverterGUI, `ssconverter-cli`, `ssconverter-web`) - either way it is the same
+`libssconverter`. See [Converting Assets](./conversion.md) for the details.
+
+## 🧩 The pieces
 
 | Component | Role |
 |---|---|
-| **SpriteStudio-SDK** | The shared Rust core. `libssconverter` converts `.sspj` into runtime assets; `libssruntime` plays them back. Consumed by every player as a git submodule. |
-| **SSPlayerForUnity / ForWeb / ForGodot / ForRenPy** | Engine-specific bindings and rendering on top of `libssruntime`. |
-| **SsConverterGUI** | A desktop front-end over `libssconverter` for converting projects without the CLI. |
+| **SpriteStudio-SDK** | The shared Rust core. `libssconverter` converts `.sspj` into runtime assets; `libssruntime` plays them back. Consumed by every player as a git submodule - including `libssconverter`, so editor-based engines convert in-place. |
+| **SSPlayerForUnity / ForGodot** | Editor-integrated players: `libssconverter` runs inside the engine editor, so import & playback need no external tool. |
+| **SSPlayerForWeb / ForRenPy** | `libssruntime` bindings + rendering; conversion via the bundled tools (or auto-import, for Ren'Py). |
+| **SsConverterGUI / `ssconverter-cli` / `ssconverter-web`** | Standalone front-ends over `libssconverter` for converting without an engine editor (desktop GUI, CLI/CI, browser). |
 
 Because conversion and playback live in the SDK, all players stay consistent in feature
-support and behavior — a fix in the core benefits every platform at once.
+support and behavior - a fix in the core benefits every platform at once.
 
 See [SDK Concepts](../sdk/concepts.md) for what the runtime format contains, and the
 [Format Specification](../sdk/format-spec.md) for the on-disk details.
