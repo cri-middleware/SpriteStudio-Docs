@@ -25,7 +25,7 @@ docs/
     license.md
   requirements.txt
 mkdocs.yml
-.github/workflows/docs.yml   # build (strict) + gh-deploy to gh-pages
+.github/workflows/pages.yml   # build (strict) + deploy via GitHub Pages
 ```
 
 The toolchain (mkdocs-material + i18n) is kept aligned with SSPlayerForUnity / SSPlayerForRenPy.

@@ -24,9 +24,10 @@ mkdocs serve           # live preview at http://127.0.0.1:8000
 mkdocs build --strict  # exactly what CI runs; fails on broken links / missing nav
 ```
 
-Always validate with `mkdocs build --strict` before finishing — CI (`.github/workflows/docs.yml`)
+Always validate with `mkdocs build --strict` before finishing — CI (`.github/workflows/pages.yml`)
 runs the same command and blocks merge on any broken internal link or nav mismatch. On push to
-`main`, CI also runs `mkdocs gh-deploy` to publish to the `gh-pages` branch.
+`main`, CI also builds the site and deploys it via the GitHub Pages deployment API (OIDC) —
+no `gh-pages` branch and no `contents: write`.
 
 ## Architecture & conventions
 
