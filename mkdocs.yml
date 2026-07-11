@@ -48,7 +48,9 @@ plugins:
             🗺️ Overview: 🗺️ 概要
             Ecosystem: エコシステム
             Choose Your Platform: プラットフォームの選び方
-            Converting Assets: アセットの変換
+            🔄 Converting Assets: 🔄 アセットの変換
+            Overview: 概要
+            Without an Editor: エディタなしで変換
             🛠️ SDK & Development: 🛠️ SDK・開発者向け
             Concepts: コンセプト
             Format Specification: フォーマット仕様
@@ -66,7 +68,9 @@ nav:
   - 🗺️ Overview:
       - Ecosystem: overview/ecosystem.md
       - Choose Your Platform: overview/choose-your-platform.md
-      - Converting Assets: overview/conversion.md
+  - 🔄 Converting Assets:
+      - Overview: overview/conversion.md
+      - Without an Editor: overview/convert-without-an-editor.md
   - 🎮 Players & Tools:
       - Unity: players/unity.md
       - Web (Player Collection): players/web.md

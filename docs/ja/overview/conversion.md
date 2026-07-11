@@ -7,37 +7,23 @@
 
 ## 🔀 変換の 2 つの方法
 
-### 1. 自動変換 - 外部ツール不要（Unity・Godot・Ren'Py）
+### 1. エンジンエディタ内 - 外部ツール不要（Unity・Godot・Ren'Py）
 
 これらの Player は `libssconverter` を内蔵し、自動で実行するため、その場で変換されます。
-**外部ツールは不要**です。
+**追加インストールは不要**です。
 
-- **Unity** - 内蔵の Importer がドラッグ&ドロップで変換。
-- **Godot** - SS Import Dock がドラッグ&ドロップで変換。
-- **Ren'Py** - 起動時に自動インポート（`SpriteStudio_Source/` にソースを配置）。
+- **Unity** - 内蔵の Importer がドラッグ&ドロップで変換します。
+- **Godot** - SS Import Dock がドラッグ&ドロップで変換します。
+- **Ren'Py** - 起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。
 
-### 2. スタンドアロンツール
+エディタでのワークフローは各 Player のドキュメント（スクリーンキャスト付き）で解説しています。
+[プラットフォームの選び方](./choose-your-platform.md) を参照してください。
 
-エディタ統合を持たないエンジン、CI/CD パイプライン、Web コレクション向けには、スタンドアロンの
-フロントエンドで変換します。
+### 2. スタンドアロンツール - エディタ不要
 
-| ツール | 向いている用途 | リンク |
-|---|---|---|
-| **SsConverterGUI** | デスクトップ、CLI 不要 | [概要](../players/converter.md) · [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
-| **`ssconverter-cli`** | バッチ／CI・CD 自動化 | [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/cli) |
-| **`ssconverter-web`** | ブラウザ上・完全クライアントサイド | [最新版](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) · [パッケージ](https://github.com/cri-middleware/SSPlayerForWeb/tree/main/packages/ssconverter-web) |
-
-!!! tip "ssconverter-web - `.ssab` スキーマ版ごとに公開"
-    [ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) は
-    `.sspj` -> `.ssab` の変換をすべてブラウザ内で行います。サーバーへは何もアップロードされません。
-
-    公開は **`.ssab` スキーマのバージョンごと**で、URL にスキーマが含まれます。
-
-    - 最新版（自動リダイレクト）: <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/>
-    - 特定スキーマ版（例 `v1`）: <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/>
-
-    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版リンクを開き、
-    アプリ内のバージョン切替から選択できます。
+別のエンジン、CI/CD パイプライン、または Web コレクションを使う場合は、3 つのスタンドアロン
+フロントエンド（デスクトップ GUI・CLI・ブラウザ）のいずれかで変換します。どれを選び、
+どう使うかは **[エディタなしで変換する](./convert-without-an-editor.md)** で解説します。
 
 ## 📦 生成されるもの
 

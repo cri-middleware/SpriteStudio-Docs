@@ -7,37 +7,23 @@ your engine and workflow.
 
 ## 🔀 Two ways to convert
 
-### 1. Automatic - no external tool (Unity, Godot, Ren'Py)
+### 1. In the engine editor - no external tool (Unity, Godot, Ren'Py)
 
 These players embed `libssconverter` and run it for you, so conversion happens
-in-place - **no external tool required**:
+in-place - **nothing else to install**:
 
 - **Unity** - the built-in Importer converts on drag & drop.
 - **Godot** - the SS Import Dock converts on drag & drop.
 - **Ren'Py** - auto-imports on startup (drop sources into `SpriteStudio_Source/`).
 
-### 2. Standalone tools
+Each player's own docs (with screencasts) walk through the editor workflow - see
+[Choose Your Platform](./choose-your-platform.md).
 
-For engines without an editor integration, for CI/CD pipelines, or for the Web collection,
-convert with one of the standalone front-ends:
+### 2. Standalone tools - no editor needed
 
-| Tool | Best for | Links |
-|---|---|---|
-| **SsConverterGUI** | Desktop, no CLI needed | [Overview](../players/converter.md) · [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
-| **`ssconverter-cli`** | Batch / CI-CD automation | [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/cli) |
-| **`ssconverter-web`** | In the browser, fully client-side | [Latest](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) · [Package](https://github.com/cri-middleware/SSPlayerForWeb/tree/main/packages/ssconverter-web) |
-
-!!! tip "ssconverter-web - versioned by `.ssab` schema"
-    [ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) converts
-    `.sspj` -> `.ssab` entirely in the browser - nothing is uploaded to a server.
-
-    It is published **per `.ssab` schema version**, so the URL includes the schema:
-
-    - Latest (auto-redirects): <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/>
-    - A specific schema, e.g. `v1`: <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/>
-
-    Match the schema to your player's runtime version. When in doubt, use the latest link and
-    pick the version from the in-app switcher.
+On a different engine, in a CI/CD pipeline, or using the Web collection? Convert with one of
+three standalone front-ends - a desktop GUI, a CLI, or a browser tool. Which one to pick and
+how to run each is covered in **[Converting Without an Editor](./convert-without-an-editor.md)**.
 
 ## 📦 What you get
 

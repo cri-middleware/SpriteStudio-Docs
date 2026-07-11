@@ -65,7 +65,8 @@ graph LR
 !!! note "対応機能"
     ボーン・トランスフォーム、各種キーフレーム補間（Bezier/Hermite/Linear ほか）、メッシュ&
     デフォーム、パーティクル、インスタンス・マスク、フレーム精度のイベント／ユーザーデータ。
-    シーケンス（`.ssqe`）再生はロードマップ上です - SDK の
+    ランタイムの **Override Layer API** により、再生時にパーツのカラー・セル参照・表示／非表示を
+    上書きできます。シーケンス（`.ssqe`）再生はロードマップ上です - SDK の
     [ROADMAP](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/ROADMAP.md) を参照。
 
 ## ➡️ 次に

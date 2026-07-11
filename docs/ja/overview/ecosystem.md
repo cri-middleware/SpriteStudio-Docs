@@ -34,7 +34,7 @@ graph LR
 この図を編集する必要はありません。</small>
 
 変換は **エンジンエディタ内**（Unity・Godot）でも、**スタンドアロンツール**
-（SsConverterGUI / `ssconverter-cli` / `ssconverter-web`）でも行え、いずれも同じ
+（SSConverterGUI / `ssconverter-cli` / `ssconverter-web`）でも行え、いずれも同じ
 `libssconverter` です。詳細は [アセットの変換](./conversion.md) を参照してください。
 
 ## 🧩 構成要素
@@ -44,7 +44,7 @@ graph LR
 | **SpriteStudio-SDK** | 共通の Rust コア。`libssconverter` が `.sspj` をランタイムアセットへ変換し、`libssruntime` が再生します。各 Player が git submodule として参照し、`libssconverter` も含むため、エディタ型エンジンはその場で変換できます。 |
 | **SSPlayerForUnity / ForGodot** | エディタ統合型 Player 。`libssconverter` がエンジンエディタ内で動くため、インポートも再生も外部ツール不要です。 |
 | **SSPlayerForWeb / ForRenPy** | `libssruntime` バインディングと描画。変換は同梱ツール（Ren'Py は自動インポート）で行います。 |
-| **SsConverterGUI / `ssconverter-cli` / `ssconverter-web`** | エンジンエディタを介さず変換するための `libssconverter` スタンドアロンフロントエンド（デスクトップ GUI／CLI・CI／ブラウザ）。 |
+| **SSConverterGUI / `ssconverter-cli` / `ssconverter-web`** | エンジンエディタを介さず変換するための `libssconverter` スタンドアロンフロントエンド（デスクトップ GUI／CLI・CI／ブラウザ）。 |
 
 変換と再生を SDK に集約しているため、全 Player で機能サポートと挙動が一貫します。
 コアの修正はすべてのプラットフォームに同時に反映されます。

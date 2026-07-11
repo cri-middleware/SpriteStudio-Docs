@@ -14,7 +14,7 @@ SpriteStudio, convert to `.ssab`, then play it back through the renderer of your
 | **`ssplayer-pixi`** | PixiJS renderer - the recommended integration. |
 | **`ssplayer-webgl`** | Standalone WebGL player exposed as the `<ss-player>` Web Component. |
 | **`ssplayer-tyrano`** | TyranoScript integration. |
-| **`ssplayer-rmmz`** | RPG Maker MZ integration - 🚧 planned, not yet implemented. |
+| **`ssplayer-rmmz`** | RPG Maker MZ (PixiJS v5) integration - 🧪 experimental (alpha); distributed as a plugin ZIP via GitHub Releases. |
 | **`ssconverter-web`** | Browser front-end that converts `.sspj` -> `.ssab` entirely client-side. |
 
 See [Choose Your Platform](../overview/choose-your-platform.md) to compare players, or

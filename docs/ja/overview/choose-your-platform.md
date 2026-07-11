@@ -8,7 +8,7 @@
 | **ブラウザ** - PixiJS・スタンドアロン WebGL・**TyranoScript** | **SSPlayerForWeb**（Player コレクション） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/) |
 | Godot ゲーム | **SSPlayerForGodot** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/) |
 | Ren'Py ビジュアルノベル | **SSPlayerForRenPy** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/) |
-| デスクトップで `.sspj` を変換したいだけ - GUI | **SsConverterGUI** | [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
+| デスクトップで `.sspj` を変換したいだけ - GUI | **SSConverterGUI** | [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
 | デスクトップで `.sspj` を変換したいだけ - CLI | **SpriteStudio-SDK**（`ssconverter-cli`） | [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK) |
 | ウェブ（ブラウザ）で `.sspj` を変換したいだけ | **SSPlayerForWeb**（`ssconverter-web`） | [試す](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
 | 独自の Player ・組み込みを作りたい | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |

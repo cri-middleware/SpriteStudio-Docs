@@ -14,7 +14,7 @@
 | **`ssplayer-pixi`** | PixiJS レンダラー。推奨の連携方法です。 |
 | **`ssplayer-webgl`** | スタンドアロンの WebGL Player 。`<ss-player>` Web Component として提供。 |
 | **`ssplayer-tyrano`** | TyranoScript 連携。 |
-| **`ssplayer-rmmz`** | RPG ツクール MZ 連携 - 🚧 予定。まだ未実装です。 |
+| **`ssplayer-rmmz`** | RPG ツクール MZ（PixiJS v5）連携 - 🧪 実験的（alpha）。プラグイン ZIP を GitHub Releases で配布します。 |
 | **`ssconverter-web`** | `.sspj` -> `.ssab` をクライアントサイドのみで変換するブラウザフロントエンド。 |
 
 Player の比較は [プラットフォームの選び方](../overview/choose-your-platform.md) を、

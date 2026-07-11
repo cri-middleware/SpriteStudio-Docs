@@ -64,8 +64,9 @@ visual drift is structurally eliminated. (See [Porting a Player](./porting.md).)
 
 !!! note "Supported features"
     Bones & transforms, full keyframe interpolation (Bezier/Hermite/Linear/...), mesh & deform,
-    particle effects, instances & masks, and frame-accurate events/user data. Sequence
-    (`.ssqe`) playback is on the roadmap - see the SDK
+    particle effects, instances & masks, and frame-accurate events/user data. A runtime
+    **Override Layer API** lets you override a part's color, cell reference, or visibility at
+    playback time. Sequence (`.ssqe`) playback is on the roadmap - see the SDK
     [ROADMAP](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/ROADMAP.md).
 
 ## ➡️ Next

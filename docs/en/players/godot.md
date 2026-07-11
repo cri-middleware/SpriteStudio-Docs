@@ -6,6 +6,9 @@ It ships in two forms:
 - **GDExtension** - drop-in binary add-on; no engine rebuild required.
 - **Custom module** - compiled into a custom Godot build for tighter integration.
 
+It also plays back animation sound (`ssaudio`) events through the engine's audio, with a hook
+to route them to a custom audio backend.
+
 - **Documentation:** <https://cri-middleware.github.io/SSPlayerForGodot/>
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForGodot>
 
