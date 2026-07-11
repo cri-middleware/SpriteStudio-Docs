@@ -7,15 +7,25 @@ SpriteStudio, convert to `.ssab`, then play it back through the renderer of your
 - **Documentation:** <https://cri-middleware.github.io/SSPlayerForWeb/>
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForWeb>
 
-## 🧰 Players in the collection
+## 🧰 Which package? Pick by environment
 
-| Package | What it is |
+Each renderer bundles the WASM core, so you install just one.
+
+| Your environment | Package |
 |---|---|
-| **`ssplayer-pixi`** | PixiJS renderer - the recommended integration. |
-| **`ssplayer-webgl`** | Standalone WebGL player exposed as the `<ss-player>` Web Component. |
-| **`ssplayer-tyrano`** | TyranoScript integration. |
-| **`ssplayer-rmmz`** | RPG Maker MZ (PixiJS v5) integration - 🧪 experimental (alpha); distributed as a plugin ZIP via GitHub Releases. |
-| **`ssconverter-web`** | Browser front-end that converts `.sspj` -> `.ssab` entirely client-side. |
+| Standalone / no framework (`<ss-player>` Web Component) | **`ssplayer-webgl`** |
+| PixiJS v8 app | **`ssplayer-pixi`** |
+| Building your own renderer | **`ssplayer-core`** |
+| Converting `.sspj` -> `.ssab` | **`ssconverter-web`** (Web tool + Node CLI) |
+| Embedding conversion in your own app / service | **`ssconverter-core`** |
+
+**Game-engine integrations** - thin adapters on top of `ssplayer-webgl`, both 🧪 experimental
+(alpha, not yet on npm):
+
+| Your environment | Package |
+|---|---|
+| RPG Maker MZ (PixiJS v5) | **`ssplayer-rmmz`** |
+| TyranoScript / TyranoBuilder | **`ssplayer-tyrano`** |
 
 See [Choose Your Platform](../overview/choose-your-platform.md) to compare players, or
 [SDK Concepts](../sdk/concepts.md) for the conversion/playback pipeline shared across all of them.
