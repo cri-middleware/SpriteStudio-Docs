@@ -1,13 +1,8 @@
 name: Publish docs via GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - '.github/workflows/pages.yml'
+  # PRs get strict-build validation only (no deploy); production is published
+  # by manually running this workflow (workflow_dispatch).
   pull_request:
     paths:
       - 'docs/**'
@@ -57,7 +52,7 @@ jobs:
       - name: Build docs (strict validation)
         run: mkdocs build --strict
 
-      # Only the production branch produces a deployable artifact.
+      # Only a manual dispatch produces a deployable artifact; PRs validate only.
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
@@ -65,7 +60,7 @@ jobs:
           path: site
 
   deploy:
-    # Deploy only on pushes to main (and manual dispatch), never on PRs.
+    # Deploy only on manual dispatch, never on PRs.
     if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest

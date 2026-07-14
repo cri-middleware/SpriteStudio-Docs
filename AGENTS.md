@@ -25,9 +25,10 @@ mkdocs build --strict  # exactly what CI runs; fails on broken links / missing n
 ```
 
 Always validate with `mkdocs build --strict` before finishing — CI (`.github/workflows/pages.yml`)
-runs the same command and blocks merge on any broken internal link or nav mismatch. On push to
-`main`, CI also builds the site and deploys it via the GitHub Pages deployment API (OIDC) —
-no `gh-pages` branch and no `contents: write`.
+runs the same command on every PR and blocks merge on any broken internal link or nav mismatch.
+Deployment is **manual**: publishing is triggered by running the workflow (`workflow_dispatch`),
+which builds the site and deploys it via the GitHub Pages deployment API (OIDC) — no `gh-pages`
+branch and no `contents: write`. Merging to `main` does **not** auto-publish.
 
 ## Architecture & conventions
 
