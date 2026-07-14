@@ -7,6 +7,8 @@
 - **ドキュメント:** <https://cri-middleware.github.io/SSPlayerForWeb/>
 - **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForWeb>
 
+▶️ 実際の動作は [ブラウザで試す](../overview/try-it.md) で確認できます。
+
 ## 🧰 環境に合わせてパッケージを選ぶ
 
 各レンダラーは WASM コアを同梱しているので、インストールするのは 1 つだけです。

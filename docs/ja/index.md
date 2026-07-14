@@ -9,6 +9,9 @@
 どれを使うか迷ったら [プラットフォームの選び方](./overview/choose-your-platform.md) を、
 全体像は [エコシステム](./overview/ecosystem.md) をご覧ください。
 
+▶️ まず動かして確かめたい方は [ブラウザで試す](./overview/try-it.md) へ — インストール不要の
+ライブデモとホスト型コンバーターがあります。
+
 ## 🎮 Player ・ツール
 
 <div class="grid cards" markdown>
@@ -27,7 +30,7 @@
 
     ---
 
-    ブラウザ向け Player 群（PixiJS・スタンドアロン WebGL・TyranoScript）と、
+    ブラウザ向け Player 群（PixiJS・フレームワーク非依存 WebGL・RPG ツクール MZ・TyranoScript）と、
     クライアントサイド変換ツール（ssconverter-web）のコレクション。
 
     [:octicons-arrow-right-24: 概要](./players/web.md) |
@@ -43,6 +46,16 @@
     [:octicons-arrow-right-24: 概要](./players/godot.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
+
+-   :simple-flutter: __Flutter__
+
+    ---
+
+    `SpriteStudioView` ウィジェットで Flutter アプリに SpriteStudio 7 アニメーションを再生。
+    🧪 **開発初期**（未リリース）です。
+
+    [:octicons-arrow-right-24: 概要](./players/flutter.md) |
+    [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
 
 -   :material-drama-masks: __Ren'Py__
 

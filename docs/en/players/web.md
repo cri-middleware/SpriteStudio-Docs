@@ -7,6 +7,8 @@ SpriteStudio, convert to `.ssab`, then play it back through the renderer of your
 - **Documentation:** <https://cri-middleware.github.io/SSPlayerForWeb/>
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForWeb>
 
+▶️ See the players running live: [Try it in your browser](../overview/try-it.md).
+
 ## 🧰 Which package? Pick by environment
 
 Each renderer bundles the WASM core, so you install just one.

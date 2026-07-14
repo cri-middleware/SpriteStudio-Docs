@@ -6,5 +6,7 @@ A playable Web demo ships with each release.
 - **Documentation:** <https://cri-middleware.github.io/SSPlayerForRenPy/>
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForRenPy>
 
+▶️ Try the playable Web demo: [Try it in your browser](../overview/try-it.md).
+
 See [Choose Your Platform](../overview/choose-your-platform.md) to compare players, or
 [SDK Concepts](../sdk/concepts.md) for the conversion/playback pipeline shared across all of them.

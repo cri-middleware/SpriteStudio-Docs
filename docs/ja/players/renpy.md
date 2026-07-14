@@ -6,5 +6,7 @@
 - **ドキュメント:** <https://cri-middleware.github.io/SSPlayerForRenPy/>
 - **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForRenPy>
 
+▶️ 再生可能な Web デモは [ブラウザで試す](../overview/try-it.md) から。
+
 Player の比較は [プラットフォームの選び方](../overview/choose-your-platform.md) を、
 全 Player 共通の変換／再生パイプラインは [SDK コンセプト](../sdk/concepts.md) を参照してください。

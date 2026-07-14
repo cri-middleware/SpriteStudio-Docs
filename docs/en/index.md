@@ -9,6 +9,9 @@ SpriteStudio animations - all powered by the shared Rust core, **SpriteStudio-SD
 Not sure where to start? See [Choose Your Platform](./overview/choose-your-platform.md),
 or read [how the pieces fit together](./overview/ecosystem.md).
 
+▶️ Prefer to see it first? [Try it in your browser](./overview/try-it.md) - live demos and a
+hosted converter, no install.
+
 ## 🎮 Players & Tools
 
 <div class="grid cards" markdown>
@@ -27,8 +30,8 @@ or read [how the pieces fit together](./overview/ecosystem.md).
 
     ---
 
-    A collection of browser players - PixiJS, standalone WebGL, TyranoScript - plus a
-    client-side converter (ssconverter-web).
+    A collection of browser players - PixiJS, framework-free WebGL, RPG Maker MZ, TyranoScript -
+    plus a client-side converter (ssconverter-web).
 
     [:octicons-arrow-right-24: Overview](./players/web.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
@@ -43,6 +46,16 @@ or read [how the pieces fit together](./overview/ecosystem.md).
     [:octicons-arrow-right-24: Overview](./players/godot.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
+
+-   :simple-flutter: __Flutter__
+
+    ---
+
+    Play SpriteStudio 7 animations in Flutter apps via a `SpriteStudioView` widget.
+    🧪 **In early development** - not yet released.
+
+    [:octicons-arrow-right-24: Overview](./players/flutter.md) |
+    [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
 
 -   :material-drama-masks: __Ren'Py__
 

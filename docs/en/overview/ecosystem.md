@@ -44,7 +44,7 @@ Conversion can happen **in the engine editor** (Unity, Godot) or via a **standal
 |---|---|
 | **SpriteStudio-SDK** | The shared Rust core. `libssconverter` converts `.sspj` into runtime assets; `libssruntime` plays them back. Consumed by every player as a git submodule - including `libssconverter`, so editor-based engines convert in-place. |
 | **SSPlayerForUnity / ForGodot** | Editor-integrated players: `libssconverter` runs inside the engine editor, so import & playback need no external tool. |
-| **SSPlayerForWeb / ForRenPy** | `libssruntime` bindings + rendering; conversion via the bundled tools (or auto-import, for Ren'Py). |
+| **SSPlayerForWeb / ForFlutter / ForRenPy** | `libssruntime` bindings + rendering; conversion via the bundled tools (or auto-import, for Ren'Py). ForFlutter is 🧪 in early development. |
 | **SSConverterGUI / `ssconverter-cli` / `ssconverter-web`** | Standalone front-ends over `libssconverter` for converting without an engine editor (desktop GUI, CLI/CI, browser). |
 
 Because conversion and playback live in the SDK, all players stay consistent in feature

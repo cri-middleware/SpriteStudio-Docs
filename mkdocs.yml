@@ -48,6 +48,7 @@ plugins:
             🗺️ Overview: 🗺️ 概要
             Ecosystem: エコシステム
             Choose Your Platform: プラットフォームの選び方
+            Try It in Your Browser: ブラウザで試す
             🔄 Converting Assets: 🔄 アセットの変換
             Overview: 概要
             Without an Editor: エディタなしで変換
@@ -60,6 +61,7 @@ plugins:
             Web (Player Collection): Web（Player コレクション）
             Godot: Godot
             Ren'Py: Ren'Py
+            Flutter: Flutter
             Converter GUI: コンバーター GUI
             ⚖️ License: ⚖️ ライセンス
 
@@ -68,6 +70,7 @@ nav:
   - 🗺️ Overview:
       - Ecosystem: overview/ecosystem.md
       - Choose Your Platform: overview/choose-your-platform.md
+      - Try It in Your Browser: overview/try-it.md
   - 🔄 Converting Assets:
       - Overview: overview/conversion.md
       - Without an Editor: overview/convert-without-an-editor.md
@@ -75,6 +78,7 @@ nav:
       - Unity: players/unity.md
       - Web (Player Collection): players/web.md
       - Godot: players/godot.md
+      - Flutter: players/flutter.md
       - Ren'Py: players/renpy.md
       - Converter GUI: players/converter.md
   - 🛠️ SDK & Development:
