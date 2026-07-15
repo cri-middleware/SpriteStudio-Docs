@@ -1,18 +1,25 @@
 # 🧭 Choose Your Platform
 
-Pick the player that matches your target runtime. Each links to its own full documentation.
+Pick the one that matches your target runtime. Names link to its overview page here; the right
+column links to its full details.
 
-| I want to ship on... | Use | Docs / Repo |
+| I want to ship on... | Use | Details |
 |---|---|---|
-| A Unity game | **SSPlayerForUnity** | [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
-| The **browser** - PixiJS, WebGL, **RPG Maker MZ**, or **TyranoScript** | **SSPlayerForWeb** (player collection) | [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
-| A Godot game | **SSPlayerForGodot** | [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
-| A **Flutter** app - 🧪 early development | **SSPlayerForFlutter** | [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter) |
-| A Ren'Py visual novel | **SSPlayerForRenPy** | [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
-| Just converting `.sspj` in the browser | **SSPlayerForWeb** (`ssconverter-web`) | [Try it](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
-| Just converting `.sspj` on the desktop - GUI | **SSConverterGUI** | [GitHub](https://github.com/cri-middleware/SSConverterGUI) |
-| Just converting `.sspj` on the desktop - CLI | **SpriteStudio-SDK** (`ssconverter-cli`) | [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK) |
+| A Unity game | **[SSPlayerForUnity](../players/unity.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
+| The **browser** - PixiJS, WebGL | **[SSPlayerForWeb](../players/web.md)** (player collection) | [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
+| **RPG Maker MZ**, **TyranoScript** - 🧪 experimental (alpha) | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-webgl` adapters) | [Docs](https://cri-middleware.github.io/SSPlayerForWeb/usage/rmmz) |
+| A Godot game | **[SSPlayerForGodot](../players/godot.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
+| A **Flutter** app - 🧪 early development | **[SSPlayerForFlutter](../players/flutter.md)** | [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter) |
+| A Ren'Py visual novel | **[SSPlayerForRenPy](../players/renpy.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
 | Building your own player / integration | **SpriteStudio-SDK** | [Porting a Player](../sdk/porting.md) |
+
+Only converting `.sspj`? Pick a standalone tool rather than a player.
+
+| I want to convert on... | Use | Details |
+|---|---|---|
+| The browser | **[SSPlayerForWeb](../players/web.md)** (`ssconverter-web`) | [Try it](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
+| The desktop - GUI | **[SSConverterGUI](../players/converter.md)** | [Docs](https://cri-middleware.github.io/SSConverterGUI/) |
+| The desktop - CLI | **SpriteStudio-SDK** (`ssconverter-cli`) | [How to run it](./convert-with-a-standalone-tool.md) |
 
 ## ✅ Common to every platform
 

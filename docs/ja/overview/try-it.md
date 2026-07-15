@@ -1,7 +1,7 @@
 # ▶️ ブラウザで試す
 
 SpriteStudio の変換と再生を、**インストール不要・設定なし**でその場で確認できます。ここに
-挙げたものはすべてブラウザ内で完結します。各項目は対応 Player のリポジトリでホストされており、
+挙げたものはすべてブラウザ内で完結します。各項目は対応 Player の公式サイトでホストされており、
 このページはそのリンクを集めたものです。
 
 ## 🔄 ブラウザで変換する
@@ -15,10 +15,8 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 
 | デモ | Player | 内容 |
 |---|---|---|
-| [PixiJS デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/) | **SSPlayerForWeb**（`ssplayer-pixi`） | PixiJS v8 アプリでの再生。`.ssab`＋`.png` の入った**ディレクトリを D&D** すると自分のアニメをプレビューできます。 |
-| [WebGL デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/) | **SSPlayerForWeb**（`ssplayer-webgl`） | フレームワーク非依存の `<ss-player>` Web Component。`.ssab`＋`.png` の**ディレクトリを D&D** して自分のアニメをプレビュー。 |
-| [RPG ツクール MZ デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | **SSPlayerForWeb**（`ssplayer-rmmz`） | SS アニメを正しい Z 順で表示するサンプル MZ プロジェクト。 |
-| [TyranoScript デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/tyrano/) | **SSPlayerForWeb**（`ssplayer-tyrano`） | TyranoScript / TyranoBuilder のノベルゲームで SpriteStudio アニメを再生。 |
-| [Ren'Py デモ](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | **SSPlayerForRenPy** | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |
-
-各 Player の詳しい説明は [Web（Player コレクション）](../players/web.md)・[Ren'Py](../players/renpy.md) の各ページを参照してください。
+| [PixiJS デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-pixi`） | PixiJS v8 アプリでの再生。`.ssab`＋`.png` の入った**ディレクトリを D&D** すると自分のアニメをプレビューできます。 |
+| [WebGL デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-webgl`） | フレームワーク非依存の `<ss-player>` Web Component。`.ssab`＋`.png` の**ディレクトリを D&D** して自分のアニメをプレビュー。 |
+| [RPG ツクール MZ デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-rmmz`） | SS アニメを正しい Z 順で表示するサンプル MZ プロジェクト。 |
+| [TyranoScript デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/tyrano/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-tyrano`） | TyranoScript / TyranoBuilder のノベルゲームで SpriteStudio アニメを再生。 |
+| [Ren'Py デモ](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | **[SSPlayerForRenPy](../players/renpy.md)** | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |

@@ -1,7 +1,7 @@
 # 🧰 スタンドアロンツールで変換する
 
-Unity・Godot・Ren'Py は `libssconverter` を **内蔵**しており、別ツールを介さずインポート時に
-`.sspj` から `.ssab` へ自動で変換します（[アセットの変換](./conversion.md) を参照）。この 3 つ以外を対象に
+Unity・Godot・Ren'Py は変換ツールとして `libssconverter` を **バンドル**しており、別ツールを介さずインポート時に
+`.sspj` から `.ssab` へ自動で変換します（[アセットの変換](./conversion.md) を参照）。これら以外を対象に
 するときは、変換を代行してくれる Player がないため、スタンドアロンツールで自分で変換します。
 たとえば次のような場合です。
 
@@ -56,7 +56,8 @@ Unity・Godot・Ren'Py は `libssconverter` を **内蔵**しており、別ツ�
 2. アプリを起動し、`.sspj` をウィンドウにドロップします（またはファイル選択から開きます）。
 3. 出力フォルダを選んで変換します。
 
-詳細やスクリーンショットは [SSConverterGUI の概要](../players/converter.md) と
+詳細やスクリーンショットは [SSConverterGUI の概要](../players/converter.md)、
+[ドキュメント](https://cri-middleware.github.io/SSConverterGUI/)、
 [リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
 
 ## ⌨️ ssconverter-cli - コマンドライン・CI

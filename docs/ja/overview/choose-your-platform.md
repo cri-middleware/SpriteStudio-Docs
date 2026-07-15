@@ -1,18 +1,25 @@
 # 🧭 プラットフォームの選び方
 
-対象ランタイムに合った Player を選んでください。各項目はそれぞれの詳細ドキュメントへリンクしています。
+対象ランタイムに合ったものを選んでください。名前は各ページの概要へ、右列はそれぞれの
+詳しい情報へリンクしています。
 
-| 動かしたい対象 | 使用するもの | ドキュメント / リポジトリ |
+| 動かしたい対象 | 使用するもの | 詳細 |
 |---|---|---|
-| Unity ゲーム | **SSPlayerForUnity** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/) |
-| **ブラウザ** - PixiJS・WebGL・**RPG ツクール MZ**・**TyranoScript** | **SSPlayerForWeb**（Player コレクション） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/) |
-| Godot ゲーム | **SSPlayerForGodot** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/) |
-| **Flutter** アプリ - 🧪 開発初期 | **SSPlayerForFlutter** | [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter) |
-| Ren'Py ビジュアルノベル | **SSPlayerForRenPy** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/) |
-| ウェブ（ブラウザ）で `.sspj` を変換したい | **SSPlayerForWeb**（`ssconverter-web`） | [試す](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
-| デスクトップで `.sspj` を変換したい - GUI | **SSConverterGUI** | [GitHub](https://github.com/cri-middleware/SSConverterGUI) |
-| デスクトップで `.sspj` を変換したい - CLI | **SpriteStudio-SDK**（`ssconverter-cli`） | [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK) |
+| Unity ゲーム | **[SSPlayerForUnity](../players/unity.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/) |
+| **ブラウザ** - PixiJS・WebGL | **[SSPlayerForWeb](../players/web.md)**（Player コレクション） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/) |
+| **RPG ツクール MZ**・**TyranoScript** - 🧪 実験的（alpha） | **[SSPlayerForWeb](../players/web.md)**（`ssplayer-webgl` のアダプター） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/rmmz) |
+| Godot ゲーム | **[SSPlayerForGodot](../players/godot.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/) |
+| **Flutter** アプリ - 🧪 開発初期 | **[SSPlayerForFlutter](../players/flutter.md)** | [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter) |
+| Ren'Py ビジュアルノベル | **[SSPlayerForRenPy](../players/renpy.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/) |
 | 独自の Player ・組み込みを作りたい | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |
+
+`.sspj` の変換だけしたい場合は、Player ではなくスタンドアロンツールを選びます。
+
+| 変換したい環境 | 使用するもの | 詳細 |
+|---|---|---|
+| ウェブ（ブラウザ） | **[SSPlayerForWeb](../players/web.md)**（`ssconverter-web`） | [試す](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
+| デスクトップ - GUI | **[SSConverterGUI](../players/converter.md)** | [ドキュメント](https://cri-middleware.github.io/SSConverterGUI/) |
+| デスクトップ - CLI | **SpriteStudio-SDK**（`ssconverter-cli`） | [使い方](./convert-with-a-standalone-tool.md) |
 
 ## ✅ すべてのプラットフォームに共通
 

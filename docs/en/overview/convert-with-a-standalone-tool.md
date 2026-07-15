@@ -1,8 +1,8 @@
 # 🧰 Converting with a Standalone Tool
 
-Unity, Godot, and Ren'Py **embed** `libssconverter`, so they convert automatically on import -
+Unity, Godot, and Ren'Py **bundle** `libssconverter` as a conversion tool, so they convert automatically on import -
 `.sspj` becomes `.ssab` seamlessly, with no separate tool (see
-[Converting Assets](./conversion.md)). Targeting anything other than those three means no player
+[Converting Assets](./conversion.md)). Targeting anything else means no player
 converts for you, so you run a standalone tool yourself - for example when you:
 
 - play back in the browser ([SSPlayerForWeb](../players/web.md)),
@@ -57,6 +57,7 @@ A cross-platform Tauri desktop app. No command line.
 3. Choose an output folder and convert.
 
 Details & screenshots: [SSConverterGUI overview](../players/converter.md) ·
+[Documentation](https://cri-middleware.github.io/SSConverterGUI/) ·
 [Repository](https://github.com/cri-middleware/SSConverterGUI).
 
 ## ⌨️ ssconverter-cli - command line & CI
