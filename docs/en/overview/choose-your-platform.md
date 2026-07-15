@@ -19,7 +19,7 @@ Pick the player that matches your target runtime. Each links to its own full doc
 - The **conversion step** (`.sspj` -> the runtime assets `.ssab` / `.ssqb` + textures) is the
   same everywhere - see
   [SDK Concepts](../sdk/concepts.md) for the pipeline, and [Converting Assets](./conversion.md)
-  for every way to convert (in-editor, GUI, CLI, or browser).
+  for every way to convert (automatic on import, GUI, CLI, or browser).
 - Feature coverage (bones, mesh/deform, particles, extended blend, masks) is driven by the
   shared core, so it is consistent across platforms.
 - Licensing is shared - see [License](../license.md).

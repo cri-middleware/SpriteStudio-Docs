@@ -7,7 +7,7 @@ your engine and workflow.
 
 ## 🔀 Two ways to convert
 
-### 1. In the engine editor - no external tool (Unity, Godot, Ren'Py)
+### 1. Converted automatically on import - no external tool (Unity, Godot, Ren'Py)
 
 These players embed `libssconverter` and run it for you, so conversion happens
 in-place - **nothing else to install**:
@@ -16,14 +16,15 @@ in-place - **nothing else to install**:
 - **Godot** - the SS Import Dock converts on drag & drop.
 - **Ren'Py** - auto-imports on startup (drop sources into `SpriteStudio_Source/`).
 
-Each player's own docs (with screencasts) walk through the editor workflow - see
+Each player's own docs (with screencasts) walk through its workflow - see
 [Choose Your Platform](./choose-your-platform.md).
 
-### 2. Standalone tools - no editor needed
+### 2. Standalone tools - convert it yourself
 
-On a different engine, in a CI/CD pipeline, or using the Web collection? Convert with one of
-three standalone front-ends - a desktop GUI, a CLI, or a browser tool. Which one to pick and
-how to run each is covered in **[Converting Without an Editor](./convert-without-an-editor.md)**.
+On a different engine, in a CI/CD pipeline, or using the Web collection? No player converts for
+you, so you convert with one of three standalone front-ends - a desktop GUI, a CLI, or a browser
+tool. Which one to pick and how to run each is covered in
+**[Converting with a Standalone Tool](./convert-with-a-standalone-tool.md)**.
 
 ## 📦 What you get
 

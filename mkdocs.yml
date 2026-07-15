@@ -51,7 +51,7 @@ plugins:
             Try It in Your Browser: ブラウザで試す
             🔄 Converting Assets: 🔄 アセットの変換
             Overview: 概要
-            Without an Editor: エディタなしで変換
+            Standalone Tools: スタンドアロンツール
             🛠️ SDK & Development: 🛠️ SDK・開発者向け
             Concepts: コンセプト
             Format Specification: フォーマット仕様
@@ -73,7 +73,7 @@ nav:
       - Try It in Your Browser: overview/try-it.md
   - 🔄 Converting Assets:
       - Overview: overview/conversion.md
-      - Without an Editor: overview/convert-without-an-editor.md
+      - Standalone Tools: overview/convert-with-a-standalone-tool.md
   - 🎮 Players & Tools:
       - Unity: players/unity.md
       - Web (Player Collection): players/web.md

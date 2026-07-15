@@ -9,7 +9,7 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 **[ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)** は `.sspj` を
 `.ssab` に変換します。処理は WebAssembly でローカル（ブラウザ内）だけで完結し、ファイルが
 サーバーへアップロードされることは一切ありません。手順やデスクトップ／CLI 版については
-[エディタなしで変換する](./convert-without-an-editor.md) を参照してください。
+[スタンドアロンツールで変換する](./convert-with-a-standalone-tool.md) を参照してください。
 
 ## 🎮 ライブ Player デモ
 

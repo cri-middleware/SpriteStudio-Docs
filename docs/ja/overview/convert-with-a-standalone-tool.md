@@ -1,9 +1,9 @@
-# 🧰 エディタなしで変換する
+# 🧰 スタンドアロンツールで変換する
 
-Unity・Godot・Ren'Py は `libssconverter` を内蔵しており、別ツールを介さず **エディタ内**で
-`.sspj` から `.ssab` へシームレスに変換できます（[アセットの変換](./conversion.md) を参照）。
-Unity・Godot・Ren'Py 以外を対象にするときは、エディタ変換が使えないため、変換を自分で
-スタンドアロンツールで行います。たとえば次のような場合です。
+Unity・Godot・Ren'Py は `libssconverter` を **内蔵**しており、別ツールを介さずインポート時に
+`.sspj` から `.ssab` へ自動で変換します（[アセットの変換](./conversion.md) を参照）。この 3 つ以外を対象に
+するときは、変換を代行してくれる Player がないため、スタンドアロンツールで自分で変換します。
+たとえば次のような場合です。
 
 - ブラウザ（Web）で再生する場合（[SSPlayerForWeb](../players/web.md)）
 - 独自の Player を組み込む、または新しいエンジンに移植する場合（[Player の移植](../sdk/porting.md)）

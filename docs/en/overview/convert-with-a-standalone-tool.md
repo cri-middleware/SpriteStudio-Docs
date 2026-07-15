@@ -1,10 +1,9 @@
-# 🧰 Converting Without an Editor
+# 🧰 Converting with a Standalone Tool
 
-Unity, Godot, and Ren'Py embed `libssconverter`, so they convert **in the editor** -
+Unity, Godot, and Ren'Py **embed** `libssconverter`, so they convert automatically on import -
 `.sspj` becomes `.ssab` seamlessly, with no separate tool (see
-[Converting Assets](./conversion.md)). Targeting anything other than those three editors means
-there is no editor to convert for you, so you run a standalone tool yourself - for example when
-you:
+[Converting Assets](./conversion.md)). Targeting anything other than those three means no player
+converts for you, so you run a standalone tool yourself - for example when you:
 
 - play back in the browser ([SSPlayerForWeb](../players/web.md)),
 - integrate your own player, or bring SpriteStudio to a new engine ([Porting a Player](../sdk/porting.md)), or
