@@ -10,7 +10,7 @@
 | **Flutter** アプリ - 🧪 開発初期 | **SSPlayerForFlutter** | [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter) |
 | Ren'Py ビジュアルノベル | **SSPlayerForRenPy** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/) |
 | ウェブ（ブラウザ）で `.sspj` を変換したい | **SSPlayerForWeb**（`ssconverter-web`） | [試す](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
-| デスクトップで `.sspj` を変換したい - GUI | **SSConverterGUI** | [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
+| デスクトップで `.sspj` を変換したい - GUI | **SSConverterGUI** | [GitHub](https://github.com/cri-middleware/SSConverterGUI) |
 | デスクトップで `.sspj` を変換したい - CLI | **SpriteStudio-SDK**（`ssconverter-cli`） | [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK) |
 | 独自の Player ・組み込みを作りたい | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |
 

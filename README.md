@@ -48,4 +48,4 @@ mkdocs build --strict # what CI runs
 | [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | Web player collection (PixiJS / WebGL / TyranoScript / ssconverter-web) |
 | [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | Godot player |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | Ren'Py player |
-| [SsConverterGUI](https://github.com/cri-middleware/SsConverterGUI) | Desktop converter GUI |
+| [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | Desktop converter GUI |

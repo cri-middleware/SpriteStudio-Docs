@@ -52,12 +52,12 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
 
 A cross-platform Tauri desktop app. No command line.
 
-1. Download a build from [GitHub Releases](https://github.com/cri-middleware/SsConverterGUI/releases).
+1. Download a build from [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases).
 2. Launch it and drag your `.sspj` onto the window (or open it from the file picker).
 3. Choose an output folder and convert.
 
 Details & screenshots: [SSConverterGUI overview](../players/converter.md) ·
-[Repository](https://github.com/cri-middleware/SsConverterGUI).
+[Repository](https://github.com/cri-middleware/SSConverterGUI).
 
 ## ⌨️ ssconverter-cli - command line & CI
 

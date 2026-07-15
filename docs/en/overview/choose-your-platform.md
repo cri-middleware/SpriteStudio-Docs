@@ -10,7 +10,7 @@ Pick the player that matches your target runtime. Each links to its own full doc
 | A **Flutter** app - 🧪 early development | **SSPlayerForFlutter** | [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter) |
 | A Ren'Py visual novel | **SSPlayerForRenPy** | [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
 | Just converting `.sspj` in the browser | **SSPlayerForWeb** (`ssconverter-web`) | [Try it](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
-| Just converting `.sspj` on the desktop - GUI | **SSConverterGUI** | [GitHub](https://github.com/cri-middleware/SsConverterGUI) |
+| Just converting `.sspj` on the desktop - GUI | **SSConverterGUI** | [GitHub](https://github.com/cri-middleware/SSConverterGUI) |
 | Just converting `.sspj` on the desktop - CLI | **SpriteStudio-SDK** (`ssconverter-cli`) | [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK) |
 | Building your own player / integration | **SpriteStudio-SDK** | [Porting a Player](../sdk/porting.md) |
 

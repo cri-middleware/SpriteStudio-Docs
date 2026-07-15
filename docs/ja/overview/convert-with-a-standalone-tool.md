@@ -52,12 +52,12 @@ Unity・Godot・Ren'Py は `libssconverter` を **内蔵**しており、別ツ�
 
 クロスプラットフォームの Tauri 製デスクトップアプリです。コマンドラインは不要です。
 
-1. [GitHub Releases](https://github.com/cri-middleware/SsConverterGUI/releases) からビルドをダウンロードします。
+1. [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
 2. アプリを起動し、`.sspj` をウィンドウにドロップします（またはファイル選択から開きます）。
 3. 出力フォルダを選んで変換します。
 
 詳細やスクリーンショットは [SSConverterGUI の概要](../players/converter.md) と
-[リポジトリ](https://github.com/cri-middleware/SsConverterGUI) を参照してください。
+[リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
 
 ## ⌨️ ssconverter-cli - コマンドライン・CI
 
