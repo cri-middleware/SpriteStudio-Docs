@@ -74,6 +74,7 @@ hosted converter, no install.
     A desktop app for converting `.sspj` projects into runtime-ready assets.
 
     [:octicons-arrow-right-24: Overview](./players/converter.md) |
+    [Docs](https://cri-middleware.github.io/SsConverterGUI/) |
     [GitHub](https://github.com/cri-middleware/SsConverterGUI)
 
 -   :material-cog: __SpriteStudio-SDK__

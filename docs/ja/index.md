@@ -74,6 +74,7 @@
     `.sspj` プロジェクトをランタイム用アセットへ変換するデスクトップアプリ。
 
     [:octicons-arrow-right-24: 概要](./players/converter.md) |
+    [ドキュメント](https://cri-middleware.github.io/SsConverterGUI/) |
     [GitHub](https://github.com/cri-middleware/SsConverterGUI)
 
 -   :material-cog: __SpriteStudio-SDK__
