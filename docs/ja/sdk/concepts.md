@@ -73,4 +73,4 @@ graph LR
 
 - [フォーマット仕様](./format-spec.md) - `.ssab / .ssqb` バイナリとランタイムの `FrameData` インターフェース。
 - [Player の移植](./porting.md) - 新規エンジン向けの Player を作る。
-- 一次情報: [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK)。
+- [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) - SDK 本体のリポジトリ。最新の正式な情報はこちらが基準です。

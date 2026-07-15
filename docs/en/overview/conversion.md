@@ -9,21 +9,22 @@ your engine and workflow.
 
 ### 1. Converted automatically on import - no external tool (Unity, Godot, Ren'Py)
 
-These players embed `libssconverter` and run it for you, so conversion happens
+The official player packages for these engines **bundle** `libssconverter` as a conversion tool.
+It runs automatically on the editor / development side, so conversion happens
 in-place - **nothing else to install**:
 
-- **Unity** - the built-in Importer converts on drag & drop.
-- **Godot** - the SS Import Dock converts on drag & drop.
-- **Ren'Py** - auto-imports on startup (drop sources into `SpriteStudio_Source/`).
+- **Unity** - [SSPlayerForUnity](../players/unity.md)'s bundled Importer converts on drag & drop.
+- **Godot** - [SSPlayerForGodot](../players/godot.md)'s SS Import Dock converts on drag & drop.
+- **Ren'Py** - [SSPlayerForRenPy](../players/renpy.md) auto-imports on startup (drop sources into `SpriteStudio_Source/`).
 
 Each player's own docs (with screencasts) walk through its workflow - see
 [Choose Your Platform](./choose-your-platform.md).
 
 ### 2. Standalone tools - convert it yourself
 
-On a different engine, in a CI/CD pipeline, or using the Web collection? No player converts for
-you, so you convert with one of three standalone front-ends - a desktop GUI, a CLI, or a browser
-tool. Which one to pick and how to run each is covered in
+On a different engine, in a CI/CD pipeline, or using [SSPlayerForWeb](../players/web.md) (the Web
+collection)? No player converts for you, so you convert with one of three standalone front-ends -
+a desktop GUI, a CLI, or a browser tool. Which one to pick and how to run each is covered in
 **[Converting with a Standalone Tool](./convert-with-a-standalone-tool.md)**.
 
 ## 📦 What you get
