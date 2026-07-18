@@ -21,7 +21,7 @@ pick by workflow, not by output.
 | Automating a build, CI/CD, or many projects at once | **`ssconverter-cli`** | Scriptable, batch mode, `--embedded` |
 
 !!! tip "Not sure? Start in the browser."
-    [ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) is a web
+    ssconverter-web is a web
     app - nothing to install - and runs the conversion in your browser via WebAssembly (wasm),
     so your files never leave your machine. It's the fastest way to get one `.ssab` and confirm
     your assets convert cleanly. Move to the GUI or CLI once conversion becomes a repeatable
@@ -35,18 +35,18 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
     ssconverter-web relies on the **File System Access API**, so it works only in Chromium-based
     browsers (**Chrome**, **Edge**, **Opera**). Firefox and Safari are not supported.
 
-1. Open the converter: <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/>
+1. Open the converter — _coming soon_ (it will be hosted on the SSPlayerForWeb site).
 2. Drop in the folder that contains your `.sspj` (its images and other referenced files are read along with it).
 3. Download the result as a ZIP (the `.ssab` and its referenced textures).
 
 !!! info "Versioned by `.ssab` schema"
     ssconverter-web is published **per `.ssab` schema version**, so the URL carries the schema:
 
-    - Latest (auto-redirects): <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/>
-    - A specific schema, e.g. `v1`: <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/>
+    - Latest (auto-redirects): _coming soon_
+    - A specific schema, e.g. `v1`: _coming soon_
 
-    Match the schema to your player's runtime version - when in doubt, use the latest link and
-    pick the version from the in-app switcher.
+    Match the schema to your player's runtime version - when in doubt, use the latest
+    (auto-redirecting) build once it's available and pick the version from the in-app switcher.
 
 ## 🖥️ SSConverterGUI - desktop app
 
@@ -57,7 +57,7 @@ A cross-platform Tauri desktop app. No command line.
 3. Choose an output folder and convert.
 
 Details & screenshots: [SSConverterGUI overview](../players/converter.md) ·
-[Documentation](https://cri-middleware.github.io/SSConverterGUI/) ·
+Documentation (coming soon) ·
 [Repository](https://github.com/cri-middleware/SSConverterGUI).
 
 ## ⌨️ ssconverter-cli - command line & CI

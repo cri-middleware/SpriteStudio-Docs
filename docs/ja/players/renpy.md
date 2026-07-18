@@ -3,7 +3,7 @@
 **Ren'Py** 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。`libssruntime` を
 基盤とし、各リリースには再生可能な Web デモが同梱されます。
 
-- **ドキュメント:** <https://cri-middleware.github.io/SSPlayerForRenPy/>
+- **ドキュメント:** _準備中_
 - **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForRenPy>
 
 ▶️ 再生可能な Web デモは [ブラウザで試す](../overview/try-it.md) から。

@@ -21,7 +21,7 @@ Unity・Godot・Ren'Py は変換ツールとして `libssconverter` を **バン
 | ビルドや CI/CD の自動化、大量に変換 | **`ssconverter-cli`** | スクリプト化・バッチモード・`--embedded` |
 
 !!! tip "迷ったらブラウザから"
-    [ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) は Web
+    ssconverter-web は Web
     アプリなのでインストール不要で、変換は WebAssembly（wasm）によってブラウザ内で実行されます。
     ファイルがサーバーへ送られることはありません。まず 1 つ `.ssab` を作ってアセットが問題なく
     変換できるか確認するのに最速です。変換が繰り返しのワークフローになったら GUI や CLI へ
@@ -35,18 +35,18 @@ Unity・Godot・Ren'Py は変換ツールとして `libssconverter` を **バン
     ssconverter-web は **File System Access API** を使用するため、Chromium 系ブラウザ
     （**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では利用できません。
 
-1. コンバーターを開きます: <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/>
+1. コンバーターを開きます — _準備中_（SSPlayerForWeb のサイトで公開予定）。
 2. `.sspj` が入ったフォルダをドロップします（画像などの参照ファイルも一緒に読み込まれます）。
 3. 変換結果（`.ssab` と参照テクスチャ）を ZIP でダウンロードします。
 
 !!! info "`.ssab` スキーマ版ごとに公開"
     ssconverter-web は **`.ssab` スキーマのバージョンごと**に公開され、URL にスキーマが含まれます。
 
-    - 最新版（自動リダイレクト）: <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/>
-    - 特定スキーマ版（例 `v1`）: <https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/>
+    - 最新版（自動リダイレクト）: _準備中_
+    - 特定スキーマ版（例 `v1`）: _準備中_
 
-    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版リンクを開き、
-    アプリ内のバージョン切替から選択できます。
+    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版（公開後）を使い、
+    アプリ内のバージョン切替から選択してください。
 
 ## 🖥️ SSConverterGUI - デスクトップアプリ
 
@@ -57,7 +57,7 @@ Unity・Godot・Ren'Py は変換ツールとして `libssconverter` を **バン
 3. 出力フォルダを選んで変換します。
 
 詳細やスクリーンショットは [SSConverterGUI の概要](../players/converter.md)、
-[ドキュメント](https://cri-middleware.github.io/SSConverterGUI/)、
+ドキュメント（準備中）、
 [リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
 
 ## ⌨️ ssconverter-cli - コマンドライン・CI

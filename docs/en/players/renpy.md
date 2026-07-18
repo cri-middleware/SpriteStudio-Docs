@@ -3,7 +3,7 @@
 Bring SpriteStudio characters into **Ren'Py** visual novels, backed by `libssruntime`.
 A playable Web demo ships with each release.
 
-- **Documentation:** <https://cri-middleware.github.io/SSPlayerForRenPy/>
+- **Documentation:** _coming soon_
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForRenPy>
 
 ▶️ Try the playable Web demo: [Try it in your browser](../overview/try-it.md).

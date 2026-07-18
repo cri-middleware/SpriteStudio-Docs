@@ -23,7 +23,7 @@
     Unity Engine 上で SpriteStudio 7 アニメーションを再生。Job System で高速動作します。
 
     [:octicons-arrow-right-24: 概要](./players/unity.md) |
-    [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/) |
+    ドキュメント（準備中） |
     [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
 
 -   :material-web: __Web（Player コレクション）__
@@ -34,7 +34,7 @@
     クライアントサイド変換ツール（ssconverter-web）のコレクション。
 
     [:octicons-arrow-right-24: 概要](./players/web.md) |
-    [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/) |
+    ドキュメント（準備中） |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
 
 -   :simple-godotengine: __Godot__
@@ -44,7 +44,7 @@
     Godot でネイティブに描画。GDExtension とカスタムモジュールの両方で提供。
 
     [:octicons-arrow-right-24: 概要](./players/godot.md) |
-    [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/) |
+    ドキュメント（準備中） |
     [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
 
 -   :simple-flutter: __Flutter__
@@ -64,7 +64,7 @@
     Ren'Py 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。
 
     [:octicons-arrow-right-24: 概要](./players/renpy.md) |
-    [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/) |
+    ドキュメント（準備中） |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
 -   :material-file-swap: __コンバーター GUI__
@@ -74,7 +74,7 @@
     `.sspj` プロジェクトをランタイム用アセットへ変換するデスクトップアプリ。
 
     [:octicons-arrow-right-24: 概要](./players/converter.md) |
-    [ドキュメント](https://cri-middleware.github.io/SSConverterGUI/) |
+    ドキュメント（準備中） |
     [GitHub](https://github.com/cri-middleware/SSConverterGUI)
 
 -   :material-cog: __SpriteStudio-SDK__

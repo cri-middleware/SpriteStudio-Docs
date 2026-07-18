@@ -5,20 +5,20 @@
 
 | 動かしたい対象 | 使用するもの | 詳細 |
 |---|---|---|
-| Unity ゲーム | **[SSPlayerForUnity](../players/unity.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/) |
-| **ブラウザ** - PixiJS・WebGL | **[SSPlayerForWeb](../players/web.md)**（Player コレクション） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/) |
-| **RPG ツクール MZ**・**TyranoScript** - 🧪 実験的（alpha） | **[SSPlayerForWeb](../players/web.md)**（`ssplayer-webgl` のアダプター） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/rmmz) |
-| Godot ゲーム | **[SSPlayerForGodot](../players/godot.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/) |
+| Unity ゲーム | **[SSPlayerForUnity](../players/unity.md)** | ドキュメント（準備中） |
+| **ブラウザ** - PixiJS・WebGL | **[SSPlayerForWeb](../players/web.md)**（Player コレクション） | ドキュメント（準備中） |
+| **RPG ツクール MZ**・**TyranoScript** - 🧪 実験的（alpha） | **[SSPlayerForWeb](../players/web.md)**（`ssplayer-webgl` のアダプター） | ドキュメント（準備中） |
+| Godot ゲーム | **[SSPlayerForGodot](../players/godot.md)** | ドキュメント（準備中） |
 | **Flutter** アプリ - 🧪 開発初期 | **[SSPlayerForFlutter](../players/flutter.md)** | [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter) |
-| Ren'Py ビジュアルノベル | **[SSPlayerForRenPy](../players/renpy.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/) |
+| Ren'Py ビジュアルノベル | **[SSPlayerForRenPy](../players/renpy.md)** | ドキュメント（準備中） |
 | 独自の Player ・組み込みを作りたい | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |
 
 `.sspj` の変換だけしたい場合は、Player ではなくスタンドアロンツールを選びます。
 
 | 変換したい環境 | 使用するもの | 詳細 |
 |---|---|---|
-| ウェブ（ブラウザ） | **[SSPlayerForWeb](../players/web.md)**（`ssconverter-web`） | [試す](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
-| デスクトップ - GUI | **[SSConverterGUI](../players/converter.md)** | [ドキュメント](https://cri-middleware.github.io/SSConverterGUI/) |
+| ウェブ（ブラウザ） | **[SSPlayerForWeb](../players/web.md)**（`ssconverter-web`） | 試す（準備中） |
+| デスクトップ - GUI | **[SSConverterGUI](../players/converter.md)** | ドキュメント（準備中） |
 | デスクトップ - CLI | **SpriteStudio-SDK**（`ssconverter-cli`） | [使い方](./convert-with-a-standalone-tool.md) |
 
 ## ✅ すべてのプラットフォームに共通

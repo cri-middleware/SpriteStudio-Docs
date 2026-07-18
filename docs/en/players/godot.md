@@ -2,7 +2,7 @@
 
 Renders SpriteStudio animations natively in the **Godot Engine**, backed by `libssruntime`.
 
-- **Documentation:** <https://cri-middleware.github.io/SSPlayerForGodot/>
+- **Documentation:** _coming soon_
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForGodot>
 
 It ships in two forms:

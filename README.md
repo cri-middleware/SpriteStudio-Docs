@@ -33,7 +33,7 @@ The toolchain (mkdocs-material + i18n) is kept aligned with SSPlayerForUnity / S
 ## Local development
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r docs/requirements.txt
 mkdocs serve          # preview at http://127.0.0.1:8000
 mkdocs build --strict # what CI runs

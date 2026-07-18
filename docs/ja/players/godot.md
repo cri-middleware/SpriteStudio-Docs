@@ -3,7 +3,7 @@
 **Godot Engine** でネイティブに SpriteStudio アニメーションを描画します。`libssruntime` を
 基盤としています。
 
-- **ドキュメント:** <https://cri-middleware.github.io/SSPlayerForGodot/>
+- **ドキュメント:** _準備中_
 - **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForGodot>
 
 次の 2 つの形態で提供されます。

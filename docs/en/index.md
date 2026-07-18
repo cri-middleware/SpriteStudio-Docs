@@ -23,7 +23,7 @@ hosted converter, no install.
     Play back SpriteStudio 7 animations in the Unity Engine, accelerated by the Job System.
 
     [:octicons-arrow-right-24: Overview](./players/unity.md) |
-    [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
+    Docs (coming soon) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
 
 -   :material-web: __Web (Player Collection)__
@@ -34,7 +34,7 @@ hosted converter, no install.
     plus a client-side converter (ssconverter-web).
 
     [:octicons-arrow-right-24: Overview](./players/web.md) |
-    [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
+    Docs (coming soon) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
 
 -   :simple-godotengine: __Godot__
@@ -44,7 +44,7 @@ hosted converter, no install.
     Render SpriteStudio animations natively in Godot - available as both a GDExtension and a custom module.
 
     [:octicons-arrow-right-24: Overview](./players/godot.md) |
-    [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
+    Docs (coming soon) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
 
 -   :simple-flutter: __Flutter__
@@ -64,7 +64,7 @@ hosted converter, no install.
     Bring SpriteStudio characters into Ren'Py visual novels.
 
     [:octicons-arrow-right-24: Overview](./players/renpy.md) |
-    [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
+    Docs (coming soon) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
 -   :material-file-swap: __Converter GUI__
@@ -74,7 +74,7 @@ hosted converter, no install.
     A desktop app for converting `.sspj` projects into runtime-ready assets.
 
     [:octicons-arrow-right-24: Overview](./players/converter.md) |
-    [Docs](https://cri-middleware.github.io/SSConverterGUI/) |
+    Docs (coming soon) |
     [GitHub](https://github.com/cri-middleware/SSConverterGUI)
 
 -   :material-cog: __SpriteStudio-SDK__

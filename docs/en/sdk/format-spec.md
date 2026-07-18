@@ -73,5 +73,5 @@ for feature flags (`default` / `no_std` / `converter`) and codegen.
 
 !!! info "Schema versioning"
     `.ssab` carries a binary `version` field, and tooling such as `ssconverter-web` is
-    published [per schema version](../overview/conversion.md). Match the converter's schema to
+    published [per schema version](../overview/convert-with-a-standalone-tool.md). Match the converter's schema to
     your player's runtime version.

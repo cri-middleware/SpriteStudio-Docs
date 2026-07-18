@@ -5,20 +5,20 @@ column links to its full details.
 
 | I want to ship on... | Use | Details |
 |---|---|---|
-| A Unity game | **[SSPlayerForUnity](../players/unity.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
-| The **browser** - PixiJS, WebGL | **[SSPlayerForWeb](../players/web.md)** (player collection) | [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
-| **RPG Maker MZ**, **TyranoScript** - 🧪 experimental (alpha) | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-webgl` adapters) | [Docs](https://cri-middleware.github.io/SSPlayerForWeb/usage/rmmz) |
-| A Godot game | **[SSPlayerForGodot](../players/godot.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
+| A Unity game | **[SSPlayerForUnity](../players/unity.md)** | Docs (coming soon) |
+| The **browser** - PixiJS, WebGL | **[SSPlayerForWeb](../players/web.md)** (player collection) | Docs (coming soon) |
+| **RPG Maker MZ**, **TyranoScript** - 🧪 experimental (alpha) | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-webgl` adapters) | Docs (coming soon) |
+| A Godot game | **[SSPlayerForGodot](../players/godot.md)** | Docs (coming soon) |
 | A **Flutter** app - 🧪 early development | **[SSPlayerForFlutter](../players/flutter.md)** | [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter) |
-| A Ren'Py visual novel | **[SSPlayerForRenPy](../players/renpy.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
+| A Ren'Py visual novel | **[SSPlayerForRenPy](../players/renpy.md)** | Docs (coming soon) |
 | Building your own player / integration | **SpriteStudio-SDK** | [Porting a Player](../sdk/porting.md) |
 
 Only converting `.sspj`? Pick a standalone tool rather than a player.
 
 | I want to convert on... | Use | Details |
 |---|---|---|
-| The browser | **[SSPlayerForWeb](../players/web.md)** (`ssconverter-web`) | [Try it](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
-| The desktop - GUI | **[SSConverterGUI](../players/converter.md)** | [Docs](https://cri-middleware.github.io/SSConverterGUI/) |
+| The browser | **[SSPlayerForWeb](../players/web.md)** (`ssconverter-web`) | Try it (coming soon) |
+| The desktop - GUI | **[SSConverterGUI](../players/converter.md)** | Docs (coming soon) |
 | The desktop - CLI | **SpriteStudio-SDK** (`ssconverter-cli`) | [How to run it](./convert-with-a-standalone-tool.md) |
 
 ## ✅ Common to every platform

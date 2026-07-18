@@ -4,7 +4,7 @@
 `libssruntime` を通じて行われ、Unity の Job System と組み合わせて高いパフォーマンスを発揮します。
 ボーン、メッシュ&デフォーム、パーティクル、拡張ブレンド、マスクに対応します。
 
-- **ドキュメント:** <https://cri-middleware.github.io/SSPlayerForUnity/>
+- **ドキュメント:** _準備中_
 - **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForUnity>
 
 Player の比較は [プラットフォームの選び方](../overview/choose-your-platform.md) を、
