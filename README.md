@@ -35,23 +35,20 @@ The toolchain (mkdocs-material + i18n) is kept aligned with SSPlayerForUnity / S
 ### macOS / Linux (bash)
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r docs/requirements.txt
-mkdocs serve          # preview at http://127.0.0.1:8000
-mkdocs build --strict # what CI runs
+python3 -m venv .venv
+.venv/bin/python -m pip install -r docs/requirements.txt
+.venv/bin/mkdocs serve          # preview at http://127.0.0.1:8000
+.venv/bin/mkdocs build --strict # what CI runs
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-py -m venv .venv; .\.venv\Scripts\Activate.ps1
-pip install -r docs/requirements.txt
-mkdocs serve          # preview at http://127.0.0.1:8000
-mkdocs build --strict # what CI runs
+py -m venv .venv
+.\.venv\Scripts\python -m pip install -r docs/requirements.txt
+.\.venv\Scripts\mkdocs serve          # preview at http://127.0.0.1:8000
+.\.venv\Scripts\mkdocs build --strict # what CI runs
 ```
-
-> If `Activate.ps1` is blocked, allow scripts for the current user once with
-> `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
 
 ## Related repositories
 

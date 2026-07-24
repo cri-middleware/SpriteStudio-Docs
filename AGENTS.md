@@ -17,14 +17,14 @@ into full player documentation; that content lives in the player's own repositor
 ## Commands
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r docs/requirements.txt
+python3 -m venv .venv
+.venv/bin/python -m pip install -r docs/requirements.txt
 
-mkdocs serve           # live preview at http://127.0.0.1:8000
-mkdocs build --strict  # exactly what CI runs; fails on broken links / missing nav
+.venv/bin/mkdocs serve           # live preview at http://127.0.0.1:8000
+.venv/bin/mkdocs build --strict  # exactly what CI runs; fails on broken links / missing nav
 ```
 
-Always validate with `mkdocs build --strict` before finishing — CI (`.github/workflows/pages.yml`)
+Always validate with `.venv/bin/mkdocs build --strict` before finishing — CI (`.github/workflows/pages.yml`)
 runs the same command on every PR and blocks merge on any broken internal link or nav mismatch.
 Deployment is **manual**: publishing is triggered by running the workflow (`workflow_dispatch`),
 which builds the site and deploys it via the GitHub Pages deployment API (OIDC) — no `gh-pages`
