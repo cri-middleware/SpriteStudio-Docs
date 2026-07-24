@@ -32,12 +32,26 @@ The toolchain (mkdocs-material + i18n) is kept aligned with SSPlayerForUnity / S
 
 ## Local development
 
+### macOS / Linux (bash)
+
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r docs/requirements.txt
 mkdocs serve          # preview at http://127.0.0.1:8000
 mkdocs build --strict # what CI runs
 ```
+
+### Windows (PowerShell)
+
+```powershell
+py -m venv .venv; .\.venv\Scripts\Activate.ps1
+pip install -r docs/requirements.txt
+mkdocs serve          # preview at http://127.0.0.1:8000
+mkdocs build --strict # what CI runs
+```
+
+> If `Activate.ps1` is blocked, allow scripts for the current user once with
+> `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
 
 ## Related repositories
 
@@ -47,5 +61,6 @@ mkdocs build --strict # what CI runs
 | [SSPlayerForUnity](https://github.com/cri-middleware/SSPlayerForUnity) | Unity player |
 | [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | Web player collection (PixiJS / WebGL / TyranoScript / ssconverter-web) |
 | [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | Godot player |
+| [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | Flutter player (🧪 early development) |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | Ren'Py player |
 | [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | Desktop converter GUI |

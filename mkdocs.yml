@@ -28,10 +28,15 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - navigation.top
+    - navigation.tracking
     - content.code.copy
 
 plugins:
-  - search
+  - search:
+      lang:
+        - en
+        - ja
   - callouts
   - i18n:
       docs_structure: folder
