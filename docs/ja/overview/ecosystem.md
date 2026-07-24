@@ -45,7 +45,7 @@ graph LR
 | **SpriteStudio-SDK** | 共通の Rust コア。`libssconverter` が `.sspj` をランタイムアセットへ変換し、`libssruntime` が再生します。各 Player が git submodule として参照し、`libssconverter` も含むため、Unity・Godot・Ren'Py はその場で変換できます。 |
 | **SSPlayerForUnity / ForGodot** | 変換ツールとして `libssconverter` をバンドルし、エンジンエディタ側で実行するため、インポートも再生も外部ツール不要です。 |
 | **SSPlayerForRenPy** | 変換ツールとして `libssconverter` をバンドルし、起動時に自動インポートするため外部ツール不要です。 |
-| **SSPlayerForWeb / ForFlutter** | `libssruntime` バインディングと描画。変換は同梱のスタンドアロンツールで行います。ForFlutter は 🧪 開発初期です。 |
+| **SSPlayerForWeb / ForFlutter** | `libssruntime` バインディングと描画。変換は同梱のスタンドアロンツールで行います。 |
 | **SSConverterGUI / `ssconverter-cli` / `ssconverter-web`** | Player を介さず変換するための `libssconverter` スタンドアロンフロントエンド（デスクトップ GUI／CLI・CI／ブラウザ）。 |
 
 変換と再生を SDK に集約しているため、全 Player で機能サポートと挙動が一貫します。

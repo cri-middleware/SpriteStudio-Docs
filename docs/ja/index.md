@@ -52,9 +52,9 @@
     ---
 
     `SpriteStudioView` ウィジェットで Flutter アプリに SpriteStudio 7 アニメーションを再生。
-    🧪 **開発初期**（未リリース）です。
 
     [:octicons-arrow-right-24: 概要](./players/flutter.md) |
+    ドキュメント（準備中） |
     [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
 
 -   :material-drama-masks: __Ren'Py__

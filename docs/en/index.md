@@ -52,9 +52,9 @@ hosted converter, no install.
     ---
 
     Play SpriteStudio 7 animations in Flutter apps via a `SpriteStudioView` widget.
-    🧪 **In early development** - not yet released.
 
     [:octicons-arrow-right-24: Overview](./players/flutter.md) |
+    Docs (coming soon) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
 
 -   :material-drama-masks: __Ren'Py__

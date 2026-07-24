@@ -9,7 +9,7 @@ column links to its full details.
 | The **browser** - PixiJS, WebGL | **[SSPlayerForWeb](../players/web.md)** (player collection) | Docs (coming soon) |
 | **RPG Maker MZ**, **TyranoScript** - 🧪 experimental (alpha) | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-webgl` adapters) | Docs (coming soon) |
 | A Godot game | **[SSPlayerForGodot](../players/godot.md)** | Docs (coming soon) |
-| A **Flutter** app - 🧪 early development | **[SSPlayerForFlutter](../players/flutter.md)** | [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter) |
+| A **Flutter** app | **[SSPlayerForFlutter](../players/flutter.md)** | Docs (coming soon) |
 | A Ren'Py visual novel | **[SSPlayerForRenPy](../players/renpy.md)** | Docs (coming soon) |
 | Building your own player / integration | **SpriteStudio-SDK** | [Porting a Player](../sdk/porting.md) |
 
