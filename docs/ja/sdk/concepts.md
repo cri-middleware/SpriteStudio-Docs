@@ -73,6 +73,7 @@ graph LR
 
 ## ➡️ 次に
 
+- [用語集](./glossary.md) - このポータルと各 Player のドキュメントで使う用語。
 - [共通の制限事項](./limitations.md) - すべての Player に共通する制約。
 - [フォーマット仕様](./format-spec.md) - `.ssab / .ssqb` バイナリとランタイムの `FrameData` インターフェース。
 - [Player の移植](./porting.md) - 新規エンジン向けの Player を作る。

@@ -41,7 +41,7 @@ branch and no `contents: write`. Merging to `main` does **not** auto-publish.
   `nav_translations` entry whenever you introduce a new nav title.
 - **Content lives in three folders** under each locale: `overview/` (ecosystem, platform
   choice, feature support, browser demos, and the asset-conversion overview + standalone tools),
-  `sdk/` (canonical cross-player concepts, format spec, shared limitations, porting guide), and
+  `sdk/` (canonical cross-player concepts, glossary, format spec, shared limitations, porting), and
   `players/` (thin entry pages) — plus `index.md`, `support.md`, and `license.md` at the locale
   root. Note: `nav` surfaces `overview/` under **two** top-level sections — 🗺️ Overview and
   🔄 Converting Assets — so a new Overview page can belong to either.
@@ -49,8 +49,15 @@ branch and no `contents: write`. Merging to `main` does **not** auto-publish.
   code. `sdk/limitations.md` summarizes the SDK's Player Porting Guide (`libs/ssruntime/docs`,
   *Introduction → Limitations*); `overview/feature-support.md` reports only what each player's
   own docs state, and says so — do not infer support or non-support that no repo documents.
+- **No facts that need tracking across repos.** Version numbers, engine/runtime requirement
+  tables, per-project license identifiers, and schema-compatibility matrices are deliberately
+  *not* hosted here: they would have to be chased across seven repositories. Let each project
+  state them in its own docs and link out instead.
 - **Internal links are relative file paths** ending in `.md` (e.g. `../sdk/concepts.md`), which
-  is what `--strict` validates. External player docs are absolute `https://…` URLs.
+  is what `--strict` validates. External player docs are absolute `https://…` URLs. Link sibling
+  repos at the **repository root**, not `blob/main/...` paths into their docs — SSPlayerForGodot,
+  SSPlayerForRenPy, and SSPlayerForUnity default to `develop` and `main` may not carry `docs/`,
+  so such a link 404s silently (`--strict` validates internal links only).
 - **"Coming soon" gating**: player docs sites, live demos, and the hosted `ssconverter-web`
   are GitHub Pages URLs (`cri-middleware.github.io/…`) that 404 until each is deployed, so those
   outbound links are neutralized to plain **"coming soon" / "準備中"** text (no hyperlink) in

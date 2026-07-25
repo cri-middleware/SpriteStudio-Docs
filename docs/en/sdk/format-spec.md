@@ -6,6 +6,9 @@ This page summarizes them; the **canonical, field-level specs live in the SDK**:
 - [**SSAB / SSQB Schema**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssab/SCHEMA.md) - the asset binary.
 - [**FrameData Schema**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssruntime/SCHEMA.md) - the runtime exchange interface.
 
+Terms below - animation pack, cellmap, part types, name hash - are defined in the
+[Glossary](./glossary.md).
+
 ## 🗄️ SSAB / SSQB - the asset binary
 
 `.ssab` (**S**prite**S**tudio **A**nime **B**inary) and `.ssqb` (Sequence Binary) are the

@@ -30,7 +30,8 @@ docs/
     index.md         # landing page (product cards)
     overview/        # ecosystem, choose-your-platform, feature-support,
                      #   try-it, conversion, convert-with-a-standalone-tool
-    sdk/             # concepts, format-spec, limitations, porting (canonical, cross-player)
+    sdk/             # concepts, glossary, format-spec, limitations, porting
+                     #   (canonical, cross-player)
     players/         # thin entry pages that link out to each player's own docs
     support.md
     license.md

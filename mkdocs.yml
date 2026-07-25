@@ -5,6 +5,8 @@ site_url: "https://cri-middleware.github.io/SpriteStudio-Docs/"
 repo_name: "cri-middleware/SpriteStudio-Docs"
 repo_url: "https://github.com/cri-middleware/SpriteStudio-Docs"
 edit_uri: "edit/main/docs/"
+# Rendered in the site footer. Deliberately year-less so it never goes stale.
+copyright: "Copyright &copy; CRI Middleware Co., Ltd."
 
 theme:
   name: material
@@ -60,6 +62,7 @@ plugins:
             Standalone Tools: スタンドアロンツール
             🛠️ SDK & Development: 🛠️ SDK・開発者向け
             Concepts: コンセプト
+            Glossary: 用語集
             Format Specification: フォーマット仕様
             Shared Limitations: 共通の制限事項
             Porting a Player: Player の移植
@@ -92,6 +95,7 @@ nav:
       - Converter GUI: players/converter.md
   - 🛠️ SDK & Development:
       - Concepts: sdk/concepts.md
+      - Glossary: sdk/glossary.md
       - Format Specification: sdk/format-spec.md
       - Shared Limitations: sdk/limitations.md
       - Porting a Player: sdk/porting.md
@@ -129,6 +133,14 @@ markdown_extensions:
       check_paths: true
 
 extra:
+  # Footer icons. Keep to destinations that outlive any single release.
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cri-middleware
+      name: cri-middleware on GitHub
+    - icon: material/web
+      link: https://www.webtech.co.jp/spritestudio/
+      name: OPTPiX SpriteStudio
   alternate:
     - name: English
       link: /SpriteStudio-Docs/
