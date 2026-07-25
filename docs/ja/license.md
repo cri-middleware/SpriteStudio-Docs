@@ -5,13 +5,13 @@
 
 | プロジェクト | ライセンス |
 |---|---|
-| SpriteStudio-SDK | [LICENSE](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/LICENSE.md) |
-| SSPlayerForUnity | [LICENSE](https://github.com/cri-middleware/SSPlayerForUnity/blob/main/LICENSE.md) |
-| SSPlayerForWeb | [LICENSE](https://github.com/cri-middleware/SSPlayerForWeb/blob/main/LICENSE.md) |
-| SSPlayerForGodot | [LICENSE](https://github.com/cri-middleware/SSPlayerForGodot/blob/main/LICENSE.md) |
-| SSPlayerForFlutter | [LICENSE](https://github.com/cri-middleware/SSPlayerForFlutter/blob/main/LICENSE.md) |
-| SSPlayerForRenPy | [LICENSE](https://github.com/cri-middleware/SSPlayerForRenPy/blob/main/LICENSE.md) |
-| SSConverterGUI | [LICENSE](https://github.com/cri-middleware/SSConverterGUI/blob/main/LICENSE.md) |
+| SpriteStudio-SDK | [LICENSE](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/LICENSE.md) |
+| SSPlayerForUnity | [LICENSE](https://github.com/cri-middleware/SSPlayerForUnity/blob/HEAD/LICENSE.md) |
+| SSPlayerForWeb | [LICENSE](https://github.com/cri-middleware/SSPlayerForWeb/blob/HEAD/LICENSE.md) |
+| SSPlayerForGodot | [LICENSE](https://github.com/cri-middleware/SSPlayerForGodot/blob/HEAD/LICENSE.md) |
+| SSPlayerForFlutter | [LICENSE](https://github.com/cri-middleware/SSPlayerForFlutter/blob/HEAD/LICENSE.md) |
+| SSPlayerForRenPy | [LICENSE](https://github.com/cri-middleware/SSPlayerForRenPy/blob/HEAD/LICENSE.md) |
+| SSConverterGUI | [LICENSE](https://github.com/cri-middleware/SSConverterGUI/blob/HEAD/LICENSE.md) |
 
 !!! note
     OPTPiX SpriteStudio 本体は [CRI Middleware Co., Ltd.](https://www.webtech.co.jp/spritestudio/)

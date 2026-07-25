@@ -3,8 +3,8 @@
 SDK は 2 つのバイナリ形式（いずれも **FlatBuffers** ベース）と、ランタイムの FFI
 インターフェースを使います。本ページは要約で、**フィールド単位の正式仕様は SDK 側**にあります。
 
-- [**SSAB / SSQB スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssab/SCHEMA.ja.md) - アセットバイナリ。
-- [**FrameData スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssruntime/SCHEMA.ja.md) - ランタイムのデータ交換インターフェース。
+- [**SSAB / SSQB スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/SCHEMA.ja.md) - アセットバイナリ。
+- [**FrameData スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.ja.md) - ランタイムのデータ交換インターフェース。
 
 以降に出てくる用語（アニメーションパック、セルマップ、パーツ種別、ネームハッシュなど）は
 [用語集](./glossary.md) に定義があります。
@@ -23,8 +23,10 @@ XML ベースの `ss*e`（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）�
 | `no_std` | 非対応 | 対応 |
 
 **変換単位は「`.ssae`（アニメーションパック）1つにつき `.ssab` 1つ」**。各 `.ssab` は自己完結し、
-そのパックが実際に参照する `ss*e` リソース（セルマップ・エフェクト・サウンド・フォント）だけを
-埋め込みます。`.sspj` プロジェクト自体は `.ssab` には含まれず、変換時のリソース解決にのみ使われます。
+そのパックが実際に参照する `ss*e` リソースの*データ*（セルマップ・エフェクト・サウンド・フォント）
+だけを埋め込みます。`.sspj` プロジェクト自体は `.ssab` には含まれず、変換時のリソース解決にのみ
+使われます。テクスチャや音声の**バイナリ**は別扱いで、*embedded モード*で変換しない限り `.ssab`
+と並べて配置します（[共通の制限事項](./limitations.md) を参照）。
 
 ### 主要な設計判断
 
@@ -62,14 +64,14 @@ FrameData（密・1フレーム）  --FFI-->  各エンジンの描画
 
 各 `PartState` フィールドは、対応する `.ssab` の `PartAnimationData` 配列から直接マップされます
 （例: `position_x` <- `position_x_array` を補間し、対象の座標系へ変換）。フィールド単位の
-対応表は [FrameData スキーマ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssruntime/SCHEMA.ja.md) にあります。
+対応表は [FrameData スキーマ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.ja.md) にあります。
 
 ## 🔧 バインディングの再生成
 
 スキーマは SDK 内の FlatBuffers `.fbs` として定義されています
-（[`ssab.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssab/fbs/ssab.fbs) /
-[`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssab/fbs/ssqb.fbs)、および
-[`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssruntime/fbs/framedata.fbs)）。フィーチャフラグ（`default` / `no_std` / `converter`）と
+（[`ssab.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssab.fbs) /
+[`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssqb.fbs)、および
+[`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/fbs/framedata.fbs)）。フィーチャフラグ（`default` / `no_std` / `converter`）と
 コード生成については [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssab) を参照。
 
 !!! info "スキーマのバージョニング"

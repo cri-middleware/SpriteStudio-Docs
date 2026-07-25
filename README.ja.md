@@ -15,8 +15,8 @@ SpriteStudio SDK と公式 Player 群のドキュメント**ポータル**です
   [スタンドアロンツールでの変換](docs/ja/overview/convert-with-a-standalone-tool.md)
 - Player 間の[機能サポート状況](docs/ja/overview/feature-support.md)と、共通ランタイムの
   [制限事項](docs/ja/sdk/limitations.md)
-- 共通の [SDK コンセプト](docs/ja/sdk/concepts.md)、[フォーマット仕様](docs/ja/sdk/format-spec.md)、
-  [移植ガイドへの案内](docs/ja/sdk/porting.md)
+- 共通の [SDK コンセプト](docs/ja/sdk/concepts.md)、[用語集](docs/ja/sdk/glossary.md)、
+  [フォーマット仕様](docs/ja/sdk/format-spec.md)、[移植ガイドへの案内](docs/ja/sdk/porting.md)
 - [サポート窓口の振り分け](docs/ja/support.md)と共通のライセンス情報
 
 公開先: <https://cri-middleware.github.io/SpriteStudio-Docs/>
@@ -74,3 +74,10 @@ py -m venv .venv
 | [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | Flutter 向け Player |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | Ren'Py 向け Player |
 | [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | デスクトップ版コンバーター GUI |
+
+## 貢献について
+
+誤りの修正、説明の改善、翻訳の修正を歓迎します。手順とドキュメントの規約は
+[CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。参加にあたっては
+[行動規範](./CODE_OF_CONDUCT.md) が適用されます。質問や不具合の報告先は
+[SUPPORT.md](./SUPPORT.md) をご覧ください。

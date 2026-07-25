@@ -67,7 +67,7 @@ visual drift is structurally eliminated. (See [Porting a Player](./porting.md).)
     particle effects, instances & masks, and frame-accurate events/user data. A runtime
     **Override Layer API** lets you override a part's color, cell reference, or visibility at
     playback time. Sequence (`.ssqe`) playback is on the roadmap - see the SDK
-    [ROADMAP](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/ROADMAP.md).
+    [ROADMAP](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md).
     For what falls outside this - and the constraints every player inherits - see
     [Shared Limitations](./limitations.md).
 

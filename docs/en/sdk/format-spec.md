@@ -3,8 +3,8 @@
 The SDK uses two binary formats, both **FlatBuffers**-based, plus a runtime FFI interface.
 This page summarizes them; the **canonical, field-level specs live in the SDK**:
 
-- [**SSAB / SSQB Schema**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssab/SCHEMA.md) - the asset binary.
-- [**FrameData Schema**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssruntime/SCHEMA.md) - the runtime exchange interface.
+- [**SSAB / SSQB Schema**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/SCHEMA.md) - the asset binary.
+- [**FrameData Schema**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.md) - the runtime exchange interface.
 
 Terms below - animation pack, cellmap, part types, name hash - are defined in the
 [Glossary](./glossary.md).
@@ -23,9 +23,11 @@ converted, play-ready assets produced by `libssconverter` from the XML-based `ss
 | `no_std` | No | Yes |
 
 **Conversion unit - one `.ssab` per `.ssae` (animation pack).** Each `.ssab` is
-self-contained: it embeds only the `ss*e` resources (cellmaps, effects, sounds, fonts) that
+self-contained: it embeds only the `ss*e` resource *data* (cellmaps, effects, sounds, fonts) that
 the pack actually references. The `.sspj` project itself is *not* stored in `.ssab` - it is
-used only to resolve resource references during conversion.
+used only to resolve resource references during conversion. The texture and sound **binaries**
+are a separate matter: they sit alongside the `.ssab` unless you convert in *embedded mode*,
+which packs them in as well - see [Shared Limitations](./limitations.md).
 
 ### Key design decisions
 
@@ -63,14 +65,14 @@ FrameData (dense, one frame)  --FFI-->  your renderer
 Each `PartState` field maps directly from the corresponding `.ssab` `PartAnimationData` array
 (e.g. `position_x` <- `position_x_array`, interpolated and converted to your coordinate
 system). The full field-by-field mapping is in the
-[FrameData Schema](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssruntime/SCHEMA.md).
+[FrameData Schema](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.md).
 
 ## 🔧 Regenerating bindings
 
 The schemas are defined as FlatBuffers `.fbs` files in the SDK
-([`ssab.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssab/fbs/ssab.fbs) /
-[`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssab/fbs/ssqb.fbs), and
-[`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssruntime/fbs/framedata.fbs)).
+([`ssab.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssab.fbs) /
+[`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssqb.fbs), and
+[`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/fbs/framedata.fbs)).
 See [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssab)
 for feature flags (`default` / `no_std` / `converter`) and codegen.
 

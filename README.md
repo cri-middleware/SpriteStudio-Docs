@@ -15,8 +15,8 @@ point and hosts the cross-cutting material that belongs to no single player:
   [standalone conversion tools](docs/en/overview/convert-with-a-standalone-tool.md),
 - [feature support](docs/en/overview/feature-support.md) across players and the shared
   [runtime limitations](docs/en/sdk/limitations.md),
-- shared [SDK concepts](docs/en/sdk/concepts.md), the
-  [format specification](docs/en/sdk/format-spec.md), and the
+- shared [SDK concepts](docs/en/sdk/concepts.md), the [glossary](docs/en/sdk/glossary.md),
+  the [format specification](docs/en/sdk/format-spec.md), and the
   [porting guide map](docs/en/sdk/porting.md),
 - [support routing](docs/en/support.md) and shared licensing.
 
@@ -75,3 +75,10 @@ py -m venv .venv
 | [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | Flutter player |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | Ren'Py player |
 | [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | Desktop converter GUI |
+
+## Contributing
+
+Corrections, clarifications, and translation fixes are welcome - see
+[CONTRIBUTING.md](./CONTRIBUTING.md) for the workflow and the documentation conventions.
+Participation is governed by our [Code of Conduct](./CODE_OF_CONDUCT.md); for where to ask a
+question or report a problem, see [SUPPORT.md](./SUPPORT.md).

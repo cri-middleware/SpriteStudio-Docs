@@ -24,10 +24,12 @@ the SDK produces and plays back.
 
 ### Part types
 
-The names below are the ones the SDK schema and the players use. The ones you meet most often:
+These are the part types as SpriteStudio names them; in the `.ssab` schema each one is spelled
+`PartType*` (`PartTypeNormal`, `PartTypeMesh`, ...). The ones you meet most often:
 
 | Part type | Draws |
 |---|---|
+| `Null` | Nothing. A grouping / pivot node that gives its children a shared transform. |
 | `Normal` | A cell (the ordinary sprite part). |
 | `Mesh` | A deformable mesh, driven by bones (mesh & deform). |
 | `Instance` | Another animation, mounted inside this one. |
@@ -44,6 +46,9 @@ The names below are the ones the SDK schema and the players use. The ones you me
 |---|---|
 | **`.ssab`** (SpriteStudio Anime Binary) | The converted, play-ready asset: one animation pack in a compact FlatBuffers binary. See the [Format Specification](./format-spec.md). |
 | **`.ssqb`** | The converted sequence binary, the `.ssqe` counterpart of `.ssab`. |
+| **`libsspj`** | The authoring-side parser: reads `.sspj` projects and the `ss*e` files they reference. |
+| **`libssab`** | The `.ssab` / `.ssqb` library - creates and parses the animation binaries. |
+| **`libssinterpolate`** | The platform-agnostic math library for animation interpolation. |
 | **`libssconverter`** | The conversion half of the SDK: `.sspj` -> `.ssab` / `.ssqb`. The same code runs in every conversion front-end, so the output is identical whichever you use. |
 | **`libssruntime`** | The playback half: evaluates the timeline for the current frame and hands the result to your renderer. |
 | **Brain / Body** | The architectural split. The **Brain** (`libssruntime`) does all the animation math and is engine-agnostic; the **Body** (a player) draws what the Brain computed. See [SDK Concepts](./concepts.md). |
@@ -53,8 +58,8 @@ The names below are the ones the SDK schema and the players use. The ones you me
 | **Override Layer API** | The runtime API for overriding a part's **color, cell reference, or visibility** at playback time. The override wins over both keyframes and blending. |
 | **Animation blending / crossfade** | Playing several animations at once with weights, or fading between them. Constrained to one `.ssab` - see [Shared Limitations](./limitations.md). |
 | **Sub-frame interpolation** | Evaluating between whole frames, so playback stays smooth above the animation's authored frame rate (and in slow motion). |
-| **Name hash** | Every named entity in `.ssab` carries a 32-bit hash of its name, so the runtime looks names up without string comparison. |
-| **Embedded mode** | A conversion mode that packs the referenced assets into the `.ssab` itself. Comes with caveats - see [Shared Limitations](./limitations.md). |
+| **Name hash** | Every named entity in `.ssab` carries a 32-bit FNV-1a hash of its name, so the runtime looks names up without string comparison. |
+| **Embedded mode** | An optional conversion mode that additionally packs the referenced **binary assets** - images, sounds - into the `.ssab`. (The `ss*e` data the pack references is embedded either way; see [Format Specification](./format-spec.md).) Comes with caveats - see [Shared Limitations](./limitations.md). |
 | **External instance** | An Instance part that mounts an animation living in *another* `.ssab`. That file has to be supplied separately. |
 | **`no_std`** | The Rust mode the core is written in: no OS and no standard library, which is what lets it run from embedded targets to browsers. |
 
