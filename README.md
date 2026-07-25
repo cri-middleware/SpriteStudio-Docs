@@ -1,3 +1,5 @@
+[**English**](./README.md) | [**日本語**](./README.ja.md)
+
 # SpriteStudio-Docs
 
 Documentation **portal** for the SpriteStudio SDK and its official players.
@@ -7,9 +9,16 @@ player keeps its own site in its own repository. This portal provides the unifie
 point and hosts the cross-cutting material that belongs to no single player:
 
 - the landing page with product cards,
-- the [ecosystem overview](docs/en/overview/ecosystem.md),
-- shared [SDK concepts](docs/en/sdk/concepts.md) and the [format specification](docs/en/sdk/format-spec.md),
-- shared licensing.
+- the [ecosystem overview](docs/en/overview/ecosystem.md) and
+  [platform chooser](docs/en/overview/choose-your-platform.md),
+- the [asset-conversion overview](docs/en/overview/conversion.md) and the
+  [standalone conversion tools](docs/en/overview/convert-with-a-standalone-tool.md),
+- [feature support](docs/en/overview/feature-support.md) across players and the shared
+  [runtime limitations](docs/en/sdk/limitations.md),
+- shared [SDK concepts](docs/en/sdk/concepts.md), the
+  [format specification](docs/en/sdk/format-spec.md), and the
+  [porting guide map](docs/en/sdk/porting.md),
+- [support routing](docs/en/support.md) and shared licensing.
 
 Published at: <https://cri-middleware.github.io/SpriteStudio-Docs/>
 
@@ -19,16 +28,20 @@ Published at: <https://cri-middleware.github.io/SpriteStudio-Docs/>
 docs/
   en/ , ja/          # folder-based i18n (mkdocs-static-i18n)
     index.md         # landing page (product cards)
-    overview/        # ecosystem, choose-your-platform
-    sdk/             # concepts, format-spec (canonical, cross-player)
+    overview/        # ecosystem, choose-your-platform, feature-support,
+                     #   try-it, conversion, convert-with-a-standalone-tool
+    sdk/             # concepts, format-spec, limitations, porting (canonical, cross-player)
     players/         # thin entry pages that link out to each player's own docs
+    support.md
     license.md
   requirements.txt
 mkdocs.yml
 .github/workflows/pages.yml   # build (strict) + deploy via GitHub Pages
 ```
 
-The toolchain (mkdocs-material + i18n) is kept aligned with SSPlayerForUnity / SSPlayerForRenPy.
+Every page exists in **both** `en/` and `ja/`; the navigation is defined once in `mkdocs.yml`
+(Japanese nav labels come from its `nav_translations` map). The toolchain (mkdocs-material +
+i18n) is kept aligned with SSPlayerForUnity / SSPlayerForRenPy.
 
 ## Local development
 
@@ -56,8 +69,8 @@ py -m venv .venv
 |---|---|
 | [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) | Shared Rust core (`libssruntime` / `libssconverter`) |
 | [SSPlayerForUnity](https://github.com/cri-middleware/SSPlayerForUnity) | Unity player |
-| [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | Web player collection (PixiJS / WebGL / TyranoScript / ssconverter-web) |
+| [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | Web player collection (PixiJS / WebGL / RPG Maker MZ / TyranoScript / ssconverter-web) |
 | [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | Godot player |
-| [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | Flutter player (🧪 early development) |
+| [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | Flutter player |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | Ren'Py player |
 | [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | Desktop converter GUI |
