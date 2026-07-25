@@ -97,5 +97,8 @@ hosted converter, no install.
     **Using the SDK directly, or building a new player?** See
     [SDK & Development](./sdk/concepts.md).
 
+    **Stuck, or found a bug?** [Support](./support.md) routes you to the right repository or
+    channel.
+
     Each player keeps its detailed documentation in its own repository; this portal is the
     entry point plus the **cross-cutting** material that belongs to no single player.

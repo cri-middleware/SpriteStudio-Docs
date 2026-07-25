@@ -68,9 +68,12 @@ graph LR
     ランタイムの **Override Layer API** により、再生時にパーツのカラー・セル参照・表示／非表示を
     上書きできます。シーケンス（`.ssqe`）再生はロードマップ上です - SDK の
     [ROADMAP](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/ROADMAP.md) を参照。
+    ここに含まれない範囲と、すべての Player が引き継ぐ制約は
+    [共通の制限事項](./limitations.md) にまとめてあります。
 
 ## ➡️ 次に
 
+- [共通の制限事項](./limitations.md) - すべての Player に共通する制約。
 - [フォーマット仕様](./format-spec.md) - `.ssab / .ssqb` バイナリとランタイムの `FrameData` インターフェース。
 - [Player の移植](./porting.md) - 新規エンジン向けの Player を作る。
 - [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) - SDK 本体のリポジトリ。最新の正式な情報はこちらが基準です。

@@ -68,9 +68,12 @@ visual drift is structurally eliminated. (See [Porting a Player](./porting.md).)
     **Override Layer API** lets you override a part's color, cell reference, or visibility at
     playback time. Sequence (`.ssqe`) playback is on the roadmap - see the SDK
     [ROADMAP](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/ROADMAP.md).
+    For what falls outside this - and the constraints every player inherits - see
+    [Shared Limitations](./limitations.md).
 
 ## ➡️ Next
 
+- [Shared Limitations](./limitations.md) - the constraints that apply to every player.
 - [Format Specification](./format-spec.md) - the `.ssab / .ssqb` binary and the runtime
   `FrameData` interface.
 - [Porting a Player](./porting.md) - build a player for a new engine.

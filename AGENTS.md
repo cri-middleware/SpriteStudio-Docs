@@ -40,10 +40,15 @@ branch and no `contents: write`. Merging to `main` does **not** auto-publish.
   `plugins.i18n.languages` → `nav_translations` map, **not** from the file tree — add a matching
   `nav_translations` entry whenever you introduce a new nav title.
 - **Content lives in three folders** under each locale: `overview/` (ecosystem, platform
-  choice, browser demos, and the asset-conversion overview + standalone tools), `sdk/`
-  (canonical cross-player concepts, format spec, porting guide), and `players/` (thin entry
-  pages). Note: `nav` surfaces `overview/` under **two** top-level sections — 🗺️ Overview and
+  choice, feature support, browser demos, and the asset-conversion overview + standalone tools),
+  `sdk/` (canonical cross-player concepts, format spec, shared limitations, porting guide), and
+  `players/` (thin entry pages) — plus `index.md`, `support.md`, and `license.md` at the locale
+  root. Note: `nav` surfaces `overview/` under **two** top-level sections — 🗺️ Overview and
   🔄 Converting Assets — so a new Overview page can belong to either.
+- **Cross-cutting claims must be sourced from the sibling repos**, since this portal owns no
+  code. `sdk/limitations.md` summarizes the SDK's Player Porting Guide (`libs/ssruntime/docs`,
+  *Introduction → Limitations*); `overview/feature-support.md` reports only what each player's
+  own docs state, and says so — do not infer support or non-support that no repo documents.
 - **Internal links are relative file paths** ending in `.md` (e.g. `../sdk/concepts.md`), which
   is what `--strict` validates. External player docs are absolute `https://…` URLs.
 - **"Coming soon" gating**: player docs sites, live demos, and the hosted `ssconverter-web`

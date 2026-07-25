@@ -28,5 +28,7 @@ Only converting `.sspj`? Pick a standalone tool rather than a player.
   [SDK Concepts](../sdk/concepts.md) for the pipeline, and [Converting Assets](./conversion.md)
   for every way to convert (automatic on import, GUI, CLI, or browser).
 - Feature coverage (bones, mesh/deform, particles, extended blend, masks) is driven by the
-  shared core, so it is consistent across platforms.
+  shared core, so the feature *set* is the same everywhere. What still differs per engine is
+  listed in [Feature Support](./feature-support.md); the constraints that apply everywhere are
+  in [Shared Limitations](../sdk/limitations.md).
 - Licensing is shared - see [License](../license.md).

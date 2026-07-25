@@ -53,6 +53,7 @@ plugins:
             🗺️ Overview: 🗺️ 概要
             Ecosystem: エコシステム
             Choose Your Platform: プラットフォームの選び方
+            Feature Support: 機能サポート状況
             Try It in Your Browser: ブラウザで試す
             🔄 Converting Assets: 🔄 アセットの変換
             Overview: 概要
@@ -60,6 +61,7 @@ plugins:
             🛠️ SDK & Development: 🛠️ SDK・開発者向け
             Concepts: コンセプト
             Format Specification: フォーマット仕様
+            Shared Limitations: 共通の制限事項
             Porting a Player: Player の移植
             🎮 Players & Tools: 🎮 Player・ツール
             Unity: Unity
@@ -68,6 +70,7 @@ plugins:
             Ren'Py: Ren'Py
             Flutter: Flutter
             Converter GUI: コンバーター GUI
+            🤝 Support: 🤝 サポート
             ⚖️ License: ⚖️ ライセンス
 
 nav:
@@ -75,6 +78,7 @@ nav:
   - 🗺️ Overview:
       - Ecosystem: overview/ecosystem.md
       - Choose Your Platform: overview/choose-your-platform.md
+      - Feature Support: overview/feature-support.md
       - Try It in Your Browser: overview/try-it.md
   - 🔄 Converting Assets:
       - Overview: overview/conversion.md
@@ -89,7 +93,9 @@ nav:
   - 🛠️ SDK & Development:
       - Concepts: sdk/concepts.md
       - Format Specification: sdk/format-spec.md
+      - Shared Limitations: sdk/limitations.md
       - Porting a Player: sdk/porting.md
+  - 🤝 Support: support.md
   - ⚖️ License: license.md
 
 markdown_extensions:
