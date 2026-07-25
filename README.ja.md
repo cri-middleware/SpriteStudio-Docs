@@ -29,7 +29,8 @@ docs/
     index.md         # ランディングページ（製品カード）
     overview/        # ecosystem, choose-your-platform, feature-support,
                      #   try-it, conversion, convert-with-a-standalone-tool
-    sdk/             # concepts, format-spec, limitations, porting（横断的な正典）
+    sdk/             # concepts, glossary, format-spec, limitations, porting
+                     #   （横断的な正典）
     players/         # 各 Player のドキュメントへリンクする薄い入口ページ
     support.md
     license.md

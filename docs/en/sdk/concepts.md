@@ -73,6 +73,7 @@ visual drift is structurally eliminated. (See [Porting a Player](./porting.md).)
 
 ## ➡️ Next
 
+- [Glossary](./glossary.md) - the vocabulary used here and in every player's docs.
 - [Shared Limitations](./limitations.md) - the constraints that apply to every player.
 - [Format Specification](./format-spec.md) - the `.ssab / .ssqb` binary and the runtime
   `FrameData` interface.

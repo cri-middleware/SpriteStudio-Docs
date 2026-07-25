@@ -6,6 +6,9 @@ SDK は 2 つのバイナリ形式（いずれも **FlatBuffers** ベース）�
 - [**SSAB / SSQB スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssab/SCHEMA.ja.md) - アセットバイナリ。
 - [**FrameData スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/libs/ssruntime/SCHEMA.ja.md) - ランタイムのデータ交換インターフェース。
 
+以降に出てくる用語（アニメーションパック、セルマップ、パーツ種別、ネームハッシュなど）は
+[用語集](./glossary.md) に定義があります。
+
 ## 🗄️ SSAB / SSQB - アセットバイナリ
 
 `.ssab`（**S**prite**S**tudio **A**nime **B**inary）と `.ssqb`（Sequence Binary）は、
