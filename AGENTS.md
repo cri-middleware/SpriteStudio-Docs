@@ -51,13 +51,14 @@ branch and no `contents: write`. Merging to `main` does **not** auto-publish.
   own docs state, and says so — do not infer support or non-support that no repo documents.
 - **No facts that need tracking across repos.** Version numbers, engine/runtime requirement
   tables, per-project license identifiers, and schema-compatibility matrices are deliberately
-  *not* hosted here: they would have to be chased across seven repositories. Let each project
-  state them in its own docs and link out instead.
+  *not* hosted here: they would have to be chased across every sibling repository. Let each
+  project state them in its own docs and link out instead.
 - **Internal links are relative file paths** ending in `.md` (e.g. `../sdk/concepts.md`), which
   is what `--strict` validates. External player docs are absolute `https://…` URLs. Link sibling
-  repos at the **repository root**, not `blob/main/...` paths into their docs — SSPlayerForGodot,
-  SSPlayerForRenPy, and SSPlayerForUnity default to `develop` and `main` may not carry `docs/`,
-  so such a link 404s silently (`--strict` validates internal links only).
+  repos at the **repository root**; when you must point at a file inside one, use
+  `blob/HEAD/...`, never `blob/main/...` — most sibling repos default to `develop`, so a
+  `main` path 404s silently (`--strict` validates internal links only) while `HEAD` always
+  resolves to whatever that repo's default branch is.
 - **"Coming soon" gating**: player docs sites, live demos, and the hosted `ssconverter-web`
   are GitHub Pages URLs (`cri-middleware.github.io/…`) that 404 until each is deployed, so those
   outbound links are neutralized to plain **"coming soon" / "準備中"** text (no hyperlink) in

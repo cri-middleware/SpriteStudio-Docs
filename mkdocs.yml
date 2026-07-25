@@ -50,6 +50,15 @@ plugins:
         - locale: ja
           name: 日本語
           build: true
+          extra:
+            # Footer icon labels (title / aria-label). Mirrors the `extra.social` list below.
+            social:
+              - icon: fontawesome/brands/github
+                link: https://github.com/cri-middleware
+                name: GitHub の cri-middleware
+              - icon: material/web
+                link: https://www.webtech.co.jp/spritestudio/
+                name: OPTPiX SpriteStudio
           nav_translations:
             🏠 Home: 🏠 ホーム
             🗺️ Overview: 🗺️ 概要

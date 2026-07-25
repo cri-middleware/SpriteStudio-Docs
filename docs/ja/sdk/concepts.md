@@ -67,7 +67,7 @@ graph LR
     デフォーム、パーティクル、インスタンス・マスク、フレーム精度のイベント／ユーザーデータ。
     ランタイムの **Override Layer API** により、再生時にパーツのカラー・セル参照・表示／非表示を
     上書きできます。シーケンス（`.ssqe`）再生はロードマップ上です - SDK の
-    [ROADMAP](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/ROADMAP.md) を参照。
+    [ROADMAP](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md) を参照。
     ここに含まれない範囲と、すべての Player が引き継ぐ制約は
     [共通の制限事項](./limitations.md) にまとめてあります。
 

@@ -35,6 +35,7 @@
 
 ## 🚦 はじめる前に
 
-- 変換 -> 実行時のパイプラインは [SDK コンセプト](./concepts.md) を参照。
+- 変換 -> 実行時のパイプラインは [SDK コンセプト](./concepts.md) を参照。ガイドが前提とする
+  用語は [用語集](./glossary.md) に揃えてあります。
 - ガイドの **Limitations** ページを最初に読む - Player の設計判断に直結します。
 - ソースコードと Issue 報告: [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK)。

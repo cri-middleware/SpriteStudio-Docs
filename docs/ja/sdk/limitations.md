@@ -53,7 +53,7 @@
 ### シーケンス（`.ssqe` / `.ssqb`）再生は未実装
 
 変換ではすでに `.ssqb` を生成できますが、ランタイムでのシーケンス再生は
-[SDK のロードマップ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/ROADMAP.md)
+[SDK のロードマップ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md)
 上の項目で、ランタイムのステートマシンと合わせて実装される予定です。
 
 ## 🧩 ランタイムが描画までは行わない機能
@@ -101,6 +101,7 @@ Flutter Web、Ren'Py Web）が対象です。
 
 ## ➡️ 次に読む
 
+- [用語集](./glossary.md) - このページで使われている用語
 - [機能サポート状況](../overview/feature-support.md) - Player 間で異なる点
 - [SDK コンセプト](./concepts.md) - これらの制約が生じる変換 → 再生パイプライン
 - [サポート](../support.md) - このページに載っていない事象の報告先

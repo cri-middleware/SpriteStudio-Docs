@@ -52,7 +52,7 @@ source fires events (each source has an event threshold).
 ### Sequence (`.ssqe` / `.ssqb`) playback is not implemented yet
 
 Conversion already produces `.ssqb`, but runtime playback of sequences is still on the
-[SDK roadmap](https://github.com/cri-middleware/SpriteStudio-SDK/blob/main/ROADMAP.md) - it lands
+[SDK roadmap](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md) - it lands
 with the runtime state machine.
 
 ## 🧩 What the runtime does *not* draw for you
@@ -99,6 +99,7 @@ itself. Two constraints follow:
 
 ## ➡️ Next
 
+- [Glossary](./glossary.md) - the vocabulary used on this page.
 - [Feature Support](../overview/feature-support.md) - what differs between players.
 - [SDK Concepts](./concepts.md) - the convert -> playback pipeline these constraints come from.
 - [Support](../support.md) - where to report something that is *not* on this page.

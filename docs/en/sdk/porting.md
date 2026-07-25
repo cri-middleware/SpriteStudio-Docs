@@ -35,6 +35,7 @@ engine's Body to the shared Brain.
 
 ## 🚦 Before you start
 
-- Read [SDK Concepts](./concepts.md) for the convert -> runtime pipeline.
+- Read [SDK Concepts](./concepts.md) for the convert -> runtime pipeline, and keep the
+  [Glossary](./glossary.md) open for the terms the guide assumes.
 - Read the guide's **Limitations** page first - it shapes your player's design decisions.
 - Source & issues: [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK).

@@ -29,12 +29,14 @@ Open a [GitHub Issue](https://github.com/cri-middleware/SpriteStudio-Docs/issues
 ### Pull Requests
 1. Fork the repository and create your branch from `main`.
 2. Make the change in **both** `docs/en/` and `docs/ja/` (see below).
-3. Run `mkdocs build --strict` locally - this is exactly what CI runs.
+3. Run `.venv/bin/mkdocs build --strict` locally - this is exactly what CI runs (see [Development Environment](#development-environment)).
 4. Submit a Pull Request targeting `main` with a clear description. Use [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `docs: …`).
 
 Note that merging does **not** publish. Deployment is manual: a maintainer runs the `Publish docs via GitHub Pages` workflow (`workflow_dispatch`).
 
 ## Development Environment
+
+macOS / Linux (bash):
 
 ```bash
 python3 -m venv .venv
@@ -44,7 +46,15 @@ python3 -m venv .venv
 .venv/bin/mkdocs build --strict  # what CI runs; fails on broken links / nav mismatches
 ```
 
-On Windows, use `py -m venv .venv` and `.\.venv\Scripts\mkdocs`.
+Windows (PowerShell):
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\python -m pip install -r docs/requirements.txt
+
+.\.venv\Scripts\mkdocs serve          # live preview at http://127.0.0.1:8000
+.\.venv\Scripts\mkdocs build --strict # what CI runs; fails on broken links / nav mismatches
+```
 
 The toolchain versions in `docs/requirements.txt` are pinned deliberately and kept in sync with the per-player documentation sites - please bump them intentionally, not incidentally.
 
@@ -60,11 +70,11 @@ The `nav:` tree is defined once, with locale-relative paths (`sdk/glossary.md`, 
 
 ### Links
 - **Internal links** are relative file paths ending in `.md` (e.g. `../sdk/concepts.md`). `--strict` validates these.
-- **Links into sibling repositories** should target the repository (or a path that exists on its default branch). Avoid deep `blob/main/...` links to documentation files: several players keep their docs on `develop`, so such a link can 404 silently - `--strict` only validates internal links.
-- **Pre-launch sites** (player documentation sites, live demos, the hosted converter) are neutralized to plain "coming soon" / "準備中" text until each is deployed. When one ships, restore its link in `en/` and `ja/` together.
+- **Links into sibling repositories** should target the repository itself. When you must point at a file inside one, write `blob/HEAD/...` rather than `blob/main/...`: most sibling repositories default to `develop`, so a `main` path can 404 silently - `--strict` only validates internal links - while `HEAD` always resolves to that repository's default branch.
+- **Pre-launch sites** (player documentation sites, live demos, the hosted converter) are GitHub Pages URLs that 404 until each is deployed, so they are neutralized to plain "coming soon" / "準備中" text. This applies to those **sites only** - `github.com/cri-middleware/…` repository links stay live as forward-links. When a site ships, restore its link in `en/` and `ja/` together.
 
 ### Writing
-- Prefer material that stays true. Version numbers, requirement tables, and other facts that need tracking across seven repositories age badly in a portal - let each project state those in its own docs, and link out instead.
+- Prefer material that stays true. Version numbers, requirement tables, and other facts that need tracking across every sibling repository age badly in a portal - let each project state those in its own docs, and link out instead.
 - Match the surrounding page: sentence-case headings with a leading emoji, tables for comparisons, and `!!!` admonitions (Material) for notes and warnings.
 - Keep the two locales structurally identical - same headings, same tables, same links - so future edits can be applied to both in one pass.
 
@@ -97,12 +107,14 @@ SpriteStudio ドキュメントポータルの改善にご関心をお寄せい�
 ### プルリクエスト
 1. リポジトリを fork し、`main` からブランチを作成してください。
 2. `docs/en/` と `docs/ja/` の **両方** を変更してください（下記参照）。
-3. ローカルで `mkdocs build --strict` を実行してください。CI と同じ検証です。
+3. ローカルで `.venv/bin/mkdocs build --strict` を実行してください。CI と同じ検証です（[開発環境](#開発環境) 参照）。
 4. `main` を対象に、変更内容を明確に記載した PR を作成してください。コミットは [Conventional Commits](https://www.conventionalcommits.org/)（例: `docs: …`）に従ってください。
 
 マージしても **公開はされません**。デプロイは手動で、メンテナーが `Publish docs via GitHub Pages` ワークフロー（`workflow_dispatch`）を実行します。
 
 ## 開発環境
+
+macOS / Linux (bash):
 
 ```bash
 python3 -m venv .venv
@@ -112,7 +124,15 @@ python3 -m venv .venv
 .venv/bin/mkdocs build --strict  # CI と同じ検証。リンク切れや nav の不整合で失敗します
 ```
 
-Windows では `py -m venv .venv` と `.\.venv\Scripts\mkdocs` を使用してください。
+Windows (PowerShell):
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\python -m pip install -r docs/requirements.txt
+
+.\.venv\Scripts\mkdocs serve          # http://127.0.0.1:8000 でライブプレビュー
+.\.venv\Scripts\mkdocs build --strict # CI と同じ検証。リンク切れや nav の不整合で失敗します
+```
 
 `docs/requirements.txt` のバージョンは各 Player のドキュメントサイトと揃えて意図的に固定しています。更新はついでではなく、意図をもって行ってください。
 
@@ -128,11 +148,11 @@ Windows では `py -m venv .venv` と `.\.venv\Scripts\mkdocs` を使用して�
 
 ### リンク
 - **内部リンク**は `.md` で終わる相対パス（例: `../sdk/concepts.md`）。`--strict` が検証します。
-- **兄弟リポジトリへのリンク**は、リポジトリ自体（または既定ブランチに存在するパス）を指してください。ドキュメントファイルへの `blob/main/...` の深いリンクは避けてください。docs を `develop` で管理している Player があり、気付かないまま 404 になります（`--strict` は内部リンクしか検証しません）。
-- **公開前のサイト**（各 Player のドキュメントサイト、ライブデモ、ホスト版コンバーター）は、公開されるまでリンクにせず「coming soon」「準備中」の文字列にしています。公開されたら `en/` と `ja/` の両方でリンクに戻してください。
+- **兄弟リポジトリへのリンク**は、リポジトリ自体を指してください。リポジトリ内のファイルを直接指す必要がある場合は、`blob/main/...` ではなく `blob/HEAD/...` と書いてください。多くの兄弟リポジトリは既定ブランチが `develop` のため、`main` を指すパスは気付かないまま 404 になります（`--strict` は内部リンクしか検証しません）。`HEAD` は常にそのリポジトリの既定ブランチへ解決されます。
+- **公開前のサイト**（各 Player のドキュメントサイト、ライブデモ、ホスト版コンバーター）は、デプロイされるまで 404 になる GitHub Pages の URL のため、リンクにせず「coming soon」「準備中」の文字列にしています。対象は**これらのサイトのみ**で、`github.com/cri-middleware/…` のリポジトリへのリンクは先行リンクとして有効なままにします。サイトが公開されたら `en/` と `ja/` の両方でリンクに戻してください。
 
 ### 書き方
-- 長く正しくあり続ける情報を優先してください。バージョン番号や要件表など、7 つのリポジトリを追跡し続ける必要がある情報はポータルでは古くなりやすいものです。各プロジェクト自身のドキュメントに任せ、こちらからはリンクしてください。
+- 長く正しくあり続ける情報を優先してください。バージョン番号や要件表など、すべての兄弟リポジトリを追跡し続ける必要がある情報はポータルでは古くなりやすいものです。各プロジェクト自身のドキュメントに任せ、こちらからはリンクしてください。
 - 周囲のページに合わせてください。見出しは先頭に絵文字、比較は表、注意書きは Material の `!!!` 記法。
 - 2 つのロケールは構造を同一に保ってください（同じ見出し、同じ表、同じリンク）。以後の編集を一度に両方へ適用できます。
 
