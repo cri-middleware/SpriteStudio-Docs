@@ -1,85 +1,52 @@
 # 🧩 Feature Support
 
 Every official player evaluates animations with the **same core**, so the *feature set* is shared
-rather than reimplemented per engine. What can still differ is:
+rather than reimplemented per engine - it is listed under
+[SDK Concepts](../sdk/concepts.md). What can still differ is:
 
 1. **What the engine's rendering layer can reproduce** - blend modes in particular map onto
    whatever fixed-function blend states the host engine exposes.
 2. **What each player has implemented so far** - the players are at different stages.
 
-Read this page together with [Shared Limitations](../sdk/limitations.md), which covers the
-constraints that apply *everywhere* (seek/reverse behavior, blending rules, browser requirements).
-
-!!! tip "Source of truth"
-    What the shared core provides - and where the runtime stops and the player begins - follows the
-    SDK's **Player Porting Guide**, *Introduction → Limitations*
-    ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)).
-    The per-player table further down is sourced separately, from each player's own docs.
-
-## ✅ Provided by the shared core
-
-These come from `libssruntime` and are therefore available to every player:
-
-- Bone hierarchies and transforms, with full keyframe interpolation (Bezier / Hermite / Linear / ...)
-- Mesh & deform
-- Effect parts (particles)
-- Instance parts
-- Masks
-- 9-slice parts - the runtime builds the whole grid (margins, stretch / tile fill, repeats), so a
-  player only draws the geometry it is handed
-- Parts color (per-part color blending)
-- Authored texture change - a per-part texture swap set on the timeline; the runtime resolves it
-  into the draw batch, so a player that binds textures per batch needs no special handling
-- Frame-accurate events - user data, signal, audio
-- Sub-frame interpolation (smooth playback above the base frame rate)
-- Whole-animation blending / crossfade (within one `.ssab` - see
-  [Shared Limitations](../sdk/limitations.md))
-- The **Override Layer API** - override a part's color, cell reference, or visibility at runtime
-
-Two of these are *state only*: **text parts** and **audio** need the player to draw the glyphs and
-to actually play the sound (see [Shared Limitations](../sdk/limitations.md)).
-
-One caveat on 9-slice: the **UV animation attributes** and **cells rotated inside their cellmap**
-do not apply to 9-slice parts. The grid is built from the cell rectangle alone, matching what the
-authoring tool does.
+This page covers only those differences **between players**. The constraints that apply
+*everywhere* - seek and reverse behavior, blending rules, browser requirements, and the features
+the core computes but leaves the player to draw or play - are in
+[Shared Limitations](../sdk/limitations.md).
 
 ## 🔍 Documented per-player differences
 
 | Player | Known differences |
 |---|---|
-| **[Unity](../players/unity.md)** | No player-specific limitations are documented. Covers bones, mesh & deform, particles, extended blending, and masks; adds uGUI (Canvas) rendering and Timeline integration. |
-| **[Web](../players/web.md)** | The renderer packages (`ssplayer-webgl`, `ssplayer-pixi`) carry no documented feature gaps. The **RPG Maker MZ adapter is experimental (alpha)**; the **TyranoScript and TyranoBuilder plugins are beta**. TyranoBuilder has no component yet for per-part color / visibility or for linking an animation to a speaker - those are written with `[ss_*]` tags instead. |
-| **[Godot](../players/godot.md)** | No feature gaps documented. Ships as GDExtension **or** custom module; the **Web export** has extra requirements (a `dlink_enabled` engine template for GDExtension - the custom module needs none). |
+| **[Unity](../players/unity.md)** | The **uGUI (Canvas) path** trades capability for CanvasRenderer's "1 renderer = 1 mesh + 1 material": it assumes a **single atlas** (parts from other atlases cannot sample correctly) and supports **MIX / ADD only**, collapsing every other blend to `Mix`. The world path has neither limit. `.ssqb` **imports** but sequences do not play back yet. Edit mode shows only a static preview of the start frame. |
+| **[Web](../players/web.md)** | The renderer packages (`ssplayer-webgl`, `ssplayer-pixi`) carry no feature gaps of their own. The framework integrations are at different stages: **RPG Maker MZ is experimental (alpha)** - a picture's opacity / tint do not affect the animation, and deployment's "exclude unused files" deletes the assets - while the **TyranoScript and TyranoBuilder plugins are beta**. TyranoBuilder has no component yet for per-part color / visibility or for linking an animation to a speaker; those are written with `[ss_*]` tags instead. The browser converter `ssconverter-web` needs the File System Access API, so it is **Chromium-only**. |
+| **[Godot](../players/godot.md)** | No feature gaps beyond the shared ones. Ships as GDExtension **or** custom module; the **Web export** has extra requirements (a `dlink_enabled` engine template for GDExtension - the custom module needs none) and is single-threaded (`nothread`), which is why it needs no COOP/COEP headers. |
 | **[Flutter](../players/flutter.md)** | Two render backends (`flutter_gpu` / Canvas; Web is always Canvas). On Canvas, `Sub` and `Invert` are reconstructed from three passes (they cannot batch), and `Div2` / `Overlay2` render as `Mix`. |
-| **[Ren'Py](../players/renpy.md)** | The longest list: **Text / NineSlice parts are not rendered**; **animation blending is not implemented**; Division / Overlay fall back to `Mix`; masks do not clip Effect particles; a whole-part tint on Mesh parts is approximated (alpha only); part overrides do not reach parts *inside* an Instance part. |
+| **[Ren'Py](../players/renpy.md)** | **Animation blending is not implemented**, and Division / Overlay fall back to `Mix`. A few features are approximate rather than exact - masking, whole-part tint on Mesh parts, and anything nested inside an Instance part. Its own docs enumerate each case. |
 
 !!! note "How to read this table"
-    It lists only what each player's own documentation states. An empty entry means *nothing is
-    documented*, which is not the same as a guarantee - each player's docs remain the source of
-    truth, and the Ren'Py list is long partly because it is the most thoroughly written down.
+    Each entry is a summary of what that player's own **Limitations & Scope** page states; follow
+    the link for the exact cases. Every player publishes one, so a gap absent here is absent from
+    that player's docs too - which is still not the same as a guarantee of support.
 
-## 🎨 About blend modes
+    Anything true of *every* player - including the fact that **text and 9-slice parts are drawn
+    by none of them yet** - is on [Shared Limitations](../sdk/limitations.md) instead, since it is
+    not a difference.
+
+## 🎨 Why blend modes are the usual difference
 
 SpriteStudio realizes each blend as a GPU blend state, so reproduction depends on what the host
-engine exposes. Where a mode has no equivalent, players fall back rather than fail:
+engine exposes. Where a mode has no equivalent, players fall back rather than fail - which is why
+the entries above cluster around the same few modes:
 
-- **Division / Overlay** fall back to `Mix` - documented for both Flutter and Ren'Py. The Flutter
-  docs note this is intentional, because these modes have no GPU blend mapping in the reference
-  players either.
-- **Sub / Invert** need a reverse-subtract or destination-replace state. Flutter's Canvas backend
-  reconstructs them exactly from three passes; a backend without that reconstruction may differ.
-- Modes that sample the destination (`Mul`, `Sub`, `Screen`, `Exclusion`, `Invert`) match the
-  editor where the pixels underneath are **opaque** - the case SpriteStudio itself assumes. Give a
-  blend-heavy animation an opaque background layer if exact parity matters.
+- **Division / Overlay** have no GPU blend mapping in the reference players either, so falling
+  back to `Mix` is deliberate behavior rather than an unfinished implementation.
+- **Sub / Invert** need a reverse-subtract or destination-replace state. An engine without one can
+  still reconstruct them exactly from multiple passes, at the cost of batching - so the difference
+  may show up as performance rather than as a visual gap.
 
-## ❔ Not documented yet
-
-- **Which players draw 9-slice and text parts** - the core builds 9-slice geometry and gives text
-  parts their slot in the draw plan, but each player still has to draw them. Only the Ren'Py docs
-  state a status (neither is rendered); the others do not document either way, so verify with the
-  player you target if your project uses them.
-- **Sequence (`.ssqe`) playback** - not implemented in the runtime yet, so no player has it (see
-  [Shared Limitations](../sdk/limitations.md)).
+A blend can also look wrong without the player being at fault: the modes that sample the
+destination assume opaque pixels underneath. That rule is core-wide - see
+[Shared Limitations](../sdk/limitations.md).
 
 ## ➡️ Next
 

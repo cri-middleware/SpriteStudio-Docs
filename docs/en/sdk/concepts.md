@@ -41,6 +41,35 @@ bone matrices, mesh deformation, and hierarchical color/opacity, then emits a cr
 the primitives. Because every renderer consumes the *same* `DrawBatch` plan, engine-specific
 visual drift is structurally eliminated. (See [Porting a Player](./porting.md).)
 
+## ✅ What the core provides
+
+Because every official player evaluates animations with `libssruntime`, this feature set is
+**shared** rather than reimplemented per engine:
+
+- Bone hierarchies and transforms, with full keyframe interpolation (Bezier / Hermite / Linear / ...)
+- Mesh & deform
+- Effect parts (particles)
+- Instance parts
+- Masks
+- 9-slice parts - the runtime builds the whole grid (margins, stretch / tile fill, repeats), so a
+  player only draws the geometry it is handed
+- Parts color (per-part color blending)
+- Authored texture change - a per-part texture swap set on the timeline; the runtime resolves it
+  into the draw batch, so a player that binds textures per batch needs no special handling
+- Frame-accurate events - user data, signal, audio
+- Sub-frame interpolation (smooth playback above the base frame rate)
+- Whole-animation blending / crossfade
+- The **Override Layer API** - override a part's color, cell reference, or visibility at runtime
+
+!!! tip "Source of truth"
+    This list follows the SDK's **Player Porting Guide**, *Introduction → Limitations*
+    ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)).
+    The same page draws the boundary: a couple of these are computed as **state only** and still
+    need the player to draw or play them, and several carry constraints - both are summarized in
+    [Shared Limitations](./limitations.md), along with what the core does *not* do yet. What
+    differs between the players themselves is on
+    [Feature Support](../overview/feature-support.md).
+
 ## 📚 Libraries & tools
 
 | Component | Role |
@@ -61,15 +90,6 @@ visual drift is structurally eliminated. (See [Porting a Player](./porting.md).)
 - **Extreme portability** - the core is strict `#![no_std]` Rust with no OS/stdlib
   dependency; integrates via C-API or WASM, from embedded devices to browsers.
 - **Sub-frame interpolation** - smooth playback beyond the base framerate (144 Hz+, slow-mo).
-
-!!! note "Supported features"
-    Bones & transforms, full keyframe interpolation (Bezier/Hermite/Linear/...), mesh & deform,
-    particle effects, instances & masks, and frame-accurate events/user data. A runtime
-    **Override Layer API** lets you override a part's color, cell reference, or visibility at
-    playback time. Sequence (`.ssqe`) playback is on the roadmap - see the SDK
-    [ROADMAP](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md).
-    For what falls outside this - and the constraints every player inherits - see
-    [Shared Limitations](./limitations.md).
 
 ## ➡️ Next
 
