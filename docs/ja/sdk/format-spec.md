@@ -72,7 +72,7 @@ FrameData（密・1フレーム）  --FFI-->  各エンジンの描画
 （[`ssab.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssab.fbs) /
 [`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssqb.fbs)、および
 [`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/fbs/framedata.fbs)）。フィーチャフラグ（`default` / `no_std` / `converter`）と
-コード生成については [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssab) を参照。
+コード生成については [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab) を参照。
 
 !!! info "スキーマのバージョニング"
     `.ssab` はバイナリ `version` フィールドを持ち、`ssconverter-web` などのツールは

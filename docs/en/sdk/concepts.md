@@ -45,12 +45,12 @@ visual drift is structurally eliminated. (See [Porting a Player](./porting.md).)
 
 | Component | Role |
 |---|---|
-| [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/sspj) | Parses `.sspj` projects (`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`). |
-| [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssab) | Reads/writes the `.ssab` / `.ssqb` binary (FlatBuffers). |
-| [`libssinterpolate`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssinterpolate) | Platform-agnostic interpolation math. |
-| [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssconverter) | Converts `.sspj` projects into `.ssab`. |
-| [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssruntime) | The playback Brain; emits the `DrawBatch` plan. |
-| [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/cli) | Command-line converter (Windows / macOS / Linux). |
+| [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/sspj) | Parses `.sspj` projects (`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`). |
+| [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab) | Reads/writes the `.ssab` / `.ssqb` binary (FlatBuffers). |
+| [`libssinterpolate`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssinterpolate) | Platform-agnostic interpolation math. |
+| [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssconverter) | Converts `.sspj` projects into `.ssab`. |
+| [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime) | The playback Brain; emits the `DrawBatch` plan. |
+| [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) | Command-line converter (Windows / macOS / Linux). |
 
 ## ✨ Why this design
 

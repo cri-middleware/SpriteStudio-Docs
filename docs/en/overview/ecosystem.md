@@ -33,7 +33,7 @@ every player builds on; the dashed hand-off is the generated **`.ssab / .ssqb`**
 core drives *every* player - see [Players &amp; Tools](../players/unity.md) for the current
 list.</small>
 
-Conversion can happen **automatically on import** (Unity, Godot, Ren'Py) or via a **standalone
+Conversion can happen **automatically on import** (Unity, Godot, Ren'Py, TyranoBuilder) or via a **standalone
 tool** (SSConverterGUI, `ssconverter-cli`, `ssconverter-web`). The same `libssconverter` runs
 either way, so **the generated asset is identical whichever route you take**. See
 [Converting Assets](./conversion.md) for the details.
@@ -42,10 +42,10 @@ either way, so **the generated asset is identical whichever route you take**. Se
 
 | Component | Role |
 |---|---|
-| **SpriteStudio-SDK** | The shared Rust core. `libssconverter` converts `.sspj` into runtime assets; `libssruntime` plays them back. Consumed by every player as a git submodule - including `libssconverter`, so Unity, Godot, and Ren'Py convert in-place. |
+| **SpriteStudio-SDK** | The shared Rust core. `libssconverter` converts `.sspj` into runtime assets; `libssruntime` plays them back. Consumed by every player as a git submodule - including `libssconverter`, so Unity, Godot, Ren'Py, and TyranoBuilder convert in-place. |
 | **SSPlayerForUnity / ForGodot** | Bundle `libssconverter` as a conversion tool and run it on the engine-editor side, so import & playback need no external tool. |
 | **SSPlayerForRenPy** | Bundles `libssconverter` as a conversion tool and auto-imports on startup, so no external tool is needed. |
-| **SSPlayerForWeb / ForFlutter** | `libssruntime` bindings + rendering; conversion via the bundled standalone tools. |
+| **SSPlayerForWeb / ForFlutter** | `libssruntime` bindings + rendering; conversion via the bundled standalone tools. SSPlayerForWeb's TyranoBuilder plugin is the exception - it converts inside the editor, so that route needs no separate tool. |
 | **SSConverterGUI / `ssconverter-cli` / `ssconverter-web`** | Standalone front-ends over `libssconverter` for converting without a player (desktop GUI, CLI/CI, browser). |
 
 Because conversion and playback live in the SDK, all players stay consistent in feature

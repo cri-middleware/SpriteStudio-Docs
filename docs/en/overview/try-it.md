@@ -22,5 +22,5 @@ CLI alternatives), see [Converting with a Standalone Tool](./convert-with-a-stan
 | PixiJS demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A `.ssab` animation in a PixiJS v8 app - **drag & drop a directory of `.ssab` + `.png` files** to preview your own. |
 | WebGL demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | The framework-free `<ss-player>` Web Component - **drop a directory of `.ssab` + `.png`** to preview your own. |
 | RPG Maker MZ demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-rmmz`) | A sample MZ project with SS animations in correct Z-order. |
-| TyranoScript demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-tyrano`) | SpriteStudio animations in a TyranoScript / TyranoBuilder visual novel. |
+| TyranoScript demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-tyranoscript`) | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
 | Ren'Py demo (coming soon) | **[SSPlayerForRenPy](../players/renpy.md)** | Bundled SpriteStudio animations running in Ren'Py Web. |

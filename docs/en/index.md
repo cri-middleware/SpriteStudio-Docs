@@ -30,8 +30,8 @@ hosted converter, no install.
 
     ---
 
-    A collection of browser players - PixiJS, framework-free WebGL, RPG Maker MZ, TyranoScript -
-    plus a client-side converter (ssconverter-web).
+    A collection of browser players - PixiJS, framework-free WebGL, RPG Maker MZ, TyranoScript,
+    TyranoBuilder - plus a client-side converter (ssconverter-web).
 
     [:octicons-arrow-right-24: Overview](./players/web.md) |
     Docs (coming soon) |

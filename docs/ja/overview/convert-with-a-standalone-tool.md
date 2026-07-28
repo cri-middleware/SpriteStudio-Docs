@@ -1,11 +1,11 @@
 # 🧰 スタンドアロンツールで変換する
 
-Unity・Godot・Ren'Py は変換ツールとして `libssconverter` を **バンドル**しており、別ツールを介さずインポート時に
+Unity・Godot・Ren'Py・TyranoBuilder は変換ツールとして `libssconverter` を **バンドル**しており、別ツールを介さずインポート時に
 `.sspj` から `.ssab` へ自動で変換します（[アセットの変換](./conversion.md) を参照）。これら以外を対象に
 するときは、変換を代行してくれる Player がないため、スタンドアロンツールで自分で変換します。
 たとえば次のような場合です。
 
-- ブラウザ（Web）で再生する場合（[SSPlayerForWeb](../players/web.md)）
+- ブラウザ（Web）で再生する場合（[SSPlayerForWeb](../players/web.md) のレンダラー）
 - 独自の Player を組み込む、または新しいエンジンに移植する場合（[Player の移植](../sdk/porting.md)）
 - ビルドや CI/CD で変換を自動化する場合
 
@@ -80,7 +80,7 @@ ssconverter-cli ./assets/projects ./more_assets
 ```
 
 バッチモードでは各出力がソースと同じフォルダに書き出されます（`-o` は無視されます）。全オプションは
-[ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/cli) を参照してください。
+[ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) を参照してください。
 
 ## ➡️ 次に
 

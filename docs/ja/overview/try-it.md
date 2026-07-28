@@ -22,5 +22,5 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 | PixiJS デモ（準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-pixi`） | PixiJS v8 アプリでの再生。`.ssab`＋`.png` の入った**ディレクトリを D&D** すると自分のアニメをプレビューできます。 |
 | WebGL デモ（準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-webgl`） | フレームワーク非依存の `<ss-player>` Web Component。`.ssab`＋`.png` の**ディレクトリを D&D** して自分のアニメをプレビュー。 |
 | RPG ツクール MZ デモ（準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-rmmz`） | SS アニメを正しい Z 順で表示するサンプル MZ プロジェクト。 |
-| TyranoScript デモ（準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-tyrano`） | TyranoScript / TyranoBuilder のノベルゲームで SpriteStudio アニメを再生。 |
+| TyranoScript デモ（準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-tyranoscript`） | TyranoScript のノベルゲームで、`[ss_*]` タグから SpriteStudio アニメを再生。 |
 | Ren'Py デモ（準備中） | **[SSPlayerForRenPy](../players/renpy.md)** | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |

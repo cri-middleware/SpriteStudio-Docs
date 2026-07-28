@@ -1,11 +1,11 @@
 # 🧰 Converting with a Standalone Tool
 
-Unity, Godot, and Ren'Py **bundle** `libssconverter` as a conversion tool, so they convert automatically on import -
+Unity, Godot, Ren'Py, and TyranoBuilder **bundle** `libssconverter` as a conversion tool, so they convert automatically on import -
 `.sspj` becomes `.ssab` seamlessly, with no separate tool (see
 [Converting Assets](./conversion.md)). Targeting anything else means no player
 converts for you, so you run a standalone tool yourself - for example when you:
 
-- play back in the browser ([SSPlayerForWeb](../players/web.md)),
+- play back in the browser with [SSPlayerForWeb](../players/web.md)'s renderers,
 - integrate your own player, or bring SpriteStudio to a new engine ([Porting a Player](../sdk/porting.md)), or
 - automate conversion in a build or CI/CD pipeline.
 
@@ -81,7 +81,7 @@ ssconverter-cli ./assets/projects ./more_assets
 ```
 
 In batch mode each output is written next to its source (`-o` is ignored). Full option list:
-[ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/cli).
+[ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli).
 
 ## ➡️ Next
 

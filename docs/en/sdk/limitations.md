@@ -6,7 +6,7 @@ is specific to it - for those differences see [Feature Support](../overview/feat
 
 !!! tip "Source of truth"
     The canonical, implementation-level list lives in the SDK's Player Porting Guide
-    ([`libs/ssruntime/docs`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssruntime/docs),
+    ([`libs/ssruntime/docs`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs),
     *Introduction → Limitations*). This page is the user-facing summary.
 
 ## 🎬 Playback & timeline
@@ -62,8 +62,11 @@ because they need the host engine:
 
 | Feature | The runtime provides | The player must implement |
 |---|---|---|
-| **Text parts** | Glyph layout (bitmap position, size, texture reference) | Drawing the glyphs |
+| **Text parts** | The authored text, plus the glyph atlas for a bitmap-font project. Text also keeps its slot in the draw plan, so it composites by priority alongside every other part | Glyph layout, rasterization for outline fonts, and the draw call - through the host engine's text stack |
 | **Audio** | The play event (file name, exact timing) | Actual sound playback via the engine's audio system |
+
+A text part authored as a **mask** is the exception: it is left out of the draw plan entirely,
+because the runtime has no glyphs with which to write coverage.
 
 So whether text parts render, and whether sounds are audible, is a **per-player** property -
 check [Feature Support](../overview/feature-support.md).
