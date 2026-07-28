@@ -71,6 +71,42 @@ because the runtime has no glyphs with which to write coverage.
 So whether text parts render, and whether sounds are audible, is a **per-player** property -
 check [Feature Support](../overview/feature-support.md).
 
+## 🚧 Text and 9-slice parts are not drawn by any player yet
+
+Two part types reach the player intact but have no implementation in **any** official player at
+present. This is not a difference between engines - it is uniform, and each player's own
+limitations page states it:
+
+- **Text parts** - the runtime supplies the authored string, the bitmap glyph atlas, and the
+  part's slot in the draw plan. No player draws the glyphs yet.
+- **9-slice parts** - the runtime builds the entire grid into dedicated buffers (`Nines` batches),
+  ready to upload. No player reads those buffers yet, so the part renders as nothing rather than
+  as a stretched cell.
+
+Both keep their place in the draw order, so an animation that uses them plays with those parts
+missing rather than failing.
+
+**What to do:** replace them with ordinary parts at authoring time for anything you ship today.
+
+## 🖌️ Rendering constraints
+
+### 9-slice parts ignore UV animation and rotated cells
+
+The **UV animation attributes** and **cells rotated inside their cellmap** do not apply to
+9-slice parts. The grid is built from the cell rectangle alone, matching what the authoring tool
+does.
+
+### Destination-sampling blend modes assume opaque pixels underneath
+
+`Mul`, `Sub`, `Screen`, `Exclusion`, and `Invert` read the pixels they are drawn over, so they
+match the editor only where those pixels are **opaque** - the case SpriteStudio itself assumes.
+
+**What to do:** give a blend-heavy animation an opaque background layer if exact parity with the
+editor matters.
+
+Which blend modes a given engine can reproduce *at all* is a separate, per-player question - see
+[Feature Support](../overview/feature-support.md).
+
 ## 🌐 Browsers require WebAssembly SIMD
 
 The WASM build of the runtime uses **WebAssembly SIMD** instructions and **will not run on

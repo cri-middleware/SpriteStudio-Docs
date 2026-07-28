@@ -49,6 +49,14 @@ branch and no `contents: write`. Merging to `main` does **not** auto-publish.
   code. `sdk/limitations.md` summarizes the SDK's Player Porting Guide (`libs/ssruntime/docs`,
   *Introduction → Limitations*); `overview/feature-support.md` reports only what each player's
   own docs state, and says so — do not infer support or non-support that no repo documents.
+- **One fact, one page.** The three cross-cutting pages have deliberately disjoint jobs, and link
+  to each other instead of restating: `sdk/concepts.md` owns what the shared core **provides**
+  (the canonical feature list), `sdk/limitations.md` owns what it **does not do** plus every
+  all-player constraint (the runtime-vs-player responsibility table, drawing and blending caveats,
+  sequence playback, browser and asset requirements), and `overview/feature-support.md` owns
+  **only what differs between players**. Keep the blend-mode discussion there stated as mechanism,
+  with the per-player enumeration confined to the table. Restating a fact on a second page is how
+  the text-part responsibilities once drifted into being documented backwards — link instead.
 - **No facts that need tracking across repos.** Version numbers, engine/runtime requirement
   tables, per-project license identifiers, and schema-compatibility matrices are deliberately
   *not* hosted here: they would have to be chased across every sibling repository. Let each
