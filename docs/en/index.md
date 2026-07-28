@@ -67,6 +67,17 @@ hosted converter, no install.
     Docs (coming soon) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
+-   :simple-rust: __Rust (wgpu)__
+
+    ---
+
+    A Rust player that renders through wgpu - WebGPU, Vulkan, DX12, Metal, GL - and rides along
+    inside any wgpu application. **In development.**
+
+    [:octicons-arrow-right-24: Overview](./players/wgpu.md) |
+    Docs (coming soon) |
+    [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
+
 -   :material-file-swap: __Converter GUI__
 
     ---
