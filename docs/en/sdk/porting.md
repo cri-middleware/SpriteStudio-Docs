@@ -6,7 +6,7 @@ through building one on top of `libssruntime`.
 
 !!! tip "Where the guide lives"
     The canonical guide is maintained in the SDK repository:
-    [**SpriteStudio 7 Player Porting Guide**](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssruntime/docs)
+    [**SpriteStudio 7 Player Porting Guide**](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
     (`libs/ssruntime/docs/`). This page is a map into it - the SDK is the source of truth.
 
 ## 🧠 Core idea: Brain vs. Body

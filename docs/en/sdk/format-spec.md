@@ -73,7 +73,7 @@ The schemas are defined as FlatBuffers `.fbs` files in the SDK
 ([`ssab.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssab.fbs) /
 [`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssqb.fbs), and
 [`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/fbs/framedata.fbs)).
-See [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/main/libs/ssab)
+See [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab)
 for feature flags (`default` / `no_std` / `converter`) and codegen.
 
 !!! info "Schema versioning"

@@ -26,13 +26,19 @@ art in SpriteStudio, convert to `.ssab`, then play it back through the renderer 
 | Converting `.sspj` -> `.ssab` | **`ssconverter-web`** (Web tool + Node CLI) |
 | Embedding conversion in your own app / service | **`@spritestudio/ssconverter-core`** |
 
-**Game-engine integrations** - thin adapters on top of `@spritestudio/ssplayer-webgl`, both
-🧪 experimental (alpha, not yet on npm):
+**Game-engine integrations** - rendering built on `@spritestudio/ssplayer-webgl`. None of these
+is published to npm; each is distributed through the repository's
+[GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases).
 
-| Your environment | Package |
-|---|---|
-| RPG Maker MZ (PixiJS v5) | **`@spritestudio/ssplayer-rmmz`** |
-| TyranoScript / TyranoBuilder | **`@spritestudio/ssplayer-tyrano`** |
+| Your environment | Package | Status |
+|---|---|---|
+| RPG Maker MZ (PixiJS v5) | **`@spritestudio/ssplayer-rmmz`** | 🧪 experimental (alpha) |
+| TyranoScript - writing `[ss_*]` tags in a scenario yourself | **`@spritestudio/ssplayer-tyranoscript`** | beta |
+| TyranoBuilder - placing animations from the component palette, no scenario code | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
+
+`ssplayer-tyranobuilder` is **author-time tooling** rather than a renderer: it ships the
+TyranoScript runtime *and* converts `.sspj` inside the editor, so a TyranoBuilder project needs
+neither of the conversion packages above.
 
 See [Choose Your Platform](../overview/choose-your-platform.md) to compare players, or
 [SDK Concepts](../sdk/concepts.md) for the conversion/playback pipeline shared across all of them.

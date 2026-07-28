@@ -10,6 +10,12 @@ rather than reimplemented per engine. What can still differ is:
 Read this page together with [Shared Limitations](../sdk/limitations.md), which covers the
 constraints that apply *everywhere* (seek/reverse behavior, blending rules, browser requirements).
 
+!!! tip "Source of truth"
+    What the shared core provides - and where the runtime stops and the player begins - follows the
+    SDK's **Player Porting Guide**, *Introduction → Limitations*
+    ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)).
+    The per-player table further down is sourced separately, from each player's own docs.
+
 ## ✅ Provided by the shared core
 
 These come from `libssruntime` and are therefore available to every player:
@@ -19,7 +25,11 @@ These come from `libssruntime` and are therefore available to every player:
 - Effect parts (particles)
 - Instance parts
 - Masks
+- 9-slice parts - the runtime builds the whole grid (margins, stretch / tile fill, repeats), so a
+  player only draws the geometry it is handed
 - Parts color (per-part color blending)
+- Authored texture change - a per-part texture swap set on the timeline; the runtime resolves it
+  into the draw batch, so a player that binds textures per batch needs no special handling
 - Frame-accurate events - user data, signal, audio
 - Sub-frame interpolation (smooth playback above the base frame rate)
 - Whole-animation blending / crossfade (within one `.ssab` - see
@@ -29,12 +39,16 @@ These come from `libssruntime` and are therefore available to every player:
 Two of these are *state only*: **text parts** and **audio** need the player to draw the glyphs and
 to actually play the sound (see [Shared Limitations](../sdk/limitations.md)).
 
+One caveat on 9-slice: the **UV animation attributes** and **cells rotated inside their cellmap**
+do not apply to 9-slice parts. The grid is built from the cell rectangle alone, matching what the
+authoring tool does.
+
 ## 🔍 Documented per-player differences
 
 | Player | Known differences |
 |---|---|
 | **[Unity](../players/unity.md)** | No player-specific limitations are documented. Covers bones, mesh & deform, particles, extended blending, and masks; adds uGUI (Canvas) rendering and Timeline integration. |
-| **[Web](../players/web.md)** | The renderer packages (`ssplayer-webgl`, `ssplayer-pixi`) carry no documented feature gaps. The **RPG Maker MZ and TyranoScript adapters are experimental (alpha)**. |
+| **[Web](../players/web.md)** | The renderer packages (`ssplayer-webgl`, `ssplayer-pixi`) carry no documented feature gaps. The **RPG Maker MZ adapter is experimental (alpha)**; the **TyranoScript and TyranoBuilder plugins are beta**. TyranoBuilder has no component yet for per-part color / visibility or for linking an animation to a speaker - those are written with `[ss_*]` tags instead. |
 | **[Godot](../players/godot.md)** | No feature gaps documented. Ships as GDExtension **or** custom module; the **Web export** has extra requirements (a `dlink_enabled` engine template for GDExtension - the custom module needs none). |
 | **[Flutter](../players/flutter.md)** | Two render backends (`flutter_gpu` / Canvas; Web is always Canvas). On Canvas, `Sub` and `Invert` are reconstructed from three passes (they cannot batch), and `Div2` / `Overlay2` render as `Mix`. |
 | **[Ren'Py](../players/renpy.md)** | The longest list: **Text / NineSlice parts are not rendered**; **animation blending is not implemented**; Division / Overlay fall back to `Mix`; masks do not clip Effect particles; a whole-part tint on Mesh parts is approximated (alpha only); part overrides do not reach parts *inside* an Instance part. |
@@ -60,8 +74,10 @@ engine exposes. Where a mode has no equivalent, players fall back rather than fa
 
 ## ❔ Not documented yet
 
-- **Text and NineSlice parts** - only the Ren'Py docs state their status (not rendered). The other
-  players do not document either way; verify with the player you target if your project uses them.
+- **Which players draw 9-slice and text parts** - the core builds 9-slice geometry and gives text
+  parts their slot in the draw plan, but each player still has to draw them. Only the Ren'Py docs
+  state a status (neither is rendered); the others do not document either way, so verify with the
+  player you target if your project uses them.
 - **Sequence (`.ssqe`) playback** - not implemented in the runtime yet, so no player has it (see
   [Shared Limitations](../sdk/limitations.md)).
 

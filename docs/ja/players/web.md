@@ -26,13 +26,19 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 | `.sspj` -> `.ssab` を変換する | **`ssconverter-web`**（Web ツール + Node CLI） |
 | 変換機能を自作アプリ / サービスに組み込む | **`@spritestudio/ssconverter-core`** |
 
-**ゲームエンジン統合** - `@spritestudio/ssplayer-webgl` の上に載る薄いアダプターです。
-いずれも 🧪 実験的（alpha、npm 未公開）です。
+**ゲームエンジン統合** - 描画は `@spritestudio/ssplayer-webgl` を基盤にしています。
+いずれも npm 未公開で、リポジトリの
+[GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases) で配布されます。
 
-| あなたの環境 | パッケージ |
-|---|---|
-| RPG ツクール MZ（PixiJS v5） | **`@spritestudio/ssplayer-rmmz`** |
-| TyranoScript / TyranoBuilder | **`@spritestudio/ssplayer-tyrano`** |
+| あなたの環境 | パッケージ | 状態 |
+|---|---|---|
+| RPG ツクール MZ（PixiJS v5） | **`@spritestudio/ssplayer-rmmz`** | 🧪 実験的（alpha） |
+| TyranoScript - シナリオに `[ss_*]` タグを自分で書く | **`@spritestudio/ssplayer-tyranoscript`** | beta |
+| TyranoBuilder - コンポーネントパレットから配置、シナリオコード不要 | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
+
+`ssplayer-tyranobuilder` はレンダラーではなく**オーサリング時のツール**です。TyranoScript
+ランタイムを同梱し、さらに `.sspj` をエディタ内で変換するため、TyranoBuilder のプロジェクトでは
+上の変換用パッケージを選ぶ必要がありません。
 
 Player の比較は [プラットフォームの選び方](../overview/choose-your-platform.md) を、
 全 Player 共通の変換／再生パイプラインは [SDK コンセプト](../sdk/concepts.md) を参照してください。
