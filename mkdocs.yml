@@ -81,6 +81,7 @@ plugins:
             Godot: Godot
             Ren'Py: Ren'Py
             Flutter: Flutter
+            Rust (wgpu): Rust（wgpu）
             Converter GUI: コンバーター GUI
             🤝 Support: 🤝 サポート
             ⚖️ License: ⚖️ ライセンス
@@ -101,6 +102,7 @@ nav:
       - Godot: players/godot.md
       - Flutter: players/flutter.md
       - Ren'Py: players/renpy.md
+      - Rust (wgpu): players/wgpu.md
       - Converter GUI: players/converter.md
   - 🛠️ SDK & Development:
       - Concepts: sdk/concepts.md

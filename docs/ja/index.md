@@ -67,6 +67,17 @@
     ドキュメント（準備中） |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
+-   :simple-rust: __Rust（wgpu）__
+
+    ---
+
+    wgpu で描画する Rust 向け Player。WebGPU・Vulkan・DX12・Metal・GL を単一のコードパスで
+    カバーします。**開発中**。
+
+    [:octicons-arrow-right-24: 概要](./players/wgpu.md) |
+    ドキュメント（準備中） |
+    [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
+
 -   :material-file-swap: __コンバーター GUI__
 
     ---
