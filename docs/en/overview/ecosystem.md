@@ -30,8 +30,8 @@ graph LR
 
 <small>The highlighted **SpriteStudio-SDK** core (`libssconverter` + `libssruntime`) is what
 every player builds on; the dashed hand-off is the generated **`.ssab / .ssqb`** asset. One
-core drives *every* player - see [Players &amp; Tools](../players/unity.md) for the current
-list.</small>
+core drives *every* player - see [Choose Your Platform](./choose-your-platform.md) for the
+current lineup.</small>
 
 Conversion can happen **automatically on import** (Unity, Godot, Ren'Py, TyranoBuilder) or via a **standalone
 tool** (SSConverterGUI, `ssconverter-cli`, `ssconverter-web`). The same `libssconverter` runs

@@ -30,8 +30,8 @@ graph LR
 
 <small>色付きの **SpriteStudio-SDK** コア（`libssconverter` + `libssruntime`）が全 Player の
 基盤です。破線の受け渡しが生成物 **`.ssab / .ssqb`** です。1 つのコアが *すべての* Player を
-駆動します。現行の Player の一覧は [Player・ツール](../players/unity.md) を参照して
-ください。</small>
+駆動します。現行のラインナップは [プラットフォームの選び方](./choose-your-platform.md) を
+参照してください。</small>
 
 変換は **インポート時の自動変換**（Unity・Godot・Ren'Py・TyranoBuilder）でも、**スタンドアロンツール**
 （SSConverterGUI / `ssconverter-cli` / `ssconverter-web`）でも行えます。いずれも同じ

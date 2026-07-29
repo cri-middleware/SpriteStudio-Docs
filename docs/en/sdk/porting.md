@@ -29,9 +29,9 @@ engine's Body to the shared Brain.
 
 !!! note "Verify as you go"
     The guide recommends running `tests/overall/overall.sspj` at each stage - if it matches
-    the SpriteStudio editor, that step is done. The existing players
-    ([Unity](../players/unity.md), [Web](../players/web.md), [Godot](../players/godot.md),
-    [Ren'Py](../players/renpy.md)) are all built this way and make good references.
+    the SpriteStudio editor, that step is done. Every official player is built this way, so any
+    of them makes a good reference - see
+    [Choose Your Platform](../overview/choose-your-platform.md) for the current lineup.
 
 ## 🚦 Before you start
 

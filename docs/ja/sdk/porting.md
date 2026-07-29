@@ -29,9 +29,9 @@
 
 !!! note "都度検証する"
     ガイドでは各段階で `tests/overall/overall.sspj` を実行することを推奨しています。SpriteStudio
-    エディタと同じ見た目になれば、その段階は完了です。既存の Player
-    （[Unity](../players/unity.md) / [Web](../players/web.md) / [Godot](../players/godot.md) /
-    [Ren'Py](../players/renpy.md)）はいずれもこの方式で作られており、良い参考例になります。
+    エディタと同じ見た目になれば、その段階は完了です。公式 Player はいずれもこの方式で作られて
+    いるので、どれも良い参考例になります。現行のラインナップは
+    [プラットフォームの選び方](../overview/choose-your-platform.md) を参照してください。
 
 ## 🚦 はじめる前に
 
