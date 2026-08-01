@@ -5,6 +5,12 @@
 [SpriteStudio-SDK](../sdk/concepts.md) の**同じ `libssconverter`** であり、**出力も同一**です。
 エンジンやワークフローに合った方法を選んでください。
 
+!!! tip "手元に SpriteStudio プロジェクトがない場合"
+    CRI Middleware が無償の
+    [サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) を公開しています。
+    キャラクター・エフェクト・UI・シェーダーなどの `.sspj` プロジェクト一式がそろっており、
+    以下のどの経路にもそのまま渡せます。利用条件は各ダウンロードに同梱の readme を参照してください。
+
 ## 🔀 変換の 2 つの方法
 
 ### 1. インポート時に自動変換 - 外部ツール不要（Unity・Godot・Ren'Py・TyranoBuilder）

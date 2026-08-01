@@ -5,6 +5,13 @@ runtime format (`.ssab` / `.ssqb`). Every path below runs the **same `libssconve
 [SpriteStudio-SDK](../sdk/concepts.md) and produces the **same output** - pick whichever fits
 your engine and workflow.
 
+!!! tip "No SpriteStudio project of your own yet?"
+    CRI Middleware publishes free
+    [sample data](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) - complete
+    `.sspj` projects (characters, effects, UI, shaders) you can feed straight into any path
+    below. Each download carries its own readme with the terms of use. (Help Center page, in
+    Japanese.)
+
 ## 🔀 Two ways to convert
 
 ### 1. Converted automatically on import - no external tool (Unity, Godot, Ren'Py, TyranoBuilder)
