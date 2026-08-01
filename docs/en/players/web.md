@@ -11,7 +11,7 @@ art in SpriteStudio, convert to `.ssab`, then play it back through the renderer 
 
 ## 🧰 Which package? Pick by environment
 
-**Playback** - each renderer bundles the WASM core, so you install just one.
+**Playback** - each renderer bundles the WASM core, so you install just one. All three are on npm.
 
 | Your environment | Package |
 |---|---|
@@ -21,10 +21,10 @@ art in SpriteStudio, convert to `.ssab`, then play it back through the renderer 
 
 **Conversion** - turns `.sspj` into runtime assets; picked separately from the playback package.
 
-| Your environment | Package |
+| Your environment | Use |
 |---|---|
-| Converting `.sspj` -> `.ssab` | **`ssconverter-web`** (Web tool + Node CLI) |
-| Embedding conversion in your own app / service | **`@spritestudio/ssconverter-core`** |
+| Converting `.sspj` -> `.ssab` | **`ssconverter-web`** - a browser tool hosted on the SSPlayerForWeb site, with a Node CLI alongside it; not an npm package |
+| Embedding conversion in your own app / service | **`@spritestudio/ssconverter-core`** - on npm |
 
 **Game-engine integrations** - rendering built on `@spritestudio/ssplayer-webgl`. None of these
 is published to npm; each is distributed through the repository's

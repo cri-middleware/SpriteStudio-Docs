@@ -2,7 +2,6 @@
 
 **Unity Engine** 上で SpriteStudio 7 アニメーションを再生します。再生は共通 Rust コアの
 `libssruntime` を通じて行われ、Unity の Job System と組み合わせて高いパフォーマンスを発揮します。
-ボーン、メッシュ&デフォーム、パーティクル、拡張ブレンド、マスクに対応します。
 
 - **ドキュメント:** _準備中_
 - **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForUnity>
