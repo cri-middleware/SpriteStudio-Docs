@@ -64,18 +64,6 @@ py -m venv .venv
 .\.venv\Scripts\mkdocs build --strict # what CI runs
 ```
 
-## Related repositories
-
-| Repository | Role |
-|---|---|
-| [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) | Shared Rust core (`libssruntime` / `libssconverter`) |
-| [SSPlayerForUnity](https://github.com/cri-middleware/SSPlayerForUnity) | Unity player |
-| [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | Web player collection (PixiJS / WebGL / RPG Maker MZ / TyranoScript / ssconverter-web) |
-| [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | Godot player |
-| [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | Flutter player |
-| [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | Ren'Py player |
-| [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | Desktop converter GUI |
-
 ## Contributing
 
 Corrections, clarifications, and translation fixes are welcome - see
