@@ -22,8 +22,8 @@
 - **Unity** - [SSPlayerForUnity](../players/unity.md) 付属の Importer がドラッグ&ドロップで変換します。
 - **Godot** - [SSPlayerForGodot](../players/godot.md) の SS Import Dock がドラッグ&ドロップで変換します。
 - **Ren'Py** - [SSPlayerForRenPy](../players/renpy.md) が起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。
-- **TyranoBuilder** - [SSPlayerForWeb](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、保存のたびに
-  エディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントパレットの
+- **TyranoBuilder** - [SSPlayerForWeb](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、プロジェクトを
+  開いたときにエディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントの
   ドロップダウンに現れます。
 
 各 Player のワークフローは、それぞれのドキュメント（スクリーンキャスト付き）で解説しています。

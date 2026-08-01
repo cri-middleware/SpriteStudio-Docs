@@ -24,8 +24,8 @@ in-place - **nothing else to install**:
 - **Godot** - [SSPlayerForGodot](../players/godot.md)'s SS Import Dock converts on drag & drop.
 - **Ren'Py** - [SSPlayerForRenPy](../players/renpy.md) auto-imports on startup (drop sources into `SpriteStudio_Source/`).
 - **TyranoBuilder** - [SSPlayerForWeb](../players/web.md)'s `ssplayer-tyranobuilder` plugin converts inside the
-  editor whenever you save (drop sources into `SpriteStudio_Source/`); the result then appears in the
-  component palette's dropdowns.
+  editor when the project is opened (drop sources into `SpriteStudio_Source/`); the result then appears in the
+  component's dropdowns.
 
 Each player's own docs (with screencasts) walk through its workflow - see
 [Choose Your Platform](./choose-your-platform.md).
