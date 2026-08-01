@@ -111,7 +111,7 @@ Which blend modes a given engine can reproduce *at all* is a separate, per-playe
 
 The WASM build of the runtime uses **WebAssembly SIMD** instructions and **will not run on
 browsers without SIMD support**. This applies to every browser-facing target: the Web players,
-Godot's Web export, Flutter Web, and Ren'Py Web.
+Unity's WebGL builds, Godot's Web export, Flutter Web, and Ren'Py Web.
 
 **What to do:** treat WebAssembly SIMD as a browser requirement for your distribution.
 
