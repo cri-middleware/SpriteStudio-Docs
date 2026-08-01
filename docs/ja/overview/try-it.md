@@ -24,3 +24,9 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 | RPG ツクール MZ デモ（準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-rmmz`） | SS アニメを正しい Z 順で表示するサンプル MZ プロジェクト。 |
 | TyranoScript デモ（準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-tyranoscript`） | TyranoScript のノベルゲームで、`[ss_*]` タグから SpriteStudio アニメを再生。 |
 | Ren'Py デモ（準備中） | **[SSPlayerForRenPy](../players/renpy.md)** | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |
+
+**自分のアニメをプレビューしたい場合**、デモが受け取るのは `.ssab`＋`.png` なので、先に `.sspj` を
+変換してください。上記のブラウザ版コンバーターでも、
+[スタンドアロンツール](./convert-with-a-standalone-tool.md) でも構いません。
+全体の流れは [アセットの変換](./conversion.md) にまとまっており、手元にプロジェクトがない場合の
+サンプルデータもそこから辿れます。

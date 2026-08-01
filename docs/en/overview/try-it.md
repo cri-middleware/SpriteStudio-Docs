@@ -24,3 +24,9 @@ CLI alternatives), see [Converting with a Standalone Tool](./convert-with-a-stan
 | RPG Maker MZ demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-rmmz`) | A sample MZ project with SS animations in correct Z-order. |
 | TyranoScript demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-tyranoscript`) | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
 | Ren'Py demo (coming soon) | **[SSPlayerForRenPy](../players/renpy.md)** | Bundled SpriteStudio animations running in Ren'Py Web. |
+
+**Want to preview your own animation?** The demos take `.ssab` + `.png`, so convert your `.sspj`
+first - with the browser converter above, or any of the
+[standalone tools](./convert-with-a-standalone-tool.md).
+[Converting Assets](./conversion.md) walks the whole path, and points to free sample data if you
+don't have a project of your own yet.
