@@ -21,14 +21,19 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
 .venv/bin/mkdocs serve           # live preview at http://127.0.0.1:8000
-.venv/bin/mkdocs build --strict  # exactly what CI runs; fails on broken links / missing nav
+.venv/bin/mkdocs build --strict  # fails on broken links / missing nav
 ```
 
-Always validate with `.venv/bin/mkdocs build --strict` before finishing — CI (`.github/workflows/pages.yml`)
-runs the same command on every PR and blocks merge on any broken internal link or nav mismatch.
-Deployment is **manual**: publishing is triggered by running the workflow (`workflow_dispatch`),
-which builds the site and deploys it via the GitHub Pages deployment API (OIDC) — no `gh-pages`
-branch and no `contents: write`. Merging to `main` does **not** auto-publish.
+Always validate with `.venv/bin/mkdocs build --strict` before finishing. **This is the only
+validation there is** — nothing builds the docs on a pull request, so a broken internal link or a
+nav mismatch is not caught for you. Running it locally is the gate.
+
+Deployment is **manual**: `.github/workflows/pages.yml` triggers on `workflow_dispatch` alone.
+Running it builds the site with that same `--strict` command (so a publish aborts rather than
+deploying a dead link) and deploys via the GitHub Pages deployment API (OIDC) — no `gh-pages`
+branch and no `contents: write`. Merging to `main` does **not** auto-publish. The sibling player
+repos publish on `release: published` + `workflow_dispatch`; this portal cuts no releases, so
+dispatch is the whole story here.
 
 ## Architecture & conventions
 
