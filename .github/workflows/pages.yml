@@ -1,13 +1,15 @@
 name: Publish docs via GitHub Pages
 
 on:
-  # PRs get strict-build validation only (no deploy); production is published
-  # by manually running this workflow (workflow_dispatch).
-  pull_request:
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - '.github/workflows/pages.yml'
+  # Publishing is manual: production is deployed by running this workflow
+  # (workflow_dispatch), and nothing else triggers it. The sibling player repos
+  # publish on `release: published` + dispatch; this portal cuts no releases, so
+  # dispatch is the whole story here.
+  #
+  # Note there is no PR build any more, matching the siblings — `mkdocs build
+  # --strict` no longer runs in CI at all, so run it locally before merging a
+  # docs change. A broken internal link or missing nav entry would otherwise
+  # only surface on the next manual publish.
   workflow_dispatch:
 
 # Least privilege: the site is published via the Pages deployment API (OIDC),
@@ -19,7 +21,7 @@ permissions:
 
 # One concurrent deployment at a time; don't cancel an in-flight production deploy.
 concurrency:
-  group: pages-${{ github.ref }}
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -48,20 +50,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r docs/requirements.txt
 
-      # Fail the build on broken links / missing nav entries so PRs catch it before merge.
+      # --strict fails the build on broken links / missing nav entries, so a
+      # publish aborts rather than deploying a site with a dead link.
       - name: Build docs (strict validation)
         run: mkdocs build --strict
 
-      # Only a manual dispatch produces a deployable artifact; PRs validate only.
       - name: Upload Pages artifact
-        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
   deploy:
-    # Deploy only on manual dispatch, never on PRs.
-    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
