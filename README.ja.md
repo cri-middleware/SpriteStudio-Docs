@@ -63,18 +63,6 @@ py -m venv .venv
 .\.venv\Scripts\mkdocs build --strict # CI と同じ検証
 ```
 
-## 関連リポジトリ
-
-| リポジトリ | 役割 |
-|---|---|
-| [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) | 共通の Rust コア（`libssruntime` / `libssconverter`） |
-| [SSPlayerForUnity](https://github.com/cri-middleware/SSPlayerForUnity) | Unity 向け Player |
-| [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | Web 向け Player コレクション（PixiJS / WebGL / RPG ツクール MZ / TyranoScript / ssconverter-web） |
-| [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | Godot 向け Player |
-| [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | Flutter 向け Player |
-| [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | Ren'Py 向け Player |
-| [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | デスクトップ版コンバーター GUI |
-
 ## 貢献について
 
 誤りの修正、説明の改善、翻訳の修正を歓迎します。手順とドキュメントの規約は
