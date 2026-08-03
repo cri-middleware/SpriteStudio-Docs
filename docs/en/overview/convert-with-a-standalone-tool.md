@@ -35,15 +35,18 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
     ssconverter-web relies on the **File System Access API**, so it works only in Chromium-based
     browsers (**Chrome**, **Edge**, **Opera**). Firefox and Safari are not supported.
 
-1. Open the converter — _coming soon_ (it will be hosted on the SSPlayerForWeb site).
+1. Open the converter at `https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/` —
+   _coming soon_; the address is final, but it goes live with the SSPlayerForWeb site.
 2. Drop in the folder that contains your `.sspj` (its images and other referenced files are read along with it).
 3. Download the result as a ZIP (the `.ssab` and its referenced textures).
 
 !!! info "Versioned by `.ssab` schema"
     ssconverter-web is published **per `.ssab` schema version**, so the URL carries the schema:
 
-    - Latest (auto-redirects): _coming soon_
-    - A specific schema, e.g. `v1`: _coming soon_
+    - Latest (auto-redirects): `https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`
+    - A specific schema, e.g. `v1`: `https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`
+
+    Both are _coming soon_ - they 404 until SSPlayerForWeb publishes its site.
 
     Match the schema to your player's runtime version - when in doubt, use the latest
     (auto-redirecting) build once it's available and pick the version from the in-app switcher.
