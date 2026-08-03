@@ -35,15 +35,18 @@ Unity・Godot・Ren'Py・TyranoBuilder は変換ツールとして `libssconvert
     ssconverter-web は **File System Access API** を使用するため、Chromium 系ブラウザ
     （**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では利用できません。
 
-1. コンバーターを開きます — _準備中_（SSPlayerForWeb のサイトで公開予定）。
+1. `https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/` でコンバーターを開きます —
+   _準備中_。アドレスは確定していますが、SSPlayerForWeb のサイト公開と同時に利用可能になります。
 2. `.sspj` が入ったフォルダをドロップします（画像などの参照ファイルも一緒に読み込まれます）。
 3. 変換結果（`.ssab` と参照テクスチャ）を ZIP でダウンロードします。
 
 !!! info "`.ssab` スキーマ版ごとに公開"
     ssconverter-web は **`.ssab` スキーマのバージョンごと**に公開され、URL にスキーマが含まれます。
 
-    - 最新版（自動リダイレクト）: _準備中_
-    - 特定スキーマ版（例 `v1`）: _準備中_
+    - 最新版（自動リダイレクト）: `https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`
+    - 特定スキーマ版（例 `v1`）: `https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`
+
+    いずれも _準備中_ です。SSPlayerForWeb がサイトを公開するまでは 404 になります。
 
     Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版（公開後）を使い、
     アプリ内のバージョン切替から選択してください。

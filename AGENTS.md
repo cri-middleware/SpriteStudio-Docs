@@ -76,7 +76,11 @@ dispatch is the whole story here.
   are GitHub Pages URLs (`cri-middleware.github.io/…`) that 404 until each is deployed, so those
   outbound links are neutralized to plain **"coming soon" / "準備中"** text (no hyperlink) in
   both locales. `github.com/cri-middleware/…` **repo** links stay live as forward-links. When a
-  site ships, restore its link in `en/` and `ja/` together.
+  site ships, restore its link in `en/` and `ja/` together. Where an address is already fixed by
+  the publishing repo — the `ssconverter-web` URLs come from `SSPlayerForWeb`'s
+  `scripts/build-ssconverter-pages.sh` — state it as an un-linked code span next to the
+  "coming soon" marker, so readers get the address without a hyperlink that 404s. Do not strip
+  those; they become the link when the site publishes.
 - **Landing page cards** (`index.md`) use Material "grid cards" — they depend on the
   `attr_list`, `md_in_html`, and `pymdownx.emoji` markdown extensions already configured in
   `mkdocs.yml`. Icon shortcodes like `:material-unity:` render to SVG via those extensions.
