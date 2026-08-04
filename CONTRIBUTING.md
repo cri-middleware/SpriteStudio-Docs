@@ -29,7 +29,7 @@ Open a [GitHub Issue](https://github.com/cri-middleware/SpriteStudio-Docs/issues
 ### Pull Requests
 1. Fork the repository and create your branch from `main`.
 2. Make the change in **both** `docs/en/` and `docs/ja/` (see below).
-3. Run `.venv/bin/mkdocs build --strict` locally - this is exactly what CI runs (see [Development Environment](#development-environment)).
+3. Run `.venv/bin/mkdocs build --strict` locally. **Nothing builds the docs on a pull request**, so this is the only validation there is - a broken link or nav mismatch is not caught for you (see [Development Environment](#development-environment)).
 4. Submit a Pull Request targeting `main` with a clear description. Use [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `docs: …`).
 
 Note that merging does **not** publish. Deployment is manual: a maintainer runs the `Publish docs via GitHub Pages` workflow (`workflow_dispatch`).
@@ -43,7 +43,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
 .venv/bin/mkdocs serve           # live preview at http://127.0.0.1:8000
-.venv/bin/mkdocs build --strict  # what CI runs; fails on broken links / nav mismatches
+.venv/bin/mkdocs build --strict  # the only gate; fails on broken links / nav mismatches
 ```
 
 Windows (PowerShell):
@@ -53,7 +53,7 @@ py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 
 .\.venv\Scripts\mkdocs serve          # live preview at http://127.0.0.1:8000
-.\.venv\Scripts\mkdocs build --strict # what CI runs; fails on broken links / nav mismatches
+.\.venv\Scripts\mkdocs build --strict # the only gate; fails on broken links / nav mismatches
 ```
 
 The toolchain versions in `docs/requirements.txt` are pinned deliberately and kept in sync with the per-player documentation sites - please bump them intentionally, not incidentally.
@@ -107,7 +107,7 @@ SpriteStudio ドキュメントポータルの改善にご関心をお寄せい�
 ### プルリクエスト
 1. リポジトリを fork し、`main` からブランチを作成してください。
 2. `docs/en/` と `docs/ja/` の **両方** を変更してください（下記参照）。
-3. ローカルで `.venv/bin/mkdocs build --strict` を実行してください。CI と同じ検証です（[開発環境](#開発環境) 参照）。
+3. ローカルで `.venv/bin/mkdocs build --strict` を実行してください。**プルリクエストではドキュメントは一切ビルドされません**。これが唯一の検証で、リンク切れや nav の不整合は自動では検出されません（[開発環境](#開発環境) 参照）。
 4. `main` を対象に、変更内容を明確に記載した PR を作成してください。コミットは [Conventional Commits](https://www.conventionalcommits.org/)（例: `docs: …`）に従ってください。
 
 マージしても **公開はされません**。デプロイは手動で、メンテナーが `Publish docs via GitHub Pages` ワークフロー（`workflow_dispatch`）を実行します。
@@ -121,7 +121,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
 .venv/bin/mkdocs serve           # http://127.0.0.1:8000 でライブプレビュー
-.venv/bin/mkdocs build --strict  # CI と同じ検証。リンク切れや nav の不整合で失敗します
+.venv/bin/mkdocs build --strict  # 唯一の検証。リンク切れや nav の不整合で失敗します
 ```
 
 Windows (PowerShell):
@@ -131,7 +131,7 @@ py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 
 .\.venv\Scripts\mkdocs serve          # http://127.0.0.1:8000 でライブプレビュー
-.\.venv\Scripts\mkdocs build --strict # CI と同じ検証。リンク切れや nav の不整合で失敗します
+.\.venv\Scripts\mkdocs build --strict # 唯一の検証。リンク切れや nav の不整合で失敗します
 ```
 
 `docs/requirements.txt` のバージョンは各 Player のドキュメントサイトと揃えて意図的に固定しています。更新はついでではなく、意図をもって行ってください。

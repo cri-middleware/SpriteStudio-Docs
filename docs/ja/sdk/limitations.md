@@ -7,8 +7,8 @@
 
 !!! tip "正典の所在"
     実装レベルの完全な一覧は SDK の Player 移植ガイド
-    （[`libs/ssruntime/docs`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
-    の *Introduction → Limitations*）にあります。このページはその利用者向け要約です。
+    （[`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md) —
+    ガイド全体の目次は [`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）にあります。このページはその利用者向け要約です。
 
 ## 🎬 再生・タイムライン
 
