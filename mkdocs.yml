@@ -8,9 +8,23 @@ edit_uri: "edit/main/docs/"
 # Rendered in the site footer. Deliberately year-less so it never goes stale.
 copyright: "Copyright &copy; CRI Middleware Co., Ltd."
 
+# Nothing builds the docs on a pull request, so a plain `mkdocs build` or `mkdocs serve`
+# must fail on a broken link too - not just the `--strict` invocation people remember to type.
+strict: true
+
 theme:
   name: material
   language: en
+  # Only overrides/main.html lives here: it appends the Open Graph / Twitter Card
+  # metadata that Material does not emit on its own.
+  custom_dir: overrides
+  # Placeholder branding - swap both for real SpriteStudio artwork when it is available.
+  # `icon.logo` is a bundled Material icon (no file at all); the favicon is a hand-rolled SVG
+  # that lives in docs/assets/ rather than under en/ or ja/, because this path resolves
+  # against the site root from every page in both locales.
+  favicon: assets/favicon.svg
+  icon:
+    logo: material/motion-play
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -32,7 +46,14 @@ theme:
     - navigation.expand
     - navigation.top
     - navigation.tracking
+    # Previous / next links in the footer, so the cross-cutting pages can be read in order.
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
     - content.code.copy
+    # Required for the "edit this page" pencil; without it the `edit_uri` above is dead config.
+    - content.action.edit
 
 plugins:
   - search:
@@ -50,6 +71,9 @@ plugins:
         - locale: ja
           name: 日本語
           build: true
+          # Feeds <meta name="description"> and the Open Graph tags on every ja page;
+          # without it they inherit the top-level English site_description.
+          site_description: "SpriteStudio SDK と公式 Player 群のドキュメントポータル"
           extra:
             # Footer icon labels (title / aria-label). Mirrors the `extra.social` list below.
             social:
@@ -59,6 +83,9 @@ plugins:
               - icon: material/web
                 link: https://www.webtech.co.jp/spritestudio/
                 name: OPTPiX SpriteStudio
+              - icon: fontawesome/brands/x-twitter
+                link: https://x.com/spritestudio
+                name: X の SpriteStudio
           nav_translations:
             🏠 Home: 🏠 ホーム
             🗺️ Overview: 🗺️ 概要
@@ -152,6 +179,10 @@ extra:
     - icon: material/web
       link: https://www.webtech.co.jp/spritestudio/
       name: OPTPiX SpriteStudio
+    # Keep the handle here in sync with `twitter:site` in overrides/main.html.
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/spritestudio
+      name: SpriteStudio on X
   alternate:
     - name: English
       link: /SpriteStudio-Docs/
