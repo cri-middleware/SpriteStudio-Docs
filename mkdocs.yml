@@ -4,7 +4,10 @@ site_author: "CRI Middleware Co., Ltd."
 site_url: "https://cri-middleware.github.io/SpriteStudio-Docs/"
 repo_name: "cri-middleware/SpriteStudio-Docs"
 repo_url: "https://github.com/cri-middleware/SpriteStudio-Docs"
-edit_uri: "edit/main/docs/"
+# No `edit_uri`, so Material renders no "edit this page" button. The value is a branch name
+# that nothing validates -- `--strict` does not look at it -- and it was already wrong in
+# three of the five sibling player repos, pointing at `main` where the default branch is
+# `develop`. The footer repo link and CONTRIBUTING.md already route corrections.
 # Rendered in the site footer. Deliberately year-less so it never goes stale.
 copyright: "Copyright &copy; CRI Middleware Co., Ltd."
 
@@ -52,8 +55,6 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
-    # Required for the "edit this page" pencil; without it the `edit_uri` above is dead config.
-    - content.action.edit
 
 plugins:
   - search:

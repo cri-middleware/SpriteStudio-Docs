@@ -100,5 +100,12 @@ dispatch is the whole story here.
       override, which replaces the whole `social` list rather than merging into it. Add or
       reorder an icon in both, or Japanese readers lose it. Keep `twitter:site` in
       `overrides/main.html` in sync with the X link.
+- **There is deliberately no `edit_uri`**, here or in the player repos, so no "edit this page"
+  button renders. It is a branch name nothing validates — `--strict` does not look at it — and
+  it was already wrong in three of the five sibling players, pointing at `main` where the
+  default branch is `develop`. `edit/HEAD/…` would remove the branch name but could not be
+  verified: the web editor redirects anonymous requests to a login page whether the ref is
+  valid or not. The footer repo link and CONTRIBUTING.md route corrections instead. Do not
+  reintroduce it without checking each repo's default branch.
 - **Pinned toolchain**: `docs/requirements.txt` versions are deliberately pinned and kept in
   sync with the per-player repos (SSPlayerForUnity, SSPlayerForRenPy). Bump intentionally.
