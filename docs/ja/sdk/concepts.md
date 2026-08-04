@@ -64,7 +64,7 @@ graph LR
 
 !!! tip "情報源"
     この一覧は SDK の **Player 移植ガイド**「はじめに → 制限事項」
-    （[`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)）
+    （[`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md)）
     に準拠しています。同じページに責務の境界も示されています。上記のうち 2 つは **状態計算のみ**
     で描画・再生には Player 側の実装が必要であり、いくつかの機能には条件が伴います。これらと、
     コアがまだ行わないことは [共通の制限事項](./limitations.md) にまとめてあります。Player 同士で

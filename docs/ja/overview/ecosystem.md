@@ -24,7 +24,7 @@ graph LR
     CONV -. ".ssab / .ssqb" .-> RT
     RT -- "1-to-N Player" --> PLAYER --> SCREEN
 
-    classDef sdk fill:#eef2ff,stroke:#818cf8,color:#1e1b4b;
+    classDef sdk fill:#818cf82e,stroke:#818cf8;
     class CONV,RT sdk;
 ```
 

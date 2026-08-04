@@ -73,7 +73,11 @@ dispatch is the whole story here.
   repos at the **repository root**; when you must point at a file inside one, use
   `blob/HEAD/...`, never `blob/main/...` — most sibling repos default to `develop`, so a
   `main` path 404s silently (`--strict` validates internal links only) while `HEAD` always
-  resolves to whatever that repo's default branch is.
+  resolves to whatever that repo's default branch is. **From `docs/ja/`, link the `.ja.md`
+  counterpart** where the sibling repo publishes one — the SDK ships `.ja.md` beside most of
+  its guide pages (`20_limitations.ja.md`, `README.ja.md`, `SCHEMA.ja.md`). Sending a Japanese
+  reader to the English original is the kind of drift `--strict` cannot see. Where only a
+  directory would do, point at that directory's `README.ja.md` instead.
 - **"Coming soon" gating**: player docs sites, live demos, and the hosted `ssconverter-web`
   are GitHub Pages URLs (`cri-middleware.github.io/…`) that 404 until each is deployed, so those
   outbound links are neutralized to plain **"coming soon" / "準備中"** text (no hyperlink) in

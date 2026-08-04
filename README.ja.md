@@ -45,13 +45,17 @@ mkdocs.yml
 
 ## ローカル開発
 
+`mkdocs.yml` で `strict: true` を設定しているため、下記のコマンドは内部リンク切れや
+nav の不整合で失敗します。**プルリクエストではドキュメントは一切ビルドされません**
+（`pages.yml` の起動条件は `workflow_dispatch` のみ）。ローカル実行が唯一の検証手段です。
+
 ### macOS / Linux（bash）
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 .venv/bin/mkdocs serve          # http://127.0.0.1:8000 でプレビュー
-.venv/bin/mkdocs build --strict # CI と同じ検証
+.venv/bin/mkdocs build --strict # 唯一の検証。PR では何も検証されません
 ```
 
 ### Windows（PowerShell）
@@ -60,7 +64,7 @@ python3 -m venv .venv
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 .\.venv\Scripts\mkdocs serve          # http://127.0.0.1:8000 でプレビュー
-.\.venv\Scripts\mkdocs build --strict # CI と同じ検証
+.\.venv\Scripts\mkdocs build --strict # 唯一の検証。PR では何も検証されません
 ```
 
 ## 貢献について

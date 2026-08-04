@@ -46,13 +46,17 @@ i18n) is kept aligned with SSPlayerForUnity / SSPlayerForRenPy.
 
 ## Local development
 
+`mkdocs.yml` sets `strict: true`, so the commands below fail on a broken internal
+link or a nav mismatch. **Nothing builds the docs on a pull request** — `pages.yml`
+runs on `workflow_dispatch` alone — so running the build locally is the only gate.
+
 ### macOS / Linux (bash)
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 .venv/bin/mkdocs serve          # preview at http://127.0.0.1:8000
-.venv/bin/mkdocs build --strict # what CI runs
+.venv/bin/mkdocs build --strict # the only gate; nothing checks a PR
 ```
 
 ### Windows (PowerShell)
@@ -61,7 +65,7 @@ python3 -m venv .venv
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 .\.venv\Scripts\mkdocs serve          # preview at http://127.0.0.1:8000
-.\.venv\Scripts\mkdocs build --strict # what CI runs
+.\.venv\Scripts\mkdocs build --strict # the only gate; nothing checks a PR
 ```
 
 ## Contributing
