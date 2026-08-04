@@ -1,0 +1,12 @@
+<!--
+  Placeholder favicon: a play triangle on the theme's blue-grey primary (#546e7a), matching
+  the `icon.logo` set in mkdocs.yml. Deliberately plain geometry rather than product artwork -
+  swap it for the real SpriteStudio mark when one is available.
+
+  Lives outside en/ and ja/ on purpose: `theme.favicon` resolves against the site root from
+  every page, in both locales, so one shared copy here is what actually gets served.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SpriteStudio Docs">
+  <rect width="64" height="64" rx="14" fill="#546e7a"/>
+  <path d="M25 19.5 46 32 25 44.5Z" fill="#fff"/>
+</svg>

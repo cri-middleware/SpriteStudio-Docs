@@ -26,7 +26,9 @@ python3 -m venv .venv
 
 Always validate with `.venv/bin/mkdocs build --strict` before finishing. **This is the only
 validation there is** — nothing builds the docs on a pull request, so a broken internal link or a
-nav mismatch is not caught for you. Running it locally is the gate.
+nav mismatch is not caught for you. Running it locally is the gate. `mkdocs.yml` also sets
+`strict: true`, so a plain `build` (and `serve`) fails the same way; the explicit flag is kept
+in the commands above and in CI because it is what the docs everywhere tell people to run.
 
 Deployment is **manual**: `.github/workflows/pages.yml` triggers on `workflow_dispatch` alone.
 Running it builds the site with that same `--strict` command (so a publish aborts rather than
@@ -84,5 +86,19 @@ dispatch is the whole story here.
 - **Landing page cards** (`index.md`) use Material "grid cards" — they depend on the
   `attr_list`, `md_in_html`, and `pymdownx.emoji` markdown extensions already configured in
   `mkdocs.yml`. Icon shortcodes like `:material-unity:` render to SVG via those extensions.
+- **Site metadata and chrome** — three things here do *not* follow the "everything twice" rule,
+  so check before duplicating:
+    - `overrides/main.html` (`theme.custom_dir`) emits the Open Graph / Twitter Card tags
+      Material omits. **One template serves both locales**: the i18n plugin substitutes
+      `languages.ja.site_description` before rendering, so Japanese cards need no second copy.
+      Localize by adding a per-locale config override, not by branching in the template.
+    - **Shared assets live in `docs/assets/`, not under `en/` and `ja/`.** `theme.favicon`
+      resolves against the site *root* from every page in both locales, so a per-locale copy is
+      never served. Note the asymmetry: files at the `docs/` root are copied to the site root
+      only, never into `ja/`.
+    - **Footer social icons are defined twice**: `extra.social` and the `ja` block's `extra`
+      override, which replaces the whole `social` list rather than merging into it. Add or
+      reorder an icon in both, or Japanese readers lose it. Keep `twitter:site` in
+      `overrides/main.html` in sync with the X link.
 - **Pinned toolchain**: `docs/requirements.txt` versions are deliberately pinned and kept in
   sync with the per-player repos (SSPlayerForUnity, SSPlayerForRenPy). Bump intentionally.
