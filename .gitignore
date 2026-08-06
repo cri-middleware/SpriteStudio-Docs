@@ -1,7 +1,5 @@
 # Build output (both locales; the ja build writes into site/ja)
 /site/
-# Scratch dir for previewing the built site under its published path prefix
-/.preview/
 # Python
 .venv/
 __pycache__/

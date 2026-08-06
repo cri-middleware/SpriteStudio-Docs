@@ -134,10 +134,17 @@ dispatch is the whole story here.
     - **Footer social icons are defined twice**, in `mkdocs.yml` and `mkdocs.ja.yml` (the labels
       are translated; the icons and links are not). Add or reorder an icon in both, or the two
       footers diverge. Keep `twitter:site` in `overrides/main.html` in sync with the X link.
-    - **The header language selector is not a per-locale setting**: `extra.alternate` in
-      `mkdocs.base.yml` holds absolute published paths (`/SpriteStudio-Docs/…`), which is why one
-      list serves both locales. It follows that the selector 404s on any dev server rooted at
-      `/` — expected, and unrelated to the engine. README explains how to preview it.
+    - **The header language selector is rebuilt by `overrides/partials/alternate.html`** so
+      that switching language keeps the reader on the page they are on. `mkdocs-static-i18n`
+      used to rewrite those links per page; nothing does once the locales are separate builds,
+      and the stock partial emits `alt.link` verbatim, sending everyone to the other locale's
+      home page. The override derives the href from `page.url` instead, which is why
+      `extra.alternate[].link` in `mkdocs.base.yml` holds a locale *subpath* (`""`, `ja/`)
+      rather than a URL, and why each locale config carries `extra.site_root_prefix`. Known
+      gap: the `<link rel="alternate" hreflang>` tags in `<head>` still point at each locale
+      root — they sit inside the theme's `site_meta` block, and overriding that would mean
+      copying thirty lines Zensical may change. `serve` still shows one locale at a time, so
+      the selector only works against a build of both; README says how.
 - **There is deliberately no `edit_uri`**, here or in the player repos, so no "edit this page"
   button renders. It is a branch name nothing validates — `--strict` does not look at it — and
   it was already wrong in three of the five sibling players, pointing at `main` where the

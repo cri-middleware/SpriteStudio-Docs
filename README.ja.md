@@ -92,22 +92,19 @@ py -m venv .venv
 
 ### 言語切り替えのプレビュー
 
-`serve` は1ロケールしか配信せず、またヘッダーの言語セレクターは公開時の絶対パス
-（`/SpriteStudio-Docs/` と `/SpriteStudio-Docs/ja/`）を指しています。そのため `serve` 上で
-切り替えると 404 になります — 開発サーバーのルートは `/` だからです。これは想定どおりの挙動で、
-今回の Zensical 移行で生じたものではありません（公開時のパスに置かれていない開発サーバーでは
-同様に 404 になります）。
-
-セレクターの動作を確認したい場合は、両ロケールをビルドしてそのパスの下で配信してください。
+`serve` は一度に1ロケールしか配信しないため、もう一方の言語が存在せずセレクターは 404 に
+なります。両ロケールをビルドして、その出力を配信してください。
 
 ```bash
 .venv/bin/zensical build --strict
 .venv/bin/zensical build -f mkdocs.ja.yml --strict
 
-mkdir -p .preview && ln -sfn ../site .preview/SpriteStudio-Docs
-python3 -m http.server 8000 -d .preview
-#  -> http://127.0.0.1:8000/SpriteStudio-Docs/
+python3 -m http.server 8000 -d site
 ```
+
+セレクターのリンクは相対パスかつページ単位なので、たとえば `/sdk/concepts/` から切り替えると
+日本語のトップページではなく `/ja/sdk/concepts/` に移動します。どのパス配下に置いても
+動作します。
 
 ## 貢献について
 

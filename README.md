@@ -93,21 +93,19 @@ currently does nothing. Run `build` before you push.
 
 ### Previewing the language selector
 
-`serve` renders one locale, and the header's language selector points at the published
-absolute paths (`/SpriteStudio-Docs/` and `/SpriteStudio-Docs/ja/`), so clicking it under
-`serve` gives a 404 — the dev server is rooted at `/`. That is expected, and is not new;
-it also 404s on any dev server that does not sit at the published path.
-
-To exercise the selector, build both locales and serve them under that path:
+`serve` renders one locale at a time, so the other language does not exist under it and the
+selector 404s. Build both locales instead and serve the result:
 
 ```bash
 .venv/bin/zensical build --strict
 .venv/bin/zensical build -f mkdocs.ja.yml --strict
 
-mkdir -p .preview && ln -sfn ../site .preview/SpriteStudio-Docs
-python3 -m http.server 8000 -d .preview
-#  -> http://127.0.0.1:8000/SpriteStudio-Docs/
+python3 -m http.server 8000 -d site
 ```
+
+The selector links are relative and per page, so switching language from, say,
+`/sdk/concepts/` lands on `/ja/sdk/concepts/` rather than the Japanese home page — and it
+works at any path prefix, including this one.
 
 ## Contributing
 
