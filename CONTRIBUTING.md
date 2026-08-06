@@ -29,7 +29,7 @@ Open a [GitHub Issue](https://github.com/cri-middleware/SpriteStudio-Docs/issues
 ### Pull Requests
 1. Fork the repository and create your branch from `main`.
 2. Make the change in **both** `docs/en/` and `docs/ja/` (see below).
-3. Run `.venv/bin/mkdocs build --strict` locally. **Nothing builds the docs on a pull request**, so this is the only validation there is - a broken link or nav mismatch is not caught for you (see [Development Environment](#development-environment)).
+3. Build **both locales** locally - `.venv/bin/zensical build --strict` then `.venv/bin/zensical build -f mkdocs.ja.yml --strict`. **Nothing builds the docs on a pull request**, so this is the only validation there is - a broken link or a nav entry pointing at a missing page is not caught for you (see [Development Environment](#development-environment)).
 4. Submit a Pull Request targeting `main` with a clear description. Use [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `docs: …`).
 
 Note that merging does **not** publish. Deployment is manual: a maintainer runs the `Publish docs via GitHub Pages` workflow (`workflow_dispatch`).
@@ -42,8 +42,12 @@ macOS / Linux (bash):
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
-.venv/bin/mkdocs serve           # live preview at http://127.0.0.1:8000
-.venv/bin/mkdocs build --strict  # the only gate; fails on broken links / nav mismatches
+.venv/bin/zensical serve                            # live preview of English at http://127.0.0.1:8000
+.venv/bin/zensical serve -f mkdocs.ja.yml           # ... or of Japanese (stop the other one first)
+
+# The gate. Nothing checks a PR. English first: it clears site/, which contains site/ja.
+.venv/bin/zensical build --strict
+.venv/bin/zensical build -f mkdocs.ja.yml --strict
 ```
 
 Windows (PowerShell):
@@ -52,11 +56,17 @@ Windows (PowerShell):
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 
-.\.venv\Scripts\mkdocs serve          # live preview at http://127.0.0.1:8000
-.\.venv\Scripts\mkdocs build --strict # the only gate; fails on broken links / nav mismatches
+.\.venv\Scripts\zensical serve                      # live preview of English at http://127.0.0.1:8000
+.\.venv\Scripts\zensical serve -f mkdocs.ja.yml     # ... or of Japanese (stop the other one first)
+
+# The gate. Nothing checks a PR. English first: it clears site/, which contains site/ja.
+.\.venv\Scripts\zensical build --strict
+.\.venv\Scripts\zensical build -f mkdocs.ja.yml --strict
 ```
 
-The toolchain versions in `docs/requirements.txt` are pinned deliberately and kept in sync with the per-player documentation sites - please bump them intentionally, not incidentally.
+The toolchain versions in `docs/requirements.txt` are pinned deliberately - please bump them intentionally, not incidentally. This portal runs on [Zensical](https://zensical.org) while the sibling player repositories are still on MkDocs + Material for MkDocs, so the pins are no longer kept in step with theirs.
+
+`serve` does not validate links, and it renders one locale, so the header's language selector 404s there - see the [README](./README.md#previewing-the-language-selector) for how to preview both locales together.
 
 ## Documentation Standards
 
@@ -65,8 +75,10 @@ The site uses folder-based i18n: every page exists twice, as `docs/en/<path>` an
 
 If you can only write one language confidently, say so in the PR; a maintainer can help with the other side rather than let the two drift.
 
-### Navigation lives in `mkdocs.yml`
-The `nav:` tree is defined once, with locale-relative paths (`sdk/glossary.md`, no `en/` or `ja/` prefix). Japanese navigation labels come from `plugins.i18n.languages` → `nav_translations`, **not** from the file tree - add a matching entry whenever you introduce a new nav title.
+### Navigation lives in the two locale configs
+There is a `nav:` tree in `mkdocs.yml` (English) and another in `mkdocs.ja.yml` (Japanese). Both use locale-relative paths (`sdk/glossary.md`, no `en/` or `ja/` prefix) and the two must stay identical in structure - only the labels differ, written directly in the language rather than looked up from a translation map. Add a page to one and forget the other, and that page simply never appears in that locale's navigation.
+
+Settings shared by both locales live in `mkdocs.base.yml`, which the two inherit. One rule governs what may go where: **a YAML sequence must be defined in exactly one of the three files.** Zensical's `INHERIT` concatenates sequences rather than replacing them, so a `nav` in the base as well as a locale config renders both navigations, one after the other.
 
 ### Links
 - **Internal links** are relative file paths ending in `.md` (e.g. `../sdk/concepts.md`). `--strict` validates these.
@@ -107,7 +119,7 @@ SpriteStudio ドキュメントポータルの改善にご関心をお寄せい�
 ### プルリクエスト
 1. リポジトリを fork し、`main` からブランチを作成してください。
 2. `docs/en/` と `docs/ja/` の **両方** を変更してください（下記参照）。
-3. ローカルで `.venv/bin/mkdocs build --strict` を実行してください。**プルリクエストではドキュメントは一切ビルドされません**。これが唯一の検証で、リンク切れや nav の不整合は自動では検出されません（[開発環境](#開発環境) 参照）。
+3. ローカルで **両ロケール** をビルドしてください（`.venv/bin/zensical build --strict` のあと `.venv/bin/zensical build -f mkdocs.ja.yml --strict`）。**プルリクエストではドキュメントは一切ビルドされません**。これが唯一の検証で、リンク切れや、存在しないページを指す nav エントリーは自動では検出されません（[開発環境](#開発環境) 参照）。
 4. `main` を対象に、変更内容を明確に記載した PR を作成してください。コミットは [Conventional Commits](https://www.conventionalcommits.org/)（例: `docs: …`）に従ってください。
 
 マージしても **公開はされません**。デプロイは手動で、メンテナーが `Publish docs via GitHub Pages` ワークフロー（`workflow_dispatch`）を実行します。
@@ -120,8 +132,12 @@ macOS / Linux (bash):
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
-.venv/bin/mkdocs serve           # http://127.0.0.1:8000 でライブプレビュー
-.venv/bin/mkdocs build --strict  # 唯一の検証。リンク切れや nav の不整合で失敗します
+.venv/bin/zensical serve                            # 英語を http://127.0.0.1:8000 でライブプレビュー
+.venv/bin/zensical serve -f mkdocs.ja.yml           # 日本語の場合（先に別のものを停止）
+
+# 唯一の検証。PR では何も検証されません。site/ を消去する英語ビルドを先に。
+.venv/bin/zensical build --strict
+.venv/bin/zensical build -f mkdocs.ja.yml --strict
 ```
 
 Windows (PowerShell):
@@ -130,11 +146,17 @@ Windows (PowerShell):
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 
-.\.venv\Scripts\mkdocs serve          # http://127.0.0.1:8000 でライブプレビュー
-.\.venv\Scripts\mkdocs build --strict # 唯一の検証。リンク切れや nav の不整合で失敗します
+.\.venv\Scripts\zensical serve                      # 英語を http://127.0.0.1:8000 でライブプレビュー
+.\.venv\Scripts\zensical serve -f mkdocs.ja.yml     # 日本語の場合（先に別のものを停止）
+
+# 唯一の検証。PR では何も検証されません。site/ を消去する英語ビルドを先に。
+.\.venv\Scripts\zensical build --strict
+.\.venv\Scripts\zensical build -f mkdocs.ja.yml --strict
 ```
 
-`docs/requirements.txt` のバージョンは各 Player のドキュメントサイトと揃えて意図的に固定しています。更新はついでではなく、意図をもって行ってください。
+`docs/requirements.txt` のバージョンは意図的に固定しています。更新はついでではなく、意図をもって行ってください。このポータルは [Zensical](https://zensical.org) を使っていますが、兄弟の Player リポジトリはまだ MkDocs + Material for MkDocs のため、バージョンを揃える運用は現在は行っていません。
+
+`serve` はリンクを検証せず、1ロケールしか配信しないため、ヘッダーの言語セレクターは 404 になります。両ロケールをまとめてプレビューする方法は [README](./README.ja.md#言語切り替えのプレビュー) を参照してください。
 
 ## ドキュメントの規約
 
@@ -143,8 +165,10 @@ py -m venv .venv
 
 片方の言語しか自信がない場合は、その旨を PR に書いてください。両者が乖離するくらいなら、メンテナーがもう一方を補います。
 
-### ナビゲーションは `mkdocs.yml`
-`nav:` はロケール相対のパス（`sdk/glossary.md` のように `en/` や `ja/` を付けない）で一度だけ定義します。日本語のナビ名はファイルツリーではなく `plugins.i18n.languages` → `nav_translations` から取得されるため、新しいナビ項目を追加したら対応するエントリーも追加してください。
+### ナビゲーションは2つのロケール設定に
+`nav:` は `mkdocs.yml`（英語）と `mkdocs.ja.yml`（日本語）にそれぞれあります。どちらもロケール相対のパス（`sdk/glossary.md` のように `en/` や `ja/` を付けない）を使い、構造は完全に一致させてください。異なるのはラベルだけで、翻訳マップを介さず各言語で直接書きます。片方に追加してもう片方を忘れると、そのロケールのナビにはそのページが現れません。
+
+両ロケール共通の設定は `mkdocs.base.yml` にあり、2つの設定ファイルがこれを継承します。どこに何を書けるかは1つのルールで決まります — **YAML の配列は3ファイルのうち必ず1つにだけ定義すること。** Zensical の `INHERIT` は配列を置き換えではなく連結するため、base とロケール設定の両方に `nav` を置くと、2つのナビが続けて描画されます。
 
 ### リンク
 - **内部リンク**は `.md` で終わる相対パス（例: `../sdk/concepts.md`）。`--strict` が検証します。

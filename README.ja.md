@@ -25,7 +25,8 @@ SpriteStudio SDK と公式 Player 群のドキュメント**ポータル**です
 
 ```
 docs/
-  en/ , ja/          # フォルダー方式の i18n（mkdocs-static-i18n）
+  en/ , ja/          # ロケールごとに1フォルダー、ロケールごとに1設定ファイル
+    assets/          # favicon（ロケールごとにコピーを持ちます）
     index.md         # ランディングページ（製品カード）
     overview/        # ecosystem, choose-your-platform, feature-support,
                      #   try-it, conversion, convert-with-a-standalone-tool
@@ -35,27 +36,42 @@ docs/
     support.md
     license.md
   requirements.txt
-mkdocs.yml
+mkdocs.base.yml               # 両ロケール共通の設定
+mkdocs.yml                    # 英語   -> site/
+mkdocs.ja.yml                 # 日本語 -> site/ja/
 .github/workflows/pages.yml   # ビルド（strict）＋ GitHub Pages へのデプロイ
 ```
 
-すべてのページは `en/` と `ja/` の**両方**に存在します。ナビゲーションは `mkdocs.yml` に
-一度だけ定義し（日本語のナビ名は同ファイルの `nav_translations` から取得）ます。ツールチェーン
-（mkdocs-material + i18n）は SSPlayerForUnity / SSPlayerForRenPy と揃えています。
+すべてのページは `en/` と `ja/` の**両方**に存在し、各ロケールはそれぞれの設定ファイルから
+ビルドされます。`mkdocs.yml` と `mkdocs.ja.yml` は `mkdocs.base.yml` から共通設定を継承し、
+差分だけを持ちます — ドキュメントディレクトリ、出力先、サイト URL、言語、そしてその言語の
+ラベルを持つナビゲーションです。
+
+サイトの生成には [Zensical](https://zensical.org)（MkDocs + Material for MkDocs の後継。
+開発チームは同じ）を使用しています。設定ファイルは MkDocs の設定としても有効なままなので、
+エンジンを比較したい場合は `mkdocs-material` でも同じサイトをビルドできます。
 
 ## ローカル開発
 
-`mkdocs.yml` で `strict: true` を設定しているため、下記のコマンドは内部リンク切れや
-nav の不整合で失敗します。**プルリクエストではドキュメントは一切ビルドされません**
-（`pages.yml` の起動条件は `workflow_dispatch` のみ）。ローカル実行が唯一の検証手段です。
+`mkdocs.base.yml` で `strict: true` を設定しているため、下記の build コマンドは内部リンク切れ
+で失敗します（フラグは不要ですが、注意喚起のため各所で `--strict` を明示しています）。
+**プルリクエストではドキュメントは一切ビルドされません**（`pages.yml` の起動条件は
+`workflow_dispatch` のみ）。ローカル実行が唯一の検証手段です。
+
+ビルドは英語を先に実行してください。日本語サイトは `site/ja` に出力されますが、英語ビルドは
+開始時に `site/` を消去するためです。
 
 ### macOS / Linux（bash）
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
-.venv/bin/mkdocs serve          # http://127.0.0.1:8000 でプレビュー
-.venv/bin/mkdocs build --strict # 唯一の検証。PR では何も検証されません
+
+.venv/bin/zensical serve                        # 英語を http://127.0.0.1:8000 でプレビュー
+.venv/bin/zensical serve -f mkdocs.ja.yml       # 日本語をプレビュー（先に別のものを停止）
+
+.venv/bin/zensical build --strict               # 唯一の検証。PR では何も検証されません
+.venv/bin/zensical build -f mkdocs.ja.yml --strict
 ```
 
 ### Windows（PowerShell）
@@ -63,8 +79,34 @@ python3 -m venv .venv
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
-.\.venv\Scripts\mkdocs serve          # http://127.0.0.1:8000 でプレビュー
-.\.venv\Scripts\mkdocs build --strict # 唯一の検証。PR では何も検証されません
+
+.\.venv\Scripts\zensical serve                  # 英語を http://127.0.0.1:8000 でプレビュー
+.\.venv\Scripts\zensical serve -f mkdocs.ja.yml # 日本語をプレビュー（先に別のものを停止）
+
+.\.venv\Scripts\zensical build --strict         # 唯一の検証。PR では何も検証されません
+.\.venv\Scripts\zensical build -f mkdocs.ja.yml --strict
+```
+
+なお `serve` はリンクを検証**しません**（`zensical serve --strict` は受け付けられますが現状
+何もしません）。push する前に `build` を実行してください。
+
+### 言語切り替えのプレビュー
+
+`serve` は1ロケールしか配信せず、またヘッダーの言語セレクターは公開時の絶対パス
+（`/SpriteStudio-Docs/` と `/SpriteStudio-Docs/ja/`）を指しています。そのため `serve` 上で
+切り替えると 404 になります — 開発サーバーのルートは `/` だからです。これは想定どおりの挙動で、
+今回の Zensical 移行で生じたものではありません（公開時のパスに置かれていない開発サーバーでは
+同様に 404 になります）。
+
+セレクターの動作を確認したい場合は、両ロケールをビルドしてそのパスの下で配信してください。
+
+```bash
+.venv/bin/zensical build --strict
+.venv/bin/zensical build -f mkdocs.ja.yml --strict
+
+mkdir -p .preview && ln -sfn ../site .preview/SpriteStudio-Docs
+python3 -m http.server 8000 -d .preview
+#  -> http://127.0.0.1:8000/SpriteStudio-Docs/
 ```
 
 ## 貢献について

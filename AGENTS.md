@@ -4,8 +4,8 @@ This file provides guidance to coding agents when working with code in this repo
 
 ## What this repo is
 
-A **documentation portal** (MkDocs + Material) for the SpriteStudio SDK and its official
-players. It is a lightweight hub, **not** a mirror of each player's docs: every player keeps
+A **documentation portal** ([Zensical](https://zensical.org)) for the SpriteStudio SDK and its
+official players. It is a lightweight hub, **not** a mirror of each player's docs: every player keeps
 its own site in its own repository. This portal hosts only the unified entry point and the
 **cross-cutting** material that belongs to no single player — the landing page, the ecosystem
 overview, shared SDK concepts, the format specification, and licensing.
@@ -20,32 +20,51 @@ into full player documentation; that content lives in the player's own repositor
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
-.venv/bin/mkdocs serve           # live preview at http://127.0.0.1:8000
-.venv/bin/mkdocs build --strict  # fails on broken links / missing nav
+.venv/bin/zensical serve                            # live preview of English
+.venv/bin/zensical serve -f mkdocs.ja.yml           # ... or of Japanese
+
+# One build per locale. English first: it clears site/, which contains site/ja.
+.venv/bin/zensical build --strict
+.venv/bin/zensical build -f mkdocs.ja.yml --strict
 ```
 
-Always validate with `.venv/bin/mkdocs build --strict` before finishing. **This is the only
-validation there is** — nothing builds the docs on a pull request, so a broken internal link or a
-nav mismatch is not caught for you. Running it locally is the gate. `mkdocs.yml` also sets
-`strict: true`, so a plain `build` (and `serve`) fails the same way; the explicit flag is kept
-in the commands above and in CI because it is what the docs everywhere tell people to run.
+Always validate with **both** build commands before finishing. **This is the only validation
+there is** — nothing builds the docs on a pull request, so a broken internal link is not caught
+for you. Running them locally is the gate. `mkdocs.base.yml` also sets `strict: true`, so a
+plain `build` fails the same way; the explicit flag is kept in the commands above and in CI
+because it is what the docs everywhere tell people to run. `serve`, by contrast, validates
+nothing — `zensical serve --strict` is accepted and currently does nothing.
+
+Building only the English locale is the easy mistake here: it leaves a stale `site/ja` from a
+previous run, so a Japanese page you just broke still looks fine.
 
 Deployment is **manual**: `.github/workflows/pages.yml` triggers on `workflow_dispatch` alone.
-Running it builds the site with that same `--strict` command (so a publish aborts rather than
-deploying a dead link) and deploys via the GitHub Pages deployment API (OIDC) — no `gh-pages`
+Running it builds both locales with those same `--strict` commands (so a publish aborts rather
+than deploying a dead link) and deploys via the GitHub Pages deployment API (OIDC) — no `gh-pages`
 branch and no `contents: write`. Merging to `main` does **not** auto-publish. The sibling player
 repos publish on `release: published` + `workflow_dispatch`; this portal cuts no releases, so
 dispatch is the whole story here.
 
 ## Architecture & conventions
 
-- **Folder-based i18n** (`mkdocs-static-i18n`, `docs_structure: folder`). Every page exists
-  twice: `docs/en/<path>` and `docs/ja/<path>`. When you add, move, or rename a page, do it in
-  **both** `en/` and `ja/`, or the strict build breaks. English is the default/fallback locale.
-- **Navigation is defined once** in `mkdocs.yml` under `nav:` using locale-relative paths (e.g.
-  `players/unity.md`, no `en/` or `ja/` prefix). Japanese nav labels come from the
-  `plugins.i18n.languages` → `nav_translations` map, **not** from the file tree — add a matching
-  `nav_translations` entry whenever you introduce a new nav title.
+- **One locale, one config.** Every page exists twice — `docs/en/<path>` and `docs/ja/<path>` —
+  and each locale is built from its own config file. `mkdocs.yml` builds English to `site/`,
+  `mkdocs.ja.yml` builds Japanese to `site/ja/`, and both inherit the shared settings from
+  `mkdocs.base.yml`. When you add, move, or rename a page, do it in **both** `en/` and `ja/`.
+  There is no fallback locale any more: a page missing from `docs/ja/` is not silently served in
+  English, it is a nav entry pointing at nothing.
+- **The three-config split has one rule: a YAML sequence must be defined in exactly one of the
+  three files.** Zensical's `INHERIT` *concatenates* parent and child sequences where MkDocs
+  replaces them. Put `nav` in the base as well as a locale config and the Japanese site renders
+  the English navigation followed by the Japanese one; do it with `extra.social` and the footer
+  grows six icons. Mappings deep-merge in both tools, so scalar overrides like `theme.language`
+  are safe. Shared sequences (`theme.palette`, `theme.features`, `plugins`,
+  `markdown_extensions`, `extra.alternate`) therefore live in `mkdocs.base.yml` and nowhere else;
+  per-locale ones (`nav`, `extra.social`) live in the locale configs and never in the base.
+- **Navigation is defined twice**, once per locale config, using locale-relative paths (e.g.
+  `players/unity.md`, no `en/` or `ja/` prefix). The two trees must stay structurally identical;
+  only the labels differ, and they are written directly in each language rather than looked up
+  from a translation map. This replaced `nav_translations`, which no longer exists.
 - **Content lives in three folders** under each locale: `overview/` (ecosystem, platform
   choice, feature support, browser demos, and the asset-conversion overview + standalone tools),
   `sdk/` (canonical cross-player concepts, glossary, format spec, shared limitations, porting), and
@@ -87,23 +106,38 @@ dispatch is the whole story here.
   `scripts/build-ssconverter-pages.sh` — state it as an un-linked code span next to the
   "coming soon" marker, so readers get the address without a hyperlink that 404s. Do not strip
   those; they become the link when the site publishes.
-- **Landing page cards** (`index.md`) use Material "grid cards" — they depend on the
-  `attr_list`, `md_in_html`, and `pymdownx.emoji` markdown extensions already configured in
-  `mkdocs.yml`. Icon shortcodes like `:material-unity:` render to SVG via those extensions.
-- **Site metadata and chrome** — three things here do *not* follow the "everything twice" rule,
-  so check before duplicating:
-    - `overrides/main.html` (`theme.custom_dir`) emits the Open Graph / Twitter Card tags
-      Material omits. **One template serves both locales**: the i18n plugin substitutes
-      `languages.ja.site_description` before rendering, so Japanese cards need no second copy.
-      Localize by adding a per-locale config override, not by branching in the template.
-    - **Shared assets live in `docs/assets/`, not under `en/` and `ja/`.** `theme.favicon`
-      resolves against the site *root* from every page in both locales, so a per-locale copy is
-      never served. Note the asymmetry: files at the `docs/` root are copied to the site root
-      only, never into `ja/`.
-    - **Footer social icons are defined twice**: `extra.social` and the `ja` block's `extra`
-      override, which replaces the whole `social` list rather than merging into it. Add or
-      reorder an icon in both, or Japanese readers lose it. Keep `twitter:site` in
-      `overrides/main.html` in sync with the X link.
+- **Landing page cards** (`index.md`) use "grid cards" — they depend on the `attr_list` and
+  `md_in_html` markdown extensions already configured in `mkdocs.base.yml`. Icon shortcodes like
+  `:material-unity:` and `:simple-rust:` render to SVG. Note that the `pymdownx.emoji` block
+  still names `material.extensions.emoji`, a module Zensical does not ship: Zensical resolves
+  icons itself and never imports it. The block is kept because it is what makes the same configs
+  build under MkDocs, and it is inert otherwise — do not "fix" it by pointing it somewhere else.
+- **Site metadata and chrome** — the "everything twice" rule applies unevenly here, so check
+  which side of it a given setting falls on before duplicating or sharing it:
+    - `overrides/main.html` (`theme.custom_dir`) emits the Open Graph / Twitter Card tags the
+      theme omits, **and repairs the page title**: Zensical never sets `page.is_homepage`, so
+      its own `base.html` titles the landing page "SpriteStudio Docs - SpriteStudio Docs". The
+      override derives the flag from `page.url` instead and overrides the `htmltitle` block, so
+      the tab, the `og:` card and the Twitter card all read from one value. It still consults
+      `page.is_homepage` first, so the workaround retires itself if Zensical starts setting it.
+      **One template serves both locales** — `config.site_name`, `config.site_description` and
+      `config.theme.language` come from whichever locale config is building. Localize by adding
+      a per-locale config override, not by branching in the template.
+    - **Each locale ships its own `assets/`.** `theme.favicon` resolves against the site root,
+      and each locale now *has* its own root (`site/` and `site/ja/`), so the file exists twice:
+      `docs/en/assets/favicon.svg` and `docs/ja/assets/favicon.svg`. There is no shared
+      `docs/assets/` any more — a file there would sit outside both `docs_dir`s and never be
+      copied anywhere.
+    - **`site_url` is per locale** and the ja one must keep its `ja/` suffix: `page.canonical_url`
+      and therefore `og:url` are built from it. Inheriting the English value would advertise
+      every Japanese page under its English address.
+    - **Footer social icons are defined twice**, in `mkdocs.yml` and `mkdocs.ja.yml` (the labels
+      are translated; the icons and links are not). Add or reorder an icon in both, or the two
+      footers diverge. Keep `twitter:site` in `overrides/main.html` in sync with the X link.
+    - **The header language selector is not a per-locale setting**: `extra.alternate` in
+      `mkdocs.base.yml` holds absolute published paths (`/SpriteStudio-Docs/…`), which is why one
+      list serves both locales. It follows that the selector 404s on any dev server rooted at
+      `/` — expected, and unrelated to the engine. README explains how to preview it.
 - **There is deliberately no `edit_uri`**, here or in the player repos, so no "edit this page"
   button renders. It is a branch name nothing validates — `--strict` does not look at it — and
   it was already wrong in three of the five sibling players, pointing at `main` where the
@@ -111,5 +145,17 @@ dispatch is the whole story here.
   verified: the web editor redirects anonymous requests to a login page whether the ref is
   valid or not. The footer repo link and CONTRIBUTING.md route corrections instead. Do not
   reintroduce it without checking each repo's default branch.
-- **Pinned toolchain**: `docs/requirements.txt` versions are deliberately pinned and kept in
-  sync with the per-player repos (SSPlayerForUnity, SSPlayerForRenPy). Bump intentionally.
+- **Pinned toolchain**: `docs/requirements.txt` pins `zensical` deliberately — bump
+  intentionally. The pins are **no longer kept in sync with the per-player repos**: this portal
+  is the first to move off MkDocs + Material for MkDocs (which its own authors put into
+  maintenance mode), and the players follow one at a time. Restore the sync rule once they have.
+- **The configs are still valid MkDocs configs, deliberately.** `pip install mkdocs-material`
+  and `mkdocs build --strict -f mkdocs.yml` builds the same site, which is what makes the
+  migration reversible and lets you diff the two engines when something looks off. Do not adopt
+  `zensical.toml` or any Zensical-only config syntax while that is still worth keeping — and
+  note Zensical's own docs currently advise existing projects against the `.toml` switch.
+- **Known Zensical gaps** worth not re-discovering: `page.is_homepage` is never set (worked
+  around in `overrides/main.html`); `serve --strict` is accepted but does nothing; there is no
+  multi-locale build, which is the whole reason for the three-config split; and the theme's own
+  chrome icons are Lucide rather than Material, so a page renders three fewer inline SVGs than
+  the MkDocs build did. Content icons are unaffected.

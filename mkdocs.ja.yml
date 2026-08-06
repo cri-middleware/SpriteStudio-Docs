@@ -1,0 +1,65 @@
+# Japanese site. Built with `zensical build -f mkdocs.ja.yml`, and always *after* the
+# English build: `site_dir` is nested inside it, and a build wipes its own output directory.
+#
+# Everything not listed here comes from mkdocs.base.yml. Before adding anything, read the
+# note there about sequences: `nav` and `extra.social` are defined in this file and in
+# mkdocs.yml, and must never also appear in the base.
+INHERIT: ./mkdocs.base.yml
+
+docs_dir: docs/ja
+site_dir: site/ja
+# Must carry the `ja/` suffix: this is what `page.canonical_url` and therefore the `og:url`
+# tag are built from. Inheriting the English `site_url` would advertise every Japanese page
+# under its English address.
+site_url: "https://cri-middleware.github.io/SpriteStudio-Docs/ja/"
+# Feeds <meta name="description"> and the Open Graph tags on every ja page. Without it they
+# would inherit the English `site_description`.
+site_description: "SpriteStudio SDK と公式 Player 群のドキュメントポータル"
+
+theme:
+  # Drives the UI string translations, the `html lang` attribute, and -- because the search
+  # engine segments CJK text per locale -- Japanese word splitting in the search index.
+  language: ja
+
+extra:
+  # Footer icon labels (title / aria-label). Mirrors `extra.social` in mkdocs.yml.
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cri-middleware
+      name: GitHub の cri-middleware
+    - icon: material/web
+      link: https://www.webtech.co.jp/spritestudio/
+      name: OPTPiX SpriteStudio
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/spritestudio
+      name: X の SpriteStudio
+
+# The Japanese counterpart of the `nav` in mkdocs.yml -- same paths, translated labels.
+# This replaces the old `nav_translations` map: labels are written where they are used
+# instead of being looked up by their English string.
+nav:
+  - 🏠 ホーム: index.md
+  - 🗺️ 概要:
+      - エコシステム: overview/ecosystem.md
+      - プラットフォームの選び方: overview/choose-your-platform.md
+      - 機能サポート状況: overview/feature-support.md
+      - ブラウザで試す: overview/try-it.md
+  - 🔄 アセットの変換:
+      - 概要: overview/conversion.md
+      - スタンドアロンツール: overview/convert-with-a-standalone-tool.md
+  - 🎮 Player・ツール:
+      - Unity: players/unity.md
+      - Web（Player コレクション）: players/web.md
+      - Godot: players/godot.md
+      - Flutter: players/flutter.md
+      - Ren'Py: players/renpy.md
+      - Rust（wgpu）: players/wgpu.md
+      - コンバーター GUI: players/converter.md
+  - 🛠️ SDK・開発者向け:
+      - コンセプト: sdk/concepts.md
+      - 用語集: sdk/glossary.md
+      - フォーマット仕様: sdk/format-spec.md
+      - 共通の制限事項: sdk/limitations.md
+      - Player の移植: sdk/porting.md
+  - 🤝 サポート: support.md
+  - ⚖️ ライセンス: license.md
