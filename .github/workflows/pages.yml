@@ -6,7 +6,7 @@ on:
   # publish on `release: published` + dispatch; this portal cuts no releases, so
   # dispatch is the whole story here.
   #
-  # Note there is no PR build any more, matching the siblings — `mkdocs build
+  # Note there is no PR build any more, matching the siblings — `zensical build
   # --strict` no longer runs in CI at all, so run it locally before merging a
   # docs change. A broken internal link or missing nav entry would otherwise
   # only surface on the next manual publish.
@@ -42,18 +42,26 @@ jobs:
 
       - uses: actions/cache@v5
         with:
-          key: mkdocs-material-${{ env.cache_id }}
+          key: zensical-${{ env.cache_id }}
           path: .cache
           restore-keys: |
-            mkdocs-material-
+            zensical-
 
       - name: Install dependencies
         run: pip install -r docs/requirements.txt
 
-      # --strict fails the build on broken links / missing nav entries, so a
+      # One build per locale — there is no plugin producing both from a single
+      # run any more. --strict fails on broken links / missing nav entries, so a
       # publish aborts rather than deploying a site with a dead link.
-      - name: Build docs (strict validation)
-        run: mkdocs build --strict
+      #
+      # Order matters: the ja build writes into site/ja, and the English build
+      # wipes site/ on the way in. Swapping these two steps silently publishes a
+      # site with no Japanese pages at all.
+      - name: Build docs, English (strict validation)
+        run: zensical build --strict
+
+      - name: Build docs, Japanese (strict validation)
+        run: zensical build -f mkdocs.ja.yml --strict
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,6 +1,14 @@
-# Documentation toolchain (MkDocs). Pinned for reproducible CI builds.
-# Bump deliberately; keep in sync with the plugins declared in mkdocs.yml.
-# Kept aligned with the per-player docs (SSPlayerForUnity, SSPlayerForRenPy).
-mkdocs-material==9.7.6
-mkdocs-static-i18n==1.3.1
-mkdocs-callouts==1.16.1
+# Documentation toolchain (Zensical). Pinned for reproducible builds; bump deliberately.
+#
+# This portal is the first repo in the family to move off MkDocs + Material for MkDocs,
+# which the same team put into maintenance mode after shipping Zensical. The sibling player
+# repos are still on `mkdocs-material`, so the "keep these pins aligned with the per-player
+# docs" rule is suspended until they follow; see AGENTS.md.
+#
+# `mkdocs-static-i18n` and `mkdocs-callouts` are gone: the first is replaced by building
+# each locale from its own config, and the second was configured but never used - no page
+# contained the `> [!NOTE]` syntax it exists to convert.
+#
+# The configs are deliberately still valid MkDocs configs, so installing `mkdocs-material`
+# instead builds the same site if you need to compare the two engines.
+zensical==0.0.53
