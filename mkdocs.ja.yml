@@ -22,6 +22,10 @@ theme:
   language: ja
 
 extra:
+  # This locale builds into site/ja, so the root of the whole multi-locale site is one level
+  # up. The language selector prepends this to its target; see
+  # overrides/partials/alternate.html.
+  site_root_prefix: "../"
   # Footer icon labels (title / aria-label). Mirrors `extra.social` in mkdocs.yml.
   social:
     - icon: fontawesome/brands/github

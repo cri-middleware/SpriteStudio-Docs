@@ -108,12 +108,15 @@ markdown_extensions:
       check_paths: true
 
 extra:
-  # The language selector in the header. Absolute paths, so the same list serves both
-  # locales - which is why it belongs here and not in the locale files.
+  # The header language selector. `link` is each locale's subpath under the site root, NOT
+  # a full URL -- overrides/partials/alternate.html rebuilds the href from it plus the
+  # current page, so switching language keeps the reader on the same page instead of
+  # dropping them on the other locale's home page. `extra.site_root_prefix` in each locale
+  # config is the other half of that calculation.
   alternate:
     - name: English
-      link: /SpriteStudio-Docs/
+      link: ""
       lang: en
     - name: 日本語
-      link: /SpriteStudio-Docs/ja/
+      link: ja/
       lang: ja

@@ -16,6 +16,10 @@ theme:
   language: en
 
 extra:
+  # English builds to the site root, so the root of the whole multi-locale site is right
+  # here. The language selector prepends this to its target; see
+  # overrides/partials/alternate.html.
+  site_root_prefix: ""
   # Footer icons. Keep to destinations that outlive any single release. Mirrored, with
   # translated labels, in mkdocs.ja.yml - add or reorder an icon in both files.
   social:
