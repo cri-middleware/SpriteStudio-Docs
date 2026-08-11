@@ -2,8 +2,8 @@
 #
 # Create the local virtualenv and install the pinned documentation toolchain.
 #
-#   scripts/prepare.sh                 # .venv + docs/requirements.txt
-#   scripts/prepare.sh force=yes       # discard the venv and build it again
+#   scripts/prepare-docs.sh            # .venv + docs/requirements.txt
+#   scripts/prepare-docs.sh force=yes  # discard the venv and build it again
 #
 # This is the whole setup step. The portal has no Node, no submodule and no
 # native toolchain -- one Python environment builds the entire site -- so unlike
@@ -15,7 +15,7 @@
 # this script after a pin changes -- pip installs the pinned version over
 # whatever the venv already has.
 #
-# Then: scripts/build.sh, which runs zensical out of the venv this created.
+# Then: scripts/build-docs.sh, which runs zensical out of the venv this created.
 set -euo pipefail
 
 APP="$(basename "$0")"
@@ -40,7 +40,7 @@ usage () {
   echo "Installs $REQUIREMENTS, whose pins are exact. Run it again whenever a pin"
   echo "changes; force=yes is only for a venv that has gone wrong."
   echo ""
-  echo "Building the site is scripts/build.sh, not this script."
+  echo "Building the site is scripts/build-docs.sh, not this script."
 }
 
 while [ $# -gt 0 ]; do
@@ -141,5 +141,5 @@ SERVE_HINT="$VENV/$(basename "$VENV_BIN")/zensical"
 
 echo ""
 echo "$APP: done -> $VENV"
-echo "$APP: build both locales: scripts/build.sh"
+echo "$APP: build both locales: scripts/build-docs.sh"
 echo "$APP: preview one:        $SERVE_HINT serve  (add -f mkdocs.ja.yml for Japanese)"
