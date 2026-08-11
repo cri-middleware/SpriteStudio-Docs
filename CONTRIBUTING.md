@@ -29,39 +29,55 @@ Open a [GitHub Issue](https://github.com/cri-middleware/SpriteStudio-Docs/issues
 ### Pull Requests
 1. Fork the repository and create your branch from `main`.
 2. Make the change in **both** `docs/en/` and `docs/ja/` (see below).
-3. Build **both locales** locally - `.venv/bin/zensical build --strict` then `.venv/bin/zensical build -f mkdocs.ja.yml --strict`. **Nothing builds the docs on a pull request**, so this is the only validation there is - a broken link or a nav entry pointing at a missing page is not caught for you (see [Development Environment](#development-environment)).
+3. Build **both locales** locally - `scripts/build.sh` (or `scripts\build.ps1`) does exactly that, in the order that works. **Nothing builds the docs on a pull request**, so this is the only validation there is - a broken link or a nav entry pointing at a missing page is not caught for you (see [Development Environment](#development-environment)).
 4. Submit a Pull Request targeting `main` with a clear description. Use [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `docs: …`).
 
 Note that merging does **not** publish. Deployment is manual: a maintainer runs the `Publish docs via GitHub Pages` workflow (`workflow_dispatch`).
 
 ## Development Environment
 
-macOS / Linux (bash):
+Two scripts, one per OS family - `--help` on either lists its `key=value` options:
+
+```bash
+scripts/prepare.sh          # create .venv and install docs/requirements.txt
+scripts/build.sh            # the gate: English then Japanese, both --strict
+```
+
+```powershell
+scripts\prepare.ps1
+scripts\build.ps1
+```
+
+`build` runs English first because that build clears `site/`, and the Japanese site lives inside it at `site/ja` - so an English-only build leaves no Japanese site at all. `scripts/build.sh locale=en` warns about this; with no arguments it does not arise.
+
+Should you prefer to run the tools yourself, that is all the scripts do:
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
-.venv/bin/zensical serve                            # live preview of English at http://127.0.0.1:8000
-.venv/bin/zensical serve -f mkdocs.ja.yml           # ... or of Japanese (stop the other one first)
-
-# The gate. Nothing checks a PR. English first: it clears site/, which contains site/ja.
 .venv/bin/zensical build --strict
 .venv/bin/zensical build -f mkdocs.ja.yml --strict
 ```
-
-Windows (PowerShell):
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 
-.\.venv\Scripts\zensical serve                      # live preview of English at http://127.0.0.1:8000
-.\.venv\Scripts\zensical serve -f mkdocs.ja.yml     # ... or of Japanese (stop the other one first)
-
-# The gate. Nothing checks a PR. English first: it clears site/, which contains site/ja.
 .\.venv\Scripts\zensical build --strict
 .\.venv\Scripts\zensical build -f mkdocs.ja.yml --strict
+```
+
+Previewing while you write has no script, because `serve` validates nothing and renders one locale at a time:
+
+```bash
+.venv/bin/zensical serve                            # live preview of English at http://127.0.0.1:8000
+.venv/bin/zensical serve -f mkdocs.ja.yml           # ... or of Japanese (stop the other one first)
+```
+
+```powershell
+.\.venv\Scripts\zensical serve                      # live preview of English at http://127.0.0.1:8000
+.\.venv\Scripts\zensical serve -f mkdocs.ja.yml     # ... or of Japanese (stop the other one first)
 ```
 
 The toolchain versions in `docs/requirements.txt` are pinned deliberately - please bump them intentionally, not incidentally. This portal runs on [Zensical](https://zensical.org) while the sibling player repositories are still on MkDocs + Material for MkDocs, so the pins are no longer kept in step with theirs.
@@ -119,39 +135,55 @@ SpriteStudio ドキュメントポータルの改善にご関心をお寄せい�
 ### プルリクエスト
 1. リポジトリを fork し、`main` からブランチを作成してください。
 2. `docs/en/` と `docs/ja/` の **両方** を変更してください（下記参照）。
-3. ローカルで **両ロケール** をビルドしてください（`.venv/bin/zensical build --strict` のあと `.venv/bin/zensical build -f mkdocs.ja.yml --strict`）。**プルリクエストではドキュメントは一切ビルドされません**。これが唯一の検証で、リンク切れや、存在しないページを指す nav エントリーは自動では検出されません（[開発環境](#開発環境) 参照）。
+3. ローカルで **両ロケール** をビルドしてください。`scripts/build.sh`（または `scripts\build.ps1`）が正しい順序で両方をビルドします。**プルリクエストではドキュメントは一切ビルドされません**。これが唯一の検証で、リンク切れや、存在しないページを指す nav エントリーは自動では検出されません（[開発環境](#開発環境) 参照）。
 4. `main` を対象に、変更内容を明確に記載した PR を作成してください。コミットは [Conventional Commits](https://www.conventionalcommits.org/)（例: `docs: …`）に従ってください。
 
 マージしても **公開はされません**。デプロイは手動で、メンテナーが `Publish docs via GitHub Pages` ワークフロー（`workflow_dispatch`）を実行します。
 
 ## 開発環境
 
-macOS / Linux (bash):
+OS ごとに 2 つのスクリプトを用意しています。`key=value` 形式のオプションは `--help` で確認できます。
+
+```bash
+scripts/prepare.sh          # .venv を作成し docs/requirements.txt を導入
+scripts/build.sh            # 唯一の検証。英語 → 日本語の順に --strict でビルド
+```
+
+```powershell
+scripts\prepare.ps1
+scripts\build.ps1
+```
+
+英語を先にビルドするのは、英語ビルドが `site/` を消去し、日本語サイトはその内側（`site/ja`）に出力されるためです。英語だけをビルドすると日本語サイトは残らず消えます。`scripts/build.sh locale=en` はその旨を警告しますが、引数なしで実行すればこの問題は起きません。
+
+スクリプトを使わない場合、実行しているのは次のコマンドだけです。
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
-.venv/bin/zensical serve                            # 英語を http://127.0.0.1:8000 でライブプレビュー
-.venv/bin/zensical serve -f mkdocs.ja.yml           # 日本語の場合（先に別のものを停止）
-
-# 唯一の検証。PR では何も検証されません。site/ を消去する英語ビルドを先に。
 .venv/bin/zensical build --strict
 .venv/bin/zensical build -f mkdocs.ja.yml --strict
 ```
-
-Windows (PowerShell):
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 
-.\.venv\Scripts\zensical serve                      # 英語を http://127.0.0.1:8000 でライブプレビュー
-.\.venv\Scripts\zensical serve -f mkdocs.ja.yml     # 日本語の場合（先に別のものを停止）
-
-# 唯一の検証。PR では何も検証されません。site/ を消去する英語ビルドを先に。
 .\.venv\Scripts\zensical build --strict
 .\.venv\Scripts\zensical build -f mkdocs.ja.yml --strict
+```
+
+執筆中のプレビューにスクリプトはありません。`serve` はリンクを検証せず、一度に1ロケールしか配信しないためです。
+
+```bash
+.venv/bin/zensical serve                            # 英語を http://127.0.0.1:8000 でライブプレビュー
+.venv/bin/zensical serve -f mkdocs.ja.yml           # 日本語の場合（先に別のものを停止）
+```
+
+```powershell
+.\.venv\Scripts\zensical serve                      # 英語を http://127.0.0.1:8000 でライブプレビュー
+.\.venv\Scripts\zensical serve -f mkdocs.ja.yml     # 日本語の場合（先に別のものを停止）
 ```
 
 `docs/requirements.txt` のバージョンは意図的に固定しています。更新はついでではなく、意図をもって行ってください。このポータルは [Zensical](https://zensical.org) を使っていますが、兄弟の Player リポジトリはまだ MkDocs + Material for MkDocs のため、バージョンを揃える運用は現在は行っていません。

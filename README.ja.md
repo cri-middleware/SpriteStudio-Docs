@@ -36,6 +36,9 @@ docs/
     support.md
     license.md
   requirements.txt
+scripts/
+  prepare.{sh,ps1}            # venv の作成とツールチェーンの導入
+  build.{sh,ps1}              # 両ロケールを正しい順序で strict ビルド
 mkdocs.base.yml               # 両ロケール共通の設定
 mkdocs.yml                    # 英語   -> site/
 mkdocs.ja.yml                 # 日本語 -> site/ja/
@@ -59,36 +62,69 @@ mkdocs.ja.yml                 # 日本語 -> site/ja/
 `workflow_dispatch` のみ）。ローカル実行が唯一の検証手段です。
 
 ビルドは英語を先に実行してください。日本語サイトは `site/ja` に出力されますが、英語ビルドは
-開始時に `site/` を消去するためです。
+開始時に `site/` を消去するため、あとから英語だけをビルドすると日本語サイトは「古いまま残る」
+のではなく消えてしまいます。セットアップとこの順序は、2 つのスクリプトが受け持ちます。
 
-### macOS / Linux（bash）
+```bash
+scripts/prepare.sh          # .venv を作成し docs/requirements.txt を導入
+scripts/build.sh            # 英語 → 日本語の順に、いずれも --strict でビルド
+```
+
+```powershell
+scripts\prepare.ps1         # PowerShell 版。オプションも出力も同じです
+scripts\build.ps1
+```
+
+いずれも Player 各リポジトリのスクリプトと同様に `key=value` 形式のオプションと `--help` を
+受け付けます。
+
+| | |
+|---|---|
+| `prepare.sh python=<exe>` | venv の作成に使うインタープリター（既定は `python3`。`.ps1` は `py`） |
+| `prepare.sh venv=<dir>` | venv の作成先（既定は `.venv`） |
+| `prepare.sh force=yes` | 既存の venv を削除して作り直す（壊れた場合用） |
+| `build.sh locale=<all\|en\|ja>` | ビルドするロケール（既定は `all`＝上記の順序） |
+| `build.sh venv=<dir>` | `zensical` を実行する venv。無ければ `PATH` 上のものを使用 |
+
+注意が必要なのは `build.sh locale=en` を単独で実行した場合です。`site/ja` が消えるため、
+スクリプトはその旨を警告します。
+
+### スクリプトを使わない場合
+
+スクリプトが実行しているのは次のコマンドだけです。
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
-.venv/bin/zensical serve                        # 英語を http://127.0.0.1:8000 でプレビュー
-.venv/bin/zensical serve -f mkdocs.ja.yml       # 日本語をプレビュー（先に別のものを停止）
-
 .venv/bin/zensical build --strict               # 唯一の検証。PR では何も検証されません
 .venv/bin/zensical build -f mkdocs.ja.yml --strict
 ```
-
-### Windows（PowerShell）
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 
-.\.venv\Scripts\zensical serve                  # 英語を http://127.0.0.1:8000 でプレビュー
-.\.venv\Scripts\zensical serve -f mkdocs.ja.yml # 日本語をプレビュー（先に別のものを停止）
-
 .\.venv\Scripts\zensical build --strict         # 唯一の検証。PR では何も検証されません
 .\.venv\Scripts\zensical build -f mkdocs.ja.yml --strict
 ```
 
-なお `serve` はリンクを検証**しません**（`zensical serve --strict` は受け付けられますが現状
-何もしません）。push する前に `build` を実行してください。
+### 執筆中のプレビュー
+
+`serve` にスクリプトはありません。リンクを検証せず、一度に1ロケールしか配信しないためです。
+
+```bash
+.venv/bin/zensical serve                        # 英語を http://127.0.0.1:8000 でプレビュー
+.venv/bin/zensical serve -f mkdocs.ja.yml       # 日本語をプレビュー（先に別のものを停止）
+```
+
+```powershell
+.\.venv\Scripts\zensical serve                  # 英語を http://127.0.0.1:8000 でプレビュー
+.\.venv\Scripts\zensical serve -f mkdocs.ja.yml # 日本語をプレビュー（先に別のものを停止）
+```
+
+`zensical serve --strict` は受け付けられますが現状何もしません。push する前に
+`scripts/build.sh` を実行してください。
 
 ### 言語切り替えのプレビュー
 
@@ -96,8 +132,7 @@ py -m venv .venv
 なります。両ロケールをビルドして、その出力を配信してください。
 
 ```bash
-.venv/bin/zensical build --strict
-.venv/bin/zensical build -f mkdocs.ja.yml --strict
+scripts/build.sh
 
 python3 -m http.server 8000 -d site
 ```

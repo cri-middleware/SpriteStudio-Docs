@@ -17,33 +17,56 @@ into full player documentation; that content lives in the player's own repositor
 ## Commands
 
 ```bash
+scripts/prepare.sh                                  # .venv + the pinned toolchain
+scripts/build.sh                                    # English then Japanese, both strict
+```
+
+`scripts/*.ps1` are the PowerShell twins, and both scripts take `key=value` options and
+`--help`, like the ones in the player repos: `prepare.sh python=py force=yes`,
+`build.sh locale=ja venv=.venv`. What they wrap is only this:
+
+```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
-
-.venv/bin/zensical serve                            # live preview of English
-.venv/bin/zensical serve -f mkdocs.ja.yml           # ... or of Japanese
 
 # One build per locale. English first: it clears site/, which contains site/ja.
 .venv/bin/zensical build --strict
 .venv/bin/zensical build -f mkdocs.ja.yml --strict
 ```
 
-Always validate with **both** build commands before finishing. **This is the only validation
-there is** — nothing builds the docs on a pull request, so a broken internal link is not caught
-for you. Running them locally is the gate. `mkdocs.base.yml` also sets `strict: true`, so a
-plain `build` fails the same way; the explicit flag is kept in the commands above and in CI
-because it is what the docs everywhere tell people to run. `serve`, by contrast, validates
-nothing — `zensical serve --strict` is accepted and currently does nothing.
+`serve` is deliberately **not** wrapped — it validates nothing, serves one locale at a time,
+and has nothing worth defaulting:
 
-Building only the English locale is the easy mistake here: it leaves a stale `site/ja` from a
-previous run, so a Japanese page you just broke still looks fine.
+```bash
+.venv/bin/zensical serve                            # live preview of English
+.venv/bin/zensical serve -f mkdocs.ja.yml           # ... or of Japanese
+```
+
+Always validate with **both** builds before finishing — `scripts/build.sh` with no arguments
+does exactly that. **This is the only validation there is** — nothing builds the docs on a pull
+request, so a broken internal link is not caught for you. Running it locally is the gate.
+`mkdocs.base.yml` also sets `strict: true`, so a plain `build` fails the same way; the explicit
+flag is kept inside `build.sh` and in the commands above because it is what the docs everywhere
+tell people to run. `serve`, by contrast, validates nothing — `zensical serve --strict` is
+accepted and currently does nothing.
+
+Building only the English locale is the easy mistake here: the English build clears `site/`,
+and `site/ja` lives inside it, so afterwards the Japanese site does not exist at all — a
+`site/` you then serve or upload is English-only. `build.sh locale=en` says so on the way out;
+plain `build.sh` avoids it.
 
 Deployment is **manual**: `.github/workflows/pages.yml` triggers on `workflow_dispatch` alone.
-Running it builds both locales with those same `--strict` commands (so a publish aborts rather
-than deploying a dead link) and deploys via the GitHub Pages deployment API (OIDC) — no `gh-pages`
-branch and no `contents: write`. Merging to `main` does **not** auto-publish. The sibling player
-repos publish on `release: published` + `workflow_dispatch`; this portal cuts no releases, so
-dispatch is the whole story here.
+Running it calls `scripts/prepare.sh` and then `scripts/build.sh` — the same two scripts you
+run locally, deliberately, so that the locale order and the `--strict` flag are defined in one
+place rather than drifting between a workflow nothing PR-tests and a README nobody re-reads.
+The publish therefore aborts rather than deploying a dead link, and deploys via the GitHub
+Pages deployment API (OIDC) — no `gh-pages` branch and no `contents: write`. Merging to `main`
+does **not** auto-publish. The sibling player repos publish on `release: published` +
+`workflow_dispatch`; this portal cuts no releases, so dispatch is the whole story here.
+
+Consequence: `scripts/*.sh` are now production tooling. Keep them executable (git records
+mode `100755`), and keep `build.sh` runnable with no arguments — that bare invocation is what
+publishes the site.
 
 ## Architecture & conventions
 
