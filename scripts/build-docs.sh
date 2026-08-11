@@ -2,8 +2,8 @@
 #
 # Build the documentation site -- one run per locale, in the order that works.
 #
-#   scripts/build.sh                   # English then Japanese, both strict
-#   scripts/build.sh locale=ja         # Japanese only, into site/ja
+#   scripts/build-docs.sh              # English then Japanese, both strict
+#   scripts/build-docs.sh locale=ja    # Japanese only, into site/ja
 #
 # Two things this script exists to get right:
 #
@@ -45,7 +45,7 @@ usage () {
   echo "locale=en on its own DELETES site/ja: the English build clears site/, and the"
   echo "Japanese site lives inside it. Use locale=all before serving or publishing."
   echo ""
-  echo "Set the venv up first with scripts/prepare.sh."
+  echo "Set the venv up first with scripts/prepare-docs.sh."
 }
 
 while [ $# -gt 0 ]; do
@@ -89,8 +89,8 @@ echo "  venv   => $VENV"
 echo ""
 
 # --- preflight ------------------------------------------------------------
-# Same probe as prepare.sh: bin/ everywhere, Scripts/ for a venv built by the
-# Windows launcher.
+# Same probe as prepare-docs.sh: bin/ everywhere, Scripts/ for a venv built by
+# the Windows launcher.
 VENV_DIR="$ROOT_DIR/$VENV"
 if [ -d "$VENV_DIR/Scripts" ]; then
   VENV_BIN="$VENV_DIR/Scripts"
@@ -115,7 +115,7 @@ fi
 
 if [ -z "$ZENSICAL" ]; then
   echo "$APP: zensical not found in $VENV or on PATH" >&2
-  echo "$APP: run 'scripts/prepare.sh' first" >&2
+  echo "$APP: run 'scripts/prepare-docs.sh' first" >&2
   exit 1
 fi
 

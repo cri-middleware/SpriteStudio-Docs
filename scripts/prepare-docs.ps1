@@ -1,10 +1,10 @@
 #!/usr/bin/env pwsh
 #
 # Create the local virtualenv and install the pinned documentation toolchain.
-# PowerShell twin of prepare.sh.
+# PowerShell twin of prepare-docs.sh.
 #
-#   scripts/prepare.ps1                # .venv + docs/requirements.txt
-#   scripts/prepare.ps1 force=yes      # discard the venv and build it again
+#   scripts/prepare-docs.ps1           # .venv + docs/requirements.txt
+#   scripts/prepare-docs.ps1 force=yes # discard the venv and build it again
 #
 # This is the whole setup step. The portal has no Node, no submodule and no
 # native toolchain -- one Python environment builds the entire site -- so unlike
@@ -16,16 +16,16 @@
 # this script after a pin changes -- pip installs the pinned version over
 # whatever the venv already has.
 #
-# Then: scripts/build.ps1, which runs zensical out of the venv this created.
+# Then: scripts/build-docs.ps1, which runs zensical out of the venv this created.
 $ErrorActionPreference = "Stop"
 
 $APP = Split-Path -Leaf $PSCommandPath
 $ROOT_DIR = Split-Path -Parent (Split-Path -Parent $PSCommandPath)
 $REQUIREMENTS = "docs/requirements.txt"
 
-# Plain stderr + an exit code, rather than Write-Error's stack trace: prepare.sh
-# answers the same mistakes the same way (2 = bad usage, 1 = the environment is
-# not ready).
+# Plain stderr + an exit code, rather than Write-Error's stack trace:
+# prepare-docs.sh answers the same mistakes the same way (2 = bad usage, 1 = the
+# environment is not ready).
 function Fail {
     param([string] $Message, [int] $Code = 1)
     [Console]::Error.WriteLine("${APP}: $Message")
@@ -34,7 +34,7 @@ function Fail {
 
 # --- options --------------------------------------------------------------
 # `py` is the Windows launcher and the reason this default differs from
-# prepare.sh's python3: it is what a stock python.org install puts on PATH.
+# prepare-docs.sh's python3: it is what a stock python.org install puts on PATH.
 $opts = [ordered]@{
     python = "py"
     venv   = ".venv"
@@ -54,7 +54,7 @@ function Show-Usage {
     Write-Host "Installs $REQUIREMENTS, whose pins are exact. Run it again whenever a pin"
     Write-Host "changes; force=yes is only for a venv that has gone wrong."
     Write-Host ""
-    Write-Host "Building the site is scripts/build.ps1, not this script."
+    Write-Host "Building the site is scripts/build-docs.ps1, not this script."
 }
 
 foreach ($item in $args) {
@@ -149,5 +149,5 @@ $serveHint = Join-Path (Join-Path $opts.venv (Split-Path -Leaf $VENV_BIN)) "zens
 
 Write-Host ""
 Write-Host "${APP}: done -> $($opts.venv)"
-Write-Host "${APP}: build both locales: scripts/build.ps1"
+Write-Host "${APP}: build both locales: scripts/build-docs.ps1"
 Write-Host "${APP}: preview one:        $serveHint serve  (add -f mkdocs.ja.yml for Japanese)"

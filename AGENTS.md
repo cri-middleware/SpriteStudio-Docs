@@ -17,13 +17,15 @@ into full player documentation; that content lives in the player's own repositor
 ## Commands
 
 ```bash
-scripts/prepare.sh                                  # .venv + the pinned toolchain
-scripts/build.sh                                    # English then Japanese, both strict
+scripts/prepare-docs.sh                             # .venv + the pinned toolchain
+scripts/build-docs.sh                               # English then Japanese, both strict
 ```
 
 `scripts/*.ps1` are the PowerShell twins, and both scripts take `key=value` options and
-`--help`, like the ones in the player repos: `prepare.sh python=py force=yes`,
-`build.sh locale=ja venv=.venv`. What they wrap is only this:
+`--help`, like the ones in the player repos: `prepare-docs.sh python=py force=yes`,
+`build-docs.sh locale=ja venv=.venv`. The `-docs` suffix is deliberate: the player repos
+carry same-named scripts for their own build steps, so the name says which one this is.
+What they wrap is only this:
 
 ```bash
 python3 -m venv .venv
@@ -42,21 +44,21 @@ and has nothing worth defaulting:
 .venv/bin/zensical serve -f mkdocs.ja.yml           # ... or of Japanese
 ```
 
-Always validate with **both** builds before finishing — `scripts/build.sh` with no arguments
-does exactly that. **This is the only validation there is** — nothing builds the docs on a pull
-request, so a broken internal link is not caught for you. Running it locally is the gate.
-`mkdocs.base.yml` also sets `strict: true`, so a plain `build` fails the same way; the explicit
-flag is kept inside `build.sh` and in the commands above because it is what the docs everywhere
-tell people to run. `serve`, by contrast, validates nothing — `zensical serve --strict` is
+Always validate with **both** builds before finishing — `scripts/build-docs.sh` with no
+arguments does exactly that. **This is the only validation there is** — nothing builds the docs
+on a pull request, so a broken internal link is not caught for you. Running it locally is the
+gate. `mkdocs.base.yml` also sets `strict: true`, so a plain `build` fails the same way; the
+explicit flag is kept inside `build-docs.sh` and in the commands above because it is what the
+docs everywhere tell people to run. `serve`, by contrast, validates nothing — `zensical serve --strict` is
 accepted and currently does nothing.
 
 Building only the English locale is the easy mistake here: the English build clears `site/`,
 and `site/ja` lives inside it, so afterwards the Japanese site does not exist at all — a
-`site/` you then serve or upload is English-only. `build.sh locale=en` says so on the way out;
-plain `build.sh` avoids it.
+`site/` you then serve or upload is English-only. `build-docs.sh locale=en` says so on the way
+out; plain `build-docs.sh` avoids it.
 
 Deployment is **manual**: `.github/workflows/pages.yml` triggers on `workflow_dispatch` alone.
-Running it calls `scripts/prepare.sh` and then `scripts/build.sh` — the same two scripts you
+Running it calls `scripts/prepare-docs.sh` and then `scripts/build-docs.sh` — the same two scripts you
 run locally, deliberately, so that the locale order and the `--strict` flag are defined in one
 place rather than drifting between a workflow nothing PR-tests and a README nobody re-reads.
 The publish therefore aborts rather than deploying a dead link, and deploys via the GitHub
@@ -65,8 +67,8 @@ does **not** auto-publish. The sibling player repos publish on `release: publish
 `workflow_dispatch`; this portal cuts no releases, so dispatch is the whole story here.
 
 Consequence: `scripts/*.sh` are now production tooling. Keep them executable (git records
-mode `100755`), and keep `build.sh` runnable with no arguments — that bare invocation is what
-publishes the site.
+mode `100755`), and keep `build-docs.sh` runnable with no arguments — that bare invocation is
+what publishes the site.
 
 ## Architecture & conventions
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env pwsh
 #
 # Build the documentation site -- one run per locale, in the order that works.
-# PowerShell twin of build.sh.
+# PowerShell twin of build-docs.sh.
 #
-#   scripts/build.ps1                  # English then Japanese, both strict
-#   scripts/build.ps1 locale=ja        # Japanese only, into site/ja
+#   scripts/build-docs.ps1             # English then Japanese, both strict
+#   scripts/build-docs.ps1 locale=ja   # Japanese only, into site/ja
 #
 # Two things this script exists to get right:
 #
@@ -54,7 +54,7 @@ function Show-Usage {
     Write-Host "locale=en on its own DELETES site/ja: the English build clears site/, and the"
     Write-Host "Japanese site lives inside it. Use locale=all before serving or publishing."
     Write-Host ""
-    Write-Host "Set the venv up first with scripts/prepare.ps1."
+    Write-Host "Set the venv up first with scripts/prepare-docs.ps1."
 }
 
 foreach ($item in $args) {
@@ -86,7 +86,7 @@ Write-Host "  venv   => $($opts.venv)"
 Write-Host ""
 
 # --- preflight ------------------------------------------------------------
-# Same probe as prepare.ps1: Scripts/ on Windows, bin/ everywhere else.
+# Same probe as prepare-docs.ps1: Scripts/ on Windows, bin/ everywhere else.
 $VENV_DIR = Join-Path $ROOT_DIR $opts.venv
 $VENV_BIN = if (Test-Path (Join-Path $VENV_DIR "Scripts")) {
     Join-Path $VENV_DIR "Scripts"
@@ -114,7 +114,7 @@ if (-not $ZENSICAL) {
 
 if (-not $ZENSICAL) {
     [Console]::Error.WriteLine("${APP}: zensical not found in $($opts.venv) or on PATH")
-    Fail "run 'scripts/prepare.ps1' first"
+    Fail "run 'scripts/prepare-docs.ps1' first"
 }
 
 function Invoke-Checked {

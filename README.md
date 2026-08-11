@@ -67,26 +67,26 @@ build clears `site/` on its way in — which leaves no Japanese site at all, not
 Two scripts take care of the setup and that order:
 
 ```bash
-scripts/prepare.sh          # create .venv and install docs/requirements.txt
-scripts/build.sh            # English, then Japanese, both --strict
+scripts/prepare-docs.sh     # create .venv and install docs/requirements.txt
+scripts/build-docs.sh       # English, then Japanese, both --strict
 ```
 
 ```powershell
-scripts\prepare.ps1         # the PowerShell twins; same options, same output
-scripts\build.ps1
+scripts\prepare-docs.ps1    # the PowerShell twins; same options, same output
+scripts\build-docs.ps1
 ```
 
 Both take `key=value` options and `--help`, like the scripts in the player repositories:
 
 | | |
 |---|---|
-| `prepare.sh python=<exe>` | interpreter to build the venv with (`python3`; `py` for the `.ps1`) |
-| `prepare.sh venv=<dir>` | where the virtualenv goes (`.venv`) |
-| `prepare.sh force=yes` | delete the venv and recreate it, for one that has gone wrong |
-| `build.sh locale=<all\|en\|ja>` | which locale to build (`all` — the order above) |
-| `build.sh venv=<dir>` | virtualenv to run `zensical` from; falls back to `PATH` |
+| `prepare-docs.sh python=<exe>` | interpreter to build the venv with (`python3`; `py` for the `.ps1`) |
+| `prepare-docs.sh venv=<dir>` | where the virtualenv goes (`.venv`) |
+| `prepare-docs.sh force=yes` | delete the venv and recreate it, for one that has gone wrong |
+| `build-docs.sh locale=<all\|en\|ja>` | which locale to build (`all` — the order above) |
+| `build-docs.sh venv=<dir>` | virtualenv to run `zensical` from; falls back to `PATH` |
 
-`build.sh locale=en` on its own is the one to watch: it removes `site/ja`, and says so.
+`build-docs.sh locale=en` on its own is the one to watch: it removes `site/ja`, and says so.
 
 ### Running the tools directly
 
@@ -122,8 +122,8 @@ py -m venv .venv
 .\.venv\Scripts\zensical serve -f mkdocs.ja.yml # preview Japanese (stop the other one first)
 ```
 
-`zensical serve --strict` is accepted but currently does nothing, so run `scripts/build.sh`
-before you push.
+`zensical serve --strict` is accepted but currently does nothing, so run
+`scripts/build-docs.sh` before you push.
 
 ### Previewing the language selector
 
@@ -131,7 +131,7 @@ before you push.
 selector 404s. Build both locales instead and serve the result:
 
 ```bash
-scripts/build.sh
+scripts/build-docs.sh
 
 python3 -m http.server 8000 -d site
 ```

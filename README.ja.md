@@ -66,13 +66,13 @@ mkdocs.ja.yml                 # 日本語 -> site/ja/
 のではなく消えてしまいます。セットアップとこの順序は、2 つのスクリプトが受け持ちます。
 
 ```bash
-scripts/prepare.sh          # .venv を作成し docs/requirements.txt を導入
-scripts/build.sh            # 英語 → 日本語の順に、いずれも --strict でビルド
+scripts/prepare-docs.sh     # .venv を作成し docs/requirements.txt を導入
+scripts/build-docs.sh       # 英語 → 日本語の順に、いずれも --strict でビルド
 ```
 
 ```powershell
-scripts\prepare.ps1         # PowerShell 版。オプションも出力も同じです
-scripts\build.ps1
+scripts\prepare-docs.ps1    # PowerShell 版。オプションも出力も同じです
+scripts\build-docs.ps1
 ```
 
 いずれも Player 各リポジトリのスクリプトと同様に `key=value` 形式のオプションと `--help` を
@@ -80,13 +80,13 @@ scripts\build.ps1
 
 | | |
 |---|---|
-| `prepare.sh python=<exe>` | venv の作成に使うインタープリター（既定は `python3`。`.ps1` は `py`） |
-| `prepare.sh venv=<dir>` | venv の作成先（既定は `.venv`） |
-| `prepare.sh force=yes` | 既存の venv を削除して作り直す（壊れた場合用） |
-| `build.sh locale=<all\|en\|ja>` | ビルドするロケール（既定は `all`＝上記の順序） |
-| `build.sh venv=<dir>` | `zensical` を実行する venv。無ければ `PATH` 上のものを使用 |
+| `prepare-docs.sh python=<exe>` | venv の作成に使うインタープリター（既定は `python3`。`.ps1` は `py`） |
+| `prepare-docs.sh venv=<dir>` | venv の作成先（既定は `.venv`） |
+| `prepare-docs.sh force=yes` | 既存の venv を削除して作り直す（壊れた場合用） |
+| `build-docs.sh locale=<all\|en\|ja>` | ビルドするロケール（既定は `all`＝上記の順序） |
+| `build-docs.sh venv=<dir>` | `zensical` を実行する venv。無ければ `PATH` 上のものを使用 |
 
-注意が必要なのは `build.sh locale=en` を単独で実行した場合です。`site/ja` が消えるため、
+注意が必要なのは `build-docs.sh locale=en` を単独で実行した場合です。`site/ja` が消えるため、
 スクリプトはその旨を警告します。
 
 ### スクリプトを使わない場合
@@ -124,7 +124,7 @@ py -m venv .venv
 ```
 
 `zensical serve --strict` は受け付けられますが現状何もしません。push する前に
-`scripts/build.sh` を実行してください。
+`scripts/build-docs.sh` を実行してください。
 
 ### 言語切り替えのプレビュー
 
@@ -132,7 +132,7 @@ py -m venv .venv
 なります。両ロケールをビルドして、その出力を配信してください。
 
 ```bash
-scripts/build.sh
+scripts/build-docs.sh
 
 python3 -m http.server 8000 -d site
 ```
