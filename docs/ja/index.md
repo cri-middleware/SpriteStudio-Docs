@@ -78,6 +78,17 @@
     ドキュメント（準備中） |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
 
+-   :simple-react: __React Native__
+
+    ---
+
+    React Native アプリで SpriteStudio 7 アニメーションを再生します。`<SpriteStudioView>`
+    コンポーネントを配置するだけで、描画は Skia 経由でネイティブ側が担当します。**開発中**。
+
+    [:octicons-arrow-right-24: 概要](./players/react-native.md) |
+    ドキュメント（準備中） |
+    [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
+
 -   :material-file-swap: __コンバーター GUI__
 
     ---

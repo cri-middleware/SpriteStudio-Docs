@@ -78,6 +78,17 @@ hosted converter, no install.
     Docs (coming soon) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
 
+-   :simple-react: __React Native__
+
+    ---
+
+    Play SpriteStudio 7 animations in React Native apps through a `<SpriteStudioView>`
+    component, drawn natively via Skia. **In development.**
+
+    [:octicons-arrow-right-24: Overview](./players/react-native.md) |
+    Docs (coming soon) |
+    [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
+
 -   :material-file-swap: __Converter GUI__
 
     ---

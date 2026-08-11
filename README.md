@@ -37,6 +37,9 @@ docs/
     support.md
     license.md
   requirements.txt
+scripts/
+  prepare.{sh,ps1}            # create the venv, install the pinned toolchain
+  build.{sh,ps1}              # build both locales, strict, in the right order
 mkdocs.base.yml               # everything shared by both locales
 mkdocs.yml                    # English  -> site/
 mkdocs.ja.yml                 # Japanese -> site/ja/
@@ -60,36 +63,67 @@ link — no flag required, though `--strict` is spelled out everywhere as a remi
 alone — so running the build locally is the only gate.
 
 Build the English site first: the Japanese one is written into `site/ja`, and the English
-build clears `site/` on its way in.
+build clears `site/` on its way in — which leaves no Japanese site at all, not a stale one.
+Two scripts take care of the setup and that order:
 
-### macOS / Linux (bash)
+```bash
+scripts/prepare.sh          # create .venv and install docs/requirements.txt
+scripts/build.sh            # English, then Japanese, both --strict
+```
+
+```powershell
+scripts\prepare.ps1         # the PowerShell twins; same options, same output
+scripts\build.ps1
+```
+
+Both take `key=value` options and `--help`, like the scripts in the player repositories:
+
+| | |
+|---|---|
+| `prepare.sh python=<exe>` | interpreter to build the venv with (`python3`; `py` for the `.ps1`) |
+| `prepare.sh venv=<dir>` | where the virtualenv goes (`.venv`) |
+| `prepare.sh force=yes` | delete the venv and recreate it, for one that has gone wrong |
+| `build.sh locale=<all\|en\|ja>` | which locale to build (`all` — the order above) |
+| `build.sh venv=<dir>` | virtualenv to run `zensical` from; falls back to `PATH` |
+
+`build.sh locale=en` on its own is the one to watch: it removes `site/ja`, and says so.
+
+### Running the tools directly
+
+Nothing is hidden behind the scripts — this is all they run:
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r docs/requirements.txt
 
-.venv/bin/zensical serve                        # preview English at http://127.0.0.1:8000
-.venv/bin/zensical serve -f mkdocs.ja.yml       # preview Japanese (stop the other one first)
-
 .venv/bin/zensical build --strict               # the only gate; nothing checks a PR
 .venv/bin/zensical build -f mkdocs.ja.yml --strict
 ```
-
-### Windows (PowerShell)
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r docs/requirements.txt
 
-.\.venv\Scripts\zensical serve                  # preview English at http://127.0.0.1:8000
-.\.venv\Scripts\zensical serve -f mkdocs.ja.yml # preview Japanese (stop the other one first)
-
 .\.venv\Scripts\zensical build --strict         # the only gate; nothing checks a PR
 .\.venv\Scripts\zensical build -f mkdocs.ja.yml --strict
 ```
 
-Note that `serve` does **not** validate links — `zensical serve --strict` is accepted but
-currently does nothing. Run `build` before you push.
+### Previewing while you write
+
+`serve` has no script, because it validates nothing and serves one locale at a time:
+
+```bash
+.venv/bin/zensical serve                        # preview English at http://127.0.0.1:8000
+.venv/bin/zensical serve -f mkdocs.ja.yml       # preview Japanese (stop the other one first)
+```
+
+```powershell
+.\.venv\Scripts\zensical serve                  # preview English at http://127.0.0.1:8000
+.\.venv\Scripts\zensical serve -f mkdocs.ja.yml # preview Japanese (stop the other one first)
+```
+
+`zensical serve --strict` is accepted but currently does nothing, so run `scripts/build.sh`
+before you push.
 
 ### Previewing the language selector
 
@@ -97,8 +131,7 @@ currently does nothing. Run `build` before you push.
 selector 404s. Build both locales instead and serve the result:
 
 ```bash
-.venv/bin/zensical build --strict
-.venv/bin/zensical build -f mkdocs.ja.yml --strict
+scripts/build.sh
 
 python3 -m http.server 8000 -d site
 ```

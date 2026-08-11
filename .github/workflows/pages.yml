@@ -32,7 +32,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: 3.x
           cache: pip
@@ -40,31 +40,43 @@ jobs:
 
       - run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
 
-      - uses: actions/cache@v5
+      - uses: actions/cache@v6
         with:
           key: zensical-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             zensical-
 
+      # Both steps below run the same scripts a contributor runs locally, rather
+      # than repeating the commands here. There is no PR build to catch a
+      # divergence between the two, so the fewer places the build is spelled out,
+      # the better: scripts/build.sh owns the locale order and the --strict flag,
+      # and this workflow just calls it.
+      #
+      # prepare.sh creates .venv and installs the pins from docs/requirements.txt;
+      # build.sh then finds zensical there. (It falls back to PATH when there is
+      # no venv, so a `pip install -r docs/requirements.txt` step would still
+      # work here — but then CI and the README would be running different things.)
       - name: Install dependencies
-        run: pip install -r docs/requirements.txt
+        run: ./scripts/prepare.sh
 
       # One build per locale — there is no plugin producing both from a single
-      # run any more. --strict fails on broken links / missing nav entries, so a
-      # publish aborts rather than deploying a site with a dead link.
+      # run any more — English first, because the English build wipes site/ and
+      # the Japanese site lives inside it at site/ja. build.sh does them in that
+      # order; the reason it exists is that the opposite order silently publishes
+      # a site with no Japanese pages at all.
       #
-      # Order matters: the ja build writes into site/ja, and the English build
-      # wipes site/ on the way in. Swapping these two steps silently publishes a
-      # site with no Japanese pages at all.
-      - name: Build docs, English (strict validation)
-        run: zensical build --strict
+      # --strict fails on broken links / missing nav entries, so a publish aborts
+      # rather than deploying a site with a dead link.
+      - name: Build docs, both locales (strict validation)
+        run: ./scripts/build.sh
 
-      - name: Build docs, Japanese (strict validation)
-        run: zensical build -f mkdocs.ja.yml --strict
-
+      # v4 stopped including dotfiles in the artifact. Nothing here is affected —
+      # a Zensical build emits no hidden files (no .nojekyll either; the artifact
+      # deployment does not run Jekyll) — but if one ever appears, the fix is
+      # `include-hidden-files: true`, not a downgrade.
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
@@ -77,4 +89,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
