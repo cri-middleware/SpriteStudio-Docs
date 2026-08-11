@@ -32,7 +32,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: 3.x
           cache: pip
@@ -40,7 +40,7 @@ jobs:
 
       - run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
 
-      - uses: actions/cache@v5
+      - uses: actions/cache@v6
         with:
           key: zensical-${{ env.cache_id }}
           path: .cache
@@ -71,8 +71,12 @@ jobs:
       - name: Build docs, both locales (strict validation)
         run: ./scripts/build.sh
 
+      # v4 stopped including dotfiles in the artifact. Nothing here is affected —
+      # a Zensical build emits no hidden files (no .nojekyll either; the artifact
+      # deployment does not run Jekyll) — but if one ever appears, the fix is
+      # `include-hidden-files: true`, not a downgrade.
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
@@ -85,4 +89,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
