@@ -7,12 +7,18 @@ column links to its full details.
 |---|---|---|
 | A Unity game | **[SSPlayerForUnity](../players/unity.md)** | Docs (coming soon) |
 | The **browser** - PixiJS, WebGL | **[SSPlayerForWeb](../players/web.md)** (player collection) | Docs (coming soon) |
-| **RPG Maker MZ** - 🧪 experimental (alpha) | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-rmmz`) | Docs (coming soon) |
-| A **TyranoScript / TyranoBuilder** visual novel - beta | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`) | Docs (coming soon) |
+| **RPG Maker MZ** | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-rmmz`) | Docs (coming soon) |
+| A **TyranoScript / TyranoBuilder** visual novel | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`) | Docs (coming soon) |
 | A Godot game | **[SSPlayerForGodot](../players/godot.md)** | Docs (coming soon) |
 | A **Flutter** app | **[SSPlayerForFlutter](../players/flutter.md)** | Docs (coming soon) |
 | A Ren'Py visual novel | **[SSPlayerForRenPy](../players/renpy.md)** | Docs (coming soon) |
+| A **Rust / wgpu** application - 🚧 in development | **[SSPlayerForWgpu](../players/wgpu.md)** | Docs (coming soon) |
+| A **React Native** app - 🚧 in development | **[SSPlayerForReactNative](../players/react-native.md)** | Docs (coming soon) |
 | Building your own player / integration | **SpriteStudio-SDK** | [Porting a Player](../sdk/porting.md) |
+
+Where a player's integrations are at different stages of maturity, the stage is stated in
+[Feature Support](./feature-support.md) and on that player's own page - it is deliberately not
+repeated here. 🚧 marks a player that has not shipped yet.
 
 Only converting `.sspj`? Pick a standalone tool rather than a player.
 
