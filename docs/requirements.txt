@@ -11,4 +11,4 @@
 #
 # The configs are deliberately still valid MkDocs configs, so installing `mkdocs-material`
 # instead builds the same site if you need to compare the two engines.
-zensical==0.0.53
+zensical==0.0.54
