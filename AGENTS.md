@@ -19,13 +19,14 @@ into full player documentation; that content lives in the player's own repositor
 ```bash
 scripts/prepare-docs.sh                             # .venv + the pinned toolchain
 scripts/build-docs.sh                               # English then Japanese, both strict
+scripts/build-pages.sh serve=yes                    # ... the published tree, on :8000
 ```
 
-`scripts/*.ps1` are the PowerShell twins, and both scripts take `key=value` options and
-`--help`, like the ones in the player repos: `prepare-docs.sh python=py force=yes`,
-`build-docs.sh locale=ja venv=.venv`. The `-docs` suffix is deliberate: the player repos
-carry same-named scripts for their own build steps, so the name says which one this is.
-What they wrap is only this:
+`scripts/*.ps1` are the PowerShell twins, and every one of these scripts takes `key=value`
+options and `--help`, like the ones in the player repos: `prepare-docs.sh python=py
+force=yes`, `build-docs.sh locale=ja venv=.venv`. The `-docs` suffix is deliberate: the
+player repos carry same-named scripts for their own build steps, so the name says which one
+this is. What the first two wrap is only this:
 
 ```bash
 python3 -m venv .venv
@@ -44,6 +45,13 @@ and has nothing worth defaulting:
 .venv/bin/zensical serve -f mkdocs.ja.yml           # ... or of Japanese
 ```
 
+`scripts/build-pages.sh` is the third script and the published site: the two above, run for
+you, then a static server over `site/`. That server is the point of it, and the one thing
+`zensical serve` cannot do — both locales at once, so the header language selector resolves
+and every link is the link a reader clicks. It builds nothing of its own; this portal's site
+is the docs and nothing else. The name is the family's: in the repos whose site carries a
+playable demo or an API reference, `build-pages` carries those too.
+
 Always validate with **both** builds before finishing — `scripts/build-docs.sh` with no
 arguments does exactly that. **This is the only validation there is** — nothing builds the docs
 on a pull request, so a broken internal link is not caught for you. Running it locally is the
@@ -58,17 +66,18 @@ and `site/ja` lives inside it, so afterwards the Japanese site does not exist at
 out; plain `build-docs.sh` avoids it.
 
 Deployment is **manual**: `.github/workflows/pages.yml` triggers on `workflow_dispatch` alone.
-Running it calls `scripts/prepare-docs.sh` and then `scripts/build-docs.sh` — the same two scripts you
-run locally, deliberately, so that the locale order and the `--strict` flag are defined in one
-place rather than drifting between a workflow nothing PR-tests and a README nobody re-reads.
+Running it calls `scripts/prepare-docs.sh` and then `scripts/build-pages.sh prepare=no serve=no`
+— the same scripts you run locally, deliberately, so that the locale order and the `--strict`
+flag are defined in one place rather than drifting between a workflow nothing PR-tests and a
+README nobody re-reads.
 The publish therefore aborts rather than deploying a dead link, and deploys via the GitHub
 Pages deployment API (OIDC) — no `gh-pages` branch and no `contents: write`. Merging to `main`
 does **not** auto-publish. The sibling player repos publish on `release: published` +
 `workflow_dispatch`; this portal cuts no releases, so dispatch is the whole story here.
 
 Consequence: `scripts/*.sh` are now production tooling. Keep them executable (git records
-mode `100755`), and keep `build-docs.sh` runnable with no arguments — that bare invocation is
-what publishes the site.
+mode `100755`), and keep `build-pages.sh` — with the `build-docs.sh` it calls — working with
+no options beyond the two the workflow passes: that invocation is what publishes the site.
 
 ## Architecture & conventions
 
