@@ -24,6 +24,11 @@ CLI alternatives), see [Converting with a Standalone Tool](./convert-with-a-stan
 | RPG Maker MZ demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-rmmz`) | A sample MZ project with SS animations in correct Z-order. |
 | TyranoScript demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-tyranoscript`) | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
 | Ren'Py demo (coming soon) | **[SSPlayerForRenPy](../players/renpy.md)** | Bundled SpriteStudio animations running in Ren'Py Web. |
+| [Flutter demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) | **[SSPlayerForFlutter](../players/flutter.md)** (`ssplayer_flutter`) | The `SpriteStudioView` widget in a Flutter web build - every draw kind, over the same `libssruntime` wasm. |
+| [Flame demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SSPlayerForFlutter](../players/flutter.md)** (`ssplayer_flame`) | The same playback as a `SpriteStudioComponent`, driven by a Flame game loop. |
+
+Both Flutter demos run on that player's Web target, which its own documentation calls a
+developer preview.
 
 **Want to preview your own animation?** The demos take `.ssab` + `.png`, so convert your `.sspj`
 first - with the browser converter above, or any of the

@@ -24,6 +24,11 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 | RPG ツクール MZ デモ（準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-rmmz`） | SS アニメを正しい Z 順で表示するサンプル MZ プロジェクト。 |
 | TyranoScript デモ（準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-tyranoscript`） | TyranoScript のノベルゲームで、`[ss_*]` タグから SpriteStudio アニメを再生。 |
 | Ren'Py デモ（準備中） | **[SSPlayerForRenPy](../players/renpy.md)** | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |
+| [Flutter デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) | **[SSPlayerForFlutter](../players/flutter.md)**（`ssplayer_flutter`） | Flutter の Web ビルドで動く `SpriteStudioView` ウィジェット。同じ `libssruntime` の wasm 上で全描画種別を再生。 |
+| [Flame デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SSPlayerForFlutter](../players/flutter.md)**（`ssplayer_flame`） | 同じ再生を `SpriteStudioComponent` として Flame のゲームループから駆動。 |
+
+Flutter の 2 つのデモは同 Player の Web ターゲットで動作します。Web ターゲットは同 Player の
+ドキュメント上 developer preview の位置づけです。
 
 **自分のアニメをプレビューしたい場合**、デモが受け取るのは `.ssab`＋`.png` なので、先に `.sspj` を
 変換してください。上記のブラウザ版コンバーターでも、
