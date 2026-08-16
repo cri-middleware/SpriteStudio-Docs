@@ -4,6 +4,7 @@ Play SpriteStudio 7 animations in **Flutter** apps, backed by `libssruntime`. Th
 `SpriteStudioView` widget composites like any other widget, across Flutter's targets.
 
 - **Documentation:** _coming soon_
+- **Web demos:** [widget](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) · [Flame](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) - both in a browser, no install
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForFlutter>
 
 Alongside the player it ships:

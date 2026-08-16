@@ -4,6 +4,7 @@
 `SpriteStudioView` ウィジェットが Flutter の各ターゲットで通常のウィジェットと同様に合成されます。
 
 - **ドキュメント:** _準備中_
+- **Web デモ:** [ウィジェット版](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) ・ [Flame 版](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) - インストール不要でブラウザから試せます
 - **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForFlutter>
 
 Player 本体に加えて、次のものが提供されます。
