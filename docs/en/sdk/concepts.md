@@ -20,13 +20,11 @@ graph LR
     CONV(" libssconverter ")
     BIN[" .ssab / .ssqb "]
     RT(" libssruntime ")
-    INT(" libssinterpolate ")
     STATE[" Part States / Mesh<br/>+ DrawBatch plan "]
     REND[[" Your renderer "]]
 
     SS --> CLI --> CONV -. generate .-> BIN
     BIN --> RT
-    RT -.-> INT
     RT --> STATE --> REND
 
     classDef generated stroke-dasharray: 5 5;
@@ -58,7 +56,7 @@ Because every official player evaluates animations with `libssruntime`, this fea
   into the draw batch, so a player that binds textures per batch needs no special handling
 - Frame-accurate events - user data, signal, audio
 - Sub-frame interpolation (smooth playback above the base frame rate)
-- Whole-animation blending / crossfade
+- Whole-animation mixing / crossfade (animations stacked on tracks)
 - The **Override Layer API** - override a part's color, cell reference, or visibility at runtime
 
 !!! tip "Source of truth"
@@ -76,7 +74,6 @@ Because every official player evaluates animations with `libssruntime`, this fea
 |---|---|
 | [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/sspj) | Parses `.sspj` projects (`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`). |
 | [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab) | Reads/writes the `.ssab` / `.ssqb` binary (FlatBuffers). |
-| [`libssinterpolate`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssinterpolate) | Platform-agnostic interpolation math. |
 | [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssconverter) | Converts `.sspj` projects into `.ssab`. |
 | [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime) | The playback Brain; emits the `DrawBatch` plan. |
 | [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) | Command-line converter (Windows / macOS / Linux). |

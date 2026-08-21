@@ -189,9 +189,13 @@ no options beyond the two the workflow passes: that invocation is what publishes
   valid or not. The footer repo link and CONTRIBUTING.md route corrections instead. Do not
   reintroduce it without checking each repo's default branch.
 - **Pinned toolchain**: `docs/requirements.txt` pins `zensical` deliberately — bump
-  intentionally. The pins are **no longer kept in sync with the per-player repos**: this portal
-  is the first to move off MkDocs + Material for MkDocs (which its own authors put into
-  maintenance mode), and the players follow one at a time. Restore the sync rule once they have.
+  intentionally, and **in step with the sibling repos again**. This portal moved off MkDocs +
+  Material for MkDocs first (its own authors put it into maintenance mode) and the players
+  followed one at a time; as of 2026-08-21 every sibling that builds its docs with Python — the
+  SDK, Unity, Godot, Ren'Py, Flutter, SSConverterGUI — pins the same `zensical` version this
+  repo does, so a bump here is a bump everywhere. The exceptions have no
+  `docs/requirements.txt` to match: SSPlayerForWeb and SSPlayerForReactNative build their sites
+  with VitePress, and SSPlayerForWgpu has no docs site at all yet.
 - **The configs are still valid MkDocs configs, deliberately.** `pip install mkdocs-material`
   and `mkdocs build --strict -f mkdocs.yml` builds the same site, which is what makes the
   migration reversible and lets you diff the two engines when something looks off. Do not adopt
