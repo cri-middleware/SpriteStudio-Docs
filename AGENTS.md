@@ -135,11 +135,13 @@ no options beyond the two the workflow passes: that invocation is what publishes
   are GitHub Pages URLs (`cri-middleware.github.io/…`) that 404 until each is deployed, so those
   outbound links are neutralized to plain **"coming soon" / "準備中"** text (no hyperlink) in
   both locales. `github.com/cri-middleware/…` **repo** links stay live as forward-links. When a
-  site ships, restore its link in `en/` and `ja/` together. Where an address is already fixed by
-  the publishing repo — the `ssconverter-web` URLs come from `SSPlayerForWeb`'s
-  `scripts/build-ssconverter-pages.sh` — state it as an un-linked code span next to the
-  "coming soon" marker, so readers get the address without a hyperlink that 404s. Do not strip
-  those; they become the link when the site publishes.
+  site ships, restore its link in `en/` and `ja/` together. **One deliberate exception**: the
+  three `ssconverter-web` addresses in `overview/convert-with-a-standalone-tool.md` *are*
+  hyperlinked — link + 🚧 + the "coming soon" / "準備中" marker, which is the pattern the sibling
+  repo READMEs use for the same situation. Their address is already fixed by the publishing repo
+  (`SSPlayerForWeb`'s `scripts/build-ssconverter-pages.sh`), so it is worth handing readers a
+  clickable forward-link rather than an address they must copy. They still 404 today: leave them
+  linked anyway, and do not extend the hyperlink pattern to another "coming soon" without asking.
 - **Landing page cards** (`index.md`) use "grid cards" — they depend on the `attr_list` and
   `md_in_html` markdown extensions already configured in `mkdocs.base.yml`. Icon shortcodes like
   `:material-unity:` and `:simple-rust:` render to SVG. Note that the `pymdownx.emoji` block
