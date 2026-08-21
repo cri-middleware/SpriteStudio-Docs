@@ -11,6 +11,7 @@ the repository you use:
 | SSPlayerForGodot | [LICENSE](https://github.com/cri-middleware/SSPlayerForGodot/blob/HEAD/LICENSE.md) |
 | SSPlayerForFlutter | [LICENSE](https://github.com/cri-middleware/SSPlayerForFlutter/blob/HEAD/LICENSE.md) |
 | SSPlayerForRenPy | [LICENSE](https://github.com/cri-middleware/SSPlayerForRenPy/blob/HEAD/LICENSE.md) |
+| SSPlayerForReactNative | [LICENSE](https://github.com/cri-middleware/SSPlayerForReactNative/blob/HEAD/LICENSE.md) |
 | SSConverterGUI | [LICENSE](https://github.com/cri-middleware/SSConverterGUI/blob/HEAD/LICENSE.md) |
 
 !!! note

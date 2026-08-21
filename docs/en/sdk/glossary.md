@@ -48,15 +48,14 @@ These are the part types as SpriteStudio names them; in the `.ssab` schema each 
 | **`.ssqb`** | The converted sequence binary, the `.ssqe` counterpart of `.ssab`. |
 | **`libsspj`** | The authoring-side parser: reads `.sspj` projects and the `ss*e` files they reference. |
 | **`libssab`** | The `.ssab` / `.ssqb` library - creates and parses the animation binaries. |
-| **`libssinterpolate`** | The platform-agnostic math library for animation interpolation. |
 | **`libssconverter`** | The conversion half of the SDK: `.sspj` -> `.ssab` / `.ssqb`. The same code runs in every conversion front-end, so the output is identical whichever you use. |
 | **`libssruntime`** | The playback half: evaluates the timeline for the current frame and hands the result to your renderer. |
 | **Brain / Body** | The architectural split. The **Brain** (`libssruntime`) does all the animation math and is engine-agnostic; the **Body** (a player) draws what the Brain computed. See [SDK Concepts](./concepts.md). |
 | **`FrameData`** | The Brain's output for **one frame** - dense, ready to render, generated at runtime. The data-exchange interface between the runtime and your renderer. |
 | **`PartState`** | One part's resolved state inside a `FrameData`: position, rotation, alpha, mesh vertices, and the rest. |
 | **`DrawBatch`** | The cross-engine drawing plan the runtime emits - what to draw, in what order, with which blend and mask state. Every player consumes the same plan, which is what keeps them visually consistent. |
-| **Override Layer API** | The runtime API for overriding a part's **color, cell reference, or visibility** at playback time. The override wins over both keyframes and blending. |
-| **Animation blending / crossfade** | Playing several animations at once with weights, or fading between them. Constrained to one `.ssab` - see [Shared Limitations](./limitations.md). |
+| **Override Layer API** | The runtime API for overriding a part's **color, cell reference, or visibility** at playback time. The override wins over both keyframes and mixing. |
+| **Animation mixing / crossfade** | Stacking several animations on tracks and mixing them by weight, or fading between them. Constrained to one `.ssab` - see [Shared Limitations](./limitations.md). |
 | **Sub-frame interpolation** | Evaluating between whole frames, so playback stays smooth above the animation's authored frame rate (and in slow motion). |
 | **Name hash** | Every named entity in `.ssab` carries a 32-bit FNV-1a hash of its name, so the runtime looks names up without string comparison. |
 | **Embedded mode** | An optional conversion mode that additionally packs the referenced **binary assets** - images, sounds - into the `.ssab`. (The `ss*e` data the pack references is embedded either way; see [Format Specification](./format-spec.md).) Comes with caveats - see [Shared Limitations](./limitations.md). |

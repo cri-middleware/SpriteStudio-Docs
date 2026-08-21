@@ -20,13 +20,11 @@ graph LR
     CONV(" libssconverter ")
     BIN[" .ssab / .ssqb "]
     RT(" libssruntime ")
-    INT(" libssinterpolate ")
     STATE[" Part State / メッシュ<br/>+ DrawBatch プラン "]
     REND[[" 各エンジンの描画 "]]
 
     SS --> CLI --> CONV -. 生成 .-> BIN
     BIN --> RT
-    RT -.-> INT
     RT --> STATE --> REND
 
     classDef generated stroke-dasharray: 5 5;
@@ -59,7 +57,7 @@ graph LR
   バインドする Player では個別の対応は不要です
 - フレーム精度のイベント - ユーザーデータ、シグナル、オーディオ
 - サブフレーム補間（基準フレームレートを超える滑らかな再生）
-- アニメーション全体のブレンド／クロスフェード
+- アニメーション全体のミキシング／クロスフェード（トラックに積んで合成）
 - **Override Layer API** - 再生時にパーツのカラー・セル参照・表示状態を上書き
 
 !!! tip "情報源"
@@ -76,7 +74,6 @@ graph LR
 |---|---|
 | [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/sspj) | `.sspj` プロジェクト（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）の解析。 |
 | [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab) | `.ssab` / `.ssqb` バイナリの読み書き（FlatBuffers）。 |
-| [`libssinterpolate`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssinterpolate) | プラットフォーム非依存の補間演算。 |
 | [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssconverter) | `.sspj` を `.ssab` へ変換。 |
 | [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime) | 再生の Brain。`DrawBatch` プランを出力。 |
 | [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) | コマンドライン変換ツール（Windows / macOS / Linux）。 |

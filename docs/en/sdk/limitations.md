@@ -36,18 +36,21 @@ Sound events fire only while the animation advances **forward** in time. When th
 direction is backward - reverse direction, the return leg of ping-pong, or a negative speed -
 audio events are skipped. Reverse audio is not something the common audio backends provide.
 
-### Animation blending is single-`.ssab` only
+### Animation mixing is single-`.ssab` only
 
-Weighted blending / crossfade between animations has two hard constraints:
+Animations are stacked on **tracks** - track 0 first, each further track mixed in on top of it.
+Stacking has two hard constraints:
 
-- **Same `.ssab`.** Blending across resources is not supported.
-- **Same cell per part.** Every blended animation must assign the *same* cell to the *same*
-  part; the cell metadata is taken from the primary source, so a mismatch produces size / pivot
+- **Same `.ssab`.** Mixing across resources is not supported.
+- **Same cell per part.** Every stacked animation must assign the *same* cell to the *same*
+  part; the cell metadata is taken from **track 0**, so a mismatch produces size / pivot
   errors that visibly break the pose. Animations inside one `.ssae` normally satisfy this.
 
-Two secondary behaviors are worth knowing: for parts that carry `parts_color`, the visible alpha
-comes from the **primary** source rather than the blended value; and by default only the primary
-source fires events (each source has an event threshold).
+Three secondary behaviors are worth knowing: for parts that carry `parts_color`, the visible
+alpha comes from **track 0** rather than the mixed value; by default only a track's
+fully-weighted animation fires events (each source has an event threshold, and track 0's
+animation always fires); and sources of different lengths run on independent clocks, so keeping
+them in step is the player's job.
 
 ### Sequence (`.ssqe` / `.ssqb`) playback is not implemented yet
 
