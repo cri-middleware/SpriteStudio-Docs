@@ -10,10 +10,9 @@ Play SpriteStudio 7 animations in **React Native** apps, on the New Architecture
 - **Documentation:** _coming soon_
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForReactNative>
 
-The decision that shapes it is **where a frame is drawn**: the native layer both bakes the
-geometry and issues the draw through
-[React Native Skia](https://shopify.github.io/react-native-skia/), so JavaScript's per-frame job
-is one call per player rather than a crossing per vertex.
+Once `<SpriteStudioView>` is in your tree, the native side takes over: both the geometry and the
+draw happen natively through [React Native Skia](https://shopify.github.io/react-native-skia/),
+so what JavaScript does each frame is one call per animation on screen.
 
 React Native has no editor to host an importer in, so converting `.sspj` to `.ssab` is a
 host-side step with the SDK's `ssconverter-cli` - see [Converting Assets](../overview/conversion.md).
