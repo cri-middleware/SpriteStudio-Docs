@@ -12,7 +12,7 @@ column links to its full details.
 | A Godot game | **[SSPlayerForGodot](../players/godot.md)** | Docs (coming soon) |
 | A **Flutter** app | **[SSPlayerForFlutter](../players/flutter.md)** | Docs (coming soon) |
 | A Ren'Py visual novel | **[SSPlayerForRenPy](../players/renpy.md)** | Docs (coming soon) |
-| A **Rust / wgpu** application | **[SSPlayerForWgpu](../players/wgpu.md)** | Docs (coming soon) |
+| A **Rust or C / C++** app that renders with wgpu | **[SSPlayerForWgpu](../players/wgpu.md)** | Docs (coming soon) |
 | A **React Native** app | **[SSPlayerForReactNative](../players/react-native.md)** | Docs (coming soon) |
 | Building your own player / integration | **SpriteStudio-SDK** | [Porting a Player](../sdk/porting.md) |
 

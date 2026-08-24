@@ -1,14 +1,17 @@
 # 🦀 SSPlayerForWgpu
 
-SpriteStudio 7 アニメーションを再生する **Rust** 向け Player です。[wgpu](https://wgpu.rs/) で
-描画するため、WebGPU・Vulkan・DX12・Metal・GL を単一のコードパスでカバーします。
+SpriteStudio 7 アニメーションを再生する、**Rust** 製で [wgpu](https://wgpu.rs/) 描画の
+Player です。wgpu が WebGPU・Vulkan・DX12・Metal の違いを吸収するため、同じ Player が
+どのバックエンドでも動きます。ホスト側は Rust とは限らず、C / C++ とブラウザにも同じ
+ライブラリから提供します。
 
 - **ドキュメント:** _準備中_
 - **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForWgpu>
 
 設計上の要は **借用モデル** です。Player は wgpu の `Device` / `Queue` / `Surface` を所有せず、
 ホスト側が所有してフレームごとに貸し出します。そのため、特定のエンジンに縛られることなく、
-自作レンダラーでも他のエンジンでも、任意の wgpu アプリケーションに同居できます。
+自作レンダラーでも、すでに自前のデバイスを持つゲームエンジンでも、wgpu を使う
+アプリケーションであれば同居できます。
 
 同じコアの上に、1 つのライブラリが 3 つの顔を持ちます。
 

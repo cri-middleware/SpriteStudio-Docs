@@ -1,15 +1,17 @@
 # 🦀 SSPlayerForWgpu
 
-A **Rust** player for SpriteStudio 7 animations, rendering through
-[wgpu](https://wgpu.rs/) - so one code path covers WebGPU, Vulkan, DX12, Metal, and GL.
+A player for SpriteStudio 7 animations, written in **Rust** and rendering through
+[wgpu](https://wgpu.rs/): wgpu puts WebGPU, Vulkan, DX12 and Metal behind one API, so the same
+player runs on any of them. The host does not have to be Rust - C, C++ and the browser are
+served from the same library.
 
 - **Documentation:** _coming soon_
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForWgpu>
 
 The decision that shapes it is the **borrow model**: the player does not own the wgpu
 `Device` / `Queue` / `Surface`. The host owns them and lends them per frame, so the player can
-ride along inside any wgpu application - your own renderer or another engine - without locking
-you into one.
+ride along inside any wgpu application - your own renderer, or a game engine that already has a
+device of its own - without locking you into one.
 
 One library carries three faces over that same core:
 
