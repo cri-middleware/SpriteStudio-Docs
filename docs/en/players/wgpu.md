@@ -3,10 +3,6 @@
 A **Rust** player for SpriteStudio 7 animations, rendering through
 [wgpu](https://wgpu.rs/) - so one code path covers WebGPU, Vulkan, DX12, Metal, and GL.
 
-!!! info "In development"
-    This player has not shipped yet. This page exists so the portal has an entry for it; the
-    details will be filled in as it lands.
-
 - **Documentation:** _coming soon_
 - **Repository:** <https://github.com/cri-middleware/SSPlayerForWgpu>
 
@@ -14,6 +10,17 @@ The decision that shapes it is the **borrow model**: the player does not own the
 `Device` / `Queue` / `Surface`. The host owns them and lends them per frame, so the player can
 ride along inside any wgpu application - your own renderer or another engine - without locking
 you into one.
+
+One library carries three faces over that same core:
+
+- **Rust** - `SSRenderer` / `SSScene` / `SSPlayer`, the API the other two wrap.
+- **C and C++** - a cdylib / staticlib plus a generated header, with Metal, DX12 and Vulkan
+  viewers as samples.
+- **WebGPU in the browser** - an npm package carrying the wasm, with a `<ss-player-webgpu>`
+  custom element over it.
+
+Nothing here hosts an importer, so converting `.sspj` to `.ssab` is a host-side step with one of
+the standalone tools - see [Converting Assets](../overview/conversion.md).
 
 See [Choose Your Platform](../overview/choose-your-platform.md) to compare players, or
 [SDK Concepts](../sdk/concepts.md) for the conversion/playback pipeline shared across all of them.

@@ -32,8 +32,10 @@ Each player's own docs (with screencasts) walk through its workflow - see
 
 ### 2. Standalone tools - convert it yourself
 
-On a different engine, in a CI/CD pipeline, or using [SSPlayerForWeb](../players/web.md)'s renderers
-(the Web collection)? No player converts for you there, so you convert with one of three standalone front-ends -
+On a different engine, in a CI/CD pipeline, or using one of the players that hosts no importer -
+[SSPlayerForWeb](../players/web.md)'s renderers (the Web collection),
+[SSPlayerForReactNative](../players/react-native.md), or [SSPlayerForWgpu](../players/wgpu.md)?
+No player converts for you there, so you convert with one of three standalone front-ends -
 a desktop GUI, a CLI, or a browser tool. Which one to pick and how to run each is covered in
 **[Converting with a Standalone Tool](./convert-with-a-standalone-tool.md)**.
 

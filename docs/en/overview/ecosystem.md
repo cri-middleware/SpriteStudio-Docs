@@ -46,6 +46,7 @@ either way, so **the generated asset is identical whichever route you take**. Se
 | **SSPlayerForUnity / ForGodot** | Bundle `libssconverter` as a conversion tool and run it on the engine-editor side, so import & playback need no external tool. |
 | **SSPlayerForRenPy** | Bundles `libssconverter` as a conversion tool and auto-imports on startup, so no external tool is needed. |
 | **SSPlayerForWeb / ForFlutter** | `libssruntime` bindings + rendering; conversion via the bundled standalone tools. SSPlayerForWeb's TyranoBuilder plugin is the exception - it converts inside the editor, so that route needs no separate tool. |
+| **SSPlayerForReactNative / ForWgpu** | `libssruntime` bindings + rendering, with no converter of their own: neither has an editor to host an importer in, so conversion is a host-side step with one of the standalone tools below. |
 | **SSConverterGUI / `ssconverter-cli` / `ssconverter-web`** | Standalone front-ends over `libssconverter` for converting without a player (desktop GUI, CLI/CI, browser). |
 
 Because conversion and playback live in the SDK, all players stay consistent in feature

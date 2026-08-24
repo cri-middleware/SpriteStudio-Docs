@@ -31,8 +31,10 @@
 
 ### 2. スタンドアロンツール - 自分で変換する
 
-別のエンジン、CI/CD パイプライン、または [SSPlayerForWeb](../players/web.md) のレンダラー
-（Web コレクション）を使う場合は、変換を代行してくれる Player がないため、3 つのスタンドアロンフロントエンド
+別のエンジン、CI/CD パイプライン、またはインポーターを持たない Player -
+[SSPlayerForWeb](../players/web.md) のレンダラー（Web コレクション）、
+[SSPlayerForReactNative](../players/react-native.md)、[SSPlayerForWgpu](../players/wgpu.md) -
+を使う場合は、変換を代行してくれる Player がないため、3 つのスタンドアロンフロントエンド
 （デスクトップ GUI・CLI・ブラウザ）のいずれかで変換します。どれを選び、どう使うかは
 **[スタンドアロンツールで変換する](./convert-with-a-standalone-tool.md)** で解説します。
 
