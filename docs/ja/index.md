@@ -67,12 +67,12 @@
     ドキュメント（準備中） |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
--   :simple-rust: __Rust（wgpu）__
+-   :simple-rust: __wgpu（Rust・C / C++）__
 
     ---
 
-    wgpu で描画する Rust 向け Player。WebGPU・Vulkan・DX12・Metal・GL を単一のコードパスで
-    カバーします。
+    wgpu で描画する Player。wgpu が WebGPU・Vulkan・DX12・Metal の違いを吸収するため、
+    同じ Player がどのバックエンドでも動きます。
 
     [:octicons-arrow-right-24: 概要](./players/wgpu.md) |
     ドキュメント（準備中） |
