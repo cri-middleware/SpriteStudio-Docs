@@ -33,8 +33,12 @@ Jumping the playhead directly (setting the frame) emits only the **destination f
 ### Audio never plays in reverse
 
 Sound events fire only while the animation advances **forward** in time. When the effective
-direction is backward - reverse direction, the return leg of ping-pong, or a negative speed -
-audio events are skipped. Reverse audio is not something the common audio backends provide.
+direction is backward - a reverse direction, or the return leg of ping-pong - audio events are
+skipped. Reverse audio is not something the common audio backends provide.
+
+A negative playback speed is **not** one of those cases: speed is a multiplier, and a negative
+one stops the playhead rather than turning it around. Reverse is the playback direction's job.
+A speed of `0` stops it too.
 
 ### Animation mixing is single-`.ssab` only
 
