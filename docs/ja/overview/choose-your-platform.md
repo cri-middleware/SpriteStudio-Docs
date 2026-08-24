@@ -12,12 +12,12 @@
 | Godot ゲーム | **[SSPlayerForGodot](../players/godot.md)** | ドキュメント（準備中） |
 | **Flutter** アプリ | **[SSPlayerForFlutter](../players/flutter.md)** | ドキュメント（準備中） |
 | Ren'Py ビジュアルノベル | **[SSPlayerForRenPy](../players/renpy.md)** | ドキュメント（準備中） |
-| **Rust / wgpu** アプリケーション - 🚧 開発中 | **[SSPlayerForWgpu](../players/wgpu.md)** | ドキュメント（準備中） |
-| **React Native** アプリ - 🚧 開発中 | **[SSPlayerForReactNative](../players/react-native.md)** | ドキュメント（準備中） |
+| **Rust / wgpu** アプリケーション | **[SSPlayerForWgpu](../players/wgpu.md)** | ドキュメント（準備中） |
+| **React Native** アプリ | **[SSPlayerForReactNative](../players/react-native.md)** | ドキュメント（準備中） |
 | 独自の Player ・組み込みを作りたい | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |
 
 Player ごとの統合の成熟度は [機能サポート状況](./feature-support.md) と各 Player のページに
-記載しており、この表では重複して書きません。🚧 はまだリリースされていない Player を表します。
+記載しており、この表では重複して書きません。
 
 `.sspj` の変換だけしたい場合は、Player ではなくスタンドアロンツールを選びます。
 

@@ -72,7 +72,7 @@ hosted converter, no install.
     ---
 
     A Rust player that renders through wgpu - WebGPU, Vulkan, DX12, Metal, GL - and rides along
-    inside any wgpu application. **In development.**
+    inside any wgpu application.
 
     [:octicons-arrow-right-24: Overview](./players/wgpu.md) |
     Docs (coming soon) |
@@ -83,7 +83,7 @@ hosted converter, no install.
     ---
 
     Play SpriteStudio 7 animations in React Native apps through a `<SpriteStudioView>`
-    component, drawn natively via Skia. **In development.**
+    component, drawn natively via Skia.
 
     [:octicons-arrow-right-24: Overview](./players/react-native.md) |
     Docs (coming soon) |

@@ -72,7 +72,7 @@
     ---
 
     wgpu で描画する Rust 向け Player。WebGPU・Vulkan・DX12・Metal・GL を単一のコードパスで
-    カバーします。**開発中**。
+    カバーします。
 
     [:octicons-arrow-right-24: 概要](./players/wgpu.md) |
     ドキュメント（準備中） |
@@ -83,7 +83,7 @@
     ---
 
     React Native アプリで SpriteStudio 7 アニメーションを再生します。`<SpriteStudioView>`
-    コンポーネントを配置するだけで、描画は Skia 経由でネイティブ側が担当します。**開発中**。
+    コンポーネントを配置するだけで、描画は Skia 経由でネイティブ側が担当します。
 
     [:octicons-arrow-right-24: 概要](./players/react-native.md) |
     ドキュメント（準備中） |

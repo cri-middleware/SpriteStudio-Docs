@@ -46,6 +46,7 @@ graph LR
 | **SSPlayerForUnity / ForGodot** | 変換ツールとして `libssconverter` をバンドルし、エンジンエディタ側で実行するため、インポートも再生も外部ツール不要です。 |
 | **SSPlayerForRenPy** | 変換ツールとして `libssconverter` をバンドルし、起動時に自動インポートするため外部ツール不要です。 |
 | **SSPlayerForWeb / ForFlutter** | `libssruntime` バインディングと描画。変換は同梱のスタンドアロンツールで行います。例外は SSPlayerForWeb の TyranoBuilder プラグインで、エディタ内で変換するため別ツールを必要としません。 |
+| **SSPlayerForReactNative / ForWgpu** | `libssruntime` バインディングと描画。変換ツールは同梱しません。インポーターを組み込むエディターがどちらにもないため、変換は下記のスタンドアロンツールを使うホスト側の作業になります。 |
 | **SSConverterGUI / `ssconverter-cli` / `ssconverter-web`** | Player を介さず変換するための `libssconverter` スタンドアロンフロントエンド（デスクトップ GUI／CLI・CI／ブラウザ）。 |
 
 変換と再生を SDK に集約しているため、全 Player で機能サポートと挙動が一貫します。
