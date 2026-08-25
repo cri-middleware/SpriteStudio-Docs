@@ -7,6 +7,8 @@ rather than reimplemented per engine - it is listed under
 1. **What the engine's rendering layer can reproduce** - blend modes in particular map onto
    whatever fixed-function blend states the host engine exposes.
 2. **What each player has implemented so far** - the players are at different stages.
+3. **How the API is shaped** - a handful of deliberate choices that follow the host platform
+   rather than the family. These are not gaps, and they have their own section below.
 
 This page covers only those differences **between players**. The constraints that apply
 *everywhere* - seek and reverse behavior, blending rules, browser requirements, and the features
@@ -51,6 +53,97 @@ the entries above cluster around the same few modes:
 A blend can also look wrong without the player being at fault: the modes that sample the
 destination assume opaque pixels underneath. That rule is core-wide - see
 [Shared Limitations](../sdk/limitations.md).
+
+## ⚙️ Differences by design - not gaps
+
+The table above is about what a player cannot yet reproduce. This section is the opposite: places
+where the players deliberately differ, because following the host platform serves you better than
+following each other.
+
+### What does *not* differ
+
+Worth stating first, because it is the larger half. **Playback semantics are identical across every
+player**, and are the SDK's contract rather than each player's invention:
+
+- **Four transport verbs**, and they are not interchangeable. `play` is a *head-out* - it rewinds
+  to the start of the section and re-arms the loop count - so it cannot lift a `pause`; `resume`
+  does that, and does nothing on a stopped animation. `stop` does not rewind.
+- **`isPlaying` stays true while paused.** A pause is a hold, not a stop; `isPausing` tells the two
+  apart.
+- **`looped` is a pulse, `finished` is an edge.** `finished` never fires under an infinite loop
+  count, and never fires for a commanded `stop`.
+- **Selecting the animation already selected does nothing.** It is a switch; with nothing to switch
+  to, the playhead stays, the loop budget is not re-armed and the overrides survive. Restarting is
+  `play`'s job.
+- **What survives an animation switch**: the speed, the frame-rate override, frame skip, and the
+  playback direction / style. What does not: the playback section, whose frame numbers mean nothing
+  against a different clip.
+
+### Where the clock comes from, and in what unit
+
+Time is the one thing a player cannot take from the SDK, because every host measures it its own
+way. So the tick is spelled in each platform's own idiom:
+
+| Player | Who advances it | Unit |
+|---|---|---|
+| **Unity** | `SpriteStudioUpdateManager`, batched | (no public tick) |
+| **Godot** | the node, on `_process` / `_physics_process` - or `ANIMATION_PROCESS_MANUAL` plus `advance()` | seconds |
+| **Web** | the `SSSurface` ticker (`ssplayer-webgl`); `Ticker.shared` (`ssplayer-pixi`) | milliseconds |
+| **Flutter** | a `Ticker` when given a `vsync`, otherwise the host calls `advance()` | `Duration` |
+| **React Native** | the view's frame loop, or `startClock()` headless | milliseconds |
+| **Ren'Py** | the displayable's `render()` | milliseconds |
+| **wgpu** | **the host** - it owns the clock and lends the player a delta | seconds |
+
+### Autoplay depends on how the player comes into being
+
+There is no family-wide default here, because the question only exists for some of them:
+
+| How you get a player | Autoplay | Why |
+|---|---|---|
+| **placed** in a scene (Unity, Godot) | **on** by default | nothing calls `play()` for a node you dropped in, so a still frame would read as broken |
+| **declared** as markup (`<ss-player>`, `<ss-player-webgpu>`) | **opt-in** attribute | the attribute *is* that call, and an HTML boolean attribute cannot idiomatically default to on - the same shape as `<video autoplay>` |
+| **declared** as a component (`<SpriteStudioView playing>`) | prop, **on** by default | a React prop is state, not a one-shot flag |
+| **shown** as a displayable (Ren'Py) | always | `show` means "this is on screen and animating" |
+| **constructed** in code (Web's JS API, Flutter, wgpu) | no such concept | you already have the call |
+
+### Sub-frame interpolation follows the host, not the family
+
+Whether what is drawn may sit *between* two authored frames. The playhead is fractional either way;
+this only decides whether the drawn frame is floored.
+
+| Default | Players |
+|---|---|
+| **off** | Unity, Godot - game engines, where pinning to authored frames is the usual expectation |
+| **on** | Web, Flutter, Ren'Py, React Native, wgpu - applications and renderers, where a display refreshing faster than the animation was authored at is the point |
+
+Every player exposes a setter, so this is a default rather than a limit.
+
+### Events reach you the way the host expects
+
+The same events - user data, signals, audio, plus loop and finish - delivered in each platform's
+own shape:
+
+| Player | Shape |
+|---|---|
+| **Godot** | signals (`user_data`, `signal_emitted`, `audio`, `animation_finished`, …) |
+| **Unity** | C# `event` **and** `UnityEvent`, so both code and the inspector can subscribe |
+| **Web** | `onX(listener)` returning an unsubscribe |
+| **Flutter**, **React Native** | callback fields on the player |
+| **Ren'Py** | observed on the frame result, plus a bounded `poll_events()` queue |
+| **wgpu** | polled - `events()` after each update, matching the borrow model |
+
+### Loading a pack
+
+| Player | Shape |
+|---|---|
+| **Unity**, **Godot** | an engine asset reference, resolved by the editor's importer - synchronous |
+| **Web**, **React Native** | asynchronous, from a URL or a source descriptor |
+| **Flutter** | asynchronous, from bytes (`loadAsset` reads them for you) |
+| **Ren'Py** | a path given to the displayable, loaded lazily on first render |
+| **wgpu** | synchronous from a path, or asynchronous through an `AssetLoader` the host supplies |
+
+Selecting an animation is **synchronous everywhere**, deliberately: everything that could stall -
+textures, instance packs, sounds - belongs to the pack and is done by the load.
 
 ## ➡️ Next
 
