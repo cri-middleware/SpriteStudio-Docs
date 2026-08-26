@@ -3,7 +3,7 @@
 このページの内容はすべて **共通コア**（`libssruntime` / `libssab`）に由来するため、エンジンを
 問わず **すべての公式 Player に当てはまります**。各 Player のドキュメントには、その Player に
 固有の事項のみが記載されています。Player 間の差分は
-[機能サポート状況](../overview/feature-support.md) を参照してください。
+[プレイヤーごとの違い](../overview/player-differences.md) を参照してください。
 
 !!! tip "正典の所在"
     実装レベルの完全な一覧は SDK の Player 移植ガイド
@@ -75,7 +75,7 @@
 書き込むためのグリフをランタイムが持たないためです。
 
 したがって、テキストパーツが描画されるか、サウンドが実際に鳴るかは **Player ごと** の性質です。
-[機能サポート状況](../overview/feature-support.md) を確認してください。
+[プレイヤーごとの違い](../overview/player-differences.md) を確認してください。
 
 ## 🚧 テキストパーツと 9 スライスパーツは、どの Player でもまだ描画されない
 
@@ -110,7 +110,7 @@
 背景レイヤーを敷いてください。
 
 なお、そのブレンドモードをエンジンが *そもそも再現できるか* は Player ごとに異なる別の問題です。
-[機能サポート状況](../overview/feature-support.md) を参照してください。
+[プレイヤーごとの違い](../overview/player-differences.md) を参照してください。
 
 ## 🌐 ブラウザでは WebAssembly SIMD が必須
 
@@ -145,6 +145,6 @@ Godot の Web 書き出し、Flutter Web、Ren'Py Web）が対象です。
 ## ➡️ 次に読む
 
 - [用語集](./glossary.md) - このページで使われている用語
-- [機能サポート状況](../overview/feature-support.md) - Player 間で異なる点
+- [プレイヤーごとの違い](../overview/player-differences.md) - Player 間で異なる点
 - [SDK コンセプト](./concepts.md) - これらの制約が生じる変換 → 再生パイプライン
 - [サポート](../support.md) - このページに載っていない事象の報告先

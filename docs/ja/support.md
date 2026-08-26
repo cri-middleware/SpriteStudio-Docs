@@ -30,7 +30,7 @@ SDK と各公式 Player はそれぞれ別のリポジトリです。そのた�
 | Converter GUI では不具合が出るが、同じ `.sspj` を `ssconverter-cli` では正常に変換できる | **SSConverterGUI**（フロントエンド側の問題） |
 | 試したどの Player でも **同じ壊れ方** をする | **SpriteStudio-SDK**（再生コアは共通） |
 | 特定のエンジンでのみ壊れる | その **Player** のリポジトリ |
-| あるエンジンだけ特定のパーツ種別やブレンドモードが効かない | まず [機能サポート状況](./overview/feature-support.md) を確認（既知の差分の可能性） |
+| あるエンジンだけ特定のパーツ種別やブレンドモードが効かない | まず [プレイヤーごとの違い](./overview/player-differences.md) を確認（既知の差分の可能性） |
 
 投稿前に [共通の制限事項](./sdk/limitations.md) の確認もおすすめします。よく報告される挙動の
 いくつか（シークでイベントが発火しない、`independent = true` パーツの逆再生、逆再生時に音が

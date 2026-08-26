@@ -30,7 +30,7 @@ shared core or in the engine-specific layer**:
 | The Converter GUI misbehaves but `ssconverter-cli` converts the same `.sspj` fine | **SSConverterGUI** (a front-end issue) |
 | An animation plays wrong the **same way on every player** you tried | **SpriteStudio-SDK** (the playback core is shared) |
 | An animation plays wrong on **one engine only** | that **player's** repository |
-| A part type or blend mode is missing on one engine | check [Feature Support](./overview/feature-support.md) first - it may be a known difference |
+| A part type or blend mode is missing on one engine | check [Player Differences](./overview/player-differences.md) first - it may be a known difference |
 
 Before filing, it also helps to check [Shared Limitations](./sdk/limitations.md): several
 frequently-reported behaviors (seeking not firing events, reverse playback of
