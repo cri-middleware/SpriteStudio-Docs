@@ -21,6 +21,12 @@ One library carries three faces over that same core:
 - **WebGPU in the browser** - an npm package carrying the wasm, with a `<ss-player-webgpu>`
   custom element over it.
 
+**Bevy** is served by a fourth route, a separate crate over the Rust face
+(`ssplayer-wgpu-bevy`). The borrow model is what makes it small: the adapter draws on the device
+Bevy already owns, so characters go into Bevy's own 2D pass rather than through a second renderer.
+It follows Bevy's release line rather than the player's, tracking one line at a time - the
+repository names which, along with the camera settings a Bevy app needs.
+
 Nothing here hosts an importer, so converting `.sspj` to `.ssab` is a host-side step with one of
 the standalone tools - see [Converting Assets](../overview/conversion.md).
 
