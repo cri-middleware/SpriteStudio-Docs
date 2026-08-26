@@ -18,7 +18,7 @@
 | **React Native** アプリ | **[SSPlayerForReactNative](../players/react-native.md)** | ドキュメント（準備中） |
 | 独自の Player ・組み込みを作りたい | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |
 
-Player ごとの統合の成熟度は [機能サポート状況](./feature-support.md) と各 Player のページに
+Player ごとの統合の成熟度は [プレイヤーごとの違い](./player-differences.md) と各 Player のページに
 記載しており、この表では重複して書きません。
 
 `.sspj` の変換だけしたい場合は、Player ではなくスタンドアロンツールを選びます。
@@ -37,6 +37,6 @@ Player ごとの統合の成熟度は [機能サポート状況](./feature-suppo
   [アセットの変換](./conversion.md) を参照してください。
 - 対応機能（ボーン、メッシュ／デフォーム、パーティクル、拡張ブレンド、マスク）は
   共通コアが担うため、機能セット自体はどこでも同じです。エンジンごとに残る差分は
-  [機能サポート状況](./feature-support.md)、すべての Player に共通する制約は
+  [プレイヤーごとの違い](./player-differences.md)、すべての Player に共通する制約は
   [共通の制限事項](../sdk/limitations.md) を参照してください。
 - ライセンスは共通です。[ライセンス](../license.md) を参照してください。

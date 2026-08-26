@@ -46,11 +46,10 @@ nav:
   - 🗺️ 概要:
       - エコシステム: overview/ecosystem.md
       - プラットフォームの選び方: overview/choose-your-platform.md
-      - 機能サポート状況: overview/feature-support.md
+      - プレイヤーごとの違い: overview/player-differences.md
       - ブラウザで試す: overview/try-it.md
-  - 🔄 アセットの変換:
-      - 概要: overview/conversion.md
-      - スタンドアロンツール: overview/convert-with-a-standalone-tool.md
+      - アセットの変換: overview/conversion.md
+      - スタンドアロンツールでの変換: overview/convert-with-a-standalone-tool.md
   - 🎮 Player・ツール:
       - Unity: players/unity.md
       - Web（Player コレクション）: players/web.md
@@ -66,5 +65,6 @@ nav:
       - フォーマット仕様: sdk/format-spec.md
       - 共通の制限事項: sdk/limitations.md
       - Player の移植: sdk/porting.md
-  - 🤝 サポート: support.md
-  - ⚖️ ライセンス: license.md
+  - ℹ️ このサイトについて:
+      - 🤝 サポート: support.md
+      - ⚖️ ライセンス: license.md

@@ -13,7 +13,7 @@ point and hosts the cross-cutting material that belongs to no single player:
   [platform chooser](docs/en/overview/choose-your-platform.md),
 - the [asset-conversion overview](docs/en/overview/conversion.md) and the
   [standalone conversion tools](docs/en/overview/convert-with-a-standalone-tool.md),
-- [feature support](docs/en/overview/feature-support.md) across players and the shared
+- the [differences between players](docs/en/overview/player-differences.md) and the shared
   [runtime limitations](docs/en/sdk/limitations.md),
 - shared [SDK concepts](docs/en/sdk/concepts.md), the [glossary](docs/en/sdk/glossary.md),
   the [format specification](docs/en/sdk/format-spec.md), and the
@@ -29,7 +29,7 @@ docs/
   en/ , ja/          # one folder per locale, one config per locale
     assets/          # favicon (each locale ships its own copy)
     index.md         # landing page (product cards)
-    overview/        # ecosystem, choose-your-platform, feature-support,
+    overview/        # ecosystem, choose-your-platform, player-differences,
                      #   try-it, conversion, convert-with-a-standalone-tool
     sdk/             # concepts, glossary, format-spec, limitations, porting
                      #   (canonical, cross-player)

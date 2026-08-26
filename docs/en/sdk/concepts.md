@@ -66,7 +66,7 @@ Because every official player evaluates animations with `libssruntime`, this fea
     need the player to draw or play them, and several carry constraints - both are summarized in
     [Shared Limitations](./limitations.md), along with what the core does *not* do yet. What
     differs between the players themselves is on
-    [Feature Support](../overview/feature-support.md).
+    [Player Differences](../overview/player-differences.md).
 
 ## 📚 Libraries & tools
 

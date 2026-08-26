@@ -100,20 +100,34 @@ no options beyond the two the workflow passes: that invocation is what publishes
   only the labels differ, and they are written directly in each language rather than looked up
   from a translation map. This replaced `nav_translations`, which no longer exists.
 - **Content lives in three folders** under each locale: `overview/` (ecosystem, platform
-  choice, feature support, browser demos, and the asset-conversion overview + standalone tools),
+  choice, player differences, browser demos, and the asset-conversion overview + standalone tools),
   `sdk/` (canonical cross-player concepts, glossary, format spec, shared limitations, porting), and
   `players/` (thin entry pages) — plus `index.md`, `support.md`, and `license.md` at the locale
-  root. Note: `nav` surfaces `overview/` under **two** top-level sections — 🗺️ Overview and
-  🔄 Converting Assets — so a new Overview page can belong to either.
+  root. Each folder maps to exactly one nav section: `overview/` → 🗺️ Overview, `players/` →
+  🎮 Players & Tools, `sdk/` → 🛠️ SDK & Development, and the two locale-root housekeeping pages
+  → ℹ️ About. Keep it that way — a folder surfaced under two top-level sections leaves a new
+  page in it with no obvious home.
+- **Every `players/` page answers the same four questions, in the same order** — the convention
+  the sibling repos follow on their own first screen, from `SpriteStudio-SDK/MAINTAINING_PLAYERS.md`:
+  what you install, how a `.sspj` becomes a `.ssab`, how it gets on screen, and where to read next
+  (three links at most: the player's own docs, its repository, and one portal page chosen for that
+  player). An admonition above them names the shape — **editor-first** (no code to reach the first
+  frame; Unity and Godot) or **code-first** — because "you start without writing a script" is a
+  selling point rather than an omission. Nothing goes above question 1: a reader there has not
+  decided to use this player yet, so package tables, architecture and feature lists come after the
+  three answers. Depart where the host genuinely collides with it and write the reason there —
+  `players/converter.md` does not follow this shape because SSConverterGUI is a conversion tool
+  rather than a player, and `players/wgpu.md` waits on that player having documentation to send
+  readers to.
 - **Cross-cutting claims must be sourced from the sibling repos**, since this portal owns no
   code. `sdk/limitations.md` summarizes the SDK's Player Porting Guide (`libs/ssruntime/docs`,
-  *Introduction → Limitations*); `overview/feature-support.md` reports only what each player's
+  *Introduction → Limitations*); `overview/player-differences.md` reports only what each player's
   own docs state, and says so — do not infer support or non-support that no repo documents.
 - **One fact, one page.** The three cross-cutting pages have deliberately disjoint jobs, and link
   to each other instead of restating: `sdk/concepts.md` owns what the shared core **provides**
   (the canonical feature list), `sdk/limitations.md` owns what it **does not do** plus every
   all-player constraint (the runtime-vs-player responsibility table, drawing and blending caveats,
-  sequence playback, browser and asset requirements), and `overview/feature-support.md` owns
+  sequence playback, browser and asset requirements), and `overview/player-differences.md` owns
   **only what differs between players**. Keep the blend-mode discussion there stated as mechanism,
   with the per-player enumeration confined to the table. Restating a fact on a second page is how
   the text-part responsibilities once drifted into being documented backwards — link instead.

@@ -3,13 +3,26 @@
 **Godot Engine** でネイティブに SpriteStudio アニメーションを描画します。`libssruntime` を
 基盤としています。
 
-- **ドキュメント:** _準備中_
-- **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForGodot>
+!!! tip "エディタで始まる - 最初のフレームまでコードは不要"
+    アドオンをコピーし、`.sspj` をエディタにドラッグし、ノードを置いてアセットを割り当てる
+    だけです。GDScript からの制御も可能ですが、ここまでには必要ありません。
 
+**1. 何を入れるか** -
+[GitHub Releases](https://github.com/cri-middleware/SSPlayerForGodot/releases) の `addons`
+フォルダを、Godot プロジェクトのルートにコピーします。対応は Godot 4.7 系です。
 次の 2 つの形態で提供されます。
 
 - **GDExtension** - エンジンの再ビルド不要で導入できるバイナリアドオン。
 - **カスタムモジュール** - Godot 本体に組み込んでビルドする、より密な統合方式。
 
-Player の比較は [プラットフォームの選び方](../overview/choose-your-platform.md) を、
-全 Player 共通の変換／再生パイプラインは [SDK コンセプト](../sdk/concepts.md) を参照してください。
+**2. `.sspj` -> `.ssab`** - `.sspj` を Godot エディタにドラッグ&ドロップします。アドオンの
+SS Import Dock がその場で変換するため、別途ツールを入れる必要はありません。
+
+**3. どう画面に出すか** - `SpriteStudioPlayer2D` ノードを追加し、**SSAB Resource**
+プロパティに `.ssab` を割り当てます。
+
+## ➡️ 次に読む
+
+- **ドキュメント** - *準備中*
+- [リポジトリ](https://github.com/cri-middleware/SSPlayerForGodot)
+- [プラットフォームの選び方](../overview/choose-your-platform.md) - 他の Player との比較

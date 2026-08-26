@@ -2,7 +2,7 @@
 
 Everything on this page comes from the **shared core** (`libssruntime` / `libssab`), so it
 applies to **every official player** regardless of engine. Each player's own docs list only what
-is specific to it - for those differences see [Feature Support](../overview/feature-support.md).
+is specific to it - for those differences see [Player Differences](../overview/player-differences.md).
 
 !!! tip "Source of truth"
     The canonical, implementation-level list lives in the SDK's Player Porting Guide
@@ -76,7 +76,7 @@ A text part authored as a **mask** is the exception: it is left out of the draw 
 because the runtime has no glyphs with which to write coverage.
 
 So whether text parts render, and whether sounds are audible, is a **per-player** property -
-check [Feature Support](../overview/feature-support.md).
+check [Player Differences](../overview/player-differences.md).
 
 ## 🚧 Text and 9-slice parts are not drawn by any player yet
 
@@ -112,7 +112,7 @@ match the editor only where those pixels are **opaque** - the case SpriteStudio 
 editor matters.
 
 Which blend modes a given engine can reproduce *at all* is a separate, per-player question - see
-[Feature Support](../overview/feature-support.md).
+[Player Differences](../overview/player-differences.md).
 
 ## 🌐 Browsers require WebAssembly SIMD
 
@@ -146,6 +146,6 @@ itself. Two constraints follow:
 ## ➡️ Next
 
 - [Glossary](./glossary.md) - the vocabulary used on this page.
-- [Feature Support](../overview/feature-support.md) - what differs between players.
+- [Player Differences](../overview/player-differences.md) - what differs between players.
 - [SDK Concepts](./concepts.md) - the convert -> playback pipeline these constraints come from.
 - [Support](../support.md) - where to report something that is *not* on this page.

@@ -41,11 +41,10 @@ nav:
   - 🗺️ Overview:
       - Ecosystem: overview/ecosystem.md
       - Choose Your Platform: overview/choose-your-platform.md
-      - Feature Support: overview/feature-support.md
+      - Player Differences: overview/player-differences.md
       - Try It in Your Browser: overview/try-it.md
-  - 🔄 Converting Assets:
-      - Overview: overview/conversion.md
-      - Standalone Tools: overview/convert-with-a-standalone-tool.md
+      - Converting Assets: overview/conversion.md
+      - Standalone Conversion Tools: overview/convert-with-a-standalone-tool.md
   - 🎮 Players & Tools:
       - Unity: players/unity.md
       - Web (Player Collection): players/web.md
@@ -61,5 +60,6 @@ nav:
       - Format Specification: sdk/format-spec.md
       - Shared Limitations: sdk/limitations.md
       - Porting a Player: sdk/porting.md
-  - 🤝 Support: support.md
-  - ⚖️ License: license.md
+  - ℹ️ About:
+      - 🤝 Support: support.md
+      - ⚖️ License: license.md

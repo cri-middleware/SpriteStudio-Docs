@@ -19,7 +19,7 @@ column links to its full details.
 | Building your own player / integration | **SpriteStudio-SDK** | [Porting a Player](../sdk/porting.md) |
 
 Where a player's integrations are at different stages of maturity, the stage is stated in
-[Feature Support](./feature-support.md) and on that player's own page - it is deliberately not
+[Player Differences](./player-differences.md) and on that player's own page - it is deliberately not
 repeated here.
 
 Only converting `.sspj`? Pick a standalone tool rather than a player.
@@ -38,6 +38,6 @@ Only converting `.sspj`? Pick a standalone tool rather than a player.
   for every way to convert (automatic on import, GUI, CLI, or browser).
 - Feature coverage (bones, mesh/deform, particles, extended blend, masks) is driven by the
   shared core, so the feature *set* is the same everywhere. What still differs per engine is
-  listed in [Feature Support](./feature-support.md); the constraints that apply everywhere are
+  listed in [Player Differences](./player-differences.md); the constraints that apply everywhere are
   in [Shared Limitations](../sdk/limitations.md).
 - Licensing is shared - see [License](../license.md).

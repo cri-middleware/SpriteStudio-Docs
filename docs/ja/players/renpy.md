@@ -3,10 +3,28 @@
 **Ren'Py** 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。`libssruntime` を
 基盤とし、各リリースには再生可能な Web デモが同梱されます。
 
-- **ドキュメント:** _準備中_
-- **リポジトリ:** <https://github.com/cri-middleware/SSPlayerForRenPy>
+!!! tip "コードで始まる - スクリプト数行"
+    `SSPlayer` は Ren'Py の標準的な Displayable なので、ATL や `Transform` と、通常の画像と
+    まったく同じように組み合わせられます。
 
-▶️ 再生可能な Web デモは [ブラウザで試す](../overview/try-it.md) から。
+**1. 何を入れるか** -
+[GitHub Releases](https://github.com/cri-middleware/SSPlayerForRenPy/releases) から
+`SSPlayerForRenPy.zip` を取得します。展開してできる `spritestudio/` フォルダを、
+プロジェクトの `game/` フォルダにコピーします。
 
-Player の比較は [プラットフォームの選び方](../overview/choose-your-platform.md) を、
-全 Player 共通の変換／再生パイプラインは [SDK コンセプト](../sdk/concepts.md) を参照してください。
+**2. `.sspj` -> `.ssab`** - SpriteStudio のソースを `SpriteStudio_Source/` に置きます。
+Auto Importer が起動時に変換し、**Shift+R** でリロードすると変更されたものだけが再変換される
+ため、手動の書き出し作業はありません。
+
+**3. どう画面に出すか** - screen に配置します。
+
+```renpy
+screen demo():
+    add SSPlayer("overall/Basic.ssab") xalign 0.5 yalign 0.5
+```
+
+## ➡️ 次に読む
+
+- **ドキュメント** - *準備中*
+- [リポジトリ](https://github.com/cri-middleware/SSPlayerForRenPy)
+- [ブラウザで試す](../overview/try-it.md) - 同梱アニメーションが Ren'Py Web で動く様子
