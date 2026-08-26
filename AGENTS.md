@@ -117,8 +117,11 @@ no options beyond the two the workflow passes: that invocation is what publishes
   decided to use this player yet, so package tables, architecture and feature lists come after the
   three answers. Depart where the host genuinely collides with it and write the reason there —
   `players/converter.md` does not follow this shape because SSConverterGUI is a conversion tool
-  rather than a player, and `players/wgpu.md` waits on that player having documentation to send
-  readers to.
+  rather than a player. `players/wgpu.md` answers question 1 with a table instead of a sentence:
+  that player is one library behind three faces (Rust, C / C++, browser) plus a Bevy adapter, so
+  *which* one you install is the question a reader arrives with. A player whose docs site does not
+  exist yet is not a reason to depart — the "read next" slot carries the "coming soon" marker and
+  points at the repository in the meantime.
 - **Cross-cutting claims must be sourced from the sibling repos**, since this portal owns no
   code. `sdk/limitations.md` summarizes the SDK's Player Porting Guide (`libs/ssruntime/docs`,
   *Introduction → Limitations*); `overview/player-differences.md` reports only what each player's
