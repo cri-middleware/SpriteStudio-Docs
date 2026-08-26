@@ -26,10 +26,8 @@ the core computes but leaves the player to draw or play - are in
 | **[wgpu](../players/wgpu.md)** | `Div2` / `Overlay2` fall back to `Mix`. Masking is **stencil-only**: overlapping masks that mix INCR and INVERT are approximated, nesting is bounded by the 8 bits available, and writers past the 24th are dropped. Group alpha composites **each part in turn**, so two overlapping parts at `0.5` leave their overlap at `0.75` rather than at `0.5`. The 13 integration shaders are covered for **Normal parts only** - `map0` / `map1` secondary textures, and a shader part combined with a mask, are not. The **Bevy adapter** is a separate crate at an early stage: it is not published, it tracks one Bevy release line at a time, and a Bevy app has to configure its camera for it. |
 
 !!! note "How to read this table"
-    Each entry is a summary of what that player's own documentation states; follow the link for
-    the exact cases. Most players publish a dedicated **Limitations & Scope** page. Two do not:
-    **Unity** states its constraints inside its guide instead (the CanvasRenderer notes under
-    *Performance Tuning & Advanced Settings*), and **wgpu**'s
+    Each entry is a summary of what that player's own **Limitations & Scope** page states; follow
+    the link for the exact cases. Every player publishes one except **wgpu**, whose
     [ROADMAP](https://github.com/cri-middleware/SSPlayerForWgpu/blob/HEAD/ROADMAP.md) covers the
     same ground until it has a documentation site. So a gap absent here is absent from that
     player's own account too - which is still not the same as a guarantee of support.
