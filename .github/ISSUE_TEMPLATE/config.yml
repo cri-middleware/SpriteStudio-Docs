@@ -1,0 +1,17 @@
+# Issues here are for the portal itself — a page that is wrong, missing, or
+# broken. Everything else has a better home; see SUPPORT.md, which these links
+# mirror.
+#
+# Two links the Player repositories carry are deliberately absent. The other
+# repositories are not public yet, so their issue trackers would 404 for exactly
+# the people who would follow them; and this repository has no SECURITY.md to
+# point at yet.
+blank_issues_enabled: false
+contact_links:
+  - name: ❓ Question about how to use SpriteStudio / 使い方の質問
+    url: https://spritestudio.jp/community/
+    about: Implementation advice and tips, in the official community forum. Issues are not for usage questions.
+
+  - name: 🔒 Private inquiry, or sending reproduction data / 個別のお問い合わせ・データ送付
+    url: https://www.webtech.co.jp/help/en/spritestudio7/inquiries/ssplayer_tool/
+    about: Use the Help Center for sensitive reports, proprietary .sspj files, or contractual support. Never attach proprietary data to a public issue.

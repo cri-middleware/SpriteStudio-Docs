@@ -1,0 +1,32 @@
+name: ✨ Something is missing / 追加してほしい内容
+description: Suggest a page, a section, or an improvement to the portal. / ページや節の追加、ポータルの改善提案。
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What were you trying to find out? / 知りたかったこと
+      description: |
+        Describe what you came to the portal for and could not answer — that is more useful
+        than the page you have in mind.
+        ポータルで何を調べようとして答えに辿り着けなかったかをお書きください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like the portal to cover? / 追加してほしい内容
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Where does it belong? / 対象範囲
+      description: |
+        The portal explains how the SDK, the Players and the tools fit together; each
+        repository documents its own API in its own site. Unsure is fine.
+        ポータルは全体像を、各 API はそれぞれのリポジトリのサイトが担当します。
+      options:
+        - The portal (how things fit together, getting started, comparisons)
+        - A specific Player's or the SDK's own documentation
+        - Not sure / わからない
