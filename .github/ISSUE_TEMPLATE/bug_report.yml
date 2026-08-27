@@ -1,0 +1,48 @@
+name: 📄 Something on the site is wrong / 記述の誤り・リンク切れ
+description: A page is inaccurate, out of date, missing, or broken. / ページの誤り、古い記述、リンク切れなど。
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This tracker is for the portal itself. If the problem is in a Player or in the SDK
+        rather than in what a page says about it, please report it in that repository instead.
+
+        こちらはポータル自体の Issue です。記述ではなく Player や SDK 側の動作の問題であれば、
+        該当リポジトリへご報告ください。
+
+  - type: input
+    id: page
+    attributes:
+      label: Which page? / 対象ページ
+      description: The URL, or the path under `docs/`. / URL、または `docs/` 以下のパス。
+      placeholder: https://cri-middleware.github.io/SpriteStudio-Docs/…
+    validations:
+      required: true
+
+  - type: dropdown
+    id: locale
+    attributes:
+      label: Language / 言語
+      options:
+        - English
+        - 日本語
+        - Both / 両方
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-is-wrong
+    attributes:
+      label: What is wrong? / 何が問題か
+      description: |
+        Quote the sentence if it is a wording or accuracy problem; name the link if it is broken.
+        記述の誤りであれば該当箇所を引用し、リンク切れであればそのリンクをお書きください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should it say instead? / 本来あるべき記述
+      description: A correction, or what you expected to find. / 修正案、または期待していた内容。
