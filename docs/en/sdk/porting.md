@@ -1,12 +1,12 @@
 # 🔌 Porting a Player
 
-Want to run SpriteStudio 7 animations on an engine or platform that doesn't have an
+Want to run SpriteStudio animations on an engine or platform that doesn't have an
 official player yet? **SpriteStudio-SDK ships a full Player Porting Guide** that walks you
 through building one on top of `libssruntime`.
 
 !!! tip "Where the guide lives"
     The canonical guide is maintained in the SDK repository:
-    [**SpriteStudio 7 Player Porting Guide**](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
+    [**SpriteStudio Player Porting Guide**](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
     (`libs/ssruntime/docs/`). This page is a map into it - the SDK is the source of truth.
 
 ## 🧠 Core idea: Brain vs. Body

@@ -2,7 +2,7 @@
 
 The documentation portal for the **SpriteStudio SDK** and its official players.
 
-[OPTPiX SpriteStudio 7](https://www.webtech.co.jp/spritestudio/) is a 2D animation tool.
+[SpriteStudio](https://www.webtech.co.jp/spritestudio/) is a 2D animation tool.
 This portal is the single entry point to every official runtime and tool that plays back
 SpriteStudio animations - all powered by the shared Rust core, **SpriteStudio-SDK**.
 
@@ -20,7 +20,7 @@ hosted converter, no install.
 
     ---
 
-    Play back SpriteStudio 7 animations in the Unity Engine, accelerated by the Job System.
+    Play back SpriteStudio animations in the Unity Engine, accelerated by the Job System.
 
     [:octicons-arrow-right-24: Overview](./players/unity.md) |
     Docs (coming soon) |
@@ -51,7 +51,7 @@ hosted converter, no install.
 
     ---
 
-    Play SpriteStudio 7 animations in Flutter apps via a `SpriteStudioView` widget.
+    Play SpriteStudio animations in Flutter apps via a `SpriteStudioView` widget.
 
     [:octicons-arrow-right-24: Overview](./players/flutter.md) |
     Docs (coming soon) |
@@ -82,7 +82,7 @@ hosted converter, no install.
 
     ---
 
-    Play SpriteStudio 7 animations in React Native apps through a `<SpriteStudioView>`
+    Play SpriteStudio animations in React Native apps through a `<SpriteStudioView>`
     component, drawn natively via Skia.
 
     [:octicons-arrow-right-24: Overview](./players/react-native.md) |

@@ -1,6 +1,6 @@
 # 📱 SSPlayerForFlutter
 
-Play SpriteStudio 7 animations in **Flutter** apps, backed by `libssruntime`. The
+Play SpriteStudio animations in **Flutter** apps, backed by `libssruntime`. The
 `SpriteStudioView` widget composites like any other widget, across Flutter's targets.
 
 ▶️ See it first, no install: the [widget demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/)
@@ -31,7 +31,7 @@ then set an animation and place a `SpriteStudioView(player: player, …)` in you
 Alongside the player it ships:
 
 - **A [Flame](https://flame-engine.org/) adapter** - drop an animation into a Flame game.
-- **Live reload** - run `sswatch` next to `flutter run` and a save in SpriteStudio 7 re-converts
+- **Live reload** - run `sswatch` next to `flutter run` and a save in SpriteStudio re-converts
   only the changed project and pushes it into the running app.
 
 ## ➡️ Read next

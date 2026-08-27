@@ -1,6 +1,6 @@
 # 🦀 SSPlayerForWgpu
 
-A player for SpriteStudio 7 animations, written in **Rust** and rendering through
+A player for SpriteStudio animations, written in **Rust** and rendering through
 [wgpu](https://wgpu.rs/): wgpu puts WebGPU, Vulkan, DX12 and Metal behind one API, so the same
 player runs on any of them. The host does not have to be Rust - C, C++ and the browser are
 served from the same library.

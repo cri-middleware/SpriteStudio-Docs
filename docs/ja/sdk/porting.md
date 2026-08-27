@@ -1,12 +1,12 @@
 # 🔌 Player の移植
 
-公式 Player がまだ無いエンジンやプラットフォームで SpriteStudio 7 アニメーションを動かしたい
+公式 Player がまだ無いエンジンやプラットフォームで SpriteStudio アニメーションを動かしたい
 場合、**SpriteStudio-SDK には本格的な Player 移植ガイドが同梱**されています。`libssruntime`
 の上に自作 Player を実装する手順を一通り解説しています。
 
 !!! tip "ガイドの場所"
     正式なガイドは SDK リポジトリで管理されています:
-    [**SpriteStudio 7 Player 移植ガイド**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)
+    [**SpriteStudio Player 移植ガイド**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)
     （`libs/ssruntime/docs/README.ja.md`。各ページに `.ja.md` の日本語版があります）。本ページはそこへの案内であり、最新の正式な情報は SDK 側が基準です。
 
 ## 🧠 中心となる考え方: Brain と Body

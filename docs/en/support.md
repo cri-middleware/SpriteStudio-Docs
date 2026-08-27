@@ -52,10 +52,10 @@ upload for repro data:
 
 👉 [**CRI Middleware Help Center (inquiry form)**](https://www.webtech.co.jp/help/en/spritestudio7/inquiries/ssplayer_tool/)
 
-!!! note "About OPTPiX SpriteStudio itself"
-    Questions about the **editor** (authoring, the SpriteStudio 7 application, licensing of the
+!!! note "About SpriteStudio itself"
+    Questions about the **editor** (authoring, the SpriteStudio application, licensing of the
     tool) go to [CRI Middleware](https://www.webtech.co.jp/spritestudio/) through the same Help
     Center - not to the player repositories. Before asking, the
-    [**SpriteStudio 7 Help Center**](https://www.webtech.co.jp/help/en/spritestudio7/) already
+    [**SpriteStudio Help Center**](https://www.webtech.co.jp/help/en/spritestudio7/) already
     covers using the editor: beginners' guide, user guide, tutorial videos, and a
     reverse-lookup reference.

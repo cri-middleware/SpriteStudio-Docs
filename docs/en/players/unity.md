@@ -1,6 +1,6 @@
 # 🎮 SSPlayerForUnity
 
-Play back SpriteStudio 7 animations in the **Unity Engine**. Playback runs through
+Play back SpriteStudio animations in the **Unity Engine**. Playback runs through
 `libssruntime` (the shared Rust core) combined with Unity's Job System for high performance.
 
 !!! tip "Editor-first - no code to reach the first frame"

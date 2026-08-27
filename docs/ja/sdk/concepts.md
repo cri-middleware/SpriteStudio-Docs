@@ -1,6 +1,6 @@
 # 💡 SDK コンセプト
 
-**SpriteStudio-SDK** は、OPTPiX SpriteStudio 7 向けの高性能かつ**エンジン非依存**な
+**SpriteStudio-SDK** は、SpriteStudio 向けの高性能かつ**エンジン非依存**な
 アニメーション再生 SDK です。ラスターベースの 2D アニメ再生に必要な計算をすべて行い、
 そのまま描画できるプランをエンジンへ渡します。 Player は「描画するだけ」で済み、SpriteStudio の
 アニメーション計算を再実装する必要はありません。
@@ -11,7 +11,7 @@
    （`.ssab`）へ変換（`ssconverter-cli` / [Converter GUI](../players/converter.md) /
    `ssconverter-web` / インポート時の自動変換）。[アセットの変換](../overview/conversion.md) を参照。
 2. **どこでも再生** - `.ssab` を `libssruntime` に渡すだけ。*あらゆる* `.ssab` を再生でき、
-   SpriteStudio 7 のフルセットに対応します。
+   SpriteStudio のフルセットに対応します。
 
 ```mermaid
 graph LR

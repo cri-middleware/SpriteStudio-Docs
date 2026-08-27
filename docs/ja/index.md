@@ -2,7 +2,7 @@
 
 **SpriteStudio SDK** と公式 Player 群のドキュメントポータルです。
 
-[OPTPiX SpriteStudio 7](https://www.webtech.co.jp/spritestudio/) は 2D アニメーション制作ツールです。
+[SpriteStudio](https://www.webtech.co.jp/spritestudio/) は 2D アニメーション制作ツールです。
 このポータルは、SpriteStudio アニメーションを再生するすべての公式ランタイム・ツールへの入口です。
 これらはすべて共通の Rust コア **SpriteStudio-SDK** の上に構築されています。
 
@@ -20,7 +20,7 @@
 
     ---
 
-    Unity Engine 上で SpriteStudio 7 アニメーションを再生。Job System で高速動作します。
+    Unity Engine 上で SpriteStudio アニメーションを再生。Job System で高速動作します。
 
     [:octicons-arrow-right-24: 概要](./players/unity.md) |
     ドキュメント（準備中） |
@@ -51,7 +51,7 @@
 
     ---
 
-    `SpriteStudioView` ウィジェットで Flutter アプリに SpriteStudio 7 アニメーションを再生。
+    `SpriteStudioView` ウィジェットで Flutter アプリに SpriteStudio アニメーションを再生。
 
     [:octicons-arrow-right-24: 概要](./players/flutter.md) |
     ドキュメント（準備中） |
@@ -82,7 +82,7 @@
 
     ---
 
-    React Native アプリで SpriteStudio 7 アニメーションを再生します。`<SpriteStudioView>`
+    React Native アプリで SpriteStudio アニメーションを再生します。`<SpriteStudioView>`
     コンポーネントを配置するだけで、描画は Skia 経由でネイティブ側が担当します。
 
     [:octicons-arrow-right-24: 概要](./players/react-native.md) |

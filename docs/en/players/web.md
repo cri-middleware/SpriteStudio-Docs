@@ -1,6 +1,6 @@
 # 🌐 SSPlayerForWeb
 
-A **collection of Web players** for SpriteStudio 7 animations in the browser, sharing one
+A **collection of Web players** for SpriteStudio animations in the browser, sharing one
 WebAssembly core (`@spritestudio/ssplayer-core`, built on `libssruntime`). Author your sprite
 art in SpriteStudio, convert to `.ssab`, then play it back through the renderer of your choice.
 
