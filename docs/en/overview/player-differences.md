@@ -27,10 +27,8 @@ the core computes but leaves the player to draw or play - are in
 
 !!! note "How to read this table"
     Each entry is a summary of what that player's own **Limitations & Scope** page states; follow
-    the link for the exact cases. Every player publishes one except **wgpu**, whose
-    [ROADMAP](https://github.com/cri-middleware/SSPlayerForWgpu/blob/HEAD/ROADMAP.md) covers the
-    same ground until it has a documentation site. So a gap absent here is absent from that
-    player's own account too - which is still not the same as a guarantee of support.
+    the link for the exact cases. Every player publishes one. So a gap absent here is absent from
+    that player's own account too - which is still not the same as a guarantee of support.
 
     Anything true of *every* player - including the fact that **text and 9-slice parts are drawn
     by none of them yet** - is on [Shared Limitations](../sdk/limitations.md) instead, since it is
