@@ -1,6 +1,6 @@
 # 🌐 SSPlayerForWeb
 
-ブラウザで SpriteStudio 7 アニメーションを再生する **Web 用 Player のコレクション**です。
+ブラウザで SpriteStudio アニメーションを再生する **Web 用 Player のコレクション**です。
 共通の WebAssembly コア（`@spritestudio/ssplayer-core`、`libssruntime` を基盤）を共有します。
 SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで、好みのレンダラーで再生できます。
 

@@ -1,6 +1,6 @@
 # 🎮 SSPlayerForUnity
 
-**Unity Engine** 上で SpriteStudio 7 アニメーションを再生します。再生は共通 Rust コアの
+**Unity Engine** 上で SpriteStudio アニメーションを再生します。再生は共通 Rust コアの
 `libssruntime` を通じて行われ、Unity の Job System と組み合わせて高いパフォーマンスを発揮します。
 
 !!! tip "エディタで始まる - 最初のフレームまでコードは不要"

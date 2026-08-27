@@ -28,7 +28,7 @@ extra:
       name: cri-middleware on GitHub
     - icon: material/web
       link: https://www.webtech.co.jp/spritestudio/
-      name: OPTPiX SpriteStudio
+      name: SpriteStudio
     # Keep the handle here in sync with `twitter:site` in overrides/main.html.
     - icon: fontawesome/brands/x-twitter
       link: https://x.com/spritestudio

@@ -1,7 +1,7 @@
 # 💡 SDK Concepts
 
 **SpriteStudio-SDK** is a high-performance, **engine-agnostic** animation player SDK for
-OPTPiX SpriteStudio 7. It computes everything needed to play a raster-based 2D animation and
+SpriteStudio. It computes everything needed to play a raster-based 2D animation and
 hands your engine a ready-to-render plan - so a player only needs to draw, not to re-implement
 SpriteStudio's animation math.
 
@@ -11,7 +11,7 @@ SpriteStudio's animation math.
    with `libssconverter` (via `ssconverter-cli`, the [Converter GUI](../players/converter.md),
    `ssconverter-web`, or automatic conversion on import). See [Converting Assets](../overview/conversion.md).
 2. **Play anywhere** - pass the `.ssab` to `libssruntime`. It plays *any* `.ssab`, supporting
-   the full SpriteStudio 7 feature set.
+   the full SpriteStudio feature set.
 
 ```mermaid
 graph LR

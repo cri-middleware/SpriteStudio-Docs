@@ -10,7 +10,7 @@ SpriteStudio プロジェクト（`.sspj`）は一度だけコンパクトなラ
 
 ```mermaid
 graph LR
-    SS[" .sspj / 画像<br/>(SpriteStudio 7) "]
+    SS[" .sspj / 画像<br/>(SpriteStudio) "]
 
     subgraph SDK ["SpriteStudio-SDK - 全 Player に組み込まれる共通コア"]
         CONV(" libssconverter<br/>変換 ")

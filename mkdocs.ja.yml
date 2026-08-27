@@ -33,7 +33,7 @@ extra:
       name: GitHub の cri-middleware
     - icon: material/web
       link: https://www.webtech.co.jp/spritestudio/
-      name: OPTPiX SpriteStudio
+      name: SpriteStudio
     - icon: fontawesome/brands/x-twitter
       link: https://x.com/spritestudio
       name: X の SpriteStudio

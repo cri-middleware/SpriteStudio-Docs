@@ -50,9 +50,9 @@ SDK と各公式 Player はそれぞれ別のリポジトリです。そのた�
 
 👉 [**ヘルプセンター（お問い合わせフォーム）**](https://www.webtech.co.jp/help/ja/spritestudio7/inquiries/ssplayer_tool/)
 
-!!! note "OPTPiX SpriteStudio 本体について"
-    **エディター**（オーサリング、SpriteStudio 7 アプリケーション、ツール自体のライセンス）に
+!!! note "SpriteStudio 本体について"
+    **エディター**（オーサリング、SpriteStudio アプリケーション、ツール自体のライセンス）に
     関するお問い合わせは、Player のリポジトリではなく、同じヘルプセンターから
     [CRI Middleware](https://www.webtech.co.jp/spritestudio/) へお願いします。お問い合わせの前に、
-    [**SpriteStudio 7 ヘルプセンター**](https://www.webtech.co.jp/help/ja/spritestudio7/) に
+    [**SpriteStudio ヘルプセンター**](https://www.webtech.co.jp/help/ja/spritestudio7/) に
     初心者ガイド・ユーザーガイド・チュートリアル動画・逆引きリファレンスがそろっています。

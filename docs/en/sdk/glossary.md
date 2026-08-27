@@ -4,7 +4,7 @@ The vocabulary shared by this portal, the SDK, and every player's documentation.
 grouped by which side of the pipeline they belong to: what you author in SpriteStudio, and what
 the SDK produces and plays back.
 
-## 🎨 Authoring - SpriteStudio 7 side
+## 🎨 Authoring - SpriteStudio side
 
 | Term | What it is |
 |---|---|

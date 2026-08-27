@@ -1,6 +1,6 @@
 # 📱 SSPlayerForFlutter
 
-**Flutter** アプリで SpriteStudio 7 アニメーションを再生します。`libssruntime` を基盤とし、
+**Flutter** アプリで SpriteStudio アニメーションを再生します。`libssruntime` を基盤とし、
 `SpriteStudioView` ウィジェットが Flutter の各ターゲットで通常のウィジェットと同様に合成されます。
 
 ▶️ インストール不要で試せます: [ウィジェット版デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/)、
@@ -32,7 +32,7 @@ dart run ssconverter_dart:ssconvert -e -o assets/spritestudio/MyChar/ SpriteStud
 Player 本体に加えて、次のものが提供されます。
 
 - **[Flame](https://flame-engine.org/) アダプター** - Flame 製ゲームにアニメーションを組み込めます。
-- **ライブリロード** - `flutter run` と並べて `sswatch` を実行すると、SpriteStudio 7 で保存した
+- **ライブリロード** - `flutter run` と並べて `sswatch` を実行すると、SpriteStudio で保存した
   時点で変更されたプロジェクトだけが再変換され、実行中のアプリに反映されます。
 
 ## ➡️ 次に読む

@@ -10,7 +10,7 @@ specific convert/import workflow.)
 
 ```mermaid
 graph LR
-    SS[" .sspj / Images<br/>(SpriteStudio 7) "]
+    SS[" .sspj / Images<br/>(SpriteStudio) "]
 
     subgraph SDK ["SpriteStudio-SDK - shared core, embedded in every player"]
         CONV(" libssconverter<br/>convert ")

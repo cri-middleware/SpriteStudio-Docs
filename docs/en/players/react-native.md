@@ -1,6 +1,6 @@
 # ⚛️ SSPlayerForReactNative
 
-Play SpriteStudio 7 animations in **React Native** apps, on the New Architecture, through a
+Play SpriteStudio animations in **React Native** apps, on the New Architecture, through a
 `<SpriteStudioView>` component.
 
 !!! tip "Code-first - and a development build, not Expo Go"
