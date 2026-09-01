@@ -12,6 +12,11 @@ or read [how the pieces fit together](./overview/ecosystem.md).
 ▶️ Prefer to see it first? [Try it in your browser](./overview/try-it.md) - live demos and a
 hosted converter, no install.
 
+🎨 No SpriteStudio project of your own? CRI Middleware publishes free
+[sample data](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) - complete `.sspj` projects
+(characters, effects, UI) you can feed straight into
+[conversion](./overview/conversion.md). (Help Center page, in Japanese.)
+
 ## 🎮 Players & Tools
 
 <div class="grid cards" markdown>

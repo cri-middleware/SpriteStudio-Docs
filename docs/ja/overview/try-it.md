@@ -33,5 +33,6 @@ Flutter の 2 つのデモは同 Player の Web ターゲットで動作しま�
 **自分のアニメをプレビューしたい場合**、デモが受け取るのは `.ssab`＋`.png` なので、先に `.sspj` を
 変換してください。上記のブラウザ版コンバーターでも、
 [スタンドアロンツール](./convert-with-a-standalone-tool.md) でも構いません。
-全体の流れは [アセットの変換](./conversion.md) にまとまっており、手元にプロジェクトがない場合の
-サンプルデータもそこから辿れます。
+全体の流れは [アセットの変換](./conversion.md) にまとまっています。手元にプロジェクトがない
+場合は、無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)が
+そのまま使えます。

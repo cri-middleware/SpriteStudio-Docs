@@ -12,6 +12,11 @@
 ▶️ まず動かして確かめたい方は [ブラウザで試す](./overview/try-it.md) へ — インストール不要の
 ライブデモとホスト型コンバーターがあります。
 
+🎨 手元に SpriteStudio プロジェクトがない場合は、CRI Middleware が無償の
+[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています —— キャラクター・
+エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)に
+かけられます。
+
 ## 🎮 Player ・ツール
 
 <div class="grid cards" markdown>
