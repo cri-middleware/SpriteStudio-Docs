@@ -208,11 +208,11 @@ no options beyond the two the workflow passes: that invocation is what publishes
 - **Pinned toolchain**: `docs/requirements.txt` pins `zensical` deliberately — bump
   intentionally, and **in step with the sibling repos again**. This portal moved off MkDocs +
   Material for MkDocs first (its own authors put it into maintenance mode) and the players
-  followed one at a time; as of 2026-08-21 every sibling that builds its docs with Python — the
-  SDK, Unity, Godot, Ren'Py, Flutter, SSConverterGUI — pins the same `zensical` version this
-  repo does, so a bump here is a bump everywhere. The exceptions have no
-  `docs/requirements.txt` to match: SSPlayerForWeb and SSPlayerForReactNative build their sites
-  with VitePress, and SSPlayerForWgpu has no docs site at all yet.
+  followed one at a time; every sibling that builds its docs with Python — the SDK, Unity,
+  Godot, Ren'Py, Flutter, wgpu, SSConverterGUI — pins the same `zensical` version this repo
+  does, so a bump here is a bump everywhere. The exceptions have no `docs/requirements.txt`
+  to match: SSPlayerForWeb and SSPlayerForReactNative build their sites with VitePress, and
+  SSProjectGenerator has no docs site of its own.
 - **The configs are still valid MkDocs configs, deliberately.** `pip install mkdocs-material`
   and `mkdocs build --strict -f mkdocs.yml` builds the same site, which is what makes the
   migration reversible and lets you diff the two engines when something looks off. Do not adopt
