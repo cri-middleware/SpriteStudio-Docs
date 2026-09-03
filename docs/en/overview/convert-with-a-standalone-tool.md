@@ -58,7 +58,7 @@ A cross-platform Tauri desktop app. No command line.
 3. Choose an output folder and convert.
 
 Details & screenshots: [SSConverterGUI overview](../players/converter.md) ·
-Documentation (coming soon) ·
+Documentation (🚧 coming soon) ·
 [Repository](https://github.com/cri-middleware/SSConverterGUI).
 
 ## ⌨️ ssconverter-cli - command line & CI

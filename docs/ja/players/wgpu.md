@@ -61,6 +61,6 @@ Bevy と Player が単一の `wgpu` に解決される必要があり、食い�
 
 ## ➡️ 次に読む
 
-- **ドキュメント** - *準備中*
+- **ドキュメント** - 🚧 *準備中*
 - [リポジトリ](https://github.com/cri-middleware/SSPlayerForWgpu) - 公開までは各クレートの README が参照先です
 - [アセットの変換](../overview/conversion.md) - ツールの選び方とビルドパイプラインへの組み込み

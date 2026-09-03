@@ -21,6 +21,6 @@ Dock converts it in place, so there is no separate tool to install.
 
 ## ➡️ Read next
 
-- **Documentation** - *coming soon*
+- **Documentation** - 🚧 *coming soon*
 - [Repository](https://github.com/cri-middleware/SSPlayerForGodot)
 - [Choose Your Platform](../overview/choose-your-platform.md) - compare with the other players

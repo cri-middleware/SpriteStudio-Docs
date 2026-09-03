@@ -25,6 +25,6 @@ screen demo():
 
 ## ➡️ 次に読む
 
-- **ドキュメント** - *準備中*
+- **ドキュメント** - 🚧 *準備中*
 - [リポジトリ](https://github.com/cri-middleware/SSPlayerForRenPy)
 - [ブラウザで試す](../overview/try-it.md) - 同梱アニメーションが Ren'Py Web で動く様子

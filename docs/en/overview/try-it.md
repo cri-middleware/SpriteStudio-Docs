@@ -4,7 +4,7 @@ See SpriteStudio conversion and playback running live - **no install, nothing to
 Everything here runs entirely in your browser. Each item is hosted on its player's own
 site; this page just gathers the links.
 
-!!! info "Coming soon"
+!!! info "🚧 Coming soon"
     These demos and the hosted converter publish alongside each player's own site. The links
     below go live then.
 
@@ -19,11 +19,11 @@ CLI alternatives), see [Converting with a Standalone Tool](./convert-with-a-stan
 
 | Demo | Player | What it shows |
 |---|---|---|
-| PixiJS demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A `.ssab` animation in a PixiJS v8 app - **drag & drop a directory of `.ssab` + `.png` files** to preview your own. |
-| WebGL demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | The framework-free `<ss-player>` Web Component - **drop a directory of `.ssab` + `.png`** to preview your own. |
-| RPG Maker MZ demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-rmmz`) | A sample MZ project with SS animations in correct Z-order. |
-| TyranoScript demo (coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-tyranoscript`) | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
-| Ren'Py demo (coming soon) | **[SSPlayerForRenPy](../players/renpy.md)** | Bundled SpriteStudio animations running in Ren'Py Web. |
+| PixiJS demo (🚧 coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A `.ssab` animation in a PixiJS v8 app - **drag & drop a directory of `.ssab` + `.png` files** to preview your own. |
+| WebGL demo (🚧 coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | The framework-free `<ss-player>` Web Component - **drop a directory of `.ssab` + `.png`** to preview your own. |
+| RPG Maker MZ demo (🚧 coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-rmmz`) | A sample MZ project with SS animations in correct Z-order. |
+| TyranoScript demo (🚧 coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-tyranoscript`) | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
+| Ren'Py demo (🚧 coming soon) | **[SSPlayerForRenPy](../players/renpy.md)** | Bundled SpriteStudio animations running in Ren'Py Web. |
 | [Flutter demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) | **[SSPlayerForFlutter](../players/flutter.md)** (`ssplayer_flutter`) | The `SpriteStudioView` widget in a Flutter web build - every draw kind, over the same `libssruntime` wasm. |
 | [Flame demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SSPlayerForFlutter](../players/flutter.md)** (`ssplayer_flame`) | The same playback as a `SpriteStudioComponent`, driven by a Flame game loop. |
 
