@@ -56,6 +56,6 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 
 ## ➡️ 次に読む
 
-- **ドキュメント** - *準備中*
+- **ドキュメント** - 🚧 *準備中*
 - [リポジトリ](https://github.com/cri-middleware/SSPlayerForWeb)
 - [ブラウザで試す](../overview/try-it.md) - 各種デモとホスト版コンバーター

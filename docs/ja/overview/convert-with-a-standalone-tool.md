@@ -58,7 +58,7 @@ Unity・Godot・Ren'Py・TyranoBuilder は変換ツールとして `libssconvert
 3. 出力フォルダを選んで変換します。
 
 詳細やスクリーンショットは [SSConverterGUI の概要](../players/converter.md)、
-ドキュメント（準備中）、
+ドキュメント（🚧 準備中）、
 [リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
 
 ## ⌨️ ssconverter-cli - コマンドライン・CI

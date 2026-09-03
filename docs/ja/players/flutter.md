@@ -37,6 +37,6 @@ Player 本体に加えて、次のものが提供されます。
 
 ## ➡️ 次に読む
 
-- **ドキュメント** - *準備中*
+- **ドキュメント** - 🚧 *準備中*
 - [リポジトリ](https://github.com/cri-middleware/SSPlayerForFlutter)
 - [ブラウザで試す](../overview/try-it.md) - 上記 2 つのデモと、他 Player の実動ビルド

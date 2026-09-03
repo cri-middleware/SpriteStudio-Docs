@@ -24,6 +24,6 @@ screen demo():
 
 ## ➡️ Read next
 
-- **Documentation** - *coming soon*
+- **Documentation** - 🚧 *coming soon*
 - [Repository](https://github.com/cri-middleware/SSPlayerForRenPy)
 - [Try It in Your Browser](../overview/try-it.md) - the bundled animations running in Ren'Py Web

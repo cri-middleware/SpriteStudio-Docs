@@ -23,6 +23,6 @@ Hierarchy へドラッグし、`SpriteStudioPlayer`（ワールド空間）か `
 
 ## ➡️ 次に読む
 
-- **ドキュメント** - *準備中*
+- **ドキュメント** - 🚧 *準備中*
 - [リポジトリ](https://github.com/cri-middleware/SSPlayerForUnity)
 - [プレイヤーごとの違い](../overview/player-differences.md) - uGUI Canvas 経路で何を諦めることになるか
