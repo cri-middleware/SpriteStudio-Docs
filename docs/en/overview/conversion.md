@@ -44,3 +44,26 @@ a desktop GUI, a CLI, or a browser tool. Which one to pick and how to run each i
 Both paths emit `.ssab` (animation) / `.ssqb` (sequence) plus the referenced textures, which
 `libssruntime` then plays back. See [SDK Concepts](../sdk/concepts.md) for the pipeline and the
 [Format Specification](../sdk/format-spec.md) for on-disk details.
+
+### How a project's files map to the output
+
+A SpriteStudio project is made up of several files. If you have been handed a `.sspj` and asked to
+implement against it, this mapping is the first thing to know — and it is **the same whichever
+conversion path you take**.
+
+| SpriteStudio file | Role | On conversion |
+|---|---|---|
+| `.sspj` | The project itself; holds the list of `.ssae` / `.ssce` / `.ssqe` it references | **Not emitted.** It is used only to resolve resources during conversion |
+| `.ssae` (animation pack) | Part structure and keyframes | Becomes one `.ssab` |
+| `.ssce` (cell map) | The image used, and the cells cut out of it (position, size, pivot) | **Never becomes a file of its own — it is folded into the `.ssab`** |
+| `.ssqe` (sequence) | A playlist of animations | Becomes one `.ssqb` (playback is not implemented — [Shared Limitations](../sdk/limitations.md)) |
+| Images (`.png` and so on) | The artwork itself | Copied to the output location and referenced by the `.ssab` |
+
+See the [Glossary](../sdk/glossary.md) for the terms and the
+[Format Specification](../sdk/format-spec.md) for the design decisions behind the conversion unit.
+
+!!! warning "When you can swap the image alone"
+    Cell positions and sizes are **baked from the `.ssce` into the `.ssab`**. Repainting the artwork
+    is reflected by replacing the image file alone, but if you add, move or resize cells — or change
+    the overall image size — **rebuild the `.ssab` and ship it alongside**. Shipping only the new
+    image renders it against the old cut-out rectangles, so the artwork shifts.
