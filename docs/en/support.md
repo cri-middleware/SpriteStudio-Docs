@@ -16,6 +16,7 @@ File these in the repository that owns the code. Search existing issues first.
 | [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | [Issues](https://github.com/cri-middleware/SSPlayerForGodot/issues) | The GDExtension / custom module, SS Import Dock |
 | [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | [Issues](https://github.com/cri-middleware/SSPlayerForFlutter/issues) | `SpriteStudioView`, the Flame adapter, `ssconvert` |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | [Issues](https://github.com/cri-middleware/SSPlayerForRenPy/issues) | The Ren'Py displayable, auto-import |
+| [SSPlayerForWgpu](https://github.com/cri-middleware/SSPlayerForWgpu) | [Issues](https://github.com/cri-middleware/SSPlayerForWgpu/issues) | The Rust crate and its C / C++ and browser faces, the Bevy adapter |
 | [SSPlayerForReactNative](https://github.com/cri-middleware/SSPlayerForReactNative) | [Issues](https://github.com/cri-middleware/SSPlayerForReactNative/issues) | `<SpriteStudioView>` / `<SpriteStudioScene>`, the native module, Skia rendering |
 | [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | [Issues](https://github.com/cri-middleware/SSConverterGUI/issues) | The desktop app itself (UI, packaging, updates) |
 
