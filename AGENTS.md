@@ -22,11 +22,11 @@ scripts/build-docs.sh                               # English then Japanese, bot
 scripts/build-pages.sh serve=yes                    # ... the published tree, on :8000
 ```
 
-`scripts/*.ps1` are the PowerShell twins, and every one of these scripts takes `key=value`
-options and `--help`, like the ones in the player repos: `prepare-docs.sh python=py
-force=yes`, `build-docs.sh locale=ja venv=.venv`. The `-docs` suffix is deliberate: the
-player repos carry same-named scripts for their own build steps, so the name says which one
-this is. What the first two wrap is only this:
+`prepare-docs` and `build-docs` also ship as `.ps1` twins — `build-pages` is `.sh` only, as in
+most of the family — and every one of these scripts takes `key=value` options and `--help`, like
+the ones in the player repos: `prepare-docs.sh python=py force=yes`, `build-docs.sh locale=ja
+venv=.venv`. The `-docs` suffix is deliberate: the player repos carry same-named scripts for
+their own build steps, so the name says which one this is. What the first two wrap is only this:
 
 ```bash
 python3 -m venv .venv
@@ -134,6 +134,11 @@ no options beyond the two the workflow passes: that invocation is what publishes
   **only what differs between players**. Keep the blend-mode discussion there stated as mechanism,
   with the per-player enumeration confined to the table. Restating a fact on a second page is how
   the text-part responsibilities once drifted into being documented backwards — link instead.
+  The same split runs through the conversion pages: `overview/conversion.md` owns the mapping
+  from the SpriteStudio project files onto what conversion emits and the consequences that
+  follow from it (cell rectangles are baked out of the `.ssce` into the `.ssab`, so swapping an
+  image is only safe while the atlas layout and image size are unchanged), while `sdk/glossary.md`
+  owns what each extension *is*.
 - **No facts that need tracking across repos.** Version numbers, engine/runtime requirement
   tables, per-project license identifiers, and schema-compatibility matrices are deliberately
   *not* hosted here: they would have to be chased across every sibling repository. Let each
@@ -141,13 +146,21 @@ no options beyond the two the workflow passes: that invocation is what publishes
 - **Internal links are relative file paths** ending in `.md` (e.g. `../sdk/concepts.md`), which
   is what `--strict` validates. External player docs are absolute `https://…` URLs. Link sibling
   repos at the **repository root**; when you must point at a file inside one, use
-  `blob/HEAD/...`, never `blob/main/...` — most sibling repos default to `develop`, so a
-  `main` path 404s silently (`--strict` validates internal links only) while `HEAD` always
-  resolves to whatever that repo's default branch is. **From `docs/ja/`, link the `.ja.md`
-  counterpart** where the sibling repo publishes one — the SDK ships `.ja.md` beside most of
-  its guide pages (`20_limitations.ja.md`, `README.ja.md`, `SCHEMA.ja.md`). Sending a Japanese
-  reader to the English original is the kind of drift `--strict` cannot see. Where only a
-  directory would do, point at that directory's `README.ja.md` instead.
+  `blob/HEAD/...`, never `blob/main/...` — the family is split between `main` and `develop`, so a
+  hard-coded branch 404s silently in every repo that uses the other one (`--strict` validates
+  internal links only) while `HEAD` always resolves to whatever that repo's default branch is.
+  **From `docs/ja/`, link the `.ja.md` counterpart** where the sibling repo publishes one — the
+  SDK ships `.ja.md` beside most of its guide pages (`20_limitations.ja.md`, `README.ja.md`,
+  `SCHEMA.ja.md`). Sending a Japanese reader to the English original is the kind of drift
+  `--strict` cannot see. Where only a directory would do, point at that directory's
+  `README.ja.md` instead.
+- **A moved page needs a redirect.** `mkdocs.base.yml` declares the `redirects` plugin with no
+  `redirect_maps:` under it — nothing has shipped from this site yet, so there is nothing to
+  redirect — and that is where the entry goes the moment a published page moves or is renamed:
+  the stub keeps the old URL working, anchors and all. Sources are relative to `docs_dir` and
+  the two locales mirror each other, so one entry covers `en` and `ja`. It matters more here
+  than in a sibling repo, because this portal is what the player repos deep-link into. Zensical
+  implements the plugin natively, which is why `docs/requirements.txt` pins nothing for it.
 - **"Coming soon" gating**: player docs sites, live demos, and the hosted `ssconverter-web`
   are GitHub Pages URLs (`cri-middleware.github.io/…`) that 404 until each is deployed, so those
   outbound links are neutralized to plain **"coming soon" / "準備中"** text (no hyperlink) in
@@ -159,6 +172,15 @@ no options beyond the two the workflow passes: that invocation is what publishes
   (`SSPlayerForWeb`'s `scripts/build-ssconverter-pages.sh`), so it is worth handing readers a
   clickable forward-link rather than an address they must copy. They still 404 today: leave them
   linked anyway, and do not extend the hyperlink pattern to another "coming soon" without asking.
+- **🚧 marks everything that has yet to be published**, not only the pending claims written as
+  prose. A grid card, a table cell and a one-line list item carry the sign as readily as a
+  sentence does, and it sits immediately before the phrase that says the thing is pending —
+  `Docs (🚧 coming soon)`, `- **Documentation** - 🚧 *coming soon*` — rather than out in front of
+  the whole entry. `en` and `ja` carry the same marks, file for file; a locale with fewer of them
+  than its counterpart is the bug. What the sign does **not** mark is a technical constraint: the
+  sequence-playback entry in `sdk/limitations.md` is a fact about the runtime sitting next to its
+  roadmap link, and it stays unmarked like every other `###` item on that page, whose headings
+  carry no emoji by design. The `##` section headings there do.
 - **Landing page cards** (`index.md`) use "grid cards" — they depend on the `attr_list` and
   `md_in_html` markdown extensions already configured in `mkdocs.base.yml`. Icon shortcodes like
   `:material-unity:` and `:simple-rust:` render to SVG. Note that the `pymdownx.emoji` block
@@ -200,10 +222,10 @@ no options beyond the two the workflow passes: that invocation is what publishes
       the selector only works against a build of both; README says how.
 - **There is deliberately no `edit_uri`**, here or in the player repos, so no "edit this page"
   button renders. It is a branch name nothing validates — `--strict` does not look at it — and
-  it was already wrong in three of the five sibling players, pointing at `main` where the
-  default branch is `develop`. `edit/HEAD/…` would remove the branch name but could not be
-  verified: the web editor redirects anonymous requests to a login page whether the ref is
-  valid or not. The footer repo link and CONTRIBUTING.md route corrections instead. Do not
+  it was already wrong in several sibling players, pointing at `main` where the default branch is
+  `develop`; the family is split between the two. `edit/HEAD/…` would remove the branch name but
+  could not be verified: the web editor redirects anonymous requests to a login page whether the
+  ref is valid or not. The footer repo link and CONTRIBUTING.md route corrections instead. Do not
   reintroduce it without checking each repo's default branch.
 - **Pinned toolchain**: `docs/requirements.txt` pins `zensical` deliberately — bump
   intentionally, and **in step with the sibling repos again**. This portal moved off MkDocs +
@@ -213,13 +235,32 @@ no options beyond the two the workflow passes: that invocation is what publishes
   does, so a bump here is a bump everywhere. The exceptions have no `docs/requirements.txt`
   to match: SSPlayerForWeb and SSPlayerForReactNative build their sites with VitePress, and
   SSProjectGenerator has no docs site of its own.
-- **The configs are still valid MkDocs configs, deliberately.** `pip install mkdocs-material`
-  and `mkdocs build --strict -f mkdocs.yml` builds the same site, which is what makes the
-  migration reversible and lets you diff the two engines when something looks off. Do not adopt
-  `zensical.toml` or any Zensical-only config syntax while that is still worth keeping — and
-  note Zensical's own docs currently advise existing projects against the `.toml` switch.
+- **The configs are still valid MkDocs configs, deliberately.** `pip install mkdocs-material
+  mkdocs-redirects` and `mkdocs build --strict -f mkdocs.yml` builds the same site, which is what
+  makes the migration reversible and lets you diff the two engines when something looks off. Do
+  not adopt `zensical.toml` or any Zensical-only config syntax while that is still worth keeping
+  — and note Zensical's own docs currently advise existing projects against the `.toml` switch.
 - **Known Zensical gaps** worth not re-discovering: `page.is_homepage` is never set (worked
   around in `overrides/main.html`); `serve --strict` is accepted but does nothing; there is no
   multi-locale build, which is the whole reason for the three-config split; and the theme's own
   chrome icons are Lucide rather than Material, so a page renders three fewer inline SVGs than
   the MkDocs build did. Content icons are unaffected.
+- **A repository added to the portal needs a row on three surfaces**: a landing-page card in
+  `index.md`, a row in the repository table in `license.md`, and a row in the one in
+  `support.md` — in both locales, so six edits, plus the `nav` entry and the `players/` page in
+  each. The page and the card are the visible half; the two tables are the half that is easy to
+  forget, and nothing validates them, since `--strict` only ever looks at internal links.
+- **`LICENSE.md` holds the licence text and nothing else.** GitHub detects the licence by
+  comparing the whole file against known texts, and the BSD-3-Clause match here sits close enough
+  to the threshold that a single `SPDX-License-Identifier:` line costs about six points of
+  similarity and flips the repository to "Other" on its own; the Japanese translation, which used
+  to sit under a rule in the same file, costs far more. The translation is `LICENSE.ja.md`,
+  labelled a reference translation with the English named as authoritative. Do not merge them
+  back together and do not add an SPDX header — the same split is what moved SSPlayerForGodot
+  from "Other" to "BSD-3-Clause".
+- **`.github/ISSUE_TEMPLATE/config.yml` mirrors `SUPPORT.md`.** Blank issues are off and the two
+  contact links — the community forum for usage questions, the Help Center for anything private
+  or carrying a customer's `.sspj` — repeat what SUPPORT.md routes; change one and change the
+  other. The two links the player repos carry are deliberately absent: their issue trackers 404
+  for anyone outside the org while those repos are private, and this repo has no `SECURITY.md`
+  to point at. Add them when either of those changes.
