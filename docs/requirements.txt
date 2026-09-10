@@ -1,14 +1,1 @@
-# Documentation toolchain (Zensical). Pinned for reproducible builds; bump deliberately.
-#
-# Zensical is the successor to MkDocs + Material for MkDocs, which the same team put into
-# maintenance mode after shipping it. Every sibling that builds its docs with Python pins
-# the same version, so a bump here is a bump everywhere; see AGENTS.md for the list.
-#
-# `mkdocs-static-i18n` and `mkdocs-callouts` are gone: the first is replaced by building
-# each locale from its own config, and the second was configured but never used - no page
-# contained the `> [!NOTE]` syntax it exists to convert.
-#
-# The configs are deliberately still valid MkDocs configs, so installing `mkdocs-material`
-# and `mkdocs-redirects` instead builds the same site if you need to compare the two
-# engines. Zensical implements both natively, which is why neither is pinned here.
-zensical==0.0.58
+zensical==0.0.60
