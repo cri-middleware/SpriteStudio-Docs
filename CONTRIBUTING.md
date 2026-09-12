@@ -2,13 +2,6 @@
 
 Thank you for your interest in improving the SpriteStudio documentation portal! Corrections, clarifications, and translation fixes are all welcome.
 
-## Table of Contents
-- [Code of Conduct](#code-of-conduct)
-- [What belongs in this repository](#what-belongs-in-this-repository)
-- [How Can I Contribute?](#how-can-i-contribute)
-- [Development Environment](#development-environment)
-- [Documentation Standards](#documentation-standards)
-
 ## Code of Conduct
 Please refer to [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
 
@@ -36,53 +29,16 @@ Note that merging does **not** publish. Deployment is manual: a maintainer runs 
 
 ## Development Environment
 
-Two scripts, one per OS family - `--help` on either lists its `key=value` options:
-
 ```bash
 scripts/prepare-docs.sh     # create .venv and install docs/requirements.txt
 scripts/build-docs.sh       # the gate: English then Japanese, both --strict
 ```
 
-```powershell
-scripts\prepare-docs.ps1
-scripts\build-docs.ps1
-```
+Both have `.ps1` twins, and `--help` on any script lists its `key=value` options. English builds first because that build clears `site/`, and the Japanese site lives inside it at `site/ja` - so an English-only build leaves no Japanese site at all.
 
-`build-docs` runs English first because that build clears `site/`, and the Japanese site lives inside it at `site/ja` - so an English-only build leaves no Japanese site at all. `scripts/build-docs.sh locale=en` warns about this; with no arguments it does not arise.
-
-Should you prefer to run the tools yourself, that is all the scripts do:
-
-```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r docs/requirements.txt
-
-.venv/bin/zensical build --strict
-.venv/bin/zensical build -f mkdocs.ja.yml --strict
-```
-
-```powershell
-py -m venv .venv
-.\.venv\Scripts\python -m pip install -r docs/requirements.txt
-
-.\.venv\Scripts\zensical build --strict
-.\.venv\Scripts\zensical build -f mkdocs.ja.yml --strict
-```
-
-Previewing while you write has no script, because `serve` validates nothing and renders one locale at a time:
-
-```bash
-.venv/bin/zensical serve                            # live preview of English at http://127.0.0.1:8000
-.venv/bin/zensical serve -f mkdocs.ja.yml           # ... or of Japanese (stop the other one first)
-```
-
-```powershell
-.\.venv\Scripts\zensical serve                      # live preview of English at http://127.0.0.1:8000
-.\.venv\Scripts\zensical serve -f mkdocs.ja.yml     # ... or of Japanese (stop the other one first)
-```
+The [README](./README.md#local-development) carries the rest: the option table, the commands the scripts wrap if you would rather run them yourself, `serve` for a live preview of one locale, and how to build and serve both together so the header's language selector resolves.
 
 The toolchain versions in `docs/requirements.txt` are pinned deliberately - please bump them intentionally, not incidentally, and **in step with the sibling repositories**. Every sibling that builds its docs with Python - the SDK, Unity, Godot, Ren'Py, Flutter, wgpu, SSConverterGUI - pins the same [Zensical](https://zensical.org) version this repository does, so a bump here is a bump everywhere. (SSPlayerForWeb and SSPlayerForReactNative build with VitePress and have no pin to match.)
-
-`serve` does not validate links, and it renders one locale, so the header's language selector 404s there - see the [README](./README.md#previewing-the-language-selector) for how to preview both locales together.
 
 ## Documentation Standards
 
@@ -142,53 +98,16 @@ SpriteStudio ドキュメントポータルの改善にご関心をお寄せい�
 
 ## 開発環境
 
-OS ごとに 2 つのスクリプトを用意しています。`key=value` 形式のオプションは `--help` で確認できます。
-
 ```bash
 scripts/prepare-docs.sh     # .venv を作成し docs/requirements.txt を導入
 scripts/build-docs.sh       # 唯一の検証。英語 → 日本語の順に --strict でビルド
 ```
 
-```powershell
-scripts\prepare-docs.ps1
-scripts\build-docs.ps1
-```
+どちらにも `.ps1` 版があり、`key=value` 形式のオプションは各スクリプトの `--help` で確認できます。英語を先にビルドするのは、英語ビルドが `site/` を消去し、日本語サイトはその内側（`site/ja`）に出力されるためです。英語だけをビルドすると日本語サイトは残らず消えます。
 
-英語を先にビルドするのは、英語ビルドが `site/` を消去し、日本語サイトはその内側（`site/ja`）に出力されるためです。英語だけをビルドすると日本語サイトは残らず消えます。`scripts/build-docs.sh locale=en` はその旨を警告しますが、引数なしで実行すればこの問題は起きません。
-
-スクリプトを使わない場合、実行しているのは次のコマンドだけです。
-
-```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r docs/requirements.txt
-
-.venv/bin/zensical build --strict
-.venv/bin/zensical build -f mkdocs.ja.yml --strict
-```
-
-```powershell
-py -m venv .venv
-.\.venv\Scripts\python -m pip install -r docs/requirements.txt
-
-.\.venv\Scripts\zensical build --strict
-.\.venv\Scripts\zensical build -f mkdocs.ja.yml --strict
-```
-
-執筆中のプレビューにスクリプトはありません。`serve` はリンクを検証せず、一度に1ロケールしか配信しないためです。
-
-```bash
-.venv/bin/zensical serve                            # 英語を http://127.0.0.1:8000 でライブプレビュー
-.venv/bin/zensical serve -f mkdocs.ja.yml           # 日本語の場合（先に別のものを停止）
-```
-
-```powershell
-.\.venv\Scripts\zensical serve                      # 英語を http://127.0.0.1:8000 でライブプレビュー
-.\.venv\Scripts\zensical serve -f mkdocs.ja.yml     # 日本語の場合（先に別のものを停止）
-```
+残りは [README](./README.ja.md#ローカル開発) にまとまっています。オプション表、スクリプトが実行しているコマンドそのもの、1 ロケールをライブプレビューする `serve`、そしてヘッダーの言語セレクターが動くように両ロケールをビルドして配信する方法です。
 
 `docs/requirements.txt` のバージョンは意図的に固定しています。更新はついでではなく、意図をもって、かつ**兄弟リポジトリと足並みを揃えて**行ってください。Python でドキュメントをビルドする兄弟リポジトリ（SDK・Unity・Godot・Ren'Py・Flutter・wgpu・SSConverterGUI）は、このリポジトリと同じ [Zensical](https://zensical.org) のバージョンを固定しているため、ここでの更新は全リポジトリでの更新を意味します（SSPlayerForWeb と SSPlayerForReactNative は VitePress のため対象外です）。
-
-`serve` はリンクを検証せず、1ロケールしか配信しないため、ヘッダーの言語セレクターは 404 になります。両ロケールをまとめてプレビューする方法は [README](./README.ja.md#言語切り替えのプレビュー) を参照してください。
 
 ## ドキュメントの規約
 
