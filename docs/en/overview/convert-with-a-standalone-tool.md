@@ -11,8 +11,8 @@ converts for you, so you run a standalone tool yourself - for example when you:
 
 ## 🧭 Which one should I use?
 
-All three run the same `libssconverter`, so the `.ssab` / `.ssqb` they produce is identical -
-pick by workflow, not by output.
+All three emit the same `.ssab` / `.ssqb` ([why](./conversion.md)) - pick by workflow, not by
+output.
 
 | Your situation | Use | Why |
 |---|---|---|

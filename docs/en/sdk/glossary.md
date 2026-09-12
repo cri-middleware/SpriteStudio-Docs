@@ -48,7 +48,7 @@ These are the part types as SpriteStudio names them; in the `.ssab` schema each 
 | **`.ssqb`** | The converted sequence binary, the `.ssqe` counterpart of `.ssab`. |
 | **`libsspj`** | The authoring-side parser: reads `.sspj` projects and the `ss*e` files they reference. |
 | **`libssab`** | The `.ssab` / `.ssqb` library - creates and parses the animation binaries. |
-| **`libssconverter`** | The conversion half of the SDK: `.sspj` -> `.ssab` / `.ssqb`. The same code runs in every conversion front-end, so the output is identical whichever you use. |
+| **`libssconverter`** | The conversion half of the SDK: `.sspj` -> `.ssab` / `.ssqb`. The same code runs in every conversion front-end - see [Converting Assets](../overview/conversion.md). |
 | **`libssruntime`** | The playback half: evaluates the timeline for the current frame and hands the result to your renderer. |
 | **Brain / Body** | The architectural split. The **Brain** (`libssruntime`) does all the animation math and is engine-agnostic; the **Body** (a player) draws what the Brain computed. See [SDK Concepts](./concepts.md). |
 | **`FrameData`** | The Brain's output for **one frame** - dense, ready to render, generated at runtime. The data-exchange interface between the runtime and your renderer. |

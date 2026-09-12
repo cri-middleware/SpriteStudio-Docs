@@ -62,7 +62,7 @@ Conversion already produces `.ssqb`, but runtime playback of sequences is still 
 [SDK roadmap](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md) - it lands
 with the runtime state machine.
 
-## 🧩 What the runtime does *not* draw for you
+## 🧩 What the player must supply
 
 `libssruntime` computes animation **state**; two features are deliberately left to the player,
 because they need the host engine:
@@ -78,7 +78,7 @@ because the runtime has no glyphs with which to write coverage.
 So whether text parts render, and whether sounds are audible, is a **per-player** property -
 check [Player Differences](../overview/player-differences.md).
 
-## 🚧 Text and 9-slice parts are not drawn by any player yet
+### Text and 9-slice parts are not drawn by any player yet
 
 Two part types reach the player intact but have no implementation in **any** official player at
 present. This is not a difference between engines - it is uniform, and each player's own
@@ -114,15 +114,9 @@ editor matters.
 Which blend modes a given engine can reproduce *at all* is a separate, per-player question - see
 [Player Differences](../overview/player-differences.md).
 
-## 🌐 Browsers require WebAssembly SIMD
+## 📦 Shipping & loading
 
-The WASM build of the runtime uses **WebAssembly SIMD** instructions and **will not run on
-browsers without SIMD support**. This applies to every browser-facing target: the Web players,
-Unity's WebGL builds, Godot's Web export, Flutter Web, and Ren'Py Web.
-
-**What to do:** treat WebAssembly SIMD as a browser requirement for your distribution.
-
-## 🔐 `.ssab` input is not validated
+### `.ssab` input is not validated
 
 For maximum performance and minimum binary size (embedded / WASM targets), the runtime performs
 **no structural validation** of the `.ssab` it loads. A corrupted or maliciously crafted asset
@@ -132,7 +126,7 @@ can cause out-of-bounds access, undefined behavior, or a crash.
 network, or from user input - validate it beforehand on your side, or restrict loading to assets
 you ship.
 
-## 📦 Embedded-mode `.ssab`
+### Embedded-mode `.ssab` has two constraints
 
 `.ssab` can be generated in *embedded* mode, which packs the referenced assets into the binary
 itself. Two constraints follow:
@@ -142,6 +136,14 @@ itself. Two constraints follow:
 - **Only the assets that pack actually uses are embedded.** The body of another `.ssab`
   referenced as an *external instance* is not included - ship those referenced `.ssab` files
   alongside.
+
+### Browsers require WebAssembly SIMD
+
+The WASM build of the runtime uses **WebAssembly SIMD** instructions and **will not run on
+browsers without SIMD support**. This applies to every browser-facing target: the Web players,
+Unity's WebGL builds, Godot's Web export, Flutter Web, and Ren'Py Web.
+
+**What to do:** treat WebAssembly SIMD as a browser requirement for your distribution.
 
 ## ➡️ Next
 

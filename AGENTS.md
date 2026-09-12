@@ -131,9 +131,15 @@ no options beyond the two the workflow passes: that invocation is what publishes
   (the canonical feature list), `sdk/limitations.md` owns what it **does not do** plus every
   all-player constraint (the runtime-vs-player responsibility table, drawing and blending caveats,
   sequence playback, browser and asset requirements), and `overview/player-differences.md` owns
-  **only what differs between players**. Keep the blend-mode discussion there stated as mechanism,
-  with the per-player enumeration confined to the table. Restating a fact on a second page is how
-  the text-part responsibilities once drifted into being documented backwards — link instead.
+  **only what differs between players**. Restating a fact on a second page is how the text-part
+  responsibilities once drifted into being documented backwards — link instead.
+    - `sdk/limitations.md` keeps **one altitude**: four `##` buckets — playback, what the player
+      supplies, rendering, shipping — and every individual constraint a `###` inside one of them.
+      A single fact promoted to `##` is the bug; the ToC then lists buckets and facts side by side.
+    - `overview/player-differences.md` is a **one-line-per-player summary table over one `###`
+      section per player**: the table is what a reader scans to find their engine, the section is
+      where that engine's cases are stated, and no player's entry lives in both. A cell that
+      outgrows its line belongs in the section. Keep the blend-mode discussion stated as mechanism.
   The same split runs through the conversion pages: `overview/conversion.md` owns the mapping
   from the SpriteStudio project files onto what conversion emits and the consequences that
   follow from it (cell rectangles are baked out of the `.ssce` into the `.ssab`, so swapping an

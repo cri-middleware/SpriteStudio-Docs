@@ -9,11 +9,11 @@
 どれを使うか迷ったら [プラットフォームの選び方](./overview/choose-your-platform.md) を、
 全体像は [エコシステム](./overview/ecosystem.md) をご覧ください。
 
-▶️ まず動かして確かめたい方は [ブラウザで試す](./overview/try-it.md) へ — インストール不要の
+▶️ まず動かして確かめたい方は [ブラウザで試す](./overview/try-it.md) へ - インストール不要の
 ライブデモとホスト型コンバーターがあります。
 
 🎨 手元に SpriteStudio プロジェクトがない場合は、CRI Middleware が無償の
-[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています —— キャラクター・
+[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています - キャラクター・
 エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)に
 かけられます。
 
