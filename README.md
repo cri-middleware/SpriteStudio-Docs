@@ -38,8 +38,9 @@ docs/
     license.md
   requirements.txt
 scripts/
-  prepare.{sh,ps1}            # create the venv, install the pinned toolchain
-  build.{sh,ps1}              # build both locales, strict, in the right order
+  prepare-docs.{sh,ps1}       # create the venv, install the pinned toolchain
+  build-docs.{sh,ps1}         # build both locales, strict, in the right order
+  build-pages.sh              # the two above, then serve site/ - what the workflow runs
 mkdocs.base.yml               # everything shared by both locales
 mkdocs.yml                    # English  -> site/
 mkdocs.ja.yml                 # Japanese -> site/ja/

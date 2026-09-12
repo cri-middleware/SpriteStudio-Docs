@@ -37,8 +37,9 @@ docs/
     license.md
   requirements.txt
 scripts/
-  prepare.{sh,ps1}            # venv の作成とツールチェーンの導入
-  build.{sh,ps1}              # 両ロケールを正しい順序で strict ビルド
+  prepare-docs.{sh,ps1}       # venv の作成とツールチェーンの導入
+  build-docs.{sh,ps1}         # 両ロケールを正しい順序で strict ビルド
+  build-pages.sh              # 上の 2 つを実行し site/ を配信。workflow が呼ぶもの
 mkdocs.base.yml               # 両ロケール共通の設定
 mkdocs.yml                    # 英語   -> site/
 mkdocs.ja.yml                 # 日本語 -> site/ja/
