@@ -34,9 +34,8 @@ graph LR
 参照してください。</small>
 
 変換は **インポート時の自動変換**（Unity・Godot・Ren'Py・TyranoBuilder）でも、**スタンドアロンツール**
-（SSConverterGUI / `ssconverter-cli` / `ssconverter-web`）でも行えます。いずれも同じ
-`libssconverter` が動くため、**生成されるアセットは経路によらず同一**です。詳細は
-[アセットの変換](./conversion.md) を参照してください。
+（SSConverterGUI / `ssconverter-cli` / `ssconverter-web`）でも行えます。どの経路があり、
+それぞれが何を出力するかは [アセットの変換](./conversion.md) にまとめてあります。
 
 ## 🧩 構成要素
 

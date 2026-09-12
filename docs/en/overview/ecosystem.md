@@ -34,9 +34,8 @@ core drives *every* player - see [Choose Your Platform](./choose-your-platform.m
 current lineup.</small>
 
 Conversion can happen **automatically on import** (Unity, Godot, Ren'Py, TyranoBuilder) or via a **standalone
-tool** (SSConverterGUI, `ssconverter-cli`, `ssconverter-web`). The same `libssconverter` runs
-either way, so **the generated asset is identical whichever route you take**. See
-[Converting Assets](./conversion.md) for the details.
+tool** (SSConverterGUI, `ssconverter-cli`, `ssconverter-web`) - see
+[Converting Assets](./conversion.md), which owns the routes and what each one emits.
 
 ## 🧩 The pieces
 
