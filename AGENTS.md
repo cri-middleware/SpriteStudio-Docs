@@ -67,9 +67,11 @@ The first two also ship as `.ps1`; all take `key=value` options and `--help`.
   under the `redirects` plugin in `mkdocs.base.yml`, relative to `docs_dir`: one entry covers both.
 - **"Coming soon" gating**: `cri-middleware.github.io/…` URLs 404 until deployed, so those
   outbound links are plain **"coming soon" / "準備中"** text, no hyperlink, while `github.com/…`
-  repo links stay live. The three `ssconverter-web` addresses in
-  `overview/convert-with-a-standalone-tool.md` are the **one exception** (link + 🚧 + marker); do
-  not extend it without asking.
+  repo links stay live. Two places link the address anyway: the three `ssconverter-web`
+  addresses in `overview/convert-with-a-standalone-tool.md` (link + 🚧 + marker), and
+  `overview/try-it.md`, where **the converter link and every demo row are live links with no
+  per-row marker** — the page's 🚧 admonition covers them, and they go live together. Do not extend
+  either without asking.
 - **🚧 marks anything pending publication** — a card, a table cell or a list item as readily as a
   sentence — immediately before the pending phrase (`Docs (🚧 coming soon)`), not in front of the
   whole entry, and never marks a technical constraint. `en` and `ja` carry the same marks file for

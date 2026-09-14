@@ -10,10 +10,10 @@ site; this page just gathers the links.
 
 ## 🔄 Convert in your browser
 
-**ssconverter-web** converts
-your `.sspj` into `.ssab` right in the browser: the whole pipeline runs locally on WebAssembly,
-so nothing is ever uploaded to a server. For the step-by-step walkthrough (and the desktop /
-CLI alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalone-tool.md).
+**[ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)** converts your
+`.sspj` into `.ssab` right in the browser: the whole pipeline runs locally on WebAssembly, so
+nothing is ever uploaded to a server. For the step-by-step walkthrough (and the desktop / CLI
+alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalone-tool.md).
 
 ## 🎮 Live player demos
 
