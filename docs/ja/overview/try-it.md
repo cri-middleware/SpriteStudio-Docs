@@ -19,16 +19,17 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 
 | デモ | Player | 内容 |
 |---|---|---|
-| PixiJS デモ（🚧 準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-pixi`） | PixiJS v8 アプリでの再生。`.ssab`＋`.png` の入った**ディレクトリを D&D** すると自分のアニメをプレビューできます。 |
-| WebGL デモ（🚧 準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-webgl`） | フレームワーク非依存の `<ss-player>` Web Component。`.ssab`＋`.png` の**ディレクトリを D&D** して自分のアニメをプレビュー。 |
-| RPG ツクール MZ デモ（🚧 準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-rmmz`） | SS アニメを正しい Z 順で表示するサンプル MZ プロジェクト。 |
-| TyranoScript デモ（🚧 準備中） | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-tyranoscript`） | TyranoScript のノベルゲームで、`[ss_*]` タグから SpriteStudio アニメを再生。 |
-| Ren'Py デモ（🚧 準備中） | **[SSPlayerForRenPy](../players/renpy.md)** | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |
+| [PixiJS デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-pixi`） | PixiJS v8 アプリでの再生。`.ssab`＋`.png` の入った**ディレクトリを D&D** すると自分のアニメをプレビューできます。 |
+| [WebGL デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-webgl`） | フレームワーク非依存の `<ss-player>` Web Component。`.ssab`＋`.png` の**ディレクトリを D&D** して自分のアニメをプレビュー。 |
+| [RPG ツクール MZ デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-rmmz`） | SS アニメを正しい Z 順で表示するサンプル MZ プロジェクト。 |
+| [TyranoScript デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/tyranoscript/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-tyranoscript`） | TyranoScript のノベルゲームで、`[ss_*]` タグから SpriteStudio アニメを再生。 |
+| [Ren'Py デモ](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | **[SSPlayerForRenPy](../players/renpy.md)** | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |
 | [Flutter デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) | **[SSPlayerForFlutter](../players/flutter.md)**（`ssplayer_flutter`） | Flutter の Web ビルドで動く `SpriteStudioView` ウィジェット。同じ `libssruntime` の wasm 上で全描画種別を再生。 |
 | [Flame デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SSPlayerForFlutter](../players/flutter.md)**（`ssplayer_flame`） | 同じ再生を `SpriteStudioComponent` として Flame のゲームループから駆動。 |
+| [WebGPU デモ](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | **[SSPlayerForWgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | 3 ページ構成。js API、`<ss-player-webgpu>` カスタム要素単体、そしてそれを他の要素と重ねて 1 ページに並べたもの（`GPUDevice` は 1 つ）。 |
 
 Flutter の 2 つのデモは同 Player の Web ターゲットで動作します。Web ターゲットは同 Player の
-ドキュメント上 developer preview の位置づけです。
+ドキュメント上 developer preview の位置づけです。WebGPU デモには WebGPU 対応ブラウザが必要です。
 
 **自分のアニメをプレビューしたい場合**、デモが受け取るのは `.ssab`＋`.png` なので、先に `.sspj` を
 変換してください。上記のブラウザ版コンバーターでも、

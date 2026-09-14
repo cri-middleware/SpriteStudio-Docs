@@ -19,16 +19,17 @@ CLI alternatives), see [Converting with a Standalone Tool](./convert-with-a-stan
 
 | Demo | Player | What it shows |
 |---|---|---|
-| PixiJS demo (🚧 coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A `.ssab` animation in a PixiJS v8 app - **drag & drop a directory of `.ssab` + `.png` files** to preview your own. |
-| WebGL demo (🚧 coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | The framework-free `<ss-player>` Web Component - **drop a directory of `.ssab` + `.png`** to preview your own. |
-| RPG Maker MZ demo (🚧 coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-rmmz`) | A sample MZ project with SS animations in correct Z-order. |
-| TyranoScript demo (🚧 coming soon) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-tyranoscript`) | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
-| Ren'Py demo (🚧 coming soon) | **[SSPlayerForRenPy](../players/renpy.md)** | Bundled SpriteStudio animations running in Ren'Py Web. |
+| [PixiJS demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A `.ssab` animation in a PixiJS v8 app - **drag & drop a directory of `.ssab` + `.png` files** to preview your own. |
+| [WebGL demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | The framework-free `<ss-player>` Web Component - **drop a directory of `.ssab` + `.png`** to preview your own. |
+| [RPG Maker MZ demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-rmmz`) | A sample MZ project with SS animations in correct Z-order. |
+| [TyranoScript demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/tyranoscript/) | **[SSPlayerForWeb](../players/web.md)** (`@spritestudio/ssplayer-tyranoscript`) | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
+| [Ren'Py demo](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | **[SSPlayerForRenPy](../players/renpy.md)** | Bundled SpriteStudio animations running in Ren'Py Web. |
 | [Flutter demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) | **[SSPlayerForFlutter](../players/flutter.md)** (`ssplayer_flutter`) | The `SpriteStudioView` widget in a Flutter web build - every draw kind, over the same `libssruntime` wasm. |
 | [Flame demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SSPlayerForFlutter](../players/flutter.md)** (`ssplayer_flame`) | The same playback as a `SpriteStudioComponent`, driven by a Flame game loop. |
+| [WebGPU demo](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | **[SSPlayerForWgpu](../players/wgpu.md)** (`@spritestudio/ssplayer-wgpu`) | Three pages: the js API, the `<ss-player-webgpu>` custom element on its own, and a page full of them overlapping other content on one `GPUDevice`. |
 
 Both Flutter demos run on that player's Web target, which its own documentation calls a
-developer preview.
+developer preview. The WebGPU demo needs a browser that supports WebGPU.
 
 **Want to preview your own animation?** The demos take `.ssab` + `.png`, so convert your `.sspj`
 first - with the browser converter above, or any of the
