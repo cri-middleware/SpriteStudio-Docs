@@ -41,10 +41,10 @@ nav:
   - 🗺️ Overview:
       - Ecosystem: overview/ecosystem.md
       - Choose Your Platform: overview/choose-your-platform.md
-      - Player Differences: overview/player-differences.md
       - Try It in Your Browser: overview/try-it.md
       - Converting Assets: overview/conversion.md
       - Standalone Conversion Tools: overview/convert-with-a-standalone-tool.md
+      - Player Differences: overview/player-differences.md
   - 🎮 Players & Tools:
       - Unity: players/unity.md
       - Web (Player Collection): players/web.md

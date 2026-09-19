@@ -39,7 +39,7 @@ docs/
 scripts/
   prepare-docs.{sh,ps1}       # venv の作成とツールチェーンの導入
   build-docs.{sh,ps1}         # 両ロケールを正しい順序で strict ビルド
-  build-pages.sh              # 上の 2 つを実行し site/ を配信。workflow が呼ぶもの
+  build-pages.{sh,ps1}        # 上の 2 つを実行し site/ を配信。workflow が呼ぶもの
 mkdocs.base.yml               # 両ロケール共通の設定
 mkdocs.yml                    # 英語   -> site/
 mkdocs.ja.yml                 # 日本語 -> site/ja/
@@ -86,6 +86,9 @@ scripts\build-docs.ps1
 | `prepare-docs.sh force=yes` | 既存の venv を削除して作り直す（壊れた場合用） |
 | `build-docs.sh locale=<all\|en\|ja>` | ビルドするロケール（既定は `all`＝上記の順序） |
 | `build-docs.sh venv=<dir>` | `zensical` を実行する venv。無ければ `PATH` 上のものを使用 |
+| `build-pages.sh prepare=<auto\|yes\|no>` | 先に `prepare-docs.sh` を実行するか（既定は `auto`＝`zensical` が見つからないときだけ。CI は別ステップで用意するので `no`） |
+| `build-pages.sh serve=<yes\|no>` | ビルド後に `site/` を配信するか（既定は `no`）。フォアグラウンドで動き、Ctrl-C で停止 |
+| `build-pages.sh port=<n>` | `serve=yes` のポート（既定は `8000`） |
 
 注意が必要なのは `build-docs.sh locale=en` を単独で実行した場合です。`site/ja` が消えるため、
 スクリプトはその旨を警告します。
@@ -131,6 +134,13 @@ py -m venv .venv
 
 `serve` は一度に1ロケールしか配信しないため、もう一方の言語が存在せずセレクターは 404 に
 なります。両ロケールをビルドして、その出力を配信してください。
+
+```bash
+scripts/build-pages.sh serve=yes     # 両ロケールをビルドし、:8000 で配信します
+```
+
+これは `pages.yml` が実行しているスクリプトそのもので、違いはアップロードしないことだけです。
+手作業で行う場合は次の 2 段です。
 
 ```bash
 scripts/build-docs.sh

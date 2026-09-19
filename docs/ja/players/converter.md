@@ -5,6 +5,8 @@
 です。Linux では SDK の `ssconverter-cli` を使ってください（窓が無いだけで、同じ
 `libssconverter` です）。
 
+- **入手:** [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases)
+- **使い方:** [スタンドアロンツールで変換する](../overview/convert-with-a-standalone-tool.md)
 - **ドキュメント:** 🚧 _準備中_
 - **リポジトリ:** <https://github.com/cri-middleware/SSConverterGUI>
 
