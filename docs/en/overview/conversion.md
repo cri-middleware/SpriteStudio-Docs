@@ -5,6 +5,9 @@ runtime format (`.ssab` / `.ssqb`). Every path below runs the **same `libssconve
 [SpriteStudio-SDK](../sdk/concepts.md) and produces the **same output** - pick whichever fits
 your engine and workflow.
 
+The input is a project authored in **SpriteStudio 7.5 or later**: the `.ssab` / `.ssqb` formats
+are defined against that version, and conversion does not upgrade an older project to it.
+
 !!! tip "No SpriteStudio project of your own yet?"
     CRI Middleware publishes free
     [sample data](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) - complete
@@ -44,6 +47,9 @@ a desktop GUI, a CLI, or a browser tool. Which one to pick and how to run each i
 Both paths emit `.ssab` (animation) / `.ssqb` (sequence) plus the referenced textures, which
 `libssruntime` then plays back. See [SDK Concepts](../sdk/concepts.md) for the pipeline and the
 [Format Specification](../sdk/format-spec.md) for on-disk details.
+
+Conversion runs one way only: `.ssab` is a playback format, and there is no route back to
+`.sspj`. Keep editing the SpriteStudio project and convert again.
 
 ### How a project's files map to the output
 
