@@ -5,6 +5,9 @@
 [SpriteStudio-SDK](../sdk/concepts.md) の**同じ `libssconverter`** であり、**出力も同一**です。
 エンジンやワークフローに合った方法を選んでください。
 
+入力は **SpriteStudio 7.5 以上**で作成したプロジェクトです。`.ssab` / `.ssqb` の形式がその版に
+対して定義されているためで、変換が古い版のプロジェクトを新しい版へ更新することはありません。
+
 !!! tip "手元に SpriteStudio プロジェクトがない場合"
     CRI Middleware が無償の
     [サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) を公開しています。
@@ -43,6 +46,9 @@
 どちらの経路でも `.ssab`（アニメーション）／`.ssqb`（シーケンス）と参照テクスチャが出力され、
 `libssruntime` がそれを再生します。パイプラインは [SDK コンセプト](../sdk/concepts.md)、
 ディスク上の詳細は [フォーマット仕様](../sdk/format-spec.md) を参照してください。
+
+変換は一方向です。`.ssab` は再生用の形式で、`.sspj` へ戻す経路はありません。編集は
+SpriteStudio のプロジェクト側で行い、変換し直してください。
 
 ### プロジェクトの構成と、変換後の対応
 

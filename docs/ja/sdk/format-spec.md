@@ -77,4 +77,5 @@ FrameData（密・1フレーム）  --FFI-->  各エンジンの描画
 !!! info "スキーマのバージョニング"
     `.ssab` はバイナリ `version` フィールドを持ち、`ssconverter-web` などのツールは
     [スキーマ版ごと](../overview/convert-with-a-standalone-tool.md)に公開されます。変換ツールのスキーマは
-    Player のランタイム版に合わせてください。
+    Player のランタイム版に合わせてください。版が合わない `.ssab` は
+    [読み込めません](./limitations.md)。

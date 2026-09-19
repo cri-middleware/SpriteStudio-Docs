@@ -6,8 +6,9 @@ player runs on any of them. The host does not have to be Rust - C, C++ and the b
 served from the same library.
 
 !!! tip "Code-first - and one library behind three faces"
-    Which face you install decides the language you write, not what the player can do. The Rust
-    API is the one the other two wrap, under different names.
+    Which face you install decides the language you write - and whether the player can draw into
+    a render pass of your own, which is a Rust-side feature. The Rust API is the one the other
+    two wrap, under different names.
 
 **1. What you install** - pick the face that matches your host. While
 [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) is private, every route
@@ -42,23 +43,32 @@ scene.update(&mut renderer, &device, &queue, delta_secs, &mut [&mut player]);
 scene.draw(&renderer, &mut rpass);           // into a pass the host opened
 ```
 
-The C and JavaScript faces are the same shape under different names. In a Bevy app the adapter
-does this for you: you spawn the three components and characters go into Bevy's own 2D pass.
+The C and JavaScript faces carry the same calls under their own names, with one structural
+difference: they build and own their device rather than drawing into a pass of yours (below). In
+a Bevy app the adapter does this for you: you spawn the three components and characters go into
+Bevy's own 2D pass.
 
-## 🔩 Why the host keeps its device
+## 🔩 Which faces borrow your device
 
-The decision that shapes this player is the **borrow model**: it does not own the wgpu
+The decision that shapes this player is the **borrow model**: the Rust API does not own the wgpu
 `Device` / `Queue` / `Surface`. The host owns them and lends them per frame - which is what
 `scene.draw` into a pass *you* opened means above. So the player rides along inside any wgpu
 application, your own renderer or an engine that already has a device of its own, without
 locking you into one.
 
-It is also what keeps the **Bevy** adapter small: the adapter draws on the device Bevy already
-owns, so characters go into Bevy's own 2D pass rather than through a second renderer. It
-follows Bevy's release line rather than the player's, tracking one line at a time - because
-Bevy and the player have to resolve to a single `wgpu`, a mismatch is a compile error rather
-than a runtime surprise. The repository names which line, along with the camera settings a
-Bevy app needs.
+**The C and browser faces do not borrow.** wgpu's types have no stable C representation, so there
+is nothing to hand across that boundary: the C face builds and owns a device on the window handle
+you give it, and the browser face creates its own device and a surface per canvas. Both draw
+frames of their own rather than into a pass of yours, so compositing a character into your pass
+is a Rust-side feature - directly or through an engine adapter - and from C the route is an
+offscreen render plus texture sharing.
+
+The borrow model is also what keeps the **Bevy** adapter small: the adapter draws on the device
+Bevy already owns, so characters go into Bevy's own 2D pass rather than through a second
+renderer. It follows Bevy's release line rather than the player's, tracking one line at a time -
+because Bevy and the player have to resolve to a single `wgpu`, a mismatch is a compile error
+rather than a runtime surprise. The repository names which line, along with the camera settings
+a Bevy app needs.
 
 ## ➡️ Read next
 

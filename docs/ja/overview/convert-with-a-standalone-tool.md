@@ -17,7 +17,7 @@ Unity・Godot・Ren'Py・TyranoBuilder は変換ツールとして `libssconvert
 | 状況 | 使うツール | 理由 |
 |---|---|---|
 | 何もインストールできない、単発でさっと | **`ssconverter-web`** | ブラウザ内で完結、導入ゼロ |
-| デスクトップで、たまに変換、GUI がよい | **SSConverterGUI** | ドラッグ&ドロップ、ターミナル不要 |
+| デスクトップで、たまに変換、GUI がよい | **SSConverterGUI**（macOS / Windows） | ドラッグ&ドロップ、ターミナル不要 |
 | ビルドや CI/CD の自動化、大量に変換 | **`ssconverter-cli`** | スクリプト化・バッチモード・`--embedded` |
 
 !!! tip "迷ったらブラウザから"
@@ -51,7 +51,8 @@ Unity・Godot・Ren'Py・TyranoBuilder は変換ツールとして `libssconvert
 
 ## 🖥️ SSConverterGUI - デスクトップアプリ
 
-クロスプラットフォームの Tauri 製デスクトップアプリです。コマンドラインは不要です。
+Tauri 製のデスクトップアプリです。コマンドラインは不要です。配布しているビルドは **macOS と
+Windows** で、Linux では下の `ssconverter-cli` を使ってください（出力は同じです）。
 
 1. [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
 2. アプリを起動し、`.sspj` をウィンドウにドロップします（またはファイル選択から開きます）。

@@ -96,10 +96,11 @@ route.
 ### wgpu
 
 `Div2` / `Overlay2` fall back to `Mix`. Masking has **two backends, and what the host's pass lends
-picks between them**: the **stencil** one approximates overlapping masks that mix INCR and INVERT,
-bounds nesting by the 8 bits available, and drops writers past the 24th; the **coverage-bitmap**
-one serves a pass that lends no stencil, with the same semantics at the cost of one extra render
-pass per masking player.
+picks between them**: the **stencil** one approximates overlapping masks that mix INCR and INVERT
+and bounds nesting by the 8 bits available; the **coverage-bitmap** one serves a pass that lends
+no stencil, lifting that nesting bound - its accumulators are shader variables - at the cost of
+one extra render pass per masking player. The writer budget both stop at is not a wgpu trait; it
+is in [Shared Limitations](../sdk/limitations.md).
 
 Group alpha composites **each part in turn**, so two overlapping parts at `0.5` leave their
 overlap at `0.75` rather than at `0.5`. The 13 integration shaders are covered for **Normal parts

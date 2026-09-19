@@ -17,7 +17,7 @@ output.
 | Your situation | Use | Why |
 |---|---|---|
 | Can't install anything, or just a quick one-off | **`ssconverter-web`** | Runs fully in the browser, nothing to install |
-| On the desktop, occasional conversions, prefer a UI | **SSConverterGUI** | Drag & drop, no terminal needed |
+| On the desktop, occasional conversions, prefer a UI | **SSConverterGUI** (macOS / Windows) | Drag & drop, no terminal needed |
 | Automating a build, CI/CD, or many projects at once | **`ssconverter-cli`** | Scriptable, batch mode, `--embedded` |
 
 !!! tip "Not sure? Start in the browser."
@@ -51,7 +51,8 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
 
 ## 🖥️ SSConverterGUI - desktop app
 
-A cross-platform Tauri desktop app. No command line.
+A Tauri desktop app. No command line. Builds are published for **macOS and Windows** - on Linux,
+take `ssconverter-cli` below instead; the output is the same.
 
 1. Download a build from [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases).
 2. Launch it and drag your `.sspj` onto the window (or open it from the file picker).
