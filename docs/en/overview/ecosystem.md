@@ -33,19 +33,15 @@ every player builds on; the dashed hand-off is the generated **`.ssab / .ssqb`**
 core drives *every* player - see [Choose Your Platform](./choose-your-platform.md) for the
 current lineup.</small>
 
-Conversion can happen **automatically on import** (Unity, Godot, Ren'Py, TyranoBuilder) or via a **standalone
-tool** (SSConverterGUI, `ssconverter-cli`, `ssconverter-web`) - see
-[Converting Assets](./conversion.md), which owns the routes and what each one emits.
+Conversion can happen **automatically on import** or via a **standalone tool** - which engines
+do which, and what each route emits, is in [Converting Assets](./conversion.md).
 
 ## 🧩 The pieces
 
 | Component | Role |
 |---|---|
-| **SpriteStudio-SDK** | The shared Rust core. `libssconverter` converts `.sspj` into runtime assets; `libssruntime` plays them back. Consumed by every player as a git submodule - including `libssconverter`, so Unity, Godot, Ren'Py, and TyranoBuilder convert in-place. |
-| **SSPlayerForUnity / ForGodot** | Bundle `libssconverter` as a conversion tool and run it on the engine-editor side, so import & playback need no external tool. |
-| **SSPlayerForRenPy** | Bundles `libssconverter` as a conversion tool and auto-imports on startup, so no external tool is needed. |
-| **SSPlayerForWeb / ForFlutter** | `libssruntime` bindings + rendering; conversion via the bundled standalone tools. SSPlayerForWeb's TyranoBuilder plugin is the exception - it converts inside the editor, so that route needs no separate tool. |
-| **SSPlayerForReactNative / ForWgpu** | `libssruntime` bindings + rendering, with no converter of their own: neither has an editor to host an importer in, so conversion is a host-side step with one of the standalone tools below. |
+| **SpriteStudio-SDK** | The shared Rust core. `libssconverter` converts `.sspj` into runtime assets; `libssruntime` plays them back. Every player consumes it as a git submodule, `libssconverter` included - which is what lets some of them convert in-place. |
+| **The players** (Unity, Web, Godot, Flutter, Ren'Py, wgpu, React Native) | `libssruntime` bindings plus the rendering for one engine. Those with an editor to host it in run the converter there; the rest leave conversion to the tools below ([Converting Assets](./conversion.md)). |
 | **SSConverterGUI / `ssconverter-cli` / `ssconverter-web`** | Standalone front-ends over `libssconverter` for converting without a player (desktop GUI, CLI/CI, browser). |
 
 Because conversion and playback live in the SDK, all players stay consistent in feature

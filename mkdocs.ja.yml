@@ -46,10 +46,10 @@ nav:
   - 🗺️ 概要:
       - エコシステム: overview/ecosystem.md
       - プラットフォームの選び方: overview/choose-your-platform.md
-      - プレイヤーごとの違い: overview/player-differences.md
       - ブラウザで試す: overview/try-it.md
       - アセットの変換: overview/conversion.md
       - スタンドアロンツールでの変換: overview/convert-with-a-standalone-tool.md
+      - プレイヤーごとの違い: overview/player-differences.md
   - 🎮 Player・ツール:
       - Unity: players/unity.md
       - Web（Player コレクション）: players/web.md

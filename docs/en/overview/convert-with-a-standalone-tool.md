@@ -1,9 +1,8 @@
 # 🧰 Converting with a Standalone Tool
 
-Unity, Godot, Ren'Py, and TyranoBuilder **bundle** `libssconverter` as a conversion tool, so they convert automatically on import -
-`.sspj` becomes `.ssab` seamlessly, with no separate tool (see
-[Converting Assets](./conversion.md)). Targeting anything else means no player
-converts for you, so you run a standalone tool yourself - for example when you:
+Some players bundle `libssconverter` and convert automatically on import, with no separate tool
+in sight - [Converting Assets](./conversion.md) says which. Targeting anything else means no
+player converts for you, so you run a standalone tool yourself - for example when you:
 
 - play back in the browser with [SSPlayerForWeb](../players/web.md)'s renderers,
 - integrate your own player, or bring SpriteStudio to a new engine ([Porting a Player](../sdk/porting.md)), or

@@ -40,7 +40,7 @@ docs/
 scripts/
   prepare-docs.{sh,ps1}       # create the venv, install the pinned toolchain
   build-docs.{sh,ps1}         # build both locales, strict, in the right order
-  build-pages.sh              # the two above, then serve site/ - what the workflow runs
+  build-pages.{sh,ps1}        # the two above, then serve site/ - what the workflow runs
 mkdocs.base.yml               # everything shared by both locales
 mkdocs.yml                    # English  -> site/
 mkdocs.ja.yml                 # Japanese -> site/ja/
@@ -77,7 +77,7 @@ scripts\prepare-docs.ps1    # the PowerShell twins; same options, same output
 scripts\build-docs.ps1
 ```
 
-Both take `key=value` options and `--help`, like the scripts in the player repositories:
+All three take `key=value` options and `--help`, like the scripts in the player repositories:
 
 | | |
 |---|---|
@@ -86,6 +86,9 @@ Both take `key=value` options and `--help`, like the scripts in the player repos
 | `prepare-docs.sh force=yes` | delete the venv and recreate it, for one that has gone wrong |
 | `build-docs.sh locale=<all\|en\|ja>` | which locale to build (`all` — the order above) |
 | `build-docs.sh venv=<dir>` | virtualenv to run `zensical` from; falls back to `PATH` |
+| `build-pages.sh prepare=<auto\|yes\|no>` | run `prepare-docs.sh` first (`auto` — only when no `zensical` is found; `no` for CI, which prepares in a step of its own) |
+| `build-pages.sh serve=<yes\|no>` | serve `site/` once the build is done (`no`); foreground, Ctrl-C to stop |
+| `build-pages.sh port=<n>` | port for `serve=yes` (`8000`) |
 
 `build-docs.sh locale=en` on its own is the one to watch: it removes `site/ja`, and says so.
 
@@ -130,6 +133,12 @@ py -m venv .venv
 
 `serve` renders one locale at a time, so the other language does not exist under it and the
 selector 404s. Build both locales instead and serve the result:
+
+```bash
+scripts/build-pages.sh serve=yes     # build both locales, then serve them on :8000
+```
+
+That is the script `pages.yml` runs, minus the upload. The two steps by hand:
 
 ```bash
 scripts/build-docs.sh

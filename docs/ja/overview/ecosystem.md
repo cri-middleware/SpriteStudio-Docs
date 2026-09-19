@@ -33,19 +33,15 @@ graph LR
 駆動します。現行のラインナップは [プラットフォームの選び方](./choose-your-platform.md) を
 参照してください。</small>
 
-変換は **インポート時の自動変換**（Unity・Godot・Ren'Py・TyranoBuilder）でも、**スタンドアロンツール**
-（SSConverterGUI / `ssconverter-cli` / `ssconverter-web`）でも行えます。どの経路があり、
-それぞれが何を出力するかは [アセットの変換](./conversion.md) にまとめてあります。
+変換は **インポート時の自動変換**でも、**スタンドアロンツール**でも行えます。どのエンジンが
+どちらで、それぞれが何を出力するかは [アセットの変換](./conversion.md) にまとめてあります。
 
 ## 🧩 構成要素
 
 | コンポーネント | 役割 |
 |---|---|
-| **SpriteStudio-SDK** | 共通の Rust コア。`libssconverter` が `.sspj` をランタイムアセットへ変換し、`libssruntime` が再生します。各 Player が git submodule として参照し、`libssconverter` も含むため、Unity・Godot・Ren'Py・TyranoBuilder はその場で変換できます。 |
-| **SSPlayerForUnity / ForGodot** | 変換ツールとして `libssconverter` をバンドルし、エンジンエディタ側で実行するため、インポートも再生も外部ツール不要です。 |
-| **SSPlayerForRenPy** | 変換ツールとして `libssconverter` をバンドルし、起動時に自動インポートするため外部ツール不要です。 |
-| **SSPlayerForWeb / ForFlutter** | `libssruntime` バインディングと描画。変換は同梱のスタンドアロンツールで行います。例外は SSPlayerForWeb の TyranoBuilder プラグインで、エディタ内で変換するため別ツールを必要としません。 |
-| **SSPlayerForReactNative / ForWgpu** | `libssruntime` バインディングと描画。変換ツールは同梱しません。インポーターを組み込むエディターがどちらにもないため、変換は下記のスタンドアロンツールを使うホスト側の作業になります。 |
+| **SpriteStudio-SDK** | 共通の Rust コア。`libssconverter` が `.sspj` をランタイムアセットへ変換し、`libssruntime` が再生します。各 Player が git submodule として参照し、`libssconverter` も含むため、その場で変換できる Player があります。 |
+| **各 Player**（Unity・Web・Godot・Flutter・Ren'Py・wgpu・React Native） | `libssruntime` のバインディングと、そのエンジン向けの描画。インポーターを組み込むエディターがあるものはそこで変換まで行い、それ以外は変換を下記のツールに任せます（[アセットの変換](./conversion.md)）。 |
 | **SSConverterGUI / `ssconverter-cli` / `ssconverter-web`** | Player を介さず変換するための `libssconverter` スタンドアロンフロントエンド（デスクトップ GUI／CLI・CI／ブラウザ）。 |
 
 変換と再生を SDK に集約しているため、全 Player で機能サポートと挙動が一貫します。

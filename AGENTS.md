@@ -29,7 +29,7 @@ scripts/build-pages.sh serve=yes   # ... then serve the published tree on :8000
 zensical serve [-f mkdocs.ja.yml]  # unwrapped: live preview of one locale at a time
 ```
 
-The first two also ship as `.ps1`; all take `key=value` options and `--help`.
+All three also ship as `.ps1`; each takes `key=value` options and `--help`.
 
 - **Order matters**: the English build clears `site/`, which contains `site/ja`. `serve` validates
   nothing — `serve --strict` is accepted and does nothing.
