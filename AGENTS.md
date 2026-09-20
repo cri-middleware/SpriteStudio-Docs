@@ -1,17 +1,22 @@
-# AGENTS.md
+# SpriteStudio-Docs — AI Agent Guide
 
 ## Operating rules
 
-*   Keep changes scoped to the requested task.
+*   Keep changes scoped to the requested task. Unrequested hardening is a suggestion, not a commit; a defect
+    you actually hit in the code you touched is not — fix it, or say plainly why you did not.
 *   Do not commit, push, or open PRs unless the user explicitly asks.
-*   Before editing, read enough surrounding context to know what a page owns and what links into
-    it; if the read tool truncated a file, read the remaining ranges first.
-*   Follow the style of the file you touch, and **edit `en/` and `ja/` in the same turn** — a
-    change that lands in one locale is the defect this repo produces most.
-*   After editing, run `scripts/build-docs.sh`. It is the only validation there is: nothing builds
-    the docs on a pull request.
-*   **This portal owns no code**, so every claim is sourced from a sibling repository. Update this
-    file when one of the invariants below changes.
+*   Before editing, read enough surrounding context to understand callers and invariants, the ones below
+    included. If the read tool truncated a file, read the remaining ranges first.
+*   Follow the existing style of the file you touch (naming, type usage, control flow, error handling).
+*   **Anything that exists twice changes twice** — a page and its translation, a `.sh` and its `.ps1`. A
+    change that lands in one half is the defect this family produces most.
+*   **Finish by running this repository's checks**: `scripts/build-docs.sh`, both locales. Nothing builds
+    the docs on a pull request, so it is the only gate there is. Read what a run says it verified rather
+    than its exit code — several checks here pass, or skip themselves, when a prerequisite is missing.
+*   **Do not restate here what another file owns.** The table below says which file that is; a fact that
+    belongs to none of them goes where it will be seen to go stale.
+*   **This portal owns no code**, so every claim is sourced from a sibling repository. Update this file when
+    one of the invariants below changes.
 
 ## What this repo is
 
@@ -30,8 +35,6 @@ links out, never full player documentation.
 | What a `players/` page owes its reader | `SpriteStudio-SDK/MAINTAINING_PLAYERS.md` |
 | Why a YAML sequence may live in only one config | the header comment of `mkdocs.base.yml` |
 | Everything else about a config or a template | the comment at the point of use |
-
-Do not restate those here. This file is for what an agent would otherwise break silently.
 
 ## Invariants
 
