@@ -47,16 +47,19 @@ forum rather than Issues:
 
 ## 🔒 Private inquiries & large repro data
 
-For private consultation, sensitive reports, sending large reproduction data (e.g. a `.sspj`
-project), or support with contractual guarantees, use the official Help Center - it has a file
-upload for repro data:
+For private consultation, sensitive reports, or support with contractual guarantees, use the
+official inquiry form:
 
-👉 [**CRI Middleware Help Center (inquiry form)**](https://www.webtech.co.jp/help/en/spritestudio7/inquiries/ssplayer_tool/)
+👉 [**CRI Middleware inquiry form (English)**](https://www.webtech.co.jp/contact/en.html)
+
+The English form has no file upload. To send large reproduction data (e.g. a `.sspj` project),
+use the [Japanese Help Center form](https://www.webtech.co.jp/help/ja/spritestudio7/inquiries/ssplayer_tool/), which
+takes a zip of up to 8 MB.
 
 !!! note "About SpriteStudio itself"
     Questions about the **editor** (authoring, the SpriteStudio application, licensing of the
-    tool) go to [CRI Middleware](https://www.webtech.co.jp/spritestudio/) through the same Help
-    Center - not to the player repositories. Before asking, the
+    tool) go to [CRI Middleware](https://www.webtech.co.jp/spritestudio/) through the same form -
+    not to the player repositories. Before asking, the
     [**SpriteStudio Help Center**](https://www.webtech.co.jp/help/en/spritestudio7/) already
     covers using the editor: beginners' guide, user guide, tutorial videos, and a
     reverse-lookup reference.
