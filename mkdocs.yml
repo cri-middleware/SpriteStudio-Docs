@@ -60,6 +60,6 @@ nav:
       - Format Specification: sdk/format-spec.md
       - Shared Limitations: sdk/limitations.md
       - Porting a Player: sdk/porting.md
-  - ℹ️ About:
+  - ℹ️ Support & License:
       - 🤝 Support: support.md
       - ⚖️ License: license.md

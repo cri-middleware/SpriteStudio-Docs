@@ -65,6 +65,6 @@ nav:
       - フォーマット仕様: sdk/format-spec.md
       - 共通の制限事項: sdk/limitations.md
       - Player の移植: sdk/porting.md
-  - ℹ️ このサイトについて:
+  - ℹ️ サポート・ライセンス:
       - 🤝 サポート: support.md
       - ⚖️ ライセンス: license.md
