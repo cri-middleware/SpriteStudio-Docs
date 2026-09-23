@@ -16,7 +16,7 @@
 #      (.github/workflows/pages.yml is workflow_dispatch only), so this is the
 #      only thing standing between a broken internal link and production.
 #      mkdocs.base.yml sets strict: true as well, but the flag is spelled out
-#      here because it is what the README and AGENTS.md tell people to run.
+#      here because it is what the README tells people to run.
 #
 # `zensical serve` is deliberately not wrapped: it validates nothing (--strict is
 # accepted and does nothing), it serves one locale at a time, and it is a
