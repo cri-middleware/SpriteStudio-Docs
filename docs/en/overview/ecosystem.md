@@ -4,10 +4,6 @@ Every official player shares one Rust core, **SpriteStudio-SDK**. A SpriteStudio
 (`.sspj`) is converted once into a compact runtime format, then played back through
 `libssruntime` regardless of the target engine.
 
-That same SDK - both conversion and playback - is embedded in every official player, so
-**one shared SDK powers many players (one-to-many)**. (Each player's own docs zoom into its
-specific convert/import workflow.)
-
 ```mermaid
 graph LR
     SS[" .sspj / Images<br/>(SpriteStudio) "]
@@ -29,9 +25,8 @@ graph LR
 ```
 
 <small>The highlighted **SpriteStudio-SDK** core (`libssconverter` + `libssruntime`) is what
-every player builds on; the dashed hand-off is the generated **`.ssab / .ssqb`** asset. One
-core drives *every* player - see [Choose Your Platform](./choose-your-platform.md) for the
-current lineup.</small>
+every player builds on; the dashed hand-off is the generated **`.ssab / .ssqb`** asset. For
+the current lineup of players, see [Choose Your Platform](./choose-your-platform.md).</small>
 
 Conversion can happen **automatically on import** or via a **standalone tool** - which engines
 do which, and what each route emits, is in [Converting Assets](./conversion.md).
@@ -41,7 +36,7 @@ do which, and what each route emits, is in [Converting Assets](./conversion.md).
 | Component | Role |
 |---|---|
 | **SpriteStudio-SDK** | The shared Rust core. `libssconverter` converts `.sspj` into runtime assets; `libssruntime` plays them back. Every player consumes it as a git submodule, `libssconverter` included - which is what lets some of them convert in-place. |
-| **The players** (Unity, Web, Godot, Flutter, Ren'Py, wgpu, React Native) | `libssruntime` bindings plus the rendering for one engine. Those with an editor to host it in run the converter there; the rest leave conversion to the tools below ([Converting Assets](./conversion.md)). |
+| **The players** | `libssruntime` bindings plus the rendering for one engine. Some also convert for you during development ([Converting Assets](./conversion.md) says which); the rest leave conversion to the tools below. |
 | **SSConverterGUI / `ssconverter-cli` / `ssconverter-web`** | Standalone front-ends over `libssconverter` for converting without a player (desktop GUI, CLI/CI, browser). |
 
 Because conversion and playback live in the SDK, all players stay consistent in feature

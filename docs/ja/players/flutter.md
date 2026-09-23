@@ -3,8 +3,8 @@
 **Flutter** アプリで SpriteStudio アニメーションを再生します。`libssruntime` を基盤とし、
 `SpriteStudioView` ウィジェットが Flutter の各ターゲットで通常のウィジェットと同様に合成されます。
 
-▶️ インストール不要で試せます: [ウィジェット版デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/)、
-[Flame 版デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) はどちらもブラウザで動きます。
+▶️ インストール不要で試せます: ウィジェット版と Flame 版のデモがブラウザで動きます -
+[ブラウザで試す](../overview/try-it.md)。
 
 !!! tip "コードで始まる - ただし Rust ツールチェーンは不要"
     ネイティブコアはビルドではなく取得されます。`ssruntime_dart` の native assets フックが、

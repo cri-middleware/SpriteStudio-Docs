@@ -76,9 +76,6 @@ because they need the host engine:
 A text part authored as a **mask** is the exception: it is left out of the draw plan entirely,
 because the runtime has no glyphs with which to write coverage.
 
-So whether text parts render, and whether sounds are audible, is a **per-player** property -
-check [Player Differences](../overview/player-differences.md).
-
 ### Text and 9-slice parts are not drawn by any player yet
 
 Two part types reach the player intact but have no implementation in **any** official player at
@@ -118,14 +115,14 @@ Which blend modes a given engine can reproduce *at all* is a separate, per-playe
 ### An animation plans at most 24 mask writers per frame
 
 Clipping is replayed from a coverage encoding that spends one bit per mask writer, and the
-budget is the 24 bits of an RGBA8's colour channels, so an animation plans **24 writers** in a
+budget is the 24 bits of an RGBA8's color channels, so an animation plans **24 writers** in a
 frame and the 25th is not planned at all. This is not one player's ceiling: the cap belongs to
 the planner the SDK's porting guide lays out
 ([`40_mask.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/40_components/40_mask.md)),
 and the official players share it. Writers carried out of an instance part spend
 from the same 24; a second character on screen brings its own budget.
 
-**What to do:** keep one animation under 24 masks live in the same frame.
+**What to do:** keep one animation to 24 or fewer masks live in the same frame.
 
 ## 📦 Shipping & loading
 
@@ -164,8 +161,7 @@ itself. Two constraints follow:
 ### Browsers require WebAssembly SIMD
 
 The WASM build of the runtime uses **WebAssembly SIMD** instructions and **will not run on
-browsers without SIMD support**. This applies to every browser-facing target: the Web players,
-Unity's WebGL builds, Godot's Web export, Flutter Web, and Ren'Py Web.
+browsers without SIMD support**. This applies to every player's browser-facing target.
 
 **What to do:** treat WebAssembly SIMD as a browser requirement for your distribution.
 

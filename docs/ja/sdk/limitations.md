@@ -3,7 +3,7 @@
 このページの内容はすべて **共通コア**（`libssruntime` / `libssab`）に由来するため、エンジンを
 問わず **すべての公式 Player に当てはまります**。各 Player のドキュメントには、その Player に
 固有の事項のみが記載されています。Player 間の差分は
-[プレイヤーごとの違い](../overview/player-differences.md) を参照してください。
+[Player ごとの違い](../overview/player-differences.md) を参照してください。
 
 !!! tip "正典の所在"
     実装レベルの完全な一覧は SDK の Player 移植ガイド
@@ -74,9 +74,6 @@
 例外として、**マスクとして作画されたテキストパーツ**は描画プランに含まれません。カバレッジを
 書き込むためのグリフをランタイムが持たないためです。
 
-したがって、テキストパーツが描画されるか、サウンドが実際に鳴るかは **Player ごと** の性質です。
-[プレイヤーごとの違い](../overview/player-differences.md) を確認してください。
-
 ### テキストパーツと 9 スライスパーツは、どの Player でもまだ描画されない
 
 次の 2 つのパーツ種別は、データとしては Player まで届きますが、現時点で **どの公式 Player にも**
@@ -110,7 +107,7 @@
 背景レイヤーを敷いてください。
 
 なお、そのブレンドモードをエンジンが *そもそも再現できるか* は Player ごとに異なる別の問題です。
-[プレイヤーごとの違い](../overview/player-differences.md) を参照してください。
+[Player ごとの違い](../overview/player-differences.md) を参照してください。
 
 ### 1 アニメーションが 1 フレームに計画できるマスクは 24 枚まで
 
@@ -162,14 +159,13 @@
 ### ブラウザでは WebAssembly SIMD が必須
 
 ランタイムの WASM ビルドは **WebAssembly SIMD 命令** を使用しており、**SIMD 非対応の
-ブラウザでは動作しません**。Web 向けのすべてのターゲット（Web Player 群、Unity の WebGL ビルド、
-Godot の Web 書き出し、Flutter Web、Ren'Py Web）が対象です。
+ブラウザでは動作しません**。どの Player でも、Web 向けのターゲットはすべて対象です。
 
 **対処:** 配信先のブラウザ要件として、WebAssembly SIMD 対応を前提としてください。
 
 ## ➡️ 次に
 
 - [用語集](./glossary.md) - このページで使われている用語
-- [プレイヤーごとの違い](../overview/player-differences.md) - Player 間で異なる点
+- [Player ごとの違い](../overview/player-differences.md) - Player 間で異なる点
 - [SDK コンセプト](./concepts.md) - これらの制約が生じる変換 → 再生パイプライン
 - [サポート](../support.md) - このページに載っていない事象の報告先

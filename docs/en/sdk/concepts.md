@@ -10,8 +10,8 @@ SpriteStudio's animation math.
 1. **Convert** - turn a SpriteStudio project (`.sspj`) into an optimized binary (`.ssab`)
    with `libssconverter` (via `ssconverter-cli`, the [Converter GUI](../players/converter.md),
    `ssconverter-web`, or automatic conversion on import). See [Converting Assets](../overview/conversion.md).
-2. **Play anywhere** - pass the `.ssab` to `libssruntime`. It plays *any* `.ssab`, supporting
-   the full SpriteStudio feature set.
+2. **Play anywhere** - pass the `.ssab` to `libssruntime`. It plays *any* `.ssab`; what it
+   covers is listed below, and what it does not cover yet is in [Shared Limitations](./limitations.md).
 
 ```mermaid
 graph LR
@@ -55,7 +55,7 @@ Because every official player evaluates animations with `libssruntime`, this fea
 - Authored texture change - a per-part texture swap set on the timeline; the runtime resolves it
   into the draw batch, so a player that binds textures per batch needs no special handling
 - Frame-accurate events - user data, signal, audio
-- Sub-frame interpolation (smooth playback above the base frame rate)
+- Sub-frame interpolation (smooth playback above the base frame rate - 144 Hz+, slow motion)
 - Whole-animation mixing / crossfade (animations stacked on tracks)
 - The **Override Layer API** - override a part's color, cell reference, or visibility at runtime
 
@@ -86,7 +86,6 @@ Because every official player evaluates animations with `libssruntime`, this fea
   lookups for near-zero parsing overhead; the runtime leverages SIMD (`f32x4`) everywhere.
 - **Extreme portability** - the core is strict `#![no_std]` Rust with no OS/stdlib
   dependency; integrates via C-API or WASM, from embedded devices to browsers.
-- **Sub-frame interpolation** - smooth playback beyond the base framerate (144 Hz+, slow-mo).
 
 ## ➡️ Next
 

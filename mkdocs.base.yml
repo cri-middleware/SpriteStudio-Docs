@@ -21,9 +21,8 @@ site_author: "CRI Middleware Co., Ltd."
 repo_name: "cri-middleware/SpriteStudio-Docs"
 repo_url: "https://github.com/cri-middleware/SpriteStudio-Docs"
 # No `edit_uri`, so no "edit this page" button renders. The value is a branch name that
-# nothing validates -- strict mode does not look at it -- and it was already wrong in three
-# of the five sibling player repos, pointing at `main` where the default branch is
-# `develop`. The footer repo link and CONTRIBUTING.md already route corrections.
+# nothing validates -- strict mode does not look at it -- so a branch rename breaks it
+# silently. The footer repo link and CONTRIBUTING.md already route corrections.
 # Rendered in the site footer. Deliberately year-less so it never goes stale.
 copyright: "Copyright &copy; CRI Middleware Co., Ltd."
 
@@ -33,13 +32,14 @@ strict: true
 
 theme:
   name: material
-  # Only overrides/main.html lives here: it appends the Open Graph / Twitter Card metadata
-  # that the theme does not emit on its own, and repairs the page title.
+  # overrides/main.html appends the Open Graph / Twitter Card metadata the theme does not
+  # emit on its own and repairs the page title; overrides/partials/alternate.html is the
+  # per-page language selector (see `extra.alternate` below).
   custom_dir: overrides
   # Placeholder branding - swap both for real SpriteStudio artwork when it is available.
   # `icon.logo` is a bundled Material icon (no file at all); the favicon is a hand-rolled
-  # SVG. Unlike under the old single-build setup, it now needs a copy under *each* locale's
-  # docs dir - see the comment on `docs/en/assets/favicon.svg`.
+  # SVG with a copy under *each* locale's docs dir - see the comment on
+  # `docs/en/assets/favicon.svg`.
   favicon: assets/favicon.svg
   icon:
     logo: material/motion-play

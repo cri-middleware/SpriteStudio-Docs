@@ -17,7 +17,7 @@ Godot project root. Godot 4.7-series. It ships in two forms:
 Dock converts it in place, so there is no separate tool to install.
 
 **3. Getting it on screen** - add a `SpriteStudioPlayer2D` node and assign the `.ssab` to its
-**SSAB Resource** property.
+**Ssab** property.
 
 ## ➡️ Read next
 

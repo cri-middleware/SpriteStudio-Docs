@@ -21,13 +21,13 @@ the core computes but leaves the player to draw or play - are in
 | **[Web](../players/web.md)** | The renderers have no gaps; the framework integrations are at different stages |
 | **[Godot](../players/godot.md)** | No feature gaps beyond the shared ones; the Web export has extra requirements |
 | **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends |
-| **[Ren'Py](../players/renpy.md)** | Division / Overlay fall back to `Mix`, and a few features are approximate |
+| **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate |
 | **[React Native](../players/react-native.md)** | Masked Effect draws unmasked, masked Mesh does not; platform reach is narrower |
 | **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter states three limits of its own |
 
 !!! note "How to read this page"
-    Each section below summarizes what that player's own **Limitations & Scope** page states;
-    follow the link for the exact cases. Every player publishes one. So a gap absent here is
+    Each section below summarizes what that player's own **Limitations & Scope** page states -
+    every player publishes one, and the exact cases are listed there. So a gap absent here is
     absent from that player's own account too - which is still not the same as a guarantee of
     support.
 
@@ -39,7 +39,7 @@ the core computes but leaves the player to draw or play - are in
 
 The **uGUI (Canvas) path** trades capability for CanvasRenderer's "1 renderer = 1 mesh + 1
 material": it assumes a **single atlas** (parts from other atlases cannot sample correctly) and
-supports **MIX / ADD only**, collapsing every other blend to `Mix`. The world path has neither
+supports **`Mix` / `Add` only**, collapsing every other blend to `Mix`. The world path has neither
 limit.
 
 `.ssqb` assets **import** and can be referenced - playing a sequence back is a
@@ -74,7 +74,7 @@ above the whole animation rather than between its parts - and assumes the view d
 
 ### Ren'Py
 
-Division / Overlay fall back to `Mix`. **Part tracking** carries the transform but not the draw
+`Div2` / `Overlay2` fall back to `Mix`. **Part tracking** carries the transform but not the draw
 order - a pinned child paints in front of the whole sprite rather than between its parts.
 
 A few features are approximate rather than exact - masking, whole-part tint on Mesh parts, and
@@ -109,7 +109,7 @@ only** - `map0` / `map1` secondary textures, and a shader part combined with a m
 The **Bevy adapter** is a separate crate, following Bevy's release line rather than the player's
 and tracking one line at a time. It takes the coverage backend, since Bevy's 2d depth texture
 carries no stencil, and states three limits of its own: a **second view is skipped** with a
-warning, **MSAA must be off** (and the camera wants `CompositingSpace::Srgb` for faithful colour),
+warning, **MSAA must be off** (and the camera wants `CompositingSpace::Srgb` for faithful color),
 and loading is **synchronous**, going to the filesystem rather than Bevy's `AssetServer` - so no
 hot reload, packed assets or shared atlases.
 
@@ -119,9 +119,9 @@ SpriteStudio realizes each blend as a GPU blend state, so reproduction depends o
 engine exposes. Where a mode has no equivalent, players fall back rather than fail - which is why
 the entries above cluster around the same few modes:
 
-- **Division / Overlay** have no GPU blend mapping in the reference players either, so falling
+- **`Div2` / `Overlay2`** have no GPU blend mapping in the reference players either, so falling
   back to `Mix` is deliberate behavior rather than an unfinished implementation.
-- **Sub / Invert** need a reverse-subtract or destination-replace state. An engine without one can
+- **`Sub` / `Invert`** need a reverse-subtract or destination-replace state. An engine without one can
   still reconstruct them exactly from multiple passes, at the cost of batching - so the difference
   may show up as performance rather than as a visual gap.
 
