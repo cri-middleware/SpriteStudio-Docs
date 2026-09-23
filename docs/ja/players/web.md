@@ -10,7 +10,7 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 
 **1. 何を入れるか** - 環境に合わせてレンダラーパッケージを 1 つ選びます（[下の表](#pick-by-environment)）。どれも WASM コアを同梱しているので、依存は 1 つで済みます。
 🚧 npm への公開は初回リリースと同時です。それまでは
-[リポジトリの examples](https://github.com/cri-middleware/SSPlayerForWeb) をチェックアウトして実行してください。
+🚧 [リポジトリの examples](https://github.com/cri-middleware/SSPlayerForWeb) をチェックアウトして実行してください。
 
 **2. `.sspj` -> `.ssab`** - この Player 自身のサイトでホストされる `ssconverter-web` を使ってブラウザで変換するか、[スタンドアロンツール](../overview/convert-with-a-standalone-tool.md)のいずれかを使います。変換用パッケージは再生用とは別に選ぶため、下の表でも行を分けています。
 
@@ -35,7 +35,7 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 | 変換機能を自作アプリ / サービスに組み込む | **`@spritestudio/ssconverter-core`** |
 
 **ゲームエンジン統合** - 描画は `@spritestudio/ssplayer-webgl` を基盤にしています。上記のパッケージとは違い、こちらはそもそも npm 公開の予定がなく、リポジトリの
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases) で配布されます。
+🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases) で配布されます。
 
 | あなたの環境 | パッケージ | 状態 |
 |---|---|---|
@@ -49,5 +49,5 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 ## ➡️ 次に読む
 
 - **ドキュメント** - 🚧 *準備中*
-- [リポジトリ](https://github.com/cri-middleware/SSPlayerForWeb)
+- 🚧 [リポジトリ](https://github.com/cri-middleware/SSPlayerForWeb)
 - [ブラウザで試す](../overview/try-it.md) - 各種デモとホスト版コンバーター

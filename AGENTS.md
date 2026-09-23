@@ -58,10 +58,11 @@ links out, never full player documentation.
   buckets (playback, what the player supplies, rendering, shipping), every constraint a `###`
   inside one — a fact promoted to `##` is the bug. `overview/player-differences.md` is a
   **one-line-per-player table over one `###` per player**; an overgrown cell belongs in one.
-- **🚧 marks anything pending publication** — a card, a table cell or a list item as readily as a
-  sentence — immediately before the pending phrase (`Docs (🚧 coming soon)`), not in front of the
-  whole entry, and never on a technical constraint. `en` and `ja` carry the same marks file for
-  file. In `sdk/limitations.md`, `##` headings carry an emoji, `###` none.
+- **🚧 marks anything pending publication** — a card, a table cell, a list item or a link into a
+  repository that is still private as readily as a sentence — immediately before the pending phrase
+  (`Docs (🚧 coming soon)`, `🚧 [GitHub](…)`), not in front of the whole entry, and never on a
+  technical constraint. `en` and `ja` carry the same marks file for file. In `sdk/limitations.md`,
+  `##` headings carry an emoji, `###` none.
 - **A repository added to the portal needs five edits per locale** — a card in `index.md`, a row
   in `license.md`, a row in `support.md`, the `nav` entry, the `players/` page. Nothing checks it.
 - **`LICENSE.md` holds the licence text and nothing else.** GitHub scores the whole file against

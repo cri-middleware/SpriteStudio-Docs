@@ -4,8 +4,8 @@
 [Player ごとの違い](../overview/player-differences.md) を参照してください。
 
 !!! tip "正典の所在"
-    実装レベルの完全な一覧は SDK の Player 移植ガイド（[`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md) -
-    ガイド全体の目次は [`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）にあります。このページはその利用者向け要約です。
+    実装レベルの完全な一覧は SDK の Player 移植ガイド（🚧 [`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md) -
+    ガイド全体の目次は 🚧 [`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）にあります。このページはその利用者向け要約です。
 
 ## 🎬 再生・タイムライン
 
@@ -41,7 +41,7 @@
 ### シーケンス（`.ssqe` / `.ssqb`）再生は未実装
 
 変換ではすでに `.ssqb` を生成できますが、ランタイムでのシーケンス再生は
-[SDK のロードマップ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md)
+🚧 [SDK のロードマップ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md)
 上の項目で、ランタイムのステートマシンと合わせて実装される予定です。
 
 ## 🧩 Player 側が用意するもの
@@ -83,7 +83,7 @@
 
 ### 1 アニメーションが 1 フレームに計画できるマスクは 24 枚まで
 
-クリッピングは writer 1 枚に 1 ビットを割り当てたカバレッジから復元され、その予算が RGBA8 のカラーチャンネル 24 ビット分です。したがって 1 つのアニメーションが 1 フレームに計画できるマスク（mask writer）は **24 枚**で、25 枚目以降は計画されません。これは特定の Player の都合ではなく、SDK の Player 移植ガイドが示すプランナー（[`40_mask.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/40_components/40_mask.md)）の上限で、公式 Player はこれを共有しています。インスタンスパーツの内側から持ち上がってくる writer も同じ 24 枚から消費します。予算はアニメーション単位なので、画面にもう
+クリッピングは writer 1 枚に 1 ビットを割り当てたカバレッジから復元され、その予算が RGBA8 のカラーチャンネル 24 ビット分です。したがって 1 つのアニメーションが 1 フレームに計画できるマスク（mask writer）は **24 枚**で、25 枚目以降は計画されません。これは特定の Player の都合ではなく、SDK の Player 移植ガイドが示すプランナー（🚧 [`40_mask.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/40_components/40_mask.md)）の上限で、公式 Player はこれを共有しています。インスタンスパーツの内側から持ち上がってくる writer も同じ 24 枚から消費します。予算はアニメーション単位なので、画面にもう
 1 体いればその 1 体にも 24 枚あります。
 
 **対処:** 1 つのアニメーションの同一フレームで、有効なマスクが 24 枚を超えない構成で制作してください。

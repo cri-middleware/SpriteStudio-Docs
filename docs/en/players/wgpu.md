@@ -11,7 +11,7 @@ served from the same library.
     two wrap, under different names.
 
 **1. What you install** - pick the face that matches your host. While
-[SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) is private, every route
+🚧 [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) is private, every route
 below needs access to it: the player links `ssruntime` and `ssab` as Rust crates rather than
 through a released C-API, so the SDK comes in as a git submodule.
 
@@ -73,5 +73,5 @@ a Bevy app needs.
 ## ➡️ Read next
 
 - **Documentation** - 🚧 *coming soon*
-- [Repository](https://github.com/cri-middleware/SSPlayerForWgpu) - the crate READMEs are the reference until then
+- 🚧 [Repository](https://github.com/cri-middleware/SSPlayerForWgpu) - the crate READMEs are the reference until then
 - [Converting Assets](../overview/conversion.md) - picking a tool and putting it in a build pipeline

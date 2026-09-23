@@ -53,18 +53,18 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
 A Tauri desktop app. No command line. Builds are published for **macOS and Windows** - on Linux,
 take `ssconverter-cli` below instead; the output is the same.
 
-1. Download a build from [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases).
+1. Download a build from 🚧 [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases).
 2. Launch it and drag your `.sspj` onto the window (or open it from the file picker).
 3. Choose an output folder and convert.
 
 Details: [SSConverterGUI overview](../players/converter.md) ·
 Documentation (🚧 coming soon) ·
-[Repository](https://github.com/cri-middleware/SSConverterGUI).
+🚧 [Repository](https://github.com/cri-middleware/SSConverterGUI).
 
 ## ⌨️ ssconverter-cli - command line & CI
 
 A single self-contained binary for Windows / macOS / Linux. Download it from the
-[SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases) (no build
+🚧 [SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases) (no build
 environment required), then:
 
 ```bash
@@ -82,7 +82,7 @@ ssconverter-cli ./assets/projects ./more_assets
 ```
 
 In batch mode each output is written next to its source (`-o` is ignored). Full option list:
-[ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli).
+🚧 [ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli).
 
 ## ➡️ Next
 

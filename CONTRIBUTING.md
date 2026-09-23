@@ -55,7 +55,7 @@ Settings shared by both locales live in `mkdocs.base.yml`, which the two inherit
 ### Links
 - **Internal links** are relative file paths ending in `.md` (e.g. `../sdk/concepts.md`). `--strict` validates these.
 - **Links into sibling repositories** should target the repository itself. When you must point inside one, write `blob/HEAD/...` for a file and `tree/HEAD/...` for a directory, never a branch name: the sibling repositories default to `main` or `develop` with no pattern to follow, so a branch path can 404 silently - `--strict` only validates internal links - while `HEAD` always resolves to that repository's default branch.
-- **Pre-launch sites** (player documentation sites, live demos, the hosted converter) are GitHub Pages URLs that 404 until each is deployed, so they are neutralized to plain "coming soon" / "準備中" text. This applies to those **sites only** - `github.com/cri-middleware/…` repository links stay live as forward-links. When a site ships, restore its link in `en/` and `ja/` together.
+- **Pre-launch sites** (player documentation sites, live demos, the hosted converter) are GitHub Pages URLs that 404 until each is deployed, so they are neutralized to plain "coming soon" / "準備中" text. This applies to those **sites only** - `github.com/cri-middleware/…` repository links stay live as forward-links, with a 🚧 immediately before each link into a repository that is still private - and before Godot's Releases, whose published build predates this player. When a site ships or a repository goes public, restore or unmark its links in `en/` and `ja/` together.
 - **Two pages link a pre-launch address anyway**, deliberately: the three `ssconverter-web` addresses in `overview/convert-with-a-standalone-tool.md` (link plus a 🚧 marker), and `overview/try-it.md`, where the converter and every demo row are live links with no per-row marker - the 🚧 admonition at the top of the page covers them, and they all go live together. Please do not neutralize those, or extend the exception to another page, without asking.
 
 ### Writing
@@ -125,7 +125,7 @@ scripts/build-docs.sh       # 唯一の検証。英語 → 日本語の順に --
 ### リンク
 - **内部リンク**は `.md` で終わる相対パス（例: `../sdk/concepts.md`）。`--strict` が検証します。
 - **兄弟リポジトリへのリンク**は、リポジトリ自体を指してください。リポジトリ内を直接指す必要がある場合は、ブランチ名を書かず、ファイルなら `blob/HEAD/...`、ディレクトリなら `tree/HEAD/...` と書いてください。兄弟リポジトリの既定ブランチは `main` と `develop` が混在しており、ブランチ名を書いたパスは気付かないまま 404 になります（`--strict` は内部リンクしか検証しません）。`HEAD` は常にそのリポジトリの既定ブランチへ解決されます。
-- **公開前のサイト**（各 Player のドキュメントサイト、ライブデモ、ホスト版コンバーター）は、デプロイされるまで 404 になる GitHub Pages の URL のため、リンクにせず「coming soon」「準備中」の文字列にしています。対象は**これらのサイトのみ**で、`github.com/cri-middleware/…` のリポジトリへのリンクは先行リンクとして有効なままにします。サイトが公開されたら `en/` と `ja/` の両方でリンクに戻してください。
+- **公開前のサイト**（各 Player のドキュメントサイト、ライブデモ、ホスト版コンバーター）は、デプロイされるまで 404 になる GitHub Pages の URL のため、リンクにせず「coming soon」「準備中」の文字列にしています。対象は**これらのサイトのみ**で、`github.com/cri-middleware/…` のリポジトリへのリンクは先行リンクとして有効なままにし、まだ private のリポジトリへのリンクには直前に 🚧 を付けます（Godot の Releases も対象です。公開済みのビルドがこの Player より古いため）。サイトの公開時やリポジトリの public 化の際は、`en/` と `ja/` の両方でリンクを戻す／🚧 を外してください。
 - **例外として、公開前のアドレスをリンクにしているページが 2 つあります**（意図的です）。`overview/convert-with-a-standalone-tool.md` の 3 つの `ssconverter-web` アドレス（リンク＋🚧 マーカー）と、`overview/try-it.md` です。後者はコンバーターもデモの全行もマーカー無しのリンクで、ページ冒頭の 🚧 admonition が表全体を覆っており、公開も一斉に行われます。これらをリンク解除したり、例外を他のページへ広げたりする場合は、事前にご相談ください。
 
 ### 書き方

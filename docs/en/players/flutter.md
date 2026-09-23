@@ -13,7 +13,7 @@ Play SpriteStudio animations in **Flutter** apps, backed by `libssruntime`. The
 
 **1. What you install** - a `ssplayer_flutter` dependency in `pubspec.yaml`. 🚧 Until the packages
 are on pub.dev, download the bundle from
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForFlutter/releases), extract it into
+🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForFlutter/releases), extract it into
 your project, and point a path dependency at
 `vendor/SSPlayerForFlutter/packages/ssplayer_flutter`; the transitive `ssruntime_dart` resolves
 from the preserved layout.
@@ -37,5 +37,5 @@ Alongside the player it ships:
 ## ➡️ Read next
 
 - **Documentation** - 🚧 *coming soon*
-- [Repository](https://github.com/cri-middleware/SSPlayerForFlutter)
+- 🚧 [Repository](https://github.com/cri-middleware/SSPlayerForFlutter)
 - [Try It in Your Browser](../overview/try-it.md) - both demos, plus the other players' live builds

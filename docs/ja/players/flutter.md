@@ -11,7 +11,7 @@
 
 **1. 何を入れるか** - `pubspec.yaml` に `ssplayer_flutter` の依存を追加します。🚧 パッケージが
 pub.dev に公開されるまでは、
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForFlutter/releases) のバンドルをダウンロードしてプロジェクト内に展開し、
+🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForFlutter/releases) のバンドルをダウンロードしてプロジェクト内に展開し、
 `vendor/SSPlayerForFlutter/packages/ssplayer_flutter` への path 依存を指定します（`packages/` の構造が保たれているため、推移依存の `ssruntime_dart` も解決されます）。
 
 **2. `.sspj` -> `.ssab`** - SpriteStudio プロジェクトを `SpriteStudio_Source/` 以下に置き、同梱の CLI で変換します。1 つの `.sspj` からアニメーションパックごとに 1 つの `.ssab` ができます。
@@ -31,5 +31,5 @@ Player 本体に加えて、次のものが提供されます。
 ## ➡️ 次に読む
 
 - **ドキュメント** - 🚧 *準備中*
-- [リポジトリ](https://github.com/cri-middleware/SSPlayerForFlutter)
+- 🚧 [リポジトリ](https://github.com/cri-middleware/SSPlayerForFlutter)
 - [ブラウザで試す](../overview/try-it.md) - 上記 2 つのデモと、他 Player の実動ビルド

@@ -45,16 +45,16 @@
 Tauri 製のデスクトップアプリです。コマンドラインは不要です。配布しているビルドは **macOS と
 Windows** で、Linux では下の `ssconverter-cli` を使ってください（出力は同じです）。
 
-1. [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
+1. 🚧 [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
 2. アプリを起動し、`.sspj` をウィンドウにドロップします（またはファイル選択から開きます）。
 3. 出力フォルダを選んで変換します。
 
 詳細は [SSConverterGUI の概要](../players/converter.md)、ドキュメント（🚧 準備中）、
-[リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
+🚧 [リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
 
 ## ⌨️ ssconverter-cli - コマンドライン・CI
 
-Windows / macOS / Linux 向けの単体バイナリです。[SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases)
+Windows / macOS / Linux 向けの単体バイナリです。🚧 [SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases)
 からダウンロードでき（ビルド環境不要）、以下のように使います。
 
 ```bash
@@ -72,7 +72,7 @@ ssconverter-cli ./assets/projects ./more_assets
 ```
 
 バッチモードでは各出力がソースと同じフォルダに書き出されます（`-o` は無視されます）。全オプションは
-[ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) を参照してください。
+🚧 [ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) を参照してください。
 
 ## ➡️ 次に
 

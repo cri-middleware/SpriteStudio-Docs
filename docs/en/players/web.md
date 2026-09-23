@@ -13,7 +13,7 @@ art in SpriteStudio, convert to `.ssab`, then play it back through the renderer 
 **1. What you install** - one renderer package, picked by your environment: see
 [the table below](#pick-by-environment). Each bundles the WASM core, so it is a
 single dependency. 🚧 They are published to npm with the first release; until then, run the
-[repository's examples](https://github.com/cri-middleware/SSPlayerForWeb) from a checkout.
+🚧 [repository's examples](https://github.com/cri-middleware/SSPlayerForWeb) from a checkout.
 
 **2. `.sspj` -> `.ssab`** - convert in the browser with `ssconverter-web`, hosted on this
 player's own site, or with any of the [standalone tools](../overview/convert-with-a-standalone-tool.md).
@@ -41,7 +41,7 @@ Conversion is picked separately from playback, so it has its own row in the tabl
 
 **Game-engine integrations** - rendering built on `@spritestudio/ssplayer-webgl`. Unlike the
 packages above, these are not headed for npm at all; each is distributed through the repository's
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases).
+🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases).
 
 | Your environment | Package | Status |
 |---|---|---|
@@ -56,5 +56,5 @@ neither of the conversion packages above.
 ## ➡️ Read next
 
 - **Documentation** - 🚧 *coming soon*
-- [Repository](https://github.com/cri-middleware/SSPlayerForWeb)
+- 🚧 [Repository](https://github.com/cri-middleware/SSPlayerForWeb)
 - [Try It in Your Browser](../overview/try-it.md) - the live demos and the hosted converter

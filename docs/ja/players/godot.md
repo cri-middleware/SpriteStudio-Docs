@@ -6,7 +6,7 @@
     アドオンをコピーし、`.sspj` をエディタにドラッグし、ノードを置いてアセットを割り当てるだけです。GDScript からの制御も可能ですが、ここまでには必要ありません。
 
 **1. 何を入れるか** -
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForGodot/releases) の `addons`
+🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForGodot/releases) の `addons`
 フォルダを、Godot プロジェクトのルートにコピーします。対応は Godot 4.7 系です。次の 2 つの形態で提供されます。
 
 - **GDExtension** - エンジンの再ビルド不要で導入できるバイナリアドオン。

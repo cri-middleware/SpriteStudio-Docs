@@ -7,7 +7,7 @@ wgpu は WebGPU・Vulkan・DX12・Metal を 1 つの API の下にまとめる�
     どのフェイスを入れるかで決まるのは書く言語と、**自分のレンダーパスへ描き込めるかどうか**（Rust 側だけの機能）です。Rust の API が本体で、他の 2 つはそれを別名で包んだものです。
 
 **1. 何を入れるか** - ホストに合うフェイスを選びます。
-[SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) が private の間は、下のどの経路にも SDK へのアクセスが必要です。この Player は `ssruntime` と `ssab` を、公開された
+🚧 [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) が private の間は、下のどの経路にも SDK へのアクセスが必要です。この Player は `ssruntime` と `ssab` を、公開された
 C-API 経由ではなく Rust クレートとしてリンクするため、SDK は git submodule として入ります。
 
 | ホスト | 追加するもの |
@@ -55,5 +55,5 @@ Rust 側（直接、またはエンジンアダプター経由）の機能です
 ## ➡️ 次に読む
 
 - **ドキュメント** - 🚧 *準備中*
-- [リポジトリ](https://github.com/cri-middleware/SSPlayerForWgpu) - 公開までは各クレートの README が参照先です
+- 🚧 [リポジトリ](https://github.com/cri-middleware/SSPlayerForWgpu) - 公開までは各クレートの README が参照先です
 - [アセットの変換](../overview/conversion.md) - ツールの選び方とビルドパイプラインへの組み込み

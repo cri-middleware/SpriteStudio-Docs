@@ -35,5 +35,5 @@ SDK の `ssconverter-cli` か [SSConverterGUI](./converter.md) を使うホス�
 ## ➡️ 次に読む
 
 - **ドキュメント** - 🚧 *準備中*
-- [リポジトリ](https://github.com/cri-middleware/SSPlayerForReactNative)
+- 🚧 [リポジトリ](https://github.com/cri-middleware/SSPlayerForReactNative)
 - [アセットの変換](../overview/conversion.md) - ツールの選び方とビルドパイプラインへの組み込み

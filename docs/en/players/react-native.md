@@ -41,5 +41,5 @@ which draws a whole cast through one canvas and one clock.
 ## ➡️ Read next
 
 - **Documentation** - 🚧 *coming soon*
-- [Repository](https://github.com/cri-middleware/SSPlayerForReactNative)
+- 🚧 [Repository](https://github.com/cri-middleware/SSPlayerForReactNative)
 - [Converting Assets](../overview/conversion.md) - picking a tool and putting it in a build pipeline
