@@ -118,7 +118,7 @@ Clipping is replayed from a coverage encoding that spends one bit per mask write
 budget is the 24 bits of an RGBA8's color channels, so an animation plans **24 writers** in a
 frame and the 25th is not planned at all. This is not one player's ceiling: the cap belongs to
 the planner the SDK's porting guide lays out
-(🚧 [`40_mask.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/40_components/40_mask.md)),
+(🚧 [`40_mask.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/40_parts/40_mask.md)),
 and the official players share it. Writers carried out of an instance part spend
 from the same 24; a second character on screen brings its own budget.
 
@@ -161,7 +161,8 @@ itself. Two constraints follow:
 ### Browsers require WebAssembly SIMD
 
 The WASM build of the runtime uses **WebAssembly SIMD** instructions and **will not run on
-browsers without SIMD support**. This applies to every player's browser-facing target.
+browsers without SIMD support**. This applies to every player's browser-facing target except the
+RPG Maker MZ plugin, which ships a runtime build without SIMD.
 
 **What to do:** treat WebAssembly SIMD as a browser requirement for your distribution.
 
