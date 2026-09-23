@@ -58,7 +58,7 @@ Windows** で、Linux では下の `ssconverter-cli` を使ってください（
 2. アプリを起動し、`.sspj` をウィンドウにドロップします（またはファイル選択から開きます）。
 3. 出力フォルダを選んで変換します。
 
-詳細やスクリーンショットは [SSConverterGUI の概要](../players/converter.md)、
+詳細は [SSConverterGUI の概要](../players/converter.md)、
 ドキュメント（🚧 準備中）、
 [リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
 

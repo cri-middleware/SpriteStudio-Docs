@@ -57,7 +57,7 @@ take `ssconverter-cli` below instead; the output is the same.
 2. Launch it and drag your `.sspj` onto the window (or open it from the file picker).
 3. Choose an output folder and convert.
 
-Details & screenshots: [SSConverterGUI overview](../players/converter.md) ·
+Details: [SSConverterGUI overview](../players/converter.md) ·
 Documentation (🚧 coming soon) ·
 [Repository](https://github.com/cri-middleware/SSConverterGUI).
 

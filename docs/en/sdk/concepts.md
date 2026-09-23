@@ -10,8 +10,8 @@ SpriteStudio's animation math.
 1. **Convert** - turn a SpriteStudio project (`.sspj`) into an optimized binary (`.ssab`)
    with `libssconverter` (via `ssconverter-cli`, the [Converter GUI](../players/converter.md),
    `ssconverter-web`, or automatic conversion on import). See [Converting Assets](../overview/conversion.md).
-2. **Play anywhere** - pass the `.ssab` to `libssruntime`. It plays *any* `.ssab`, supporting
-   the full SpriteStudio feature set.
+2. **Play anywhere** - pass the `.ssab` to `libssruntime`. It plays *any* `.ssab`; what it
+   covers is listed below, and what it does not cover yet is in [Shared Limitations](./limitations.md).
 
 ```mermaid
 graph LR

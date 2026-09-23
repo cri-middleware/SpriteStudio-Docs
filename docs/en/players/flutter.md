@@ -3,8 +3,8 @@
 Play SpriteStudio animations in **Flutter** apps, backed by `libssruntime`. The
 `SpriteStudioView` widget composites like any other widget, across Flutter's targets.
 
-▶️ See it first, no install: the [widget demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/)
-and the [Flame demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) both run in a browser.
+▶️ See it first, no install: the widget and Flame demos run in a browser -
+[Try it in your browser](../overview/try-it.md).
 
 !!! tip "Code-first - and no Rust toolchain"
     The native core is fetched, not built: `ssruntime_dart`'s native-assets hook downloads the

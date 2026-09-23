@@ -32,7 +32,7 @@ in-place - **nothing else to install**:
   editor when the project is opened (drop sources into `SpriteStudio_Source/`); the result then appears in the
   component's dropdowns.
 
-Each player's own docs (with screencasts) walk through its workflow - see
+Each player's own docs walk through its workflow - see
 [Choose Your Platform](./choose-your-platform.md).
 
 ### 2. Standalone tools - convert it yourself

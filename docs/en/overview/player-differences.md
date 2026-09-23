@@ -26,8 +26,8 @@ the core computes but leaves the player to draw or play - are in
 | **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter states three limits of its own |
 
 !!! note "How to read this page"
-    Each section below summarizes what that player's own **Limitations & Scope** page states;
-    follow the link for the exact cases. Every player publishes one. So a gap absent here is
+    Each section below summarizes what that player's own **Limitations & Scope** page states -
+    every player publishes one, and the exact cases are listed there. So a gap absent here is
     absent from that player's own account too - which is still not the same as a guarantee of
     support.
 

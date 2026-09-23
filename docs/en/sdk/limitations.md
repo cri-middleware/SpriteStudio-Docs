@@ -76,9 +76,6 @@ because they need the host engine:
 A text part authored as a **mask** is the exception: it is left out of the draw plan entirely,
 because the runtime has no glyphs with which to write coverage.
 
-So whether text parts render, and whether sounds are audible, is a **per-player** property -
-check [Player Differences](../overview/player-differences.md).
-
 ### Text and 9-slice parts are not drawn by any player yet
 
 Two part types reach the player intact but have no implementation in **any** official player at
@@ -125,7 +122,7 @@ the planner the SDK's porting guide lays out
 and the official players share it. Writers carried out of an instance part spend
 from the same 24; a second character on screen brings its own budget.
 
-**What to do:** keep one animation under 24 masks live in the same frame.
+**What to do:** keep one animation to 24 or fewer masks live in the same frame.
 
 ## 📦 Shipping & loading
 
