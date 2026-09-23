@@ -1,9 +1,6 @@
 # 🧰 スタンドアロンツールで変換する
 
-`libssconverter` をバンドルし、別ツールを介さずインポート時に変換してしまう Player もあります
-（どれがそうかは [アセットの変換](./conversion.md) にあります）。それ以外を対象にするときは、
-変換を代行してくれる Player がないため、スタンドアロンツールで自分で変換します。たとえば次の
-ような場合です。
+`libssconverter` をバンドルし、別ツールを介さずインポート時に変換してしまう Player もあります（どれがそうかは [アセットの変換](./conversion.md) にあります）。それ以外を対象にするときは、変換を代行してくれる Player がないため、スタンドアロンツールで自分で変換します。たとえば次のような場合です。
 
 - ブラウザ（Web）で再生する場合（[SSPlayerForWeb](../players/web.md) のレンダラー）
 - 独自の Player を組み込む、または新しいエンジンに移植する場合（[Player の移植](../sdk/porting.md)）
@@ -11,8 +8,7 @@
 
 ## 🧭 どれを使うべき？
 
-3 つのツールが出力する `.ssab` / `.ssqb` は同一です（[理由](./conversion.md)）。
-出力では差がつかないので、自分のワークフローに合うものを選んでください。
+3 つのツールが出力する `.ssab` / `.ssqb` は同一です（[理由](./conversion.md)）。出力では差がつかないので、自分のワークフローに合うものを選んでください。
 
 | 状況 | 使うツール | 理由 |
 |---|---|---|
@@ -22,18 +18,14 @@
 
 !!! tip "迷ったらブラウザから"
     ssconverter-web は Web
-    アプリなのでインストール不要で、変換は WebAssembly（wasm）によってブラウザ内で実行されます。
-    ファイルがサーバーへ送られることはありません。まず 1 つ `.ssab` を作ってアセットが問題なく
-    変換できるか確認するのに最速です。変換が繰り返しのワークフローになったら GUI や CLI へ
-    移行しましょう。
+    アプリなのでインストール不要で、変換は WebAssembly（wasm）によってブラウザ内で実行されます。ファイルがサーバーへ送られることはありません。まず 1 つ `.ssab` を作ってアセットが問題なく変換できるか確認するのに最速です。変換が繰り返しのワークフローになったら GUI や CLI へ移行しましょう。
 
 ## 🌐 ssconverter-web - ブラウザで
 
 `.sspj` -> `.ssab` の変換をすべてブラウザ内で行います。サーバーへは何もアップロードされません。
 
 !!! warning "Chromium 系ブラウザで利用してください"
-    ssconverter-web は **File System Access API** を使用するため、Chromium 系ブラウザ
-    （**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では利用できません。
+    ssconverter-web は **File System Access API** を使用するため、Chromium 系ブラウザ（**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では利用できません。
 
 1. [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) でコンバーターを開きます —
    🚧 _準備中_。アドレスは確定していますが、SSPlayerForWeb のサイト公開と同時に利用可能になります。
@@ -46,25 +38,23 @@
     - 最新版（自動リダイレクト）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) — 🚧 _準備中_
     - 特定スキーマ版（例 `v1`）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/) — 🚧 _準備中_
 
-    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版（公開後）を使い、
-    アプリ内のバージョン切替から選択してください。
+    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版（公開後）を使い、アプリ内のバージョン切替から選択してください。
 
 ## 🖥️ SSConverterGUI - デスクトップアプリ
 
 Tauri 製のデスクトップアプリです。コマンドラインは不要です。配布しているビルドは **macOS と
 Windows** で、Linux では下の `ssconverter-cli` を使ってください（出力は同じです）。
 
-1. [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
+1. 🚧 [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
 2. アプリを起動し、`.sspj` をウィンドウにドロップします（またはファイル選択から開きます）。
 3. 出力フォルダを選んで変換します。
 
-詳細は [SSConverterGUI の概要](../players/converter.md)、
-ドキュメント（🚧 準備中）、
-[リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
+詳細は [SSConverterGUI の概要](../players/converter.md)、ドキュメント（🚧 準備中）、
+🚧 [リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
 
 ## ⌨️ ssconverter-cli - コマンドライン・CI
 
-Windows / macOS / Linux 向けの単体バイナリです。[SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases)
+Windows / macOS / Linux 向けの単体バイナリです。🚧 [SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases)
 からダウンロードでき（ビルド環境不要）、以下のように使います。
 
 ```bash
@@ -82,9 +72,8 @@ ssconverter-cli ./assets/projects ./more_assets
 ```
 
 バッチモードでは各出力がソースと同じフォルダに書き出されます（`-o` は無視されます）。全オプションは
-[ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) を参照してください。
+🚧 [ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) を参照してください。
 
 ## ➡️ 次に
 
-どれを使っても出力は同じ `.ssab` / `.ssqb` です。再生の仕組みは [SDK コンセプト](../sdk/concepts.md)、
-ディスク上の詳細は [フォーマット仕様](../sdk/format-spec.md) を参照してください。
+どれを使っても出力は同じ `.ssab` / `.ssqb` です。再生の仕組みは [SDK コンセプト](../sdk/concepts.md)、ディスク上の詳細は [フォーマット仕様](../sdk/format-spec.md) を参照してください。

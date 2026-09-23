@@ -6,8 +6,8 @@ is specific to it - for those differences see [Player Differences](../overview/p
 
 !!! tip "Source of truth"
     The canonical, implementation-level list lives in the SDK's Player Porting Guide
-    ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md) -
-    the guide's own table of contents is [`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)).
+    (🚧 [`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md) -
+    the guide's own table of contents is 🚧 [`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)).
     This page is the user-facing summary.
 
 ## 🎬 Playback & timeline
@@ -60,7 +60,7 @@ them in step is the player's job.
 ### Sequence (`.ssqe` / `.ssqb`) playback is not implemented yet
 
 Conversion already produces `.ssqb`, but runtime playback of sequences is still on the
-[SDK roadmap](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md) - it lands
+🚧 [SDK roadmap](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md) - it lands
 with the runtime state machine.
 
 ## 🧩 What the player must supply
@@ -118,7 +118,7 @@ Clipping is replayed from a coverage encoding that spends one bit per mask write
 budget is the 24 bits of an RGBA8's color channels, so an animation plans **24 writers** in a
 frame and the 25th is not planned at all. This is not one player's ceiling: the cap belongs to
 the planner the SDK's porting guide lays out
-([`40_mask.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/40_components/40_mask.md)),
+(🚧 [`40_mask.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/40_components/40_mask.md)),
 and the official players share it. Writers carried out of an instance part spend
 from the same 24; a second character on screen brings its own budget.
 

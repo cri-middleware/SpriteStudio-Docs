@@ -8,7 +8,7 @@ A playable Web demo ships with each release.
     like any other image.
 
 **1. What you install** - `SSPlayerForRenPy.zip` from
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForRenPy/releases). Extract it and
+🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForRenPy/releases). Extract it and
 copy the resulting `spritestudio/` folder into your project's `game/` folder.
 
 **2. `.sspj` -> `.ssab`** - drop your SpriteStudio sources into `SpriteStudio_Source/`. The Auto
@@ -25,5 +25,5 @@ screen demo():
 ## ➡️ Read next
 
 - **Documentation** - 🚧 *coming soon*
-- [Repository](https://github.com/cri-middleware/SSPlayerForRenPy)
+- 🚧 [Repository](https://github.com/cri-middleware/SSPlayerForRenPy)
 - [Try It in Your Browser](../overview/try-it.md) - the bundled animations running in Ren'Py Web

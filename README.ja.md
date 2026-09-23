@@ -4,9 +4,7 @@
 
 SpriteStudio SDK と公式 Player 群のドキュメント**ポータル**です。
 
-このリポジトリは軽量なハブです。各 Player のドキュメントを**再ホストはしません** - Player の
-ドキュメントはそれぞれのリポジトリのサイトで管理されています。ここが提供するのは統一された
-入口と、どの Player にも属さない横断的な情報です。
+このリポジトリは軽量なハブです。各 Player のドキュメントを**再ホストはしません** - Player のドキュメントはそれぞれのリポジトリのサイトで管理されています。ここが提供するのは統一された入口と、どの Player にも属さない横断的な情報です。
 
 - 製品カードを並べたランディングページ
 - [エコシステム概要](docs/ja/overview/ecosystem.md) と
@@ -15,8 +13,7 @@ SpriteStudio SDK と公式 Player 群のドキュメント**ポータル**です
   [スタンドアロンツールでの変換](docs/ja/overview/convert-with-a-standalone-tool.md)
 - [Player ごとの違い](docs/ja/overview/player-differences.md)と、共通ランタイムの
   [制限事項](docs/ja/sdk/limitations.md)
-- 共通の [SDK コンセプト](docs/ja/sdk/concepts.md)、[用語集](docs/ja/sdk/glossary.md)、
-  [フォーマット仕様](docs/ja/sdk/format-spec.md)、[移植ガイドへの案内](docs/ja/sdk/porting.md)
+- 共通の [SDK コンセプト](docs/ja/sdk/concepts.md)、[用語集](docs/ja/sdk/glossary.md)、[フォーマット仕様](docs/ja/sdk/format-spec.md)、[移植ガイドへの案内](docs/ja/sdk/porting.md)
 - [サポート窓口の振り分け](docs/ja/support.md)と共通のライセンス情報
 
 公開先: <https://cri-middleware.github.io/SpriteStudio-Docs/>（🚧 準備中）
@@ -46,25 +43,16 @@ mkdocs.ja.yml                 # 日本語 -> site/ja/
 .github/workflows/pages.yml   # ビルド（strict）＋ GitHub Pages へのデプロイ
 ```
 
-すべてのページは `en/` と `ja/` の**両方**に存在し、各ロケールはそれぞれの設定ファイルから
-ビルドされます。`mkdocs.yml` と `mkdocs.ja.yml` は `mkdocs.base.yml` から共通設定を継承し、
-差分だけを持ちます — ドキュメントディレクトリ、出力先、サイト URL、言語、そしてその言語の
-ラベルを持つナビゲーションです。
+すべてのページは `en/` と `ja/` の**両方**に存在し、各ロケールはそれぞれの設定ファイルからビルドされます。`mkdocs.yml` と `mkdocs.ja.yml` は `mkdocs.base.yml` から共通設定を継承し、差分だけを持ちます — ドキュメントディレクトリ、出力先、サイト URL、言語、そしてその言語のラベルを持つナビゲーションです。
 
-サイトの生成には [Zensical](https://zensical.org)（MkDocs + Material for MkDocs の後継。
-開発チームは同じ）を使用しています。設定ファイルは MkDocs の設定としても有効なままなので、
-エンジンを比較したい場合は `mkdocs-material` でも同じサイトをビルドできます。
+サイトの生成には [Zensical](https://zensical.org)（MkDocs + Material for MkDocs の後継。開発チームは同じ）を使用しています。設定ファイルは MkDocs の設定としても有効なままなので、エンジンを比較したい場合は `mkdocs-material` でも同じサイトをビルドできます。
 
 ## ローカル開発
 
-`mkdocs.base.yml` で `strict: true` を設定しているため、下記の build コマンドは内部リンク切れ
-で失敗します（フラグは不要ですが、注意喚起のため各所で `--strict` を明示しています）。
-**プルリクエストではドキュメントは一切ビルドされません**（`pages.yml` の起動条件は
+`mkdocs.base.yml` で `strict: true` を設定しているため、下記の build コマンドは内部リンク切れで失敗します（フラグは不要ですが、注意喚起のため各所で `--strict` を明示しています）。**プルリクエストではドキュメントは一切ビルドされません**（`pages.yml` の起動条件は
 `workflow_dispatch` のみ）。ローカル実行が唯一の検証手段です。
 
-ビルドは英語を先に実行してください。日本語サイトは `site/ja` に出力されますが、英語ビルドは
-開始時に `site/` を消去するため、あとから英語だけをビルドすると日本語サイトは「古いまま残る」
-のではなく消えてしまいます。セットアップとこの順序は、2 つのスクリプトが受け持ちます。
+ビルドは英語を先に実行してください。日本語サイトは `site/ja` に出力されますが、英語ビルドは開始時に `site/` を消去するため、あとから英語だけをビルドすると日本語サイトは「古いまま残る」のではなく消えてしまいます。セットアップとこの順序は、2 つのスクリプトが受け持ちます。
 
 ```bash
 scripts/prepare-docs.sh     # .venv を作成し docs/requirements.txt を導入
@@ -76,8 +64,7 @@ scripts\prepare-docs.ps1    # PowerShell 版。オプションも出力も同じ
 scripts\build-docs.ps1
 ```
 
-いずれも Player 各リポジトリのスクリプトと同様に `key=value` 形式のオプションと `--help` を
-受け付けます。
+いずれも Player 各リポジトリのスクリプトと同様に `key=value` 形式のオプションと `--help` を受け付けます。
 
 | | |
 |---|---|
@@ -90,8 +77,7 @@ scripts\build-docs.ps1
 | `build-pages.sh serve=<yes\|no>` | ビルド後に `site/` を配信するか（既定は `no`）。フォアグラウンドで動き、Ctrl-C で停止 |
 | `build-pages.sh port=<n>` | `serve=yes` のポート（既定は `8000`） |
 
-注意が必要なのは `build-docs.sh locale=en` を単独で実行した場合です。`site/ja` が消えるため、
-スクリプトはその旨を警告します。
+注意が必要なのは `build-docs.sh locale=en` を単独で実行した場合です。`site/ja` が消えるため、スクリプトはその旨を警告します。
 
 ### スクリプトを使わない場合
 
@@ -132,15 +118,13 @@ py -m venv .venv
 
 ### 言語切り替えのプレビュー
 
-`serve` は一度に1ロケールしか配信しないため、もう一方の言語が存在せずセレクターは 404 に
-なります。両ロケールをビルドして、その出力を配信してください。
+`serve` は一度に1ロケールしか配信しないため、もう一方の言語が存在せずセレクターは 404 になります。両ロケールをビルドして、その出力を配信してください。
 
 ```bash
 scripts/build-pages.sh serve=yes     # 両ロケールをビルドし、:8000 で配信します
 ```
 
-これは `pages.yml` が実行しているスクリプトそのもので、違いはアップロードしないことだけです。
-手作業で行う場合は次の 2 段です。
+これは `pages.yml` が実行しているスクリプトそのもので、違いはアップロードしないことだけです。手作業で行う場合は次の 2 段です。
 
 ```bash
 scripts/build-docs.sh
@@ -148,9 +132,7 @@ scripts/build-docs.sh
 python3 -m http.server 8000 -d site
 ```
 
-セレクターのリンクは相対パスかつページ単位なので、たとえば `/sdk/concepts/` から切り替えると
-日本語のトップページではなく `/ja/sdk/concepts/` に移動します。どのパス配下に置いても
-動作します。
+セレクターのリンクは相対パスかつページ単位なので、たとえば `/sdk/concepts/` から切り替えると日本語のトップページではなく `/ja/sdk/concepts/` に移動します。どのパス配下に置いても動作します。
 
 ## 貢献について
 

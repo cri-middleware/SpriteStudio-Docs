@@ -10,6 +10,7 @@
 *   Follow the existing style of the file you touch (naming, type usage, control flow, error handling).
 *   **Anything that exists twice changes twice** — a page and its translation, a `.sh` and its `.ps1`. A
     change that lands in one half is the defect this family produces most.
+*   **Never break a line between two Japanese characters**: Chrome draws that break as a visible space.
 *   **Finish by running this repository's checks**: `scripts/build-docs.sh`, both locales. Nothing builds
     the docs on a pull request, so it is the only gate there is. Read what a run says it verified rather
     than its exit code — several checks here pass, or skip themselves, when a prerequisite is missing.
@@ -57,10 +58,11 @@ links out, never full player documentation.
   buckets (playback, what the player supplies, rendering, shipping), every constraint a `###`
   inside one — a fact promoted to `##` is the bug. `overview/player-differences.md` is a
   **one-line-per-player table over one `###` per player**; an overgrown cell belongs in one.
-- **🚧 marks anything pending publication** — a card, a table cell or a list item as readily as a
-  sentence — immediately before the pending phrase (`Docs (🚧 coming soon)`), not in front of the
-  whole entry, and never on a technical constraint. `en` and `ja` carry the same marks file for
-  file. In `sdk/limitations.md`, `##` headings carry an emoji, `###` none.
+- **🚧 marks anything pending publication** — a card, a table cell, a list item or a link into a
+  repository that is still private as readily as a sentence — immediately before the pending phrase
+  (`Docs (🚧 coming soon)`, `🚧 [GitHub](…)`), not in front of the whole entry, and never on a
+  technical constraint. `en` and `ja` carry the same marks file for file. In `sdk/limitations.md`,
+  `##` headings carry an emoji, `###` none.
 - **A repository added to the portal needs five edits per locale** — a card in `index.md`, a row
   in `license.md`, a row in `support.md`, the `nav` entry, the `players/` page. Nothing checks it.
 - **`LICENSE.md` holds the licence text and nothing else.** GitHub scores the whole file against
