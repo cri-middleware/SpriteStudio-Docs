@@ -13,7 +13,7 @@ SpriteStudio SDK と公式 Player 群のドキュメント**ポータル**です
   [プラットフォームの選び方](docs/ja/overview/choose-your-platform.md)
 - [アセットの変換](docs/ja/overview/conversion.md) と
   [スタンドアロンツールでの変換](docs/ja/overview/convert-with-a-standalone-tool.md)
-- [プレイヤーごとの違い](docs/ja/overview/player-differences.md)と、共通ランタイムの
+- [Player ごとの違い](docs/ja/overview/player-differences.md)と、共通ランタイムの
   [制限事項](docs/ja/sdk/limitations.md)
 - 共通の [SDK コンセプト](docs/ja/sdk/concepts.md)、[用語集](docs/ja/sdk/glossary.md)、
   [フォーマット仕様](docs/ja/sdk/format-spec.md)、[移植ガイドへの案内](docs/ja/sdk/porting.md)

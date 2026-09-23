@@ -55,7 +55,7 @@ Because every official player evaluates animations with `libssruntime`, this fea
 - Authored texture change - a per-part texture swap set on the timeline; the runtime resolves it
   into the draw batch, so a player that binds textures per batch needs no special handling
 - Frame-accurate events - user data, signal, audio
-- Sub-frame interpolation (smooth playback above the base frame rate)
+- Sub-frame interpolation (smooth playback above the base frame rate - 144 Hz+, slow motion)
 - Whole-animation mixing / crossfade (animations stacked on tracks)
 - The **Override Layer API** - override a part's color, cell reference, or visibility at runtime
 
@@ -86,7 +86,6 @@ Because every official player evaluates animations with `libssruntime`, this fea
   lookups for near-zero parsing overhead; the runtime leverages SIMD (`f32x4`) everywhere.
 - **Extreme portability** - the core is strict `#![no_std]` Rust with no OS/stdlib
   dependency; integrates via C-API or WASM, from embedded devices to browsers.
-- **Sub-frame interpolation** - smooth playback beyond the base framerate (144 Hz+, slow-mo).
 
 ## ➡️ Next
 

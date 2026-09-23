@@ -17,4 +17,4 @@
 
 !!! note
     SpriteStudio 本体は [CRI Middleware Co., Ltd.](https://www.webtech.co.jp/spritestudio/)
-    の製品であり、これらの Player ・SDK とは別のライセンスで提供されます。
+    の製品であり、これらの Player・SDK とは別のライセンスで提供されます。

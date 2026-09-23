@@ -3,7 +3,7 @@
 このページの内容はすべて **共通コア**（`libssruntime` / `libssab`）に由来するため、エンジンを
 問わず **すべての公式 Player に当てはまります**。各 Player のドキュメントには、その Player に
 固有の事項のみが記載されています。Player 間の差分は
-[プレイヤーごとの違い](../overview/player-differences.md) を参照してください。
+[Player ごとの違い](../overview/player-differences.md) を参照してください。
 
 !!! tip "正典の所在"
     実装レベルの完全な一覧は SDK の Player 移植ガイド
@@ -107,7 +107,7 @@
 背景レイヤーを敷いてください。
 
 なお、そのブレンドモードをエンジンが *そもそも再現できるか* は Player ごとに異なる別の問題です。
-[プレイヤーごとの違い](../overview/player-differences.md) を参照してください。
+[Player ごとの違い](../overview/player-differences.md) を参照してください。
 
 ### 1 アニメーションが 1 フレームに計画できるマスクは 24 枚まで
 
@@ -166,6 +166,6 @@
 ## ➡️ 次に
 
 - [用語集](./glossary.md) - このページで使われている用語
-- [プレイヤーごとの違い](../overview/player-differences.md) - Player 間で異なる点
+- [Player ごとの違い](../overview/player-differences.md) - Player 間で異なる点
 - [SDK コンセプト](./concepts.md) - これらの制約が生じる変換 → 再生パイプライン
 - [サポート](../support.md) - このページに載っていない事象の報告先

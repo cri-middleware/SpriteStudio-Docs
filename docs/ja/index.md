@@ -17,7 +17,7 @@
 エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)に
 かけられます。
 
-## 🎮 Player ・ツール
+## 🎮 Player・ツール
 
 <div class="grid cards" markdown>
 

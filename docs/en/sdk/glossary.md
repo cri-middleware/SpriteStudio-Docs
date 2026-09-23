@@ -18,7 +18,7 @@ the SDK produces and plays back.
 | **Sound** (`.ssse`) | Sound settings referenced by audio events on the timeline. |
 | **Sequence** (`.ssqe`) | A playlist that chains animations together. Converted to `.ssqb`; runtime playback is not implemented yet (see [Shared Limitations](./limitations.md)). |
 | **Bitmap font** (`.fnt`) | The BMFont-format font a Text part draws with. |
-| **User data / Signal** | Markers placed on a frame that the runtime reports back as **events** - the frame-accurate hook for triggering game logic, SE, and so on. |
+| **User data / Signal** | Markers placed on a frame that the runtime reports back as **events** - the frame-accurate hook for triggering game logic, sound effects, and so on. |
 | **Parts color** | A per-part color blend authored on the timeline, applied on top of the part's texture. |
 | **`independent`** | A flag on an Instance or Effect part that detaches its child from the parent timeline, running it on its own real-time clock. It has real consequences for reverse playback and seeking - see [Shared Limitations](./limitations.md). |
 
