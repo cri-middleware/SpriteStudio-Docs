@@ -1,18 +1,14 @@
 # ▶️ ブラウザで試す
 
-SpriteStudio の変換と再生を、**インストール不要・設定なし**でその場で確認できます。ここに
-挙げたものはすべてブラウザ内で完結します。各項目は対応 Player の公式サイトでホストされており、
-このページはそのリンクを集めたものです。
+SpriteStudio の変換と再生を、**インストール不要・設定なし**でその場で確認できます。ここに挙げたものはすべてブラウザ内で完結します。各項目は対応 Player の公式サイトでホストされており、このページはそのリンクを集めたものです。
 
 !!! info "🚧 準備中"
-    これらのデモとホスト型コンバーターは、各 Player のサイトと同時に公開されます。以下の
-    リンクはその時点で有効になります。
+    これらのデモとホスト型コンバーターは、各 Player のサイトと同時に公開されます。以下のリンクはその時点で有効になります。
 
 ## 🔄 ブラウザで変換する
 
 **[ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)** は `.sspj` を
-`.ssab` に変換します。処理は WebAssembly でローカル（ブラウザ内）だけで完結し、ファイルが
-サーバーへアップロードされることは一切ありません。手順やデスクトップ／CLI 版については
+`.ssab` に変換します。処理は WebAssembly でローカル（ブラウザ内）だけで完結し、ファイルがサーバーへアップロードされることは一切ありません。手順やデスクトップ／CLI 版については
 [スタンドアロンツールで変換する](./convert-with-a-standalone-tool.md) を参照してください。
 
 ## 🎮 ライブ Player デモ
@@ -29,12 +25,7 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 | [Flame デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SSPlayerForFlutter](../players/flutter.md)**（`ssplayer_flame`） | 同じ再生を `SpriteStudioComponent` として Flame のゲームループから駆動。 |
 | [WebGPU デモ](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | **[SSPlayerForWgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | js API、`<ss-player-webgpu>` カスタム要素単体、それを他の要素と重ねて 1 ページに並べたもの（`GPUDevice` は 1 つ）、そして `partTransform` でパーツに DOM マーカーを追従させるもの。 |
 
-Flutter の 2 つのデモは同 Player の Web ターゲットで動作します。Web ターゲットは同 Player の
-ドキュメント上 developer preview の位置づけです。WebGPU デモには WebGPU 対応ブラウザが必要です。
+Flutter の 2 つのデモは同 Player の Web ターゲットで動作します。Web ターゲットは同 Player のドキュメント上 developer preview の位置づけです。WebGPU デモには WebGPU 対応ブラウザが必要です。
 
-**自分のアニメをプレビューしたい場合**、デモが受け取るのは `.ssab`＋`.png` なので、先に `.sspj` を
-変換してください。上記のブラウザ版コンバーターでも、
-[スタンドアロンツール](./convert-with-a-standalone-tool.md) でも構いません。
-全体の流れは [アセットの変換](./conversion.md) にまとまっています。手元にプロジェクトがない
-場合は、無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)が
-そのまま使えます。
+**自分のアニメをプレビューしたい場合**、デモが受け取るのは `.ssab`＋`.png` なので、先に `.sspj` を変換してください。上記のブラウザ版コンバーターでも、
+[スタンドアロンツール](./convert-with-a-standalone-tool.md) でも構いません。全体の流れは [アセットの変換](./conversion.md) にまとまっています。手元にプロジェクトがない場合は、無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)がそのまま使えます。

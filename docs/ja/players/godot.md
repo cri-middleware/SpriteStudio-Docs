@@ -1,16 +1,13 @@
 # 🕹️ SSPlayerForGodot
 
-**Godot Engine** でネイティブに SpriteStudio アニメーションを描画します。`libssruntime` を
-基盤としています。
+**Godot Engine** でネイティブに SpriteStudio アニメーションを描画します。`libssruntime` を基盤としています。
 
 !!! tip "エディタで始まる - 最初のフレームまでコードは不要"
-    アドオンをコピーし、`.sspj` をエディタにドラッグし、ノードを置いてアセットを割り当てる
-    だけです。GDScript からの制御も可能ですが、ここまでには必要ありません。
+    アドオンをコピーし、`.sspj` をエディタにドラッグし、ノードを置いてアセットを割り当てるだけです。GDScript からの制御も可能ですが、ここまでには必要ありません。
 
 **1. 何を入れるか** -
 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForGodot/releases) の `addons`
-フォルダを、Godot プロジェクトのルートにコピーします。対応は Godot 4.7 系です。
-次の 2 つの形態で提供されます。
+フォルダを、Godot プロジェクトのルートにコピーします。対応は Godot 4.7 系です。次の 2 つの形態で提供されます。
 
 - **GDExtension** - エンジンの再ビルド不要で導入できるバイナリアドオン。
 - **カスタムモジュール** - Godot 本体に組み込んでビルドする、より密な統合方式。

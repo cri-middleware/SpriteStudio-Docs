@@ -4,14 +4,12 @@
 `libssruntime` を通じて行われ、Unity の Job System と組み合わせて高いパフォーマンスを発揮します。
 
 !!! tip "エディタで始まる - 最初のフレームまでコードは不要"
-    パッケージを入れ、`.sspj` をエディタにドラッグし、コンポーネントを置いてアセットを割り当てる
-    だけです。スクリプト制御や Timeline も使えますが、ここまでには必要ありません。
+    パッケージを入れ、`.sspj` をエディタにドラッグし、コンポーネントを置いてアセットを割り当てるだけです。スクリプト制御や Timeline も使えますが、ここまでには必要ありません。
 
 **1. 何を入れるか** -
 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForUnity/releases) のパッケージ
 tarball を、Unity の Package Manager の **Add package from tarball** から追加します。
-*Add package from URL* は使えません（ネイティブバイナリが tarball にしか含まれないため）。
-対応は Unity 6.3 LTS 以降、URP・BRP の両方です。
+*Add package from URL* は使えません（ネイティブバイナリが tarball にしか含まれないため）。対応は Unity 6.3 LTS 以降、URP・BRP の両方です。
 
 **2. `.sspj` -> `.ssab`** - **Window > SpriteStudio > Importer** を開き、`.sspj` をドラッグ
 &ドロップします。`libssconverter` がパッケージに同梱されているため別途ツールを入れる必要はなく、
