@@ -20,12 +20,12 @@ engine's Body to the shared Brain.
 
 | Section | Contents |
 |---|---|
-| **10. Introduction** | Core concepts & glossary, and **Limitations** (support scope / spec constraints - read first). |
-| **20. Design** | Preparation & prerequisites, Brain-vs-Body architecture, and a staged **implementation roadmap**. |
-| **30. Core** | Minimal playback: loading & initialization, playback control & events, the render loop & batching. |
-| **40. Components** | Per part-type detail: instance, effect, mesh & deform, mask, parts color, animation mixing, part overrides, external resources, sequence, audio, special parts. |
-| **50. Reference** | `no_std` integration and troubleshooting. |
-| **60. Tooling** | Integrating `ssconverter` into your engine's editor. |
+| **10. Introduction** | Overview of the Brain / Player split, **Limitations** (technical constraints - read first), and the glossary. |
+| **20. Design** | Preparation, the Player's design (ssab memory, class structure, coordinate systems), the **Player API conventions** every Player shares, and `no_std` integration. |
+| **30. Core playback** | Loading & initialization, playback control, events, and the render loop (the DrawBatch plan). |
+| **40. Parts** | Parts color, mesh, 9-slice / shape / text, mask, instance parts, effect parts. |
+| **50. Features** | Animation mixing, part overrides, external resources & textures, sequence, audio, editor integration. |
+| **60. Troubleshooting** | A table from symptom to cause, and link errors. |
 
 !!! note "Verify as you go"
     The guide recommends running `tests/overall/overall.sspj` at each stage - if it matches
