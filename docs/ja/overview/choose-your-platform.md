@@ -11,7 +11,7 @@
 | **RPG ツクール MZ** | **[SSPlayerForWeb](../players/web.md)**（`ssplayer-rmmz`） | ドキュメント（🚧 準備中） |
 | **TyranoScript / TyranoBuilder** のビジュアルノベル | **[SSPlayerForWeb](../players/web.md)**（`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`） | ドキュメント（🚧 準備中） |
 | Godot ゲーム | **[SSPlayerForGodot](../players/godot.md)** | ドキュメント（🚧 準備中） |
-| **Bevy** ゲーム | **[SSPlayerForWgpu](../players/wgpu.md)**（`ssplayer-wgpu-bevy`） | ドキュメント（🚧 準備中） |
+| **Bevy** ゲーム | **[SSPlayerForWgpu](../players/wgpu.md)**（`ssplayer-bevy`） | ドキュメント（🚧 準備中） |
 | **Flutter** アプリ | **[SSPlayerForFlutter](../players/flutter.md)** | ドキュメント（🚧 準備中） |
 | Ren'Py ビジュアルノベル | **[SSPlayerForRenPy](../players/renpy.md)** | ドキュメント（🚧 準備中） |
 | エンジンを使わず自分で描画する **Rust** / **C・C++** アプリケーション | **[SSPlayerForWgpu](../players/wgpu.md)** | ドキュメント（🚧 準備中） |

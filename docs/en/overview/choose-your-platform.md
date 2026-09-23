@@ -11,7 +11,7 @@ column links to its full details.
 | **RPG Maker MZ** | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-rmmz`) | Docs (🚧 coming soon) |
 | A **TyranoScript / TyranoBuilder** visual novel | **[SSPlayerForWeb](../players/web.md)** (`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`) | Docs (🚧 coming soon) |
 | A Godot game | **[SSPlayerForGodot](../players/godot.md)** | Docs (🚧 coming soon) |
-| A **Bevy** game | **[SSPlayerForWgpu](../players/wgpu.md)** (`ssplayer-wgpu-bevy`) | Docs (🚧 coming soon) |
+| A **Bevy** game | **[SSPlayerForWgpu](../players/wgpu.md)** (`ssplayer-bevy`) | Docs (🚧 coming soon) |
 | A **Flutter** app | **[SSPlayerForFlutter](../players/flutter.md)** | Docs (🚧 coming soon) |
 | A Ren'Py visual novel | **[SSPlayerForRenPy](../players/renpy.md)** | Docs (🚧 coming soon) |
 | A **Rust** or **C / C++** app with no engine, rendering its own frames | **[SSPlayerForWgpu](../players/wgpu.md)** | Docs (🚧 coming soon) |

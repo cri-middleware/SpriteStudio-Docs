@@ -16,7 +16,7 @@ C-API 経由ではなく Rust クレートとしてリンクするため、SDK �
 | ホスト | 追加するもの |
 |---|---|
 | **Rust** アプリ | `ssplayer-wgpu` を git 依存として追加します。submodule は Cargo が取得するので、他のツールは不要です。🚧 SDK クレートの公開が先なので、crates.io にはまだありません。 |
-| **Bevy** アプリ | 代わりに `ssplayer-wgpu-bevy` を追加します。Player 本体を引き込み、`SsPlayer` / `SsTransform` / `SsPlayback` の 3 コンポーネントを追加します。 |
+| **Bevy** アプリ | 代わりに `ssplayer-bevy` を追加します。Player 本体を引き込み、`SsPlayer` / `SsTransform` / `SsPlayback` の 3 コンポーネントを追加します。 |
 | **C / C++** アプリ | cdylib / staticlib と生成されたヘッダー。リポジトリで `scripts/build.sh` を実行すると `bin/` にまとまります。🚧 ビルド済みの配布はまだありません。 |
 | **ブラウザ**（WebGPU） | npm パッケージ `@spritestudio/ssplayer-wgpu`。wasm と TypeScript 層、`<ss-player-webgpu>` カスタム要素は独立したエントリポイントです。🚧 npm 未公開です。 |
 
@@ -30,11 +30,11 @@ C-API 経由ではなく Rust クレートとしてリンクするため、SDK �
 
 ```rust
 let mut renderer = SSRenderer::new(&device);
-let mut scene = SSScene::new(&device, &SceneConfig { color_format, stencil_format });
+let mut scene = SSScene::new(&device, &SceneConfig { color_format, stencil_format, mask: MaskBackend::Stencil });
 
 let mut player = SSPlayer::new();
 player.load("assets/overall/Basic.ssab")?;   // パック・アトラス・関連パックを 1 回で読み込む
-player.set_animation("Basic")?;
+player.set_animation("anime_1")?;
 player.play();
 
 scene.update(&mut renderer, &device, &queue, delta_secs, &mut [&mut player]);

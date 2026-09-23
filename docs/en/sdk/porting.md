@@ -23,8 +23,7 @@ engine's Body to the shared Brain.
 | **10. Introduction** | Core concepts & glossary, and **Limitations** (support scope / spec constraints - read first). |
 | **20. Design** | Preparation & prerequisites, Brain-vs-Body architecture, and a staged **implementation roadmap**. |
 | **30. Core** | Minimal playback: loading & initialization, playback control & events, the render loop & batching. |
-| **40. Components** | Per part-type detail: instance, effect, mesh & deform, mask, parts color, animation mixing, part overrides, external resources, sequence, audio,
-special parts. |
+| **40. Components** | Per part-type detail: instance, effect, mesh & deform, mask, parts color, animation mixing, part overrides, external resources, sequence, audio, special parts. |
 | **50. Reference** | `no_std` integration and troubleshooting. |
 | **60. Tooling** | Integrating `ssconverter` into your engine's editor. |
 

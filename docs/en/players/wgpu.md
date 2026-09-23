@@ -18,7 +18,7 @@ through a released C-API, so the SDK comes in as a git submodule.
 | Your host | What you add |
 |---|---|
 | A **Rust** app | `ssplayer-wgpu` as a git dependency - Cargo checks out the submodule for you, and no other tooling is needed. 🚧 Not on crates.io until the SDK crates publish first. |
-| A **Bevy** app | `ssplayer-wgpu-bevy` instead - it pulls the player in and adds the `SsPlayer` / `SsTransform` / `SsPlayback` components. |
+| A **Bevy** app | `ssplayer-bevy` instead - it pulls the player in and adds the `SsPlayer` / `SsTransform` / `SsPlayback` components. |
 | A **C or C++** app | A cdylib / staticlib plus a generated header, built from the repository with `scripts/build.sh` into `bin/`. 🚧 No prebuilt downloads yet. |
 | The **browser** (WebGPU) | The npm package `@spritestudio/ssplayer-wgpu` - the wasm plus a TypeScript layer, with the `<ss-player-webgpu>` custom element in its own entry point. 🚧 Not on npm yet. |
 
@@ -32,11 +32,11 @@ any number of `SSPlayer`s drawn into it in one pass:
 
 ```rust
 let mut renderer = SSRenderer::new(&device);
-let mut scene = SSScene::new(&device, &SceneConfig { color_format, stencil_format });
+let mut scene = SSScene::new(&device, &SceneConfig { color_format, stencil_format, mask: MaskBackend::Stencil });
 
 let mut player = SSPlayer::new();
 player.load("assets/overall/Basic.ssab")?;   // pack, atlases and sibling packs, in one call
-player.set_animation("Basic")?;
+player.set_animation("anime_1")?;
 player.play();
 
 scene.update(&mut renderer, &device, &queue, delta_secs, &mut [&mut player]);

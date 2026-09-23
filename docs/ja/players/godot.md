@@ -18,7 +18,7 @@
 **2. `.sspj` -> `.ssab`** - `.sspj` を Godot エディタにドラッグ&ドロップします。アドオンの
 SS Import Dock がその場で変換するため、別途ツールを入れる必要はありません。
 
-**3. どう画面に出すか** - `SpriteStudioPlayer2D` ノードを追加し、**SSAB Resource**
+**3. どう画面に出すか** - `SpriteStudioPlayer2D` ノードを追加し、**Ssab**
 プロパティに `.ssab` を割り当てます。
 
 ## ➡️ 次に読む
