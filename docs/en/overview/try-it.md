@@ -27,7 +27,7 @@ alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalo
 | [Ren'Py demo](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | **[SSPlayerForRenPy](../players/renpy.md)** | Bundled SpriteStudio animations running in Ren'Py Web. |
 | [Flutter demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) | **[SSPlayerForFlutter](../players/flutter.md)** (`ssplayer_flutter`) | The `SpriteStudioView` widget in a Flutter web build - every draw kind, over the same `libssruntime` wasm. |
 | [Flame demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SSPlayerForFlutter](../players/flutter.md)** (`ssplayer_flame`) | The same playback as a `SpriteStudioComponent`, driven by a Flame game loop. |
-| [WebGPU demo](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | **[SSPlayerForWgpu](../players/wgpu.md)** (`@spritestudio/ssplayer-wgpu`) | Three pages: the js API, the `<ss-player-webgpu>` custom element on its own, and a page full of them overlapping other content on one `GPUDevice`. |
+| [WebGPU demo](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | **[SSPlayerForWgpu](../players/wgpu.md)** (`@spritestudio/ssplayer-wgpu`) | The js API, the `<ss-player-webgpu>` custom element on its own, a page full of them overlapping other content on one `GPUDevice`, and a DOM marker following a part through `partTransform`. |
 
 Both Flutter demos run on that player's Web target, which its own documentation calls a
 developer preview. The WebGPU demo needs a browser that supports WebGPU.

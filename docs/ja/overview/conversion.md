@@ -16,7 +16,7 @@
 
 ## 🔀 変換の 2 つの方法
 
-### 1. インポート時に自動変換 - 外部ツール不要（Unity・Godot・Ren'Py・TyranoBuilder）
+### 1. インポート時に自動変換 - 外部ツール不要（Unity・Godot・Flutter・Ren'Py・TyranoBuilder）
 
 これらのエンジン向けの公式 Player パッケージには、変換ツールとして `libssconverter` が
 **バンドル**されています。エディタなどの開発環境側で自動的に実行されるため、その場で変換
@@ -24,6 +24,8 @@
 
 - **Unity** - [SSPlayerForUnity](../players/unity.md) 付属の Importer がドラッグ&ドロップで変換します。
 - **Godot** - [SSPlayerForGodot](../players/godot.md) の SS Import Dock がドラッグ&ドロップで変換します。
+- **Flutter** - [SSPlayerForFlutter](../players/flutter.md) のオートインポート（`sswatch`）が保存のたびに再変換し、
+  実行中のアプリへ反映します（`SpriteStudio_Source/` にソースを配置）。単発の変換は `ssconvert` CLI で行えます。
 - **Ren'Py** - [SSPlayerForRenPy](../players/renpy.md) が起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。
 - **TyranoBuilder** - [SSPlayerForWeb](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、プロジェクトを
   開いたときにエディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントの

@@ -164,8 +164,7 @@ itself. Two constraints follow:
 ### Browsers require WebAssembly SIMD
 
 The WASM build of the runtime uses **WebAssembly SIMD** instructions and **will not run on
-browsers without SIMD support**. This applies to every browser-facing target: the Web players,
-Unity's WebGL builds, Godot's Web export, Flutter Web, and Ren'Py Web.
+browsers without SIMD support**. This applies to every player's browser-facing target.
 
 **What to do:** treat WebAssembly SIMD as a browser requirement for your distribution.
 

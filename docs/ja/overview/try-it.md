@@ -27,7 +27,7 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 | [Ren'Py デモ](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | **[SSPlayerForRenPy](../players/renpy.md)** | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |
 | [Flutter デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) | **[SSPlayerForFlutter](../players/flutter.md)**（`ssplayer_flutter`） | Flutter の Web ビルドで動く `SpriteStudioView` ウィジェット。同じ `libssruntime` の wasm 上で全描画種別を再生。 |
 | [Flame デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SSPlayerForFlutter](../players/flutter.md)**（`ssplayer_flame`） | 同じ再生を `SpriteStudioComponent` として Flame のゲームループから駆動。 |
-| [WebGPU デモ](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | **[SSPlayerForWgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | 3 ページ構成。js API、`<ss-player-webgpu>` カスタム要素単体、そしてそれを他の要素と重ねて 1 ページに並べたもの（`GPUDevice` は 1 つ）。 |
+| [WebGPU デモ](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | **[SSPlayerForWgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | js API、`<ss-player-webgpu>` カスタム要素単体、それを他の要素と重ねて 1 ページに並べたもの（`GPUDevice` は 1 つ）、そして `partTransform` でパーツに DOM マーカーを追従させるもの。 |
 
 Flutter の 2 つのデモは同 Player の Web ターゲットで動作します。Web ターゲットは同 Player の
 ドキュメント上 developer preview の位置づけです。WebGPU デモには WebGPU 対応ブラウザが必要です。

@@ -162,8 +162,7 @@
 ### ブラウザでは WebAssembly SIMD が必須
 
 ランタイムの WASM ビルドは **WebAssembly SIMD 命令** を使用しており、**SIMD 非対応の
-ブラウザでは動作しません**。Web 向けのすべてのターゲット（Web Player 群、Unity の WebGL ビルド、
-Godot の Web 書き出し、Flutter Web、Ren'Py Web）が対象です。
+ブラウザでは動作しません**。どの Player でも、Web 向けのターゲットはすべて対象です。
 
 **対処:** 配信先のブラウザ要件として、WebAssembly SIMD 対応を前提としてください。
 
