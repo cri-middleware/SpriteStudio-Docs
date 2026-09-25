@@ -120,6 +120,8 @@ extra:
   # current page, so switching language keeps the reader on the same page instead of
   # dropping them on the other locale's home page. `extra.site_root_prefix` in each locale
   # config is the other half of that calculation.
+  #
+  # overrides/main.html builds the page head's hreflang links from the same `link`s.
   alternate:
     - name: English
       link: ""
