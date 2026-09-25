@@ -8,8 +8,7 @@ body:
         This tracker is for the portal itself. If the problem is in a Player or in the SDK
         rather than in what a page says about it, please report it in that repository instead.
 
-        こちらはポータル自体の Issue です。記述ではなく Player や SDK 側の動作の問題であれば、
-        該当リポジトリへご報告ください。
+        こちらはポータル自体の Issue です。記述ではなく Player や SDK 側の動作の問題であれば、該当リポジトリへご報告ください。
 
   - type: input
     id: page
