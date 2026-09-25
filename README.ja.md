@@ -7,16 +7,13 @@ SpriteStudio SDK と公式 Player 群のドキュメント**ポータル**です
 このリポジトリは軽量なハブです。各 Player のドキュメントを**再ホストはしません** - Player のドキュメントはそれぞれのリポジトリのサイトで管理されています。ここが提供するのは統一された入口と、どの Player にも属さない横断的な情報です。
 
 - 製品カードを並べたランディングページ
-- [エコシステム概要](docs/ja/overview/ecosystem.md) と
-  [プラットフォームの選び方](docs/ja/overview/choose-your-platform.md)
-- [アセットの変換](docs/ja/overview/conversion.md) と
-  [スタンドアロンツールでの変換](docs/ja/overview/convert-with-a-standalone-tool.md)
-- [Player ごとの違い](docs/ja/overview/player-differences.md)と、共通ランタイムの
-  [制限事項](docs/ja/sdk/limitations.md)
+- [エコシステム概要](docs/ja/overview/ecosystem.md)と[プラットフォームの選び方](docs/ja/overview/choose-your-platform.md)
+- [アセットの変換](docs/ja/overview/conversion.md)と[スタンドアロンツールでの変換](docs/ja/overview/convert-with-a-standalone-tool.md)
+- [Player ごとの違い](docs/ja/overview/player-differences.md)と、共通ランタイムの[制限事項](docs/ja/sdk/limitations.md)
 - 共通の [SDK コンセプト](docs/ja/sdk/concepts.md)、[用語集](docs/ja/sdk/glossary.md)、[フォーマット仕様](docs/ja/sdk/format-spec.md)、[移植ガイドへの案内](docs/ja/sdk/porting.md)
 - [サポート窓口の振り分け](docs/ja/support.md)と共通のライセンス情報
 
-公開先: <https://cri-middleware.github.io/SpriteStudio-Docs/>（🚧 準備中）
+公開先: <https://cri-middleware.github.io/SpriteStudio-Docs/ja/>（🚧 準備中）
 
 ## 構成
 
@@ -34,7 +31,7 @@ docs/
     license.md
   requirements.txt
 scripts/
-  prepare-docs.{sh,ps1}       # venv の作成とツールチェーンの導入
+  prepare-docs.{sh,ps1}       # venv の作成と、バージョン固定したツールチェーンの導入
   build-docs.{sh,ps1}         # 両ロケールを正しい順序で strict ビルド
   build-pages.{sh,ps1}        # 上の 2 つを実行し site/ を配信。workflow が呼ぶもの
 mkdocs.base.yml               # 両ロケール共通の設定
@@ -132,11 +129,10 @@ scripts/build-docs.sh
 python3 -m http.server 8000 -d site
 ```
 
-セレクターのリンクは相対パスかつページ単位なので、たとえば `/sdk/concepts/` から切り替えると日本語のトップページではなく `/ja/sdk/concepts/` に移動します。どのパス配下に置いても動作します。
+セレクターのリンクは相対パスかつページ単位なので、たとえば `/sdk/concepts/` から切り替えると日本語のトップページではなく `/ja/sdk/concepts/` に移動します。このサイト自身のパスも含め、どのパス配下に置いても動作します。
 
 ## 貢献について
 
 誤りの修正、説明の改善、翻訳の修正を歓迎します。手順とドキュメントの規約は
-[CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。参加にあたっては
-[行動規範](./CODE_OF_CONDUCT.md) が適用されます。質問や不具合の報告先は
+[CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。参加にあたっては[行動規範](./CODE_OF_CONDUCT.md)が適用されます。質問や不具合の報告先は
 [SUPPORT.md](./SUPPORT.md) をご覧ください。
