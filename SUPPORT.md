@@ -23,6 +23,9 @@ For private consultations, sensitive issue reports, or support with contractual 
 
 *Note: the English form has no file upload. To send large reproduction data (e.g., a `.sspj` project), use the [Japanese Help Center form](https://www.webtech.co.jp/help/ja/spritestudio7/inquiries/ssplayer_tool/), which takes a zip of up to 8 MB.*
 
+## 🛡️ Security Vulnerabilities
+Please do **not** report security vulnerabilities through public GitHub Issues. See [SECURITY.md](./SECURITY.md) for the private reporting channels.
+
 ---
 
 ## 日本語でのサポート (Support in Japanese)
@@ -49,3 +52,6 @@ Player や SDK の使い方に関するご質問、実装の相談、他の開�
 👉 [**ヘルプセンター（お問い合わせフォーム）**](https://www.webtech.co.jp/help/ja/spritestudio7/inquiries/ssplayer_tool/)
 
 *注: 再現データの送付には、フォーム内のファイルアップロード機能をご利用ください。*
+
+### 🛡️ 脆弱性のご報告
+セキュリティ上の脆弱性は、公開の GitHub Issues では**報告しないでください**。非公開の報告窓口については [SECURITY.md](./SECURITY.md) を参照してください。
