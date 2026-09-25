@@ -45,7 +45,7 @@ compromised, a workflow that exposes a secret.
 
 ## 脆弱性の報告
 
-**セキュリティに関する問題は、公開の GitHub Issue に投稿しないでください。** 再現データの添付も可能なヘルプセンターより、非公開でご報告ください。
+**セキュリティに関する問題は、公開の GitHub Issue に投稿しないでください。** 再現データ（8 MB までの zip ファイル）の添付も可能なヘルプセンターより、非公開でご報告ください。
 
 👉 [**ヘルプセンター（お問い合わせフォーム）**](https://www.webtech.co.jp/help/ja/spritestudio7/inquiries/ssplayer_tool/)
 

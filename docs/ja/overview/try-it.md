@@ -17,7 +17,7 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 |---|---|---|
 | [PixiJS デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-pixi`） | PixiJS v8 アプリでの再生。`.ssab`＋`.png` の入った**ディレクトリを D&D** すると自分のアニメをプレビューできます。 |
 | [WebGL デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-webgl`） | フレームワーク非依存の `<ss-player>` Web Component。`.ssab`＋`.png` の**ディレクトリを D&D** して自分のアニメをプレビュー。 |
-| [Override Layer API デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/override/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-pixi`） | Ringo のサンプルに対して、パーツ単位のカラー・セル・表示の上書きを順に適用する自走デモ。各ステップの呼び出しが画面に出ます。 |
+| [Override Layer API デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/override/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-pixi`） | Ringo のサンプルを再生したまま、パーツ単位のカラー・表示・セルの上書きを 1 つずつ切り替えながら繰り返す自走デモ。各ステップの呼び出しが画面に出ます。 |
 | [RPG ツクール MZ デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-rmmz`） | SpriteStudio アニメを正しい Z 順で表示するサンプル MZ プロジェクト。 |
 | [TyranoScript デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/tyranoscript/) | **[SSPlayerForWeb](../players/web.md)**（`@spritestudio/ssplayer-tyranoscript`） | TyranoScript のノベルゲームで、`[ss_*]` タグから SpriteStudio アニメを再生。 |
 | [Ren'Py デモ](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | **[SSPlayerForRenPy](../players/renpy.md)** | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |
