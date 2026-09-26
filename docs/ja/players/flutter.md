@@ -1,4 +1,4 @@
-# 📱 SSPlayerForFlutter
+# 📱 SpriteStudio Player for Flutter
 
 **Flutter** アプリで SpriteStudio アニメーションを再生します。`libssruntime` を基盤とし、
 `SpriteStudioView` ウィジェットが Flutter の各ターゲットで通常のウィジェットと同様に合成されます。

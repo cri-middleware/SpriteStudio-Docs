@@ -1,4 +1,4 @@
-# 🦀 SSPlayerForWgpu
+# 🦀 SpriteStudio Player for wgpu
 
 **Rust** で書かれ、[wgpu](https://wgpu.rs/) を通じて描画する SpriteStudio 用の Player です。
 wgpu は WebGPU・Vulkan・DX12・Metal を 1 つの API の下にまとめるため、同じ Player がそのどれでも動きます。ホスト側は Rust である必要はなく、C・C++・ブラウザも同じライブラリから利用できます。

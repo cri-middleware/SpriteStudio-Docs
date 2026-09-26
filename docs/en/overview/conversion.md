@@ -23,12 +23,12 @@ The official player packages for these engines **bundle** `libssconverter` as a 
 It runs automatically on the editor / development side, so conversion happens
 in-place - **nothing else to install**:
 
-- **Unity** - [SSPlayerForUnity](../players/unity.md)'s bundled Importer converts on drag & drop.
-- **Godot** - [SSPlayerForGodot](../players/godot.md)'s SS Import Dock converts on drag & drop.
-- **Flutter** - [SSPlayerForFlutter](../players/flutter.md)'s auto importer (`sswatch`) re-converts on save and pushes the
+- **Unity** - [SpriteStudio Player for Unity](../players/unity.md)'s bundled Importer converts on drag & drop.
+- **Godot** - [SpriteStudio Player for Godot](../players/godot.md)'s SS Import Dock converts on drag & drop.
+- **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md)'s auto importer (`sswatch`) re-converts on save and pushes the
   result into the running app (drop sources into `SpriteStudio_Source/`); its `ssconvert` CLI converts once.
-- **Ren'Py** - [SSPlayerForRenPy](../players/renpy.md) auto-imports on startup (drop sources into `SpriteStudio_Source/`).
-- **TyranoBuilder** - [SSPlayerForWeb](../players/web.md)'s `ssplayer-tyranobuilder` plugin converts inside the
+- **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) auto-imports on startup (drop sources into `SpriteStudio_Source/`).
+- **TyranoBuilder** - [SpriteStudio Player for Web](../players/web.md)'s `ssplayer-tyranobuilder` plugin converts inside the
   editor when the project is opened (drop sources into `SpriteStudio_Source/`); the result then appears in the
   component's dropdowns.
 
@@ -38,8 +38,8 @@ Each player's own docs walk through its workflow - see
 ### 2. Standalone tools - convert it yourself
 
 On a different engine, in a CI/CD pipeline, or using one of the players that hosts no importer -
-[SSPlayerForWeb](../players/web.md)'s renderers (the Web collection),
-[SSPlayerForReactNative](../players/react-native.md), or [SSPlayerForWgpu](../players/wgpu.md)?
+[SpriteStudio Player for Web](../players/web.md)'s renderers (the Web collection),
+[SpriteStudio Player for React Native](../players/react-native.md), or [SpriteStudio Player for wgpu](../players/wgpu.md)?
 No player converts for you there, so you convert with one of three standalone front-ends -
 a desktop GUI, a CLI, or a browser tool. Which one to pick and how to run each is covered in
 **[Converting with a Standalone Tool](./convert-with-a-standalone-tool.md)**.

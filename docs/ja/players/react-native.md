@@ -1,4 +1,4 @@
-# ⚛️ SSPlayerForReactNative
+# ⚛️ SpriteStudio Player for React Native
 
 **React Native** アプリ（New Architecture）で SpriteStudio アニメーションを再生します。
 `<SpriteStudioView>` コンポーネントとして配置できます。

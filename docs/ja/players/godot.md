@@ -1,4 +1,4 @@
-# 🕹️ SSPlayerForGodot
+# 🕹️ SpriteStudio Player for Godot
 
 **Godot Engine** でネイティブに SpriteStudio アニメーションを描画します。`libssruntime` を基盤としています。
 

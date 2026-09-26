@@ -4,17 +4,17 @@
 
 | 動かしたい対象 | 使用するもの | 詳細 |
 |---|---|---|
-| Unity ゲーム | **[SSPlayerForUnity](../players/unity.md)** | ドキュメント（🚧 準備中） |
-| **ブラウザ** - PixiJS・WebGL | **[SSPlayerForWeb](../players/web.md)**（Player コレクション） | ドキュメント（🚧 準備中） |
-| **ブラウザ** - WebGPU | **[SSPlayerForWgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | ドキュメント（🚧 準備中） |
-| **RPG ツクール MZ** | **[SSPlayerForWeb](../players/web.md)**（`ssplayer-rmmz`） | ドキュメント（🚧 準備中） |
-| **TyranoScript / TyranoBuilder** のビジュアルノベル | **[SSPlayerForWeb](../players/web.md)**（`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`） | ドキュメント（🚧 準備中） |
-| Godot ゲーム | **[SSPlayerForGodot](../players/godot.md)** | ドキュメント（🚧 準備中） |
-| **Bevy** ゲーム | **[SSPlayerForWgpu](../players/wgpu.md)**（`ssplayer-bevy`） | ドキュメント（🚧 準備中） |
-| **Flutter** アプリ | **[SSPlayerForFlutter](../players/flutter.md)** | ドキュメント（🚧 準備中） |
-| Ren'Py ビジュアルノベル | **[SSPlayerForRenPy](../players/renpy.md)** | ドキュメント（🚧 準備中） |
-| エンジンを使わず自分で描画する **Rust** / **C・C++** アプリケーション | **[SSPlayerForWgpu](../players/wgpu.md)** | ドキュメント（🚧 準備中） |
-| **React Native** アプリ | **[SSPlayerForReactNative](../players/react-native.md)** | ドキュメント（🚧 準備中） |
+| Unity ゲーム | **[SpriteStudio Player for Unity](../players/unity.md)** | ドキュメント（🚧 準備中） |
+| **ブラウザ** - PixiJS・WebGL | **[SpriteStudio Player for Web](../players/web.md)**（Player コレクション） | ドキュメント（🚧 準備中） |
+| **ブラウザ** - WebGPU | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | ドキュメント（🚧 準備中） |
+| **RPG ツクール MZ** | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-rmmz`） | ドキュメント（🚧 準備中） |
+| **TyranoScript / TyranoBuilder** のビジュアルノベル | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`） | ドキュメント（🚧 準備中） |
+| Godot ゲーム | **[SpriteStudio Player for Godot](../players/godot.md)** | ドキュメント（🚧 準備中） |
+| **Bevy** ゲーム | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`ssplayer-bevy`） | ドキュメント（🚧 準備中） |
+| **Flutter** アプリ | **[SpriteStudio Player for Flutter](../players/flutter.md)** | ドキュメント（🚧 準備中） |
+| Ren'Py ビジュアルノベル | **[SpriteStudio Player for Ren'Py](../players/renpy.md)** | ドキュメント（🚧 準備中） |
+| エンジンを使わず自分で描画する **Rust** / **C・C++** アプリケーション | **[SpriteStudio Player for wgpu](../players/wgpu.md)** | ドキュメント（🚧 準備中） |
+| **React Native** アプリ | **[SpriteStudio Player for React Native](../players/react-native.md)** | ドキュメント（🚧 準備中） |
 | 独自の Player・組み込みを作りたい | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |
 
 Player ごとの統合の成熟度は [Player ごとの違い](./player-differences.md) と各 Player のページに記載しており、この表では重複して書きません。
@@ -23,7 +23,7 @@ Player ごとの統合の成熟度は [Player ごとの違い](./player-differen
 
 | 変換したい環境 | 使用するもの | 詳細 |
 |---|---|---|
-| ウェブ（ブラウザ） | **[SSPlayerForWeb](../players/web.md)**（`ssconverter-web`） | 試す（🚧 準備中） |
+| ウェブ（ブラウザ） | **[SpriteStudio Player for Web](../players/web.md)**（`ssconverter-web`） | 試す（🚧 準備中） |
 | デスクトップ - GUI | **[SSConverterGUI](../players/converter.md)** | ドキュメント（🚧 準備中） |
 | デスクトップ - CLI | **SpriteStudio-SDK**（`ssconverter-cli`） | [使い方](./convert-with-a-standalone-tool.md) |
 
