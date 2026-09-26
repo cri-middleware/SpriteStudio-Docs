@@ -1,4 +1,4 @@
-# 🌐 SSPlayerForWeb
+# 🌐 SpriteStudio Player for Web
 
 ブラウザで SpriteStudio アニメーションを再生する **Web 用 Player のコレクション**です。共通の WebAssembly コア（`@spritestudio/ssplayer-core`、`libssruntime` を基盤）を共有します。
 SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで、好みのレンダラーで再生できます。
@@ -31,7 +31,7 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 
 | あなたの環境 | 使うもの |
 |---|---|
-| `.sspj` -> `.ssab` を変換する | **`ssconverter-web`** - SSPlayerForWeb のサイトでホストされるブラウザツール（Node CLI も同梱）。npm パッケージではありません |
+| `.sspj` -> `.ssab` を変換する | **`ssconverter-web`** - SpriteStudio Player for Web のサイトでホストされるブラウザツール（Node CLI も同梱）。npm パッケージではありません |
 | 変換機能を自作アプリ / サービスに組み込む | **`@spritestudio/ssconverter-core`** |
 
 **ゲームエンジン統合** - 描画は `@spritestudio/ssplayer-webgl` を基盤にしています。上記のパッケージとは違い、こちらはそもそも npm 公開の予定がなく、リポジトリの

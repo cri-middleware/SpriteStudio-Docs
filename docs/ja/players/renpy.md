@@ -1,4 +1,4 @@
-# 🎭 SSPlayerForRenPy
+# 🎭 SpriteStudio Player for Ren'Py
 
 **Ren'Py** 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。`libssruntime` を基盤とし、各リリースには再生可能な Web デモが同梱されます。
 

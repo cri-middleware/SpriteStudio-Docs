@@ -1,4 +1,4 @@
-# 🕹️ SSPlayerForGodot
+# 🕹️ SpriteStudio Player for Godot
 
 Renders SpriteStudio animations natively in the **Godot Engine**, backed by `libssruntime`.
 

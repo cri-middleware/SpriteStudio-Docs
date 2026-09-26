@@ -1,4 +1,4 @@
-# 🌐 SSPlayerForWeb
+# 🌐 SpriteStudio Player for Web
 
 A **collection of Web players** for SpriteStudio animations in the browser, sharing one
 WebAssembly core (`@spritestudio/ssplayer-core`, built on `libssruntime`). Author your sprite
@@ -36,7 +36,7 @@ Conversion is picked separately from playback, so it has its own row in the tabl
 
 | Your environment | Use |
 |---|---|
-| Converting `.sspj` -> `.ssab` | **`ssconverter-web`** - a browser tool hosted on the SSPlayerForWeb site, with a Node CLI alongside it; not an npm package |
+| Converting `.sspj` -> `.ssab` | **`ssconverter-web`** - a browser tool hosted on the SpriteStudio Player for Web site, with a Node CLI alongside it; not an npm package |
 | Embedding conversion in your own app / service | **`@spritestudio/ssconverter-core`** |
 
 **Game-engine integrations** - rendering built on `@spritestudio/ssplayer-webgl`. Unlike the

@@ -1,4 +1,4 @@
-# 📱 SSPlayerForFlutter
+# 📱 SpriteStudio Player for Flutter
 
 Play SpriteStudio animations in **Flutter** apps, backed by `libssruntime`. The
 `SpriteStudioView` widget composites like any other widget, across Flutter's targets.

@@ -4,7 +4,7 @@ Some players bundle `libssconverter` and convert automatically on import, with n
 in sight - [Converting Assets](./conversion.md) says which. Targeting anything else means no
 player converts for you, so you run a standalone tool yourself - for example when you:
 
-- play back in the browser with [SSPlayerForWeb](../players/web.md)'s renderers,
+- play back in the browser with [SpriteStudio Player for Web](../players/web.md)'s renderers,
 - integrate your own player, or bring SpriteStudio to a new engine ([Porting a Player](../sdk/porting.md)), or
 - automate conversion in a build or CI/CD pipeline.
 
@@ -35,7 +35,7 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
     browsers (**Chrome**, **Edge**, **Opera**). Firefox and Safari are not supported.
 
 1. Open the converter at [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) —
-   🚧 _coming soon_; the address is final, but it goes live with the SSPlayerForWeb site.
+   🚧 _coming soon_; the address is final, but it goes live with the SpriteStudio Player for Web site.
 2. Drop in the folder that contains your `.sspj` (its images and other referenced files are read along with it).
 3. Download the result as a ZIP (the `.ssab` and its referenced textures).
 
