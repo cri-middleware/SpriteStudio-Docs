@@ -23,7 +23,7 @@ the core computes but leaves the player to draw or play - are in
 | **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends |
 | **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate |
 | **[React Native](../players/react-native.md)** | Masked Effect draws unmasked, masked Mesh does not; platform reach is narrower |
-| **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter states three limits of its own |
+| **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter states two limits of its own |
 
 !!! note "How to read this page"
     Each section below summarizes what that player's own **Limitations & Scope** page states -
@@ -112,10 +112,10 @@ only** - `map0` / `map1` secondary textures, and a shader part combined with a m
 
 The **Bevy adapter** is a separate crate, following Bevy's release line rather than the player's
 and tracking one line at a time. It takes the coverage backend, since Bevy's 2d depth texture
-carries no stencil, and states three limits of its own: a **second view is skipped** with a
-warning, **MSAA must be off** (and the camera wants `CompositingSpace::Srgb` for faithful color),
-and loading is **synchronous**, going to the filesystem rather than Bevy's `AssetServer` - so no
-hot reload, packed assets or shared atlases.
+carries no stencil, and states two limits of its own: a **second view is skipped** with a
+warning, and **MSAA must be off** (the camera also wants `CompositingSpace::Srgb` for faithful
+color). Packs load through Bevy's `AssetServer`, so hot reload, packed assets and shared atlases
+work as they do for any Bevy asset.
 
 ## 🎨 Why blend modes are the usual difference
 
