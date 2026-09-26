@@ -19,7 +19,7 @@ the core computes but leaves the player to draw or play - are in
 |---|---|
 | **[Unity](../players/unity.md)** | The uGUI (Canvas) path carries limits the world path does not |
 | **[Web](../players/web.md)** | The renderers have no gaps; the framework integrations are at different stages |
-| **[Godot](../players/godot.md)** | No feature gaps beyond the shared ones; the Web export has extra requirements |
+| **[Godot](../players/godot.md)** | Four of the twelve blend modes are honored; the Web export has extra requirements |
 | **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends |
 | **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate |
 | **[React Native](../players/react-native.md)** | Masked Effect draws unmasked, masked Mesh does not; platform reach is narrower |
@@ -59,9 +59,13 @@ The browser converter `ssconverter-web` needs the File System Access API, so it 
 
 ### Godot
 
-No feature gaps beyond the shared ones. Ships as GDExtension **or** custom module; the **Web
-export** has extra requirements (a `dlink_enabled` engine template for GDExtension - the custom
-module needs none) and is single-threaded (`nothread`), which is why it needs no COOP/COEP headers.
+Only **four of the twelve blend modes** are honored - `Mix`, `Mul`, `Add` and `Sub` - and the
+other eight fall back to `Mix`: the plugin draws straight to a Godot canvas item, so a part is
+limited to the modes a `CanvasItemMaterial` maps onto.
+
+Ships as GDExtension **or** custom module; the **Web export** has extra requirements (a
+`dlink_enabled` engine template for GDExtension - the custom module needs none) and is
+single-threaded (`nothread`), which is why it needs no COOP/COEP headers.
 
 ### Flutter
 
@@ -117,7 +121,7 @@ hot reload, packed assets or shared atlases.
 
 SpriteStudio realizes each blend as a GPU blend state, so reproduction depends on what the host
 engine exposes. Where a mode has no equivalent, players fall back rather than fail - which is why
-the entries above cluster around the same few modes:
+most entries above cluster around the same few modes:
 
 - **`Div2` / `Overlay2`** have no GPU blend mapping in the reference players either, so falling
   back to `Mix` is deliberate behavior rather than an unfinished implementation.
