@@ -79,8 +79,7 @@ because the runtime has no glyphs with which to write coverage.
 ### Text and 9-slice parts are not drawn by any player yet
 
 Two part types reach the player intact but have no implementation in **any** official player at
-present. This is not a difference between engines - it is uniform, and each player's own
-limitations page states it:
+present. This is not a difference between engines - it is uniform:
 
 - **Text parts** - the runtime supplies the authored string, the bitmap glyph atlas, and the
   part's slot in the draw plan. No player draws the glyphs yet.
@@ -111,18 +110,6 @@ editor matters.
 
 Which blend modes a given engine can reproduce *at all* is a separate, per-player question - see
 [Player Differences](../overview/player-differences.md).
-
-### An animation plans at most 24 mask writers per frame
-
-Clipping is replayed from a coverage encoding that spends one bit per mask writer, and the
-budget is the 24 bits of an RGBA8's color channels, so an animation plans **24 writers** in a
-frame and the 25th is not planned at all. This is not one player's ceiling: the cap belongs to
-the planner the SDK's porting guide lays out
-(🚧 [`40_mask.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/40_parts/40_mask.md)),
-and the official players share it. Writers carried out of an instance part spend
-from the same 24; a second character on screen brings its own budget.
-
-**What to do:** keep one animation to 24 or fewer masks live in the same frame.
 
 ## 📦 Shipping & loading
 
