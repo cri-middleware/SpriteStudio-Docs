@@ -18,7 +18,7 @@ the core computes but leaves the player to draw or play - are in
 | Player | In short |
 |---|---|
 | **[Unity](../players/unity.md)** | The uGUI (Canvas) path carries limits the world path does not |
-| **[Web](../players/web.md)** | The renderers have no gaps; the framework integrations are at different stages |
+| **[Web](../players/web.md)** | PixiJS does not mask effects; the framework integrations are at different stages |
 | **[Godot](../players/godot.md)** | Four of the twelve blend modes are honored; the Web export has extra requirements |
 | **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends |
 | **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate |
@@ -48,10 +48,10 @@ start frame.
 
 ### Web
 
-The renderer packages (`ssplayer-webgl`, `ssplayer-pixi`) carry no feature gaps of their own. The
-framework integrations are at different stages: **RPG Maker MZ is experimental (alpha)** - a
-picture's tint does not affect the animation - while the **TyranoScript and TyranoBuilder plugins
-are beta**. TyranoBuilder has no component yet for per-part color / visibility or for linking an
+**`ssplayer-pixi` does not mask effects** - an effect's particles draw unclipped even when the effect
+part is a mask target; `ssplayer-webgl` masks them. The framework integrations are at different
+stages: **RPG Maker MZ is experimental (alpha)** - a picture's tint does not affect the animation -
+while the **TyranoScript and TyranoBuilder plugins are beta**. TyranoBuilder has no component yet for per-part color / visibility or for linking an
 animation to a speaker; those are written with `[ss_*]` tags instead.
 
 The browser converter `ssconverter-web` needs the File System Access API, so it is
@@ -61,7 +61,7 @@ The browser converter `ssconverter-web` needs the File System Access API, so it 
 
 Only **four of the twelve blend modes** are honored - `Mix`, `Mul`, `Add` and `Sub` - and the
 other eight fall back to `Mix`: the plugin draws straight to a Godot canvas item, so a part is
-limited to the modes a `CanvasItemMaterial` maps onto.
+limited to the modes a `CanvasItemMaterial` maps onto. Masks **do not clip Effect parts**.
 
 Ships as GDExtension **or** custom module; the **Web export** has extra requirements (a
 `dlink_enabled` engine template for GDExtension - the custom module needs none) and is
@@ -71,7 +71,7 @@ single-threaded (`nothread`), which is why it needs no COOP/COEP headers.
 
 Two render backends (`flutter_gpu` / Canvas; Web is always Canvas). On Canvas, `Sub` and `Invert`
 are reconstructed from three passes (they cannot batch); `Div2` / `Overlay2` render as `Mix` on
-**both** backends.
+**both** backends. Masks **do not clip Effect parts** on either backend.
 
 Widget **part following** carries the transform but not the draw order - a followed widget paints
 above the whole animation rather than between its parts - and assumes the view draws unscaled.
@@ -82,7 +82,7 @@ above the whole animation rather than between its parts - and assumes the view d
 order - a pinned child paints in front of the whole sprite rather than between its parts.
 
 A few features are approximate rather than exact - masking, whole-part tint on Mesh parts, and
-anything nested inside an Instance part. Its own docs enumerate each case.
+anything nested inside an Instance part - and the particles an Effect part emits are not clipped by masks, even where the editor clips them. Its own docs enumerate each case.
 
 ### React Native
 
