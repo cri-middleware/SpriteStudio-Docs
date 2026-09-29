@@ -79,8 +79,7 @@ because the runtime has no glyphs with which to write coverage.
 ### Text and 9-slice parts are not drawn by any player yet
 
 Two part types reach the player intact but have no implementation in **any** official player at
-present. This is not a difference between engines - it is uniform, and each player's own
-limitations page states it:
+present. This is not a difference between engines - it is uniform:
 
 - **Text parts** - the runtime supplies the authored string, the bitmap glyph atlas, and the
   part's slot in the draw plan. No player draws the glyphs yet.
