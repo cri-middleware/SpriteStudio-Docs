@@ -103,8 +103,8 @@ route.
 picks between them**: the **stencil** one approximates overlapping masks that mix INCR and INVERT
 and bounds nesting by the 8 bits available; the **coverage-bitmap** one serves a pass that lends
 no stencil, lifting that nesting bound - its accumulators are shader variables - at the cost of
-one extra render pass per masking player. The writer budget both stop at is not a wgpu trait; it
-is in [Shared Limitations](../sdk/limitations.md).
+one extra render pass per masking player, and one more for every 24 mask writers past the first
+24. Both backends stop at 96 writers per player.
 
 Group alpha composites **each part in turn**, so two overlapping parts at `0.5` leave their
 overlap at `0.75` rather than at `0.5`. The 13 integration shaders are covered for **Normal parts

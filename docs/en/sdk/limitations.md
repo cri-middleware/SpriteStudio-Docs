@@ -112,18 +112,6 @@ editor matters.
 Which blend modes a given engine can reproduce *at all* is a separate, per-player question - see
 [Player Differences](../overview/player-differences.md).
 
-### An animation plans at most 24 mask writers per frame
-
-Clipping is replayed from a coverage encoding that spends one bit per mask writer, and the
-budget is the 24 bits of an RGBA8's color channels, so an animation plans **24 writers** in a
-frame and the 25th is not planned at all. This is not one player's ceiling: the cap belongs to
-the planner the SDK's porting guide lays out
-(🚧 [`40_mask.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/40_parts/40_mask.md)),
-and the official players share it. Writers carried out of an instance part spend
-from the same 24; a second character on screen brings its own budget.
-
-**What to do:** keep one animation to 24 or fewer masks live in the same frame.
-
 ## 📦 Shipping & loading
 
 ### A `.ssab` whose schema version differs from the runtime does not load
