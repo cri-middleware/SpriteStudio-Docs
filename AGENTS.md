@@ -64,7 +64,8 @@ links out, never full player documentation.
   technical constraint. `en` and `ja` carry the same marks file for file. In `sdk/limitations.md`,
   `##` headings carry an emoji, `###` none.
 - **A repository added to the portal needs five edits per locale** — a card in `index.md`, a row
-  in `license.md`, a row in `support.md`, the `nav` entry, the `players/` page. Nothing checks it.
+  in `license.md`, a row in `support.md`, the `nav` entry, the `players/` page — plus one entry in
+  `llmstxt.sections` of `mkdocs.base.yml`, once for both locales. Nothing checks it.
 - **`LICENSE.md` holds the licence text and nothing else.** GitHub scores the whole file against
   known texts, and one `SPDX-License-Identifier:` line costs ~6 points of similarity — enough to
   flip the repo to "Other". The translation lives in `LICENSE.ja.md`; do not merge them back.
