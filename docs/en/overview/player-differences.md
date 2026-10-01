@@ -59,9 +59,10 @@ The browser converter `ssconverter-web` needs the File System Access API, so it 
 
 ### Godot
 
-Only **four of the twelve blend modes** are honored - `Mix`, `Mul`, `Add` and `Sub` - and the
-other eight fall back to `Mix`: the plugin draws straight to a Godot canvas item, so a part is
-limited to the modes a `CanvasItemMaterial` maps onto. Masks **do not clip Effect parts**.
+Only **four of the twelve blend modes** are honored - `Mix`, `Mul`, `Add` and `Sub`. `Mulalpha`
+and `Mul2` draw as `Mul`, and the other six fall back to `Mix`: the plugin draws straight to a
+Godot canvas item, so a part is limited to the modes a `CanvasItemMaterial` maps onto. Masks
+**do not clip Effect parts**.
 
 Ships as GDExtension **or** custom module; the **Web export** has extra requirements (a
 `dlink_enabled` engine template for GDExtension - the custom module needs none) and is
