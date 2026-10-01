@@ -115,6 +115,7 @@ plugins:
           - overview/conversion.md: "Converting a SpriteStudio 7.5+ project (`.sspj`) into the runtime format (`.ssab` / `.ssqb`), and which route each player takes."
           - overview/convert-with-a-standalone-tool.md: "Which standalone converter to run when no player converts for you, including in CI."
           - overview/player-differences.md: "Only what differs between players: what each engine's renderer can reproduce and how far each player has got."
+          - overview/ai-assistants.md: "How to hand these docs to an AI assistant: each site's llms.txt, the docs inside the Unity package, and a snippet for your AGENTS.md."
         Players and tools:
           - players/unity.md: "Unity player, editor-first: drag a `.sspj` into the editor and assign it to a component."
           - players/web.md: "Web players (PixiJS, WebGL, RPG Maker MZ, TyranoScript, TyranoBuilder) on one WebAssembly core."

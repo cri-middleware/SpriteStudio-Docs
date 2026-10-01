@@ -45,6 +45,7 @@ nav:
       - Converting Assets: overview/conversion.md
       - Standalone Conversion Tools: overview/convert-with-a-standalone-tool.md
       - Player Differences: overview/player-differences.md
+      - 🤖 Using with AI Assistants: overview/ai-assistants.md
   - 🎮 Players & Tools:
       - Unity: players/unity.md
       - Web (Player Collection): players/web.md
