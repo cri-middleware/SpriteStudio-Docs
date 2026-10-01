@@ -50,6 +50,7 @@ nav:
       - アセットの変換: overview/conversion.md
       - スタンドアロンツールでの変換: overview/convert-with-a-standalone-tool.md
       - Player ごとの違い: overview/player-differences.md
+      - 🤖 AI アシスタントと使う: overview/ai-assistants.md
   - 🎮 Player・ツール:
       - Unity: players/unity.md
       - Web（Player コレクション）: players/web.md
