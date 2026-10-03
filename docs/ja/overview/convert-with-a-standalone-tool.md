@@ -72,7 +72,7 @@ ssconverter-cli ./assets/projects ./more_assets
 ```
 
 バッチモードでは各出力がソースと同じフォルダに書き出されます（`-o` は無視されます）。全オプションは
-🚧 [ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) を参照してください。
+🚧 [ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) を参照してください。
 
 ## ➡️ 次に
 

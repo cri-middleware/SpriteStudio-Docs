@@ -55,7 +55,7 @@ FrameData（密・1フレーム）  --FFI-->  各エンジンの描画
 
 スキーマは SDK 内の FlatBuffers `.fbs` として定義されています（🚧 [`ssab.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssab.fbs) /
 🚧 [`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssqb.fbs)、および
-🚧 [`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/fbs/framedata.fbs)）。フィーチャフラグ（`default` / `no_std` / `converter`）とコード生成については 🚧 [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab) を参照。
+🚧 [`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/fbs/framedata.fbs)）。フィーチャフラグ（`default` / `no_std` / `converter`）とコード生成については 🚧 [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/README.ja.md) を参照。
 
 !!! info "スキーマのバージョニング"
     `.ssab` はバイナリ `version` フィールドを持ち、`ssconverter-web` などのツールは[スキーマ版ごと](../overview/convert-with-a-standalone-tool.md)に公開されます。変換ツールのスキーマは

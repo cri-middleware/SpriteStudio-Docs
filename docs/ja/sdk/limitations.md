@@ -106,7 +106,7 @@
 
 ### ブラウザでは WebAssembly SIMD が必須
 
-ランタイムの WASM ビルドは **WebAssembly SIMD 命令** を使用しており、**SIMD 非対応のブラウザでは動作しません**。どの Player でも、Web 向けのターゲットはすべて対象です（RPG Maker MZ のプラグインは SIMD を使わないビルドを同梱しているので対象外です）。
+ランタイムの WASM ビルドは **WebAssembly SIMD 命令** を使用しており、**SIMD 非対応のブラウザでは動作しません**。どの Player でも、Web 向けのターゲットはすべて対象です（RPG ツクール MZ のプラグインは SIMD を使わないビルドを同梱しているので対象外です）。
 
 **対処:** 配信先のブラウザ要件として、WebAssembly SIMD 対応を前提としてください。
 
