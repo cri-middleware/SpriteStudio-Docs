@@ -92,8 +92,8 @@ affine quad's UV, and an effect is a cloud of quads with no single shape to cut.
 is supported: a mesh needs its texcoord channel for its atlas, so it is drawn into an isolated
 layer that the same triangles then cut with `kDstIn`, carrying the coverage UV per vertex.
 
-Platform reach is narrower too: tvOS / visionOS wait on Tier 3 Rust targets, and Windows has no
-route.
+Platform reach is narrower too: tvOS / visionOS wait on slices for them in the SDK's
+XCFramework, and Windows has no route.
 
 ### wgpu
 
