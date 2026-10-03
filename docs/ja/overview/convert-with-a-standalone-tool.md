@@ -13,7 +13,7 @@
 | 状況 | 使うツール | 理由 |
 |---|---|---|
 | 何もインストールできない、単発でさっと | **`ssconverter-web`** | ブラウザ内で完結、導入ゼロ |
-| デスクトップで、たまに変換、GUI がよい | **SSConverterGUI**（macOS / Windows） | ドラッグ&ドロップ、ターミナル不要 |
+| デスクトップで、たまに変換、GUI がよい | **SSConverter GUI**（macOS / Windows） | ドラッグ&ドロップ、ターミナル不要 |
 | ビルドや CI/CD の自動化、大量に変換 | **`ssconverter-cli`** | スクリプト化・バッチモード・`--embedded` |
 
 !!! tip "迷ったらブラウザから"
@@ -40,7 +40,7 @@
 
     Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版（公開後）を使い、アプリ内のバージョン切替から選択してください。
 
-## 🖥️ SSConverterGUI - デスクトップアプリ
+## 🖥️ SSConverter GUI - デスクトップアプリ
 
 Tauri 製のデスクトップアプリです。コマンドラインは不要です。配布しているビルドは **macOS と
 Windows** で、Linux では下の `ssconverter-cli` を使ってください（出力は同じです）。
@@ -49,7 +49,7 @@ Windows** で、Linux では下の `ssconverter-cli` を使ってください（
 2. アプリを起動し、`.sspj` をウィンドウにドロップします（またはファイル選択から開きます）。
 3. 出力フォルダを選んで変換します。
 
-詳細は [SSConverterGUI の概要](../players/converter.md)、ドキュメント（🚧 準備中）、
+詳細は [SSConverter GUI の概要](../players/converter.md)、ドキュメント（🚧 準備中）、
 🚧 [リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
 
 ## ⌨️ ssconverter-cli - コマンドライン・CI

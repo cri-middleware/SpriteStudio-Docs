@@ -23,7 +23,7 @@ through a released C-API, so the SDK comes in as a git submodule.
 | The **browser** (WebGPU) | The npm package `@spritestudio/ssplayer-wgpu` - the wasm plus a TypeScript layer, with the `<ss-player-webgpu>` custom element in its own entry point. 🚧 Not on npm yet. |
 
 **2. `.sspj` -> `.ssab`** - nothing here hosts an importer and nothing converts at runtime, so
-this is a host-side step with the desktop [SSConverterGUI](./converter.md) or the SDK's
+this is a host-side step with the desktop [SSConverter GUI](./converter.md) or the SDK's
 `ssconverter-cli` - see [Converting Assets](../overview/conversion.md). Nothing of your own is
 needed to try the player first: the bundled samples run on the SDK's own test animations.
 

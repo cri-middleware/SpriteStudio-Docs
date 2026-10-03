@@ -24,7 +24,7 @@ Player ごとの統合の成熟度は [Player ごとの違い](./player-differen
 | 変換したい環境 | 使用するもの | 詳細 |
 |---|---|---|
 | ウェブ（ブラウザ） | **[SpriteStudio Player for Web](../players/web.md)**（`ssconverter-web`） | 試す（🚧 準備中） |
-| デスクトップ - GUI | **[SSConverterGUI](../players/converter.md)** | ドキュメント（🚧 準備中） |
+| デスクトップ - GUI | **[SSConverter GUI](../players/converter.md)** | ドキュメント（🚧 準備中） |
 | デスクトップ - CLI | **SpriteStudio-SDK**（`ssconverter-cli`） | [使い方](./convert-with-a-standalone-tool.md) |
 
 ## ✅ すべてのプラットフォームに共通

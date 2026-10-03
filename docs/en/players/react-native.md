@@ -17,7 +17,7 @@ npx expo install react-native-spritestudio @shopify/react-native-skia react-nati
 🚧 It is not on npm until the first release; until then, run it from a checkout.
 
 **2. `.sspj` -> `.ssab`** - React Native has no editor to host an importer in, so this is a
-host-side step with the SDK's `ssconverter-cli` or [SSConverterGUI](./converter.md) - see
+host-side step with the SDK's `ssconverter-cli` or [SSConverter GUI](./converter.md) - see
 [Converting Assets](../overview/conversion.md). **A pack is a directory, not a file**: a `.ssab`
 names its textures and its external packs by paths relative to itself, and Metro bundles only what
 a `require()` names. So pack directories ship as native app assets - point the Expo config plugin
