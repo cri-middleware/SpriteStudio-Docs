@@ -1,6 +1,6 @@
 [**English**](./README.md) | [**日本語**](./README.ja.md)
 
-# SpriteStudio-Docs
+# SpriteStudio Docs
 
 SpriteStudio SDK と公式 Player 群のドキュメント**ポータル**です。
 

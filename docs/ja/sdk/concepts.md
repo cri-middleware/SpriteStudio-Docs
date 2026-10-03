@@ -54,11 +54,11 @@ graph LR
 
 | コンポーネント | 役割 |
 |---|---|
-| 🚧 [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/sspj) | `.sspj` プロジェクト（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）の解析。 |
-| 🚧 [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab) | `.ssab` / `.ssqb` バイナリの読み書き（FlatBuffers）。 |
-| 🚧 [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssconverter) | `.sspj` を `.ssab` へ変換。 |
-| 🚧 [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime) | 再生の Brain。`DrawBatch` プランを出力。 |
-| 🚧 [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) | コマンドライン変換ツール（Windows / macOS / Linux）。 |
+| 🚧 [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/sspj/README.ja.md) | `.sspj` プロジェクト（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）の解析。 |
+| 🚧 [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/README.ja.md) | `.ssab` / `.ssqb` バイナリの読み書き（FlatBuffers）。 |
+| 🚧 [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssconverter/README.ja.md) | `.sspj` を `.ssab` へ変換。 |
+| 🚧 [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/README.ja.md) | 再生の Brain。`DrawBatch` プランを出力。 |
+| 🚧 [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) | コマンドライン変換ツール（Windows / macOS / Linux）。 |
 
 ## ✨ この設計の利点
 

@@ -1,45 +1,17 @@
-# Settings shared by every locale. `mkdocs.yml` (English) and `mkdocs.ja.yml` both start
-# with `INHERIT: ./mkdocs.base.yml` and add only what differs between them.
-#
-# This file is never built directly -- it has no `docs_dir` and no `nav`. It is named
-# `mkdocs.base.yml` rather than `mkdocs.yml` precisely so that a bare `zensical build`
-# picks up the English locale config instead of this one.
-#
-# IMPORTANT -- the rule that shapes this split: **every YAML sequence must be defined in
-# exactly one of the three files.** Zensical's `INHERIT` *concatenates* sequences from
-# parent and child, where MkDocs replaces them. Put `nav` here as well as in a locale file
-# and the Japanese site renders the English navigation followed by the Japanese one; do the
-# same with `extra.social` and the footer grows six icons. Mappings deep-merge in both
-# tools, so scalars like `theme.language` are safe to override.
-#
-# Hence: sequences that are genuinely shared (`theme.palette`, `theme.features`, `plugins`,
-# `markdown_extensions`, `extra.alternate`) live here and *only* here, while the ones that
-# differ per locale (`nav`, `extra.social`) live in the locale files and *only* there.
+# Zensical's INHERIT concatenates YAML sequences (nav, plugins, extra.social, ...) instead of
+# replacing them, so each sequence is defined in exactly one of mkdocs.base.yml, mkdocs.yml and
+# mkdocs.ja.yml.
 
 site_name: SpriteStudio Docs
 site_author: "CRI Middleware Co., Ltd."
 repo_name: "cri-middleware/SpriteStudio-Docs"
 repo_url: "https://github.com/cri-middleware/SpriteStudio-Docs"
-# No `edit_uri`, so no "edit this page" button renders. The value is a branch name that
-# nothing validates -- strict mode does not look at it -- so a branch rename breaks it
-# silently. The footer repo link and CONTRIBUTING.md already route corrections.
-# Rendered in the site footer. Deliberately year-less so it never goes stale.
 copyright: "Copyright &copy; CRI Middleware Co., Ltd."
-
-# Nothing builds the docs on a pull request, so a plain `zensical build` must fail on a
-# broken link too - not just the `--strict` invocation people remember to type.
 strict: true
 
 theme:
   name: material
-  # overrides/main.html appends the Open Graph / Twitter Card metadata the theme does not
-  # emit on its own and repairs the page title; overrides/partials/alternate.html is the
-  # per-page language selector (see `extra.alternate` below).
   custom_dir: overrides
-  # Placeholder branding - swap both for real SpriteStudio artwork when it is available.
-  # `icon.logo` is a bundled Material icon (no file at all); the favicon is a hand-rolled
-  # SVG with a copy under *each* locale's docs dir - see the comment on
-  # `docs/en/assets/favicon.svg`.
   favicon: assets/favicon.svg
   icon:
     logo: material/motion-play
@@ -64,39 +36,17 @@ theme:
     - navigation.expand
     - navigation.top
     - navigation.tracking
-    # Previous / next links in the footer, so the cross-cutting pages can be read in order.
     - navigation.footer
     - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
-    # "Copy as Markdown" on every page. It fetches the Markdown the `llmstxt` plugin writes.
     - content.action.copy
+    - content.tabs.link
 
 plugins:
-  # Search language follows `theme.language`, which each locale config sets, so there is no
-  # per-language list to keep in sync here. Each locale gets its own index, and the Japanese
-  # one is segmented into words rather than indexed as unbroken runs of characters.
   - search
-
-  # Nothing has shipped from this site yet, so there is nothing to redirect. Add a
-  # `redirect_maps:` entry the moment a published page moves or is renamed: the stub keeps
-  # the old URL working, anchors and all, and the player repos deep-link into these pages.
-  # Sources are relative to `docs_dir`, and the two locales mirror each other, so a single
-  # entry covers en and ja.
   - redirects
-
-  # Writes `llms.txt` and `llms-full.txt` at each locale's root, and a Markdown copy of every
-  # page beside its HTML, for readers who hand the docs to an AI assistant. Needs `site_url`,
-  # which both locale configs set.
-  #
-  # Every page is listed by path, because only an entry that names one page can carry its
-  # description (a glob would give every match the same line, and front matter is ignored).
-  # The price: a page missing from this list is left out of both files without a warning
-  # (a listed page that no longer exists does fail the strict build), and a glob next to it
-  # would list the page twice. The text is English for both locales -
-  # a per-locale one would have to move `llmstxt` into the locale files and split `plugins`
-  # across three files, which the sequence rule at the top forbids.
   - llmstxt:
       full_output: llms-full.txt
       markdown_description: |
@@ -137,19 +87,13 @@ plugins:
 
 markdown_extensions:
   - toc:
-      # The "¶" beside each heading, so a reader can copy a link to a section. Listing
-      # `markdown_extensions` replaces Zensical's defaults wholesale, and the default `toc`
-      # is the one that carries this.
       permalink: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
   - admonition
-  # Required by the "grid cards" on index.md - the `markdown` attr on the wrapping <div>
-  # and the `{ .card }`-style attributes both need these two.
   - attr_list
   - md_in_html
-  # Renders the :material-*: / :octicons-*: / :simple-*: icon shortcodes as SVGs.
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -159,6 +103,11 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -168,15 +117,10 @@ markdown_extensions:
       base_path:
         - .
       check_paths: true
+  - pymdownx.quotes:
+      callouts: true
 
 extra:
-  # The header language selector. `link` is each locale's subpath under the site root, NOT
-  # a full URL -- overrides/partials/alternate.html rebuilds the href from it plus the
-  # current page, so switching language keeps the reader on the same page instead of
-  # dropping them on the other locale's home page. `extra.site_root_prefix` in each locale
-  # config is the other half of that calculation.
-  #
-  # overrides/main.html builds the page head's hreflang links from the same `link`s.
   alternate:
     - name: English
       link: ""

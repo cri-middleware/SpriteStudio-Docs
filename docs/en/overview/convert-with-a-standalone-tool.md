@@ -16,7 +16,7 @@ output.
 | Your situation | Use | Why |
 |---|---|---|
 | Can't install anything, or just a quick one-off | **`ssconverter-web`** | Runs fully in the browser, nothing to install |
-| On the desktop, occasional conversions, prefer a UI | **SSConverterGUI** (macOS / Windows) | Drag & drop, no terminal needed |
+| On the desktop, occasional conversions, prefer a UI | **SSConverter GUI** (macOS / Windows) | Drag & drop, no terminal needed |
 | Automating a build, CI/CD, or many projects at once | **`ssconverter-cli`** | Scriptable, batch mode, `--embedded` |
 
 !!! tip "Not sure? Start in the browser."
@@ -48,7 +48,7 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
     Match the schema to your player's runtime version - when in doubt, use the latest
     (auto-redirecting) build once it's available and pick the version from the in-app switcher.
 
-## 🖥️ SSConverterGUI - desktop app
+## 🖥️ SSConverter GUI - desktop app
 
 A Tauri desktop app. No command line. Builds are published for **macOS and Windows** - on Linux,
 take `ssconverter-cli` below instead; the output is the same.
@@ -57,7 +57,7 @@ take `ssconverter-cli` below instead; the output is the same.
 2. Launch it and drag your `.sspj` onto the window (or open it from the file picker).
 3. Choose an output folder and convert.
 
-Details: [SSConverterGUI overview](../players/converter.md) ·
+Details: [SSConverter GUI overview](../players/converter.md) ·
 Documentation (🚧 coming soon) ·
 🚧 [Repository](https://github.com/cri-middleware/SSConverterGUI).
 

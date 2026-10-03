@@ -17,7 +17,7 @@ C-API 経由ではなく Rust クレートとしてリンクするため、SDK �
 | **C / C++** アプリ | cdylib / staticlib と生成されたヘッダー。リポジトリで `scripts/build.sh` を実行すると `bin/` にまとまります。🚧 ビルド済みの配布はまだありません。 |
 | **ブラウザ**（WebGPU） | npm パッケージ `@spritestudio/ssplayer-wgpu`。wasm と TypeScript 層、`<ss-player-webgpu>` カスタム要素は独立したエントリポイントです。🚧 npm 未公開です。 |
 
-**2. `.sspj` -> `.ssab`** - この Player はインポーターを持たず、実行時に変換も行いません。デスクトップ版 [SSConverterGUI](./converter.md) か SDK の `ssconverter-cli` を使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。試すだけなら自分の素材は不要です。同梱サンプルは SDK 自身のテストアニメーションで動きます。
+**2. `.sspj` -> `.ssab`** - この Player はインポーターを持たず、実行時に変換も行いません。デスクトップ版 [SSConverter GUI](./converter.md) か SDK の `ssconverter-cli` を使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。試すだけなら自分の素材は不要です。同梱サンプルは SDK 自身のテストアニメーションで動きます。
 
 **3. どう画面に出すか** - デバイスごとに `SSRenderer` を 1 つ、描画ターゲットごとに `SSScene`
 を 1 つ、そこに任意の数の `SSPlayer` を 1 パスで描画します。

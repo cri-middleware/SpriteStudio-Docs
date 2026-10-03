@@ -27,7 +27,7 @@ Only converting `.sspj`? Pick a standalone tool rather than a player.
 | I want to convert on... | Use | Details |
 |---|---|---|
 | The browser | **[SpriteStudio Player for Web](../players/web.md)** (`ssconverter-web`) | Try it (🚧 coming soon) |
-| The desktop - GUI | **[SSConverterGUI](../players/converter.md)** | Docs (🚧 coming soon) |
+| The desktop - GUI | **[SSConverter GUI](../players/converter.md)** | Docs (🚧 coming soon) |
 | The desktop - CLI | **SpriteStudio-SDK** (`ssconverter-cli`) | [How to run it](./convert-with-a-standalone-tool.md) |
 
 ## ✅ Common to every platform

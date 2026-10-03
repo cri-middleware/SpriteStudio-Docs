@@ -2,10 +2,10 @@
 
 Thank you for using the SpriteStudio documentation portal! Please use the following channels to get help, report issues, or suggest improvements.
 
-👉 **Looking for help with a player or the SDK, not with these docs?** The portal's [**Support page**](./docs/en/support.md) routes you to the right repository - it lists every project's issue tracker and how to tell a shared-core problem from an engine-specific one.
+👉 **Looking for help with a player or the SDK, not with these docs?** The portal's [**Support page**](./docs/en/support.md) routes you to the right repository — it lists every project's issue tracker and how to tell a shared-core problem from an engine-specific one.
 
 ## 🛠️ GitHub Issues (Public)
-For problems **with this portal** - a wrong or outdated description, a broken link, a missing translation, a build failure - please use [GitHub Issues](https://github.com/cri-middleware/SpriteStudio-Docs/issues).
+For problems **with this portal** — a wrong or outdated description, a broken link, a missing translation, a build failure — please use [GitHub Issues](https://github.com/cri-middleware/SpriteStudio-Docs/issues).
 
 *Note: issues about a player's own behavior belong in that player's repository, not here. This repository contains documentation only.*
 
