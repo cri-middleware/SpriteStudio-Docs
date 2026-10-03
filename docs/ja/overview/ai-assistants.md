@@ -41,7 +41,7 @@ Unity パッケージには、インストールした版のドキュメント�
 ```markdown
 ## SpriteStudio Player for Unity
 
-- この Player を使ったコードを書く前にドキュメントを読み、機能を約束する前に「制限事項と対応範囲」のページを確認する。
+- この Player を使ったコードを書く前にドキュメントを読み、機能を約束する前に「制約と適用範囲」のページを確認する。
 - インストールした版のドキュメントはパッケージの中にある: `Library/PackageCache/jp.co.cri-mw.spritestudio.ssplayer-unity@*/Documentation~/`（日本語は `ja/index.md` から）。`Library/` は gitignore されているので、`rg --no-ignore` で検索する。
 - 最新のドキュメント（Markdown）: https://cri-middleware.github.io/SSPlayerForUnity/ja/llms.txt
 ```
