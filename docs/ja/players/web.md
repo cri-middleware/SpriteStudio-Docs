@@ -39,7 +39,7 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 
 | あなたの環境 | パッケージ | 状態 |
 |---|---|---|
-| RPG ツクール MZ（PixiJS v5） | **`@spritestudio/ssplayer-rmmz`** | 🧪 実験的（alpha） |
+| RPG ツクール MZ（PixiJS v5） | **`@spritestudio/ssplayer-rmmz`** | beta |
 | TyranoScript - シナリオに `[ss_*]` タグを自分で書く | **`@spritestudio/ssplayer-tyranoscript`** | beta |
 | TyranoBuilder - コンポーネントパレットから配置、シナリオコード不要 | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
 

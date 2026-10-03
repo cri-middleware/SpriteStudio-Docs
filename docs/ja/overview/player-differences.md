@@ -14,7 +14,7 @@ Player に委ねている機能）は [共通の制限事項](../sdk/limitations
 | Player | 一言で言うと |
 |---|---|
 | **[Unity](../players/unity.md)** | uGUI（Canvas）パスにのみ、ワールドパスにはない制約がある |
-| **[Web](../players/web.md)** | PixiJS はエフェクトをマスクしない。フレームワーク連携の成熟度が異なる |
+| **[Web](../players/web.md)** | `ssplayer-webgl` のマスクはステンシルバッファが前提。フレームワーク連携は beta |
 | **[Godot](../players/godot.md)** | 12 種のブレンドのうち対応は 4 種。Web 書き出しに追加要件 |
 | **[Flutter](../players/flutter.md)** | 描画バックエンドが 2 種類。Canvas では 2 つのブレンドでバッチングが落ちる |
 | **[Ren'Py](../players/renpy.md)** | `Div2`・`Overlay2` が `Mix` にフォールバック。一部機能は近似 |
@@ -36,8 +36,7 @@ Player に委ねている機能）は [共通の制限事項](../sdk/limitations
 
 ### Web
 
-**`ssplayer-pixi` はエフェクトをマスクしません**（エフェクトパーツがマスクの対象でも、パーティクルはクリップされずに描画されます。`ssplayer-webgl` はマスクします）。フレームワーク連携は成熟度が異なり、**RPG ツクール MZ は実験的（alpha）**（ピクチャの色調がアニメーションに影響しない）、**TyranoScript・TyranoBuilder向けプラグインは beta** です。
-TyranoBuilderはパーツ単位の色・表示切り替えと、アニメーションと話者の紐付けに対応するコンポーネントがまだなく、これらは `[ss_*]` タグで記述します。
+**`ssplayer-webgl` はステンシルバッファでマスクします**。ステンシルバッファの無いコンテキストではマスクを書き込めないため、マスクの外側に描くパーツはマスクされずに描かれ、マスクの内側にだけ描く設定のパーツは描かれません。フレームワーク連携（**RPG ツクール MZ・TyranoScript・TyranoBuilder**）は **beta** で、RPG ツクール MZ ではピクチャの色調とブレンドモードがアニメーションに影響しません。
 
 ブラウザ版コンバーター `ssconverter-web` は File System Access API を使うため
 **Chromium 系ブラウザ限定**です。

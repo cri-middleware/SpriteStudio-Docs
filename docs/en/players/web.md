@@ -45,7 +45,7 @@ packages above, these are not headed for npm at all; each is distributed through
 
 | Your environment | Package | Status |
 |---|---|---|
-| RPG Maker MZ (PixiJS v5) | **`@spritestudio/ssplayer-rmmz`** | 🧪 experimental (alpha) |
+| RPG Maker MZ (PixiJS v5) | **`@spritestudio/ssplayer-rmmz`** | beta |
 | TyranoScript - writing `[ss_*]` tags in a scenario yourself | **`@spritestudio/ssplayer-tyranoscript`** | beta |
 | TyranoBuilder - placing animations from the component palette, no scenario code | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
 

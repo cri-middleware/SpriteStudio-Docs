@@ -18,7 +18,7 @@ the core computes but leaves the player to draw or play - are in
 | Player | In short |
 |---|---|
 | **[Unity](../players/unity.md)** | The uGUI (Canvas) path carries limits the world path does not |
-| **[Web](../players/web.md)** | PixiJS does not mask effects; the framework integrations are at different stages |
+| **[Web](../players/web.md)** | `ssplayer-webgl` masks only with a stencil buffer; the framework integrations are beta |
 | **[Godot](../players/godot.md)** | Four of the twelve blend modes are honored; the Web export has extra requirements |
 | **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends |
 | **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate |
@@ -48,11 +48,10 @@ start frame.
 
 ### Web
 
-**`ssplayer-pixi` does not mask effects** - an effect's particles draw unclipped even when the effect
-part is a mask target; `ssplayer-webgl` masks them. The framework integrations are at different
-stages: **RPG Maker MZ is experimental (alpha)** - a picture's tint does not affect the animation -
-while the **TyranoScript and TyranoBuilder plugins are beta**. TyranoBuilder has no component yet for per-part color / visibility or for linking an
-animation to a speaker; those are written with `[ss_*]` tags instead.
+**`ssplayer-webgl` masks through the stencil buffer**, so on a context without one no mask can be
+written: parts drawn outside a mask draw unclipped, and parts set to draw only inside a mask are
+not drawn. The framework integrations - **RPG Maker MZ, TyranoScript and TyranoBuilder** - are
+**beta**; on RPG Maker MZ a picture's tint and blend mode do not affect the animation.
 
 The browser converter `ssconverter-web` needs the File System Access API, so it is
 **Chromium-only**.
