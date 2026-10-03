@@ -1,6 +1,6 @@
 [**English**](./README.md) | [**日本語**](./README.ja.md)
 
-# SpriteStudio-Docs
+# SpriteStudio Docs
 
 Documentation **portal** for the SpriteStudio SDK and its official players.
 
