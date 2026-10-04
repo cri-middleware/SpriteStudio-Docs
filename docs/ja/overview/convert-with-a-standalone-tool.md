@@ -46,8 +46,8 @@ Tauri 製のデスクトップアプリです。コマンドラインは不要�
 Windows** で、Linux では下の `ssconverter-cli` を使ってください（出力は同じです）。
 
 1. 🚧 [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
-2. アプリを起動し、`.sspj` をウィンドウにドロップします（またはファイル選択から開きます）。
-3. 出力フォルダを選んで変換します。
+2. アプリを起動し、`.sspj`（または複数の `.sspj` を含むフォルダ）をウィンドウにドロップします（**File...** / **Folder...** からも選べます）。
+3. 必要なら出力フォルダを変更し（既定は `.sspj` の隣のフォルダ）、**Convert** を押します。
 
 詳細は [SSConverter GUI の概要](../players/converter.md)、ドキュメント（🚧 準備中）、
 🚧 [リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。

@@ -30,7 +30,8 @@ docs/
     assets/          # favicon (each locale ships its own copy)
     index.md         # landing page (product cards)
     overview/        # ecosystem, choose-your-platform, player-differences,
-                     #   try-it, conversion, convert-with-a-standalone-tool
+                     #   try-it, conversion, convert-with-a-standalone-tool,
+                     #   ai-assistants
     sdk/             # concepts, glossary, format-spec, limitations, porting
                      #   (canonical, cross-player)
     players/         # thin entry pages that link out to each player's own docs

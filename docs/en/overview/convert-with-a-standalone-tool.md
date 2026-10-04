@@ -54,8 +54,10 @@ A Tauri desktop app. No command line. Builds are published for **macOS and Windo
 take `ssconverter-cli` below instead; the output is the same.
 
 1. Download a build from 🚧 [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases).
-2. Launch it and drag your `.sspj` onto the window (or open it from the file picker).
-3. Choose an output folder and convert.
+2. Launch it and drop a `.sspj` - or a folder of them - onto the window (or pick one with
+   **File...** / **Folder...**).
+3. Optionally change the output folder (by default, a folder next to the `.sspj`), then click
+   **Convert**.
 
 Details: [SSConverter GUI overview](../players/converter.md) ·
 Documentation (🚧 coming soon) ·

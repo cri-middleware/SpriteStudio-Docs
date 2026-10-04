@@ -23,7 +23,8 @@ docs/
     assets/          # favicon（ロケールごとにコピーを持ちます）
     index.md         # ランディングページ（製品カード）
     overview/        # ecosystem, choose-your-platform, player-differences,
-                     #   try-it, conversion, convert-with-a-standalone-tool
+                     #   try-it, conversion, convert-with-a-standalone-tool,
+                     #   ai-assistants
     sdk/             # concepts, glossary, format-spec, limitations, porting
                      #   （横断的な正典）
     players/         # 各 Player のドキュメントへリンクする薄い入口ページ
