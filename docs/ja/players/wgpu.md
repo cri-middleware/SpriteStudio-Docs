@@ -6,15 +6,14 @@ wgpu は WebGPU・Vulkan・DX12・Metal を 1 つの API の下にまとめる�
 !!! tip "コードで始まる - 1 つのライブラリに 3 つのフェイス"
     どのフェイスを入れるかで決まるのは書く言語と、**自分のレンダーパスへ描き込めるかどうか**（Rust 側だけの機能）です。Rust の API が本体で、他の 2 つはそれを別名で包んだものです。
 
-**1. 何を入れるか** - ホストに合うフェイスを選びます。
-🚧 [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) が private の間は、下のどの経路にも SDK へのアクセスが必要です。この Player は `ssruntime` と `ssab` を、公開された
-C-API 経由ではなく Rust クレートとしてリンクするため、SDK は git submodule として入ります。
+**1. 何を入れるか** - ホストに合うフェイスを選びます。この Player は `ssruntime` と `ssab` を、公開された
+C-API 経由ではなく Rust クレートとしてリンクするため、[SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) は git submodule として入ります。
 
 | ホスト | 追加するもの |
 |---|---|
 | **Rust** アプリ | `ssplayer-wgpu` を git 依存として追加します。submodule は Cargo が取得するので、他のツールは不要です。🚧 SDK クレートの公開が先なので、crates.io にはまだありません。 |
 | **Bevy** アプリ | 代わりに `ssplayer-bevy` を追加します。Player 本体を引き込み、`SsPlayer` / `SsTransform` / `SsPlayback` の 3 コンポーネントを追加します。 |
-| **C / C++** アプリ | cdylib / staticlib と生成されたヘッダー。リポジトリで `scripts/build.sh` を実行すると `bin/` にまとまります。🚧 ビルド済みの配布はまだありません。 |
+| **C / C++** アプリ | cdylib / staticlib と生成されたヘッダー。ビルド済みのものが [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases) に `ssplayer-wgpu-<platform>-<arch>.zip` としてあり、リポジトリで `scripts/build.sh` を実行して `bin/` にビルドすることもできます。 |
 | **ブラウザ**（WebGPU） | npm パッケージ `@spritestudio/ssplayer-wgpu`。wasm と TypeScript 層、`<ss-player-webgpu>` カスタム要素は独立したエントリポイントです。🚧 npm 未公開です。 |
 
 **2. `.sspj` -> `.ssab`** - この Player はインポーターを持たず、実行時に変換も行いません。デスクトップ版 [SSConverter GUI](./converter.md) か SDK の `ssconverter-cli` を使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。試すだけなら自分の素材は不要です。同梱サンプルは SDK 自身のテストアニメーションで動きます。
