@@ -7,7 +7,7 @@
     パッケージを入れ、`.sspj` をエディタにドラッグし、コンポーネントを置いてアセットを割り当てるだけです。スクリプト制御や Timeline も使えますが、ここまでには必要ありません。
 
 **1. 何を入れるか** -
-🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForUnity/releases) のパッケージ
+[GitHub Releases](https://github.com/cri-middleware/SSPlayerForUnity/releases) のパッケージ
 tarball を、Unity の Package Manager の **Add package from tarball** から追加します。
 *Add package from URL* は使えません（ネイティブバイナリが tarball にしか含まれないため）。対応は Unity 6.3 LTS 以降、URP・BRP の両方です。
 
@@ -22,5 +22,5 @@ Hierarchy へドラッグし、`SpriteStudioPlayer`（ワールド空間）か `
 ## ➡️ 次に読む
 
 - **ドキュメント** - 🚧 *準備中*
-- 🚧 [リポジトリ](https://github.com/cri-middleware/SSPlayerForUnity)
+- [リポジトリ](https://github.com/cri-middleware/SSPlayerForUnity)
 - [Player ごとの違い](../overview/player-differences.md) - uGUI Canvas 経路で何を諦めることになるか

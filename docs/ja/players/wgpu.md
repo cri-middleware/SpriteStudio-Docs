@@ -55,5 +55,5 @@ Rust 側（直接、またはエンジンアダプター経由）の機能です
 ## ➡️ 次に読む
 
 - **ドキュメント** - 🚧 *準備中*
-- 🚧 [リポジトリ](https://github.com/cri-middleware/SSPlayerForWgpu) - 公開までは各クレートの README が参照先です
+- [リポジトリ](https://github.com/cri-middleware/SSPlayerForWgpu) - 公開までは各クレートの README が参照先です
 - [アセットの変換](../overview/conversion.md) - ツールの選び方とビルドパイプラインへの組み込み

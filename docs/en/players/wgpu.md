@@ -73,5 +73,5 @@ a Bevy app needs.
 ## ➡️ Read next
 
 - **Documentation** - 🚧 *coming soon*
-- 🚧 [Repository](https://github.com/cri-middleware/SSPlayerForWgpu) - the crate READMEs are the reference until then
+- [Repository](https://github.com/cri-middleware/SSPlayerForWgpu) - the crate READMEs are the reference until then
 - [Converting Assets](../overview/conversion.md) - picking a tool and putting it in a build pipeline

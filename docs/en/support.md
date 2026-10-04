@@ -10,15 +10,15 @@ File these in the repository that owns the code. Search existing issues first.
 
 | Repository | Issues | Use it for |
 |---|---|---|
-| 🚧 [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) | 🚧 [Issues](https://github.com/cri-middleware/SpriteStudio-SDK/issues) | Conversion output, playback math, the `.ssab` / `.ssqb` format, `ssconverter-cli` |
-| 🚧 [SSPlayerForUnity](https://github.com/cri-middleware/SSPlayerForUnity) | 🚧 [Issues](https://github.com/cri-middleware/SSPlayerForUnity/issues) | Unity import, components, rendering |
-| 🚧 [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | 🚧 [Issues](https://github.com/cri-middleware/SSPlayerForWeb/issues) | The browser players and `ssconverter-web` |
+| [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) | [Issues](https://github.com/cri-middleware/SpriteStudio-SDK/issues) | Conversion output, playback math, the `.ssab` / `.ssqb` format, `ssconverter-cli` |
+| [SSPlayerForUnity](https://github.com/cri-middleware/SSPlayerForUnity) | [Issues](https://github.com/cri-middleware/SSPlayerForUnity/issues) | Unity import, components, rendering |
+| [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | [Issues](https://github.com/cri-middleware/SSPlayerForWeb/issues) | The browser players and `ssconverter-web` |
 | [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | [Issues](https://github.com/cri-middleware/SSPlayerForGodot/issues) | The GDExtension / custom module, SS Import Dock |
-| 🚧 [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | 🚧 [Issues](https://github.com/cri-middleware/SSPlayerForFlutter/issues) | `SpriteStudioView`, the Flame adapter, `ssconvert` |
-| 🚧 [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | 🚧 [Issues](https://github.com/cri-middleware/SSPlayerForRenPy/issues) | The Ren'Py displayable, auto-import |
-| 🚧 [SSPlayerForWgpu](https://github.com/cri-middleware/SSPlayerForWgpu) | 🚧 [Issues](https://github.com/cri-middleware/SSPlayerForWgpu/issues) | The Rust crate and its C / C++ and browser faces, the Bevy adapter |
-| 🚧 [SSPlayerForReactNative](https://github.com/cri-middleware/SSPlayerForReactNative) | 🚧 [Issues](https://github.com/cri-middleware/SSPlayerForReactNative/issues) | `<SpriteStudioView>` / `<SpriteStudioScene>`, the native module, Skia rendering |
-| 🚧 [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | 🚧 [Issues](https://github.com/cri-middleware/SSConverterGUI/issues) | The desktop app itself (UI, packaging, updates) |
+| [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | [Issues](https://github.com/cri-middleware/SSPlayerForFlutter/issues) | `SpriteStudioView`, the Flame adapter, `ssconvert` |
+| [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | [Issues](https://github.com/cri-middleware/SSPlayerForRenPy/issues) | The Ren'Py displayable, auto-import |
+| [SSPlayerForWgpu](https://github.com/cri-middleware/SSPlayerForWgpu) | [Issues](https://github.com/cri-middleware/SSPlayerForWgpu/issues) | The Rust crate and its C / C++ and browser faces, the Bevy adapter |
+| [SSPlayerForReactNative](https://github.com/cri-middleware/SSPlayerForReactNative) | [Issues](https://github.com/cri-middleware/SSPlayerForReactNative/issues) | `<SpriteStudioView>` / `<SpriteStudioScene>`, the native module, Skia rendering |
+| [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | [Issues](https://github.com/cri-middleware/SSConverterGUI/issues) | The desktop app itself (UI, packaging, updates) |
 
 ### 🧭 Not sure which one?
 

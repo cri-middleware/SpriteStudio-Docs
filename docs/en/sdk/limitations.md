@@ -6,8 +6,8 @@ is specific to it - for those differences see [Player Differences](../overview/p
 
 !!! tip "Source of truth"
     The canonical, implementation-level list lives in the SDK's Player Porting Guide
-    (🚧 [`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md) -
-    the guide's own table of contents is 🚧 [`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)).
+    ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md) -
+    the guide's own table of contents is [`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)).
     This page is the user-facing summary.
 
 ## 🎬 Playback & timeline

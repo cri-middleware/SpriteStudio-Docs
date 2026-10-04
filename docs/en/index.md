@@ -29,7 +29,7 @@ hosted converter, no install.
 
     [:octicons-arrow-right-24: Overview](./players/unity.md) |
     Docs (🚧 coming soon) |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
 
 -   :material-web: __Web (Player Collection)__
 
@@ -40,7 +40,7 @@ hosted converter, no install.
 
     [:octicons-arrow-right-24: Overview](./players/web.md) |
     Docs (🚧 coming soon) |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
 
 -   :simple-godotengine: __Godot__
 
@@ -60,7 +60,7 @@ hosted converter, no install.
 
     [:octicons-arrow-right-24: Overview](./players/flutter.md) |
     Docs (🚧 coming soon) |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
 
 -   :material-drama-masks: __Ren'Py__
 
@@ -70,7 +70,7 @@ hosted converter, no install.
 
     [:octicons-arrow-right-24: Overview](./players/renpy.md) |
     Docs (🚧 coming soon) |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
 -   :simple-rust: __wgpu (Rust, C / C++)__
 
@@ -81,7 +81,7 @@ hosted converter, no install.
 
     [:octicons-arrow-right-24: Overview](./players/wgpu.md) |
     Docs (🚧 coming soon) |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
 
 -   :simple-react: __React Native__
 
@@ -92,7 +92,7 @@ hosted converter, no install.
 
     [:octicons-arrow-right-24: Overview](./players/react-native.md) |
     Docs (🚧 coming soon) |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
 
 -   :material-file-swap: __Converter GUI__
 
@@ -102,7 +102,7 @@ hosted converter, no install.
 
     [:octicons-arrow-right-24: Overview](./players/converter.md) |
     Docs (🚧 coming soon) |
-    🚧 [GitHub](https://github.com/cri-middleware/SSConverterGUI)
+    [GitHub](https://github.com/cri-middleware/SSConverterGUI)
 
 -   :material-cog: __SpriteStudio-SDK__
 
@@ -113,7 +113,7 @@ hosted converter, no install.
 
     [:octicons-arrow-right-24: Concepts](./sdk/concepts.md) |
     [Porting](./sdk/porting.md) |
-    🚧 [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
+    [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
 
 </div>
 

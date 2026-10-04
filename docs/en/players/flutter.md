@@ -37,5 +37,5 @@ Alongside the player it ships:
 ## ➡️ Read next
 
 - **Documentation** - 🚧 *coming soon*
-- 🚧 [Repository](https://github.com/cri-middleware/SSPlayerForFlutter)
+- [Repository](https://github.com/cri-middleware/SSPlayerForFlutter)
 - [Try It in Your Browser](../overview/try-it.md) - both demos, plus the other players' live builds

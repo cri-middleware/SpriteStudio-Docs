@@ -61,9 +61,9 @@ Because every official player evaluates animations with `libssruntime`, this fea
 
 !!! tip "Source of truth"
     This list follows the SDK's **Player Porting Guide**, whose table of contents
-    (🚧 [`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)) gives each item its own page.
+    ([`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)) gives each item its own page.
     The guide's *Introduction → Limitations*
-    (🚧 [`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)) draws the
+    ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)) draws the
     boundary: a couple of these are computed as **state only** and still need the player to draw or
     play them, and several carry constraints - both are summarized in
     [Shared Limitations](./limitations.md), along with what the core does *not* do. What
@@ -74,11 +74,11 @@ Because every official player evaluates animations with `libssruntime`, this fea
 
 | Component | Role |
 |---|---|
-| 🚧 [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/sspj) | Parses `.sspj` projects (`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`). |
-| 🚧 [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab) | Reads/writes the `.ssab` / `.ssqb` binary (FlatBuffers). |
-| 🚧 [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssconverter) | Converts `.sspj` projects into `.ssab`. |
-| 🚧 [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime) | The playback Brain; emits the `DrawBatch` plan. |
-| 🚧 [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) | Command-line converter (Windows / macOS / Linux). |
+| [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/sspj) | Parses `.sspj` projects (`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`). |
+| [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab) | Reads/writes the `.ssab` / `.ssqb` binary (FlatBuffers). |
+| [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssconverter) | Converts `.sspj` projects into `.ssab`. |
+| [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime) | The playback Brain; emits the `DrawBatch` plan. |
+| [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) | Command-line converter (Windows / macOS / Linux). |
 
 ## ✨ Why this design
 
@@ -96,4 +96,4 @@ Because every official player evaluates animations with `libssruntime`, this fea
 - [Format Specification](./format-spec.md) - the `.ssab / .ssqb` binary and the runtime
   `FrameData` interface.
 - [Porting a Player](./porting.md) - build a player for a new engine.
-- Source of truth: 🚧 [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK).
+- Source of truth: [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK).

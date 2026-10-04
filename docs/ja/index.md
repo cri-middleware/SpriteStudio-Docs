@@ -22,7 +22,7 @@
 
     [:octicons-arrow-right-24: 概要](./players/unity.md) |
     ドキュメント（🚧 準備中） |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
 
 -   :material-web: __Web（Player コレクション）__
 
@@ -33,7 +33,7 @@
 
     [:octicons-arrow-right-24: 概要](./players/web.md) |
     ドキュメント（🚧 準備中） |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
 
 -   :simple-godotengine: __Godot__
 
@@ -53,7 +53,7 @@
 
     [:octicons-arrow-right-24: 概要](./players/flutter.md) |
     ドキュメント（🚧 準備中） |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
 
 -   :material-drama-masks: __Ren'Py__
 
@@ -63,7 +63,7 @@
 
     [:octicons-arrow-right-24: 概要](./players/renpy.md) |
     ドキュメント（🚧 準備中） |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
 -   :simple-rust: __wgpu（Rust・C / C++）__
 
@@ -73,7 +73,7 @@
 
     [:octicons-arrow-right-24: 概要](./players/wgpu.md) |
     ドキュメント（🚧 準備中） |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
 
 -   :simple-react: __React Native__
 
@@ -84,7 +84,7 @@
 
     [:octicons-arrow-right-24: 概要](./players/react-native.md) |
     ドキュメント（🚧 準備中） |
-    🚧 [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
+    [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
 
 -   :material-file-swap: __コンバーター GUI__
 
@@ -94,7 +94,7 @@
 
     [:octicons-arrow-right-24: 概要](./players/converter.md) |
     ドキュメント（🚧 準備中） |
-    🚧 [GitHub](https://github.com/cri-middleware/SSConverterGUI)
+    [GitHub](https://github.com/cri-middleware/SSConverterGUI)
 
 -   :material-cog: __SpriteStudio-SDK__
 
@@ -104,7 +104,7 @@
 
     [:octicons-arrow-right-24: コンセプト](./sdk/concepts.md) |
     [移植](./sdk/porting.md) |
-    🚧 [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
+    [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
 
 </div>
 
