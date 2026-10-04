@@ -31,8 +31,8 @@ which packs them in as well - see [Shared Limitations](./limitations.md).
 
 ### Key design decisions
 
-- **Hash-based lookups** - every named entity carries `name_hash: uint32` for O(1) lookup, no
-  string compares at runtime.
+- **Hash-based lookups** - every named entity carries `name_hash: uint32`, so a lookup compares
+  integers, never strings, at runtime.
 - **Columnar keyframes** - instead of `ss*e`'s per-part tagged attribute lists, every key of
   the pack sits in one set of columns (frame, interpolation, curve, value), and each part
   names, per attribute, the run of keys that animates it (`position_x_keys`,
