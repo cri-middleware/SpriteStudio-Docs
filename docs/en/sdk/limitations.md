@@ -57,12 +57,6 @@ fully-weighted animation fires events (each source has an event threshold, and t
 animation always fires); and sources of different lengths run on independent clocks, so keeping
 them in step is the player's job.
 
-### Sequence (`.ssqe` / `.ssqb`) playback is not implemented yet
-
-Conversion already produces `.ssqb`, but runtime playback of sequences is still on the
-🚧 [SDK roadmap](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/ROADMAP.md) - it lands
-with the runtime state machine.
-
 ## 🧩 What the player must supply
 
 `libssruntime` computes animation **state**; two features are deliberately left to the player,

@@ -16,7 +16,7 @@ the SDK produces and plays back.
 | **Cellmap** (`.ssce`) | A texture plus the cells defined on it. Parts reference cells through their cellmap. |
 | **Effect** (`.ssee`) | A particle effect definition, played by an Effect part. |
 | **Sound** (`.ssse`) | Sound settings referenced by audio events on the timeline. |
-| **Sequence** (`.ssqe`) | A playlist that chains animations together. Converted to `.ssqb`; runtime playback is not implemented yet (see [Shared Limitations](./limitations.md)). |
+| **Sequence** (`.ssqe`) | A playlist that chains animations together. Converted to `.ssqb`. |
 | **Bitmap font** (`.fnt`) | The BMFont-format font a Text part draws with. |
 | **User data / Signal** | Markers placed on a frame that the runtime reports back as **events** - the frame-accurate hook for triggering game logic, sound effects, and so on. |
 | **Parts color** | A per-part color blend authored on the timeline, applied on top of the part's texture. |

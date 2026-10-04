@@ -42,9 +42,7 @@ material": it assumes a **single atlas** (parts from other atlases cannot sample
 supports **`Mix` / `Add` only**, collapsing every other blend to `Mix`. The world path has neither
 limit.
 
-`.ssqb` assets **import** and can be referenced - playing a sequence back is a
-[shared](../sdk/limitations.md) gap, not a Unity one. Edit mode shows only a static preview of the
-start frame.
+Edit mode shows only a static preview of the start frame.
 
 ### Web
 
