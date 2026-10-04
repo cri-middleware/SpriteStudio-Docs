@@ -8,10 +8,10 @@ Renders SpriteStudio animations natively in the **Godot Engine**, backed by `lib
 
 **1. What you install** - the `addons` folder from
 🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForGodot/releases), copied into your
-Godot project root. Godot 4.7-series. It ships in two forms:
+Godot project root. Godot 4.7-series. The player comes in two forms:
 
-- **GDExtension** - drop-in binary add-on; no engine rebuild required.
-- **Custom module** - compiled into a custom Godot build for tighter integration.
+- **GDExtension** - the drop-in binary add-on the Release carries; no engine rebuild required.
+- **Custom module** - built from source into a custom Godot build for tighter integration.
 
 **2. `.sspj` -> `.ssab`** - drag & drop the `.sspj` onto the Godot editor. The add-on's SS Import
 Dock converts it in place, so there is no separate tool to install.
