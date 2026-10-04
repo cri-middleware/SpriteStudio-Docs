@@ -64,7 +64,7 @@ conversion path you take**.
 | `.sspj` | The project itself; holds the list of `.ssae` / `.ssce` / `.ssqe` it references | **Not emitted.** It is used only to resolve resources during conversion |
 | `.ssae` (animation pack) | Part structure and keyframes | Becomes one `.ssab` |
 | `.ssce` (cell map) | The image used, and the cells cut out of it (position, size, pivot) | **Never becomes a file of its own - it is folded into the `.ssab`** |
-| `.ssqe` (sequence) | A playlist of animations | Becomes one `.ssqb` (playback is not implemented - [Shared Limitations](../sdk/limitations.md)) |
+| `.ssqe` (sequence) | A playlist of animations | Becomes one `.ssqb` |
 | Images (`.png` and so on) | The artwork itself | Copied to the output location and referenced by the `.ssab` |
 
 See the [Glossary](../sdk/glossary.md) for the terms and the

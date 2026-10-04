@@ -49,8 +49,10 @@ links out, never full player documentation.
   say why there (`converter.md` is a conversion tool; `wgpu.md` answers question 1 with a table).
   A missing docs site is not such a case.
 - **One fact, one page** — link instead of restating. `sdk/concepts.md` owns what the core
-  **provides**; `sdk/limitations.md` what it does **not**, plus every all-player constraint;
-  `overview/player-differences.md` **only what differs between players**; `overview/conversion.md`
+  **provides**; `sdk/limitations.md` what it does **not**, plus every all-player constraint —
+  technical constraints only, since work not built yet belongs in a ROADMAP (text and 9-slice
+  parts, which no player draws, are the one exception); `overview/player-differences.md` **only
+  what differs between players**; `overview/conversion.md`
   how project files map onto what conversion emits; `sdk/glossary.md` what each extension *is*.
   The first comes from the SDK's Player Porting Guide (`libs/ssruntime/docs`, *Introduction →
   Limitations*), the second from each player's own docs.
