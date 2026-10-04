@@ -14,8 +14,8 @@
 #   2. --strict, always. Nothing builds the docs on a pull request
 #      (.github/workflows/pages.yml is workflow_dispatch only), so this is the
 #      only thing standing between a broken internal link and production.
-#      mkdocs.base.yml sets strict: true as well, but the flag is spelled out
-#      here because it is what the README tells people to run.
+#      mkdocs.base.yml sets strict: true as well; the flag is spelled out
+#      here so the build stays strict if the config ever loses it.
 #
 # `zensical serve` is deliberately not wrapped: it validates nothing (--strict is
 # accepted and does nothing), it serves one locale at a time, and it is a

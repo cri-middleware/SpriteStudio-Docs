@@ -29,14 +29,24 @@ Note that merging does **not** publish. Deployment is manual: a maintainer runs 
 
 ## Development Environment
 
+You need Python 3.
+
 ```bash
-scripts/prepare-docs.sh     # create .venv and install docs/requirements.txt
-scripts/build-docs.sh       # the gate: English then Japanese, both --strict
+scripts/prepare-docs.sh          # once: .venv + the pins in docs/requirements.txt
+scripts/build-docs.sh            # the gate: English then Japanese, both --strict
+scripts/build-pages.sh serve=yes # the published tree, both locales -> http://localhost:8000/
 ```
 
-Both have `.ps1` twins, and `--help` on any script lists its `key=value` options. English builds first because that build clears `site/`, and the Japanese site lives inside it at `site/ja` - so an English-only build leaves no Japanese site at all.
+Both locales, English first: the English build clears `site/`, and the Japanese site lives inside it at `site/ja`, so an English-only build leaves no Japanese site at all. `mkdocs.base.yml` sets `strict: true`, so a broken internal link or a nav entry pointing at a missing page fails the build. `build-pages.sh serve=yes` serves both locales from one server, the only way to see the header's language selector resolve. `pages.yml`'s build job **is** that script, so a publish builds exactly what a local run with the same options builds, and a change to `prepare-docs.sh` or `build-pages.sh` is a change to the publish: keep them executable (mode `100755`). `.ps1` twins on Windows, `key=value` options and `--help` on every script.
 
-The [README](./README.md#local-development) carries the rest: the option table, the commands the scripts wrap if you would rather run them yourself, `serve` for a live preview of one locale, and how to build and serve both together so the header's language selector resolves.
+`zensical serve` previews one locale as you write, and validates nothing, `--strict` or not:
+
+```bash
+.venv/bin/zensical serve                    # English at http://127.0.0.1:8000
+.venv/bin/zensical serve -f mkdocs.ja.yml   # Japanese; stop the other one first
+```
+
+On Windows the executable is `.\.venv\Scripts\zensical`.
 
 The toolchain versions in `docs/requirements.txt` are pinned deliberately - please bump them intentionally, not incidentally, and **in step with the sibling repositories**. Every sibling that builds its docs with Python - the SDK, Unity, Godot, Ren'Py, Flutter, wgpu, SSConverterGUI - pins the same [Zensical](https://zensical.org) version this repository does, so a bump here is a bump everywhere. (SSPlayerForWeb and SSPlayerForReactNative build with VitePress and have no pin to match.)
 
@@ -99,14 +109,24 @@ SpriteStudio ドキュメントポータルの改善にご関心をお寄せい�
 
 ## 開発環境
 
+Python 3 が必要です。
+
 ```bash
-scripts/prepare-docs.sh     # .venv を作成し docs/requirements.txt を導入
-scripts/build-docs.sh       # 唯一の検証。英語 → 日本語の順に --strict でビルド
+scripts/prepare-docs.sh          # 一度だけ: .venv と docs/requirements.txt のピン
+scripts/build-docs.sh            # 唯一の検証。英語 → 日本語の順に --strict でビルド
+scripts/build-pages.sh serve=yes # 公開ツリー、両ロケール -> http://localhost:8000/
 ```
 
-どちらにも `.ps1` 版があり、`key=value` 形式のオプションは各スクリプトの `--help` で確認できます。英語を先にビルドするのは、英語ビルドが `site/` を消去し、日本語サイトはその内側（`site/ja`）に出力されるためです。英語だけをビルドすると日本語サイトは残らず消えます。
+必ず両ロケールを、英語を先にビルドします。英語ビルドは `site/` を消去し、日本語サイトはその内側（`site/ja`）に出力されるため、英語だけをビルドすると日本語サイトは残らず消えます。`mkdocs.base.yml` が `strict: true` を設定しているので、内部リンク切れや、存在しないページを指す nav エントリーがあるとビルドは失敗します。`build-pages.sh serve=yes` は両ロケールを 1 つのサーバーで配信します。ヘッダーの言語セレクターの動作を確認できるのはこの方法だけです。`pages.yml` のビルドジョブは**このスクリプト**なので、公開でビルドされるものは、同じオプションで手元でビルドしたものと一致します。`prepare-docs.sh` と `build-pages.sh` への変更は公開への変更でもあるため、実行権限（モード `100755`）を保ってください。Windows は `.ps1` 版を使い、どのスクリプトも `key=value` 形式のオプションと `--help` を取ります。
 
-残りは [README](./README.ja.md#ローカル開発) にまとまっています。オプション表、スクリプトが実行しているコマンドそのもの、1 ロケールをライブプレビューする `serve`、そしてヘッダーの言語セレクターが動くように両ロケールをビルドして配信する方法です。
+執筆中は `zensical serve` で 1 ロケールをプレビューできます。`--strict` を付けても何も検証しません。
+
+```bash
+.venv/bin/zensical serve                    # 英語を http://127.0.0.1:8000 で
+.venv/bin/zensical serve -f mkdocs.ja.yml   # 日本語（先にもう一方を停止）
+```
+
+Windows では実行ファイルは `.\.venv\Scripts\zensical` です。
 
 `docs/requirements.txt` のバージョンは意図的に固定しています。更新はついでではなく、意図をもって、かつ**兄弟リポジトリと足並みを揃えて**行ってください。Python でドキュメントをビルドする兄弟リポジトリ（SDK・Unity・Godot・Ren'Py・Flutter・wgpu・SSConverterGUI）は、このリポジトリと同じ [Zensical](https://zensical.org) のバージョンを固定しているため、ここでの更新は全リポジトリでの更新を意味します（SSPlayerForWeb と SSPlayerForReactNative は VitePress のため対象外です）。
 

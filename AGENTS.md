@@ -31,8 +31,8 @@ links out, never full player documentation.
 | Question | File |
 |---|---|
 | How to set up, build and check the site, and the rules for writing a page | [CONTRIBUTING.md](./CONTRIBUTING.md) |
-| The option table, and the commands the scripts wrap | [README.md](./README.md#local-development) |
-| How the published tree is built and deployed | [RELEASING.md](./RELEASING.md), maintainers only |
+| What each script does and takes | that script's `--help` |
+| How the site is published | [RELEASING.md](./RELEASING.md), maintainers only |
 | What a `players/` page owes its reader | `SpriteStudio-SDK/MAINTAINING_PLAYERS.md` |
 | Why a YAML sequence may live in only one config | the header comment of `mkdocs.base.yml` |
 | Everything else about a config or a template | the comment at the point of use |
