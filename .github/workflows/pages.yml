@@ -57,8 +57,8 @@ jobs:
       # prepare-docs.sh creates .venv and installs the pins from
       # docs/requirements.txt; build-pages.sh then finds zensical there. (It falls
       # back to PATH when there is no venv, so a `pip install -r
-      # docs/requirements.txt` step would still work here — but then CI and the
-      # README would be running different things.) It stays a step of its own so a
+      # docs/requirements.txt` step would still work here — but then CI and a
+      # local build would be running different things.) It stays a step of its own so a
       # dependency failure is legible as one in the run summary, which is also why
       # build-pages.sh is invoked below with prepare=no.
       - name: Install dependencies
