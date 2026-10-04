@@ -22,8 +22,8 @@ the core computes but leaves the player to draw or play - are in
 | **[Godot](../players/godot.md)** | Four of the twelve blend modes are honored; the Web export has extra requirements |
 | **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends |
 | **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate |
-| **[React Native](../players/react-native.md)** | Masked Effect draws unmasked, masked Mesh does not; platform reach is narrower |
-| **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter states two limits of its own |
+| **[React Native](../players/react-native.md)** | Masks do not clip Effect parts, and nothing draws on the web |
+| **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter draws one view |
 
 !!! note "How to read this page"
     Each section below summarizes what that player's own **Limitations & Scope** page states -
@@ -74,7 +74,8 @@ are reconstructed from three passes (they cannot batch); `Div2` / `Overlay2` ren
 **both** backends. Masks **do not clip Effect parts** on either backend.
 
 Widget **part following** carries the transform but not the draw order - a followed widget paints
-above the whole animation rather than between its parts - and assumes the view draws unscaled.
+above the whole animation rather than between its parts - and its anchor has to cover the view's
+own box.
 
 ### Ren'Py
 
@@ -86,33 +87,24 @@ anything nested inside an Instance part - and the particles an Effect part emits
 
 ### React Native
 
-**Masked Effect draws unmasked** - the mask replay places its coverage sample by inverting one
-affine quad's UV, and an effect is a cloud of quads with no single shape to cut. Masked **Mesh**
-is supported: a mesh needs its texcoord channel for its atlas, so it is drawn into an isolated
-layer that the same triangles then cut with `kDstIn`, carrying the coverage UV per vertex.
+Masks clip Normal, Mesh and Shape parts; **Effect parts draw unmasked**.
 
-Platform reach is narrower too: tvOS / visionOS wait on slices for them in the SDK's
-XCFramework, and Windows has no route.
+Platform reach is narrower too: **nothing draws on the web** - the web entry is a stub, so an app
+that ships both halves still bundles - and Windows has no route.
 
 ### wgpu
 
 `Div2` / `Overlay2` fall back to `Mix`. Masking has **two backends, and what the host's pass lends
-picks between them**: the **stencil** one approximates overlapping masks that mix INCR and INVERT
-and bounds nesting by the 8 bits available; the **coverage-bitmap** one serves a pass that lends
-no stencil, lifting that nesting bound - its accumulators are shader variables - at the cost of
-one extra render pass per masking player, and one more for every 24 mask writers past the first
-24. Both backends stop at 96 writers per player.
-
-Group alpha composites **each part in turn**, so two overlapping parts at `0.5` leave their
-overlap at `0.75` rather than at `0.5`. The 13 integration shaders are covered for **Normal parts
-only** - `map0` / `map1` secondary textures, and a shader part combined with a mask, are not.
+picks between them**: the **stencil** one, or the **coverage-bitmap** one for a pass that lends no
+stencil, at the cost of one extra render pass per masking player, and one more for every 24 mask
+writers past the first 24. Both backends stop at 96 writers per player. Either way, the pass the
+player draws into must have **MSAA off**.
 
 The **Bevy adapter** is a separate crate, following Bevy's release line rather than the player's
 and tracking one line at a time. It takes the coverage backend, since Bevy's 2d depth texture
-carries no stencil, and states two limits of its own: a **second view is skipped** with a
-warning, and **MSAA must be off** (the camera also wants `CompositingSpace::Srgb` for faithful
-color). Packs load through Bevy's `AssetServer`, so hot reload, packed assets and shared atlases
-work as they do for any Bevy asset.
+carries no stencil, and draws **one view** - a second one is skipped with a warning (the camera
+also wants `CompositingSpace::Srgb` for faithful color). Packs load through Bevy's `AssetServer`,
+so hot reload, packed assets and shared atlases work as they do for any Bevy asset.
 
 ## 🎨 Why blend modes are the usual difference
 
