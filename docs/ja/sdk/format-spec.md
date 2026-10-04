@@ -27,7 +27,7 @@ XML ベースの `ss*e`（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）�
 ### 主要な設計判断
 
 - **ハッシュルックアップ** - 名前を持つ全エンティティが `name_hash: uint32` を持ち、実行時の文字列比較なしで O(1) 検索。
-- **列指向のアニメーションデータ** - `ss*e` のパーツ別タグ付き属性リストではなく、パーツごとに属性別の型付き配列（`position_x_array`・`rotation_z_array` ...）を保持し、1属性のフレーム横断反復を効率化。
+- **列指向のキーフレーム** - `ss*e` のパーツ別タグ付き属性リストではなく、パック内の全キーをフレーム・補間・カーブ・値の列にまとめ、パーツの各属性はそれを動かすキーの並び（ラン）を指す（`position_x_keys`・`rotation_z_keys` ...）。キーの探索は連続したメモリをたどり、繰り返し現れるラン・カーブ・複合値は 1 回だけ格納。
 - **イベントの分離** - イベント属性（ユーザーデータ・シグナル・オーディオ・インスタンス・エフェクト）はパーツ別ではなく**フレーム別**（`EventsPerFrame`）に格納し、フレーム単位のディスパッチを最適化。
 - **ユニオン型のパーツ種別** - FlatBuffers ユニオンが `ss*e` のタグ文字列ディスパッチを置き換え。
 - **ゼロコピー／`no_std`** - 既定のランタイムモードは非確保で読み取り。`converter` フィーチャで書き込み用の Object API を有効化。
@@ -49,7 +49,7 @@ FrameData（密・1フレーム）  --FFI-->  各エンジンの描画
    +- parts: [PartState]  (position_x, rotation_z, alpha, mesh ...)
 ```
 
-各 `PartState` フィールドは、対応する `.ssab` の `PartAnimationData` 配列から直接マップされます（例: `position_x` <- `position_x_array` を補間し、対象の座標系へ変換）。フィールド単位の対応表は 🚧 [FrameData スキーマ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.ja.md) にあります。
+各 `PartState` フィールドは、対応する `.ssab` の `PartAnimationData` フィールドが指すキーから直接マップされます（例: `position_x` <- `position_x_keys` が指すランを補間し、対象の座標系へ変換）。フィールド単位の対応表は 🚧 [FrameData スキーマ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.ja.md) にあります。
 
 ## 🔧 バインディングの再生成
 

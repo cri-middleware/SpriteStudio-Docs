@@ -33,9 +33,11 @@ which packs them in as well - see [Shared Limitations](./limitations.md).
 
 - **Hash-based lookups** - every named entity carries `name_hash: uint32` for O(1) lookup, no
   string compares at runtime.
-- **Columnar animation data** - instead of `ss*e`'s per-part tagged attribute lists, each
-  part stores typed arrays per attribute (`position_x_array`, `rotation_z_array`, ...),
-  enabling efficient iteration of one attribute across frames.
+- **Columnar keyframes** - instead of `ss*e`'s per-part tagged attribute lists, every key of
+  the pack sits in one set of columns (frame, interpolation, curve, value), and each part
+  names, per attribute, the run of keys that animates it (`position_x_keys`,
+  `rotation_z_keys`, ...). A key search walks contiguous memory, and runs, curves and
+  compound values that repeat are stored once.
 - **Event separation** - event attributes (user data, signal, audio, instance, effect) are
   stored **per frame** (`EventsPerFrame`) rather than per part, optimizing frame dispatch.
 - **Union-based part types** - a FlatBuffers union replaces `ss*e`'s tag-string dispatch.
@@ -62,9 +64,9 @@ FrameData (dense, one frame)  --FFI-->  your renderer
    +- parts: [PartState]  (position_x, rotation_z, alpha, mesh, ...)
 ```
 
-Each `PartState` field maps directly from the corresponding `.ssab` `PartAnimationData` array
-(e.g. `position_x` <- `position_x_array`, interpolated and converted to your coordinate
-system). The full field-by-field mapping is in the
+Each `PartState` field maps directly from the keys of the corresponding `.ssab`
+`PartAnimationData` field (e.g. `position_x` <- the run `position_x_keys` names, interpolated
+and converted to your coordinate system). The full field-by-field mapping is in the
 🚧 [FrameData Schema](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.md).
 
 ## 🔧 Regenerating bindings
