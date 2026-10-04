@@ -23,6 +23,6 @@ window into the Hierarchy, pick `SpriteStudioPlayer` (world space) or `SpriteStu
 
 ## ➡️ Read next
 
-- **Documentation** - 🚧 *coming soon*
+- [Documentation](https://cri-middleware.github.io/SSPlayerForUnity/)
 - [Repository](https://github.com/cri-middleware/SSPlayerForUnity)
 - [Player Differences](../overview/player-differences.md) - what the uGUI Canvas path trades away

@@ -4,10 +4,6 @@ See SpriteStudio conversion and playback running live - **no install, nothing to
 Everything here runs entirely in your browser. Each item is hosted on its player's own
 site; this page just gathers the links.
 
-!!! info "🚧 Coming soon"
-    These demos and the hosted converter publish alongside each player's own site. The links
-    below go live then.
-
 ## 🔄 Convert in your browser
 
 **[ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)** converts your

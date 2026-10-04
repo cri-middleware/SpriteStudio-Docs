@@ -20,7 +20,7 @@ point and hosts the cross-cutting material that belongs to no single player:
   [porting guide map](docs/en/sdk/porting.md),
 - [support routing](docs/en/support.md) and shared licensing.
 
-Publishes to: <https://cri-middleware.github.io/SpriteStudio-Docs/> (🚧 not live yet)
+Publishes to: <https://cri-middleware.github.io/SpriteStudio-Docs/>
 
 ## Structure
 

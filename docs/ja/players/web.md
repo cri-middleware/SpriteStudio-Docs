@@ -48,6 +48,6 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 
 ## ➡️ 次に読む
 
-- **ドキュメント** - 🚧 *準備中*
+- [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/)
 - [リポジトリ](https://github.com/cri-middleware/SSPlayerForWeb)
 - [ブラウザで試す](../overview/try-it.md) - 各種デモとホスト版コンバーター

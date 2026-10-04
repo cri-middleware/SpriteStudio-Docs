@@ -2,9 +2,6 @@
 
 SpriteStudio の変換と再生を、**インストール不要・設定なし**でその場で確認できます。ここに挙げたものはすべてブラウザ内で完結します。各項目は対応 Player の公式サイトでホストされており、このページはそのリンクを集めたものです。
 
-!!! info "🚧 準備中"
-    これらのデモとホスト型コンバーターは、各 Player のサイトと同時に公開されます。以下のリンクはその時点で有効になります。
-
 ## 🔄 ブラウザで変換する
 
 **[ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)** は `.sspj` を

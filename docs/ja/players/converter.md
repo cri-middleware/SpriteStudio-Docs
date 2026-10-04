@@ -7,7 +7,7 @@
 
 - **入手:** [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases)
 - **使い方:** [スタンドアロンツールで変換する](../overview/convert-with-a-standalone-tool.md)
-- **ドキュメント:** 🚧 _準備中_
+- **ドキュメント:** <https://cri-middleware.github.io/SSConverterGUI/ja/>
 - **リポジトリ:** <https://github.com/cri-middleware/SSConverterGUI>
 
 これらのアセットが供給される変換パイプラインについては [SDK コンセプト](../sdk/concepts.md) を参照してください。

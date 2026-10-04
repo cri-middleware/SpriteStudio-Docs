@@ -20,6 +20,6 @@ SS Import Dock がその場で変換するため、別途ツールを入れる�
 
 ## ➡️ 次に読む
 
-- **ドキュメント** - 🚧 *準備中*
+- [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/)
 - [リポジトリ](https://github.com/cri-middleware/SSPlayerForGodot)
 - [プラットフォームの選び方](../overview/choose-your-platform.md) - 他の Player との比較
