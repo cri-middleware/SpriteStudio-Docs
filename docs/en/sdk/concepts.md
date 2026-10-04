@@ -60,11 +60,13 @@ Because every official player evaluates animations with `libssruntime`, this fea
 - The **Override Layer API** - override a part's color, cell reference, or visibility at runtime
 
 !!! tip "Source of truth"
-    This list follows the SDK's **Player Porting Guide**, *Introduction → Limitations*
-    (🚧 [`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)).
-    The same page draws the boundary: a couple of these are computed as **state only** and still
-    need the player to draw or play them, and several carry constraints - both are summarized in
-    [Shared Limitations](./limitations.md), along with what the core does *not* do yet. What
+    This list follows the SDK's **Player Porting Guide**, whose table of contents
+    (🚧 [`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)) gives each item its own page.
+    The guide's *Introduction → Limitations*
+    (🚧 [`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)) draws the
+    boundary: a couple of these are computed as **state only** and still need the player to draw or
+    play them, and several carry constraints - both are summarized in
+    [Shared Limitations](./limitations.md), along with what the core does *not* do. What
     differs between the players themselves is on
     [Player Differences](../overview/player-differences.md).
 

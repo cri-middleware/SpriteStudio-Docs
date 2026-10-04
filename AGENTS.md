@@ -54,8 +54,9 @@ links out, never full player documentation.
   parts, which no player draws, are the one exception); `overview/player-differences.md` **only
   what differs between players**; `overview/conversion.md`
   how project files map onto what conversion emits; `sdk/glossary.md` what each extension *is*.
-  The first comes from the SDK's Player Porting Guide (`libs/ssruntime/docs`, *Introduction →
-  Limitations*), the second from each player's own docs.
+  `sdk/concepts.md` follows the SDK's Player Porting Guide (`libs/ssruntime/docs`, its table of
+  contents), `sdk/limitations.md` the guide's *Introduction → Limitations*, and
+  `overview/player-differences.md` each player's own docs.
 - **Two of those keep a fixed shape.** `sdk/limitations.md` holds **one altitude**: four `##`
   buckets (playback, what the player supplies, rendering, shipping), every constraint a `###`
   inside one — a fact promoted to `##` is the bug. `overview/player-differences.md` is a
