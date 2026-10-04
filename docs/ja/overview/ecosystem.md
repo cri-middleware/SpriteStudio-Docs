@@ -32,7 +32,7 @@ graph LR
 
 | コンポーネント | 役割 |
 |---|---|
-| **SpriteStudio-SDK** | 共通の Rust コア。`libssconverter` が `.sspj` をランタイムアセットへ変換し、`libssruntime` が再生します。各 Player が git submodule として参照し、`libssconverter` も含むため、その場で変換できる Player があります。 |
+| **SpriteStudio-SDK** | 共通の Rust コア。`libssconverter` が `.sspj` をランタイムアセットへ変換し、`libssruntime` が再生します。各 Player は git submodule で SDK の版を固定し、そのライブラリを版のビルド済みバイナリとして取得するか、submodule からビルドします。`libssconverter` も含まれるため、その場で変換できる Player があります。 |
 | **各 Player** | `libssruntime` のバインディングと、そのエンジン向けの描画。開発中の変換まで担うものもあり（どれがそうかは [アセットの変換](./conversion.md) にあります）、それ以外は変換を下記のツールに任せます。 |
 | **SSConverter GUI / `ssconverter-cli` / `ssconverter-web`** | Player を介さず変換するための `libssconverter` スタンドアロンフロントエンド（デスクトップ GUI／CLI・CI／ブラウザ）。 |
 
