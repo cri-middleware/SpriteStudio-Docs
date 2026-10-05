@@ -1,5 +1,8 @@
 # Contributing to SpriteStudio-Docs
 
+> [!IMPORTANT]
+> We are not accepting pull requests until a Contributor License Agreement (CLA) is in place. Issues remain open for bug reports and requests.
+
 Thank you for your interest in improving the SpriteStudio documentation portal! Corrections, clarifications, and translation fixes are all welcome.
 
 ## Code of Conduct
@@ -79,6 +82,9 @@ Contributions to this project are considered to be made under the terms of the p
 ---
 
 # SpriteStudio-Docs への貢献
+
+> [!IMPORTANT]
+> コントリビューターライセンス契約（CLA）の準備が整うまで、プルリクエストは受け付けていません。バグ報告や要望は引き続き Issue で受け付けています。
 
 SpriteStudio ドキュメントポータルの改善にご関心をお寄せいただきありがとうございます。誤りの修正、説明の改善、翻訳の修正など、どれも歓迎します。
 
