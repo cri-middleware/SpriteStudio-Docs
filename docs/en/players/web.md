@@ -41,7 +41,7 @@ Conversion is picked separately from playback, so it has its own row in the tabl
 
 **Game-engine integrations** - rendering built on `@spritestudio/ssplayer-webgl`. Unlike the
 packages above, these are not headed for npm at all; each is distributed through the repository's
-🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases).
+[GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases).
 
 | Your environment | Package | Status |
 |---|---|---|
@@ -55,6 +55,6 @@ neither of the conversion packages above.
 
 ## ➡️ Read next
 
-- **Documentation** - 🚧 *coming soon*
-- 🚧 [Repository](https://github.com/cri-middleware/SSPlayerForWeb)
+- [Documentation](https://cri-middleware.github.io/SSPlayerForWeb/)
+- [Repository](https://github.com/cri-middleware/SSPlayerForWeb)
 - [Try It in Your Browser](../overview/try-it.md) - the live demos and the hosted converter

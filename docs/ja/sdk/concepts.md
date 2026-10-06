@@ -48,17 +48,17 @@ graph LR
 - **Override Layer API** - 再生時にパーツのカラー・セル参照・表示状態を上書き
 
 !!! tip "情報源"
-    この一覧は SDK の **Player 移植ガイド**に準拠しており、各項目のページはガイドの目次（🚧 [`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）にあります。責務の境界はガイドの「はじめに → 制限事項」（🚧 [`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md)）が示しています。上記のうち 2 つは **状態計算のみ**で描画・再生には Player 側の実装が必要であり、いくつかの機能には条件が伴います。これらと、コアが行わないことは [共通の制限事項](./limitations.md) にまとめてあります。Player 同士で異なる点は [Player ごとの違い](../overview/player-differences.md) を参照してください。
+    この一覧は SDK の **Player 移植ガイド**に準拠しており、各項目のページはガイドの目次（[`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）にあります。責務の境界はガイドの「はじめに → 制限事項」（[`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md)）が示しています。上記のうち 2 つは **状態計算のみ**で描画・再生には Player 側の実装が必要であり、いくつかの機能には条件が伴います。これらと、コアが行わないことは [共通の制限事項](./limitations.md) にまとめてあります。Player 同士で異なる点は [Player ごとの違い](../overview/player-differences.md) を参照してください。
 
 ## 📚 ライブラリとツール
 
 | コンポーネント | 役割 |
 |---|---|
-| 🚧 [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/sspj/README.ja.md) | `.sspj` プロジェクト（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）の解析。 |
-| 🚧 [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/README.ja.md) | `.ssab` / `.ssqb` バイナリの読み書き（FlatBuffers）。 |
-| 🚧 [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssconverter/README.ja.md) | `.sspj` を `.ssab` へ変換。 |
-| 🚧 [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/README.ja.md) | 再生の Brain。`DrawBatch` プランを出力。 |
-| 🚧 [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) | コマンドライン変換ツール（Windows / macOS / Linux）。 |
+| [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/sspj/README.ja.md) | `.sspj` プロジェクト（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）の解析。 |
+| [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/README.ja.md) | `.ssab` / `.ssqb` バイナリの読み書き（FlatBuffers）。 |
+| [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssconverter/README.ja.md) | `.sspj` を `.ssab` へ変換。 |
+| [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/README.ja.md) | 再生の Brain。`DrawBatch` プランを出力。 |
+| [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) | コマンドライン変換ツール（Windows / macOS / Linux）。 |
 
 ## ✨ この設計の利点
 
@@ -74,4 +74,4 @@ graph LR
 - [共通の制限事項](./limitations.md) - すべての Player に共通する制約。
 - [フォーマット仕様](./format-spec.md) - `.ssab / .ssqb` バイナリとランタイムの `FrameData` インターフェース。
 - [Player の移植](./porting.md) - 新規エンジン向けの Player を作る。
-- 🚧 [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) - SDK 本体のリポジトリ。最新の正式な情報はこちらが基準です。
+- [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) - SDK 本体のリポジトリ。最新の正式な情報はこちらが基準です。

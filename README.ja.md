@@ -13,7 +13,7 @@ SpriteStudio SDK と公式 Player 群のドキュメント**ポータル**です
 - 共通の [SDK コンセプト](docs/ja/sdk/concepts.md)、[用語集](docs/ja/sdk/glossary.md)、[フォーマット仕様](docs/ja/sdk/format-spec.md)、[移植ガイドへの案内](docs/ja/sdk/porting.md)
 - [サポート窓口の振り分け](docs/ja/support.md)と共通のライセンス情報
 
-公開先: <https://cri-middleware.github.io/SpriteStudio-Docs/ja/>（🚧 準備中）
+公開先: <https://cri-middleware.github.io/SpriteStudio-Docs/ja/>
 
 ## 構成
 

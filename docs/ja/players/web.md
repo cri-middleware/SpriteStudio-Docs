@@ -35,7 +35,7 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 | 変換機能を自作アプリ / サービスに組み込む | **`@spritestudio/ssconverter-core`** |
 
 **ゲームエンジン統合** - 描画は `@spritestudio/ssplayer-webgl` を基盤にしています。上記のパッケージとは違い、こちらはそもそも npm 公開の予定がなく、リポジトリの
-🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases) で配布されます。
+[GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases) で配布されます。
 
 | あなたの環境 | パッケージ | 状態 |
 |---|---|---|
@@ -48,6 +48,6 @@ SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで�
 
 ## ➡️ 次に読む
 
-- **ドキュメント** - 🚧 *準備中*
-- 🚧 [リポジトリ](https://github.com/cri-middleware/SSPlayerForWeb)
+- [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/)
+- [リポジトリ](https://github.com/cri-middleware/SSPlayerForWeb)
 - [ブラウザで試す](../overview/try-it.md) - 各種デモとホスト版コンバーター

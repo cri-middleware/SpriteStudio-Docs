@@ -10,16 +10,15 @@ served from the same library.
     a render pass of your own, which is a Rust-side feature. The Rust API is the one the other
     two wrap, under different names.
 
-**1. What you install** - pick the face that matches your host. While
-🚧 [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) is private, every route
-below needs access to it: the player links `ssruntime` and `ssab` as Rust crates rather than
-through a released C-API, so the SDK comes in as a git submodule.
+**1. What you install** - pick the face that matches your host. The player links `ssruntime`
+and `ssab` as Rust crates rather than through a released C-API, so
+[SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) comes in as a git submodule.
 
 | Your host | What you add |
 |---|---|
 | A **Rust** app | `ssplayer-wgpu` as a git dependency - Cargo checks out the submodule for you, and no other tooling is needed. 🚧 Not on crates.io until the SDK crates publish first. |
 | A **Bevy** app | `ssplayer-bevy` instead - it pulls the player in and adds the `SsPlayer` / `SsTransform` / `SsPlayback` components. |
-| A **C or C++** app | A cdylib / staticlib plus a generated header, built from the repository with `scripts/build.sh` into `bin/`. 🚧 No prebuilt downloads yet. |
+| A **C or C++** app | A cdylib / staticlib plus a generated header: prebuilt as `ssplayer-wgpu-<platform>-<arch>.zip` on [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases), or built from the repository with `scripts/build.sh` into `bin/`. |
 | The **browser** (WebGPU) | The npm package `@spritestudio/ssplayer-wgpu` - the wasm plus a TypeScript layer, with the `<ss-player-webgpu>` custom element in its own entry point. 🚧 Not on npm yet. |
 
 **2. `.sspj` -> `.ssab`** - nothing here hosts an importer and nothing converts at runtime, so
@@ -72,6 +71,6 @@ a Bevy app needs.
 
 ## ➡️ Read next
 
-- **Documentation** - 🚧 *coming soon*
-- 🚧 [Repository](https://github.com/cri-middleware/SSPlayerForWgpu) - the crate READMEs are the reference until then
+- [Documentation](https://cri-middleware.github.io/SSPlayerForWgpu/)
+- [Repository](https://github.com/cri-middleware/SSPlayerForWgpu)
 - [Converting Assets](../overview/conversion.md) - picking a tool and putting it in a build pipeline

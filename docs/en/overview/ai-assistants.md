@@ -2,9 +2,6 @@
 
 Every official site publishes its documentation as Markdown too, so you can hand it to an AI assistant instead of pasting pages one by one. This page says where the Markdown is and how to point an assistant at it.
 
-!!! info "🚧 Coming soon"
-    The addresses below go live as each player's site is published. They are written as plain text, not links, because they 404 until then.
-
 ## 🔗 What each site serves
 
 Every site serves two files at its root, and a Markdown copy of every page:
@@ -15,16 +12,16 @@ Every site serves two files at its root, and a Markdown copy of every page:
 
 | Site | `llms.txt` |
 |---|---|
-| [Unity](../players/unity.md) | `https://cri-middleware.github.io/SSPlayerForUnity/llms.txt` |
-| [Web (Player Collection)](../players/web.md) | `https://cri-middleware.github.io/SSPlayerForWeb/llms.txt` |
-| [Godot](../players/godot.md) | `https://cri-middleware.github.io/SSPlayerForGodot/llms.txt` |
-| [Flutter](../players/flutter.md) | `https://cri-middleware.github.io/SSPlayerForFlutter/llms.txt` |
-| [Ren'Py](../players/renpy.md) | `https://cri-middleware.github.io/SSPlayerForRenPy/llms.txt` |
-| [wgpu (Rust, C / C++)](../players/wgpu.md) | `https://cri-middleware.github.io/SSPlayerForWgpu/llms.txt` |
-| [React Native](../players/react-native.md) | `https://cri-middleware.github.io/SSPlayerForReactNative/llms.txt` |
-| [Converter GUI](../players/converter.md) | `https://cri-middleware.github.io/SSConverterGUI/llms.txt` |
-| [SDK - the Player Porting Guide](../sdk/porting.md) | `https://cri-middleware.github.io/SpriteStudio-SDK/llms.txt` |
-| This portal | `https://cri-middleware.github.io/SpriteStudio-Docs/llms.txt` |
+| [Unity](../players/unity.md) | [`https://cri-middleware.github.io/SSPlayerForUnity/llms.txt`](https://cri-middleware.github.io/SSPlayerForUnity/llms.txt) |
+| [Web (Player Collection)](../players/web.md) | [`https://cri-middleware.github.io/SSPlayerForWeb/llms.txt`](https://cri-middleware.github.io/SSPlayerForWeb/llms.txt) |
+| [Godot](../players/godot.md) | [`https://cri-middleware.github.io/SSPlayerForGodot/llms.txt`](https://cri-middleware.github.io/SSPlayerForGodot/llms.txt) |
+| [Flutter](../players/flutter.md) | [`https://cri-middleware.github.io/SSPlayerForFlutter/llms.txt`](https://cri-middleware.github.io/SSPlayerForFlutter/llms.txt) |
+| [Ren'Py](../players/renpy.md) | [`https://cri-middleware.github.io/SSPlayerForRenPy/llms.txt`](https://cri-middleware.github.io/SSPlayerForRenPy/llms.txt) |
+| [wgpu (Rust, C / C++)](../players/wgpu.md) | [`https://cri-middleware.github.io/SSPlayerForWgpu/llms.txt`](https://cri-middleware.github.io/SSPlayerForWgpu/llms.txt) |
+| [React Native](../players/react-native.md) | [`https://cri-middleware.github.io/SSPlayerForReactNative/llms.txt`](https://cri-middleware.github.io/SSPlayerForReactNative/llms.txt) |
+| [Converter GUI](../players/converter.md) | [`https://cri-middleware.github.io/SSConverterGUI/llms.txt`](https://cri-middleware.github.io/SSConverterGUI/llms.txt) |
+| [SDK - the Player Porting Guide](../sdk/porting.md) | [`https://cri-middleware.github.io/SpriteStudio-SDK/llms.txt`](https://cri-middleware.github.io/SpriteStudio-SDK/llms.txt) |
+| This portal | [`https://cri-middleware.github.io/SpriteStudio-Docs/llms.txt`](https://cri-middleware.github.io/SpriteStudio-Docs/llms.txt) |
 
 ### 🌐 Languages
 

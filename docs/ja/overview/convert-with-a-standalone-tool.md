@@ -27,34 +27,33 @@
 !!! warning "Chromium 系ブラウザで利用してください"
     ssconverter-web は **File System Access API** を使用するため、Chromium 系ブラウザ（**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では利用できません。
 
-1. [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) でコンバーターを開きます —
-   🚧 _準備中_。アドレスは確定していますが、SpriteStudio Player for Web のサイト公開と同時に利用可能になります。
+1. [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) でコンバーターを開きます。
 2. `.sspj` が入ったフォルダをドロップします（画像などの参照ファイルも一緒に読み込まれます）。
 3. 変換結果（`.ssab` と参照テクスチャ）を ZIP でダウンロードします。
 
 !!! info "`.ssab` スキーマ版ごとに公開"
     ssconverter-web は **`.ssab` スキーマのバージョンごと**に公開され、URL にスキーマが含まれます。
 
-    - 最新版（自動リダイレクト）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) — 🚧 _準備中_
-    - 特定スキーマ版（例 `v1`）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/) — 🚧 _準備中_
+    - 最新版（自動リダイレクト）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)
+    - 特定スキーマ版（例 `v1`）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
 
-    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版（公開後）を使い、アプリ内のバージョン切替から選択してください。
+    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版を使い、アプリ内のバージョン切替から選択してください。
 
 ## 🖥️ SSConverter GUI - デスクトップアプリ
 
 Tauri 製のデスクトップアプリです。コマンドラインは不要です。配布しているビルドは **macOS と
 Windows** で、Linux では下の `ssconverter-cli` を使ってください（出力は同じです）。
 
-1. 🚧 [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
+1. [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
 2. アプリを起動し、`.sspj`（または複数の `.sspj` を含むフォルダ）をウィンドウにドロップします（**File...** / **Folder...** からも選べます）。
 3. 必要なら出力フォルダを変更し（既定は `.sspj` の隣のフォルダ）、**Convert** を押します。
 
-詳細は [SSConverter GUI の概要](../players/converter.md)、ドキュメント（🚧 準備中）、
-🚧 [リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
+詳細は [SSConverter GUI の概要](../players/converter.md)、[ドキュメント](https://cri-middleware.github.io/SSConverterGUI/ja/)、
+[リポジトリ](https://github.com/cri-middleware/SSConverterGUI) を参照してください。
 
 ## ⌨️ ssconverter-cli - コマンドライン・CI
 
-Windows / macOS / Linux 向けの単体バイナリです。🚧 [SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases)
+Windows / macOS / Linux 向けの単体バイナリです。[SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases)
 からダウンロードでき（ビルド環境不要）、以下のように使います。
 
 ```bash
@@ -72,7 +71,7 @@ ssconverter-cli ./assets/projects ./more_assets
 ```
 
 バッチモードでは各出力がソースと同じフォルダに書き出されます（`-o` は無視されます）。全オプションは
-🚧 [ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) を参照してください。
+[ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) を参照してください。
 
 ## ➡️ 次に
 

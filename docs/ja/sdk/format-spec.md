@@ -3,8 +3,8 @@
 SDK は 2 つのバイナリ形式（いずれも **FlatBuffers** ベース）と、ランタイムの FFI
 インターフェースを使います。本ページは要約で、**フィールド単位の正式仕様は SDK 側**にあります。
 
-- 🚧 [**SSAB / SSQB スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/SCHEMA.ja.md) - アセットバイナリ。
-- 🚧 [**FrameData スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.ja.md) - ランタイムのデータ交換インターフェース。
+- [**SSAB / SSQB スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/SCHEMA.ja.md) - アセットバイナリ。
+- [**FrameData スキーマ**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.ja.md) - ランタイムのデータ交換インターフェース。
 
 以降に出てくる用語（アニメーションパック、セルマップ、パーツ種別、ネームハッシュなど）は
 [用語集](./glossary.md) に定義があります。
@@ -49,13 +49,13 @@ FrameData（密・1フレーム）  --FFI-->  各エンジンの描画
    +- parts: [PartState]  (position_x, rotation_z, alpha, mesh ...)
 ```
 
-各 `PartState` フィールドは、対応する `.ssab` の `PartAnimationData` フィールドが指すキーから直接マップされます（例: `position_x` <- `position_x_keys` が指すランを補間し、対象の座標系へ変換）。フィールド単位の対応表は 🚧 [FrameData スキーマ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.ja.md) にあります。
+各 `PartState` フィールドは、対応する `.ssab` の `PartAnimationData` フィールドが指すキーから直接マップされます（例: `position_x` <- `position_x_keys` が指すランを補間し、対象の座標系へ変換）。フィールド単位の対応表は [FrameData スキーマ](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.ja.md) にあります。
 
 ## 🔧 バインディングの再生成
 
-スキーマは SDK 内の FlatBuffers `.fbs` として定義されています（🚧 [`ssab.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssab.fbs) /
-🚧 [`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssqb.fbs)、および
-🚧 [`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/fbs/framedata.fbs)）。フィーチャフラグ（`default` / `no_std` / `converter`）とコード生成については 🚧 [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/README.ja.md) を参照。
+スキーマは SDK 内の FlatBuffers `.fbs` として定義されています（[`ssab.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssab.fbs) /
+[`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssqb.fbs)、および
+[`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/fbs/framedata.fbs)）。フィーチャフラグ（`default` / `no_std` / `converter`）とコード生成については [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/README.ja.md) を参照。
 
 !!! info "スキーマのバージョニング"
     `.ssab` はバイナリ `version` フィールドを持ち、`ssconverter-web` などのツールは[スキーマ版ごと](../overview/convert-with-a-standalone-tool.md)に公開されます。変換ツールのスキーマは

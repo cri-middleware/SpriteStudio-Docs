@@ -6,7 +6,7 @@ through building one on top of `libssruntime`.
 
 !!! tip "Where the guide lives"
     The canonical guide is maintained in the SDK repository:
-    🚧 [**SpriteStudio Player Porting Guide**](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
+    [**SpriteStudio Player Porting Guide**](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
     (`libs/ssruntime/docs/`). This page is a map into it - the SDK is the source of truth.
 
 ## 🧠 Core idea: Brain vs. Body
@@ -38,4 +38,4 @@ engine's Body to the shared Brain.
 - Read [SDK Concepts](./concepts.md) for the convert -> runtime pipeline, and keep the
   [Glossary](./glossary.md) open for the terms the guide assumes.
 - Read the guide's **Limitations** page first - it shapes your player's design decisions.
-- Source & issues: 🚧 [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK).
+- Source & issues: [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK).

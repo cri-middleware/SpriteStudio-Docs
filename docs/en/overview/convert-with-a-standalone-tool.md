@@ -34,39 +34,38 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
     ssconverter-web relies on the **File System Access API**, so it works only in Chromium-based
     browsers (**Chrome**, **Edge**, **Opera**). Firefox and Safari are not supported.
 
-1. Open the converter at [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) —
-   🚧 _coming soon_; the address is final, but it goes live with the SpriteStudio Player for Web site.
+1. Open the converter at [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/).
 2. Drop in the folder that contains your `.sspj` (its images and other referenced files are read along with it).
 3. Download the result as a ZIP (the `.ssab` and its referenced textures).
 
 !!! info "Versioned by `.ssab` schema"
     ssconverter-web is published **per `.ssab` schema version**, so the URL carries the schema:
 
-    - Latest (auto-redirects): [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) — 🚧 _coming soon_
-    - A specific schema, e.g. `v1`: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/) — 🚧 _coming soon_
+    - Latest (auto-redirects): [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)
+    - A specific schema, e.g. `v1`: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
 
     Match the schema to your player's runtime version - when in doubt, use the latest
-    (auto-redirecting) build once it's available and pick the version from the in-app switcher.
+    (auto-redirecting) build and pick the version from the in-app switcher.
 
 ## 🖥️ SSConverter GUI - desktop app
 
 A Tauri desktop app. No command line. Builds are published for **macOS and Windows** - on Linux,
 take `ssconverter-cli` below instead; the output is the same.
 
-1. Download a build from 🚧 [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases).
+1. Download a build from [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases).
 2. Launch it and drop a `.sspj` - or a folder of them - onto the window (or pick one with
    **File...** / **Folder...**).
 3. Optionally change the output folder (by default, a folder next to the `.sspj`), then click
    **Convert**.
 
 Details: [SSConverter GUI overview](../players/converter.md) ·
-Documentation (🚧 coming soon) ·
-🚧 [Repository](https://github.com/cri-middleware/SSConverterGUI).
+[Documentation](https://cri-middleware.github.io/SSConverterGUI/) ·
+[Repository](https://github.com/cri-middleware/SSConverterGUI).
 
 ## ⌨️ ssconverter-cli - command line & CI
 
 A single self-contained binary for Windows / macOS / Linux. Download it from the
-🚧 [SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases) (no build
+[SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases) (no build
 environment required), then:
 
 ```bash
@@ -84,7 +83,7 @@ ssconverter-cli ./assets/projects ./more_assets
 ```
 
 In batch mode each output is written next to its source (`-o` is ignored). Full option list:
-🚧 [ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli).
+[ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli).
 
 ## ➡️ Next
 
