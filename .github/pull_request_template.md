@@ -31,7 +31,6 @@ that is useful information, not a problem.
 - [ ] `docs/en/` and `docs/ja/` both changed, and `nav` in both `mkdocs.yml` and `mkdocs.ja.yml`.
 - [ ] Every claim comes from a sibling repository; nothing is inferred.
 - [ ] Links into sibling repositories use `blob/HEAD/` or `tree/HEAD/`, never a branch name.
-- [ ] Written as published: no 🚧, "coming soon" or "準備中", and every repository, site and Release linked as live.
 
 ## Anything reviewers should know? / レビュー時の注意点
 
