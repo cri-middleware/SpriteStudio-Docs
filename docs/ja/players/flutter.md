@@ -9,10 +9,7 @@
 !!! tip "コードで始まる - ただし Rust ツールチェーンは不要"
     ネイティブコアはビルドではなく取得されます。`ssruntime_dart` の native assets フックが、固定された SDK リリースからビルド済みの `libssruntime` をダウンロードし、コンバーターも同じ仕組みで `libssconverter` を取得します。
 
-**1. 何を入れるか** - `pubspec.yaml` に `ssplayer_flutter` の依存を追加します。🚧 パッケージが
-pub.dev に公開されるまでは、
-🚧 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForFlutter/releases) のバンドルをダウンロードしてプロジェクト内に展開し、
-`vendor/SSPlayerForFlutter/packages/ssplayer_flutter` への path 依存を指定します（`packages/` の構造が保たれているため、推移依存の `ssruntime_dart` も解決されます）。
+**1. 何を入れるか** - `pubspec.yaml` に `ssplayer_flutter` の依存を、リリースのタグ（`ssplayer_flutter-v<version>`）を指す git 依存として追加します。`ssplayer_flutter` が参照する `ssruntime_dart` も、同じタグから `dependency_overrides` で取ります（[インストール](https://cri-middleware.github.io/SSPlayerForFlutter/ja/guide/install/) を参照）。
 
 **2. `.sspj` -> `.ssab`** - SpriteStudio プロジェクトを `SpriteStudio_Source/` 以下に置き、同梱の CLI で変換します。1 つの `.sspj` からアニメーションパックごとに 1 つの `.ssab` ができます。
 

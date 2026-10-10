@@ -14,8 +14,6 @@
 npx expo install react-native-spritestudio @shopify/react-native-skia react-native-nitro-modules react-native-reanimated react-native-worklets
 ```
 
-🚧 初回リリースまでは npm に公開されていません。それまではチェックアウトから実行します。
-
 **2. `.sspj` -> `.ssab`** - React Native にはインポーターを組み込むエディターがないため、
 SDK の `ssconverter-cli` か [SSConverter GUI](./converter.md) を使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。**パックはファイルではなくディレクトリです**。`.ssab` はテクスチャや外部パックを自身からの相対パスで参照し、Metro は `require()` が名指ししたものしかバンドルしません。そのためパックのディレクトリはネイティブアセットとして同梱します。Expo config plugin に自分のパスを指定してください。
 

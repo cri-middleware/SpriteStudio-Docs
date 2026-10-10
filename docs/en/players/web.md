@@ -10,10 +10,9 @@ art in SpriteStudio, convert to `.ssab`, then play it back through the renderer 
     The WASM core ships inside each renderer package, so you install one package and write a few
     lines. Building the core from source is only for changing the Rust.
 
-**1. What you install** - one renderer package, picked by your environment: see
+**1. What you install** - one renderer package from npm, picked by your environment: see
 [the table below](#pick-by-environment). Each bundles the WASM core, so it is a
-single dependency. 🚧 They are published to npm with the first release; until then, run the
-🚧 [repository's examples](https://github.com/cri-middleware/SSPlayerForWeb) from a checkout.
+single dependency.
 
 **2. `.sspj` -> `.ssab`** - convert in the browser with `ssconverter-web`, hosted on this
 player's own site, or with any of the [standalone tools](../overview/convert-with-a-standalone-tool.md).

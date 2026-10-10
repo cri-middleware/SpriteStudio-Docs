@@ -60,12 +60,11 @@ links out, never full player documentation.
 - **Two of those keep a fixed shape.** `sdk/limitations.md` holds **one altitude**: four `##`
   buckets (playback, what the player supplies, rendering, shipping), every constraint a `###`
   inside one — a fact promoted to `##` is the bug. `overview/player-differences.md` is a
-  **one-line-per-player table over one `###` per player**; an overgrown cell belongs in one.
-- **🚧 marks anything pending publication** — a card, a table cell, a list item or a link into a
-  repository that is still private as readily as a sentence — immediately before the pending phrase
-  (`Docs (🚧 coming soon)`, `🚧 [GitHub](…)`), not in front of the whole entry, and never on a
-  technical constraint. `en` and `ja` carry the same marks file for file. In `sdk/limitations.md`,
-  `##` headings carry an emoji, `###` none.
+  **one-line-per-player table over one `###` per player**; an overgrown cell belongs in one. In
+  `sdk/limitations.md`, `##` headings carry an emoji, `###` none.
+- **Every page reads as published** — a sibling repository, its GitHub Pages site and its Releases
+  are linked as live, never marked 🚧, "coming soon" or "準備中", and a registry a package is not on
+  goes unmentioned. `en` and `ja` carry the same links file for file.
 - **A repository added to the portal needs five edits per locale** — a card in `index.md`, a row
   in `license.md`, a row in `support.md`, the `nav` entry, the `players/` page — plus one entry in
   `llmstxt.sections` of `mkdocs.base.yml`, once for both locales. Nothing checks it.

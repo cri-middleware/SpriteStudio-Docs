@@ -68,7 +68,7 @@ Settings shared by both locales live in `mkdocs.base.yml`, which the two inherit
 ### Links
 - **Internal links** are relative file paths ending in `.md` (e.g. `../sdk/concepts.md`). `--strict` validates these.
 - **Links into sibling repositories** should target the repository itself. When you must point inside one, write `blob/HEAD/...` for a file and `tree/HEAD/...` for a directory, never a branch name: the sibling repositories default to `main` or `develop` with no pattern to follow, so a branch path can 404 silently - `--strict` only validates internal links - while `HEAD` always resolves to that repository's default branch.
-- **Pending publication** gets a 🚧 immediately before the pending phrase, never in front of the whole entry, with the same marks in `en/` and `ja/`. A GitHub Pages site that is not deployed yet (a player's docs, a demo) is written as plain "coming soon" / "準備中" text rather than linked, since it 404s until then; a `github.com/cri-middleware/…` link stays live and carries the mark while its repository is private. When something publishes, link or unmark it in `en/` and `ja/` together.
+- **Write every page as published.** A sibling repository, its GitHub Pages site (a player's docs, a demo) and its Releases are linked as live, with no 🚧, "coming soon" or "準備中". A registry a package is not on (pub.dev, crates.io) goes unmentioned: name the route that exists. Change `en/` and `ja/` together.
 
 ### Writing
 - Prefer material that stays true. Version numbers, requirement tables, and other facts that need tracking across every sibling repository age badly in a portal - let each project state those in its own docs, and link out instead.
@@ -150,7 +150,7 @@ Windows では実行ファイルは `.\.venv\Scripts\zensical` です。
 ### リンク
 - **内部リンク**は `.md` で終わる相対パス（例: `../sdk/concepts.md`）。`--strict` が検証します。
 - **兄弟リポジトリへのリンク**は、リポジトリ自体を指してください。リポジトリ内を直接指す必要がある場合は、ブランチ名を書かず、ファイルなら `blob/HEAD/...`、ディレクトリなら `tree/HEAD/...` と書いてください。兄弟リポジトリの既定ブランチは `main` と `develop` が混在しており、ブランチ名を書いたパスは気付かないまま 404 になります（`--strict` は内部リンクしか検証しません）。`HEAD` は常にそのリポジトリの既定ブランチへ解決されます。
-- **公開待ちのもの**には、公開待ちの語句の直前に 🚧 を付けます。項目全体の前には付けず、`en/` と `ja/` で同じ印にします。まだデプロイされていない GitHub Pages のサイト（Player のドキュメント、デモ）は、それまで 404 になるため、リンクにせず「coming soon」「準備中」の文字列にします。`github.com/cri-middleware/…` へのリンクは有効なままにし、リポジトリが private の間は印を付けます。公開されたら、`en/` と `ja/` の両方でリンクにする／印を外してください。
+- **公開済みとして書きます。** 兄弟リポジトリ、その GitHub Pages のサイト（Player のドキュメント、デモ）、Releases は公開されているものとしてリンクし、🚧・「coming soon」・「準備中」は付けません。パッケージが載っていないレジストリ（pub.dev、crates.io）には触れず、実際にある入手経路を書きます。`en/` と `ja/` は一緒に変えてください。
 
 ### 書き方
 - 長く正しくあり続ける情報を優先してください。バージョン番号や要件表など、すべての兄弟リポジトリを追跡し続ける必要がある情報はポータルでは古くなりやすいものです。各プロジェクト自身のドキュメントに任せ、こちらからはリンクしてください。
