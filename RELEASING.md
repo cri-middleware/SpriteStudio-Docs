@@ -17,6 +17,14 @@ git switch main && git pull --ff-only
 scripts/build-pages.sh serve=yes    # http://localhost:8000/; Ctrl-C to stop
 ```
 
+Then scan `main` for copyright and license notices copied from others. `provenance.yml` runs ScanCode, which finds them. Its summary of what it found is on the run's page. **A person sorts what it finds.** A notice of the earlier SpriteStudio Players and SDK is our own. Anything else is rewritten, unless its license, read at its source, is compatible with BSD-3-Clause and the notice that license asks for is kept. Fix it by a pull request into `main`, and run the block again.
+
+```bash
+gh workflow run provenance.yml --ref main
+gh run watch                        # the run takes a few seconds to appear
+gh run view --web                   # the summary is on the run's page
+```
+
 ### 2. Run the workflow from main
 
 ```bash
@@ -55,6 +63,14 @@ A publish replaces the whole site, so undoing one is publishing again: revert th
 ```bash
 git switch main && git pull --ff-only
 scripts/build-pages.sh serve=yes    # http://localhost:8000/ 。Ctrl-C で停止
+```
+
+続けて、他者の著作権表示やライセンスの記述が紛れ込んでいないかを、`main` で照合します。`provenance.yml` は ScanCode でそれを見つけます。見つかったものの一覧は run のページにあります。**見つかったものは人が仕分けます。** 以前の SpriteStudio の Player・SDK の表示は、自社のものです。それ以外は書き直します。残せるのは、出所で確かめたライセンスが BSD-3-Clause と両立し、そのライセンスが求める表示を残すときだけです。直すときは、プルリクエストで `main` を直し、このブロックをもう一度実行します。
+
+```bash
+gh workflow run provenance.yml --ref main
+gh run watch                        # run が一覧に出るまで数秒かかる
+gh run view --web                   # 一覧は run のページにある
 ```
 
 ### 2. main からワークフローを実行する
