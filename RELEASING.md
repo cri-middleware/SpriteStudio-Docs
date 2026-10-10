@@ -17,6 +17,14 @@ git switch main && git pull --ff-only
 scripts/build-pages.sh serve=yes    # http://localhost:8000/; Ctrl-C to stop
 ```
 
+Then scan `main` for code copied from others. `provenance.yml` runs SCANOSS, which matches the tracked files against public open-source code by sending their fingerprints rather than the code, and ScanCode, which finds copyright and license notices. Its summary of what they found is on the run's page. **A person sorts the matches.** A match with the earlier SpriteStudio Players and SDK is our own code. Anything else is rewritten, unless its license, read at its source, is compatible with BSD-3-Clause and the code keeps the notice that license asks for. Fix a match by a pull request into `main`, and run the block again.
+
+```bash
+gh workflow run provenance.yml --ref main
+gh run watch                        # the run takes a few seconds to appear
+gh run view --web                   # the summary is on the run's page
+```
+
 ### 2. Run the workflow from main
 
 ```bash
@@ -55,6 +63,14 @@ A publish replaces the whole site, so undoing one is publishing again: revert th
 ```bash
 git switch main && git pull --ff-only
 scripts/build-pages.sh serve=yes    # http://localhost:8000/ 。Ctrl-C で停止
+```
+
+続けて、他者のコードを写した箇所が無いかを、`main` で照合します。`provenance.yml` は SCANOSS と ScanCode を実行します。SCANOSS は、追跡しているファイルを公開されているオープンソースのコードと照合します。送るのはコードではなく指紋です。ScanCode は、著作権表示とライセンスの記述を見つけます。見つかったものの一覧は run のページにあります。**一致は人が仕分けます。** 以前の SpriteStudio の Player・SDK との一致は、自社のコードです。それ以外は書き直します。残せるのは、出所で確かめたライセンスが BSD-3-Clause と両立し、そのライセンスが求める表示をコードに残すときだけです。一致を直すときは、プルリクエストで `main` を直し、このブロックをもう一度実行します。
+
+```bash
+gh workflow run provenance.yml --ref main
+gh run watch                        # run が一覧に出るまで数秒かかる
+gh run view --web                   # 一覧は run のページにある
 ```
 
 ### 2. main からワークフローを実行する
