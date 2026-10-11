@@ -25,7 +25,7 @@ Open a [GitHub Issue](https://github.com/cri-middleware/SpriteStudio-Docs/issues
 ### Pull Requests
 1. Fork the repository and create your branch from `main`.
 2. Make the change in **both** `docs/en/` and `docs/ja/` (see below).
-3. Build **both locales** locally - `scripts/build-docs.sh` (or `scripts\build-docs.ps1`) does exactly that, in the order that works. **Nothing builds the docs on a pull request**, so this is the only validation there is - a broken link or a nav entry pointing at a missing page is not caught for you (see [Development Environment](#development-environment)).
+3. Build **both locales** locally - `scripts/build-docs.sh` (or `scripts\build-docs.ps1`) does exactly that, in the order that works. A pull request's CI runs the same build, so a broken link or a nav entry pointing at a missing page fails the PR as well; building first finds it sooner (see [Development Environment](#development-environment)).
 4. Submit a Pull Request targeting `main` with a clear description. Use [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `docs: …`).
 
 Note that merging does **not** publish. Deployment is manual: a maintainer runs the `Publish docs via GitHub Pages` workflow (`workflow_dispatch`).
@@ -36,7 +36,7 @@ You need Python 3.
 
 ```bash
 scripts/prepare-docs.sh          # once: .venv + the pins in docs/requirements.txt
-scripts/build-docs.sh            # the gate: English then Japanese, both --strict
+scripts/build-docs.sh            # English then Japanese, both --strict: what CI runs
 scripts/build-pages.sh serve=yes # the published tree, both locales -> http://localhost:8000/
 ```
 
@@ -107,7 +107,7 @@ SpriteStudio ドキュメントポータルの改善にご関心をお寄せい�
 ### プルリクエスト
 1. リポジトリを fork し、`main` からブランチを作成してください。
 2. `docs/en/` と `docs/ja/` の **両方** を変更してください（下記参照）。
-3. ローカルで **両ロケール** をビルドしてください。`scripts/build-docs.sh`（または `scripts\build-docs.ps1`）が正しい順序で両方をビルドします。**プルリクエストではドキュメントは一切ビルドされません**。これが唯一の検証で、リンク切れや、存在しないページを指す nav エントリーは自動では検出されません（[開発環境](#開発環境) 参照）。
+3. ローカルで **両ロケール** をビルドしてください。`scripts/build-docs.sh`（または `scripts\build-docs.ps1`）が正しい順序で両方をビルドします。プルリクエストの CI も同じビルドを実行するので、リンク切れや、存在しないページを指す nav エントリーがあれば PR も失敗します。先に手元でビルドすれば、早く気付けます（[開発環境](#開発環境) 参照）。
 4. `main` を対象に、変更内容を明確に記載した PR を作成してください。コミットは [Conventional Commits](https://www.conventionalcommits.org/)（例: `docs: …`）に従ってください。
 
 マージしても **公開はされません**。デプロイは手動で、メンテナーが `Publish docs via GitHub Pages` ワークフロー（`workflow_dispatch`）を実行します。
@@ -118,7 +118,7 @@ Python 3 が必要です。
 
 ```bash
 scripts/prepare-docs.sh          # 一度だけ: .venv と docs/requirements.txt のピン
-scripts/build-docs.sh            # 唯一の検証。英語 → 日本語の順に --strict でビルド
+scripts/build-docs.sh            # 英語 → 日本語の順に --strict でビルド。CI と同じビルド
 scripts/build-pages.sh serve=yes # 公開ツリー、両ロケール -> http://localhost:8000/
 ```
 

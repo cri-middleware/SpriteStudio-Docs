@@ -4,12 +4,8 @@ on:
   # Publishing is manual: production is deployed by running this workflow
   # (workflow_dispatch), and nothing else triggers it. The sibling player repos
   # publish on `release: published` + dispatch; this portal cuts no releases, so
-  # dispatch is the whole story here.
-  #
-  # Note there is no PR build any more, matching the siblings — `zensical build
-  # --strict` no longer runs in CI at all, so run it locally before merging a
-  # docs change. A broken internal link or missing nav entry would otherwise
-  # only surface on the next manual publish.
+  # dispatch is the whole story here. ci.yml builds the same tree on every pull
+  # request.
   workflow_dispatch:
 
 # Least privilege: the site is published via the Pages deployment API (OIDC),
@@ -47,10 +43,10 @@ jobs:
           restore-keys: |
             zensical-
 
-      # Both steps below run the same scripts a contributor runs locally, rather
-      # than repeating the commands here. There is no PR build to catch a
-      # divergence between the two, so the fewer places the build is spelled out,
-      # the better: scripts/build-docs.sh owns the locale order and the --strict
+      # Both steps below run the same scripts a contributor runs locally, and
+      # ci.yml runs on every pull request, rather than repeating the commands
+      # here. The fewer places the build is spelled out, the better:
+      # scripts/build-docs.sh owns the locale order and the --strict
       # flag, scripts/build-pages.sh owns the tree this job uploads, and this
       # workflow just calls them.
       #

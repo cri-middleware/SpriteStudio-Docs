@@ -1,0 +1,64 @@
+name: CI
+
+# The site is all this repository builds, so every pull request builds it the way
+# pages.yml publishes it: both locales, --strict, so a broken link or a nav entry
+# pointing at a missing page fails the PR. The weekly run builds main and is what
+# writes the caches PRs restore from.
+on:
+  pull_request:
+    # Unlike the sibling repositories, Markdown is not ignored: it is the content.
+    paths-ignore:
+      - '.gitignore'
+      - 'LICENSE*'
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docs:
+    name: 📚 Docs site
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: 3.x
+          cache: pip
+          cache-dependency-path: docs/requirements.txt
+
+      # Zensical's build cache, started over each ISO week as pages.yml does.
+      - run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
+
+      - name: Restore the Zensical cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          key: zensical-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            zensical-
+
+      - name: Install dependencies
+        run: ./scripts/prepare-docs.sh
+
+      - name: Build the Pages tree (docs, both locales, strict validation)
+        run: ./scripts/build-pages.sh prepare=no serve=no
+
+      # Only main writes caches. A PR's cache is visible to that PR alone, so
+      # saving one per PR would only fill the 10 GB quota.
+      - name: Save the Zensical cache
+        if: github.ref == 'refs/heads/main'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          key: zensical-${{ env.cache_id }}
+          path: .cache

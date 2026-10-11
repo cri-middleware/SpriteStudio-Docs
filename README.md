@@ -45,6 +45,7 @@ scripts/
 mkdocs.base.yml               # everything shared by both locales
 mkdocs.yml                    # English  -> site/
 mkdocs.ja.yml                 # Japanese -> site/ja/
+.github/workflows/ci.yml      # build (strict) on every pull request, and weekly
 .github/workflows/pages.yml   # build (strict) + deploy via GitHub Pages
 ```
 

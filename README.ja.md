@@ -38,6 +38,7 @@ scripts/
 mkdocs.base.yml               # 両ロケール共通の設定
 mkdocs.yml                    # 英語   -> site/
 mkdocs.ja.yml                 # 日本語 -> site/ja/
+.github/workflows/ci.yml      # プルリクエストごとと毎週のビルド（strict）
 .github/workflows/pages.yml   # ビルド（strict）＋ GitHub Pages へのデプロイ
 ```
 
