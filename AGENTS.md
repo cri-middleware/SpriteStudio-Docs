@@ -2,76 +2,60 @@
 
 ## Operating rules
 
-*   Keep changes scoped to the requested task. Unrequested hardening is a suggestion, not a commit; a defect
-    you actually hit in the code you touched is not — fix it, or say plainly why you did not.
-*   Do not commit, push, or open PRs unless the user explicitly asks.
-*   Before editing, read enough surrounding context to understand callers and invariants, the ones below
-    included. If the read tool truncated a file, read the remaining ranges first.
-*   Follow the existing style of the file you touch (naming, type usage, control flow, error handling).
-*   **Anything that exists twice changes twice** — a page and its translation, a `.sh` and its `.ps1`. A
-    change that lands in one half is the defect this family produces most.
-*   **Never break a line between two Japanese characters**: Chrome draws that break as a visible space.
-*   **Finish by running this repository's checks**: `scripts/build-docs.sh`, both locales, the build a
-    pull request's CI runs. Read what a run says it verified rather than its exit code — several checks
-    here pass, or skip themselves, when a prerequisite is missing.
-*   **Do not restate here what another file owns.** The table below says which file that is; a fact that
-    belongs to none of them goes where it will be seen to go stale.
-*   **This portal owns no code**, so every claim is sourced from a sibling repository. Update this file when
-    one of the invariants below changes.
+*   **Unrequested hardening is a suggestion, not a commit.** A defect you hit in code you touched is not:
+    fix it, or say why you did not.
+*   **Anything that exists twice changes twice** — a page and its translation, a `.sh` and its `.ps1`.
+    Missing one half is this family's most common defect.
+*   **Never break a line between two Japanese characters**; Chrome renders the break as a space.
+*   **Finish with this repository's checks**: `scripts/build-docs.sh`, both locales, the build CI runs.
+    Read what a run says it verified, not its exit code — several checks pass, or skip themselves, without
+    a prerequisite.
+*   **Do not restate what another file owns**; the table below says which file. A fact no file owns goes
+    where its staleness will be noticed.
+*   **This portal owns no code**: every claim is sourced from a sibling repository.
 
 ## What this repo is
 
-A Zensical **documentation portal** for the SpriteStudio SDK and its official players: the entry
-point plus the **cross-cutting** material belonging to no single player. Every player documents
-itself in its own repository, so `docs/*/players/` pages stay **thin** — a short description and
-links out, never full player documentation.
+A Zensical documentation portal for the SpriteStudio SDK and its official players: the entry point,
+plus the cross-cutting material no single player owns. Each player documents itself in its own
+repository, so `docs/*/players/` pages stay thin — a short description and links out.
 
 ## Where each answer is written
 
 | Question | File |
 |---|---|
-| How to set up, build and check the site, and the rules for writing a page | [CONTRIBUTING.md](./CONTRIBUTING.md) |
-| What each script does and takes | that script's `--help` |
-| How the site is published | [RELEASING.md](./RELEASING.md), maintainers only |
+| Setup, build and checks, and the rules for writing a page | [CONTRIBUTING.md](./CONTRIBUTING.md) |
+| Publishing the site, maintainers only | [RELEASING.md](./RELEASING.md) |
 | What a `players/` page owes its reader | `SpriteStudio-SDK/MAINTAINING_PLAYERS.md` |
-| Why a YAML sequence may live in only one config | the header comment of `mkdocs.base.yml` |
-| Everything else about a config or a template | the comment at the point of use |
+| What a script takes | its `--help` |
 
 ## Invariants
 
-*   **Three folders per locale, one nav section each**: `overview/` → 🗺️ Overview, `players/` →
-    🎮 Players & Tools, `sdk/` → 🛠️ SDK & Development, and `index.md` / `support.md` / `license.md`
-    at the root → ℹ️ Support & License. Keep it one-to-one.
-*   **Every `players/` page answers four questions in order** (from `MAINTAINING_PLAYERS.md`): what
-    you install, how a `.sspj` becomes a `.ssab`, how it gets on screen, where to read next (three
-    links at most). An admonition above them names the shape — **editor-first** (Unity, Godot) or
-    **code-first**; nothing goes above question 1. Depart only where the host collides with it, and
-    say why there (`converter.md` is a conversion tool; `wgpu.md` answers question 1 with a table).
-    A missing docs site is not such a case.
-*   **One fact, one page** — link instead of restating. `sdk/concepts.md` owns what the core
-    **provides**; `sdk/limitations.md` what it does **not**, plus every all-player constraint —
-    technical constraints only, since work not built yet belongs in a ROADMAP (text and 9-slice
-    parts, which no player draws, are the one exception); `overview/player-differences.md` **only
-    what differs between players**; `overview/conversion.md`
-    how project files map onto what conversion emits; `sdk/glossary.md` what each extension *is*.
-    `sdk/concepts.md` follows the SDK's Player Porting Guide (`libs/ssruntime/docs`, its table of
-    contents), `sdk/limitations.md` the guide's *Introduction → Limitations*, and
-    `overview/player-differences.md` each player's own docs.
-*   **Two of those keep a fixed shape.** `sdk/limitations.md` holds **one altitude**: four `##`
-    buckets (playback, what the player supplies, rendering, shipping), every constraint a `###`
-    inside one — a fact promoted to `##` is the bug. `overview/player-differences.md` is a
-    **one-line-per-player table over one `###` per player**; an overgrown cell belongs in one. In
-    `sdk/limitations.md`, `##` headings carry an emoji, `###` none.
-*   **Every page reads as published** — a sibling repository, its GitHub Pages site and its Releases
-    are linked as live, never marked 🚧, "coming soon" or "準備中", and a registry a package is not on
-    goes unmentioned. `en` and `ja` carry the same links file for file.
-*   **A repository added to the portal needs five edits per locale** — a card in `index.md`, a row
-    in `license.md`, a row in `support.md`, the `nav` entry, the `players/` page — plus one entry in
-    `llmstxt.sections` of `mkdocs.base.yml`, once for both locales. Nothing checks it.
-*   **`LICENSE.md` holds the licence text and nothing else.** GitHub scores the whole file against
-    known texts, and one `SPDX-License-Identifier:` line costs ~6 points of similarity — enough to
-    flip the repo to "Other". The translation lives in `LICENSE.ja.md`; do not merge them back.
-*   **`.github/ISSUE_TEMPLATE/config.yml` mirrors `SUPPORT.md`** — change one, change the other.
+*   **Three folders per locale, one nav section each**, one-to-one: `overview/` → 🗺️ Overview, `players/`
+    → 🎮 Players & Tools, `sdk/` → 🛠️ SDK & Development, and the root's `index.md` / `support.md` /
+    `license.md` → ℹ️ Support & License.
+*   **A `players/` page answers four questions in order**: what you install, how a `.sspj` becomes a
+    `.ssab`, how it gets on screen, and where to read next (three links at most). An admonition above them
+    names the shape — **editor-first** (Unity, Godot) or **code-first** — and nothing else precedes
+    question 1. Depart only where the host collides with the shape, and say why on the page
+    (`converter.md`, `wgpu.md`); a missing docs site is not such a case.
+*   **One fact, one page; link instead of restating.** `sdk/concepts.md` owns what the core provides,
+    following the Player Porting Guide's contents. `sdk/limitations.md` owns what it does not, and every
+    all-player technical constraint, following the guide's Limitations; unbuilt work belongs in a ROADMAP,
+    except text and 9-slice parts. `overview/player-differences.md` owns only what differs between players,
+    `overview/conversion.md` how project files map onto conversion output, and `sdk/glossary.md` what each
+    extension is.
+*   **`sdk/limitations.md` holds one altitude**: four `##` buckets with emoji (playback, what the player
+    supplies, rendering, shipping), and every constraint a `###` without one inside a bucket.
+    **`overview/player-differences.md` is a one-line-per-player table over one `###` per player**; an
+    overgrown cell moves into its `###`.
+*   **A repository added to the portal needs five edits per locale** — a card in `index.md`, rows in
+    `license.md` and `support.md`, the `nav` entry and the `players/` page — plus one `llmstxt.sections`
+    entry in `mkdocs.base.yml`. Nothing checks it.
+*   **`LICENSE.md` holds the licence text and nothing else**: GitHub scores the whole file, and an
+    `SPDX-License-Identifier:` line costs enough similarity to flip it to "Other". The translation stays in
+    `LICENSE.ja.md`.
+*   **`.github/ISSUE_TEMPLATE/config.yml` mirrors `SUPPORT.md`.**
 *   **No `edit_uri`**, here or in the player repos: nothing validates a branch name.
-*   **Do not adopt `zensical.toml` or Zensical-only syntax**; the configs are valid MkDocs configs.
-    The `pymdownx.emoji` block names a module Zensical never imports: inert here, and not a bug.
+*   **No `zensical.toml` and no Zensical-only syntax**; the configs stay valid MkDocs. The
+    `pymdownx.emoji` block names a module Zensical never imports — inert, not a bug.
