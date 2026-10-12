@@ -8,13 +8,13 @@
 
 ## 🧭 どれを使うべき？
 
-3 つのツールが出力する `.ssab` / `.ssqb` は同一です（[理由](./conversion.md)）。出力では差がつかないので、自分のワークフローに合うものを選んでください。
+3 つのツールが出力する `.ssab` / `.ssqb` は同一です（[理由](./conversion.md)）。出力では差がつかないので、自分のワークフローに合うものを選んでください。どれも embedded の `.ssab` を出力できます（ブラウザ版と GUI は **Embedded Assets**、CLI は `--embedded`）。読める Player は限られるので、先に [reference と embedded](./conversion.md#reference-and-embedded) を確認してください。
 
 | 状況 | 使うツール | 理由 |
 |---|---|---|
 | 何もインストールできない、単発でさっと | **`ssconverter-web`** | ブラウザ内で完結、導入ゼロ |
 | デスクトップで、たまに変換、GUI がよい | **SSConverter GUI**（macOS / Windows） | ドラッグ&ドロップ、ターミナル不要 |
-| ビルドや CI/CD の自動化、大量に変換 | **`ssconverter-cli`** | スクリプト化・バッチモード・`--embedded` |
+| ビルドや CI/CD の自動化、大量に変換 | **`ssconverter-cli`** | スクリプト化・バッチモード |
 
 !!! tip "迷ったらブラウザから"
     ssconverter-web は Web
