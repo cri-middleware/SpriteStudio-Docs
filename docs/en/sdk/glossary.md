@@ -58,7 +58,7 @@ These are the part types as SpriteStudio names them; in the `.ssab` schema each 
 | **Animation mixing / crossfade** | Stacking several animations on tracks and mixing them by weight, or fading between them. Constrained to one `.ssab` - see [Shared Limitations](./limitations.md). |
 | **Sub-frame interpolation** | Evaluating between whole frames, so playback stays smooth above the animation's authored frame rate (and in slow motion). |
 | **Name hash** | Every named entity in `.ssab` carries a 32-bit FNV-1a hash of its name, so the runtime looks names up without string comparison. |
-| **Embedded mode** | An optional conversion mode that additionally packs the referenced **binary assets** - images, sounds - into the `.ssab`. (The `ss*e` data the pack references is embedded either way; see [Format Specification](./format-spec.md).) Comes with caveats - see [Shared Limitations](./limitations.md). |
+| **Embedded mode** | An optional conversion mode that additionally packs the referenced **binary assets** - images, sounds - into the `.ssab`. (The `ss*e` data the pack references is embedded either way; see [Format Specification](./format-spec.md).) How it differs from the default, reference, and which players read it: [Converting Assets](../overview/conversion.md#reference-and-embedded). Comes with caveats - see [Shared Limitations](./limitations.md). |
 | **External instance** | An Instance part that mounts an animation living in *another* `.ssab`. That file has to be supplied separately. |
 | **`no_std`** | The Rust mode the core is written in: no OS and no standard library, which is what lets it run from embedded targets to browsers. |
 

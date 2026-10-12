@@ -65,7 +65,7 @@ conversion path you take**.
 | `.ssae` (animation pack) | Part structure and keyframes | Becomes one `.ssab` |
 | `.ssce` (cell map) | The image used, and the cells cut out of it (position, size, pivot) | **Never becomes a file of its own - it is folded into the `.ssab`** |
 | `.ssqe` (sequence) | A playlist of animations | Becomes one `.ssqb` |
-| Images (`.png` and so on) | The artwork itself | Copied to the output location and referenced by the `.ssab` |
+| Images (`.png` and so on) | The artwork itself | Copied to the output location and referenced by the `.ssab` (inside the `.ssab` when [embedded](#reference-and-embedded)) |
 
 See the [Glossary](../sdk/glossary.md) for the terms and the
 [Format Specification](../sdk/format-spec.md) for the design decisions behind the conversion unit.
@@ -75,3 +75,17 @@ See the [Glossary](../sdk/glossary.md) for the terms and the
     is reflected by replacing the image file alone, but if you add, move or resize cells - or change
     the overall image size - **rebuild the `.ssab` and ship it alongside**. Shipping only the new
     image renders it against the old cut-out rectangles, so the artwork shifts.
+
+### Reference and embedded { #reference-and-embedded }
+
+A `.ssab` comes in two kinds, which differ in where the images and sounds live.
+
+| Kind | Where images and sounds live | Players that read it | Where it fits |
+|---|---|---|---|
+| **Reference** | Outside the `.ssab`, copied to the output location on conversion | All | Handing the files to the engine's own asset management. Images can be swapped, and shared by several `.ssab` |
+| **Embedded** | Inside the `.ssab` | Web, Flutter, React Native, wgpu | Shipping a single file, as with web ads or small apps |
+
+Converting on import produces reference by default. Embedded comes from a standalone tool's
+embedded mode (`--embedded` on the CLI, **Embedded Assets** in the GUI and the browser tool).
+Unity, Godot and Ren'Py do not read embedded, so give them reference. Embedded's constraints are
+in [Shared Limitations](../sdk/limitations.md).

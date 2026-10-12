@@ -11,13 +11,15 @@ player converts for you, so you run a standalone tool yourself - for example whe
 ## 🧭 Which one should I use?
 
 All three emit the same `.ssab` / `.ssqb` ([why](./conversion.md)) - pick by workflow, not by
-output.
+output. Each can emit an embedded `.ssab` too (**Embedded Assets** in the browser tool and the
+GUI, `--embedded` on the CLI); not every player reads one, so check
+[Reference and embedded](./conversion.md#reference-and-embedded) first.
 
 | Your situation | Use | Why |
 |---|---|---|
 | Can't install anything, or just a quick one-off | **`ssconverter-web`** | Runs fully in the browser, nothing to install |
 | On the desktop, occasional conversions, prefer a UI | **SSConverter GUI** (macOS / Windows) | Drag & drop, no terminal needed |
-| Automating a build, CI/CD, or many projects at once | **`ssconverter-cli`** | Scriptable, batch mode, `--embedded` |
+| Automating a build, CI/CD, or many projects at once | **`ssconverter-cli`** | Scriptable, batch mode |
 
 !!! tip "Not sure? Start in the browser."
     ssconverter-web is a web
