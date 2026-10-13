@@ -16,7 +16,7 @@
 これらのエンジン向けの公式 Player パッケージには、変換ツールとして `libssconverter` が**バンドル**されています。エディタなどの開発環境側で自動的に実行されるため、その場で変換できます。**追加インストールは不要**です。
 
 - **Unity** - [SpriteStudio Player for Unity](../players/unity.md) 付属の Importer がドラッグ&ドロップで変換します。
-- **Godot** - [SpriteStudio Player for Godot](../players/godot.md) の SS Import Dock がドラッグ&ドロップで変換します。
+- **Godot** - [SpriteStudio Player for Godot](../players/godot.md) の SS Importer ドックがドラッグ&ドロップで変換します。
 - **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md) のオートインポート（`sswatch`）が保存のたびに再変換し、実行中のアプリへ反映します（`SpriteStudio_Source/` にソースを配置）。単発の変換は `ssconvert` CLI で行えます。
 - **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) が起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。
 - **TyranoBuilder** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、プロジェクトを開いたときにエディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントのドロップダウンに現れます。
