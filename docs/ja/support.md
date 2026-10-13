@@ -11,7 +11,7 @@ SDK と各公式 Player はそれぞれ別のリポジトリです。そのた�
 | [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) | [Issues](https://github.com/cri-middleware/SpriteStudio-SDK/issues) | 変換結果、再生計算、`.ssab` / `.ssqb` フォーマット、`ssconverter-cli` |
 | [SSPlayerForUnity](https://github.com/cri-middleware/SSPlayerForUnity) | [Issues](https://github.com/cri-middleware/SSPlayerForUnity/issues) | Unity へのインポート、コンポーネント、描画 |
 | [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | [Issues](https://github.com/cri-middleware/SSPlayerForWeb/issues) | ブラウザ向け Player 群、`ssconverter-web` |
-| [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | [Issues](https://github.com/cri-middleware/SSPlayerForGodot/issues) | GDExtension / カスタムモジュール、SS Import Dock |
+| [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | [Issues](https://github.com/cri-middleware/SSPlayerForGodot/issues) | GDExtension / カスタムモジュール、SS Importer ドック |
 | [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | [Issues](https://github.com/cri-middleware/SSPlayerForFlutter/issues) | `SpriteStudioView`、Flame アダプター、`ssconvert` |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | [Issues](https://github.com/cri-middleware/SSPlayerForRenPy/issues) | Ren'Py の Displayable、自動インポート |
 | [SSPlayerForWgpu](https://github.com/cri-middleware/SSPlayerForWgpu) | [Issues](https://github.com/cri-middleware/SSPlayerForWgpu/issues) | Rust クレートと C / C++・ブラウザの各フェイス、Bevy アダプター |

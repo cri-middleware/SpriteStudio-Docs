@@ -13,8 +13,8 @@ Godot project root. Godot 4.7-series. The player comes in two forms:
 - **GDExtension** - the drop-in binary add-on the Release carries; no engine rebuild required.
 - **Custom module** - built from source into a custom Godot build for tighter integration.
 
-**2. `.sspj` -> `.ssab`** - drag & drop the `.sspj` onto the Godot editor. The add-on's SS Import
-Dock converts it in place, so there is no separate tool to install.
+**2. `.sspj` -> `.ssab`** - drag & drop the `.sspj` onto the Godot editor. The add-on's SS Importer
+dock converts it in place, so there is no separate tool to install.
 
 **3. Getting it on screen** - add a `SpriteStudioPlayer2D` node and assign the `.ssab` to its
 **Ssab** property.
