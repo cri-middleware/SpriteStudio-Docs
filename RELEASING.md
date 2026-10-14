@@ -32,7 +32,7 @@ gh workflow run pages.yml --ref main
 gh run watch                        # the run takes a few seconds to appear
 ```
 
-Always from `main`: nothing in the workflow stops a run started on another branch from publishing that branch. **Run workflow** on the Actions page offers `main` by default. The build is `--strict`, so a broken internal link fails the run before anything is deployed, and the site stays as it was.
+Always from `main`: a run started on another branch fails at its first step and deploys nothing. **Run workflow** on the Actions page offers `main` by default. The build is `--strict`, so a broken internal link fails the run before anything is deployed, and the site stays as it was.
 
 ### 3. Check the live site
 
@@ -80,7 +80,7 @@ gh workflow run pages.yml --ref main
 gh run watch                        # run が一覧に出るまで数秒かかる
 ```
 
-必ず `main` から実行します。別のブランチから始めた実行がそのブランチを公開するのを、ワークフローは止めません。Actions ページの **Run workflow** は既定で `main` を選びます。ビルドは `--strict` なので、内部リンクが切れていれば何もデプロイされないまま実行が失敗し、サイトはそのまま残ります。
+必ず `main` から実行します。別のブランチから始めた実行は最初のステップで失敗し、何もデプロイしません。Actions ページの **Run workflow** は既定で `main` を選びます。ビルドは `--strict` なので、内部リンクが切れていれば何もデプロイされないまま実行が失敗し、サイトはそのまま残ります。
 
 ### 3. 公開されたサイトを確かめる
 

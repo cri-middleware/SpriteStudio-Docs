@@ -24,6 +24,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Only main is published: a run started on another branch would replace the
+      # site with that branch. It fails here rather than being skipped, so a run
+      # that deployed nothing does not look like one that did.
+      - name: Refuse to publish anything but main
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "::error::pages.yml publishes main only; this run was started on ${GITHUB_REF}."
+          exit 1
+
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
