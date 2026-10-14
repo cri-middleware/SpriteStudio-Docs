@@ -85,7 +85,8 @@ Because every official player evaluates animations with `libssruntime`, this fea
 - **Zero-math integration & visual consistency** - the SDK does the state computation; your
   engine just renders the shared `DrawBatch`.
 - **Ultra-compact payload & SIMD** - the `.ssab` format uses a columnar layout and hash-based
-  lookups for near-zero parsing overhead; the runtime leverages SIMD (`f32x4`) everywhere.
+  lookups for near-zero parsing overhead; the runtime leverages SIMD (`f32x4`), with a
+  WebAssembly build without it for runtimes that have none.
 - **Extreme portability** - the core is strict `#![no_std]` Rust with no OS/stdlib
   dependency; integrates via C-API or WASM, from embedded devices to browsers.
 
