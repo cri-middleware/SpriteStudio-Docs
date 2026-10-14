@@ -24,5 +24,4 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 
 Flutter の 2 つのデモは同 Player の Web ターゲットで動作します。Web ターゲットは同 Player のドキュメント上 developer preview の位置づけです。WebGPU デモには WebGPU 対応ブラウザが必要です。
 
-**自分のアニメをプレビューしたい場合**、デモが受け取るのは `.ssab`＋`.png` なので、先に `.sspj` を変換してください。上記のブラウザ版コンバーターでも、
-[スタンドアロンツール](./convert-with-a-standalone-tool.md) でも構いません。全体の流れは [アセットの変換](./conversion.md) にまとまっています。手元にプロジェクトがない場合は、無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)がそのまま使えます。
+**自分のアニメをプレビューしたい場合**、デモが受け取るのは `.ssab`＋`.png` なので、先に `.sspj` を変換してください。上記のブラウザ版コンバーターでも、[スタンドアロンツール](./convert-with-a-standalone-tool.md) でも構いません。全体の流れは [アセットの変換](./conversion.md) にまとまっています。手元にプロジェクトがない場合は、無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)がそのまま使えます。
