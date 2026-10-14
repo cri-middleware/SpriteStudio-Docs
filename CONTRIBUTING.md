@@ -51,7 +51,7 @@ Both locales, English first: the English build clears `site/`, and the Japanese 
 
 On Windows the executable is `.\.venv\Scripts\zensical`.
 
-The toolchain versions in `docs/requirements.txt` are pinned deliberately - please bump them intentionally, not incidentally, and **in step with the sibling repositories**. Every sibling that builds its docs with Python - the SDK, Unity, Godot, Ren'Py, Flutter, wgpu, SSConverterGUI - pins the same [Zensical](https://zensical.org) version this repository does, so a bump here is a bump everywhere. (SSPlayerForWeb and SSPlayerForReactNative build with VitePress and have no pin to match.)
+The toolchain versions in `docs/requirements.txt` are pinned deliberately - please bump them intentionally, not incidentally, and **in step with the sibling repositories**. Every sibling that builds its docs with Python - the SDK, Unity, Godot, Ren'Py, Flutter, wgpu, SSConverterGUI - pins the same [Zensical](https://zensical.org) version this repository does, so a bump here is a bump everywhere. (SSPlayerForWeb and SSPlayerForReactNative build with VitePress and have no pin to match.) Bump to a release uploaded at least seven days earlier: a release is likeliest to be yanked, or found compromised, in its first days, and pip run with a seven-day cooldown (`PIP_UPLOADED_PRIOR_TO=P7D`) does not install a younger one. If the new version raises its `Requires-Python`, raise `MIN_PYTHON` in `scripts/prepare-docs.sh` and `.ps1` with it.
 
 ## Documentation Standards
 
@@ -133,7 +133,7 @@ scripts/build-pages.sh serve=yes # 公開ツリー、両ロケール -> http://l
 
 Windows では実行ファイルは `.\.venv\Scripts\zensical` です。
 
-`docs/requirements.txt` のバージョンは意図的に固定しています。更新はついでではなく、意図をもって、かつ**兄弟リポジトリと足並みを揃えて**行ってください。Python でドキュメントをビルドする兄弟リポジトリ（SDK・Unity・Godot・Ren'Py・Flutter・wgpu・SSConverterGUI）は、このリポジトリと同じ [Zensical](https://zensical.org) のバージョンを固定しているため、ここでの更新は全リポジトリでの更新を意味します（SSPlayerForWeb と SSPlayerForReactNative は VitePress のため対象外です）。
+`docs/requirements.txt` のバージョンは意図的に固定しています。更新はついでではなく、意図をもって、かつ**兄弟リポジトリと足並みを揃えて**行ってください。Python でドキュメントをビルドする兄弟リポジトリ（SDK・Unity・Godot・Ren'Py・Flutter・wgpu・SSConverterGUI）は、このリポジトリと同じ [Zensical](https://zensical.org) のバージョンを固定しているため、ここでの更新は全リポジトリでの更新を意味します（SSPlayerForWeb と SSPlayerForReactNative は VitePress のため対象外です）。更新先は、アップロードから 7 日以上たったリリースにしてください。取り下げられたり侵害が見つかったりするのは公開直後の数日が最も多く、7 日のクールダウン（`PIP_UPLOADED_PRIOR_TO=P7D`）を設定した pip はそれより新しいリリースを入れません。新しい版が `Requires-Python` を引き上げたら、`scripts/prepare-docs.sh` と `.ps1` の `MIN_PYTHON` も合わせて引き上げてください。
 
 ## ドキュメントの規約
 
