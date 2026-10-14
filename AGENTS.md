@@ -54,7 +54,7 @@ repository, so `docs/*/players/` pages stay thin — a short description and lin
     overgrown cell moves into its `###`.
 *   **A repository added to the portal needs six edits per locale** — a card in `index.md`, rows in
     `license.md` and `support.md`, the `players/` page, and its entries in that locale config's `nav` and
-    `llmstxt.sections`. Nothing checks it.
+    `llmstxt.sections`. `scripts/check-docs.py` checks that they agree.
 *   **`LICENSE.md` holds the licence text and nothing else**: GitHub scores the whole file, and an
     `SPDX-License-Identifier:` line costs enough similarity to flip it to "Other". The translation stays in
     `LICENSE.ja.md`.

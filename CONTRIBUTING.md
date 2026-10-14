@@ -36,11 +36,11 @@ You need Python 3.11 or later, Zensical's minimum. The `python3` that macOS ship
 
 ```bash
 scripts/prepare-docs.sh          # once: .venv + the pins in docs/requirements.txt
-scripts/build-docs.sh            # English then Japanese, both --strict: what CI runs
+scripts/build-docs.sh            # the checks, then English and Japanese, both --strict: what CI runs
 scripts/build-pages.sh serve=yes # the published tree, both locales -> http://localhost:8000/
 ```
 
-Both locales, English first: the English build clears `site/`, and the Japanese site lives inside it at `site/ja`, so an English-only build leaves no Japanese site at all. `mkdocs.base.yml` sets `strict: true`, so a broken internal link or a nav entry pointing at a missing page fails the build. `build-pages.sh serve=yes` serves both locales from one server, the only way to see the header's language selector resolve. `pages.yml`'s build job **is** that script, so a publish builds exactly what a local run with the same options builds, and a change to `prepare-docs.sh` or `build-pages.sh` is a change to the publish: keep them executable (mode `100755`). `.ps1` twins on Windows, `key=value` options and `--help` on every script.
+Both locales, English first: the English build clears `site/`, and the Japanese site lives inside it at `site/ja`, so an English-only build leaves no Japanese site at all. `mkdocs.base.yml` sets `strict: true`, so a broken internal link or a nav entry pointing at a missing page fails the build. Before either build, `build-docs.sh` runs `scripts/check-docs.py`, which fails on what `--strict` cannot see; its `--help` lists the checks. `build-pages.sh serve=yes` serves both locales from one server, the only way to see the header's language selector resolve. `pages.yml`'s build job **is** that script, so a publish builds exactly what a local run with the same options builds, and a change to `prepare-docs.sh` or `build-pages.sh` is a change to the publish: keep them executable (mode `100755`). `.ps1` twins on Windows, `key=value` options and `--help` on every script.
 
 `zensical serve` previews one locale as you write, and validates nothing, `--strict` or not:
 
@@ -56,12 +56,12 @@ The toolchain versions in `docs/requirements.txt` are pinned deliberately - plea
 ## Documentation Standards
 
 ### Both languages, always
-The site uses folder-based i18n: every page exists twice, as `docs/en/<path>` and `docs/ja/<path>`. When you add, move, or rename a page, **do it in both** - otherwise the strict build fails. There is no fallback locale: each locale is a separate build over its own `docs_dir`, so a page missing from `docs/ja/` is not quietly served in English, it is a nav entry pointing at nothing.
+The site uses folder-based i18n: every page exists twice, as `docs/en/<path>` and `docs/ja/<path>`. When you add, move, or rename a page, **do it in both**. There is no fallback locale: each locale is a separate build over its own `docs_dir`, so a page missing from `docs/ja/` is not quietly served in English, it is a nav entry pointing at nothing, and the strict build fails on it. The strict build says nothing about a page that no nav names; `scripts/check-docs.py` fails on that, and on the two locales' pages differing.
 
 If you can only write one language confidently, say so in the PR; a maintainer can help with the other side rather than let the two drift.
 
 ### Navigation lives in the two locale configs
-There is a `nav:` tree in `mkdocs.yml` (English) and another in `mkdocs.ja.yml` (Japanese). Both use locale-relative paths (`sdk/glossary.md`, no `en/` or `ja/` prefix) and the two must stay identical in structure - only the labels differ, written directly in the language rather than looked up from a translation map. Add a page to one and forget the other, and that page simply never appears in that locale's navigation. Each locale config also carries that locale's `llms.txt` index, `llmstxt.sections`, written in its language: it names every nav page in nav order.
+There is a `nav:` tree in `mkdocs.yml` (English) and another in `mkdocs.ja.yml` (Japanese). Both use locale-relative paths (`sdk/glossary.md`, no `en/` or `ja/` prefix) and the two must stay identical in structure - only the labels differ, written directly in the language rather than looked up from a translation map. Add a page to one and forget the other, and `scripts/check-docs.py` fails the build. Each locale config also carries that locale's `llms.txt` index, `llmstxt.sections`, written in its language: it names every nav page in nav order, and the same check holds it to that.
 
 Settings shared by both locales live in `mkdocs.base.yml`, which the two inherit. One rule governs what may go where: **a YAML sequence must be defined in exactly one of the three files.** Zensical's `INHERIT` concatenates sequences rather than replacing them, so a `nav` in the base as well as a locale config renders both navigations, one after the other.
 
@@ -118,11 +118,11 @@ Python 3.11 以上が必要です（Zensical の要件）。macOS に同梱の `
 
 ```bash
 scripts/prepare-docs.sh          # 一度だけ: .venv と docs/requirements.txt のピン
-scripts/build-docs.sh            # 英語 → 日本語の順に --strict でビルド。CI と同じビルド
+scripts/build-docs.sh            # チェックのあと、英語 → 日本語の順に --strict でビルド。CI と同じビルド
 scripts/build-pages.sh serve=yes # 公開ツリー、両ロケール -> http://localhost:8000/
 ```
 
-必ず両ロケールを、英語を先にビルドします。英語ビルドは `site/` を消去し、日本語サイトはその内側（`site/ja`）に出力されるため、英語だけをビルドすると日本語サイトは残らず消えます。`mkdocs.base.yml` が `strict: true` を設定しているので、内部リンク切れや、存在しないページを指す nav エントリーがあるとビルドは失敗します。`build-pages.sh serve=yes` は両ロケールを 1 つのサーバーで配信します。ヘッダーの言語セレクターの動作を確認できるのはこの方法だけです。`pages.yml` のビルドジョブは**このスクリプト**なので、公開でビルドされるものは、同じオプションで手元でビルドしたものと一致します。`prepare-docs.sh` と `build-pages.sh` への変更は公開への変更でもあるため、実行権限（モード `100755`）を保ってください。Windows は `.ps1` 版を使い、どのスクリプトも `key=value` 形式のオプションと `--help` を取ります。
+必ず両ロケールを、英語を先にビルドします。英語ビルドは `site/` を消去し、日本語サイトはその内側（`site/ja`）に出力されるため、英語だけをビルドすると日本語サイトは残らず消えます。`mkdocs.base.yml` が `strict: true` を設定しているので、内部リンク切れや、存在しないページを指す nav エントリーがあるとビルドは失敗します。`build-docs.sh` はどちらのビルドよりも先に `scripts/check-docs.py` を実行し、`--strict` では見えないものがあれば失敗します。チェックの一覧はその `--help` にあります。`build-pages.sh serve=yes` は両ロケールを 1 つのサーバーで配信します。ヘッダーの言語セレクターの動作を確認できるのはこの方法だけです。`pages.yml` のビルドジョブは**このスクリプト**なので、公開でビルドされるものは、同じオプションで手元でビルドしたものと一致します。`prepare-docs.sh` と `build-pages.sh` への変更は公開への変更でもあるため、実行権限（モード `100755`）を保ってください。Windows は `.ps1` 版を使い、どのスクリプトも `key=value` 形式のオプションと `--help` を取ります。
 
 執筆中は `zensical serve` で 1 ロケールをプレビューできます。`--strict` を付けても何も検証しません。
 
@@ -138,12 +138,12 @@ Windows では実行ファイルは `.\.venv\Scripts\zensical` です。
 ## ドキュメントの規約
 
 ### 常に両言語
-フォルダー方式の i18n を使っており、すべてのページは `docs/en/<path>` と `docs/ja/<path>` の 2 か所に存在します。ページの追加・移動・リネームは **必ず両方** に行ってください。片方だけだと strict ビルドが失敗します。フォールバックのロケールはありません。ロケールごとに `docs_dir` の異なる別のビルドなので、`docs/ja/` に無いページが英語で代替表示されることはなく、リンク先の無い nav エントリーになります。
+フォルダー方式の i18n を使っており、すべてのページは `docs/en/<path>` と `docs/ja/<path>` の 2 か所に存在します。ページの追加・移動・リネームは **必ず両方** に行ってください。フォールバックのロケールはありません。ロケールごとに `docs_dir` の異なる別のビルドなので、`docs/ja/` に無いページが英語で代替表示されることはなく、リンク先の無い nav エントリーになり、strict ビルドが失敗します。一方、どの nav にも載っていないページについて strict ビルドは何も言いません。それを失敗にするのは `scripts/check-docs.py` で、2 つのロケールのページが食い違う場合も同じです。
 
 片方の言語しか自信がない場合は、その旨を PR に書いてください。両者が乖離するくらいなら、メンテナーがもう一方を補います。
 
 ### ナビゲーションは2つのロケール設定に
-`nav:` は `mkdocs.yml`（英語）と `mkdocs.ja.yml`（日本語）にそれぞれあります。どちらもロケール相対のパス（`sdk/glossary.md` のように `en/` や `ja/` を付けない）を使い、構造は完全に一致させてください。異なるのはラベルだけで、翻訳マップを介さず各言語で直接書きます。片方に追加してもう片方を忘れると、そのロケールのナビにはそのページが現れません。各ロケールの設定ファイルには、そのロケールの `llms.txt` の目次（`llmstxt.sections`）もその言語で書かれています。nav のすべてのページを nav と同じ順に並べます。
+`nav:` は `mkdocs.yml`（英語）と `mkdocs.ja.yml`（日本語）にそれぞれあります。どちらもロケール相対のパス（`sdk/glossary.md` のように `en/` や `ja/` を付けない）を使い、構造は完全に一致させてください。異なるのはラベルだけで、翻訳マップを介さず各言語で直接書きます。片方に追加してもう片方を忘れると、`scripts/check-docs.py` がビルドを失敗させます。各ロケールの設定ファイルには、そのロケールの `llms.txt` の目次（`llmstxt.sections`）もその言語で書かれています。nav のすべてのページを nav と同じ順に並べ、同じチェックがそれを確かめます。
 
 両ロケール共通の設定は `mkdocs.base.yml` にあり、2つの設定ファイルがこれを継承します。どこに何を書けるかは1つのルールで決まります — **YAML の配列は3ファイルのうち必ず1つにだけ定義すること。** Zensical の `INHERIT` は配列を置き換えではなく連結するため、base とロケール設定の両方に `nav` を置くと、2つのナビが続けて描画されます。
 

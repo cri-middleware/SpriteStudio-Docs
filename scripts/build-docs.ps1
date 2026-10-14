@@ -6,7 +6,7 @@
 #   scripts/build-docs.ps1             # English then Japanese, both strict
 #   scripts/build-docs.ps1 locale=ja   # Japanese only, into site/ja
 #
-# Two things this script exists to get right:
+# Three things this script exists to get right:
 #
 #   1. Order. The Japanese site is written *inside* the English one (site/ja),
 #      and a build clears its own output directory first -- so `zensical build`
@@ -14,6 +14,9 @@
 #      order publishes a site with no Japanese pages at all.
 #   2. --strict, always. mkdocs.base.yml sets strict: true as well; the flag is
 #      spelled out here so the build stays strict if the config ever loses it.
+#   3. What --strict cannot see. scripts/check-docs.py runs first and fails the
+#      build on a page no nav names, the locales or their llms.txt sections
+#      drifting apart, and a Japanese line break that renders as a space.
 #
 # `zensical serve` is deliberately not wrapped: it validates nothing (--strict is
 # accepted and does nothing), it serves one locale at a time, and it is a
@@ -47,6 +50,8 @@ function Show-Usage {
     Write-Host ""
     Write-Host "Output: site/ (English) and site/ja/ (Japanese). Both builds are --strict, so a"
     Write-Host "broken internal link or a nav entry pointing at a missing page fails the build."
+    Write-Host "scripts/check-docs.py runs first and fails it on what --strict cannot see; its"
+    Write-Host "--help lists the checks."
     Write-Host ""
     Write-Host "locale=en on its own DELETES site/ja: the English build clears site/, and the"
     Write-Host "Japanese site lives inside it. Use locale=all before serving or publishing."
@@ -120,10 +125,28 @@ function Invoke-Checked {
     if ($LASTEXITCODE -ne 0) { Fail "$What failed ($LASTEXITCODE)" $LASTEXITCODE }
 }
 
+# The venv's interpreter when there is one; the checker needs only the standard
+# library, so any Python 3 on PATH does otherwise. py first, as the Windows
+# launcher: a bare `python` there can be the Store stub that does nothing.
+$PYTHON = $null
+foreach ($candidate in @((Join-Path $VENV_BIN "python.exe"), (Join-Path $VENV_BIN "python"))) {
+    if (Test-Path $candidate) { $PYTHON = $candidate; break }
+}
+if (-not $PYTHON) {
+    foreach ($candidate in @("py", "python3", "python")) {
+        if (Get-Command $candidate -ErrorAction SilentlyContinue) { $PYTHON = $candidate; break }
+    }
+}
+if (-not $PYTHON) { Fail "no python to run scripts/check-docs.py with" }
+
 # Every path in the configs is relative to the repo root, so build from there
 # however the script was invoked.
 Push-Location $ROOT_DIR
 try {
+    # --- check ------------------------------------------------------------
+    Write-Host ">> scripts/check-docs.py"
+    Invoke-Checked "scripts/check-docs.py" { & $PYTHON scripts/check-docs.py }
+
     # --- build ------------------------------------------------------------
     if ($opts.locale -in "all", "en") {
         Write-Host ">> zensical build --strict (en) -> site/"
