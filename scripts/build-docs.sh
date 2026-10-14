@@ -11,11 +11,8 @@
 #      and a build clears its own output directory first -- so `zensical build`
 #      deletes site/ja on its way in. English first, Japanese second; the other
 #      order publishes a site with no Japanese pages at all.
-#   2. --strict, always. Nothing builds the docs on a pull request
-#      (.github/workflows/pages.yml is workflow_dispatch only), so this is the
-#      only thing standing between a broken internal link and production.
-#      mkdocs.base.yml sets strict: true as well; the flag is spelled out
-#      here so the build stays strict if the config ever loses it.
+#   2. --strict, always. mkdocs.base.yml sets strict: true as well; the flag is
+#      spelled out here so the build stays strict if the config ever loses it.
 #
 # `zensical serve` is deliberately not wrapped: it validates nothing (--strict is
 # accepted and does nothing), it serves one locale at a time, and it is a
@@ -35,8 +32,8 @@ usage () {
   echo "  locale=<all|en|ja>      Which locale to build (default: $LOCALE)"
   echo "                          all = English then Japanese, the only safe order"
   echo "  venv=<dir>              Virtualenv to run zensical from, relative to the repo"
-  echo "                          root (default: $VENV). Falls back to zensical on PATH,"
-  echo "                          which is how CI runs with no venv at all."
+  echo "                          root (default: $VENV). Falls back to zensical on PATH"
+  echo "                          when there is no venv."
   echo "  -h | --help             Show this help"
   echo ""
   echo "Output: site/ (English) and site/ja/ (Japanese). Both builds are --strict, so a"
@@ -106,8 +103,8 @@ for candidate in "$VENV_BIN/zensical" "$VENV_BIN/zensical.exe"; do
   fi
 done
 
-# CI installs the pins with plain `pip install -r`, so there is no venv there and
-# zensical is simply on PATH. Fall back to it rather than demanding a venv.
+# With no venv -- zensical installed some other way -- fall back to PATH rather
+# than demanding one.
 if [ -z "$ZENSICAL" ] && command -v zensical > /dev/null 2>&1; then
   ZENSICAL="$(command -v zensical)"
   echo "$APP: no venv at $VENV; using zensical from PATH"

@@ -10,7 +10,7 @@ The portal cuts no releases — no version, no tag, no Release. A publish is a r
 
 ### 1. Read what main will publish
 
-Nothing builds a pull request, so the merges in `main` have never been built together. Build `main` the way the workflow does and read the result in a browser: both locales, and the language selector on a page other than the home page.
+Build `main` the way the workflow does and read the result in a browser: both locales, and the language selector on a page other than the home page.
 
 ```bash
 git switch main && git pull --ff-only
@@ -58,7 +58,7 @@ A publish replaces the whole site, so undoing one is publishing again: revert th
 
 ### 1. main が公開するものを読む
 
-プルリクエストではビルドが走らないため、`main` に入ったマージは一度も一緒にビルドされていません。ワークフローと同じ方法で `main` をビルドし、結果をブラウザで読みます。両ロケールと、トップページ以外のページでの言語セレクターです。
+ワークフローと同じ方法で `main` をビルドし、結果をブラウザで読みます。両ロケールと、トップページ以外のページでの言語セレクターです。
 
 ```bash
 git switch main && git pull --ff-only
