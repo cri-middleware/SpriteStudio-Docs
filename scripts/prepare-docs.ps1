@@ -10,11 +10,9 @@
 # native toolchain -- one Python environment builds the entire site -- so unlike
 # the player repos there is no download-sdk/build-runtime pair to run first.
 #
-# The pins in docs/requirements.txt are deliberate (see the file's own header):
-# this repo is the first in the family off MkDocs + Material for MkDocs, so the
-# version it builds with is not the version the sibling players build with. Rerun
-# this script after a pin changes -- pip installs the pinned version over
-# whatever the venv already has.
+# The pin in docs/requirements.txt is exact; CONTRIBUTING.md says when and how
+# it moves. Rerun this script after it changes -- pip installs the pinned
+# version over whatever the venv already has.
 #
 # Then: scripts/build-docs.ps1, which runs zensical out of the venv this created.
 $ErrorActionPreference = "Stop"
@@ -22,6 +20,11 @@ $ErrorActionPreference = "Stop"
 $APP = Split-Path -Leaf $PSCommandPath
 $ROOT_DIR = Split-Path -Parent (Split-Path -Parent $PSCommandPath)
 $REQUIREMENTS = "docs/requirements.txt"
+
+# Zensical's Requires-Python. pip answers an older interpreter with "No matching
+# distribution found", which names the package rather than the cause, so this
+# script checks first. Raise it when a bump to docs/requirements.txt raises it.
+$MIN_PYTHON = "3.11"
 
 # Plain stderr + an exit code, rather than Write-Error's stack trace:
 # prepare-docs.sh answers the same mistakes the same way (2 = bad usage, 1 = the
@@ -44,7 +47,8 @@ $opts = [ordered]@{
 function Show-Usage {
     Write-Host "Usage: $APP [options]"
     Write-Host "$APP options:"
-    Write-Host "  python=<exe>            Interpreter to create the venv with (default: py)"
+    Write-Host "  python=<exe>            Interpreter to create the venv with, Python $MIN_PYTHON or"
+    Write-Host "                          later (default: py)"
     Write-Host "  venv=<dir>              Virtualenv location, relative to the repo root"
     Write-Host "                          (default: .venv)"
     Write-Host "  force=<yes|no>          Delete an existing venv and recreate it, rather than"
@@ -103,7 +107,22 @@ function Invoke-Checked {
     if ($LASTEXITCODE -ne 0) { Fail "$What failed ($LASTEXITCODE)" $LASTEXITCODE }
 }
 
+# Prints the interpreter's version; $LASTEXITCODE is 0 when it is at least MIN_PYTHON.
+function Get-PythonVersion {
+    param([string] $Exe)
+    & $Exe -c "import platform, sys; print(platform.python_version()); sys.exit(sys.version_info < tuple(map(int, '$MIN_PYTHON'.split('.'))))"
+}
+
 $VENV_DIR = Join-Path $ROOT_DIR $opts.venv
+
+# Only the interpreter that will create the venv; a reused venv is checked below.
+if ($opts.force -eq "yes" -or !(Test-Path $VENV_DIR)) {
+    $found = Get-PythonVersion $opts.python
+    if ($LASTEXITCODE -ne 0) {
+        [Console]::Error.WriteLine("${APP}: '$($opts.python)' is Python $found; zensical needs $MIN_PYTHON or later")
+        Fail "pass a newer interpreter, e.g. $APP python=python3.13"
+    }
+}
 
 # --- venv -----------------------------------------------------------------
 if ($opts.force -eq "yes" -and (Test-Path $VENV_DIR)) {
@@ -130,6 +149,12 @@ $VENV_PY = Join-Path $VENV_BIN "python.exe"
 if (!(Test-Path $VENV_PY)) { $VENV_PY = Join-Path $VENV_BIN "python" }
 if (!(Test-Path $VENV_PY)) {
     Fail "no interpreter in $($opts.venv) -- the venv looks broken; retry with force=yes"
+}
+
+$found = Get-PythonVersion $VENV_PY
+if ($LASTEXITCODE -ne 0) {
+    [Console]::Error.WriteLine("${APP}: the venv in $($opts.venv) is Python $found; zensical needs $MIN_PYTHON or later")
+    Fail "rebuild it with a newer interpreter: $APP force=yes python=<exe>"
 }
 
 # --- toolchain ------------------------------------------------------------

@@ -32,7 +32,7 @@ Note that merging does **not** publish. Deployment is manual: a maintainer runs 
 
 ## Development Environment
 
-You need Python 3.
+You need Python 3.11 or later, Zensical's minimum. The `python3` that macOS ships is older, so point the script at a newer one: `scripts/prepare-docs.sh python=python3.13`.
 
 ```bash
 scripts/prepare-docs.sh          # once: .venv + the pins in docs/requirements.txt
@@ -114,7 +114,7 @@ SpriteStudio ドキュメントポータルの改善にご関心をお寄せい�
 
 ## 開発環境
 
-Python 3 が必要です。
+Python 3.11 以上が必要です（Zensical の要件）。macOS に同梱の `python3` はこれより古いので、新しいものをスクリプトに指定してください: `scripts/prepare-docs.sh python=python3.13`。
 
 ```bash
 scripts/prepare-docs.sh          # 一度だけ: .venv と docs/requirements.txt のピン
