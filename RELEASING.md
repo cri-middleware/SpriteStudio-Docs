@@ -36,7 +36,7 @@ Always from `main`: a run started on another branch fails at its first step and 
 
 ### 3. Check the live site
 
-Open <https://cri-middleware.github.io/SpriteStudio-Docs/> and <https://cri-middleware.github.io/SpriteStudio-Docs/ja/>, and switch language on a page other than the home page.
+Open <https://cri-middleware.github.io/SpriteStudio-Docs/> and <https://cri-middleware.github.io/SpriteStudio-Docs/ja/>, and switch language on a page other than the home page. Then check the external links, which no build does: `gh workflow run ci.yml --ref main` runs the link check along with the build, and its summary lists any link that failed.
 
 ## Undoing a publish
 
@@ -84,7 +84,7 @@ gh run watch                        # run が一覧に出るまで数秒かか�
 
 ### 3. 公開されたサイトを確かめる
 
-<https://cri-middleware.github.io/SpriteStudio-Docs/> と <https://cri-middleware.github.io/SpriteStudio-Docs/ja/> を開き、トップページ以外のページで言語を切り替えます。
+<https://cri-middleware.github.io/SpriteStudio-Docs/> と <https://cri-middleware.github.io/SpriteStudio-Docs/ja/> を開き、トップページ以外のページで言語を切り替えます。続けて、どのビルドも確かめない外部リンクを確認します。`gh workflow run ci.yml --ref main` はビルドとあわせてリンクチェックを実行し、失敗したリンクを run のサマリーに一覧します。
 
 ## 公開の取り消し
 

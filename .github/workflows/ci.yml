@@ -2,8 +2,8 @@ name: CI
 
 # The site is all this repository builds, so every pull request builds it the way
 # pages.yml publishes it: both locales, --strict, so a broken link or a nav entry
-# pointing at a missing page fails the PR. The weekly run builds main and is what
-# writes the caches PRs restore from.
+# pointing at a missing page fails the PR. The weekly run builds main, is what
+# writes the caches PRs restore from, and checks the external links.
 on:
   pull_request:
     # Unlike the sibling repositories, Markdown is not ignored: it is the content.
@@ -65,3 +65,22 @@ jobs:
         with:
           key: zensical-${{ env.cache_id }}
           path: .cache
+
+  links:
+    name: 🔗 External links
+    # The weekly run and a dispatch only: --strict checks the internal links on
+    # every pull request, and a site that goes down mid-review is not the pull
+    # request's fault. Links inside code blocks are examples, not links, and
+    # lychee skips them.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Check the external links in the pages and the repository's own docs
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: >-
+            --no-progress --scheme https --scheme http --exclude-loopback --max-retries 3
+            'docs/**/*.md' '*.md'
