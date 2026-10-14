@@ -35,11 +35,14 @@ scripts/
   prepare-docs.{sh,ps1}       # venv の作成と、バージョン固定したツールチェーンの導入
   build-docs.{sh,ps1}         # 両ロケールを正しい順序で strict ビルド
   build-pages.{sh,ps1}        # 上の 2 つを実行し site/ を配信。workflow が呼ぶもの
+  check-docs.py               # --strict では見えないものの検査。build-docs が最初に実行
 mkdocs.base.yml               # 両ロケール共通の設定
 mkdocs.yml                    # 英語   -> site/
 mkdocs.ja.yml                 # 日本語 -> site/ja/
-.github/workflows/ci.yml      # プルリクエストごとと毎週のビルド（strict）
-.github/workflows/pages.yml   # ビルド（strict）＋ GitHub Pages へのデプロイ
+.github/workflows/
+  ci.yml                      # プルリクエストごとと毎週のビルド（strict）。毎週は外部リンクも
+  pages.yml                   # ビルド（strict）＋ GitHub Pages へのデプロイ。main からのみ
+  provenance.yml              # 公開前に、追跡ファイルを ScanCode で照合
 ```
 
 すべてのページは `en/` と `ja/` の**両方**に存在し、各ロケールはそれぞれの設定ファイルからビルドされます。`mkdocs.yml` と `mkdocs.ja.yml` は `mkdocs.base.yml` から共通設定を継承し、差分だけを持ちます — ドキュメントディレクトリ、出力先、サイト URL、言語、そしてその言語で書いたナビゲーションと `llms.txt` の目次です。

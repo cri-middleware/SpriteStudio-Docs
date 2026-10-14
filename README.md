@@ -42,11 +42,14 @@ scripts/
   prepare-docs.{sh,ps1}       # create the venv, install the pinned toolchain
   build-docs.{sh,ps1}         # build both locales, strict, in the right order
   build-pages.{sh,ps1}        # the two above, then serve site/ - what the workflow runs
+  check-docs.py               # what --strict cannot see; build-docs runs it first
 mkdocs.base.yml               # everything shared by both locales
 mkdocs.yml                    # English  -> site/
 mkdocs.ja.yml                 # Japanese -> site/ja/
-.github/workflows/ci.yml      # build (strict) on every pull request, and weekly
-.github/workflows/pages.yml   # build (strict) + deploy via GitHub Pages
+.github/workflows/
+  ci.yml                      # build (strict) on every pull request; weekly, external links too
+  pages.yml                   # build (strict) + deploy via GitHub Pages, from main only
+  provenance.yml              # ScanCode over the tracked files, before a publish
 ```
 
 Every page exists in **both** `en/` and `ja/`, and each locale is built from its own config:
