@@ -1,7 +1,6 @@
 # 🌐 エコシステム
 
-すべての公式 Player は、共通の Rust コア **SpriteStudio-SDK** を共有しています。
-SpriteStudio プロジェクト（`.sspj`）は一度だけコンパクトなランタイム形式へ変換され、対象エンジンを問わず `libssruntime` で再生されます。
+すべての公式 Player は、共通の Rust コア **SpriteStudio-SDK** を共有しています。SpriteStudio プロジェクト（`.sspj`）は一度だけコンパクトなランタイム形式へ変換され、対象エンジンを問わず `libssruntime` で再生されます。
 
 ```mermaid
 graph LR

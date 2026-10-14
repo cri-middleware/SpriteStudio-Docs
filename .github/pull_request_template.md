@@ -16,7 +16,7 @@ that is useful information, not a problem.
 実行した確認と環境。実行できなかった場合はその旨をお書きください。
 -->
 
-- [ ] `scripts/build-docs.sh` — builds `en` and `ja` with `--strict`; nothing builds the docs on a pull request
+- [ ] `scripts/build-docs.sh` — runs `scripts/check-docs.py`, then builds `en` and `ja` with `--strict`
 - [ ] `scripts/build-pages.sh serve=yes` — checked the pages and the language selector in a browser
 - [ ] Not run — see notes below / 未実行（理由は下記）
 

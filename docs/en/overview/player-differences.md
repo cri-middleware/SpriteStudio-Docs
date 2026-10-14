@@ -22,8 +22,8 @@ the core computes but leaves the player to draw or play - are in
 | **[Godot](../players/godot.md)** | Four of the twelve blend modes are honored; the Web export has extra requirements |
 | **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends |
 | **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate |
-| **[React Native](../players/react-native.md)** | Masks do not clip Effect parts, and nothing draws on the web |
 | **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter draws one view |
+| **[React Native](../players/react-native.md)** | Masks do not clip Effect parts, and nothing draws on the web |
 
 !!! note "How to read this page"
     Each section below summarizes what that player's own **Limitations & Scope** page states -
@@ -83,13 +83,6 @@ order - a pinned child paints in front of the whole sprite rather than between i
 A few features are approximate rather than exact - masking, whole-part tint on Mesh parts, and
 anything nested inside an Instance part - and the particles an Effect part emits are not clipped by masks, even where the editor clips them. Its own docs enumerate each case.
 
-### React Native
-
-Masks clip Normal, Mesh and Shape parts; **Effect parts draw unmasked**.
-
-Platform reach is narrower too: **nothing draws on the web** - the web entry is a stub, so an app
-that ships both halves still bundles - and Windows has no route.
-
 ### wgpu
 
 `Div2` / `Overlay2` fall back to `Mix`. Masking has **two backends, and what the host's pass lends
@@ -103,6 +96,13 @@ and tracking one line at a time. It takes the coverage backend, since Bevy's 2d 
 carries no stencil, and draws **one view** - a second one is skipped with a warning (the camera
 also wants `CompositingSpace::Srgb` for faithful color). Packs load through Bevy's `AssetServer`,
 so hot reload, packed assets and shared atlases work as they do for any Bevy asset.
+
+### React Native
+
+Masks clip Normal, Mesh and Shape parts; **Effect parts draw unmasked**.
+
+Platform reach is narrower too: **nothing draws on the web** - the web entry is a stub, so an app
+that ships both halves still bundles - and Windows has no route.
 
 ## 🎨 Why blend modes are the usual difference
 

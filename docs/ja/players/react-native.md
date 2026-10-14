@@ -1,12 +1,9 @@
 # ⚛️ SpriteStudio Player for React Native
 
-**React Native** アプリ（New Architecture）で SpriteStudio アニメーションを再生します。
-`<SpriteStudioView>` コンポーネントとして配置できます。
+**React Native** アプリ（New Architecture）で SpriteStudio アニメーションを再生します。`<SpriteStudioView>` コンポーネントとして配置できます。
 
 !!! tip "コードで始まる - かつ Expo Go ではなく development build が必要"
-    このパッケージはアプリ自身のバイナリに組み込まれるため、**Expo Go では動きません**。
-    managed なアプリなら `npx expo prebuild` のあと `npx expo run:ios` / `run:android`、
-    bare なアプリなら既存のネイティブプロジェクトを再ビルドします。どちらも autolinking がパッケージを拾います。
+    このパッケージはアプリ自身のバイナリに組み込まれるため、**Expo Go では動きません**。managed なアプリなら `npx expo prebuild` のあと `npx expo run:ios` / `run:android`、bare なアプリなら既存のネイティブプロジェクトを再ビルドします。どちらも autolinking がパッケージを拾います。
 
 **1. 何を入れるか** - パッケージとネイティブ側の peer 依存です。
 
@@ -14,8 +11,7 @@
 npx expo install react-native-spritestudio @shopify/react-native-skia react-native-nitro-modules react-native-reanimated react-native-worklets
 ```
 
-**2. `.sspj` -> `.ssab`** - React Native にはインポーターを組み込むエディターがないため、
-SDK の `ssconverter-cli` か [SSConverter GUI](./converter.md) を使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。**パックはファイルではなくディレクトリです**。`.ssab` はテクスチャや外部パックを自身からの相対パスで参照し、Metro は `require()` が名指ししたものしかバンドルしません。そのためパックのディレクトリはネイティブアセットとして同梱します。Expo config plugin に自分のパスを指定してください。
+**2. `.sspj` -> `.ssab`** - React Native にはインポーターを組み込むエディターがないため、SDK の `ssconverter-cli` か [SSConverter GUI](./converter.md) を使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。**パックはファイルではなくディレクトリです**。`.ssab` はテクスチャや外部パックを自身からの相対パスで参照し、Metro は `require()` が名指ししたものしかバンドルしません。そのためパックのディレクトリはネイティブアセットとして同梱します。Expo config plugin に自分のパスを指定してください。
 
 ```json
 { "expo": { "plugins": [["react-native-spritestudio", { "assets": ["./assets/ss"] }]] } }

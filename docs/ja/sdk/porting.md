@@ -5,8 +5,7 @@
 
 !!! tip "ガイドの場所"
     正式なガイドは SDK リポジトリで管理されています:
-    [**SpriteStudio Player 移植ガイド**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)
-    （`libs/ssruntime/docs/README.ja.md`。各ページに `.ja.md` の日本語版があります）。本ページはそこへの案内であり、最新の正式な情報は SDK 側が基準です。
+    [**SpriteStudio Player 移植ガイド**](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)（`libs/ssruntime/docs/README.ja.md`。各ページに `.ja.md` の日本語版があります）。本ページはそこへの案内であり、最新の正式な情報は SDK 側が基準です。
 
 ## 🧠 中心となる考え方: Brain と Body
 

@@ -9,11 +9,9 @@
 # native toolchain -- one Python environment builds the entire site -- so unlike
 # the player repos there is no download-sdk/build-runtime pair to run first.
 #
-# The pins in docs/requirements.txt are deliberate (see the file's own header):
-# this repo is the first in the family off MkDocs + Material for MkDocs, so the
-# version it builds with is not the version the sibling players build with. Rerun
-# this script after a pin changes -- pip installs the pinned version over
-# whatever the venv already has.
+# The pin in docs/requirements.txt is exact; CONTRIBUTING.md says when and how
+# it moves. Rerun this script after it changes -- pip installs the pinned
+# version over whatever the venv already has.
 #
 # Then: scripts/build-docs.sh, which runs zensical out of the venv this created.
 set -euo pipefail
@@ -21,6 +19,11 @@ set -euo pipefail
 APP="$(basename "$0")"
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 REQUIREMENTS="docs/requirements.txt"
+
+# Zensical's Requires-Python. pip answers an older interpreter with "No matching
+# distribution found", which names the package rather than the cause, so this
+# script checks first. Raise it when a bump to docs/requirements.txt raises it.
+MIN_PYTHON="3.11"
 
 # --- options --------------------------------------------------------------
 PYTHON="python3"
@@ -30,7 +33,8 @@ FORCE="no"
 usage () {
   echo "Usage: $APP [options]"
   echo "$APP options:"
-  echo "  python=<exe>            Interpreter to create the venv with (default: $PYTHON)"
+  echo "  python=<exe>            Interpreter to create the venv with, Python $MIN_PYTHON or"
+  echo "                          later (default: $PYTHON)"
   echo "  venv=<dir>              Virtualenv location, relative to the repo root"
   echo "                          (default: $VENV)"
   echo "  force=<yes|no>          Delete an existing venv and recreate it, rather than"
@@ -96,7 +100,21 @@ if ! command -v "$PYTHON" > /dev/null 2>&1; then
   exit 1
 fi
 
+# <exe>: exits 0 when it is at least MIN_PYTHON, and prints its version either way.
+python_at_least_min () {
+  "$1" -c "import platform, sys; print(platform.python_version()); sys.exit(sys.version_info < tuple(map(int, '$MIN_PYTHON'.split('.'))))"
+}
+
 VENV_DIR="$ROOT_DIR/$VENV"
+
+# Only the interpreter that will create the venv; a reused venv is checked below.
+if [ "$FORCE" = "yes" ] || [ ! -d "$VENV_DIR" ]; then
+  if ! found="$(python_at_least_min "$PYTHON")"; then
+    echo "$APP: '$PYTHON' is Python ${found:-of unknown version}; zensical needs $MIN_PYTHON or later" >&2
+    echo "$APP: pass a newer interpreter, e.g. $APP python=python3.13" >&2
+    exit 1
+  fi
+fi
 
 # --- venv -----------------------------------------------------------------
 if [ "$FORCE" = "yes" ] && [ -d "$VENV_DIR" ]; then
@@ -124,6 +142,12 @@ VENV_PY="$VENV_BIN/python"
 [ -x "$VENV_PY" ] || VENV_PY="$VENV_BIN/python.exe"
 if [ ! -x "$VENV_PY" ]; then
   echo "$APP: no interpreter in $VENV -- the venv looks broken; retry with force=yes" >&2
+  exit 1
+fi
+
+if ! found="$(python_at_least_min "$VENV_PY")"; then
+  echo "$APP: the venv in $VENV is Python ${found:-of unknown version}; zensical needs $MIN_PYTHON or later" >&2
+  echo "$APP: rebuild it with a newer interpreter: $APP force=yes python=<exe>" >&2
   exit 1
 fi
 

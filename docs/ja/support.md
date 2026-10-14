@@ -46,5 +46,4 @@ SDK と各公式 Player はそれぞれ別のリポジトリです。そのた�
 
 !!! note "SpriteStudio 本体について"
     **エディター**（オーサリング、SpriteStudio アプリケーション、ツール自体のライセンス）に関するお問い合わせは、Player のリポジトリではなく、同じヘルプセンターから
-    [CRI Middleware](https://www.webtech.co.jp/spritestudio/) へお願いします。お問い合わせの前に、
-    [**SpriteStudio ヘルプセンター**](https://www.webtech.co.jp/help/ja/spritestudio7/) に初心者ガイド・ユーザーガイド・チュートリアル動画・逆引きリファレンスがそろっています。
+    [CRI Middleware](https://www.webtech.co.jp/spritestudio/) へお願いします。お問い合わせの前に、[**SpriteStudio ヘルプセンター**](https://www.webtech.co.jp/help/ja/spritestudio7/) に初心者ガイド・ユーザーガイド・チュートリアル動画・逆引きリファレンスがそろっています。

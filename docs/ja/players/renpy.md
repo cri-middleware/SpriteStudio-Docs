@@ -9,8 +9,7 @@
 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForRenPy/releases) から
 `SSPlayerForRenPy.zip` を取得します。展開してできる `spritestudio/` フォルダを、プロジェクトの `game/` フォルダにコピーします。
 
-**2. `.sspj` -> `.ssab`** - SpriteStudio のソースを `SpriteStudio_Source/` に置きます。
-Auto Importer が起動時に変換し、**Shift+R** でリロードすると変更されたものだけが再変換されるため、手動の書き出し作業はありません。
+**2. `.sspj` -> `.ssab`** - SpriteStudio のソースを `SpriteStudio_Source/` に置きます。Auto Importer が起動時に変換し、**Shift+R** でリロードすると変更されたものだけが再変換されるため、手動の書き出し作業はありません。
 
 **3. どう画面に出すか** - screen に配置します。
 

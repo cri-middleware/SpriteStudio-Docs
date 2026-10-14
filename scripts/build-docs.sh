@@ -5,17 +5,17 @@
 #   scripts/build-docs.sh              # English then Japanese, both strict
 #   scripts/build-docs.sh locale=ja    # Japanese only, into site/ja
 #
-# Two things this script exists to get right:
+# Three things this script exists to get right:
 #
 #   1. Order. The Japanese site is written *inside* the English one (site/ja),
 #      and a build clears its own output directory first -- so `zensical build`
 #      deletes site/ja on its way in. English first, Japanese second; the other
 #      order publishes a site with no Japanese pages at all.
-#   2. --strict, always. Nothing builds the docs on a pull request
-#      (.github/workflows/pages.yml is workflow_dispatch only), so this is the
-#      only thing standing between a broken internal link and production.
-#      mkdocs.base.yml sets strict: true as well; the flag is spelled out
-#      here so the build stays strict if the config ever loses it.
+#   2. --strict, always. mkdocs.base.yml sets strict: true as well; the flag is
+#      spelled out here so the build stays strict if the config ever loses it.
+#   3. What --strict cannot see. scripts/check-docs.py runs first and fails the
+#      build on a page no nav names, the locales or their llms.txt sections
+#      drifting apart, and a Japanese line break that renders as a space.
 #
 # `zensical serve` is deliberately not wrapped: it validates nothing (--strict is
 # accepted and does nothing), it serves one locale at a time, and it is a
@@ -35,12 +35,14 @@ usage () {
   echo "  locale=<all|en|ja>      Which locale to build (default: $LOCALE)"
   echo "                          all = English then Japanese, the only safe order"
   echo "  venv=<dir>              Virtualenv to run zensical from, relative to the repo"
-  echo "                          root (default: $VENV). Falls back to zensical on PATH,"
-  echo "                          which is how CI runs with no venv at all."
+  echo "                          root (default: $VENV). Falls back to zensical on PATH"
+  echo "                          when there is no venv."
   echo "  -h | --help             Show this help"
   echo ""
   echo "Output: site/ (English) and site/ja/ (Japanese). Both builds are --strict, so a"
   echo "broken internal link or a nav entry pointing at a missing page fails the build."
+  echo "scripts/check-docs.py runs first and fails it on what --strict cannot see; its"
+  echo "--help lists the checks."
   echo ""
   echo "locale=en on its own DELETES site/ja: the English build clears site/, and the"
   echo "Japanese site lives inside it. Use locale=all before serving or publishing."
@@ -106,8 +108,8 @@ for candidate in "$VENV_BIN/zensical" "$VENV_BIN/zensical.exe"; do
   fi
 done
 
-# CI installs the pins with plain `pip install -r`, so there is no venv there and
-# zensical is simply on PATH. Fall back to it rather than demanding a venv.
+# With no venv -- zensical installed some other way -- fall back to PATH rather
+# than demanding one.
 if [ -z "$ZENSICAL" ] && command -v zensical > /dev/null 2>&1; then
   ZENSICAL="$(command -v zensical)"
   echo "$APP: no venv at $VENV; using zensical from PATH"
@@ -122,6 +124,25 @@ fi
 # Every path in the configs is relative to the repo root, so build from there
 # however the script was invoked.
 cd "$ROOT_DIR"
+
+# --- check ----------------------------------------------------------------
+# The venv's interpreter when there is one; the checker needs only the standard
+# library, so any Python 3 on PATH does otherwise.
+PYTHON=""
+for candidate in "$VENV_BIN/python" "$VENV_BIN/python.exe" python3 python; do
+  if command -v "$candidate" > /dev/null 2>&1; then
+    PYTHON="$candidate"
+    break
+  fi
+done
+
+if [ -z "$PYTHON" ]; then
+  echo "$APP: no python to run scripts/check-docs.py with" >&2
+  exit 1
+fi
+
+echo ">> scripts/check-docs.py"
+"$PYTHON" scripts/check-docs.py
 
 # --- build ----------------------------------------------------------------
 if [ "$LOCALE" = "all" ] || [ "$LOCALE" = "en" ]; then

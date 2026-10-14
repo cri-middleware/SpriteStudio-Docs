@@ -28,7 +28,7 @@ repository, so `docs/*/players/` pages stay thin — a short description and lin
 |---|---|
 | Setup, build and checks, and the rules for writing a page | [CONTRIBUTING.md](./CONTRIBUTING.md) |
 | Publishing the site, maintainers only | [RELEASING.md](./RELEASING.md) |
-| What a `players/` page owes its reader | `SpriteStudio-SDK/MAINTAINING_PLAYERS.md` |
+| The four questions a player's README answers, which `players/` pages follow | `SpriteStudio-SDK/MAINTAINING_PLAYERS.md` |
 | What a script takes | its `--help` |
 
 ## Invariants
@@ -37,10 +37,11 @@ repository, so `docs/*/players/` pages stay thin — a short description and lin
     → 🎮 Players & Tools, `sdk/` → 🛠️ SDK & Development, and the root's `index.md` / `support.md` /
     `license.md` → ℹ️ Support & License.
 *   **A `players/` page answers four questions in order**: what you install, how a `.sspj` becomes a
-    `.ssab`, how it gets on screen, and where to read next (three links at most). An admonition above them
-    names the shape — **editor-first** (Unity, Godot) or **code-first** — and nothing else precedes
-    question 1. Depart only where the host collides with the shape, and say why on the page
-    (`converter.md`, `wgpu.md`); a missing docs site is not such a case.
+    `.ssab`, how it gets on screen, and where to read next: the player's documentation site, its
+    repository, and one page of this portal. An admonition above them names the shape — **editor-first**
+    (Unity, Godot) or **code-first** — and nothing else precedes question 1. Depart only where the host
+    collides with the shape, and say why on the page (`converter.md`, `wgpu.md`); a missing docs site is
+    not such a case.
 *   **One fact, one page; link instead of restating.** `sdk/concepts.md` owns what the core provides,
     following the Player Porting Guide's contents. `sdk/limitations.md` owns what it does not, and every
     all-player technical constraint, following the guide's Limitations; unbuilt work belongs in a ROADMAP,
@@ -51,9 +52,9 @@ repository, so `docs/*/players/` pages stay thin — a short description and lin
     supplies, rendering, shipping), and every constraint a `###` without one inside a bucket.
     **`overview/player-differences.md` is a one-line-per-player table over one `###` per player**; an
     overgrown cell moves into its `###`.
-*   **A repository added to the portal needs five edits per locale** — a card in `index.md`, rows in
-    `license.md` and `support.md`, the `nav` entry and the `players/` page — plus one `llmstxt.sections`
-    entry in `mkdocs.base.yml`. Nothing checks it.
+*   **A repository added to the portal needs six edits per locale** — a card in `index.md`, rows in
+    `license.md` and `support.md`, the `players/` page, and its entries in that locale config's `nav` and
+    `llmstxt.sections`. `scripts/check-docs.py` checks that they agree.
 *   **`LICENSE.md` holds the licence text and nothing else**: GitHub scores the whole file, and an
     `SPDX-License-Identifier:` line costs enough similarity to flip it to "Other". The translation stays in
     `LICENSE.ja.md`.

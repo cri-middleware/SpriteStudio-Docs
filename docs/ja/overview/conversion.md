@@ -21,21 +21,18 @@
 - **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) が起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。
 - **TyranoBuilder** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、プロジェクトを開いたときにエディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントのドロップダウンに現れます。
 
-各 Player のワークフローは、それぞれのドキュメントで解説しています。
-[プラットフォームの選び方](./choose-your-platform.md) を参照してください。
+各 Player のワークフローは、それぞれのドキュメントで解説しています。[プラットフォームの選び方](./choose-your-platform.md) を参照してください。
 
 ### 2. スタンドアロンツール - 自分で変換する
 
 別のエンジン、CI/CD パイプライン、またはインポーターを持たない Player -
-[SpriteStudio Player for Web](../players/web.md) のレンダラー（Web コレクション）、
-[SpriteStudio Player for React Native](../players/react-native.md)、[SpriteStudio Player for wgpu](../players/wgpu.md) -
+[SpriteStudio Player for Web](../players/web.md) のレンダラー（Web コレクション）、[SpriteStudio Player for React Native](../players/react-native.md)、[SpriteStudio Player for wgpu](../players/wgpu.md) -
 を使う場合は、変換を代行してくれる Player がないため、3 つのスタンドアロンフロントエンド（デスクトップ GUI・CLI・ブラウザ）のいずれかで変換します。どれを選び、どう使うかは
 **[スタンドアロンツールで変換する](./convert-with-a-standalone-tool.md)** で解説します。
 
 ## 📦 生成されるもの
 
-どちらの経路でも `.ssab`（アニメーション）／`.ssqb`（シーケンス）と参照テクスチャが出力され、
-`libssruntime` がそれを再生します。パイプラインは [SDK コンセプト](../sdk/concepts.md)、ディスク上の詳細は [フォーマット仕様](../sdk/format-spec.md) を参照してください。
+どちらの経路でも `.ssab`（アニメーション）／`.ssqb`（シーケンス）と参照テクスチャが出力され、`libssruntime` がそれを再生します。パイプラインは [SDK コンセプト](../sdk/concepts.md)、ディスク上の詳細は [フォーマット仕様](../sdk/format-spec.md) を参照してください。
 
 変換は一方向です。`.ssab` は再生用の形式で、`.sspj` へ戻す経路はありません。編集は
 SpriteStudio のプロジェクト側で行い、変換し直してください。
