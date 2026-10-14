@@ -42,7 +42,7 @@ mkdocs.ja.yml                 # 日本語 -> site/ja/
 .github/workflows/pages.yml   # ビルド（strict）＋ GitHub Pages へのデプロイ
 ```
 
-すべてのページは `en/` と `ja/` の**両方**に存在し、各ロケールはそれぞれの設定ファイルからビルドされます。`mkdocs.yml` と `mkdocs.ja.yml` は `mkdocs.base.yml` から共通設定を継承し、差分だけを持ちます — ドキュメントディレクトリ、出力先、サイト URL、言語、そしてその言語のラベルを持つナビゲーションです。
+すべてのページは `en/` と `ja/` の**両方**に存在し、各ロケールはそれぞれの設定ファイルからビルドされます。`mkdocs.yml` と `mkdocs.ja.yml` は `mkdocs.base.yml` から共通設定を継承し、差分だけを持ちます — ドキュメントディレクトリ、出力先、サイト URL、言語、そしてその言語で書いたナビゲーションと `llms.txt` の目次です。
 
 サイトの生成には [Zensical](https://zensical.org)（MkDocs + Material for MkDocs の後継。開発チームは同じ）を使用しています。設定ファイルは MkDocs の設定としても有効なままなので、エンジンを比較したい場合は `mkdocs-material` でも同じサイトをビルドできます。
 

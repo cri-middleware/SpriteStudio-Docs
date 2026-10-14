@@ -61,7 +61,7 @@ The site uses folder-based i18n: every page exists twice, as `docs/en/<path>` an
 If you can only write one language confidently, say so in the PR; a maintainer can help with the other side rather than let the two drift.
 
 ### Navigation lives in the two locale configs
-There is a `nav:` tree in `mkdocs.yml` (English) and another in `mkdocs.ja.yml` (Japanese). Both use locale-relative paths (`sdk/glossary.md`, no `en/` or `ja/` prefix) and the two must stay identical in structure - only the labels differ, written directly in the language rather than looked up from a translation map. Add a page to one and forget the other, and that page simply never appears in that locale's navigation.
+There is a `nav:` tree in `mkdocs.yml` (English) and another in `mkdocs.ja.yml` (Japanese). Both use locale-relative paths (`sdk/glossary.md`, no `en/` or `ja/` prefix) and the two must stay identical in structure - only the labels differ, written directly in the language rather than looked up from a translation map. Add a page to one and forget the other, and that page simply never appears in that locale's navigation. Each locale config also carries that locale's `llms.txt` index, `llmstxt.sections`, written in its language: it names every nav page in nav order.
 
 Settings shared by both locales live in `mkdocs.base.yml`, which the two inherit. One rule governs what may go where: **a YAML sequence must be defined in exactly one of the three files.** Zensical's `INHERIT` concatenates sequences rather than replacing them, so a `nav` in the base as well as a locale config renders both navigations, one after the other.
 
@@ -143,7 +143,7 @@ Windows では実行ファイルは `.\.venv\Scripts\zensical` です。
 片方の言語しか自信がない場合は、その旨を PR に書いてください。両者が乖離するくらいなら、メンテナーがもう一方を補います。
 
 ### ナビゲーションは2つのロケール設定に
-`nav:` は `mkdocs.yml`（英語）と `mkdocs.ja.yml`（日本語）にそれぞれあります。どちらもロケール相対のパス（`sdk/glossary.md` のように `en/` や `ja/` を付けない）を使い、構造は完全に一致させてください。異なるのはラベルだけで、翻訳マップを介さず各言語で直接書きます。片方に追加してもう片方を忘れると、そのロケールのナビにはそのページが現れません。
+`nav:` は `mkdocs.yml`（英語）と `mkdocs.ja.yml`（日本語）にそれぞれあります。どちらもロケール相対のパス（`sdk/glossary.md` のように `en/` や `ja/` を付けない）を使い、構造は完全に一致させてください。異なるのはラベルだけで、翻訳マップを介さず各言語で直接書きます。片方に追加してもう片方を忘れると、そのロケールのナビにはそのページが現れません。各ロケールの設定ファイルには、そのロケールの `llms.txt` の目次（`llmstxt.sections`）もその言語で書かれています。nav のすべてのページを nav と同じ順に並べます。
 
 両ロケール共通の設定は `mkdocs.base.yml` にあり、2つの設定ファイルがこれを継承します。どこに何を書けるかは1つのルールで決まります — **YAML の配列は3ファイルのうち必ず1つにだけ定義すること。** Zensical の `INHERIT` は配列を置き換えではなく連結するため、base とロケール設定の両方に `nav` を置くと、2つのナビが続けて描画されます。
 

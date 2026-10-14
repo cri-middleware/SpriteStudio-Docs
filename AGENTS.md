@@ -52,9 +52,9 @@ repository, so `docs/*/players/` pages stay thin — a short description and lin
     supplies, rendering, shipping), and every constraint a `###` without one inside a bucket.
     **`overview/player-differences.md` is a one-line-per-player table over one `###` per player**; an
     overgrown cell moves into its `###`.
-*   **A repository added to the portal needs five edits per locale** — a card in `index.md`, rows in
-    `license.md` and `support.md`, the `nav` entry and the `players/` page — plus one `llmstxt.sections`
-    entry in `mkdocs.base.yml`. Nothing checks it.
+*   **A repository added to the portal needs six edits per locale** — a card in `index.md`, rows in
+    `license.md` and `support.md`, the `players/` page, and its entries in that locale config's `nav` and
+    `llmstxt.sections`. Nothing checks it.
 *   **`LICENSE.md` holds the licence text and nothing else**: GitHub scores the whole file, and an
     `SPDX-License-Identifier:` line costs enough similarity to flip it to "Other". The translation stays in
     `LICENSE.ja.md`.
