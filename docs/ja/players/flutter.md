@@ -8,9 +8,9 @@
 !!! tip "コードで始まる - ただし Rust ツールチェーンは不要"
     ネイティブコアはビルドではなく取得されます。`ssruntime_dart` の native assets フックが、固定された SDK リリースからビルド済みの `libssruntime` をダウンロードし、コンバーターも同じ仕組みで `libssconverter` を取得します。
 
-**1. 何を入れるか** - `pubspec.yaml` に `ssplayer_flutter` の依存を、リリースのタグ（`ssplayer_flutter-v<version>`）を指す git 依存として追加します。`ssplayer_flutter` が参照する `ssruntime_dart` も、同じタグから `dependency_overrides` で取ります（[インストール](https://cri-middleware.github.io/SSPlayerForFlutter/ja/guide/install/) を参照）。
+**1. 何を入れるか** - `pubspec.yaml` に `ssplayer_flutter` の依存を、リリースのタグ（`ssplayer_flutter-v<version>`）を指す git 依存として追加します。`ssplayer_flutter` が参照する `ssruntime_dart` も、同じタグから `dependency_overrides` で取ります。変換用に、`ssconverter_dart` も同じタグから dev 依存として追加します（[インストール](https://cri-middleware.github.io/SSPlayerForFlutter/ja/guide/install/) を参照）。
 
-**2. `.sspj` -> `.ssab`** - SpriteStudio プロジェクトを `SpriteStudio_Source/` 以下に置き、同梱の CLI で変換します。1 つの `.sspj` からアニメーションパックごとに 1 つの `.ssab` ができます。
+**2. `.sspj` -> `.ssab`** - SpriteStudio プロジェクトを `SpriteStudio_Source/` 以下に置き、`ssconverter_dart` の `ssconvert` CLI で変換します。1 つの `.sspj` からアニメーションパックごとに 1 つの `.ssab` ができます。
 
 ```bash
 dart run ssconverter_dart:ssconvert -e -o assets/spritestudio/MyChar/ SpriteStudio_Source/MyChar/MyChar.sspj

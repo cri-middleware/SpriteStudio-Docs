@@ -113,6 +113,7 @@ hosted converter, no install.
 
     [:octicons-arrow-right-24: Concepts](./sdk/concepts.md) |
     [Porting](./sdk/porting.md) |
+    [Docs](https://cri-middleware.github.io/SpriteStudio-SDK/) |
     [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
 
 </div>

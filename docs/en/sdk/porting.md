@@ -5,9 +5,10 @@ official player yet? **SpriteStudio-SDK ships a full Player Porting Guide** that
 through building one on top of `libssruntime`.
 
 !!! tip "Where the guide lives"
-    The canonical guide is maintained in the SDK repository:
-    [**SpriteStudio Player Porting Guide**](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
-    (`libs/ssruntime/docs/`). This page is a map into it - the SDK is the source of truth.
+    The canonical guide is published on the SDK's documentation site:
+    [**SpriteStudio Player Porting Guide**](https://cri-middleware.github.io/SpriteStudio-SDK/)
+    (source: [`libs/ssruntime/docs/`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
+    in the SDK repository). This page is a map into it - the SDK is the source of truth.
 
 ## 🧠 Core idea: Brain vs. Body
 
