@@ -39,7 +39,7 @@ Conversion is picked separately from playback, so it has its own row in the tabl
 | Embedding conversion in your own app / service | **`@spritestudio/ssconverter-core`** |
 
 **Game-engine integrations** - rendering built on `@spritestudio/ssplayer-webgl`. Unlike the
-packages above, these are not headed for npm at all; each is distributed through the repository's
+packages above, these are not published to npm; each is distributed through the repository's
 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases).
 
 | Your environment | Package | Status |

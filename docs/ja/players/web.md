@@ -31,7 +31,7 @@
 | `.sspj` -> `.ssab` を変換する | **`ssconverter-web`** - SpriteStudio Player for Web のサイトでホストされるブラウザツール（Node CLI も同梱）。npm パッケージではありません |
 | 変換機能を自作アプリ / サービスに組み込む | **`@spritestudio/ssconverter-core`** |
 
-**ゲームエンジン統合** - 描画は `@spritestudio/ssplayer-webgl` を基盤にしています。上記のパッケージとは違い、こちらはそもそも npm 公開の予定がなく、リポジトリの
+**ゲームエンジン統合** - 描画は `@spritestudio/ssplayer-webgl` を基盤にしています。上記のパッケージとは違い、こちらは npm では公開しておらず、リポジトリの
 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases) で配布されます。
 
 | あなたの環境 | パッケージ | 状態 |

@@ -104,6 +104,7 @@
 
     [:octicons-arrow-right-24: コンセプト](./sdk/concepts.md) |
     [移植](./sdk/porting.md) |
+    [ドキュメント](https://cri-middleware.github.io/SpriteStudio-SDK/ja/) |
     [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
 
 </div>
