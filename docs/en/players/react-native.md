@@ -11,7 +11,7 @@ Play SpriteStudio animations in **React Native** apps, on the New Architecture, 
 **1. What you install** - the package plus its native peers:
 
 ```bash
-npx expo install react-native-spritestudio @shopify/react-native-skia react-native-nitro-modules react-native-reanimated react-native-worklets
+npx expo install react-native-spritestudio react-native-skia react-native-nitro-modules react-native-reanimated react-native-worklets
 ```
 
 **2. `.sspj` -> `.ssab`** - React Native has no editor to host an importer in, so this is a
