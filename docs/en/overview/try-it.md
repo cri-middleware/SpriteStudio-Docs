@@ -15,7 +15,7 @@ alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalo
 
 | Demo | Player | What it shows |
 |---|---|---|
-| [PixiJS demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A `.ssab` animation in a PixiJS v8 app - **drag & drop a directory of `.ssab` + `.png` files** to preview your own. |
+| [PixiJS demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A `.ssab` animation in a PixiJS app - **drag & drop a directory of `.ssab` + `.png` files** to preview your own. |
 | [WebGL demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | The framework-free `<ss-player>` Web Component - **drop a directory of `.ssab` + `.png`** to preview your own. |
 | [Override Layer API demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/override/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A self-running loop on the Ringo sample: per-part color, visibility and cell overrides, applied one at a time while the animation keeps playing, with the call behind each step on screen. |
 | [RPG Maker MZ demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-rmmz`) | A sample MZ project with SpriteStudio animations in correct Z-order. |
@@ -25,8 +25,8 @@ alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalo
 | [Flame demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SpriteStudio Player for Flutter](../players/flutter.md)** (`ssplayer_flame`) | The same playback as a `SpriteStudioComponent`, driven by a Flame game loop. |
 | [WebGPU demo](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | **[SpriteStudio Player for wgpu](../players/wgpu.md)** (`@spritestudio/ssplayer-wgpu`) | The js API, the `<ss-player-webgpu>` custom element on its own, a page full of them overlapping other content on one `GPUDevice`, and a DOM marker following a part through `partTransform`. |
 
-Both Flutter demos run on that player's Web target, which its own documentation calls a
-developer preview. The WebGPU demo needs a browser that supports WebGPU.
+Both Flutter demos run on that player's Web target. The WebGPU demo needs a browser that
+supports WebGPU.
 
 **Want to preview your own animation?** The demos take `.ssab` + `.png`, so convert your `.sspj`
 first - with the browser converter above, or any of the
