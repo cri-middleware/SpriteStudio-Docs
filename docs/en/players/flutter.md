@@ -11,10 +11,9 @@ Play SpriteStudio animations in **Flutter** apps, backed by `libssruntime`. The
     prebuilt `libssruntime` from the pinned SDK release, and the converter downloads
     `libssconverter` the same way.
 
-**1. What you install** - a `ssplayer_flutter` dependency in `pubspec.yaml`, as a git dependency
-on its release tag (`ssplayer_flutter-v<version>`), with the `ssruntime_dart` it names taken from
-the same tag under `dependency_overrides`, and `ssconverter_dart` from the same tag as a dev
-dependency for the converter - see
+**1. What you install** - `ssplayer_flutter` from pub.dev (`flutter pub add ssplayer_flutter`),
+which brings `ssruntime_dart` with it, and `ssconverter_dart` as a dev dependency for the
+converter (`flutter pub add --dev ssconverter_dart`) - see
 [Installation](https://cri-middleware.github.io/SSPlayerForFlutter/guide/install/).
 
 **2. `.sspj` -> `.ssab`** - put your SpriteStudio project under `SpriteStudio_Source/` and run the

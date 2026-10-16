@@ -47,7 +47,7 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
     - A specific schema, e.g. `v1`: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
 
     Match the schema to your player's runtime version - when in doubt, use the latest
-    (auto-redirecting) build and pick the version from the in-app switcher.
+    (auto-redirecting) build.
 
 ## 🖥️ SSConverter GUI - desktop app
 

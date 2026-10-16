@@ -37,7 +37,7 @@
     - 最新版（自動リダイレクト）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)
     - 特定スキーマ版（例 `v1`）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
 
-    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版を使い、アプリ内のバージョン切替から選択してください。
+    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版を使ってください。
 
 ## 🖥️ SSConverter GUI - デスクトップアプリ
 
