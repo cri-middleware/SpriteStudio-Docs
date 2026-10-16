@@ -8,11 +8,8 @@ Play SpriteStudio animations in **React Native** apps, on the New Architecture, 
     app that means `npx expo prebuild` then `npx expo run:ios` / `run:android`; a bare app
     rebuilds its existing native projects. Autolinking picks the package up either way.
 
-**1. What you install** - the package plus its native peers:
-
-```bash
-npx expo install react-native-spritestudio react-native-skia react-native-nitro-modules react-native-reanimated react-native-worklets
-```
+**1. What you install** - `react-native-spritestudio` and its native peers, added with `npx expo install` - see
+[Installation](https://cri-middleware.github.io/SSPlayerForReactNative/setup/install).
 
 **2. `.sspj` -> `.ssab`** - React Native has no editor to host an importer in, so this is a
 host-side step with the SDK's `ssconverter-cli` or [SSConverter GUI](./converter.md) - see

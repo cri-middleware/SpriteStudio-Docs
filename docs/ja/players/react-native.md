@@ -5,11 +5,7 @@
 !!! tip "コードで始まる - かつ Expo Go ではなく development build が必要"
     このパッケージはアプリ自身のバイナリに組み込まれるため、**Expo Go では動きません**。managed なアプリなら `npx expo prebuild` のあと `npx expo run:ios` / `run:android`、bare なアプリなら既存のネイティブプロジェクトを再ビルドします。どちらも autolinking がパッケージを拾います。
 
-**1. 何を入れるか** - パッケージとネイティブ側の peer 依存です。
-
-```bash
-npx expo install react-native-spritestudio react-native-skia react-native-nitro-modules react-native-reanimated react-native-worklets
-```
+**1. 何を入れるか** - `react-native-spritestudio` とネイティブ側の peer 依存を `npx expo install` で入れます（[インストール](https://cri-middleware.github.io/SSPlayerForReactNative/ja/setup/install) を参照）。
 
 **2. `.sspj` -> `.ssab`** - React Native にはインポーターを組み込むエディターがないため、SDK の `ssconverter-cli` か [SSConverter GUI](./converter.md) を使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。**パックはファイルではなくディレクトリです**。`.ssab` はテクスチャや外部パックを自身からの相対パスで参照し、Metro は `require()` が名指ししたものしかバンドルしません。そのためパックのディレクトリはネイティブアセットとして同梱します。Expo config plugin に自分のパスを指定してください。
 
