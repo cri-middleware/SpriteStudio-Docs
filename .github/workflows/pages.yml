@@ -9,11 +9,11 @@ on:
   workflow_dispatch:
 
 # Least privilege: the site is published via the Pages deployment API (OIDC),
-# not by pushing to a branch, so no `contents: write` is needed.
+# not by pushing to a branch, so no `contents: write` is needed. Only the deploy
+# job gets what that deployment needs (pages: write, id-token: write); the build
+# job runs the repository's scripts and does not need them.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # One concurrent deployment at a time; don't cancel an in-flight production deploy.
 concurrency:
@@ -23,6 +23,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       # Only main is published: a run started on another branch would replace the
       # site with that branch. It fails here rather than being skipped, so a run
@@ -36,6 +37,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
@@ -103,6 +105,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
