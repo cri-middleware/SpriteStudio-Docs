@@ -53,7 +53,7 @@ Both paths emit `.ssab` (animation) / `.ssqb` (sequence) plus the referenced tex
 Conversion runs one way only: `.ssab` is a playback format, and there is no route back to
 `.sspj`. Keep editing the SpriteStudio project and convert again.
 
-### How a project's files map to the output
+### How a project's files map to the output { #how-a-projects-files-map-to-the-output }
 
 A SpriteStudio project is made up of several files. If you have been handed a `.sspj` and asked to
 implement against it, this mapping is the first thing to know - and it is **the same whichever
