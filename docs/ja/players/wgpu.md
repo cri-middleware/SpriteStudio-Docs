@@ -12,7 +12,7 @@ C-API 経由ではなく Rust クレートとしてリンクするため、[Spri
 |---|---|
 | **Rust** アプリ | `ssplayer-wgpu` を git 依存として追加します。submodule は Cargo が取得するので、他のツールは不要です。 |
 | **Bevy** アプリ | 代わりに `ssplayer-bevy` を追加します。Player 本体を引き込み、`SsPlayer` / `SsTransform` / `SsPlayback` の 3 コンポーネントを追加します。 |
-| **C / C++** アプリ | cdylib / staticlib と生成されたヘッダー。ビルド済みのものが [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases) に `ssplayer-wgpu-<platform>-<arch>.zip` としてあり、リポジトリで `scripts/build.sh` を実行して `bin/` にビルドすることもできます。 |
+| **C / C++** アプリ | cdylib / staticlib と生成されたヘッダー。ビルド済みのものが [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases?q=ssplayer-wgpu&expanded=true) に `ssplayer-wgpu-<platform>-<arch>.zip` としてあり、リポジトリで `scripts/build.sh` を実行して `bin/` にビルドすることもできます。 |
 | **ブラウザ**（WebGPU） | npm パッケージ `@spritestudio/ssplayer-wgpu`。wasm と TypeScript 層、`<ss-player-webgpu>` カスタム要素は独立したエントリポイントです。 |
 
 **2. `.sspj` -> `.ssab`** - この Player はインポーターを持たず、実行時に変換も行いません。デスクトップ版 [SSConverter GUI](./converter.md) か SDK の `ssconverter-cli` を使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。試すだけなら自分の素材は不要です。同梱サンプルは SDK 自身のテストアニメーションで動きます。

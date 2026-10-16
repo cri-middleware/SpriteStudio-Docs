@@ -18,7 +18,7 @@ and `ssab` as Rust crates rather than through a released C-API, so
 |---|---|
 | A **Rust** app | `ssplayer-wgpu` as a git dependency - Cargo checks out the submodule for you, and no other tooling is needed. |
 | A **Bevy** app | `ssplayer-bevy` instead - it pulls the player in and adds the `SsPlayer` / `SsTransform` / `SsPlayback` components. |
-| A **C or C++** app | A cdylib / staticlib plus a generated header: prebuilt as `ssplayer-wgpu-<platform>-<arch>.zip` on [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases), or built from the repository with `scripts/build.sh` into `bin/`. |
+| A **C or C++** app | A cdylib / staticlib plus a generated header: prebuilt as `ssplayer-wgpu-<platform>-<arch>.zip` on [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases?q=ssplayer-wgpu&expanded=true), or built from the repository with `scripts/build.sh` into `bin/`. |
 | The **browser** (WebGPU) | The npm package `@spritestudio/ssplayer-wgpu` - the wasm plus a TypeScript layer, with the `<ss-player-webgpu>` custom element in its own entry point. |
 
 **2. `.sspj` -> `.ssab`** - nothing here hosts an importer and nothing converts at runtime, so
