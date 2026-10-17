@@ -40,7 +40,7 @@ usage () {
   echo "  -h | --help             Show this help"
   echo ""
   echo "Output: site/ (English) and site/ja/ (Japanese). Both builds are --strict, so a"
-  echo "broken internal link or a nav entry pointing at a missing page fails the build."
+  echo "broken internal link fails the build."
   echo "scripts/check-docs.py runs first and fails it on what --strict cannot see; its"
   echo "--help lists the checks."
   echo ""

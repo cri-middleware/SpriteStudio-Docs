@@ -34,7 +34,7 @@ docs/
 scripts/
   prepare-docs.{sh,ps1}       # venv の作成と、バージョン固定したツールチェーンの導入
   build-docs.{sh,ps1}         # 両ロケールを正しい順序で strict ビルド
-  build-pages.{sh,ps1}        # 上の 2 つを実行し site/ を配信。workflow が呼ぶもの
+  build-pages.{sh,ps1}        # 上の 2 つ（serve=yes で site/ を配信）。workflow が呼ぶもの
   check-docs.py               # --strict では見えないものの検査。build-docs が最初に実行
 mkdocs.base.yml               # 両ロケール共通の設定
 mkdocs.yml                    # 英語   -> site/

@@ -25,7 +25,7 @@ Open a [GitHub Issue](https://github.com/cri-middleware/SpriteStudio-Docs/issues
 ### Pull Requests
 1. Fork the repository and create your branch from `main`.
 2. Make the change in **both** `docs/en/` and `docs/ja/` (see below).
-3. Build **both locales** locally - `scripts/build-docs.sh` (or `scripts\build-docs.ps1`) does exactly that, in the order that works. A pull request's CI runs the same build, so a broken link or a nav entry pointing at a missing page fails the PR as well; building first finds it sooner (see [Development Environment](#development-environment)).
+3. Build **both locales** locally - `scripts/build-docs.sh` (or `scripts\build-docs.ps1`) does exactly that, in the order that works. A pull request's CI runs the same build, so a broken link fails the PR as well; building first finds it sooner (see [Development Environment](#development-environment)).
 4. Submit a Pull Request targeting `main` with a clear description. Use [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `docs: …`).
 
 Note that merging does **not** publish. Deployment is manual: a maintainer runs the `Publish docs via GitHub Pages` workflow (`workflow_dispatch`).
@@ -40,7 +40,7 @@ scripts/build-docs.sh            # the checks, then English and Japanese, both -
 scripts/build-pages.sh serve=yes # the published tree, both locales -> http://localhost:8000/
 ```
 
-Both locales, English first: the English build clears `site/`, and the Japanese site lives inside it at `site/ja`, so an English-only build leaves no Japanese site at all. `mkdocs.base.yml` sets `strict: true`, so a broken internal link or a nav entry pointing at a missing page fails the build. Before either build, `build-docs.sh` runs `scripts/check-docs.py`, which fails on what `--strict` cannot see; its `--help` lists the checks. `build-pages.sh serve=yes` serves both locales from one server, the only way to see the header's language selector resolve. `pages.yml`'s build job **is** that script, so a publish builds exactly what a local run with the same options builds, and a change to `prepare-docs.sh` or `build-pages.sh` is a change to the publish: keep them executable (mode `100755`). `.ps1` twins on Windows, `key=value` options and `--help` on every script.
+Both locales, English first: the English build clears `site/`, and the Japanese site lives inside it at `site/ja`, so an English-only build leaves no Japanese site at all. `mkdocs.base.yml` sets `strict: true`, so a broken internal link fails the build. Before either build, `build-docs.sh` runs `scripts/check-docs.py`, which fails on what `--strict` cannot see; its `--help` lists the checks. `build-pages.sh serve=yes` serves both locales from one server, the only way to see the header's language selector resolve. `pages.yml`'s build job **is** that script, so a publish builds exactly what a local run with the same options builds, and a change to `prepare-docs.sh` or `build-pages.sh` is a change to the publish: keep them executable (mode `100755`). `.ps1` twins on Windows, `key=value` options and `--help` on every script.
 
 `zensical serve` previews one locale as you write, and validates nothing, `--strict` or not:
 
@@ -56,7 +56,7 @@ The toolchain versions in `docs/requirements.txt` are pinned deliberately - plea
 ## Documentation Standards
 
 ### Both languages, always
-The site uses folder-based i18n: every page exists twice, as `docs/en/<path>` and `docs/ja/<path>`. When you add, move, or rename a page, **do it in both**. There is no fallback locale: each locale is a separate build over its own `docs_dir`, so a page missing from `docs/ja/` is not quietly served in English, it is a nav entry pointing at nothing, and the strict build fails on it. The strict build says nothing about a page that no nav names; `scripts/check-docs.py` fails on that, and on the two locales' pages differing.
+The site uses folder-based i18n: every page exists twice, as `docs/en/<path>` and `docs/ja/<path>`. When you add, move, or rename a page, **do it in both**. There is no fallback locale: each locale is a separate build over its own `docs_dir`, so a page missing from `docs/ja/` is not quietly served in English, it is a nav entry pointing at nothing. The strict build says nothing about that, nor about a page that no nav names; `scripts/check-docs.py` fails on the two locales' pages differing, which is how a page missing from one of them shows, and on a page that no nav names.
 
 If you can only write one language confidently, say so in the PR; a maintainer can help with the other side rather than let the two drift.
 
@@ -106,7 +106,7 @@ SpriteStudio ドキュメントポータルの改善にご関心をお寄せい�
 ### プルリクエスト
 1. リポジトリを fork し、`main` からブランチを作成してください。
 2. `docs/en/` と `docs/ja/` の **両方** を変更してください（下記参照）。
-3. ローカルで **両ロケール** をビルドしてください。`scripts/build-docs.sh`（または `scripts\build-docs.ps1`）が正しい順序で両方をビルドします。プルリクエストの CI も同じビルドを実行するので、リンク切れや、存在しないページを指す nav エントリーがあれば PR も失敗します。先に手元でビルドすれば、早く気付けます（[開発環境](#開発環境) 参照）。
+3. ローカルで **両ロケール** をビルドしてください。`scripts/build-docs.sh`（または `scripts\build-docs.ps1`）が正しい順序で両方をビルドします。プルリクエストの CI も同じビルドを実行するので、リンク切れがあれば PR も失敗します。先に手元でビルドすれば、早く気付けます（[開発環境](#開発環境) 参照）。
 4. `main` を対象に、変更内容を明確に記載した PR を作成してください。コミットは [Conventional Commits](https://www.conventionalcommits.org/)（例: `docs: …`）に従ってください。
 
 マージしても **公開はされません**。デプロイは手動で、メンテナーが `Publish docs via GitHub Pages` ワークフロー（`workflow_dispatch`）を実行します。
@@ -121,7 +121,7 @@ scripts/build-docs.sh            # チェックのあと、英語 → 日本語�
 scripts/build-pages.sh serve=yes # 公開ツリー、両ロケール -> http://localhost:8000/
 ```
 
-必ず両ロケールを、英語を先にビルドします。英語ビルドは `site/` を消去し、日本語サイトはその内側（`site/ja`）に出力されるため、英語だけをビルドすると日本語サイトは残らず消えます。`mkdocs.base.yml` が `strict: true` を設定しているので、内部リンク切れや、存在しないページを指す nav エントリーがあるとビルドは失敗します。`build-docs.sh` はどちらのビルドよりも先に `scripts/check-docs.py` を実行し、`--strict` では見えないものがあれば失敗します。チェックの一覧はその `--help` にあります。`build-pages.sh serve=yes` は両ロケールを 1 つのサーバーで配信します。ヘッダーの言語セレクターの動作を確認できるのはこの方法だけです。`pages.yml` のビルドジョブは**このスクリプト**なので、公開でビルドされるものは、同じオプションで手元でビルドしたものと一致します。`prepare-docs.sh` と `build-pages.sh` への変更は公開への変更でもあるため、実行権限（モード `100755`）を保ってください。Windows は `.ps1` 版を使い、どのスクリプトも `key=value` 形式のオプションと `--help` を取ります。
+必ず両ロケールを、英語を先にビルドします。英語ビルドは `site/` を消去し、日本語サイトはその内側（`site/ja`）に出力されるため、英語だけをビルドすると日本語サイトは残らず消えます。`mkdocs.base.yml` が `strict: true` を設定しているので、内部リンク切れがあるとビルドは失敗します。`build-docs.sh` はどちらのビルドよりも先に `scripts/check-docs.py` を実行し、`--strict` では見えないものがあれば失敗します。チェックの一覧はその `--help` にあります。`build-pages.sh serve=yes` は両ロケールを 1 つのサーバーで配信します。ヘッダーの言語セレクターの動作を確認できるのはこの方法だけです。`pages.yml` のビルドジョブは**このスクリプト**なので、公開でビルドされるものは、同じオプションで手元でビルドしたものと一致します。`prepare-docs.sh` と `build-pages.sh` への変更は公開への変更でもあるため、実行権限（モード `100755`）を保ってください。Windows は `.ps1` 版を使い、どのスクリプトも `key=value` 形式のオプションと `--help` を取ります。
 
 執筆中は `zensical serve` で 1 ロケールをプレビューできます。`--strict` を付けても何も検証しません。
 
@@ -137,7 +137,7 @@ Windows では実行ファイルは `.\.venv\Scripts\zensical` です。
 ## ドキュメントの規約
 
 ### 常に両言語
-フォルダー方式の i18n を使っており、すべてのページは `docs/en/<path>` と `docs/ja/<path>` の 2 か所に存在します。ページの追加・移動・リネームは **必ず両方** に行ってください。フォールバックのロケールはありません。ロケールごとに `docs_dir` の異なる別のビルドなので、`docs/ja/` に無いページが英語で代替表示されることはなく、リンク先の無い nav エントリーになり、strict ビルドが失敗します。一方、どの nav にも載っていないページについて strict ビルドは何も言いません。それを失敗にするのは `scripts/check-docs.py` で、2 つのロケールのページが食い違う場合も同じです。
+フォルダー方式の i18n を使っており、すべてのページは `docs/en/<path>` と `docs/ja/<path>` の 2 か所に存在します。ページの追加・移動・リネームは **必ず両方** に行ってください。フォールバックのロケールはありません。ロケールごとに `docs_dir` の異なる別のビルドなので、`docs/ja/` に無いページが英語で代替表示されることはなく、リンク先の無い nav エントリーになります。strict ビルドはこれについても、どの nav にも載っていないページについても何も言いません。`scripts/check-docs.py` は、2 つのロケールのページの食い違い（片方に無いページはこれで分かります）と、どの nav にも載っていないページを失敗にします。
 
 片方の言語しか自信がない場合は、その旨を PR に書いてください。両者が乖離するくらいなら、メンテナーがもう一方を補います。
 
