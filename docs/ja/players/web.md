@@ -12,7 +12,7 @@
 **2. `.sspj` -> `.ssab`** - この Player 自身のサイトでホストされる `ssconverter-web` を使ってブラウザで変換するか、[スタンドアロンツール](../overview/convert-with-a-standalone-tool.md)のいずれかを使います。変換用パッケージは再生用とは別に選ぶため、下の表でも行を分けています。
 
 **3. どう画面に出すか** - 選んだレンダラーが提供する要素を配置します。フレームワーク非依存の
-`<ss-player>` Web Component か、PixiJS v8 アプリ内の `SpriteStudio` 表示オブジェクトです。
+`<ss-player>` Web Component か、PixiJS アプリ内の `SpriteStudio` 表示オブジェクトです。
 
 ## 🧰 環境に合わせてパッケージを選ぶ { #pick-by-environment }
 
@@ -21,7 +21,7 @@
 | あなたの環境 | パッケージ |
 |---|---|
 | 単体 / フレームワーク非依存（`<ss-player>` Web Component） | **`@spritestudio/ssplayer-webgl`** |
-| PixiJS v8 アプリ | **`@spritestudio/ssplayer-pixi`** |
+| PixiJS アプリ | **`@spritestudio/ssplayer-pixi`** |
 | 自作レンダラーを実装する | **`@spritestudio/ssplayer-core`** |
 
 **変換** - `.sspj` をランタイムアセットへ変換します。再生用パッケージとは別に選びます。
@@ -36,7 +36,7 @@
 
 | あなたの環境 | パッケージ | 状態 |
 |---|---|---|
-| RPG ツクール MZ（PixiJS v5） | **`@spritestudio/ssplayer-rmmz`** | beta |
+| RPG ツクール MZ | **`@spritestudio/ssplayer-rmmz`** | beta |
 | TyranoScript - シナリオに `[ss_*]` タグを自分で書く | **`@spritestudio/ssplayer-tyranoscript`** | beta |
 | TyranoBuilder - コンポーネントパレットから配置、シナリオコード不要 | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
 

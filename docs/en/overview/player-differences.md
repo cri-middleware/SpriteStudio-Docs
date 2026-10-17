@@ -69,7 +69,8 @@ single-threaded (`nothread`), which is why it needs no COOP/COEP headers.
 
 Two render backends (`flutter_gpu` / Canvas; Web is always Canvas). On Canvas, `Sub` and `Invert`
 are reconstructed from four and three passes (they cannot batch); `Div2` / `Overlay2` render as `Mix` on
-**both** backends. Masks **do not clip Effect parts** on either backend.
+**both** backends. Masks **do not clip Effect parts** on either backend. The Web target is a
+**developer preview**.
 
 Widget **part following** carries the transform but not the draw order - a followed widget paints
 above the whole animation rather than between its parts - and its anchor has to cover the view's

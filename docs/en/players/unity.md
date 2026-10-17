@@ -12,7 +12,7 @@ registry for `jp.co.cri-mw` (**Install package by name...**), or as the tarball 
 [GitHub Releases](https://github.com/cri-middleware/SSPlayerForUnity/releases) with **Add package
 from tarball** - see [Installation](https://cri-middleware.github.io/SSPlayerForUnity/setup/install/).
 *Add package from URL* does not work for this package: the native binaries ship only in the
-released package. Unity 6.3 LTS and later, on both URP and BRP.
+released package. It runs on both URP and BRP.
 
 **2. `.sspj` -> `.ssab`** - open **Window > SpriteStudio > Importer** and drag the `.sspj` in.
 `libssconverter` is bundled with the package, so there is no separate tool to install, and

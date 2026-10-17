@@ -7,8 +7,8 @@ Renders SpriteStudio animations natively in the **Godot Engine**, backed by `lib
     GDScript control is available; nothing above needs it.
 
 **1. What you install** - the `addons` folder from
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForGodot/releases), copied into your
-Godot project root. Godot 4.7-series. The player comes in two forms:
+the [latest Release](https://github.com/cri-middleware/SSPlayerForGodot/releases/latest), copied into your
+Godot project root. The player comes in two forms:
 
 - **GDExtension** - the drop-in binary add-on the Release carries; no engine rebuild required.
 - **Custom module** - built from source into a custom Godot build for tighter integration.

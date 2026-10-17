@@ -19,7 +19,7 @@ player's own site, or with any of the [standalone tools](../overview/convert-wit
 Conversion is picked separately from playback, so it has its own row in the tables below.
 
 **3. Getting it on screen** - place the element your renderer provides: the framework-free
-`<ss-player>` Web Component, or a `SpriteStudio` display object inside a PixiJS v8 app.
+`<ss-player>` Web Component, or a `SpriteStudio` display object inside a PixiJS app.
 
 ## 🧰 Which package? Pick by environment { #pick-by-environment }
 
@@ -28,7 +28,7 @@ Conversion is picked separately from playback, so it has its own row in the tabl
 | Your environment | Package |
 |---|---|
 | Standalone / no framework (`<ss-player>` Web Component) | **`@spritestudio/ssplayer-webgl`** |
-| PixiJS v8 app | **`@spritestudio/ssplayer-pixi`** |
+| PixiJS app | **`@spritestudio/ssplayer-pixi`** |
 | Building your own renderer | **`@spritestudio/ssplayer-core`** |
 
 **Conversion** - turns `.sspj` into runtime assets; picked separately from the playback package.
@@ -44,7 +44,7 @@ packages above, these are not published to npm; each is distributed through the 
 
 | Your environment | Package | Status |
 |---|---|---|
-| RPG Maker MZ (PixiJS v5) | **`@spritestudio/ssplayer-rmmz`** | beta |
+| RPG Maker MZ | **`@spritestudio/ssplayer-rmmz`** | beta |
 | TyranoScript - writing `[ss_*]` tags in a scenario yourself | **`@spritestudio/ssplayer-tyranoscript`** | beta |
 | TyranoBuilder - placing animations from the component palette, no scenario code | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
 
