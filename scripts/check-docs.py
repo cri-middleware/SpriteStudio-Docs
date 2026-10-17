@@ -6,22 +6,25 @@
 --strict fails a nav entry that names a missing page, and a broken internal
 link or anchor. It says nothing about a page that no nav names, a locale that
 has drifted from the other, an llms.txt index that has lost a page, the lists of
-repositories disagreeing, or a Japanese line break the browser renders as a
-space. This script checks those.
+repositories disagreeing, a link from a player's docs into this site that lands
+on no page or on an anchor no heading names with an explicit id, or a Japanese
+line break the browser renders as a space. This script checks those.
 
 scripts/build-docs.sh and build-docs.ps1 run it before building, so CI and a
 publish run it too. It needs only the standard library, so any Python 3 on PATH
 can run it.
 
 Each check prints what it compared. A check that cannot run says "skipped" and
-why -- the deep-link check needs the sibling repositories cloned next to this
-one, and CI has none -- so read the output, not just the exit code.
+why -- the deep-link and inbound-link checks need the sibling repositories
+cloned next to this one, and CI has none -- so read the output, not just the
+exit code.
 """
 
 import os
 import re
 import subprocess
 import sys
+import urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP = os.path.basename(__file__)
@@ -292,6 +295,55 @@ def check_deep_links(links):
         skipped("deep links", f"{n} into {repo}: no clone at {os.path.join(siblings, repo)}")
 
 
+PORTAL_LINK = re.compile(r"cri-middleware\.github\.io/SpriteStudio-Docs/([^\s)>\"'`#]*)(?:#([^\s)>\"'`]+))?")
+EXPLICIT_ID = re.compile(r"^#{1,6} .*\{[^}]*#([^\s}]+)[^}]*\}\s*$")
+
+
+def check_inbound_links():
+    """What the sibling repositories link to on this site: a page, and an anchor a heading names.
+
+    The anchor has to be an explicit id (`{ #id }`) on the heading, so rewording the
+    heading leaves the link where it was. Links to files the build makes (llms.txt)
+    are not pages and are left out.
+    """
+    siblings = os.path.dirname(ROOT)
+    problems, links, anchors, clones = [], 0, 0, 0
+    for repo in sorted(repos_in("docs/en/index.md")):
+        clone = os.path.join(siblings, repo)
+        if not os.path.exists(os.path.join(clone, ".git")):
+            continue
+        clones += 1
+        out = subprocess.check_output(["git", "-C", clone, "ls-files", "--", "*.md"], stderr=subprocess.DEVNULL)
+        for path in out.decode("utf-8").split("\n")[:-1]:
+            with open(os.path.join(clone, path), encoding="utf-8") as f:
+                lines = f.read().split("\n")
+            for i, line in enumerate(lines, 1):
+                for m in PORTAL_LINK.finditer(line):
+                    where, anchor = m.group(1).strip("/"), m.group(2)
+                    loc, page = ("ja", where[3:]) if where == "ja" or where.startswith("ja/") else ("en", where)
+                    if "." in page.rsplit("/", 1)[-1]:
+                        continue
+                    links += 1
+                    pages = [f"docs/{loc}/{page}.md", f"docs/{loc}/{page}/index.md"] if page else [f"docs/{loc}/index.md"]
+                    md = next((c for c in pages if os.path.isfile(os.path.join(ROOT, c))), None)
+                    if not md:
+                        problems.append(f"{repo}/{path}:{i}: links {m.group(0)}, but there is no {pages[0]}")
+                        continue
+                    if anchor:
+                        anchors += 1
+                        anchor = urllib.parse.unquote(anchor)
+                        ids = {x.group(1) for x in map(EXPLICIT_ID.match, read(md).split("\n")) if x}
+                        if anchor not in ids:
+                            problems.append(f"{repo}/{path}:{i}: links #{anchor} on {md}, which no heading names "
+                                            f"with an explicit {{ #{anchor} }}")
+    if not clones:
+        skipped("inbound links", f"no sibling repository is cloned next to this one ({siblings})")
+        return
+    report("inbound links", problems,
+           f"{links} links from {clones} sibling clones land on a page, and the {anchors} with an anchor "
+           f"on a heading's explicit id")
+
+
 # Chrome renders a soft line break as a space, also between two Japanese
 # characters and next to Japanese punctuation, where the pages write none. Beside
 # a link they do write one, so a break there is that space.
@@ -368,6 +420,7 @@ def main(argv):
     links = sibling_links()
     check_head_links(links)
     check_deep_links(links)
+    check_inbound_links()
     check_japanese_breaks()
     print(f"{APP}: {'FAILED -- ' + str(failures) + ' check(s)' if failures else 'done'}")
     return 1 if failures else 0
