@@ -1,5 +1,6 @@
 # Build output (both locales; the ja build writes into site/ja)
 /site/
+/qa/
 # Python
 .venv/
 __pycache__/
