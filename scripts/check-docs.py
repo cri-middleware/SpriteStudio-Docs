@@ -6,8 +6,9 @@
 --strict fails a broken internal link or anchor, but not a nav entry that names
 a missing page. It says nothing about a page that no nav names, a locale that
 has drifted from the other, an llms.txt index that has lost a page, the lists of
-repositories disagreeing, a link from a player's docs into this site that lands
-on no page or on an anchor no heading names with an explicit id, or a Japanese
+repositories disagreeing, a link from a sibling's docs into this site that
+lands on no page or on an anchor no heading names with an explicit id, a link
+from this site to a page or demo a sibling's site does not build, or a Japanese
 line break the browser renders as a space. This script checks those.
 
 scripts/build-docs.sh and build-docs.ps1 run it before building, so CI and a
@@ -15,11 +16,12 @@ publish run it too. It needs only the standard library, so any Python 3 on PATH
 can run it.
 
 Each check prints what it compared. A check that cannot run says "skipped" and
-why -- the deep-link and inbound-link checks need the sibling repositories
-cloned next to this one, and CI has none -- so read the output, not just the
-exit code.
+why -- the deep-link, inbound-link and outbound-link checks need the sibling
+repositories cloned next to this one, and CI has none -- so read the output,
+not just the exit code.
 """
 
+import json
 import os
 import re
 import subprocess
@@ -344,6 +346,66 @@ def check_inbound_links():
            f"on a heading's explicit id")
 
 
+SIBLING_SITE_LINK = re.compile(r"cri-middleware\.github\.io/([A-Za-z0-9_.-]+)/([^\s)>\"'`#]*)")
+
+
+def sibling_site_has(clone, where):
+    loc, page = ("ja", where[3:]) if where == "ja" or where.startswith("ja/") else ("en", where)
+    roots = [f"docs/{loc}"] + (["docs"] if loc == "en" else [])
+    candidates = [f"{r}/{page}.md" for r in roots if page]
+    candidates += [f"{r}/{page}/index.md" if page else f"{r}/index.md" for r in roots]
+    if not page:
+        candidates.append("libs/ssruntime/docs/README.ja.md" if loc == "ja" else "libs/ssruntime/docs/README.md")
+    if any(os.path.isfile(os.path.join(clone, c)) for c in candidates):
+        return True
+    if where == "ssconverter" or where.startswith("ssconverter/"):
+        versions = os.path.join(clone, "packages", "ssconverter-web", "versions.json")
+        if not os.path.isfile(versions):
+            return False
+        with open(versions, encoding="utf-8") as f:
+            schemas = {v["schema"] for v in json.load(f)["versions"]}
+        return where == "ssconverter" or where.split("/", 1)[1] in schemas
+    build_sh = os.path.join(clone, "scripts", "build-pages.sh")
+    if not where or not os.path.isfile(build_sh):
+        return False
+    with open(build_sh, encoding="utf-8") as f:
+        code = "\n".join(l for l in f.read().split("\n") if not l.lstrip().startswith("#"))
+    return re.search(rf"(?:\bsite|\$\{{?OUT\}}?)/{re.escape(where)}(?![\w.-])", code) is not None
+
+
+def check_outbound_links():
+    """What this site links to on the sibling repositories' sites: a page or a demo they build.
+
+    A page is a Markdown file in the sibling's docs; a demo is a path its
+    scripts/build-pages.sh writes under site/ or $OUT, or a converter schema in its
+    versions.json. Links to files (llms.txt) are left out, and anchors are not checked.
+    """
+    siblings = os.path.dirname(ROOT)
+    problems, resolved, missing_clone = [], 0, {}
+    for path in tracked("*.md", "*.yml", "*.html"):
+        for i, line in enumerate(read(path).split("\n"), 1):
+            for m in SIBLING_SITE_LINK.finditer(line):
+                repo, where = m.group(1), m.group(2).strip("/")
+                if repo == "SpriteStudio-Docs" or "." in where.rsplit("/", 1)[-1]:
+                    continue
+                clone = os.path.join(siblings, repo)
+                if not os.path.exists(os.path.join(clone, ".git")):
+                    missing_clone[repo] = missing_clone.get(repo, 0) + 1
+                    continue
+                if sibling_site_has(clone, where):
+                    resolved += 1
+                else:
+                    problems.append(f"{path}:{i}: links {m.group(0)}, which {repo} at {clone} does not build")
+    if not resolved and not problems:
+        skipped("outbound links", f"no sibling repository is cloned next to this one ({siblings})")
+        return
+    report("outbound links", problems,
+           f"{resolved} links to sibling sites match a page or demo in the local clones' working trees, "
+           f"which may not be on the default branch")
+    for repo, n in sorted(missing_clone.items()):
+        skipped("outbound links", f"{n} into {repo}: no clone at {os.path.join(siblings, repo)}")
+
+
 # Chrome renders a soft line break as a space, also between two Japanese
 # characters and next to Japanese punctuation, where the pages write none. Beside
 # a link they do write one, so a break there is that space.
@@ -421,6 +483,7 @@ def main(argv):
     check_head_links(links)
     check_deep_links(links)
     check_inbound_links()
+    check_outbound_links()
     check_japanese_breaks()
     print(f"{APP}: {'FAILED -- ' + str(failures) + ' check(s)' if failures else 'done'}")
     return 1 if failures else 0

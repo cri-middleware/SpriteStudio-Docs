@@ -33,9 +33,12 @@ Jumping the playhead directly (setting the frame) emits only the **destination f
 
 ### Audio never plays in reverse
 
-Sound events fire only while the animation advances **forward** in time. When the effective
-direction is backward - a reverse direction, or the return leg of ping-pong - audio events are
-skipped. Reverse audio is not something the common audio backends provide.
+Reverse audio is not something the common audio backends provide, so sounds are played only
+while the animation advances **forward** in time. When the effective direction is backward - a
+reverse direction, or the return leg of ping-pong - the runtime still reports the audio events,
+and it is the sound that is suppressed: the players with built-in audio playback skip it, and on
+a player that hands audio events to your app, gate on `isPlayingForward` (`is_playing_forward`)
+before playing.
 
 A negative playback speed is **not** one of those cases: speed is a multiplier, and a negative
 one stops the playhead rather than turning it around. Reverse is the playback direction's job.
@@ -52,10 +55,10 @@ Stacking has two hard constraints:
   errors that visibly break the pose. Animations inside one `.ssae` normally satisfy this.
 
 Three secondary behaviors are worth knowing: for parts that carry `parts_color`, the visible
-alpha comes from **track 0** rather than the mixed value; by default only a track's
-fully-weighted animation fires events (each source has an event threshold, and track 0's
-animation always fires); and sources of different lengths run on independent clocks, so keeping
-them in step is the player's job.
+alpha comes from **track 0** rather than the mixed value; by default only **track 0**'s main
+animation fires events (other sources have a default event threshold of `+∞`, so lower a
+source's threshold to let it fire too); and sources of different lengths run on independent
+clocks, so keeping them in step is the player's job.
 
 ## 🧩 What the player must supply
 
