@@ -41,7 +41,7 @@ docs/
 scripts/
   prepare-docs.{sh,ps1}       # create the venv, install the pinned toolchain
   build-docs.{sh,ps1}         # build both locales, strict, in the right order
-  build-pages.{sh,ps1}        # the two above, then serve site/ - what the workflow runs
+  build-pages.{sh,ps1}        # the two above (serve=yes serves site/) - what the workflows run
   check-docs.py               # what --strict cannot see; build-docs runs it first
 mkdocs.base.yml               # everything shared by both locales
 mkdocs.yml                    # English  -> site/

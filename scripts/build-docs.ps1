@@ -49,7 +49,7 @@ function Show-Usage {
     Write-Host "  -h | --help             Show this help"
     Write-Host ""
     Write-Host "Output: site/ (English) and site/ja/ (Japanese). Both builds are --strict, so a"
-    Write-Host "broken internal link or a nav entry pointing at a missing page fails the build."
+    Write-Host "broken internal link fails the build."
     Write-Host "scripts/check-docs.py runs first and fails it on what --strict cannot see; its"
     Write-Host "--help lists the checks."
     Write-Host ""

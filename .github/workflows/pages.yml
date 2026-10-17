@@ -84,7 +84,7 @@ jobs:
       # that order; the reason it exists is that the opposite order silently
       # publishes a site with no Japanese pages at all.
       #
-      # --strict fails on broken links / missing nav entries, so a publish aborts
+      # --strict fails on broken links, so a publish aborts
       # rather than deploying a site with a dead link.
       #
       # Every option is spelled out rather than left to the script's defaults:

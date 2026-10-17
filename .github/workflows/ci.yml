@@ -1,9 +1,9 @@
 name: CI
 
 # The site is all this repository builds, so every pull request builds it the way
-# pages.yml publishes it: both locales, --strict, so a broken link or a nav entry
-# pointing at a missing page fails the PR. The weekly run builds main, is what
-# writes the caches PRs restore from, and checks the external links.
+# pages.yml publishes it: both locales, --strict, so a broken link fails the PR.
+# The weekly run builds main, is what writes the caches PRs restore from, and
+# checks the external links.
 on:
   pull_request:
     # Unlike the sibling repositories, Markdown is not ignored: it is the content.

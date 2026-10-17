@@ -3,8 +3,8 @@
 
   scripts/check-docs.py              # every check; exit 1 if any fails
 
---strict fails a nav entry that names a missing page, and a broken internal
-link or anchor. It says nothing about a page that no nav names, a locale that
+--strict fails a broken internal link or anchor, but not a nav entry that names
+a missing page. It says nothing about a page that no nav names, a locale that
 has drifted from the other, an llms.txt index that has lost a page, the lists of
 repositories disagreeing, a link from a player's docs into this site that lands
 on no page or on an anchor no heading names with an explicit id, or a Japanese
