@@ -17,7 +17,7 @@ are defined against that version, and conversion does not upgrade an older proje
 
 ## 🔀 Two ways to convert
 
-### 1. Converted automatically on import - no external tool (Unity, Godot, Flutter, Ren'Py, TyranoBuilder)
+### 1. Converted automatically on import - no external tool (Unity, Godot, Flutter, Ren'Py, RPG Maker MZ, TyranoBuilder)
 
 The official player packages for these engines **bundle** `libssconverter` as a conversion tool.
 It runs automatically on the editor / development side, so conversion happens
@@ -28,6 +28,8 @@ in-place - **nothing else to install**:
 - **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md)'s auto importer (`sswatch`) re-converts on save and pushes the
   result into the running app (drop sources into `SpriteStudio_Source/`); its `ssconvert` CLI converts once.
 - **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) auto-imports on startup (drop sources into `SpriteStudio_Source/`).
+- **RPG Maker MZ** - [SpriteStudio Player for Web](../players/web.md)'s `ssplayer-rmmz` plugin converts when a test play
+  starts, before the title appears (drop sources into `SpriteStudio_Source/`).
 - **TyranoBuilder** - [SpriteStudio Player for Web](../players/web.md)'s `ssplayer-tyranobuilder` plugin converts inside the
   editor when the project is opened (drop sources into `SpriteStudio_Source/`); the result then appears in the
   component's dropdowns.
@@ -38,7 +40,7 @@ Each player's own docs walk through its workflow - see
 ### 2. Standalone tools - convert it yourself
 
 On a different engine, in a CI/CD pipeline, or using one of the players that hosts no importer -
-[SpriteStudio Player for Web](../players/web.md)'s renderers (the Web collection),
+[SpriteStudio Player for Web](../players/web.md)'s renderers and its TyranoScript plugin,
 [SpriteStudio Player for React Native](../players/react-native.md), or [SpriteStudio Player for wgpu](../players/wgpu.md)?
 No player converts for you there, so you convert with one of three standalone front-ends -
 a desktop GUI, a CLI, or a browser tool. Which one to pick and how to run each is covered in

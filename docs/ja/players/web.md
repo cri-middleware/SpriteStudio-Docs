@@ -42,8 +42,7 @@
 | TyranoScript - シナリオに `[ss_*]` タグを自分で書く | **`@spritestudio/ssplayer-tyranoscript`** | beta |
 | TyranoBuilder - コンポーネントパレットから配置、シナリオコード不要 | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
 
-`ssplayer-tyranobuilder` はレンダラーではなく**オーサリング時のツール**です。TyranoScript
-ランタイムを同梱し、さらに `.sspj` をエディタ内で変換するため、TyranoBuilder のプロジェクトでは上の変換用パッケージを選ぶ必要がありません。
+`ssplayer-rmmz` と `ssplayer-tyranobuilder` は `.sspj` を自分で変換します（MZ のプラグインはテストプレイの開始時、TyranoBuilder のプラグインはエディタ内）。そのため MZ や TyranoBuilder のプロジェクトでは、上の変換用パッケージを選ぶ必要がありません。`ssplayer-tyranobuilder` はレンダラーではなく**オーサリング時のツール**で、TyranoScript ランタイムを同梱しています。
 
 ## ➡️ 次に読む
 
