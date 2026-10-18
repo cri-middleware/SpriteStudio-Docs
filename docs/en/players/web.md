@@ -50,9 +50,10 @@ packages above, these are not published to npm; each is distributed through the 
 | TyranoScript - writing `[ss_*]` tags in a scenario yourself | **`@spritestudio/ssplayer-tyranoscript`** | beta |
 | TyranoBuilder - placing animations from the component palette, no scenario code | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
 
-`ssplayer-tyranobuilder` is **author-time tooling** rather than a renderer: it ships the
-TyranoScript runtime *and* converts `.sspj` inside the editor, so a TyranoBuilder project needs
-neither of the conversion packages above.
+`ssplayer-rmmz` and `ssplayer-tyranobuilder` convert `.sspj` themselves - the MZ plugin when a test
+play starts, the TyranoBuilder plugin inside the editor - so an MZ or TyranoBuilder project needs
+neither of the conversion packages above. `ssplayer-tyranobuilder` is **author-time tooling** rather
+than a renderer: it ships the TyranoScript runtime with it.
 
 ## ➡️ Read next
 

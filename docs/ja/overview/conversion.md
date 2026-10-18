@@ -11,7 +11,7 @@
 
 ## 🔀 変換の 2 つの方法
 
-### 1. インポート時に自動変換 - 外部ツール不要（Unity・Godot・Flutter・Ren'Py・TyranoBuilder）
+### 1. インポート時に自動変換 - 外部ツール不要（Unity・Godot・Flutter・Ren'Py・RPG ツクール MZ・TyranoBuilder）
 
 これらのエンジン向けの公式 Player パッケージには、変換ツールとして `libssconverter` が**バンドル**されています。エディタなどの開発環境側で自動的に実行されるため、その場で変換できます。**追加インストールは不要**です。
 
@@ -19,6 +19,7 @@
 - **Godot** - [SpriteStudio Player for Godot](../players/godot.md) の SS Importer ドックがドラッグ&ドロップで変換します。
 - **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md) のオートインポート（`sswatch`）が保存のたびに再変換し、実行中のアプリへ反映します（`SpriteStudio_Source/` にソースを配置）。単発の変換は `ssconvert` CLI で行えます。
 - **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) が起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。
+- **RPG ツクール MZ** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-rmmz` プラグインが、テストプレイの開始時、タイトルが出る前に変換します（`SpriteStudio_Source/` にソースを配置）。
 - **TyranoBuilder** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、プロジェクトを開いたときにエディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントのドロップダウンに現れます。
 
 各 Player のワークフローは、それぞれのドキュメントで解説しています。[プラットフォームの選び方](./choose-your-platform.md) を参照してください。
@@ -26,7 +27,7 @@
 ### 2. スタンドアロンツール - 自分で変換する
 
 別のエンジン、CI/CD パイプライン、またはインポーターを持たない Player -
-[SpriteStudio Player for Web](../players/web.md) のレンダラー（Web コレクション）、[SpriteStudio Player for React Native](../players/react-native.md)、[SpriteStudio Player for wgpu](../players/wgpu.md) -
+[SpriteStudio Player for Web](../players/web.md) のレンダラーと TyranoScript プラグイン、[SpriteStudio Player for React Native](../players/react-native.md)、[SpriteStudio Player for wgpu](../players/wgpu.md) -
 を使う場合は、変換を代行してくれる Player がないため、3 つのスタンドアロンフロントエンド（デスクトップ GUI・CLI・ブラウザ）のいずれかで変換します。どれを選び、どう使うかは
 **[スタンドアロンツールで変換する](./convert-with-a-standalone-tool.md)** で解説します。
 
