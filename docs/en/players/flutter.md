@@ -16,15 +16,14 @@ which brings `ssruntime_dart` with it, and `ssconverter_dart` as a dev dependenc
 converter (`flutter pub add --dev ssconverter_dart`) - see
 [Installation](https://cri-middleware.github.io/SSPlayerForFlutter/guide/install/).
 
-**2. `.sspj` -> `.ssab`** - put your SpriteStudio project under `SpriteStudio_Source/` and run the
-`ssconvert` CLI from `ssconverter_dart`. One `.sspj` yields one `.ssab` per animation pack:
+**2. `.sspj` -> `.ssab`** - put your SpriteStudio project under `SpriteStudio_Source/`, convert it
+with the `ssconvert` CLI from `ssconverter_dart`, and list the output folder under `assets:` in
+`pubspec.yaml`. One `.sspj` yields one `.ssab` per animation pack.
 
-```bash
-dart run ssconverter_dart:ssconvert -e -o assets/spritestudio/MyChar/ SpriteStudio_Source/MyChar/MyChar.sspj
-```
+**3. Getting it on screen** - one `SpriteStudioAnimation.asset(…)` widget with the `.ssab`'s asset
+path; a `SpriteStudioPlayer` in a `SpriteStudioView` when you drive playback yourself.
 
-**3. Getting it on screen** - `await player.loadAsset('assets/spritestudio/MyChar/MyChar.ssab')`,
-then set an animation and place a `SpriteStudioView(player: player, …)` in your widget tree.
+The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForFlutter#-1-quick-start).
 
 Alongside the player it ships:
 

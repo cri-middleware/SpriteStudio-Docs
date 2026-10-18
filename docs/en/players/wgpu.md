@@ -27,25 +27,14 @@ this is a host-side step with the desktop [SSConverter GUI](./converter.md) or t
 needed to try the player first: the bundled samples run on the SDK's own test animations.
 
 **3. Getting it on screen** - one `SSRenderer` per device, one `SSScene` per render target, and
-any number of `SSPlayer`s drawn into it in one pass:
-
-```rust
-let mut renderer = SSRenderer::new(&device);
-let mut scene = SSScene::new(&device, &SceneConfig { color_format, stencil_format, mask: MaskBackend::Stencil });
-
-let mut player = SSPlayer::new();
-player.load("assets/overall/Basic.ssab")?;   // pack, atlases and sibling packs, in one call
-player.set_animation("anime_1")?;
-player.play();
-
-scene.update(&mut renderer, &device, &queue, delta_secs, &mut [&mut player]);
-scene.draw(&renderer, &mut rpass);           // into a pass the host opened
-```
+any number of `SSPlayer`s drawn into it in one pass, inside a render pass the host opened.
 
 The C and JavaScript faces carry the same calls under their own names, with one structural
 difference: they build and own their device rather than drawing into a pass of yours (below). In
 a Bevy app the adapter does this for you: you spawn the three components and characters go into
 Bevy's own 2D pass.
+
+The steps for each face are in the README's [Installation](https://github.com/cri-middleware/SSPlayerForWgpu#-installation).
 
 ## 🔩 Which faces borrow your device
 

@@ -13,11 +13,13 @@ Godot project root. The player comes in two forms:
 - **GDExtension** - the drop-in binary add-on the Release carries; no engine rebuild required.
 - **Custom module** - built from source into a custom Godot build for tighter integration.
 
-**2. `.sspj` -> `.ssab`** - drag & drop the `.sspj` onto the Godot editor. The add-on's SS Importer
-dock converts it in place, so there is no separate tool to install.
+**2. `.sspj` -> `.ssab`** - drag the `.sspj` from your file manager onto the add-on's **SS Importer**
+dock, which converts it inside the project, so there is no separate tool to install.
 
-**3. Getting it on screen** - add a `SpriteStudioPlayer2D` node and assign the `.ssab` to its
-**Ssab** property.
+**3. Getting it on screen** - drop the converted `.ssab` into the 2D viewport; that places a
+`SpriteStudioPlayer2D` node playing it.
+
+The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForGodot#-quick-start-with-gdextension).
 
 ## ➡️ Read next
 
