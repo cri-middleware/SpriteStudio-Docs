@@ -18,23 +18,12 @@ C-API 経由ではなく Rust クレートとしてリンクするため、[Spri
 **2. `.sspj` -> `.ssab`** - この Player はインポーターを持たず、実行時に変換も行いません。デスクトップ版 [SSConverter GUI](./converter.md) か SDK の `ssconverter-cli` を使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。試すだけなら自分の素材は不要です。同梱サンプルは SDK 自身のテストアニメーションで動きます。
 
 **3. どう画面に出すか** - デバイスごとに `SSRenderer` を 1 つ、描画ターゲットごとに `SSScene`
-を 1 つ、そこに任意の数の `SSPlayer` を 1 パスで描画します。
-
-```rust
-let mut renderer = SSRenderer::new(&device);
-let mut scene = SSScene::new(&device, &SceneConfig { color_format, stencil_format, mask: MaskBackend::Stencil });
-
-let mut player = SSPlayer::new();
-player.load("assets/overall/Basic.ssab")?;   // パック・アトラス・関連パックを 1 回で読み込む
-player.set_animation("anime_1")?;
-player.play();
-
-scene.update(&mut renderer, &device, &queue, delta_secs, &mut [&mut player]);
-scene.draw(&renderer, &mut rpass);           // ホストが開いたパスへ描画する
-```
+を 1 つ、そこに任意の数の `SSPlayer` を、ホストが開いたレンダーパスの中で 1 パスで描画します。
 
 C と JavaScript のフェイスも、呼び出しの形は同じで名前が違うだけですが、構造がひとつ違います。どちらも自分でデバイスを構築して所有し、あなたのパスへは描き込みません（下記）。Bevy アプリではアダプターがこれを代行するので、3 つのコンポーネントを spawn すればキャラクターが Bevy 自身の
 2D パスに入ります。
+
+フェイスごとの手順は、README の[インストール](https://github.com/cri-middleware/SSPlayerForWgpu/blob/HEAD/README.ja.md#-インストール)にあります。
 
 ## 🔩 どのフェイスがデバイスを借りるか
 

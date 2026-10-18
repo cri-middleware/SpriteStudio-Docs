@@ -12,11 +12,11 @@
 - **GDExtension** - Release に入っている、エンジンの再ビルド不要で導入できるバイナリアドオン。
 - **カスタムモジュール** - ソースから Godot 本体に組み込んでビルドする、より密な統合方式。
 
-**2. `.sspj` -> `.ssab`** - `.sspj` を Godot エディタにドラッグ&ドロップします。アドオンの
-SS Importer ドックがその場で変換するため、別途ツールを入れる必要はありません。
+**2. `.sspj` -> `.ssab`** - `.sspj` をファイルマネージャーから、アドオンの **SS Importer** ドックへドラッグ&ドロップします。プロジェクトの中で変換されるため、別途ツールを入れる必要はありません。
 
-**3. どう画面に出すか** - `SpriteStudioPlayer2D` ノードを追加し、**Ssab**
-プロパティに `.ssab` を割り当てます。
+**3. どう画面に出すか** - 変換された `.ssab` を 2D ビューポートへドロップします。それを再生する `SpriteStudioPlayer2D` ノードが置かれます。
+
+フォルダを含めた手順は、README の[クイックスタート](https://github.com/cri-middleware/SSPlayerForGodot/blob/HEAD/README.ja.md#-gdextension-を用いたクイックスタート)にあります。
 
 ## ➡️ 次に読む
 

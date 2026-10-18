@@ -12,26 +12,20 @@ Play SpriteStudio animations in **React Native** apps, on the New Architecture, 
 [Installation](https://cri-middleware.github.io/SSPlayerForReactNative/setup/install).
 
 **2. `.sspj` -> `.ssab`** - React Native has no editor to host an importer in, so this is a
-host-side step with the SDK's `ssconverter-cli` or [SSConverter GUI](./converter.md) - see
-[Converting Assets](../overview/conversion.md). **A pack is a directory, not a file**: a `.ssab`
-names its textures and its external packs by paths relative to itself, and Metro bundles only what
-a `require()` names. So pack directories ship as native app assets - point the Expo config plugin
-at yours:
+host-side step with `ssconverter-web`, [SSConverter GUI](./converter.md) or the SDK's
+`ssconverter-cli` - see [Converting Assets](../overview/conversion.md). **A pack is a directory, not
+a file**, and Metro bundles only what a `require()` names, so the pack folder ships as a native app
+asset through the package's Expo config plugin.
 
-```json
-{ "expo": { "plugins": [["react-native-spritestudio", { "assets": ["./assets/ss"] }]] } }
-```
-
-**3. Getting it on screen** - address a pack by its path inside that asset root:
-
-```tsx
-<SpriteStudioView source="ss/overall/Basic.ssab" animation="anime_1" fit="contain" style={{ flex: 1 }} />
-```
+**3. Getting it on screen** - a `<SpriteStudioView>` whose `source` names the pack by its path
+inside that asset folder.
 
 Once it is in your tree the native side takes over: both the geometry and the draw happen natively
 through [React Native Skia](https://shopify.github.io/react-native-skia/), so what JavaScript does
 each frame is one call per animation on screen. Alongside the view it ships **`<SpriteStudioScene>`**,
 which draws a whole cast through one canvas and one clock.
+
+The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForReactNative#-quick-start).
 
 ## ➡️ Read next
 

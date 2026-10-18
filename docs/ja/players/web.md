@@ -12,7 +12,9 @@
 **2. `.sspj` -> `.ssab`** - この Player 自身のサイトでホストされる `ssconverter-web` を使ってブラウザで変換するか、[スタンドアロンツール](../overview/convert-with-a-standalone-tool.md)のいずれかを使います。変換用パッケージは再生用とは別に選ぶため、下の表でも行を分けています。
 
 **3. どう画面に出すか** - 選んだレンダラーが提供する要素を配置します。フレームワーク非依存の
-`<ss-player>` Web Component か、PixiJS アプリ内の `SpriteStudio` 表示オブジェクトです。
+`<ss-player>` Web Component か、PixiJS アプリ内の `SSPlayer`（PixiJS の `Container`）です。
+
+フォルダを含めた手順は、README の[クイックスタート](https://github.com/cri-middleware/SSPlayerForWeb/blob/HEAD/README.ja.md#-クイックスタート)にあります。
 
 ## 🧰 環境に合わせてパッケージを選ぶ { #pick-by-environment }
 

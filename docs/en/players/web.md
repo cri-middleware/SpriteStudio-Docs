@@ -19,7 +19,9 @@ player's own site, or with any of the [standalone tools](../overview/convert-wit
 Conversion is picked separately from playback, so it has its own row in the tables below.
 
 **3. Getting it on screen** - place the element your renderer provides: the framework-free
-`<ss-player>` Web Component, or a `SpriteStudio` display object inside a PixiJS app.
+`<ss-player>` Web Component, or an `SSPlayer` - a PixiJS `Container` - inside a PixiJS app.
+
+The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForWeb#-quick-start).
 
 ## 🧰 Which package? Pick by environment { #pick-by-environment }
 
