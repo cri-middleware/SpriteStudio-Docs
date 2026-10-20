@@ -29,11 +29,31 @@ Web と React Native 以外のサイトでは、リポジトリ名のあとに `
 
 ## 📦 パッケージの中のドキュメント
 
-Unity パッケージには、インストールした版のドキュメントが、英語・日本語の Markdown で入っています。場所は `Library/PackageCache/jp.co.cri-mw.spritestudio.ssplayer-unity@<hash>/Documentation~/` で、`en/index.md`（日本語は `ja/index.md`）から読めます。ネットワークなしで読め、インストールした版と必ず一致します。`Library/` は通常 gitignore されているため、`.gitignore` を尊重する検索では見つかりません。ripgrep なら `--no-ignore` が要ります。
+どの Player のパッケージにも、インストールした版のドキュメントが Markdown で入っています。英語で、Unity だけは日本語もあります。ネットワークなしで読め、インストールした版と必ず一致します。
+
+| Player | 場所 | Agent Skill |
+|---|---|---|
+| Unity | `Library/PackageCache/jp.co.cri-mw.spritestudio.ssplayer-unity@<hash>/Documentation~/`。`en/index.md`（日本語は `ja/index.md`）から | — |
+| Web | `node_modules/@spritestudio/<package>/docs/`。`README.md` から | `skills/<package>/` |
+| Godot | `addons/spritestudio/`。`README.md` から | — |
+| Flutter | `ssplayer_flutter` と `ssplayer_flame` それぞれの `doc/`。pub のキャッシュ（`~/.pub-cache/hosted/pub.dev/<package>-<version>/`）にあり、`doc/index.md` から | `skills/ssplayer-flutter-docs/`、`skills/ssplayer-flame-docs/` |
+| Ren'Py | `game/spritestudio/`。`README.md` から | — |
+| wgpu | npm: `node_modules/@spritestudio/ssplayer-wgpu/docs/`。`README.md` から。C / C++: zip の `README.md` と `docs/`。Rust: クレートの `docs/`。`docs/index.md` から | npm: `skills/ssplayer-wgpu/` |
+| React Native | `node_modules/react-native-spritestudio/docs/`。`README.md` から | `skills/react-native-spritestudio/` |
+
+`Library/` と `node_modules/` は通常 gitignore されているため、`.gitignore` を尊重する検索では見つかりません。ripgrep なら `--no-ignore` が要ります。
+
+### 🧩 Agent Skill として
+
+npm と Flutter のパッケージは、同じページを [Agent Skill](https://agentskills.io) としても持っています。`SKILL.md` に、そのページが何のためのものかをアシスタント向けに書いたフォルダーです。プロジェクトの skill ディレクトリ（`.claude/skills/`、`.agents/skills/` など）に置かれると、アシスタントは場所を教わらなくてもドキュメントを見つけます。置くのはパッケージマネージャーです。
+
+- **pnpm 12.11 以降**: `pnpm approve <package>` を 1 回実行します。以後のインストールのたびに、直接依存の skill が、ワークスペースのルートにある skill ディレクトリか、`pnpm-workspace.yaml` の `skills.dirs` が指すディレクトリにリンクされます。承認済みの skill があるのにそのディレクトリが無いとインストールが失敗するので、CI の checkout にも要ります。
+- **npm・yarn**: `npx skills experimental_sync` で同じようにリンクされます。
+- **Flutter**: `dart run skills@ get` でコピーされます。アップグレードのあとにもう一度実行してください。
 
 ## 📝 AGENTS.md に貼る数行
 
-アシスタントがドキュメントの場所を知るには、プロジェクトのどこかにそれが書かれている必要があります。次の数行を、プロジェクトの `AGENTS.md`（または `CLAUDE.md`）に貼り、上の表から使う Player のアドレスに差し替えてください。
+アシスタントがドキュメントの場所を知るには、プロジェクトのどこかにそれが書かれている必要があります。インストールした Agent Skill（上記）はそれ自体がその役目を果たすので、この数行は Agent Skill の無い Player か、skill を入れないプロジェクトのためのものです。次の数行を、プロジェクトの `AGENTS.md`（または `CLAUDE.md`）に貼り、上の表から使う Player のアドレスに差し替えてください。
 
 ```markdown
 ## SpriteStudio Player for Unity
