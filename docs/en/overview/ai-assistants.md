@@ -29,11 +29,31 @@ For the sites other than Web and React Native, add `ja/` after the repository na
 
 ## 📦 Docs inside the package
 
-The Unity package carries its documentation for the version you installed, as Markdown in English and Japanese: in `Library/PackageCache/jp.co.cri-mw.spritestudio.ssplayer-unity@<hash>/Documentation~/`, starting at `en/index.md`. It reads without a network and always matches the installed version. `Library/` is normally gitignored, so a search that respects `.gitignore` skips it; ripgrep needs `--no-ignore`.
+Every player's package carries its documentation for the version you installed, as Markdown: in English, and for Unity in Japanese too. It reads without a network and always matches the installed version.
+
+| Player | Where | Agent Skill |
+|---|---|---|
+| Unity | `Library/PackageCache/jp.co.cri-mw.spritestudio.ssplayer-unity@<hash>/Documentation~/`, starting at `en/index.md` (Japanese: `ja/index.md`) | — |
+| Web | `node_modules/@spritestudio/<package>/docs/`, starting at `README.md` | `skills/<package>/` |
+| Godot | `addons/spritestudio/`, starting at `README.md` | — |
+| Flutter | `doc/` in `ssplayer_flutter` and in `ssplayer_flame`, in the pub cache (`~/.pub-cache/hosted/pub.dev/<package>-<version>/`), starting at `doc/index.md` | `skills/ssplayer-flutter-docs/`, `skills/ssplayer-flame-docs/` |
+| Ren'Py | `game/spritestudio/`, starting at `README.md` | — |
+| wgpu | npm: `node_modules/@spritestudio/ssplayer-wgpu/docs/`, starting at `README.md`. C / C++: the zip's `README.md` and `docs/`. Rust: the crate's `docs/`, starting at `docs/index.md` | npm: `skills/ssplayer-wgpu/` |
+| React Native | `node_modules/react-native-spritestudio/docs/`, starting at `README.md` | `skills/react-native-spritestudio/` |
+
+`Library/` and `node_modules/` are normally gitignored, so a search that respects `.gitignore` skips them; ripgrep needs `--no-ignore`.
+
+### 🧩 As an Agent Skill
+
+The npm and Flutter packages also carry those pages as an [Agent Skill](https://agentskills.io): a folder whose `SKILL.md` tells an assistant what the pages are for. Once it is in your project's skill directory (`.claude/skills/`, `.agents/skills/`, and so on), the assistant finds the docs without being told where they are. Your package manager puts it there:
+
+- **pnpm 12.11 or later**: run `pnpm approve <package>` once. Every install after that links the skills of your direct dependencies into the skill directories at the workspace root, or into the ones `skills.dirs` in `pnpm-workspace.yaml` names. An install with an approved skill and no such directory fails, so a CI checkout needs one too.
+- **npm or yarn**: `npx skills experimental_sync` links them the same way.
+- **Flutter**: `dart run skills@ get` copies them. Run it again after upgrading.
 
 ## 📝 A snippet for your AGENTS.md
 
-An assistant only knows where the docs are if something in your project says so. Paste this into your project's `AGENTS.md` (or `CLAUDE.md`), and swap in your player's address from the table above:
+An assistant only knows where the docs are if something in your project says so. An installed Agent Skill (above) does that by itself, so this snippet is for the players without one, or for a project that does not install skills. Paste this into your project's `AGENTS.md` (or `CLAUDE.md`), and swap in your player's address from the table above:
 
 ```markdown
 ## SpriteStudio Player for Unity
