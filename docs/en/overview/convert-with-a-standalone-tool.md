@@ -1,10 +1,10 @@
 # 🧰 Converting with a Standalone Tool
 
-Some players bundle `libssconverter` and convert automatically on import, with no separate tool
+Some players bundle `libssconverter` and convert by themselves, with no separate tool
 in sight - [Converting Assets](./conversion.md) says which. Targeting anything else means no
 player converts for you, so you run a standalone tool yourself - for example when you:
 
-- play back in the browser with [SpriteStudio Player for Web](../players/web.md)'s renderers,
+- play back in the browser with [SpriteStudio Player for Web](../players/web.md)'s renderers or its TyranoScript plugin,
 - integrate your own player, or bring SpriteStudio to a new engine ([Porting a Player](../sdk/porting.md)), or
 - automate conversion in a build or CI/CD pipeline.
 
@@ -38,7 +38,7 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
 
 1. Open the converter at [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/).
 2. Drop in the folder that contains your `.sspj` (its images and other referenced files are read along with it).
-3. Download the result as a ZIP (the `.ssab` and its referenced textures).
+3. Press **⚡ Convert & Download**. The ZIP holds one folder named after the `.sspj`, with the `.ssab` and its textures inside.
 
 !!! info "Versioned by `.ssab` schema"
     ssconverter-web is published **per `.ssab` schema version**, so the URL carries the schema:

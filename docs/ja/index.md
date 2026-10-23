@@ -28,8 +28,7 @@
 
     ---
 
-    ブラウザ向け Player 群（PixiJS・フレームワーク非依存 WebGL・RPG ツクール MZ・TyranoScript・
-    TyranoBuilder）と、クライアントサイド変換ツール（ssconverter-web）のコレクション。
+    ブラウザ向け Player 群（PixiJS・フレームワーク非依存 WebGL・RPG ツクール MZ・TyranoScript・ティラノビルダー）と、クライアントサイド変換ツール（ssconverter-web）のコレクション。
 
     [:octicons-arrow-right-24: 概要](./players/web.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/) |

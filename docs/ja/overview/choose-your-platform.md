@@ -8,7 +8,7 @@
 | **ブラウザ** - PixiJS・WebGL | **[SpriteStudio Player for Web](../players/web.md)**（Player コレクション） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/) |
 | **ブラウザ** - WebGPU | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/web/) |
 | **RPG ツクール MZ** | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-rmmz`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/rmmz) |
-| **TyranoScript / TyranoBuilder** のビジュアルノベル | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`） | ドキュメント: [TyranoScript](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyrano) / [TyranoBuilder](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyranobuilder) |
+| **TyranoScript / ティラノビルダー** のビジュアルノベル | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`） | ドキュメント: [TyranoScript](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyrano) / [ティラノビルダー](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyranobuilder) |
 | Godot ゲーム | **[SpriteStudio Player for Godot](../players/godot.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |
 | **Bevy** ゲーム | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`ssplayer-bevy`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/bevy/) |
 | **Flutter** アプリ | **[SpriteStudio Player for Flutter](../players/flutter.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/) |
@@ -30,7 +30,7 @@ Player ごとの統合の成熟度は [Player ごとの違い](./player-differen
 ## ✅ すべてのプラットフォームに共通
 
 - **変換ステップ**（`.sspj` -> ランタイムアセット `.ssab` / `.ssqb` ＋テクスチャ）はどこでも同じです。パイプラインは
-  [SDK コンセプト](../sdk/concepts.md)、変換方法（インポート時の自動変換・GUI・CLI・ブラウザ）は
+  [SDK コンセプト](../sdk/concepts.md)、変換方法（Player による自動変換・GUI・CLI・ブラウザ）は
   [アセットの変換](./conversion.md) を参照してください。
 - 対応機能（ボーン、メッシュ／デフォーム、パーティクル、拡張ブレンド、マスク）は共通コアが担うため、機能セット自体はどこでも同じです。エンジンごとに残る差分は
   [Player ごとの違い](./player-differences.md)、すべての Player に共通する制約は

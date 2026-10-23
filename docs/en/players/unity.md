@@ -13,12 +13,12 @@ npm (a scoped registry for `jp.co.cri-mw`) or as the tarball from
 BRP.
 
 **2. `.sspj` -> `.ssab`** - open **Window > SpriteStudio > Importer** and drag the `.sspj` in.
-`libssconverter` is bundled with the package, so there is no separate tool to install, and
-re-editing in SpriteStudio updates the Unity asset in place.
+`libssconverter` is bundled with the package, so there is no separate tool to install. After
+editing in SpriteStudio, **Reconvert** in the asset's Inspector updates it in place.
 
 **3. Getting it on screen** - drag the generated `SpriteStudioAnimeAsset` from the Project
-window into the Hierarchy, pick `SpriteStudioPlayer` (world space) or `SpriteStudioGraphic`
-(uGUI Canvas), and press Play: it starts on the pack's first animation.
+window into the Hierarchy, pick **SpriteStudioPlayer** (world space) or **SpriteStudioGraphic
+(Canvas UI)**, and press Play: it starts on the pack's first animation.
 
 The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForUnity#-quick-start).
 

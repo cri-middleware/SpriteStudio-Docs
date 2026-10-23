@@ -11,7 +11,7 @@
 
 ## 🔀 変換の 2 つの方法
 
-### 1. インポート時に自動変換 - 外部ツール不要（Unity・Godot・Flutter・Ren'Py・RPG ツクール MZ・TyranoBuilder）
+### 1. Player が自動で変換 - 外部ツール不要（Unity・Godot・Flutter・Ren'Py・RPG ツクール MZ・ティラノビルダー）
 
 これらのエンジン向けの公式 Player パッケージには、変換ツールとして `libssconverter` が**バンドル**されています。エディタなどの開発環境側で自動的に実行されるため、その場で変換できます。**追加インストールは不要**です。
 
@@ -20,7 +20,7 @@
 - **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md) のオートインポート（`sswatch`）が保存のたびに再変換し、実行中のアプリへ反映します（`SpriteStudio_Source/` にソースを配置）。単発の変換は `ssconvert` CLI で行えます。
 - **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) が起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。
 - **RPG ツクール MZ** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-rmmz` プラグインが、テストプレイの開始時、タイトルが出る前に変換します（`SpriteStudio_Source/` にソースを配置）。
-- **TyranoBuilder** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、プロジェクトを開いたときにエディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントのドロップダウンに現れます。
+- **ティラノビルダー** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、プロジェクトを開いたときにエディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントのドロップダウンに現れます。
 
 各 Player のワークフローは、それぞれのドキュメントで解説しています。[プラットフォームの選び方](./choose-your-platform.md) を参照してください。
 
@@ -65,4 +65,4 @@ SpriteStudio プロジェクトは複数のファイルで構成されます。`
 | **reference** | `.ssab` の外。変換時に出力先へコピーされます | すべて | エンジンのアセット管理にそのまま載せる場合。画像を差し替えたり、複数の `.ssab` で共有したりできます |
 | **embedded** | `.ssab` の中 | Web・Flutter・React Native・wgpu | Web 広告や小さなアプリなど、1 ファイルで配りたい場合 |
 
-インポート時の自動変換は既定で reference を出力します。embedded は、スタンドアロンツールの embedded モード（CLI の `--embedded`、GUI とブラウザ版の **Embedded Assets**）で作ります。Unity・Godot・Ren'Py は embedded を読めないので、reference で渡してください。embedded の制約は [共通の制限事項](../sdk/limitations.md) にあります。
+Player による自動変換は既定で reference を出力します。embedded は、スタンドアロンツールの embedded モード（CLI の `--embedded`、GUI とブラウザ版の **Embedded Assets**）で作ります。Unity・Godot・Ren'Py は embedded を読めないので、reference で渡してください。embedded の制約は [共通の制限事項](../sdk/limitations.md) にあります。
