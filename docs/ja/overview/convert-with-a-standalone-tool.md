@@ -2,7 +2,7 @@
 
 `libssconverter` をバンドルし、別ツールを介さずインポート時に変換してしまう Player もあります（どれがそうかは [アセットの変換](./conversion.md) にあります）。それ以外を対象にするときは、変換を代行してくれる Player がないため、スタンドアロンツールで自分で変換します。たとえば次のような場合です。
 
-- ブラウザ（Web）で再生する場合（[SpriteStudio Player for Web](../players/web.md) のレンダラー）
+- ブラウザ（Web）で再生する場合（[SpriteStudio Player for Web](../players/web.md) のレンダラーや TyranoScript 用プラグイン）
 - 独自の Player を組み込む、または新しいエンジンに移植する場合（[Player の移植](../sdk/porting.md)）
 - ビルドや CI/CD で変換を自動化する場合
 
@@ -29,7 +29,7 @@
 
 1. [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) でコンバーターを開きます。
 2. `.sspj` が入ったフォルダをドロップします（画像などの参照ファイルも一緒に読み込まれます）。
-3. 変換結果（`.ssab` と参照テクスチャ）を ZIP でダウンロードします。
+3. **⚡ Convert & Download** を押します。ZIP には `.sspj` の名前のフォルダが 1 つ入っていて、その中に `.ssab` とテクスチャがあります。
 
 !!! info "`.ssab` スキーマ版ごとに公開"
     ssconverter-web は **`.ssab` スキーマのバージョンごと**に公開され、URL にスキーマが含まれます。
