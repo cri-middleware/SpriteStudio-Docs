@@ -4,17 +4,16 @@
 
 ▶️ 実際の動作は [ブラウザで試す](../overview/try-it.md) で確認できます。
 
-!!! tip "コードで始まる - ただし Rust・WASM のツールチェーンは不要"
-    WASM コアは各レンダラーパッケージに同梱されているので、1 つ入れて数行書くだけです。コアをソースからビルドするのは Rust 側を変更する場合だけです。
+!!! tip "npm のパッケージはコードで始まる - RPG ツクール MZ・TyranoScript・ティラノビルダーではコード不要"
+    npm のパッケージは WASM コアを同梱しているので、1 つ入れて数行書くだけです。1 つのリポジトリが両方の形を出しているため、このページは両方を扱います。3 つのゲームエンジン向けプラグインは、それぞれのエディタで設定し、コードは書きません。
 
-**1. 何を入れるか** - 環境に合わせて npm のレンダラーパッケージを 1 つ選びます（[下の表](#pick-by-environment)）。どれも WASM コアを同梱しているので、依存は 1 つで済みます。
+**1. 何を入れるか** - 環境に合わせて npm のレンダラーパッケージを 1 つ選びます（[下の表](#pick-by-environment)）。どれも WASM コアを同梱しているので、依存は 1 つで済みます。RPG ツクール MZ・TyranoScript・ティラノビルダーでは、代わりに GitHub Releases のプラグインを入れます。
 
 **2. `.sspj` -> `.ssab`** - この Player 自身のサイトでホストされる `ssconverter-web` を使ってブラウザで変換するか、[スタンドアロンツール](../overview/convert-with-a-standalone-tool.md)のいずれかを使います。変換用パッケージは再生用とは別に選ぶため、下の表でも行を分けています。
 
-**3. どう画面に出すか** - 選んだレンダラーが提供する要素を配置します。フレームワーク非依存の
-`<ss-player>` Web Component か、PixiJS アプリ内の `SSPlayer`（PixiJS の `Container`）です。
+**3. どう画面に出すか** - 選んだレンダラーが提供する要素を配置します。フレームワーク非依存の `<ss-player>` Web Component か、PixiJS アプリ内の `SSPlayer`（PixiJS の `Container`）です。RPG ツクール MZ ではプラグインコマンドの **SS表示**、TyranoScript では `[ss_new]` タグ、ティラノビルダーでは **SpriteStudio 表示** コンポーネントです。
 
-フォルダを含めた手順は、README の[クイックスタート](https://github.com/cri-middleware/SSPlayerForWeb/blob/HEAD/README.ja.md#-クイックスタート)にあります。
+フォルダを含めた手順は各パッケージの README にあり、README の[パッケージの表](https://github.com/cri-middleware/SSPlayerForWeb/blob/HEAD/README.ja.md#-どのパッケージを使うか)からたどれます。
 
 ## 🧰 環境に合わせてパッケージを選ぶ { #pick-by-environment }
 
@@ -33,8 +32,7 @@
 | `.sspj` -> `.ssab` を変換する | **`ssconverter-web`** - SpriteStudio Player for Web のサイトでホストされるブラウザツール（Node CLI も同梱）。npm パッケージではありません |
 | 変換機能を自作アプリ / サービスに組み込む | **`@spritestudio/ssconverter-core`** |
 
-**ゲームエンジン統合** - 描画は `@spritestudio/ssplayer-webgl` を基盤にしています。上記のパッケージとは違い、こちらは npm では公開しておらず、リポジトリの
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases) で配布されます。
+**ゲームエンジン統合** - npm のパッケージではなくプラグインで、リポジトリの [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases) で配布されます。
 
 | あなたの環境 | パッケージ | 状態 |
 |---|---|---|
@@ -42,7 +40,7 @@
 | TyranoScript - シナリオに `[ss_*]` タグを自分で書く | **`@spritestudio/ssplayer-tyranoscript`** | beta |
 | TyranoBuilder - コンポーネントパレットから配置、シナリオコード不要 | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
 
-`ssplayer-rmmz` と `ssplayer-tyranobuilder` は `.sspj` を自分で変換します（MZ のプラグインはテストプレイの開始時、TyranoBuilder のプラグインはエディタ内）。そのため MZ や TyranoBuilder のプロジェクトでは、上の変換用パッケージを選ぶ必要がありません。`ssplayer-tyranobuilder` はレンダラーではなく**オーサリング時のツール**で、TyranoScript ランタイムを同梱しています。
+`ssplayer-rmmz` と `ssplayer-tyranobuilder` は `.sspj` を自分で変換します（MZ のプラグインはテストプレイの開始時、TyranoBuilder のプラグインはエディタ内）。そのため MZ や TyranoBuilder のプロジェクトでは、上の変換用パッケージを選ぶ必要がありません。ティラノビルダーのプロジェクトに必要なのは `ssplayer.tbp` だけです。TyranoScript 用プラグインの中身も入っています。
 
 ## ➡️ 次に読む
 

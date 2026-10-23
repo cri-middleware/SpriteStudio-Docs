@@ -6,22 +6,27 @@ art in SpriteStudio, convert to `.ssab`, then play it back through the renderer 
 
 ▶️ See the players running live: [Try it in your browser](../overview/try-it.md).
 
-!!! tip "Code-first - and no Rust or WASM toolchain"
-    The WASM core ships inside each renderer package, so you install one package and write a few
-    lines. Building the core from source is only for changing the Rust.
+!!! tip "Code-first for the npm packages - no code in RPG Maker MZ, TyranoScript or TyranoBuilder"
+    The npm packages bundle the WASM core, so you install one and write a few lines. This page
+    covers both shapes because one repository ships both: the three game-engine plugins are set
+    up in their editors, with no code.
 
 **1. What you install** - one renderer package from npm, picked by your environment: see
 [the table below](#pick-by-environment). Each bundles the WASM core, so it is a
-single dependency.
+single dependency. RPG Maker MZ, TyranoScript and TyranoBuilder take a plugin from GitHub
+Releases instead.
 
 **2. `.sspj` -> `.ssab`** - convert in the browser with `ssconverter-web`, hosted on this
 player's own site, or with any of the [standalone tools](../overview/convert-with-a-standalone-tool.md).
 Conversion is picked separately from playback, so it has its own row in the tables below.
 
 **3. Getting it on screen** - place the element your renderer provides: the framework-free
-`<ss-player>` Web Component, or an `SSPlayer` - a PixiJS `Container` - inside a PixiJS app.
+`<ss-player>` Web Component, or an `SSPlayer` - a PixiJS `Container` - inside a PixiJS app. In
+RPG Maker MZ it is the **Show SS** plugin command, in TyranoScript an `[ss_new]` tag, and in
+TyranoBuilder the **SpriteStudio: show** component.
 
-The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForWeb#-quick-start).
+The steps, with the folders they use, are in each package's README, linked from the README's
+[package table](https://github.com/cri-middleware/SSPlayerForWeb#-which-package-should-i-use).
 
 ## 🧰 Which package? Pick by environment { #pick-by-environment }
 
@@ -40,9 +45,8 @@ The steps, with the folders they use, are in the README's [Quick Start](https://
 | Converting `.sspj` -> `.ssab` | **`ssconverter-web`** - a browser tool hosted on the SpriteStudio Player for Web site, with a Node CLI alongside it; not an npm package |
 | Embedding conversion in your own app / service | **`@spritestudio/ssconverter-core`** |
 
-**Game-engine integrations** - rendering built on `@spritestudio/ssplayer-webgl`. Unlike the
-packages above, these are not published to npm; each is distributed through the repository's
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases).
+**Game-engine integrations** - plugins rather than npm packages, each distributed through the
+repository's [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases).
 
 | Your environment | Package | Status |
 |---|---|---|
@@ -52,8 +56,8 @@ packages above, these are not published to npm; each is distributed through the 
 
 `ssplayer-rmmz` and `ssplayer-tyranobuilder` convert `.sspj` themselves - the MZ plugin when a test
 play starts, the TyranoBuilder plugin inside the editor - so an MZ or TyranoBuilder project needs
-neither of the conversion packages above. `ssplayer-tyranobuilder` is **author-time tooling** rather
-than a renderer: it ships the TyranoScript runtime with it.
+neither of the conversion packages above. `ssplayer.tbp` is the only download a TyranoBuilder
+project needs: it already holds the TyranoScript plugin.
 
 ## ➡️ Read next
 
