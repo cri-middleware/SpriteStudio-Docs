@@ -17,7 +17,7 @@ are defined against that version, and conversion does not upgrade an older proje
 
 ## 🔀 Two ways to convert
 
-### 1. Converted automatically on import - no external tool (Unity, Godot, Flutter, Ren'Py, RPG Maker MZ, TyranoBuilder)
+### 1. Converted by the player - no external tool (Unity, Godot, Flutter, Ren'Py, RPG Maker MZ, TyranoBuilder)
 
 The official player packages for these engines **bundle** `libssconverter` as a conversion tool.
 It runs automatically on the editor / development side, so conversion happens
@@ -87,7 +87,7 @@ A `.ssab` comes in two kinds, which differ in where the images and sounds live.
 | **Reference** | Outside the `.ssab`, copied to the output location on conversion | All | Handing the files to the engine's own asset management. Images can be swapped, and shared by several `.ssab` |
 | **Embedded** | Inside the `.ssab` | Web, Flutter, React Native, wgpu | Shipping a single file, as with web ads or small apps |
 
-Converting on import produces reference by default. Embedded comes from a standalone tool's
+Conversion by a player produces reference by default. Embedded comes from a standalone tool's
 embedded mode (`--embedded` on the CLI, **Embedded Assets** in the GUI and the browser tool).
 Unity, Godot and Ren'Py do not read embedded, so give them reference. Embedded's constraints are
 in [Shared Limitations](../sdk/limitations.md).

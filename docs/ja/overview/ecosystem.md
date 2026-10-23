@@ -25,7 +25,7 @@ graph LR
 <small>色付きの **SpriteStudio-SDK** コア（`libssconverter` + `libssruntime`）が全 Player の基盤です。破線の受け渡しが生成物 **`.ssab / .ssqb`** です。現行の Player のラインナップは
 [プラットフォームの選び方](./choose-your-platform.md) を参照してください。</small>
 
-変換は **インポート時の自動変換**でも、**スタンドアロンツール**でも行えます。どのエンジンがどちらで、それぞれが何を出力するかは [アセットの変換](./conversion.md) にまとめてあります。
+変換は **Player による自動変換**でも、**スタンドアロンツール**でも行えます。どのエンジンがどちらで、それぞれが何を出力するかは [アセットの変換](./conversion.md) にまとめてあります。
 
 ## 🧩 構成要素
 

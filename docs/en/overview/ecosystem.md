@@ -28,7 +28,7 @@ graph LR
 every player builds on; the dashed hand-off is the generated **`.ssab / .ssqb`** asset. For
 the current lineup of players, see [Choose Your Platform](./choose-your-platform.md).</small>
 
-Conversion can happen **automatically on import** or via a **standalone tool** - which engines
+Conversion can happen **automatically, in the player** or via a **standalone tool** - which engines
 do which, and what each route emits, is in [Converting Assets](./conversion.md).
 
 ## 🧩 The pieces

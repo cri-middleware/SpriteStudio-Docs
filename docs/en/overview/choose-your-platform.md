@@ -35,7 +35,7 @@ Only converting `.sspj`? Pick a standalone tool rather than a player.
 - The **conversion step** (`.sspj` -> the runtime assets `.ssab` / `.ssqb` + textures) is the
   same everywhere - see
   [SDK Concepts](../sdk/concepts.md) for the pipeline, and [Converting Assets](./conversion.md)
-  for every way to convert (automatic on import, GUI, CLI, or browser).
+  for every way to convert (automatic in the player, GUI, CLI, or browser).
 - Feature coverage (bones, mesh/deform, particles, extended blend, masks) is driven by the
   shared core, so the feature *set* is the same everywhere. What still differs per engine is
   listed in [Player Differences](./player-differences.md); the constraints that apply everywhere are

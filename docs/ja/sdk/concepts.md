@@ -5,7 +5,7 @@
 ## 🔄 ワークフロー
 
 1. **変換** - SpriteStudio プロジェクト（`.sspj`）を `libssconverter` で最適化バイナリ（`.ssab`）へ変換（`ssconverter-cli` / [Converter GUI](../players/converter.md) /
-   `ssconverter-web` / インポート時の自動変換）。[アセットの変換](../overview/conversion.md) を参照。
+   `ssconverter-web` / Player による自動変換）。[アセットの変換](../overview/conversion.md) を参照。
 2. **どこでも再生** - `.ssab` を `libssruntime` に渡すだけ。*あらゆる* `.ssab` を再生できます。対応範囲は下の一覧に、まだ対応していないことは [共通の制限事項](./limitations.md) にあります。
 
 ```mermaid

@@ -1,6 +1,6 @@
 # 🧰 Converting with a Standalone Tool
 
-Some players bundle `libssconverter` and convert automatically on import, with no separate tool
+Some players bundle `libssconverter` and convert by themselves, with no separate tool
 in sight - [Converting Assets](./conversion.md) says which. Targeting anything else means no
 player converts for you, so you run a standalone tool yourself - for example when you:
 
