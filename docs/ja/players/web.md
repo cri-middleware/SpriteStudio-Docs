@@ -38,9 +38,9 @@
 |---|---|---|
 | RPG ツクール MZ | **`@spritestudio/ssplayer-rmmz`** | beta |
 | TyranoScript - シナリオに `[ss_*]` タグを自分で書く | **`@spritestudio/ssplayer-tyranoscript`** | beta |
-| TyranoBuilder - コンポーネントパレットから配置、シナリオコード不要 | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
+| ティラノビルダー - コンポーネントパレットから配置、シナリオコード不要 | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
 
-`ssplayer-rmmz` と `ssplayer-tyranobuilder` は `.sspj` を自分で変換します（MZ のプラグインはテストプレイの開始時、TyranoBuilder のプラグインはエディタ内）。そのため MZ や TyranoBuilder のプロジェクトでは、上の変換用パッケージを選ぶ必要がありません。ティラノビルダーのプロジェクトに必要なのは `ssplayer.tbp` だけです。TyranoScript 用プラグインの中身も入っています。
+`ssplayer-rmmz` と `ssplayer-tyranobuilder` は `.sspj` を自分で変換します（MZ のプラグインはテストプレイの開始時、ティラノビルダーのプラグインはエディタ内）。そのため MZ やティラノビルダーのプロジェクトでは、上の変換用パッケージを選ぶ必要がありません。ティラノビルダーのプロジェクトに必要なのは `ssplayer.tbp` だけです。TyranoScript 用プラグインの中身も入っています。
 
 ## ➡️ 次に読む
 

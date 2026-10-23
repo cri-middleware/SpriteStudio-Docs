@@ -8,7 +8,7 @@
 | **ブラウザ** - PixiJS・WebGL | **[SpriteStudio Player for Web](../players/web.md)**（Player コレクション） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/) |
 | **ブラウザ** - WebGPU | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/web/) |
 | **RPG ツクール MZ** | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-rmmz`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/rmmz) |
-| **TyranoScript / TyranoBuilder** のビジュアルノベル | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`） | ドキュメント: [TyranoScript](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyrano) / [TyranoBuilder](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyranobuilder) |
+| **TyranoScript / ティラノビルダー** のビジュアルノベル | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`） | ドキュメント: [TyranoScript](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyrano) / [ティラノビルダー](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyranobuilder) |
 | Godot ゲーム | **[SpriteStudio Player for Godot](../players/godot.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |
 | **Bevy** ゲーム | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`ssplayer-bevy`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/bevy/) |
 | **Flutter** アプリ | **[SpriteStudio Player for Flutter](../players/flutter.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/) |
