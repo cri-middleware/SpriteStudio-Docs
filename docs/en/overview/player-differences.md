@@ -111,8 +111,8 @@ SpriteStudio realizes each blend as a GPU blend state, so reproduction depends o
 engine exposes. Where a mode has no equivalent, players fall back rather than fail - which is why
 most entries above cluster around the same few modes:
 
-- **`Div2` / `Overlay2`** have no GPU blend mapping in the reference players either, so falling
-  back to `Mix` is deliberate behavior rather than an unfinished implementation.
+- **`Div2` / `Overlay2`** read the colour already behind the part, which no GPU blend state can do,
+  so falling back to `Mix` is deliberate behavior rather than an unfinished implementation.
 - **`Sub` / `Invert`** need a reverse-subtract or destination-replace state. An engine without one can
   still reconstruct them exactly from multiple passes, at the cost of batching - so the difference
   may show up as performance rather than as a visual gap.
