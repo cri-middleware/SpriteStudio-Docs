@@ -68,7 +68,7 @@ plugins:
           - overview/ecosystem.md: "How a SpriteStudio project reaches the screen: the shared Rust core and every player built on it, with a diagram."
           - overview/choose-your-platform.md: "Maps a target runtime to the official player to use."
           - overview/try-it.md: "Live browser demos and a hosted converter, with nothing to install."
-          - overview/conversion.md: "Converting a SpriteStudio 7.5+ project (`.sspj`) into the runtime format (`.ssab` / `.ssqb`), and which route each player takes."
+          - overview/conversion.md: "Converting a SpriteStudio 7.6+ project (`.sspj`) into the runtime format (`.ssab` / `.ssqb`), and which route each player takes."
           - overview/convert-with-a-standalone-tool.md: "Which standalone converter to run when no player converts for you, including in CI."
           - overview/player-differences.md: "Only what differs between players: what each engine's renderer can reproduce and how far each player has got."
           - overview/ai-assistants.md: "How to hand these docs to an AI assistant: each site's llms.txt, the docs inside each player's package and the Agent Skill the npm and Flutter packages carry, and a snippet for your AGENTS.md."

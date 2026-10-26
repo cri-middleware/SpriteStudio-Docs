@@ -5,7 +5,7 @@ runtime format (`.ssab` / `.ssqb`). Every path below runs the **same `libssconve
 [SpriteStudio-SDK](../sdk/concepts.md) and produces the **same output** - pick whichever fits
 your engine and workflow.
 
-The input is a project authored in **SpriteStudio 7.5 or later**: the `.ssab` / `.ssqb` formats
+The input is a project authored in **SpriteStudio 7.6 or later**: the `.ssab` / `.ssqb` formats
 are defined against that version, and conversion does not upgrade an older project to it.
 
 !!! tip "No SpriteStudio project of your own yet?"
