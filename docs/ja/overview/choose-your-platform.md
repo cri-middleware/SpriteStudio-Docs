@@ -12,6 +12,7 @@
 | Godot ゲーム | **[SpriteStudio Player for Godot](../players/godot.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |
 | **Bevy** ゲーム | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`ssplayer-bevy`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/bevy/) |
 | **Flutter** アプリ | **[SpriteStudio Player for Flutter](../players/flutter.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/) |
+| **Flame** 製のゲーム | **[SpriteStudio Player for Flutter](../players/flutter.md)**（`ssplayer_flame`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/guide/flame/) |
 | Ren'Py ビジュアルノベル | **[SpriteStudio Player for Ren'Py](../players/renpy.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/ja/) |
 | エンジンを使わず自分で描画する **Rust** / **C・C++** アプリケーション | **[SpriteStudio Player for wgpu](../players/wgpu.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/) |
 | **React Native** アプリ | **[SpriteStudio Player for React Native](../players/react-native.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForReactNative/ja/) |

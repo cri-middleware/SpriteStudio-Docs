@@ -13,6 +13,7 @@ column links to its full details.
 | A Godot game | **[SpriteStudio Player for Godot](../players/godot.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
 | A **Bevy** game | **[SpriteStudio Player for wgpu](../players/wgpu.md)** (`ssplayer-bevy`) | [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/start/bevy/) |
 | A **Flutter** app | **[SpriteStudio Player for Flutter](../players/flutter.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForFlutter/) |
+| A **Flame** game | **[SpriteStudio Player for Flutter](../players/flutter.md)** (`ssplayer_flame`) | [Docs](https://cri-middleware.github.io/SSPlayerForFlutter/guide/flame/) |
 | A Ren'Py visual novel | **[SpriteStudio Player for Ren'Py](../players/renpy.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
 | A **Rust** or **C / C++** app with no engine, rendering its own frames | **[SpriteStudio Player for wgpu](../players/wgpu.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/) |
 | A **React Native** app | **[SpriteStudio Player for React Native](../players/react-native.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForReactNative/) |
