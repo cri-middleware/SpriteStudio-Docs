@@ -29,6 +29,7 @@ nav:
       - ブラウザで試す: overview/try-it.md
       - アセットの変換: overview/conversion.md
       - スタンドアロンツールでの変換: overview/convert-with-a-standalone-tool.md
+      - UI 統合: overview/ui-integration.md
       - Player ごとの違い: overview/player-differences.md
       - 🤖 AI アシスタントと使う: overview/ai-assistants.md
   - 🎮 Player・ツール:
@@ -65,6 +66,7 @@ plugins:
           - overview/try-it.md: "インストール不要で、ブラウザで動くライブデモとホスト型コンバーター。"
           - overview/conversion.md: "SpriteStudio 7.6 以上のプロジェクト（`.sspj`）をランタイム形式（`.ssab` / `.ssqb`）へ変換する方法と、各 Player がどの経路を取るか。"
           - overview/convert-with-a-standalone-tool.md: "変換してくれる Player がないとき（CI を含む）に使うスタンドアロンコンバーターの選び方。"
+          - overview/ui-integration.md: "SpriteStudio のアニメーションを UI ツールキットのボタンにする。ラベルで作る状態、絵の上だけのクリック、reduced motion と、対応する Player。"
           - overview/player-differences.md: "Player 間で違うことだけ。各エンジンの描画層が再現できる範囲と、各 Player の実装の進み具合。"
           - overview/ai-assistants.md: "このドキュメントを AI アシスタントに渡す方法。各サイトの llms.txt、各 Player のパッケージ内のドキュメントと、npm・Flutter のパッケージが持つ Agent Skill、ssconverter-cli での変換、AGENTS.md に貼る数行。"
         Player・ツール:
