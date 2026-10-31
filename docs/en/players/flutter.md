@@ -28,8 +28,9 @@ The steps, with the folders they use, are in the README's [Quick Start](https://
 Alongside the player it ships:
 
 - **A [Flame](https://flame-engine.org/) adapter** - drop an animation into a Flame game.
-- **Live reload** - run `sswatch` next to `flutter run` and a save in SpriteStudio re-converts
-  only the changed project and pushes it into the running app.
+- **Live reload** - add `ssgen_flutter` as a dev dependency and run its `sswatch` next to
+  `flutter run`: a save in SpriteStudio re-converts only the changed project and pushes it into the
+  running debug app.
 
 ## ➡️ Read next
 

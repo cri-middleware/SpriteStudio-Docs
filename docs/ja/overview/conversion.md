@@ -11,13 +11,13 @@
 
 ## 🔀 変換の 2 つの方法
 
-### 1. Player が自動で変換 - 外部ツール不要（Unity・Godot・Flutter・Ren'Py・RPG ツクール MZ・ティラノビルダー）
+### 1. Player が変換 - 外部ツール不要（Unity・Godot・Flutter・Ren'Py・RPG ツクール MZ・ティラノビルダー）
 
-これらのエンジン向けの公式 Player パッケージには、変換ツールとして `libssconverter` が**バンドル**されています。エディタなどの開発環境側で自動的に実行されるため、その場で変換できます。**追加インストールは不要**です。
+これらのエンジン向けの公式 Player パッケージは、変換ツールとして `libssconverter` を持っているので、スタンドアロンのコンバーターは使いません。ほとんどはエディタなどの開発環境側で自動的に実行されるため、その場で変換できます。**追加インストールは不要**です。Flutter だけは、コンバーターを dev 依存として追加し、自分で実行します。
 
 - **Unity** - [SpriteStudio Player for Unity](../players/unity.md) 付属の Importer がドラッグ&ドロップで変換します。
 - **Godot** - [SpriteStudio Player for Godot](../players/godot.md) の SS Importer ドックがドラッグ&ドロップで変換します。
-- **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md) のオートインポート（`sswatch`）が保存のたびに再変換し、実行中のアプリへ反映します（`SpriteStudio_Source/` にソースを配置）。単発の変換は `ssconvert` CLI で行えます。
+- **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md) の `ssconvert` CLI（dev 依存の `ssconverter_dart`）が、`SpriteStudio_Source/` を手動または CI でアセットへ変換します。ライブリロード（dev 依存の `ssgen_flutter`）を使うと、`sswatch` が保存のたびに再変換し、デバッグ実行中のアプリへ反映します。
 - **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) が起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。
 - **RPG ツクール MZ** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-rmmz` プラグインが、テストプレイの開始時、タイトルが出る前に変換します（`SpriteStudio_Source/` にソースを配置）。
 - **ティラノビルダー** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、プロジェクトを開いたときにエディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントのドロップダウンに現れます。
@@ -48,6 +48,7 @@ SpriteStudio プロジェクトは複数のファイルで構成されます。`
 | `.ssae`（アニメーションパック） | パーツ構成とキーフレーム | `.ssab` 1 本になります |
 | `.ssce`（セルマップ） | 使用する画像と、その画像から切り出すセル（位置・サイズ・原点） | **単独のファイルにはならず、`.ssab` に取り込まれます** |
 | `.ssqe`（シーケンス） | アニメーションのプレイリスト | `.ssqb` 1 本になります |
+| `.ssee`（エフェクト）・`.ssse`（サウンド）・`.fnt`（ビットマップフォント） | アニメーションが使うエフェクト・サウンド設定・フォント | `.ssce` と同じく **`.ssab` に取り込まれます**。サウンド設定が指す音声ファイルは、画像と同じく出力先へコピーされます（[embedded](#reference-and-embedded) では `.ssab` に入ります） |
 | 画像（`.png` ほか） | 絵柄そのもの | 出力先へコピーされ、`.ssab` から参照されます（[embedded](#reference-and-embedded) では `.ssab` に入ります） |
 
 用語の詳細は [用語集](../sdk/glossary.md)、変換単位の設計判断は
@@ -65,4 +66,4 @@ SpriteStudio プロジェクトは複数のファイルで構成されます。`
 | **reference** | `.ssab` の外。変換時に出力先へコピーされます | すべて | エンジンのアセット管理にそのまま載せる場合。画像を差し替えたり、複数の `.ssab` で共有したりできます |
 | **embedded** | `.ssab` の中 | Web・Flutter・React Native・wgpu | Web 広告や小さなアプリなど、1 ファイルで配りたい場合 |
 
-Player による自動変換は既定で reference を出力します。embedded は、スタンドアロンツールの embedded モード（CLI の `--embedded`、GUI とブラウザ版の **Embedded Assets**）で作ります。Unity・Godot・Ren'Py は embedded を読めないので、reference で渡してください。embedded の制約は [共通の制限事項](../sdk/limitations.md) にあります。
+Player による自動変換は既定で reference を出力します。embedded は embedded モードで作ります（CLI と Flutter の `ssconvert` の `--embedded`、GUI とブラウザ版の **Embedded Assets**）。Unity・Godot・Ren'Py は embedded を読めないので、reference で渡してください。embedded の制約は [共通の制限事項](../sdk/limitations.md) にあります。

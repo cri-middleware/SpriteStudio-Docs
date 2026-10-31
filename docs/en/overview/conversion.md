@@ -19,14 +19,16 @@ are defined against that version, and conversion does not upgrade an older proje
 
 ### 1. Converted by the player - no external tool (Unity, Godot, Flutter, Ren'Py, RPG Maker MZ, TyranoBuilder)
 
-The official player packages for these engines **bundle** `libssconverter` as a conversion tool.
-It runs automatically on the editor / development side, so conversion happens
-in-place - **nothing else to install**:
+The official player packages for these engines carry `libssconverter` as a conversion tool, so
+no standalone converter is involved. Most run it automatically on the editor / development side,
+so conversion happens in-place - **nothing else to install**. Flutter is the exception: you add
+its converter as a dev dependency and run it yourself.
 
 - **Unity** - [SpriteStudio Player for Unity](../players/unity.md)'s bundled Importer converts on drag & drop.
 - **Godot** - [SpriteStudio Player for Godot](../players/godot.md)'s SS Importer dock converts on drag & drop.
-- **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md)'s auto importer (`sswatch`) re-converts on save and pushes the
-  result into the running app (drop sources into `SpriteStudio_Source/`); its `ssconvert` CLI converts once.
+- **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md)'s `ssconvert` CLI (dev dependency `ssconverter_dart`)
+  converts `SpriteStudio_Source/` into your assets, by hand or in CI. With Live Reload (dev dependency
+  `ssgen_flutter`), `sswatch` re-converts on save and pushes the result into the running debug app.
 - **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) auto-imports on startup (drop sources into `SpriteStudio_Source/`).
 - **RPG Maker MZ** - [SpriteStudio Player for Web](../players/web.md)'s `ssplayer-rmmz` plugin converts when a test play
   starts, before the title appears (drop sources into `SpriteStudio_Source/`).
@@ -67,6 +69,7 @@ conversion path you take**.
 | `.ssae` (animation pack) | Part structure and keyframes | Becomes one `.ssab` |
 | `.ssce` (cell map) | The image used, and the cells cut out of it (position, size, pivot) | **Never becomes a file of its own - it is folded into the `.ssab`** |
 | `.ssqe` (sequence) | A playlist of animations | Becomes one `.ssqb` |
+| `.ssee` (effect), `.ssse` (sound), `.fnt` (bitmap font) | Effects, sound settings and fonts the animations use | **Folded into the `.ssab`**, like the `.ssce`. The sound files they name are copied to the output location like images (inside the `.ssab` when [embedded](#reference-and-embedded)) |
 | Images (`.png` and so on) | The artwork itself | Copied to the output location and referenced by the `.ssab` (inside the `.ssab` when [embedded](#reference-and-embedded)) |
 
 See the [Glossary](../sdk/glossary.md) for the terms and the
@@ -87,7 +90,7 @@ A `.ssab` comes in two kinds, which differ in where the images and sounds live.
 | **Reference** | Outside the `.ssab`, copied to the output location on conversion | All | Handing the files to the engine's own asset management. Images can be swapped, and shared by several `.ssab` |
 | **Embedded** | Inside the `.ssab` | Web, Flutter, React Native, wgpu | Shipping a single file, as with web ads or small apps |
 
-Conversion by a player produces reference by default. Embedded comes from a standalone tool's
-embedded mode (`--embedded` on the CLI, **Embedded Assets** in the GUI and the browser tool).
+Conversion by a player produces reference by default. Embedded comes from an embedded mode:
+`--embedded` on the CLI and on Flutter's `ssconvert`, **Embedded Assets** in the GUI and the browser tool.
 Unity, Godot and Ren'Py do not read embedded, so give them reference. Embedded's constraints are
 in [Shared Limitations](../sdk/limitations.md).
