@@ -25,7 +25,7 @@ engine's Body to the shared Brain.
 | **20. Design** | Preparation, the Player's design (ssab memory, class structure, coordinate systems), the **Player API conventions** every Player shares, and `no_std` integration. |
 | **30. Basic playback** | Loading & initialization, playback control, events, and the render loop (the DrawBatch plan). |
 | **40. Parts** | Parts color, mesh, 9-slice / shape / text, mask, instance parts, effect parts. |
-| **50. Features** | Animation mixing, part overrides, external resources & textures, sequence, audio, editor integration, placement (fit and align). |
+| **50. Features** | Animation mixing, part overrides, external resources & textures, sequence, audio, editor integration, placement (fit and align), UI integration (hit testing, UI states, reduced motion). |
 | **60. Troubleshooting** | A table from symptom to cause, and link errors. |
 
 !!! note "Verify as you go"
