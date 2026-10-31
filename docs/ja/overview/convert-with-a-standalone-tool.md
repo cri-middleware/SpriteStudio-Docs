@@ -53,7 +53,7 @@ Windows** で、Linux では下の `ssconverter-cli` を使ってください（
 ## ⌨️ ssconverter-cli - コマンドライン・CI
 
 Windows / macOS / Linux 向けの単体バイナリです。[SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases)
-からダウンロードでき（ビルド環境不要）、以下のように使います。
+からダウンロードできます（ビルド環境不要）。各リリースにはプラットフォームごとの zip が固定の URL `https://github.com/cri-middleware/SpriteStudio-SDK/releases/latest/download/ssconverter-cli-<platform>.zip` で入っているので、スクリプトから最新版を取得できます。プラットフォームの一覧は下記の README にあります。以下のように使います。
 
 ```bash
 # 単一プロジェクトを変換し、.sspj と同じフォルダに project/ を出力する
@@ -69,7 +69,7 @@ ssconverter-cli project.sspj --embedded
 ssconverter-cli ./assets/projects ./more_assets
 ```
 
-バッチモードでは各出力がソースと同じフォルダに書き出されます（`-o` は無視されます）。全オプションは
+バッチモードでは各出力がソースと同じフォルダに書き出されます（`-o` は無視されます）。実行結果には、書き出した `.ssab` とそれぞれの中のアニメーション名が出ます。全オプションは
 [ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) を参照してください。
 
 ## ➡️ 次に

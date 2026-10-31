@@ -1,6 +1,6 @@
 # 🤖 AI アシスタントと使う
 
-公式の各サイトは、ドキュメントを Markdown でも公開しています。ページを 1 枚ずつ貼り付けなくても、AI アシスタントにそのまま渡せます。このページでは、Markdown の在り処と、アシスタントに場所を知らせる方法をまとめます。
+公式の各サイトは、ドキュメントを Markdown でも公開しています。ページを 1 枚ずつ貼り付けなくても、AI アシスタントにそのまま渡せます。このページでは、Markdown の在り処と、アシスタントに場所を知らせる方法、アシスタントがプロジェクトを変換する方法をまとめます。
 
 ## 🔗 各サイトが提供するもの
 
@@ -50,6 +50,10 @@ npm と Flutter のパッケージは、同じページを [Agent Skill](https:/
 - **pnpm 12.11 以降**: `pnpm approve <package>` を 1 回実行します。以後のインストールのたびに、直接依存の skill が、ワークスペースのルートにある skill ディレクトリか、`pnpm-workspace.yaml` の `skills.dirs` が指すディレクトリにリンクされます。承認済みの skill があるのにそのディレクトリが無いとインストールが失敗するので、CI の checkout にも要ります。
 - **npm・yarn**: `npx skills experimental_sync` で同じようにリンクされます。
 - **Flutter**: `dart run skills@ get` でコピーされます。アップグレードのあとにもう一度実行してください。
+
+## ⌨️ プロジェクトの変換
+
+アシスタントはコマンドを実行できてもウィンドウは扱えないので、変換には `ssconverter-cli` を使います。SDK の各リリースにはプラットフォームごとの zip が固定の URL `https://github.com/cri-middleware/SpriteStudio-SDK/releases/latest/download/ssconverter-cli-<platform>.zip` で入っていて、プラットフォームの一覧は [CLI の README](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) にあります。実行結果には書き出した `.ssab` ごとに中のアニメーション名が出るので、Player に渡す名前はそこで分かります。
 
 ## 📝 AGENTS.md に貼る数行
 

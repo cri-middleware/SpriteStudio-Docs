@@ -69,7 +69,9 @@ Details: [SSConverter GUI overview](../players/converter.md) ·
 
 A single self-contained binary for Windows / macOS / Linux. Download it from the
 [SDK Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases) (no build
-environment required), then:
+environment required). Each release has one zip per platform at a fixed URL,
+`https://github.com/cri-middleware/SpriteStudio-SDK/releases/latest/download/ssconverter-cli-<platform>.zip`,
+so a script can fetch the latest; the platforms are listed in the README linked below. Then:
 
 ```bash
 # Single project -> writes a project/ folder alongside the .sspj
@@ -85,7 +87,8 @@ ssconverter-cli project.sspj --embedded
 ssconverter-cli ./assets/projects ./more_assets
 ```
 
-In batch mode each output is written next to its source (`-o` is ignored). Full option list:
+In batch mode each output is written next to its source (`-o` is ignored). Each run lists the
+`.ssab` it wrote and the animations inside each. Full option list:
 [ssconverter-cli README](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli).
 
 ## ➡️ Next

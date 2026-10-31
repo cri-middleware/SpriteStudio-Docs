@@ -1,6 +1,6 @@
 # 🤖 Using with AI Assistants
 
-Every official site publishes its documentation as Markdown too, so you can hand it to an AI assistant instead of pasting pages one by one. This page says where the Markdown is and how to point an assistant at it.
+Every official site publishes its documentation as Markdown too, so you can hand it to an AI assistant instead of pasting pages one by one. This page says where the Markdown is, how to point an assistant at it, and how an assistant converts a project.
 
 ## 🔗 What each site serves
 
@@ -50,6 +50,10 @@ The npm and Flutter packages also carry those pages as an [Agent Skill](https://
 - **pnpm 12.11 or later**: run `pnpm approve <package>` once. Every install after that links the skills of your direct dependencies into the skill directories at the workspace root, or into the ones `skills.dirs` in `pnpm-workspace.yaml` names. An install with an approved skill and no such directory fails, so a CI checkout needs one too.
 - **npm or yarn**: `npx skills experimental_sync` links them the same way.
 - **Flutter**: `dart run skills@ get` copies them. Run it again after upgrading.
+
+## ⌨️ Converting a project
+
+An assistant can run commands but cannot use a window, so it converts with `ssconverter-cli`. Each SDK release has one zip per platform at a fixed URL, `https://github.com/cri-middleware/SpriteStudio-SDK/releases/latest/download/ssconverter-cli-<platform>.zip`; the platforms are listed in the [CLI README](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.md). Its output names every `.ssab` it wrote with the animations inside, which are the names to pass to the player.
 
 ## 📝 A snippet for your AGENTS.md
 
