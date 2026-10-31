@@ -28,7 +28,7 @@
     フォルダのドロップは **File System Access API** を使用するため、Chromium 系ブラウザ（**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では **Browse...** でフォルダを選択してください。
 
 1. [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) でコンバーターを開きます。
-2. `.sspj` が入ったフォルダをドロップするか、**Browse...** で選択します（画像などの参照ファイルも一緒に読み込まれます）。
+2. `.sspj` が入ったフォルダをドロップするか、**Browse...** で選択します（画像などの参照ファイルも一緒に読み込まれます）。フォルダに入れる `.sspj` は 1 つだけにしてください。
 3. **⚡ Convert & Download** を押します。ZIP には `.sspj` の名前のフォルダが 1 つ入っていて、その中に `.ssab` とテクスチャがあります。
 
 !!! info "`.ssab` スキーマ版ごとに公開"

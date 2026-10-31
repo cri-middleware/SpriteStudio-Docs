@@ -38,7 +38,7 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
     **Browse...** instead.
 
 1. Open the converter at [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/).
-2. Drop in the folder that contains your `.sspj`, or pick it with **Browse...** (its images and other referenced files are read along with it).
+2. Drop in the folder that contains your `.sspj`, or pick it with **Browse...** (its images and other referenced files are read along with it). The folder must hold exactly one `.sspj`.
 3. Press **⚡ Convert & Download**. The ZIP holds one folder named after the `.sspj`, with the `.ssab` and its textures inside.
 
 !!! info "Versioned by `.ssab` schema"

@@ -15,19 +15,19 @@ the core computes but leaves the player to draw or play - are in
 
 ## 🔍 Documented per-player differences
 
-| Player | In short |
-|---|---|
-| **[Unity](../players/unity.md)** | The uGUI (Canvas) path carries limits the world path does not |
-| **[Web](../players/web.md)** | `ssplayer-webgl` masks only with a stencil buffer; the framework integrations are beta |
-| **[Godot](../players/godot.md)** | Four of the twelve blend modes are honored; the Web export has extra requirements |
-| **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends |
-| **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate |
-| **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter draws one view |
-| **[React Native](../players/react-native.md)** | Masks do not clip Effect parts, and nothing draws on the web |
+| Player | In short | Details |
+|---|---|---|
+| **[Unity](../players/unity.md)** | The uGUI (Canvas) path carries limits the world path does not | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForUnity/limitations/) |
+| **[Web](../players/web.md)** | `ssplayer-webgl` masks only with a stencil buffer; the framework integrations are beta | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForWeb/limitations) |
+| **[Godot](../players/godot.md)** | Four of the twelve blend modes are honored; the Web export has extra requirements | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForGodot/limitations/) |
+| **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForFlutter/limitations/) |
+| **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForRenPy/limitations/) |
+| **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter draws one view | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForWgpu/limitations/) |
+| **[React Native](../players/react-native.md)** | Masks do not clip Effect parts, and nothing draws on the web | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForReactNative/limitations) |
 
 !!! note "How to read this page"
     Each section below summarizes what that player's own **Limitations & Scope** page states -
-    every player publishes one, and the exact cases are listed there. So a gap absent here is
+    every player publishes one, linked in the table above, and the exact cases are listed there. So a gap absent here is
     absent from that player's own account too - which is still not the same as a guarantee of
     support.
 
@@ -40,7 +40,8 @@ the core computes but leaves the player to draw or play - are in
 The **uGUI (Canvas) path** trades capability for CanvasRenderer's "1 renderer = 1 mesh + 1
 material": it assumes a **single atlas** (parts from other atlases cannot sample correctly) and
 supports **`Mix` / `Add` only**, collapsing every other blend to `Mix`. The world path has neither
-limit.
+limit; it draws every blend but four, with `Mul2` drawn as `Mul`, `Screen2` as `Screen`, and `Div2` /
+`Overlay2` as `Mix`.
 
 Edit mode shows only a static preview of the start frame.
 
@@ -69,7 +70,7 @@ single-threaded (`nothread`), which is why it needs no COOP/COEP headers.
 
 Two render backends (`flutter_gpu` / Canvas; Web is always Canvas). On Canvas, `Sub` and `Invert`
 are reconstructed from four and three passes (they cannot batch); `Div2` / `Overlay2` render as `Mix` on
-**both** backends. Masks **do not clip Effect parts** on either backend. The Web target is a
+**both** backends, and `Mulalpha` / `Mul2` as `Mul` and `Screen2` as `Screen`. Masks **do not clip Effect parts** on either backend. The Web target is a
 **developer preview**.
 
 Widget **part following** carries the transform but not the draw order - a followed widget paints
@@ -86,7 +87,7 @@ anything nested inside an Instance part - and the particles an Effect part emits
 
 ### wgpu
 
-`Div2` / `Overlay2` fall back to `Mix`. Masking has **two backends, and what the host's pass lends
+`Div2` / `Overlay2` fall back to `Mix`, `Mulalpha` / `Mul2` draw as `Mul`, and `Screen2` as `Screen`. Masking has **two backends, and what the host's pass lends
 picks between them**: the **stencil** one, or the **coverage-bitmap** one for a pass that lends no
 stencil, at the cost of one extra render pass per masking player, and one more for every 24 mask
 writers past the first 24. Both backends stop at 96 writers per player. Either way, the pass the

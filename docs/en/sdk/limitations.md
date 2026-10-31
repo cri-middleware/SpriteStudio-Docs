@@ -113,8 +113,10 @@ Which blend modes a given engine can reproduce *at all* is a separate, per-playe
 ### A `.ssab` whose schema version differs from the runtime does not load
 
 `.ssab` and `.ssqb` carry their schema version in the binary, and the runtime **fails the load**
-of a file whose version is not the one it reads, naming both the version it expected and the one
-it got. Nothing is read partially, and an asset built against an older schema does not quietly
+of a file whose version is not the one it reads. Rust callers and the browser (wasm) face get both
+versions in the error's text; through the C ABI the text is only "Invalid SSAB version", and the
+two numbers are `ss_runtime_ssab_schema_version()` and the pack's own `version` field. Nothing is
+read partially, and an asset built against an older schema does not quietly
 keep working.
 
 **What to do:** rebuild your assets with the SDK version your player runs. It is the same reason

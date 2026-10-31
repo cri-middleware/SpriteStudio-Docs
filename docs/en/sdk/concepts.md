@@ -51,6 +51,8 @@ Because every official player evaluates animations with `libssruntime`, this fea
 - Masks
 - 9-slice parts - the runtime builds the whole grid (margins, stretch / tile fill, repeats), so a
   player only draws the geometry it is handed
+- Shape parts - triangles, rectangles, stars and other figures with no texture; the runtime
+  generates their vertices, so a player only draws them
 - Parts color (per-part color blending)
 - Authored texture change - a per-part texture swap set on the timeline; the runtime resolves it
   into the draw batch, so a player that binds textures per batch needs no special handling

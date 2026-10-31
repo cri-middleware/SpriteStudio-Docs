@@ -11,25 +11,25 @@ Player に委ねている機能）は [共通の制限事項](../sdk/limitations
 
 ## 🔍 ドキュメントに記載されている Player ごとの差分
 
-| Player | 一言で言うと |
-|---|---|
-| **[Unity](../players/unity.md)** | uGUI（Canvas）パスにのみ、ワールドパスにはない制約がある |
-| **[Web](../players/web.md)** | `ssplayer-webgl` のマスクはステンシルバッファが前提。フレームワーク連携は beta |
-| **[Godot](../players/godot.md)** | 12 種のブレンドのうち対応は 4 種。Web 書き出しに追加要件 |
-| **[Flutter](../players/flutter.md)** | 描画バックエンドが 2 種類。Canvas では 2 つのブレンドでバッチングが落ちる |
-| **[Ren'Py](../players/renpy.md)** | `Div2`・`Overlay2` が `Mix` にフォールバック。一部機能は近似 |
-| **[wgpu](../players/wgpu.md)** | マスクのバックエンドが 2 つ。Bevy アダプタが描画するビューは 1 つ |
-| **[React Native](../players/react-native.md)** | マスクはエフェクトパーツをクリップしない。Web では何も描画されない |
+| Player | 一言で言うと | 詳細 |
+|---|---|---|
+| **[Unity](../players/unity.md)** | uGUI（Canvas）パスにのみ、ワールドパスにはない制約がある | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForUnity/ja/limitations/) |
+| **[Web](../players/web.md)** | `ssplayer-webgl` のマスクはステンシルバッファが前提。フレームワーク連携は beta | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForWeb/ja/limitations) |
+| **[Godot](../players/godot.md)** | 12 種のブレンドのうち対応は 4 種。Web 書き出しに追加要件 | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForGodot/ja/limitations/) |
+| **[Flutter](../players/flutter.md)** | 描画バックエンドが 2 種類。Canvas では 2 つのブレンドでバッチングが落ちる | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForFlutter/ja/limitations/) |
+| **[Ren'Py](../players/renpy.md)** | `Div2`・`Overlay2` が `Mix` にフォールバック。一部機能は近似 | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForRenPy/ja/limitations/) |
+| **[wgpu](../players/wgpu.md)** | マスクのバックエンドが 2 つ。Bevy アダプタが描画するビューは 1 つ | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForWgpu/ja/limitations/) |
+| **[React Native](../players/react-native.md)** | マスクはエフェクトパーツをクリップしない。Web では何も描画されない | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForReactNative/ja/limitations) |
 
 !!! note "このページの読み方"
-    以下の各節は、その Player 自身の **制約と適用範囲** ページに記載された内容の要約です。制約と適用範囲のページはどの Player も公開しており、個別のケースはそこに列挙されています。したがって、ここに載っていない事項はその Player 自身の記述にもない、ということになります（対応の保証ではありません）。
+    以下の各節は、その Player 自身の **制約と適用範囲** ページに記載された内容の要約です。制約と適用範囲のページはどの Player も公開しており（上の表からリンクしています）、個別のケースはそこに列挙されています。したがって、ここに載っていない事項はその Player 自身の記述にもない、ということになります（対応の保証ではありません）。
 
     *すべての* Player に当てはまることは差分ではないため、ここではなく
     [共通の制限事項](../sdk/limitations.md) に記載しています。**テキストパーツと 9 スライスパーツがどの Player でもまだ描画されない**ことも、そちらに含まれます。
 
 ### Unity
 
-**uGUI（Canvas）パス** は CanvasRenderer の「1 レンダラー = 1 メッシュ + 1 マテリアル」に合わせるため、**単一アトラス前提**（他のアトラスのパーツは正しく参照できない）で、**`Mix` / `Add` のみ**対応し、それ以外のブレンドは `Mix` に集約されます。ワールドパスにはどちらの制約もありません。
+**uGUI（Canvas）パス** は CanvasRenderer の「1 レンダラー = 1 メッシュ + 1 マテリアル」に合わせるため、**単一アトラス前提**（他のアトラスのパーツは正しく参照できない）で、**`Mix` / `Add` のみ**対応し、それ以外のブレンドは `Mix` に集約されます。ワールドパスにはどちらの制約もなく、4 種を除くすべてのブレンドを描きます。`Mul2` は `Mul`、`Screen2` は `Screen`、`Div2`・`Overlay2` は `Mix` として描かれます。
 
 編集モードでは開始フレームの静止プレビューのみが表示されます。
 
@@ -48,7 +48,7 @@ GDExtension とカスタムモジュールの 2 形態で提供され、**Web �
 ### Flutter
 
 描画バックエンドが 2 種類（`flutter_gpu` / Canvas。Web は常に Canvas）。Canvas では
-`Sub` を 4 パス、`Invert` を 3 パスで再現するためバッチングできません。`Div2`・`Overlay2` は**両バックエンドとも** `Mix` として描画されます。マスクは**どちらのバックエンドでもエフェクトパーツをクリップしません**。Web ターゲットは **developer preview** です。
+`Sub` を 4 パス、`Invert` を 3 パスで再現するためバッチングできません。`Div2`・`Overlay2` は**両バックエンドとも** `Mix` として、`Mulalpha`・`Mul2` は `Mul`、`Screen2` は `Screen` として描画されます。マスクは**どちらのバックエンドでもエフェクトパーツをクリップしません**。Web ターゲットは **developer preview** です。
 
 ウィジェットの**パーツトラッキング**は変換のみを転送し描画順は含まないため、追従したウィジェットはパーツの間ではなくアニメーション全体の手前に描画されます。アンカーはビューと同じ矩形を覆う必要があります。
 
@@ -60,7 +60,7 @@ GDExtension とカスタムモジュールの 2 形態で提供され、**Web �
 
 ### wgpu
 
-`Div2`・`Overlay2` は `Mix` にフォールバックします。マスクには**バックエンドが 2 つあり、ホストのパスが何を貸せるかで選ばれます**。**ステンシル**方式と、ステンシルを貸せないパスのための**カバレッジビットマップ**方式で、後者はマスクを持つ Player 1 体につき描画パスが 1 つ増え、writer が 24 枚を超えるごとにさらに 1 つ増えます。どちらのバックエンドも writer は 1 体につき 96 枚で止まります。どちらでも、Player が描画するパスは **MSAA を off** にする必要があります。
+`Div2`・`Overlay2` は `Mix` にフォールバックし、`Mulalpha`・`Mul2` は `Mul`、`Screen2` は `Screen` として描かれます。マスクには**バックエンドが 2 つあり、ホストのパスが何を貸せるかで選ばれます**。**ステンシル**方式と、ステンシルを貸せないパスのための**カバレッジビットマップ**方式で、後者はマスクを持つ Player 1 体につき描画パスが 1 つ増え、writer が 24 枚を超えるごとにさらに 1 つ増えます。どちらのバックエンドも writer は 1 体につき 96 枚で止まります。どちらでも、Player が描画するパスは **MSAA を off** にする必要があります。
 
 **Bevy アダプタ**は別クレートで、Player 側ではなく Bevy のリリースラインに追従し、一度に
 1 ラインだけを対象とします。Bevy の 2D デプステクスチャはステンシルを持たないためカバレッジ方式が使われます。描画するビューは **1 つ**で、2 つ目のビューは警告付きでスキップされます（色を忠実に出すにはカメラに

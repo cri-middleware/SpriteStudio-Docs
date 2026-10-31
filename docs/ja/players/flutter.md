@@ -19,7 +19,7 @@
 Player 本体に加えて、次のものが提供されます。
 
 - **[Flame](https://flame-engine.org/) アダプター** - Flame 製ゲームにアニメーションを組み込めます。
-- **ライブリロード** - `flutter run` と並べて `sswatch` を実行すると、SpriteStudio で保存した時点で変更されたプロジェクトだけが再変換され、実行中のアプリに反映されます。
+- **ライブリロード** - `ssgen_flutter` を dev 依存に追加し、その `sswatch` を `flutter run` と並べて実行すると、SpriteStudio で保存した時点で変更されたプロジェクトだけが再変換され、デバッグ実行中のアプリに反映されます。
 
 ## ➡️ 次に読む
 
