@@ -14,8 +14,8 @@ Attach something of your own to a part - a weapon in a hand, an effect at a muzz
 a head - and it moves, turns and scales with that part every frame. What follows is yours: a node,
 widget or view your engine draws, so it can be anything the engine can show.
 
-A mesh (skinned) part cannot be followed directly: its transform stays at its setup position while
-bone skinning moves the art. Add a null or bone part at that spot in SpriteStudio and follow that.
+A mesh (skinned) part cannot be followed directly; [Shared Limitations](../sdk/limitations.md) says
+why, and what to follow instead.
 
 ## 🧥 Swap a texture
 
