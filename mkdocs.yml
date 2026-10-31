@@ -29,6 +29,7 @@ nav:
       - Try It in Your Browser: overview/try-it.md
       - Converting Assets: overview/conversion.md
       - Standalone Conversion Tools: overview/convert-with-a-standalone-tool.md
+      - UI Integration: overview/ui-integration.md
       - Player Differences: overview/player-differences.md
       - 🤖 Using with AI Assistants: overview/ai-assistants.md
   - 🎮 Players & Tools:
@@ -70,6 +71,7 @@ plugins:
           - overview/try-it.md: "Live browser demos and a hosted converter, with nothing to install."
           - overview/conversion.md: "Converting a SpriteStudio 7.6+ project (`.sspj`) into the runtime format (`.ssab` / `.ssqb`), and which route each player takes."
           - overview/convert-with-a-standalone-tool.md: "Which standalone converter to run when no player converts for you, including in CI."
+          - overview/ui-integration.md: "A SpriteStudio animation as a button in your UI toolkit: states from labels, clicks on the artwork only, reduced motion, and the players that offer it."
           - overview/player-differences.md: "Only what differs between players: what each engine's renderer can reproduce and how far each player has got."
           - overview/ai-assistants.md: "How to hand these docs to an AI assistant: each site's llms.txt, the docs inside each player's package and the Agent Skill the npm and Flutter packages carry, and a snippet for your AGENTS.md."
         Players and tools:
