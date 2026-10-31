@@ -23,8 +23,9 @@ drawn by the Ringo sample in a PixiJS app, one taking the pointer only on the pa
   section, and a `reduced_motion` label can give the idle state a calm loop instead.
 - **Screen readers.** The button takes the name a screen reader announces; the animation itself stays
   decoration.
-- **One animation, every player.** Every player follows the same convention - the same state labels,
-  the same fallbacks - so an animation authored as a button works as one on any of them.
+- **One animation, every player in the table.** The players below follow the same convention - the
+  same state labels, the same fallbacks - so an animation authored as a button works as one on any
+  of them.
 
 ## 🎮 Where to use it
 
