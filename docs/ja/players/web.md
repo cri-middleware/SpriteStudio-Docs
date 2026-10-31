@@ -23,6 +23,7 @@
 |---|---|
 | 単体 / フレームワーク非依存（`<ss-player>` Web Component） | **`@spritestudio/ssplayer-webgl`** |
 | PixiJS アプリ | **`@spritestudio/ssplayer-pixi`** |
+| PixiJS アプリで、アニメーションで描く [`@pixi/ui`](https://github.com/pixijs/ui) のボタン | **`@spritestudio/ssplayer-pixi-ui`**（`ssplayer-pixi` も一緒に入ります） |
 | 自作レンダラーを実装する | **`@spritestudio/ssplayer-core`** |
 
 **変換** - `.sspj` をランタイムアセットへ変換します。再生用パッケージとは別に選びます。

@@ -57,7 +57,7 @@ An assistant can run commands but cannot use a window, so it converts with `ssco
 
 ## 📝 A snippet for your AGENTS.md
 
-An assistant only knows where the docs are if something in your project says so. An installed Agent Skill (above) does that by itself, so this snippet is for the players without one, or for a project that does not install skills. Paste this into your project's `AGENTS.md` (or `CLAUDE.md`), and swap in your player's address from the table above:
+An assistant only knows where the docs are if something in your project says so. An installed Agent Skill (above) does that by itself, so this snippet is for the players without one, or for a project that does not install skills. Paste this into your project's `AGENTS.md` (or `CLAUDE.md`). It is written for Unity: for another player, swap the heading, the package path (from the table under *Docs inside the package*) and the `llms.txt` address (from the table under *What each site serves*):
 
 ```markdown
 ## SpriteStudio Player for Unity

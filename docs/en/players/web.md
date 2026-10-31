@@ -36,6 +36,7 @@ The steps, with the folders they use, are in each package's README, linked from 
 |---|---|
 | Standalone / no framework (`<ss-player>` Web Component) | **`@spritestudio/ssplayer-webgl`** |
 | PixiJS app | **`@spritestudio/ssplayer-pixi`** |
+| PixiJS app with [`@pixi/ui`](https://github.com/pixijs/ui) buttons drawn by animations | **`@spritestudio/ssplayer-pixi-ui`** (brings `ssplayer-pixi` with it) |
 | Building your own renderer | **`@spritestudio/ssplayer-core`** |
 
 **Conversion** - turns `.sspj` into runtime assets; picked separately from the playback package.
