@@ -24,12 +24,13 @@
 | **60. トラブルシューティング** | 症状から原因を探す表と、リンクのエラー。 |
 
 !!! note "都度検証する"
-    ガイドでは各段階で `tests/overall/overall.sspj` を実行することを推奨しています。SpriteStudio
+    ガイドでは各段階で、SDK リポジトリの [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj) を実行することを推奨しています。SpriteStudio
     エディタと同じ見た目になれば、その段階は完了です。公式 Player はいずれもこの方式で作られているので、どれも良い参考例になります。現行のラインナップは
     [プラットフォームの選び方](../overview/choose-your-platform.md) を参照してください。
 
 ## 🚦 はじめる前に
 
 - 変換 -> 実行時のパイプラインは [SDK コンセプト](./concepts.md) を参照。ガイドが前提とする用語は [用語集](./glossary.md) に揃えてあります。
-- ガイドの **制限事項** ページを最初に読む - Player の設計判断に直結します。
+- ガイドの **[制限事項](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md)** と **[Player API 規約](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/20_design/30_api_conventions.ja.md)** を最初に読む - どちらも Player の設計に直結します。
+- ライブラリは SDK の [Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases) から入手します。`spritestudio-sdk-static-libs.zip` か `spritestudio-sdk-dynamic-libs.zip`（`libssruntime`、`libssconverter`、C ヘッダー、C# バインディング）と、ブラウザ向けの `spritestudio-sdk-web-libs.zip` です。Rust の API は [rustdoc](https://cri-middleware.github.io/SpriteStudio-SDK/api/ssruntime/index.html) にあります（英語）。
 - ソースコードと Issue 報告: [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK)。

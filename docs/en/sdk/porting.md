@@ -29,7 +29,8 @@ engine's Body to the shared Brain.
 | **60. Troubleshooting** | A table from symptom to cause, and link errors. |
 
 !!! note "Verify as you go"
-    The guide recommends running `tests/overall/overall.sspj` at each stage - if it matches
+    The guide recommends running [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj)
+    from the SDK repository at each stage - if it matches
     the SpriteStudio editor, that step is done. Every official player is built this way, so any
     of them makes a good reference - see
     [Choose Your Platform](../overview/choose-your-platform.md) for the current lineup.
@@ -38,5 +39,12 @@ engine's Body to the shared Brain.
 
 - Read [SDK Concepts](./concepts.md) for the convert -> runtime pipeline, and keep the
   [Glossary](./glossary.md) open for the terms the guide assumes.
-- Read the guide's **Limitations** page first - it shapes your player's design decisions.
+- Read the guide's **[Limitations](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)** and
+  **[Player API Conventions](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/20_design/30_api_conventions.md)** first - both shape your
+  player's design.
+- Get the libraries from the SDK's [Releases](https://github.com/cri-middleware/SpriteStudio-SDK/releases):
+  `spritestudio-sdk-static-libs.zip` or `spritestudio-sdk-dynamic-libs.zip` (`libssruntime`,
+  `libssconverter`, the C headers and the C# bindings) and `spritestudio-sdk-web-libs.zip` for the
+  browser. The Rust API is in the
+  [rustdoc](https://cri-middleware.github.io/SpriteStudio-SDK/api/ssruntime/index.html).
 - Source & issues: [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK).
