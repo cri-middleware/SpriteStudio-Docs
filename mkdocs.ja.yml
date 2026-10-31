@@ -66,7 +66,7 @@ plugins:
           - overview/conversion.md: "SpriteStudio 7.6 以上のプロジェクト（`.sspj`）をランタイム形式（`.ssab` / `.ssqb`）へ変換する方法と、各 Player がどの経路を取るか。"
           - overview/convert-with-a-standalone-tool.md: "変換してくれる Player がないとき（CI を含む）に使うスタンドアロンコンバーターの選び方。"
           - overview/player-differences.md: "Player 間で違うことだけ。各エンジンの描画層が再現できる範囲と、各 Player の実装の進み具合。"
-          - overview/ai-assistants.md: "このドキュメントを AI アシスタントに渡す方法。各サイトの llms.txt、各 Player のパッケージ内のドキュメントと、npm・Flutter のパッケージが持つ Agent Skill、AGENTS.md に貼る数行。"
+          - overview/ai-assistants.md: "このドキュメントを AI アシスタントに渡す方法。各サイトの llms.txt、各 Player のパッケージ内のドキュメントと、npm・Flutter のパッケージが持つ Agent Skill、ssconverter-cli での変換、AGENTS.md に貼る数行。"
         Player・ツール:
           - players/unity.md: "Unity 用 Player。エディタで始まる: `.sspj` をエディタにドラッグし、コンポーネントに割り当てる。"
           - players/web.md: "1 つの WebAssembly コアを共有する Web 用 Player 群（PixiJS・WebGL・RPG ツクール MZ・TyranoScript・ティラノビルダー）。"
