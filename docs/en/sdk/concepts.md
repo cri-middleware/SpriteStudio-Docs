@@ -58,7 +58,8 @@ Because every official player evaluates animations with `libssruntime`, this fea
   into the draw batch, so a player that binds textures per batch needs no special handling
 - Frame-accurate events - user data, signal, audio
 - Sub-frame interpolation (smooth playback above the base frame rate - 144 Hz+, slow motion)
-- Whole-animation mixing / crossfade (animations stacked on tracks)
+- Whole-animation mixing / crossfade (animations stacked on tracks) - what it gives and where each
+  player documents it is on [Motion Blending](../overview/motion-blending.md)
 - The **Override Layer API** - override a part's color, cell reference, or visibility at runtime
 
 !!! tip "Source of truth"
