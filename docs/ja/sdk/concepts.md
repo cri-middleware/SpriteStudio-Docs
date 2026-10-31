@@ -46,7 +46,7 @@ graph LR
 - フレーム精度のイベント - ユーザーデータ、シグナル、オーディオ
 - サブフレーム補間（基準フレームレートを超える滑らかな再生。144Hz 以上やスローモーションにも）
 - アニメーション全体のミキシング／クロスフェード（トラックに積んで合成） - できることと各 Player のドキュメントは [モーションブレンド](../overview/motion-blending.md) にあります
-- **Override Layer API** - 再生時にパーツのカラー・セル参照・表示状態を上書き
+- **Override Layer API** - 再生時にパーツのカラー・セル参照・表示状態を上書き。Player が実行時に変えられるものは [実行時にキャラクターを変える](../overview/runtime-changes.md) にあります
 
 !!! tip "情報源"
     この一覧は SDK の **Player 移植ガイド**に準拠しており、各項目のページはガイドの目次（[`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）にあります。責務の境界はガイドの「はじめに → 制限事項」（[`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md)）が示しています。上記のうち 2 つは **状態計算のみ**で描画・再生には Player 側の実装が必要であり、いくつかの機能には条件が伴います。これらと、コアが行わないことは [共通の制限事項](./limitations.md) にまとめてあります。Player 同士で異なる点は [Player ごとの違い](../overview/player-differences.md) を参照してください。

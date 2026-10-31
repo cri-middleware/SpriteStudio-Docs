@@ -18,6 +18,9 @@ authored on its own - see [Motion Blending](./overview/motion-blending.md).
 🔘 Building a UI? A SpriteStudio animation can be a button in your UI toolkit, with every
 state drawn in SpriteStudio - see [UI Integration](./overview/ui-integration.md).
 
+🧥 Equipment, costumes and colour variants: make things follow a part, swap textures and override
+single parts while the animation plays - see [Changing a Character at Runtime](./overview/runtime-changes.md).
+
 🎨 No SpriteStudio project of your own? CRI Middleware publishes free
 [sample data](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) - complete `.sspj` projects
 (characters, effects, UI) you can feed straight into
