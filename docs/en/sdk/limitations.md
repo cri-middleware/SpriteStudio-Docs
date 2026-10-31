@@ -47,18 +47,36 @@ A speed of `0` stops it too.
 ### Animation mixing is single-`.ssab` only
 
 Animations are stacked on **tracks** - track 0 first, each further track mixed in on top of it.
-Stacking has two hard constraints:
+Stacking has four hard constraints:
 
 - **Same `.ssab`.** Mixing across resources is not supported.
 - **Same cell per part.** Every stacked animation must assign the *same* cell to the *same*
   part; the cell metadata is taken from **track 0**, so a mismatch produces size / pivot
   errors that visibly break the pose. Animations inside one `.ssae` normally satisfy this.
+- **Discrete attributes are not mixed.** Cell, parts color, shader, flip, hide, draw priority and
+  texture come from **track 0**'s main animation, and switch to the incoming one when a crossfade
+  on track 0 begins - so a layered track cannot swap a cell. To swap one, use
+  [part overrides](../overview/runtime-changes.md).
+- **No per-part masks.** What a track affects is decided by the parts its animation keys; a track
+  cannot be limited to some parts.
 
 Three secondary behaviors are worth knowing: for parts that carry `parts_color`, the visible
 alpha comes from **track 0** rather than the mixed value; by default only **track 0**'s main
 animation fires events (other sources have a default event threshold of `+∞`, so lower a
 source's threshold to let it fire too); and sources of different lengths run on independent
 clocks, so keeping them in step is the player's job.
+
+Instance and Effect parts sit outside mixing. They belong to the `.ssab`, not to one animation, so
+a crossfade on track 0 keeps them running rather than setting them up again, and which animation's
+key drives them across the switch is not blended.
+
+### A mesh (skinned) part cannot be followed directly
+
+A follower takes the transform of the part it follows. A mesh part's transform stays at its setup
+position while bone skinning moves its vertices, so a follower attached to a mesh part sits near the
+character's root rather than on the visible art.
+
+**What to do:** add a null or bone part at that spot in SpriteStudio and follow that part instead.
 
 ## 🧩 What the player must supply
 
