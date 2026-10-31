@@ -24,11 +24,11 @@
 
 `.sspj` -> `.ssab` の変換をすべてブラウザ内で行います。サーバーへは何もアップロードされません。
 
-!!! warning "Chromium 系ブラウザで利用してください"
-    ssconverter-web は **File System Access API** を使用するため、Chromium 系ブラウザ（**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では利用できません。
+!!! note "フォルダのドロップ"
+    フォルダのドロップは **File System Access API** を使用するため、Chromium 系ブラウザ（**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では **Browse...** でフォルダを選択してください。
 
 1. [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) でコンバーターを開きます。
-2. `.sspj` が入ったフォルダをドロップします（画像などの参照ファイルも一緒に読み込まれます）。
+2. `.sspj` が入ったフォルダをドロップするか、**Browse...** で選択します（画像などの参照ファイルも一緒に読み込まれます）。
 3. **⚡ Convert & Download** を押します。ZIP には `.sspj` の名前のフォルダが 1 つ入っていて、その中に `.ssab` とテクスチャがあります。
 
 !!! info "`.ssab` スキーマ版ごとに公開"

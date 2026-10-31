@@ -37,8 +37,7 @@ Player に委ねている機能）は [共通の制限事項](../sdk/limitations
 
 **`ssplayer-webgl` はステンシルバッファでマスクします**。ステンシルバッファの無いコンテキストではマスクを書き込めないため、マスクの外側に描くパーツはマスクされずに描かれ、マスクの内側にだけ描く設定のパーツは描かれません。フレームワーク連携（**RPG ツクール MZ・TyranoScript・ティラノビルダー**）は **beta** で、RPG ツクール MZ ではピクチャの色調とブレンドモードがアニメーションに影響しません。
 
-ブラウザ版コンバーター `ssconverter-web` は File System Access API を使うため
-**Chromium 系ブラウザ限定**です。
+ブラウザ版コンバーター `ssconverter-web` でフォルダをドロップするには File System Access API が要るため、ドロップは **Chromium 系ブラウザ限定**です。ほかのブラウザでは **Browse...** でフォルダを選択します。
 
 ### Godot
 

@@ -51,8 +51,8 @@ written: parts drawn outside a mask draw unclipped, and parts set to draw only i
 not drawn. The framework integrations - **RPG Maker MZ, TyranoScript and TyranoBuilder** - are
 **beta**; on RPG Maker MZ a picture's tint and blend mode do not affect the animation.
 
-The browser converter `ssconverter-web` needs the File System Access API, so it is
-**Chromium-only**.
+In the browser converter `ssconverter-web`, dropping a folder needs the File System Access API,
+so dropping is **Chromium-only**; other browsers pick the folder with **Browse...**.
 
 ### Godot
 

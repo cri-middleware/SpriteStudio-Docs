@@ -32,12 +32,13 @@ GUI, `--embedded` on the CLI); not every player reads one, so check
 
 Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a server.
 
-!!! warning "Use a Chromium-based browser"
-    ssconverter-web relies on the **File System Access API**, so it works only in Chromium-based
-    browsers (**Chrome**, **Edge**, **Opera**). Firefox and Safari are not supported.
+!!! note "Dropping a folder"
+    Dropping a folder relies on the **File System Access API**, so it works only in Chromium-based
+    browsers (**Chrome**, **Edge**, **Opera**). In Firefox and Safari, pick the folder with
+    **Browse...** instead.
 
 1. Open the converter at [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/).
-2. Drop in the folder that contains your `.sspj` (its images and other referenced files are read along with it).
+2. Drop in the folder that contains your `.sspj`, or pick it with **Browse...** (its images and other referenced files are read along with it).
 3. Press **⚡ Convert & Download**. The ZIP holds one folder named after the `.sspj`, with the `.ssab` and its textures inside.
 
 !!! info "Versioned by `.ssab` schema"
