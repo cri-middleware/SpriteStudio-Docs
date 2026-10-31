@@ -39,8 +39,8 @@ The steps for each face are in the README's [Installation](https://github.com/cr
 ## 🔩 Which faces borrow your device
 
 The decision that shapes this player is the **borrow model**: the Rust API does not own the wgpu
-`Device` / `Queue` / `Surface`. The host owns them and lends them per frame - which is what
-`scene.draw` into a pass *you* opened means above. So the player rides along inside any wgpu
+`Device` / `Queue` / `Surface`. The host owns them and lends them per frame - which is why the
+scene above draws inside a render pass the host opened. So the player rides along inside any wgpu
 application, your own renderer or an engine that already has a device of its own, without
 locking you into one.
 
@@ -48,8 +48,9 @@ locking you into one.
 is nothing to hand across that boundary: the C face builds and owns a device on the window handle
 you give it, and the browser face creates its own device and a surface per canvas. Both draw
 frames of their own rather than into a pass of yours, so compositing a character into your pass
-is a Rust-side feature - directly or through an engine adapter - and from C the route is an
-offscreen render plus texture sharing.
+is a Rust-side feature - directly or through an engine adapter. From C a scene draws only to the
+window or layer it was created on, so the route is a window or layer of the player's own (a child
+window, or a `CAMetalLayer` placed in your layer tree), not your pass or a texture.
 
 The borrow model is also what keeps the **Bevy** adapter small: the adapter draws on the device
 Bevy already owns, so characters go into Bevy's own 2D pass rather than through a second
@@ -62,4 +63,4 @@ a Bevy app needs.
 
 - [Documentation](https://cri-middleware.github.io/SSPlayerForWgpu/)
 - [Repository](https://github.com/cri-middleware/SSPlayerForWgpu)
-- [Converting Assets](../overview/conversion.md) - picking a tool and putting it in a build pipeline
+- [Converting with a Standalone Tool](../overview/convert-with-a-standalone-tool.md) - picking a tool and putting it in a build pipeline

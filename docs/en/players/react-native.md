@@ -22,7 +22,8 @@ inside that asset folder.
 
 Once it is in your tree the native side takes over: both the geometry and the draw happen natively
 through [React Native Skia](https://shopify.github.io/react-native-skia/), so what JavaScript does
-each frame is one call per animation on screen. Alongside the view it ships **`<SpriteStudioScene>`**,
+each frame is the same few calls per animation on screen, however complex it is, and no vertex
+crosses into JavaScript. Alongside the view it ships **`<SpriteStudioScene>`**,
 which draws a whole cast through one canvas and one clock.
 
 The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForReactNative#-quick-start).
@@ -31,4 +32,4 @@ The steps, with the folders they use, are in the README's [Quick Start](https://
 
 - [Documentation](https://cri-middleware.github.io/SSPlayerForReactNative/)
 - [Repository](https://github.com/cri-middleware/SSPlayerForReactNative)
-- [Converting Assets](../overview/conversion.md) - picking a tool and putting it in a build pipeline
+- [Converting with a Standalone Tool](../overview/convert-with-a-standalone-tool.md) - picking a tool and putting it in a build pipeline

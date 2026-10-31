@@ -12,7 +12,7 @@
 **3. どう画面に出すか** - `source` にそのアセットフォルダ内のパスを指定した `<SpriteStudioView>` を置きます。
 
 ツリーに置いたあとはネイティブ側が担当します。ジオメトリの生成も描画も
-[React Native Skia](https://shopify.github.io/react-native-skia/) を介してネイティブ層で完結するため、JavaScript が毎フレーム行うのは、表示中の 1 アニメーションにつき 1 回の呼び出しだけです。ビューと併せて **`<SpriteStudioScene>`** を同梱しており、複数体を 1 つのキャンバスと 1 つのクロックでまとめて描画できます。
+[React Native Skia](https://shopify.github.io/react-native-skia/) を介してネイティブ層で完結するため、JavaScript が毎フレーム行うのは、表示中のアニメーションごとに、どれほど複雑でも同じ数回の呼び出しだけで、頂点が JavaScript 側へ渡ることはありません。ビューと併せて **`<SpriteStudioScene>`** を同梱しており、複数体を 1 つのキャンバスと 1 つのクロックでまとめて描画できます。
 
 フォルダを含めた手順は、README の[クイックスタート](https://github.com/cri-middleware/SSPlayerForReactNative/blob/HEAD/README.ja.md#-クイックスタート)にあります。
 
@@ -20,4 +20,4 @@
 
 - [ドキュメント](https://cri-middleware.github.io/SSPlayerForReactNative/ja/)
 - [リポジトリ](https://github.com/cri-middleware/SSPlayerForReactNative)
-- [アセットの変換](../overview/conversion.md) - ツールの選び方とビルドパイプラインへの組み込み
+- [スタンドアロンツールでの変換](../overview/convert-with-a-standalone-tool.md) - ツールの選び方とビルドパイプラインへの組み込み
