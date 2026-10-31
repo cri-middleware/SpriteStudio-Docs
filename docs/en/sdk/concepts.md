@@ -60,7 +60,8 @@ Because every official player evaluates animations with `libssruntime`, this fea
 - Sub-frame interpolation (smooth playback above the base frame rate - 144 Hz+, slow motion)
 - Whole-animation mixing / crossfade (animations stacked on tracks) - what it gives and where each
   player documents it is on [Motion Blending](../overview/motion-blending.md)
-- The **Override Layer API** - override a part's color, cell reference, or visibility at runtime
+- The **Override Layer API** - override a part's color, cell reference, or visibility at runtime;
+  what a player lets you change at runtime is on [Changing a Character at Runtime](../overview/runtime-changes.md)
 
 !!! tip "Source of truth"
     This list follows the SDK's **Player Porting Guide**, whose table of contents

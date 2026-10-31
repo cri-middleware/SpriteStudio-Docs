@@ -12,6 +12,8 @@
 
 🔘 UI を作るなら、SpriteStudio のアニメーションを UI ツールキットのボタンにして、どの状態の見た目も SpriteStudio で作れます - [UI 統合](./overview/ui-integration.md) をご覧ください。
 
+🧥 装備・着せ替え・色違いには、再生中にパーツへ物を追従させたり、テクスチャを差し替えたり、パーツ 1 つを上書きしたりできます - [実行時にキャラクターを変える](./overview/runtime-changes.md) をご覧ください。
+
 🎨 手元に SpriteStudio プロジェクトがない場合は、CRI Middleware が無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています - キャラクター・エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)にかけられます。
 
 ## 🎮 Player・ツール

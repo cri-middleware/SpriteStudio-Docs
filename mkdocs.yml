@@ -31,6 +31,7 @@ nav:
       - Standalone Conversion Tools: overview/convert-with-a-standalone-tool.md
       - Motion Blending: overview/motion-blending.md
       - UI Integration: overview/ui-integration.md
+      - Changing at Runtime: overview/runtime-changes.md
       - Player Differences: overview/player-differences.md
       - 🤖 Using with AI Assistants: overview/ai-assistants.md
   - 🎮 Players & Tools:
@@ -74,6 +75,7 @@ plugins:
           - overview/convert-with-a-standalone-tool.md: "Which standalone converter to run when no player converts for you, including in CI."
           - overview/motion-blending.md: "One character playing several animations at once: crossfades, layered tracks, blends by weight, and the players that offer it."
           - overview/ui-integration.md: "A SpriteStudio animation as a button in your UI toolkit: states from labels, clicks on the artwork only, reduced motion, and the players that offer it."
+          - overview/runtime-changes.md: "Changing a character while it plays: things that follow a part, swapping the textures it draws with, and per-part colour, cell and visibility overrides, with the players that offer each."
           - overview/player-differences.md: "Only what differs between players: what each engine's renderer can reproduce and how far each player has got."
           - overview/ai-assistants.md: "How to hand these docs to an AI assistant: each site's llms.txt, the docs inside each player's package and the Agent Skill the npm and Flutter packages carry, converting with ssconverter-cli, and a snippet for your AGENTS.md."
         Players and tools:
