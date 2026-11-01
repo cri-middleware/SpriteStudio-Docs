@@ -77,7 +77,7 @@ plugins:
           - overview/ui-integration.md: "A SpriteStudio animation as a button in your UI toolkit: states from labels, clicks on the artwork only, reduced motion, and the players that offer it."
           - overview/runtime-changes.md: "Changing a character while it plays: things that follow a part, swapping the textures it draws with, and per-part colour, cell and visibility overrides, with the players that offer each."
           - overview/player-differences.md: "Only what differs between players: what each engine's renderer can reproduce and how far each player has got."
-          - overview/ai-assistants.md: "How to hand these docs to an AI assistant: each site's llms.txt, the docs inside each player's package and the Agent Skill the npm and Flutter packages carry, converting with ssconverter-cli, and a snippet for your AGENTS.md."
+          - overview/ai-assistants.md: "How to hand these docs to an AI assistant: each site's llms.txt, the docs inside each player's package and the Agent Skill the npm and Flutter packages carry, and converting with ssconverter-cli."
         Players and tools:
           - players/unity.md: "Unity player, editor-first: drag a `.sspj` into the editor and assign it to a component."
           - players/web.md: "Web players (PixiJS, WebGL, RPG Maker MZ, TyranoScript, TyranoBuilder) on one WebAssembly core."

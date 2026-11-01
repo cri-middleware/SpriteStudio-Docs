@@ -54,15 +54,3 @@ npm と Flutter のパッケージは、同じページを [Agent Skill](https:/
 ## ⌨️ プロジェクトの変換
 
 アシスタントはコマンドを実行できてもウィンドウは扱えないので、変換には `ssconverter-cli` を使います。SDK の各リリースにはプラットフォームごとの zip が固定の URL `https://github.com/cri-middleware/SpriteStudio-SDK/releases/latest/download/ssconverter-cli-<platform>.zip` で入っていて、プラットフォームの一覧は [CLI の README](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) にあります。実行結果には書き出した `.ssab` ごとに中のアニメーション名が出るので、Player に渡す名前はそこで分かります。
-
-## 📝 AGENTS.md に貼る数行
-
-アシスタントがドキュメントの場所を知るには、プロジェクトのどこかにそれが書かれている必要があります。インストールした Agent Skill（上記）はそれ自体がその役目を果たすので、この数行は Agent Skill の無い Player か、skill を入れないプロジェクトのためのものです。次の数行を、プロジェクトの `AGENTS.md`（または `CLAUDE.md`）に貼ってください。Unity 向けに書いてあるので、ほかの Player では見出し、パッケージのパス（「パッケージの中のドキュメント」の表）、`llms.txt` のアドレス（「各サイトが提供するもの」の表）を差し替えてください。
-
-```markdown
-## SpriteStudio Player for Unity
-
-- この Player を使ったコードを書く前にドキュメントを読み、機能を約束する前に「制約と適用範囲」のページを確認する。
-- インストールした版のドキュメントはパッケージの中にある: `Library/PackageCache/jp.co.cri-mw.spritestudio.ssplayer-unity@*/Documentation~/`（日本語は `ja/index.md` から）。`Library/` は gitignore されているので、`rg --no-ignore` で検索する。
-- 最新のドキュメント（Markdown）: https://cri-middleware.github.io/SSPlayerForUnity/ja/llms.txt
-```
