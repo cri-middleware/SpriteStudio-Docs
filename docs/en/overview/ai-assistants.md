@@ -54,15 +54,3 @@ The npm and Flutter packages also carry those pages as an [Agent Skill](https://
 ## ⌨️ Converting a project
 
 An assistant can run commands but cannot use a window, so it converts with `ssconverter-cli`. Each SDK release has one zip per platform at a fixed URL, `https://github.com/cri-middleware/SpriteStudio-SDK/releases/latest/download/ssconverter-cli-<platform>.zip`; the platforms are listed in the [CLI README](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.md). Its output names every `.ssab` it wrote with the animations inside, which are the names to pass to the player.
-
-## 📝 A snippet for your AGENTS.md
-
-An assistant only knows where the docs are if something in your project says so. An installed Agent Skill (above) does that by itself, so this snippet is for the players without one, or for a project that does not install skills. Paste this into your project's `AGENTS.md` (or `CLAUDE.md`). It is written for Unity: for another player, swap the heading, the package path (from the table under *Docs inside the package*) and the `llms.txt` address (from the table under *What each site serves*):
-
-```markdown
-## SpriteStudio Player for Unity
-
-- Read the player's docs before writing code against it, and check its Limitations & Scope page before promising a feature.
-- The docs for the installed version are inside the package: `Library/PackageCache/jp.co.cri-mw.spritestudio.ssplayer-unity@*/Documentation~/`, starting at `en/index.md`. `Library/` is gitignored, so search it with `rg --no-ignore`.
-- The latest docs, as Markdown: https://cri-middleware.github.io/SSPlayerForUnity/llms.txt
-```
