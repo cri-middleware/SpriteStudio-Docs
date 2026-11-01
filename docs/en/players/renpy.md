@@ -18,7 +18,7 @@ one **Shift+R** each save re-converts what changed, so there is no manual export
 **3. Getting it on screen** - `show ringo wait1`: the pack `Ringo.ssab` is the image `ringo`, and
 each of its animations an attribute.
 
-The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForRenPy#-1-quick-start).
+The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForRenPy#-quick-start).
 
 ## ➡️ Read next
 

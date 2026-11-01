@@ -13,7 +13,7 @@
 
 **3. どう画面に出すか** - `show ringo wait1` と書きます。パック `Ringo.ssab` が画像 `ringo` になり、アニメーションがその属性になります。
 
-フォルダを含めた手順は、README の[クイックスタート](https://github.com/cri-middleware/SSPlayerForRenPy/blob/HEAD/README.ja.md#-1-クイックスタート)にあります。
+フォルダを含めた手順は、README の[クイックスタート](https://github.com/cri-middleware/SSPlayerForRenPy/blob/HEAD/README.ja.md#-クイックスタート)にあります。
 
 ## ➡️ 次に読む
 

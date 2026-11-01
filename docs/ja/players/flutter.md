@@ -14,7 +14,7 @@
 
 **3. どう画面に出すか** - `.ssab` のアセットのパスを渡した `SpriteStudioAnimation.asset(…)` ウィジェットを 1 つ置きます。再生を自分で制御するときは、`SpriteStudioPlayer` を `SpriteStudioView` に渡します。
 
-フォルダを含めた手順は、README の[クイックスタート](https://github.com/cri-middleware/SSPlayerForFlutter/blob/HEAD/README.ja.md#-1-クイックスタート)にあります。
+フォルダを含めた手順は、README の[クイックスタート](https://github.com/cri-middleware/SSPlayerForFlutter/blob/HEAD/README.ja.md#-クイックスタート)にあります。
 
 Player 本体に加えて、次のものが提供されます。
 

@@ -23,7 +23,7 @@ with the `ssconvert` CLI from `ssconverter_dart`, and list the output folder und
 **3. Getting it on screen** - one `SpriteStudioAnimation.asset(…)` widget with the `.ssab`'s asset
 path; a `SpriteStudioPlayer` in a `SpriteStudioView` when you drive playback yourself.
 
-The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForFlutter#-1-quick-start).
+The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForFlutter#-quick-start).
 
 Alongside the player it ships:
 
