@@ -72,7 +72,9 @@ jobs:
     # The weekly run and a dispatch only: --strict checks the internal links on
     # every pull request, and a site that goes down mid-review is not the pull
     # request's fault. Links inside code blocks are examples, not links, and
-    # lychee skips them.
+    # lychee skips them. A 503 is a site saying it is down for now, as a
+    # maintenance page does, not a broken link, so it is accepted on top of
+    # lychee's default.
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -86,4 +88,5 @@ jobs:
         with:
           args: >-
             --no-progress --scheme https --scheme http --exclude-loopback --max-retries 3
+            --accept '100..=103,200..=299,503'
             'docs/**/*.md' '*.md'
