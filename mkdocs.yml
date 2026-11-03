@@ -40,7 +40,7 @@ nav:
       - Godot: players/godot.md
       - Flutter: players/flutter.md
       - Ren'Py: players/renpy.md
-      - wgpu (Rust, C / C++): players/wgpu.md
+      - wgpu (Rust, C / C++, WebGPU): players/wgpu.md
       - React Native: players/react-native.md
       - SSConverter GUI: players/converter.md
   - 🛠️ SDK & Development:

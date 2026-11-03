@@ -70,7 +70,7 @@
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
--   :simple-rust: __wgpu（Rust・C / C++）__
+-   :simple-rust: __wgpu（Rust・C / C++・WebGPU）__
 
     ---
 

@@ -81,7 +81,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
     [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
--   :simple-rust: __wgpu (Rust, C / C++)__
+-   :simple-rust: __wgpu (Rust, C / C++, WebGPU)__
 
     ---
 

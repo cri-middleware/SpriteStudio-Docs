@@ -14,7 +14,7 @@ SDK と各公式 Player はそれぞれ別のリポジトリです。そのた�
 | [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | [Issues](https://github.com/cri-middleware/SSPlayerForGodot/issues) | GDExtension / カスタムモジュール、SS Importer ドック |
 | [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | [Issues](https://github.com/cri-middleware/SSPlayerForFlutter/issues) | `SpriteStudioAnimation` と `SpriteStudioView`、Flame アダプター、`ssconvert` |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | [Issues](https://github.com/cri-middleware/SSPlayerForRenPy/issues) | Ren'Py の Displayable、自動インポート |
-| [SSPlayerForWgpu](https://github.com/cri-middleware/SSPlayerForWgpu) | [Issues](https://github.com/cri-middleware/SSPlayerForWgpu/issues) | Rust クレートと C / C++・ブラウザの各フェイス、Bevy アダプター |
+| [SSPlayerForWgpu](https://github.com/cri-middleware/SSPlayerForWgpu) | [Issues](https://github.com/cri-middleware/SSPlayerForWgpu/issues) | Rust クレートと C / C++・ブラウザの各 Face、Bevy アダプター |
 | [SSPlayerForReactNative](https://github.com/cri-middleware/SSPlayerForReactNative) | [Issues](https://github.com/cri-middleware/SSPlayerForReactNative/issues) | `<SpriteStudioView>` / `<SpriteStudioScene>`、ネイティブモジュール、Skia 描画 |
 | [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | [Issues](https://github.com/cri-middleware/SSConverterGUI/issues) | デスクトップアプリ本体（UI・パッケージング・更新） |
 

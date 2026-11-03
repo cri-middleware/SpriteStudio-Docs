@@ -5,26 +5,27 @@ A player for SpriteStudio animations, written in **Rust** and rendering through
 player runs on any of them. The host does not have to be Rust - C, C++ and the browser are
 served from the same library.
 
-!!! tip "Code-first - and one library behind three faces"
-    Which face you install decides the language you write - and whether the player can draw into
-    a render pass of your own, which is a Rust-side feature. The Rust API is the one the other
-    two wrap, under different names.
+▶️ See it first, no install: the WebGPU demo runs in a browser -
+[Try it in your browser](../overview/try-it.md).
 
-**1. What you install** - pick the face that matches your host. The player links `ssruntime`
-and `ssab` as Rust crates rather than through a released C-API, so
-[SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) comes in as a git submodule.
+!!! tip "Code-first - and one library behind four faces"
+    Which face you install decides the language you write - and whether the player can draw into
+    a render pass of your own, which is a Rust-side feature. The C and JavaScript faces wrap the
+    Rust API under different names, and the Bevy adapter builds on it.
+
+**1. What you install** - pick the face that matches your host.
 
 | Your host | What you add |
 |---|---|
-| A **Rust** app | `ssplayer-wgpu` as a git dependency - Cargo checks out the submodule for you, and no other tooling is needed. |
+| A **Rust** app | `ssplayer-wgpu` as a git dependency - Cargo also checks out the SpriteStudio-SDK submodule it builds against, and no other tooling is needed. |
 | A **Bevy** app | `ssplayer-bevy` instead - it pulls the player in and adds the `SsPlayer` / `SsTransform` / `SsPlayback` components. |
-| A **C or C++** app | A cdylib / staticlib plus a generated header: prebuilt as `ssplayer-wgpu-<platform>-<arch>.zip` on [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases?q=ssplayer-wgpu&expanded=true), or built from the repository with `scripts/build.sh` into `bin/`. |
+| A **C or C++** app | A cdylib / staticlib plus a generated header: prebuilt for Windows and macOS as `ssplayer-wgpu-<platform>-<arch>.zip` on [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases?q=ssplayer-wgpu&expanded=true), or - on Linux, or for the Windows DLL - built from a checkout with `scripts/build.sh` into `bin/`. |
 | The **browser** (WebGPU) | The npm package `@spritestudio/ssplayer-wgpu` - the wasm plus a TypeScript layer, with the `<ss-player-webgpu>` custom element in its own entry point. |
 
 **2. `.sspj` -> `.ssab`** - nothing here hosts an importer and nothing converts at runtime, so
-this is a host-side step with the desktop [SSConverter GUI](./converter.md) or the SDK's
-`ssconverter-cli` - see [Converting Assets](../overview/conversion.md). Nothing of your own is
-needed to try the player first: the bundled samples run on the SDK's own test animations.
+this is a host-side step with the browser's [`ssconverter-web`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/),
+the desktop [SSConverter GUI](./converter.md) or the SDK's `ssconverter-cli` - see
+[Converting Assets](../overview/conversion.md).
 
 **3. Getting it on screen** - one `SSRenderer` per device, one `SSScene` per render target, and
 any number of `SSPlayer`s drawn into it in one pass, inside a render pass the host opened.
