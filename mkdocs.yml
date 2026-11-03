@@ -83,7 +83,7 @@ plugins:
           - players/web.md: "Web players (PixiJS, WebGL, RPG Maker MZ, TyranoScript, TyranoBuilder) on one WebAssembly core."
           - players/godot.md: "Godot player, editor-first: GDExtension and custom-module builds."
           - players/flutter.md: "Flutter player, code-first: the `SpriteStudioView` widget."
-          - players/renpy.md: "Ren'Py player, code-first: `SSPlayer` is a standard Displayable."
+          - players/renpy.md: "Ren'Py player, code-first: a converted pack is already an image, so `show` puts it on screen."
           - players/wgpu.md: "wgpu player in Rust, with C, C++ and browser access to the same library."
           - players/react-native.md: "React Native player, code-first: `<SpriteStudioView>`; needs a development build, not Expo Go."
           - players/converter.md: "Converter GUI, a desktop app that converts `.sspj` projects; macOS and Windows builds."

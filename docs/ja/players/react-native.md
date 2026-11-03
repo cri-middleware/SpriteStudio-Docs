@@ -2,12 +2,12 @@
 
 **React Native** アプリ（New Architecture）で SpriteStudio アニメーションを再生します。`<SpriteStudioView>` コンポーネントとして配置できます。
 
-!!! tip "コードで始まる - かつ Expo Go ではなく development build が必要"
-    このパッケージはアプリ自身のバイナリに組み込まれるため、**Expo Go では動きません**。managed なアプリなら `npx expo prebuild` のあと `npx expo run:ios` / `run:android`、bare なアプリなら既存のネイティブプロジェクトを再ビルドします。どちらも autolinking がパッケージを拾います。
+!!! tip "コードで始まる - ただし Expo Go ではなく development build が必要"
+    このパッケージはアプリ自身のバイナリに組み込まれるため、**Expo Go では動きません**。`npx expo prebuild` のあと `npx expo run:ios` / `run:android` で development build を作ります。
 
 **1. 何を入れるか** - `react-native-spritestudio` とネイティブ側の peer 依存を `npx expo install` で入れます（[インストール](https://cri-middleware.github.io/SSPlayerForReactNative/ja/setup/install) を参照）。
 
-**2. `.sspj` -> `.ssab`** - React Native にはインポーターを組み込むエディターがないため、`ssconverter-web`、[SSConverter GUI](./converter.md)、SDK の `ssconverter-cli` のいずれかを使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。**パックはファイルではなくディレクトリです**。Metro は `require()` が名指ししたものしかバンドルしないため、パックのフォルダはパッケージの Expo config plugin でネイティブアセットとして同梱します。
+**2. `.sspj` -> `.ssab`** - React Native にはインポーターを組み込むエディターがないため、ブラウザで動く [`ssconverter-web`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)、[SSConverter GUI](./converter.md)、SDK の `ssconverter-cli` のいずれかを使うホスト側の作業になります（[アセットの変換](../overview/conversion.md) を参照）。**パックはファイルではなくディレクトリです**。Metro は `require()` が名指ししたものしかバンドルしないため、パックのフォルダはパッケージの Expo config plugin でネイティブアセットとして同梱します。
 
 **3. どう画面に出すか** - `source` にそのアセットフォルダ内のパスを指定した `<SpriteStudioView>` を置きます。
 

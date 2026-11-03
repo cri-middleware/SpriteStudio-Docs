@@ -44,7 +44,7 @@
 
     ---
 
-    Godot でネイティブに描画。GDExtension とカスタムモジュールの両方で提供。
+    Godot で SpriteStudio アニメーションをネイティブに描画。GDExtension とカスタムモジュールの両方で提供。
 
     [:octicons-arrow-right-24: 概要](./players/godot.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |

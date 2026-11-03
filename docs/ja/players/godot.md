@@ -9,7 +9,7 @@
 [最新の Release](https://github.com/cri-middleware/SSPlayerForGodot/releases/latest) の Assets にある `ssplayer-godot-extension-<Godot のバージョン>.zip` を取り、中の `addons` フォルダを Godot プロジェクトのルートにコピーします。Player の形態は次の 2 つです。
 
 - **GDExtension** - Release に入っている、エンジンの再ビルド不要で導入できるバイナリアドオン。
-- **カスタムモジュール** - ソースから Godot 本体に組み込んでビルドする、より密な統合方式。
+- **カスタムモジュール** - ソースから Godot 本体に組み込んでビルドする方式。エンジン自体が Player を含みます。
 
 **2. `.sspj` -> `.ssab`** - `.sspj` をファイルマネージャーから、アドオンの **SS Importer** ドックへドラッグ&ドロップします。プロジェクトの中で変換されるため、別途ツールを入れる必要はありません。
 

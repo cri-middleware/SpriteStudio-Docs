@@ -78,7 +78,7 @@ plugins:
           - players/web.md: "1 つの WebAssembly コアを共有する Web 用 Player 群（PixiJS・WebGL・RPG ツクール MZ・TyranoScript・ティラノビルダー）。"
           - players/godot.md: "Godot 用 Player。エディタで始まる: GDExtension とカスタムモジュールの 2 形態。"
           - players/flutter.md: "Flutter 用 Player。コードで始まる: `SpriteStudioView` ウィジェット。"
-          - players/renpy.md: "Ren'Py 用 Player。コードで始まる: `SSPlayer` は標準的な Displayable。"
+          - players/renpy.md: "Ren'Py 用 Player。コードで始まる: 変換したパックはそのまま画像なので、`show` で画面に出せる。"
           - players/wgpu.md: "Rust で書かれた wgpu 用 Player。同じライブラリを C・C++・ブラウザからも使える。"
           - players/react-native.md: "React Native 用 Player。コードで始まる: `<SpriteStudioView>`。Expo Go ではなく development build が必要。"
           - players/converter.md: "`.sspj` プロジェクトを変換するデスクトップアプリ、コンバーター GUI。macOS と Windows 向けのビルドがある。"
