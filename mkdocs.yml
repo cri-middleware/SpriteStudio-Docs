@@ -42,7 +42,7 @@ nav:
       - Ren'Py: players/renpy.md
       - wgpu (Rust, C / C++): players/wgpu.md
       - React Native: players/react-native.md
-      - Converter GUI: players/converter.md
+      - SSConverter GUI: players/converter.md
   - 🛠️ SDK & Development:
       - Concepts: sdk/concepts.md
       - Glossary: sdk/glossary.md
@@ -86,7 +86,7 @@ plugins:
           - players/renpy.md: "Ren'Py player, code-first: a converted pack is already an image, so `show` puts it on screen."
           - players/wgpu.md: "wgpu player in Rust, with C, C++ and browser access to the same library."
           - players/react-native.md: "React Native player, code-first: `<SpriteStudioView>`; needs a development build, not Expo Go."
-          - players/converter.md: "Converter GUI, a desktop app that converts `.sspj` projects; macOS and Windows builds."
+          - players/converter.md: "SSConverter GUI, a desktop app that converts `.sspj` projects; macOS and Windows builds."
         SDK and development:
           - sdk/concepts.md: "What the shared core provides: the convert-then-play workflow and the features every player shares."
           - sdk/glossary.md: "Definitions of the terms used across the SDK and every player's docs (`.sspj`, `.ssab`, cellmap, animation pack, part types)."

@@ -103,7 +103,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
     [Docs](https://cri-middleware.github.io/SSPlayerForReactNative/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
 
--   :material-file-swap: __Converter GUI__
+-   :material-file-swap: __SSConverter GUI__
 
     ---
 

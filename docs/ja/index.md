@@ -91,7 +91,7 @@
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForReactNative/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
 
--   :material-file-swap: __コンバーター GUI__
+-   :material-file-swap: __SSConverter GUI__
 
     ---
 

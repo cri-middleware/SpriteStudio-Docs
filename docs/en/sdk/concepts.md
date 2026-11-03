@@ -8,7 +8,7 @@ SpriteStudio's animation math.
 ## 🔄 The workflow
 
 1. **Convert** - turn a SpriteStudio project (`.sspj`) into an optimized binary (`.ssab`)
-   with `libssconverter` (via `ssconverter-cli`, the [Converter GUI](../players/converter.md),
+   with `libssconverter` (via `ssconverter-cli`, [SSConverter GUI](../players/converter.md),
    `ssconverter-web`, or automatic conversion in the player). See [Converting Assets](../overview/conversion.md).
 2. **Play anywhere** - pass the `.ssab` to `libssruntime`. It plays *any* `.ssab`; what it
    covers is listed below, and what it does not cover yet is in [Shared Limitations](./limitations.md).

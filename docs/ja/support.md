@@ -25,7 +25,7 @@ SDK と各公式 Player はそれぞれ別のリポジトリです。そのた�
 | 症状 | 投稿先 |
 |---|---|
 | 変換結果が壊れている／変換中にクラッシュする。しかも GUI・CLI・ブラウザツールの **いずれでも** 再現する | **SpriteStudio-SDK**（変換エンジンは共通） |
-| Converter GUI では不具合が出るが、同じ `.sspj` を `ssconverter-cli` では正常に変換できる | **SSConverterGUI**（フロントエンド側の問題） |
+| SSConverter GUI では不具合が出るが、同じ `.sspj` を `ssconverter-cli` では正常に変換できる | **SSConverterGUI**（フロントエンド側の問題） |
 | 試したどの Player でも **同じ壊れ方** をする | **SpriteStudio-SDK**（再生コアは共通） |
 | 特定のエンジンでのみ壊れる | その **Player** のリポジトリ |
 | あるエンジンだけ特定のパーツ種別やブレンドモードが効かない | まず [Player ごとの違い](./overview/player-differences.md) を確認（既知の差分の可能性） |

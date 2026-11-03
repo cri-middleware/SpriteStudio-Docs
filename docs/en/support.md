@@ -28,7 +28,7 @@ shared core or in the engine-specific layer**:
 | Symptom | Where it belongs |
 |---|---|
 | Conversion produces a wrong or corrupt asset, or crashes - and it reproduces in the GUI, the CLI, **and** the browser tool | **SpriteStudio-SDK** (the conversion engine is shared) |
-| The Converter GUI misbehaves but `ssconverter-cli` converts the same `.sspj` fine | **SSConverterGUI** (a front-end issue) |
+| SSConverter GUI misbehaves but `ssconverter-cli` converts the same `.sspj` fine | **SSConverterGUI** (a front-end issue) |
 | An animation plays wrong the **same way on every player** you tried | **SpriteStudio-SDK** (the playback core is shared) |
 | An animation plays wrong on **one engine only** | that **player's** repository |
 | A part type or blend mode is missing on one engine | check [Player Differences](./overview/player-differences.md) first - it may be a known difference |
