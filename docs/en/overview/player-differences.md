@@ -6,7 +6,8 @@ rather than reimplemented per engine - it is listed under
 
 1. **What the engine's rendering layer can reproduce** - blend modes in particular map onto
    whatever fixed-function blend states the host engine exposes.
-2. **What each player has implemented so far** - the players are at different stages.
+2. **What each player's host allows** - its platforms, its own rendering and UI model, and how the
+   player ships for it.
 
 This page covers only those differences **between players**. The constraints that apply
 *everywhere* - seek and reverse behavior, blending rules, browser requirements, and the features
@@ -21,15 +22,14 @@ the core computes but leaves the player to draw or play - are in
 | **[Web](../players/web.md)** | `ssplayer-webgl` masks only with a stencil buffer; the framework integrations are beta | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForWeb/limitations) |
 | **[Godot](../players/godot.md)** | Four of the twelve blend modes are honored; the Web export has extra requirements | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForGodot/limitations/) |
 | **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForFlutter/limitations/) |
-| **[Ren'Py](../players/renpy.md)** | `Div2` / `Overlay2` fall back to `Mix`, and a few features are approximate | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForRenPy/limitations/) |
-| **[wgpu](../players/wgpu.md)** | Masking has two backends, and the Bevy adapter draws one view | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForWgpu/limitations/) |
+| **[Ren'Py](../players/renpy.md)** | A whole-part tint on Mesh parts is approximate, and a save keeps only track 0 | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForRenPy/limitations/) |
+| **[wgpu](../players/wgpu.md)** | The C face draws only to its own window, the web face needs WebGPU, and the Bevy adapter draws one view | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForWgpu/limitations/) |
 | **[React Native](../players/react-native.md)** | Masks do not clip Effect parts, and nothing draws on the web | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForReactNative/limitations) |
 
 !!! note "How to read this page"
     Each section below summarizes what that player's own **Limitations & Scope** page states -
-    every player publishes one, linked in the table above, and the exact cases are listed there. So a gap absent here is
-    absent from that player's own account too - which is still not the same as a guarantee of
-    support.
+    every player publishes one, linked in the table above. The summary keeps what differs between
+    players; the full list, and every exact case, is on that page.
 
     Anything true of *every* player - including the fact that **text and 9-slice parts are drawn
     by none of them yet** - is on [Shared Limitations](../sdk/limitations.md) instead, since it is
@@ -39,9 +39,9 @@ the core computes but leaves the player to draw or play - are in
 
 The **uGUI (Canvas) path** trades capability for CanvasRenderer's "1 renderer = 1 mesh + 1
 material": it assumes a **single atlas** (parts from other atlases cannot sample correctly) and
-supports **`Mix` / `Add` only**, collapsing every other blend to `Mix`. The world path has neither
-limit; it draws every blend but four, with `Mul2` drawn as `Mul`, `Screen2` as `Screen`, and `Div2` /
-`Overlay2` as `Mix`.
+supports **`Mix` / `Add` only**, collapsing every other blend to `Mix`. It also gives up part
+tracking, per-part shaders and Timeline control. The world path has none of these limits; it draws
+`Mul2` as `Mul` and `Screen2` as `Screen`.
 
 Edit mode shows only a static preview of the start frame.
 
@@ -68,9 +68,10 @@ single-threaded (`nothread`), which is why it needs no COOP/COEP headers.
 
 ### Flutter
 
-Two render backends (`flutter_gpu` / Canvas; Web is always Canvas). On Canvas, `Sub` and `Invert`
-are reconstructed from four and three passes (they cannot batch); `Div2` / `Overlay2` render as `Mix` on
-**both** backends, and `Mulalpha` / `Mul2` as `Mul` and `Screen2` as `Screen`. Masks **do not clip Effect parts** on either backend. The Web target is a
+Two render backends: Canvas, always available and the only one on the Web, and `flutter_gpu`,
+used only when the run switches it on (`--enable-flutter-gpu`). On Canvas, `Sub` and `Invert` are
+reconstructed from four and three passes (they cannot batch); on **both** backends `Mulalpha` /
+`Mul2` render as `Mul` and `Screen2` as `Screen`. Masks **do not clip Effect parts** on either backend. The Web target is a
 **developer preview**.
 
 Widget **part following** carries the transform but not the draw order - a followed widget paints
@@ -79,32 +80,34 @@ own box.
 
 ### Ren'Py
 
-`Div2` / `Overlay2` fall back to `Mix`. **Part tracking** carries the transform but not the draw
-order - a pinned child paints in front of the whole sprite rather than between its parts.
+`Mulalpha` / `Mul2` draw as `Mul`, and `Screen2` as `Screen`. **Part tracking** carries the
+transform but not the draw order - a pinned child paints in front of the whole sprite rather than
+between its parts.
 
-A few features are approximate rather than exact - masking, whole-part tint on Mesh parts, and
-anything nested inside an Instance part - and the particles an Effect part emits are not clipped by masks, even where the editor clips them. Its own docs enumerate each case.
+A whole-part tint on Mesh parts is approximated (alpha only), and the particles an Effect part
+emits are not clipped by masks, even where the editor clips them. Part overrides reach only the
+parts of the pack the player itself plays, not those inside an Instance part. A save does not keep
+the track stack: a loaded save comes back on track 0's animation alone. Its own docs enumerate each
+case.
 
 ### wgpu
 
-`Div2` / `Overlay2` fall back to `Mix`, `Mulalpha` / `Mul2` draw as `Mul`, and `Screen2` as `Screen`. Masking has **two backends, and what the host's pass lends
-picks between them**: the **stencil** one, or the **coverage-bitmap** one for a pass that lends no
-stencil, at the cost of one extra render pass per masking player, and one more for every 24 mask
-writers past the first 24. Both backends stop at 96 writers per player. Either way, the pass the
-player draws into must have **MSAA off**.
+`Mulalpha` / `Mul2` draw as `Mul`, and `Screen2` as `Screen`. The **C face builds and owns its
+device** and draws only to the window it was given - not into a render pass of yours, nor into a
+texture. Drawing into a pass you own is for Rust and the Bevy adapter: your application and the
+player must resolve to one `wgpu`, and the pass must have **MSAA off**. The **web face needs
+WebGPU**, with no WebGL fallback.
 
 The **Bevy adapter** is a separate crate, following Bevy's release line rather than the player's
-and tracking one line at a time. It takes the coverage backend, since Bevy's 2d depth texture
-carries no stencil, and draws **one view** - a second one is skipped with a warning (the camera
-also wants `CompositingSpace::Srgb` for faithful color). Packs load through Bevy's `AssetServer`,
-so hot reload, packed assets and shared atlases work as they do for any Bevy asset.
+and tracking one line at a time. It draws **one view** - a second one is skipped with a warning
+(the camera also wants `CompositingSpace::Srgb` for faithful color).
 
 ### React Native
 
 Masks clip Normal, Mesh and Shape parts; **Effect parts draw unmasked**.
 
 Platform reach is narrower too: **nothing draws on the web** - the web entry is a stub, so an app
-that ships both halves still bundles - and Windows has no route.
+that also builds for the web still bundles - and Windows has no route.
 
 ## 🎨 Why blend modes are the usual difference
 
@@ -113,7 +116,8 @@ engine exposes. Where a mode has no equivalent, players fall back rather than fa
 most entries above cluster around the same few modes:
 
 - **`Div2` / `Overlay2`** read the colour already behind the part, which no GPU blend state can do,
-  so falling back to `Mix` is deliberate behavior rather than an unfinished implementation.
+  and no published formula defines them, so every player draws them as `Mix`. Being the same
+  everywhere, it is left out of the sections above.
 - **`Sub` / `Invert`** need a reverse-subtract or destination-replace state. An engine without one can
   still reconstruct them exactly from multiple passes, at the cost of batching - so the difference
   may show up as performance rather than as a visual gap.

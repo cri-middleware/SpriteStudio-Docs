@@ -25,7 +25,8 @@ drawn by the Ringo sample in a PixiJS app, one taking the pointer only on the pa
   decoration.
 - **One animation, every player in the table.** The players below follow the same convention - the
   same state labels, the same fallbacks - so an animation authored as a button works as one on any
-  of them.
+  of them. A toggle's on position adds `selected_` labels (`selected_normal`, `selected_hover`,
+  ...); Unity, Godot and Ren'Py read them, and the other players play the plain labels.
 
 ## 🎮 Where to use it
 

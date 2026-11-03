@@ -19,8 +19,9 @@ overlays on one character, each on a key, with the state of every track beside t
 - **Blend two animations on one track.** Weight them against each other, as in a walk-to-run blend.
 - **Drive a track from a value.** Move a track's playhead yourself instead of playing it, to turn
   a head by a tracked value.
-- **Keep cycles in step.** A layered cycle can start at the same point as the one below it, so two
-  walks keep their stride.
+- **Start a cycle in phase.** An animation laid on a track can start at the point track 0's
+  animation has reached, so a run laid over a walk half-way through its stride starts half-way
+  through its own.
 - **One clock for the whole character.** Pausing, resuming and stopping act on every track at once.
 
 The animations you combine come from one `.ssab`, and a few attributes - such as which cell a part
@@ -32,7 +33,7 @@ lists them.
 | Player | What you call | Details |
 |---|---|---|
 | **[Unity](../players/unity.md)** | Methods on `SpriteStudioPlayer` and `SpriteStudioGraphic`, the same on both | [Guide](https://cri-middleware.github.io/SSPlayerForUnity/workflow/motion_blending/) |
-| **[Web](../players/web.md)** | Methods on `SSPlayer` in `ssplayer-pixi` and `ssplayer-webgl`; RPG Maker MZ's `SSPlayer` has them for scripts | [Guide](https://cri-middleware.github.io/SSPlayerForWeb/customize/motion-blending) |
+| **[Web](../players/web.md)** | Methods on `SSPlayer` in `ssplayer-pixi`, `ssplayer-webgl` and RPG Maker MZ; MZ's **Set SS Track** / **Fade SS Track** / **Clear SS Track** commands; TyranoScript's `[ss_track]` / `[ss_track_fade]` / `[ss_track_clear]` tags and `transition=` on `[ss_play]` | [Guide](https://cri-middleware.github.io/SSPlayerForWeb/customize/motion-blending) |
 | **[Godot](../players/godot.md)** | Methods on `SpriteStudioPlayer2D` | [Guide](https://cri-middleware.github.io/SSPlayerForGodot/workflow/motion_blending/) |
 | **[Flutter](../players/flutter.md)** | Methods on `SpriteStudioPlayer` | [Guide](https://cri-middleware.github.io/SSPlayerForFlutter/guide/motion-blending/) |
 | **[Ren'Py](../players/renpy.md)** | `ss_crossfade`, `ss_set_track_animation` and the other `ss_*` track calls | [Guide](https://cri-middleware.github.io/SSPlayerForRenPy/usage/#mixing-animations) |

@@ -9,8 +9,8 @@
 - **カットではなくクロスフェード。** 待機から攻撃へ、1 フレームで切り替えずに一瞬かけて移ります。
 - **アニメーションを重ねる。** アニメーションはトラックに積みます。歩きに足を引きずる動きを重ねる、何にでもまばたきや手振りを重ねる、といった使い方です。トラックごとに強さがあるので、半分の強さで重ねたり、フェードインやフェードアウトさせたりできます。
 - **1 つのトラックで 2 つのアニメーションを混ぜる。** 歩きから走りへのブレンドのように、重みで混ぜ合わせます。
-- **値でトラックを動かす。** トラックを再生せずに再生位置を自分で動かせば、追いかける値に合わせて顔の向きを変えるといったことができます。
-- **周期をそろえる。** 重ねる周期アニメーションを下のアニメーションと同じ位置から始められるので、2 つの歩きの歩幅がずれません。
+- **値でトラックを動かす。** トラックを再生せずに再生位置を自分で動かせば、トラッキングの値に合わせて顔の向きを変えるといったことができます。
+- **位相をそろえて始める。** トラックに載せるアニメーションを、track 0 のアニメーションがいる位置から始められるので、歩幅の半ばにいる歩きに走りを重ねると、走りも自分の歩幅の半ばから始まります。
 - **キャラクター全体で 1 つの時計。** 一時停止・再開・停止はすべてのトラックにまとめて効きます。
 
 組み合わせるアニメーションは 1 つの `.ssab` に入っている必要があり、パーツがどのセルを表示するかなど一部の属性は、混ぜられずにメインのアニメーションに従います。詳しくは [共通の制限事項](../sdk/limitations.md) にあります。
@@ -20,7 +20,7 @@
 | Player | 呼ぶもの | 詳細 |
 |---|---|---|
 | **[Unity](../players/unity.md)** | `SpriteStudioPlayer` と `SpriteStudioGraphic` のメソッド（どちらも同じ） | [ガイド](https://cri-middleware.github.io/SSPlayerForUnity/ja/workflow/motion_blending/) |
-| **[Web](../players/web.md)** | `ssplayer-pixi` と `ssplayer-webgl` の `SSPlayer` のメソッド。RPG ツクール MZ の `SSPlayer` もスクリプトから使えます | [ガイド](https://cri-middleware.github.io/SSPlayerForWeb/ja/customize/motion-blending) |
+| **[Web](../players/web.md)** | `ssplayer-pixi`・`ssplayer-webgl`・RPG ツクール MZ の `SSPlayer` のメソッド。MZ のプラグインコマンド **SSトラック設定**・**SSトラックフェード**・**SSトラック解除**。TyranoScript の `[ss_track]`・`[ss_track_fade]`・`[ss_track_clear]` タグと `[ss_play]` の `transition=` | [ガイド](https://cri-middleware.github.io/SSPlayerForWeb/ja/customize/motion-blending) |
 | **[Godot](../players/godot.md)** | `SpriteStudioPlayer2D` のメソッド | [ガイド](https://cri-middleware.github.io/SSPlayerForGodot/ja/workflow/motion_blending/) |
 | **[Flutter](../players/flutter.md)** | `SpriteStudioPlayer` のメソッド | [ガイド](https://cri-middleware.github.io/SSPlayerForFlutter/ja/guide/motion-blending/) |
 | **[Ren'Py](../players/renpy.md)** | `ss_crossfade`・`ss_set_track_animation` などの `ss_*` のトラック操作 | [ガイド](https://cri-middleware.github.io/SSPlayerForRenPy/ja/usage/#mixing-animations) |
