@@ -17,7 +17,7 @@ the SDK produces and plays back.
 | **Effect** (`.ssee`) | A particle effect definition, played by an Effect part. |
 | **Sound** (`.ssse`) | Sound settings referenced by audio events on the timeline. |
 | **Sequence** (`.ssqe`) | A playlist that chains animations together. Converted to `.ssqb`. |
-| **Bitmap font** (`.fnt`) | The BMFont-format font a Text part draws with. |
+| **Bitmap font** (`.fnt`) | The BMFont-format font a bitmap-font Text part draws with. |
 | **User data / Signal** | Markers placed on a frame that the runtime reports back as **events** - the frame-accurate hook for triggering game logic, sound effects, and so on. |
 | **Parts color** | A per-part color blend authored on the timeline, applied on top of the part's texture. |
 | **`independent`** | A flag on an Instance or Effect part that detaches its child from the parent timeline, running it on its own real-time clock. It has real consequences for reverse playback and seeking - see [Shared Limitations](./limitations.md). |
@@ -35,7 +35,7 @@ These are the part types as SpriteStudio names them; in the `.ssab` schema each 
 | `Instance` | Another animation, mounted inside this one. |
 | `Effect` | A particle effect (`.ssee`). |
 | `Mask` | A stencil that clips the parts it covers. |
-| `Shape` | A generated primitive (rectangle, triangle, star, arrow, ...). |
+| `Shape` | A generated primitive (rectangle, triangle, star or arrow). |
 | `Text` | Bitmap-font text. |
 | `Nines` | A nine-sliced (9-slice) image. |
 | `Armature` | A bone. Draws nothing itself; it drives the parts bound to it. |
@@ -50,9 +50,9 @@ These are the part types as SpriteStudio names them; in the `.ssab` schema each 
 | **`libssab`** | The `.ssab` / `.ssqb` library - creates and parses the animation binaries. |
 | **`libssconverter`** | The conversion half of the SDK: `.sspj` -> `.ssab` / `.ssqb`. The same code runs in every conversion front-end - see [Converting Assets](../overview/conversion.md). |
 | **`libssruntime`** | The playback half: evaluates the timeline for the current frame and hands the result to your renderer. |
-| **Brain / Body** | The architectural split. The **Brain** (`libssruntime`) does all the animation math and is engine-agnostic; the **Body** (a player) draws what the Brain computed. See [SDK Concepts](./concepts.md). |
+| **Brain / Body** | The architectural split. The **Brain** (`libssruntime`) does all the animation math and is engine-agnostic; the **Body** (a player) draws what the Brain computed; the Player Porting Guide calls the Body the **Player**. See [SDK Concepts](./concepts.md). |
 | **`FrameData`** | The Brain's output for **one frame** - dense, ready to render, generated at runtime. The data-exchange interface between the runtime and your renderer. |
-| **`PartState`** | One part's resolved state inside a `FrameData`: position, rotation, alpha, mesh vertices, and the rest. |
+| **`PartState`** | One part's resolved state inside a `FrameData`: position, rotation, alpha, cell, and the rest. The vertices to draw are read from the runtime's SoA buffers, not from here. |
 | **`DrawBatch`** | The cross-engine drawing plan the runtime emits - what to draw, in what order, with which blend and mask state. Every player consumes the same plan, which is what keeps them visually consistent. |
 | **Override Layer API** | The runtime API for overriding a part's **color, cell reference, or visibility** at playback time. The override wins over both keyframes and mixing. |
 | **Animation mixing / crossfade** | Stacking several animations on tracks and mixing them by weight, or fading between them. Constrained to one `.ssab` - see [Shared Limitations](./limitations.md). |

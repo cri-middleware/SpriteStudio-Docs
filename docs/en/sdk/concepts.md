@@ -53,6 +53,8 @@ Because every official player evaluates animations with `libssruntime`, this fea
   player only draws the geometry it is handed
 - Shape parts - triangles, rectangles, stars and other figures with no texture; the runtime
   generates their vertices, so a player only draws them
+- Text parts - the runtime passes the authored text and, for a bitmap font, its glyph table, and
+  keeps the part's slot in the draw plan; laying out and drawing the glyphs is the player's job
 - Parts color (per-part color blending)
 - Authored texture change - a per-part texture swap set on the timeline; the runtime resolves it
   into the draw batch, so a player that binds textures per batch needs no special handling
@@ -65,10 +67,10 @@ Because every official player evaluates animations with `libssruntime`, this fea
 
 !!! tip "Source of truth"
     This list follows the SDK's **Player Porting Guide**, whose table of contents
-    ([`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)) gives each item its own page.
+    ([`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)) links to the page that covers each item.
     The guide's *Introduction → Limitations*
     ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)) draws the
-    boundary: a couple of these are computed as **state only** and still need the player to draw or
+    boundary: two of these - text parts and audio events - are computed as **state only** and still need the player to draw or
     play them, and several carry constraints - both are summarized in
     [Shared Limitations](./limitations.md), along with what the core does *not* do. What
     differs between the players themselves is on
@@ -80,7 +82,7 @@ Because every official player evaluates animations with `libssruntime`, this fea
 |---|---|
 | [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/sspj) | Parses `.sspj` projects (`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`). |
 | [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab) | Reads/writes the `.ssab` / `.ssqb` binary (FlatBuffers). |
-| [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssconverter) | Converts `.sspj` projects into `.ssab`. |
+| [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssconverter) | Converts `.sspj` projects into `.ssab` / `.ssqb`. |
 | [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime) | The playback Brain; emits the `DrawBatch` plan. |
 | [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/cli) | Command-line converter (Windows / macOS / Linux). |
 

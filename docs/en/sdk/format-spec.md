@@ -23,8 +23,9 @@ converted, play-ready assets produced by `libssconverter` from the XML-based `ss
 | `no_std` | No | Yes |
 
 **Conversion unit - one `.ssab` per `.ssae` (animation pack).** Each `.ssab` is
-self-contained: it embeds only the `ss*e` resource *data* (cellmaps, effects, sounds, fonts) that
-the pack actually references. The `.sspj` project itself is *not* stored in `.ssab` - it is
+self-contained: it embeds only the `ss*e` resource *data* (cellmaps, effects, fonts) that
+the pack actually references - except sound settings: a pack with an Audio part carries every
+`.ssse` of the project. The `.sspj` project itself is *not* stored in `.ssab` - it is
 used only to resolve resource references during conversion. The texture and sound **binaries**
 are a separate matter: they sit alongside the `.ssab` unless you convert in *embedded mode*,
 which packs them in as well - see [Shared Limitations](./limitations.md).
@@ -61,13 +62,15 @@ primary **data-exchange interface between the runtime core and your renderer ove
         |  libssruntime: interpolate + coordinate-convert
         v
 FrameData (dense, one frame)  --FFI-->  your renderer
-   +- parts: [PartState]  (position_x, rotation_z, alpha, mesh, ...)
+   +- parts: [PartState]  (position_x, rotation_z, alpha, cell, ...)
 ```
 
 Each `PartState` field maps directly from the keys of the corresponding `.ssab`
 `PartAnimationData` field (e.g. `position_x` <- the run `position_x_keys` names, interpolated
 and converted to your coordinate system). The full field-by-field mapping is in the
 [FrameData Schema](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/SCHEMA.md).
+The vertices to draw are not in `FrameData`: the renderer reads them from the runtime's SoA
+buffers ([Render Loop](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/30_core/40_render_loop.md)).
 
 ## 🔧 Regenerating bindings
 
@@ -76,7 +79,7 @@ The schemas are defined as FlatBuffers `.fbs` files in the SDK
 [`ssqb.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/fbs/ssqb.fbs), and
 [`framedata.fbs`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/fbs/framedata.fbs)).
 See [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab)
-for feature flags (`default` / `no_std` / `converter`) and codegen.
+for its features (`default`, `converter`, and `no_std` by turning the default features off) and codegen.
 
 !!! info "Schema versioning"
     `.ssab` carries a binary `version` field, and tooling such as `ssconverter-web` is

@@ -118,10 +118,6 @@ most entries above cluster around the same few modes:
   still reconstruct them exactly from multiple passes, at the cost of batching - so the difference
   may show up as performance rather than as a visual gap.
 
-A blend can also look wrong without the player being at fault: the modes that sample the
-destination assume opaque pixels underneath. That rule is core-wide - see
-[Shared Limitations](../sdk/limitations.md).
-
 ## ➡️ Next
 
 - [Choose Your Platform](./choose-your-platform.md) - pick a player by target runtime.

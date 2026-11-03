@@ -10,7 +10,7 @@
 ## 🧠 中心となる考え方: Brain と Body
 
 `libssruntime` が **Brain**（頭脳）- アニメーション計算（状態・トランスフォーム・メッシュ／デフォーム・バッチ計画）をすべて担い、エンジンに依存しません。Player 側が **Body**（身体）-
-エンジン固有の描画・リソース読み込み・入力を提供します。移植作業の大半は、自エンジンの Body を共通の Brain に接続することです。
+エンジン固有の読み込み・描画・イベントの通知・音の再生を担います。移植作業の大半は、自エンジンの Body を共通の Brain に接続することです。
 
 ## 📋 ガイドの内容
 
@@ -24,7 +24,7 @@
 | **60. トラブルシューティング** | 症状から原因を探す表と、リンクのエラー。 |
 
 !!! note "都度検証する"
-    ガイドでは各段階で、SDK リポジトリの [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj) を実行することを推奨しています。SpriteStudio
+    ガイドでは各段階で、SDK リポジトリの [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj) のアニメーションで確かめることを推奨しています。SpriteStudio
     エディタと同じ見た目になれば、その段階は完了です。公式 Player はいずれもこの方式で作られているので、どれも良い参考例になります。現行のラインナップは
     [プラットフォームの選び方](../overview/choose-your-platform.md) を参照してください。
 

@@ -14,7 +14,7 @@ through building one on top of `libssruntime`.
 
 `libssruntime` is the **Brain** - it does all the animation computation (state, transforms,
 mesh/deform, batching plan) and is engine-agnostic. Your player provides the **Body** - the
-engine-specific rendering, resource loading, and input. Porting is mostly about wiring your
+engine-specific loading, drawing, event notification and sound playback. Porting is mostly about wiring your
 engine's Body to the shared Brain.
 
 ## 📋 What the guide covers
@@ -29,8 +29,8 @@ engine's Body to the shared Brain.
 | **60. Troubleshooting** | A table from symptom to cause, and link errors. |
 
 !!! note "Verify as you go"
-    The guide recommends running [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj)
-    from the SDK repository at each stage - if it matches
+    The guide recommends checking each stage against the animations in [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj)
+    from the SDK repository - if they match
     the SpriteStudio editor, that step is done. Every official player is built this way, so any
     of them makes a good reference - see
     [Choose Your Platform](../overview/choose-your-platform.md) for the current lineup.
