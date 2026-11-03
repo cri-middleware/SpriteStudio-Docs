@@ -43,8 +43,6 @@ supports **`Mix` / `Add` only**, collapsing every other blend to `Mix`. It also 
 tracking, per-part shaders and Timeline control. The world path has none of these limits; it draws
 `Mul2` as `Mul` and `Screen2` as `Screen`.
 
-Edit mode shows only a static preview of the start frame.
-
 ### Web
 
 **`ssplayer-webgl` masks through the stencil buffer**, so on a context without one no mask can be
