@@ -1,6 +1,6 @@
 # 🤝 サポート
 
-SDK と各公式 Player はそれぞれ別のリポジトリです。そのため最初に迷うのは、たいてい**どこに聞けばよいか** です。このページはその振り分けを行います（多くのリポジトリにも、同じ窓口を記載した `SUPPORT.md` があります）。
+SDK と各公式 Player はそれぞれ別のリポジトリです。そのため最初に迷うのは、たいてい**どこに聞けばよいか** です。このページはその振り分けを行います（各リポジトリにも、同じ窓口を記載した `SUPPORT.md` があります）。
 
 ## 🛠️ 不具合報告・機能要望 - GitHub Issues
 
@@ -10,13 +10,13 @@ SDK と各公式 Player はそれぞれ別のリポジトリです。そのた�
 |---|---|---|
 | [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) | [Issues](https://github.com/cri-middleware/SpriteStudio-SDK/issues) | 変換結果、再生計算、`.ssab` / `.ssqb` フォーマット、`ssconverter-cli` |
 | [SSPlayerForUnity](https://github.com/cri-middleware/SSPlayerForUnity) | [Issues](https://github.com/cri-middleware/SSPlayerForUnity/issues) | Unity へのインポート、コンポーネント、描画 |
-| [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | [Issues](https://github.com/cri-middleware/SSPlayerForWeb/issues) | ブラウザ向け Player 群、`ssconverter-web` |
+| [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | [Issues](https://github.com/cri-middleware/SSPlayerForWeb/issues) | ブラウザ向け Player 群、RPG ツクール MZ・TyranoScript・ティラノビルダー用プラグイン、`ssconverter-web` |
 | [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | [Issues](https://github.com/cri-middleware/SSPlayerForGodot/issues) | GDExtension / カスタムモジュール、SS Importer ドック |
 | [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | [Issues](https://github.com/cri-middleware/SSPlayerForFlutter/issues) | `SpriteStudioAnimation` と `SpriteStudioView`、Flame アダプター、`ssconvert` |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | [Issues](https://github.com/cri-middleware/SSPlayerForRenPy/issues) | Ren'Py の Displayable、自動インポート |
 | [SSPlayerForWgpu](https://github.com/cri-middleware/SSPlayerForWgpu) | [Issues](https://github.com/cri-middleware/SSPlayerForWgpu/issues) | Rust クレートと C / C++・ブラウザの各 Face、Bevy アダプター |
 | [SSPlayerForReactNative](https://github.com/cri-middleware/SSPlayerForReactNative) | [Issues](https://github.com/cri-middleware/SSPlayerForReactNative/issues) | `<SpriteStudioView>` / `<SpriteStudioScene>`、ネイティブモジュール、Skia 描画 |
-| [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | [Issues](https://github.com/cri-middleware/SSConverterGUI/issues) | デスクトップアプリ本体（UI・パッケージング・更新） |
+| [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | [Issues](https://github.com/cri-middleware/SSConverterGUI/issues) | デスクトップアプリ本体（UI・ファイル選択・パッケージング） |
 
 ### 🧭 どこに出せばよいか分からないときは
 

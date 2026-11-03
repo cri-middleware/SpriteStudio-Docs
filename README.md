@@ -31,6 +31,7 @@ docs/
     index.md         # landing page (product cards)
     overview/        # ecosystem, choose-your-platform, player-differences,
                      #   try-it, conversion, convert-with-a-standalone-tool,
+                     #   motion-blending, ui-integration, runtime-changes,
                      #   ai-assistants
     sdk/             # concepts, glossary, format-spec, limitations, porting
                      #   (canonical, cross-player)

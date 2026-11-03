@@ -2,7 +2,7 @@
 
 **SpriteStudio SDK** と公式 Player 群のドキュメントポータルです。
 
-[SpriteStudio](https://www.webtech.co.jp/spritestudio/) は 2D アニメーション制作ツールです。このポータルは、SpriteStudio アニメーションを再生するすべての公式ランタイム・ツールへの入口です。これらはすべて共通の Rust コア **SpriteStudio-SDK** の上に構築されています。
+[SpriteStudio](https://www.webtech.co.jp/spritestudio/) は 2D アニメーション制作ツールです。このポータルは、SpriteStudio アニメーションを再生するすべての公式ランタイムと、そのための変換ツールへの入口です。これらはすべて共通の Rust コア **SpriteStudio-SDK** の上に構築されています。
 
 どれを使うか迷ったら [プラットフォームの選び方](./overview/choose-your-platform.md) を、全体像は [エコシステム](./overview/ecosystem.md) をご覧ください。
 

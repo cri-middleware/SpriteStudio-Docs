@@ -7,8 +7,8 @@
 どのサイトも、ルートに 2 つのファイルと、全ページの Markdown コピーを置いています。
 
 - `llms.txt` は、サイトのページの目次です。AI アシスタントが最初に読んで、必要なページを選ぶためのものです。
-- `llms-full.txt` は、全ページを 1 ファイルにまとめたものです。大きくなることがあるので、通常は `llms.txt` を渡して、必要なページをアシスタントに取らせてください。
-- 各ページには、HTML の隣に Markdown のコピーもあります。ページのフォルダー内の `index.md`（Web と React Native のサイトは `<page>.md`）です。ページ題の横のボタンで、そのページの Markdown をクリップボードにコピーできます。
+- `llms-full.txt` は、全ページを 1 ファイルにまとめたものです。大きくなることがあるので、通常は `llms.txt` を渡して、必要なページはアシスタントに取得させてください。
+- 各ページには、HTML の隣に Markdown のコピーもあります。ページのフォルダー内の `index.md`（Web と React Native のサイトは `<page>.md`）です。ページタイトルの横のボタンで、そのページの Markdown をクリップボードにコピーできます。
 
 | サイト | `llms.txt` |
 |---|---|
@@ -25,7 +25,7 @@
 
 ### 🌐 言語
 
-Web と React Native 以外のサイトでは、リポジトリ名のあとに `ja/` を付けると日本語版のファイルになります（例: `https://cri-middleware.github.io/SSPlayerForUnity/ja/llms.txt`）。Web と React Native のサイトは英語版の 1 組だけです。日本語の各ページの Markdown コピーは、同じパスの `ja/` 配下に `.md` を付けたものです。
+Web と React Native 以外のサイトでは、リポジトリ名のあとに `ja/` を付けると日本語版のファイルになります（例: `https://cri-middleware.github.io/SSPlayerForUnity/ja/llms.txt`）。Web と React Native のサイトの `llms.txt` / `llms-full.txt` は英語版だけです。日本語の各ページの Markdown コピーは、同じパスの `ja/` 配下に `.md` を付けたものです。
 
 ## 📦 パッケージの中のドキュメント
 
@@ -34,7 +34,7 @@ Web と React Native 以外のサイトでは、リポジトリ名のあとに `
 | Player | 場所 | Agent Skill |
 |---|---|---|
 | Unity | `Library/PackageCache/jp.co.cri-mw.spritestudio.ssplayer-unity@<hash>/Documentation~/`。`en/index.md`（日本語は `ja/index.md`）から | — |
-| Web | `node_modules/@spritestudio/<package>/docs/`。`README.md` から | `skills/<package>/` |
+| Web（npm パッケージ） | `node_modules/@spritestudio/<package>/docs/`。`README.md` から | `skills/<package>/` |
 | Godot | `addons/spritestudio/`。`README.md` から | — |
 | Flutter | `ssplayer_flutter` と `ssplayer_flame` それぞれの `doc/`。pub のキャッシュ（`~/.pub-cache/hosted/pub.dev/<package>-<version>/`）にあり、`doc/index.md` から | `skills/ssplayer-flutter-docs/`、`skills/ssplayer-flame-docs/` |
 | Ren'Py | `game/spritestudio/`。`README.md` から | — |

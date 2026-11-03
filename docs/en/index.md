@@ -3,8 +3,8 @@
 The documentation portal for the **SpriteStudio SDK** and its official players.
 
 [SpriteStudio](https://www.webtech.co.jp/spritestudio/) is a 2D animation tool.
-This portal is the single entry point to every official runtime and tool that plays back
-SpriteStudio animations - all powered by the shared Rust core, **SpriteStudio-SDK**.
+This portal is the single entry point to every official runtime that plays back
+SpriteStudio animations, and to the tools that convert for them - all powered by the shared Rust core, **SpriteStudio-SDK**.
 
 Not sure where to start? See [Choose Your Platform](./overview/choose-your-platform.md),
 or read [how the pieces fit together](./overview/ecosystem.md).
