@@ -123,7 +123,7 @@ does.
 
 ## 📦 Shipping & loading
 
-### A `.ssab` whose schema version differs from the runtime does not load
+### A `.ssab` whose schema version differs from the runtime does not load { #schema-version }
 
 A `.ssab` carries its schema version in the binary, and the runtime **fails the load** of one
 whose version is not the one it reads. Rust callers and the browser (wasm) API get both

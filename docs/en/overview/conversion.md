@@ -27,7 +27,7 @@ its converter as a dev dependency and run it yourself.
 - **Unity** - [SpriteStudio Player for Unity](../players/unity.md)'s bundled Importer converts on drag & drop.
 - **Godot** - [SpriteStudio Player for Godot](../players/godot.md)'s SS Importer dock converts on drag & drop.
 - **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md)'s `ssconvert` CLI (dev dependency `ssconverter_dart`)
-  converts `SpriteStudio_Source/` into your assets, by hand or in CI. With Live Reload (dev dependency
+  converts one `.sspj` under `SpriteStudio_Source/` into your assets per run, by hand or in CI. With Live Reload (dev dependency
   `ssgen_flutter`), `sswatch` re-converts on save and pushes the result into the running debug app.
 - **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) auto-imports on startup (drop sources into `SpriteStudio_Source/`).
 - **RPG Maker MZ** - [SpriteStudio Player for Web](../players/web.md)'s `ssplayer-rmmz` plugin converts when a test play
