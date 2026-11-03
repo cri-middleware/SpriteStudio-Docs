@@ -16,9 +16,11 @@ art in SpriteStudio, convert to `.ssab`, then play it back through the renderer 
 single dependency. RPG Maker MZ, TyranoScript and TyranoBuilder take a plugin from GitHub
 Releases instead.
 
-**2. `.sspj` -> `.ssab`** - convert in the browser with `ssconverter-web`, hosted on this
-player's own site, or with any of the [standalone tools](../overview/convert-with-a-standalone-tool.md).
-Conversion is picked separately from playback, so it has its own row in the tables below.
+**2. `.sspj` -> `.ssab`** - the RPG Maker MZ and TyranoBuilder plugins convert on their own: MZ
+when a test play starts, TyranoBuilder as the project opens. Anywhere else, convert in the browser
+with [`ssconverter-web`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/), hosted on
+this player's own site, or with any of the [standalone tools](../overview/convert-with-a-standalone-tool.md).
+Conversion is picked separately from playback, so it has its own table below.
 
 **3. Getting it on screen** - place the element your renderer provides: the framework-free
 `<ss-player>` Web Component, or an `SSPlayer` - a PixiJS `Container` - inside a PixiJS app. In
@@ -43,21 +45,20 @@ The steps, with the folders they use, are in each package's README, linked from 
 
 | Your environment | Use |
 |---|---|
-| Converting `.sspj` -> `.ssab` | **`ssconverter-web`** - a browser tool hosted on the SpriteStudio Player for Web site, with a Node CLI alongside it; not an npm package |
+| Converting `.sspj` -> `.ssab` | **`ssconverter-web`** - a browser tool hosted on the SpriteStudio Player for Web site; not an npm package |
 | Embedding conversion in your own app / service | **`@spritestudio/ssconverter-core`** |
 
-**Game-engine integrations** - plugins rather than npm packages, each distributed through the
-repository's [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWeb/releases).
+**Game-engine integrations** - plugins rather than npm packages: each is a file under **Assets**
+on that plugin's GitHub Release.
 
-| Your environment | Package | Status |
+| Your environment | Download | Status |
 |---|---|---|
-| RPG Maker MZ | **`@spritestudio/ssplayer-rmmz`** | beta |
-| TyranoScript - writing `[ss_*]` tags in a scenario yourself | **`@spritestudio/ssplayer-tyranoscript`** | beta |
-| TyranoBuilder - placing animations from the component palette, no scenario code | **`@spritestudio/ssplayer-tyranobuilder`** | beta |
+| RPG Maker MZ | **`ssplayer-rmmz-plugin-<version>.zip`** from the [`@spritestudio/ssplayer-rmmz` Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-rmmz&expanded=true) | beta |
+| TyranoScript - writing `[ss_*]` tags in a scenario yourself | **`ssplayer-tyranoscript-plugin-<version>.zip`** from the [`@spritestudio/ssplayer-tyranoscript` Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranoscript&expanded=true) | beta |
+| TyranoBuilder - placing animations from the component palette, no scenario code | **`ssplayer.tbp`** from the [`@spritestudio/ssplayer-tyranobuilder` Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranobuilder&expanded=true) | beta |
 
-`ssplayer-rmmz` and `ssplayer-tyranobuilder` convert `.sspj` themselves - the MZ plugin when a test
-play starts, the TyranoBuilder plugin inside the editor - so an MZ or TyranoBuilder project needs
-neither of the conversion packages above. `ssplayer.tbp` is the only download a TyranoBuilder
+The MZ and TyranoBuilder plugins convert `.sspj` themselves (step 2), so an MZ or TyranoBuilder
+project needs neither of the conversion rows above. `ssplayer.tbp` is the only download a TyranoBuilder
 project needs: it already holds the TyranoScript plugin.
 
 ## ➡️ Read next
