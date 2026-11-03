@@ -54,7 +54,7 @@
 
     ---
 
-    `SpriteStudioView` ウィジェットで Flutter アプリに SpriteStudio アニメーションを再生。
+    `SpriteStudioAnimation` ウィジェットで Flutter アプリに SpriteStudio アニメーションを再生。
 
     [:octicons-arrow-right-24: 概要](./players/flutter.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/) |

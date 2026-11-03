@@ -1,11 +1,11 @@
 # 📱 SpriteStudio Player for Flutter
 
-**Flutter** アプリで SpriteStudio アニメーションを再生します。`libssruntime` を基盤とし、`SpriteStudioView` ウィジェットが Flutter の各ターゲットで通常のウィジェットと同様に合成されます。
+**Flutter** アプリで SpriteStudio アニメーションを再生します。`libssruntime` を基盤とし、`SpriteStudioAnimation` ウィジェットが通常のウィジェットと同様に合成されます。
 
 ▶️ インストール不要で試せます: ウィジェット版と Flame 版のデモがブラウザで動きます -
 [ブラウザで試す](../overview/try-it.md)。
 
-!!! tip "コードで始まる - ただし Rust ツールチェーンは不要"
+!!! tip "コードで始まる - Rust ツールチェーンは不要"
     ネイティブコアはビルドではなく取得されます。`ssruntime_dart` の native assets フックが、固定された SDK リリースからビルド済みの `libssruntime` をダウンロードし、コンバーターも同じ仕組みで `libssconverter` を取得します。
 
 **1. 何を入れるか** - pub.dev の `ssplayer_flutter` です（`flutter pub add ssplayer_flutter`）。`ssruntime_dart` は一緒に入ります。変換用に、`ssconverter_dart` を dev 依存として追加します（`flutter pub add --dev ssconverter_dart`。[インストール](https://cri-middleware.github.io/SSPlayerForFlutter/ja/guide/install/) を参照）。
@@ -18,8 +18,8 @@
 
 Player 本体に加えて、次のものが提供されます。
 
-- **[Flame](https://flame-engine.org/) アダプター** - Flame 製ゲームにアニメーションを組み込めます。
-- **ライブリロード** - `ssgen_flutter` を dev 依存に追加し、その `sswatch` を `flutter run` と並べて実行すると、SpriteStudio で保存した時点で変更されたプロジェクトだけが再変換され、デバッグ実行中のアプリに反映されます。
+- **[Flame](https://flame-engine.org/) アダプター** - `ssplayer_flame` で、Flame 製ゲームにアニメーションを組み込めます。
+- **ライブリロード** - `ssgen_flutter` を dev 依存に追加し、`flutter run` を包む `sswatch --run` でアプリを起動すると、SpriteStudio で保存した時点で変更されたプロジェクトだけが再変換され、デバッグ実行中のアプリに反映されます。
 
 ## ➡️ 次に読む
 

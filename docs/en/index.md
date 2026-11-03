@@ -65,7 +65,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
 
     ---
 
-    Play SpriteStudio animations in Flutter apps via a `SpriteStudioView` widget.
+    Play SpriteStudio animations in Flutter apps via a `SpriteStudioAnimation` widget.
 
     [:octicons-arrow-right-24: Overview](./players/flutter.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForFlutter/) |
