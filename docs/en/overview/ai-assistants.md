@@ -47,9 +47,9 @@ Every player's package carries its documentation for the version you installed, 
 
 The npm and Flutter packages also carry those pages as an [Agent Skill](https://agentskills.io): a folder whose `SKILL.md` tells an assistant what the pages are for. Once it is in your project's skill directory (`.claude/skills/`, `.agents/skills/`, and so on), the assistant finds the docs without being told where they are. Your package manager puts it there:
 
-- **pnpm 12.11 or later**: run `pnpm approve <package>` once. Every install after that links the skills of your direct dependencies into the skill directories at the workspace root, or into the ones `skills.dirs` in `pnpm-workspace.yaml` names. An install with an approved skill and no such directory fails, so a CI checkout needs one too.
-- **npm or yarn**: `npx skills experimental_sync` links them the same way.
-- **Flutter**: `dart run skills@ get` copies them. Run it again after upgrading.
+- **pnpm 12.11 or later**: run `pnpm approve <package>` once. Every install after that links the skills of your direct dependencies into the skill directories at the workspace root, or into the ones `skills.dirs` in `pnpm-workspace.yaml` names, which it creates. Run from a coding agent pnpm recognizes, such as Claude Code, an install creates that agent's directory when there is none. Anywhere else, a terminal or CI included, an install with an approved skill fails while there is neither, so commit the directory or the `skills.dirs` setting.
+- **npm, or yarn with `nodeLinker: node-modules`**: `npx skills experimental_sync` links them the same way, after asking which agents to link them for (`-a claude-code -y` answers without a prompt). Under yarn's default Plug'n'Play there is no `node_modules` for it to read.
+- **Flutter**: `dart run skills@ get --all` copies them into the skill directory of the coding agent it finds in the project (`.claude/` and so on). When the project has none yet, name one with `--agent claude` (or `codex`, `copilot`, `cursor` and others). Without `--all` it only lists them. Run it again after upgrading.
 
 ## ⌨️ Converting a project
 
