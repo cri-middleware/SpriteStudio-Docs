@@ -6,7 +6,7 @@
 graph LR
     SS[" .sspj / 画像<br/>(SpriteStudio) "]
 
-    subgraph SDK ["SpriteStudio-SDK - 全 Player に組み込まれる共通コア"]
+    subgraph SDK ["SpriteStudio-SDK - 共通コア"]
         CONV(" libssconverter<br/>変換 ")
         RT(" libssruntime<br/>再生 ")
     end
@@ -22,10 +22,10 @@ graph LR
     class CONV,RT sdk;
 ```
 
-<small>色付きの **SpriteStudio-SDK** コア（`libssconverter` + `libssruntime`）が全 Player の基盤です。破線の受け渡しが生成物 **`.ssab / .ssqb`** です。現行の Player のラインナップは
+<small>色付きの **SpriteStudio-SDK** コアが全 Player の基盤です（`libssruntime` はすべての Player に、`libssconverter` は変換を代行する Player にだけ入ります）。破線の受け渡しが生成物 **`.ssab / .ssqb`** です。現行の Player のラインナップは
 [プラットフォームの選び方](./choose-your-platform.md) を参照してください。</small>
 
-変換は **Player による自動変換**でも、**スタンドアロンツール**でも行えます。どのエンジンがどちらで、それぞれが何を出力するかは [アセットの変換](./conversion.md) にまとめてあります。
+変換は **Player 自身**でも、**スタンドアロンツール**でも行えます。どのエンジンがどちらで、それぞれが何を出力するかは [アセットの変換](./conversion.md) にまとめてあります。
 
 ## 🧩 構成要素
 

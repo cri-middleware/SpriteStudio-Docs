@@ -2,7 +2,7 @@
 
 **SpriteStudio SDK** と公式 Player 群のドキュメントポータルです。
 
-[SpriteStudio](https://www.webtech.co.jp/spritestudio/) は 2D アニメーション制作ツールです。このポータルは、SpriteStudio アニメーションを再生するすべての公式ランタイム・ツールへの入口です。これらはすべて共通の Rust コア **SpriteStudio-SDK** の上に構築されています。
+[SpriteStudio](https://www.webtech.co.jp/spritestudio/) は 2D アニメーション制作ツールです。このポータルは、SpriteStudio アニメーションを再生するすべての公式ランタイムと、そのための変換ツールへの入口です。これらはすべて共通の Rust コア **SpriteStudio-SDK** の上に構築されています。
 
 どれを使うか迷ったら [プラットフォームの選び方](./overview/choose-your-platform.md) を、全体像は [エコシステム](./overview/ecosystem.md) をご覧ください。
 
@@ -44,7 +44,7 @@
 
     ---
 
-    Godot でネイティブに描画。GDExtension とカスタムモジュールの両方で提供。
+    Godot で SpriteStudio アニメーションをネイティブに描画。GDExtension とカスタムモジュールの両方で提供。
 
     [:octicons-arrow-right-24: 概要](./players/godot.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |
@@ -54,7 +54,7 @@
 
     ---
 
-    `SpriteStudioView` ウィジェットで Flutter アプリに SpriteStudio アニメーションを再生。
+    `SpriteStudioAnimation` ウィジェットで Flutter アプリに SpriteStudio アニメーションを再生。
 
     [:octicons-arrow-right-24: 概要](./players/flutter.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/) |
@@ -70,7 +70,7 @@
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
--   :simple-rust: __wgpu（Rust・C / C++）__
+-   :simple-rust: __wgpu（Rust・C / C++・WebGPU）__
 
     ---
 
@@ -91,7 +91,7 @@
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForReactNative/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
 
--   :material-file-swap: __コンバーター GUI__
+-   :material-file-swap: __SSConverter GUI__
 
     ---
 

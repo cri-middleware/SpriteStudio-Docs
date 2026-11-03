@@ -4,7 +4,7 @@
 
 ## 🔄 ワークフロー
 
-1. **変換** - SpriteStudio プロジェクト（`.sspj`）を `libssconverter` で最適化バイナリ（`.ssab`）へ変換（`ssconverter-cli` / [Converter GUI](../players/converter.md) /
+1. **変換** - SpriteStudio プロジェクト（`.sspj`）を `libssconverter` で最適化バイナリ（`.ssab`）へ変換（`ssconverter-cli` / [SSConverter GUI](../players/converter.md) /
    `ssconverter-web` / Player による自動変換）。[アセットの変換](../overview/conversion.md) を参照。
 2. **どこでも再生** - `.ssab` を `libssruntime` に渡すだけ。*あらゆる* `.ssab` を再生できます。対応範囲は下の一覧に、まだ対応していないことは [共通の制限事項](./limitations.md) にあります。
 
@@ -41,6 +41,7 @@ graph LR
 - マスク
 - 9 スライスパーツ - マージン、ストレッチ／タイルの塗り方、繰り返しを含むグリッド全体をランタイムが構築するため、Player は渡された頂点を描画するだけで済みます
 - シェイプパーツ - 三角形・矩形・星など、テクスチャを持たない図形です。頂点はランタイムが生成するため、Player は描画するだけで済みます
+- テキストパーツ - 作画された文字列と、ビットマップフォントではそのグリフ表をランタイムが渡し、描画プラン上の位置も確保します。文字の配置と描画は Player が行います
 - パーツカラー（パーツ単位のカラーブレンド）
 - 作画で指定するテクスチャ変更（TextureChange） - タイムライン上でパーツ単位にテクスチャを差し替えます。ランタイムが評価して描画バッチに反映するため、バッチ単位でテクスチャをバインドする Player では個別の対応は不要です
 - フレーム精度のイベント - ユーザーデータ、シグナル、オーディオ
@@ -49,7 +50,7 @@ graph LR
 - **Override Layer API** - 再生時にパーツのカラー・セル参照・表示状態を上書き。Player が実行時に変えられるものは [実行時にキャラクターを変える](../overview/runtime-changes.md) にあります
 
 !!! tip "情報源"
-    この一覧は SDK の **Player 移植ガイド**に準拠しており、各項目のページはガイドの目次（[`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）にあります。責務の境界はガイドの「はじめに → 制限事項」（[`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md)）が示しています。上記のうち 2 つは **状態計算のみ**で描画・再生には Player 側の実装が必要であり、いくつかの機能には条件が伴います。これらと、コアが行わないことは [共通の制限事項](./limitations.md) にまとめてあります。Player 同士で異なる点は [Player ごとの違い](../overview/player-differences.md) を参照してください。
+    この一覧は SDK の **Player 移植ガイド**に準拠しており、各項目を扱うページはガイドの目次（[`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）からたどれます。責務の境界はガイドの「はじめに → 制限事項」（[`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md)）が示しています。上記のうち 2 つ（テキストパーツとオーディオイベント）は **状態計算のみ**で描画・再生には Player 側の実装が必要であり、いくつかの機能には条件が伴います。これらと、コアが行わないことは [共通の制限事項](./limitations.md) にまとめてあります。Player 同士で異なる点は [Player ごとの違い](../overview/player-differences.md) を参照してください。
 
 ## 📚 ライブラリとツール
 
@@ -57,7 +58,7 @@ graph LR
 |---|---|
 | [`libsspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/sspj/README.ja.md) | `.sspj` プロジェクト（`ssae` / `ssce` / `ssee` / `ssse` / `fnt` / `ssqe`）の解析。 |
 | [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssab/README.ja.md) | `.ssab` / `.ssqb` バイナリの読み書き（FlatBuffers）。 |
-| [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssconverter/README.ja.md) | `.sspj` を `.ssab` へ変換。 |
+| [`libssconverter`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssconverter/README.ja.md) | `.sspj` を `.ssab` / `.ssqb` へ変換。 |
 | [`libssruntime`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/README.ja.md) | 再生の Brain。`DrawBatch` プランを出力。 |
 | [`ssconverter-cli`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/cli/README.ja.md) | コマンドライン変換ツール（Windows / macOS / Linux）。 |
 

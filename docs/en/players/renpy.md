@@ -1,17 +1,19 @@
 # 🎭 SpriteStudio Player for Ren'Py
 
 Bring SpriteStudio characters into **Ren'Py** visual novels, backed by `libssruntime`.
-A playable Web demo ships with each release.
+
+▶️ See it first, no install: the bundled animations run in Ren'Py Web -
+[Try it in your browser](../overview/try-it.md).
 
 !!! tip "Code-first - one line of script"
     A converted pack is already an image, so `show` puts it on screen, and ATL and `Transform`
     move it like any other image.
 
-**1. What you install** - `SSPlayerForRenPy.zip` from
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForRenPy/releases). Extract it and
+**1. What you install** - [`SSPlayerForRenPy.zip`](https://github.com/cri-middleware/SSPlayerForRenPy/releases/latest/download/SSPlayerForRenPy.zip),
+from the latest Release. Extract it and
 copy the resulting `spritestudio/` folder into your project's `game/` folder.
 
-**2. `.sspj` -> `.ssab`** - put your SpriteStudio project in `SpriteStudio_Source/`, beside
+**2. `.sspj` -> `.ssab`** - copy your SpriteStudio project's whole folder into `SpriteStudio_Source/`, beside
 `game/`. The Auto Importer converts it when the game launches from the Ren'Py launcher, and after
 one **Shift+R** each save re-converts what changed, so there is no manual export step.
 

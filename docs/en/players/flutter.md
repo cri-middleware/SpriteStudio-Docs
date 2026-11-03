@@ -1,7 +1,7 @@
 # 📱 SpriteStudio Player for Flutter
 
 Play SpriteStudio animations in **Flutter** apps, backed by `libssruntime`. The
-`SpriteStudioView` widget composites like any other widget, across Flutter's targets.
+`SpriteStudioAnimation` widget composites like any other widget.
 
 ▶️ See it first, no install: the widget and Flame demos run in a browser -
 [Try it in your browser](../overview/try-it.md).
@@ -27,10 +27,10 @@ The steps, with the folders they use, are in the README's [Quick Start](https://
 
 Alongside the player it ships:
 
-- **A [Flame](https://flame-engine.org/) adapter** - drop an animation into a Flame game.
-- **Live reload** - add `ssgen_flutter` as a dev dependency and run its `sswatch` next to
-  `flutter run`: a save in SpriteStudio re-converts only the changed project and pushes it into the
-  running debug app.
+- **A [Flame](https://flame-engine.org/) adapter** - `ssplayer_flame` drops an animation into a Flame game.
+- **Live reload** - add `ssgen_flutter` as a dev dependency and launch the app through its
+  `sswatch --run`, which wraps `flutter run`: a save in SpriteStudio re-converts only the changed
+  project and pushes it into the running debug app.
 
 ## ➡️ Read next
 

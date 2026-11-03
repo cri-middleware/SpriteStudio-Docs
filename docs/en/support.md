@@ -1,7 +1,7 @@
 # 🤝 Support
 
 The SDK and every official player are separate repositories, so the first question is usually
-**where to ask**. This page routes you; most repositories also ship their own `SUPPORT.md`
+**where to ask**. This page routes you; every repository also ships its own `SUPPORT.md`
 listing the same channels.
 
 ## 🛠️ Bugs & feature requests - GitHub Issues
@@ -12,13 +12,13 @@ File these in the repository that owns the code. Search existing issues first.
 |---|---|---|
 | [SpriteStudio-SDK](https://github.com/cri-middleware/SpriteStudio-SDK) | [Issues](https://github.com/cri-middleware/SpriteStudio-SDK/issues) | Conversion output, playback math, the `.ssab` / `.ssqb` format, `ssconverter-cli` |
 | [SSPlayerForUnity](https://github.com/cri-middleware/SSPlayerForUnity) | [Issues](https://github.com/cri-middleware/SSPlayerForUnity/issues) | Unity import, components, rendering |
-| [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | [Issues](https://github.com/cri-middleware/SSPlayerForWeb/issues) | The browser players and `ssconverter-web` |
+| [SSPlayerForWeb](https://github.com/cri-middleware/SSPlayerForWeb) | [Issues](https://github.com/cri-middleware/SSPlayerForWeb/issues) | The browser players, the RPG Maker MZ / TyranoScript / TyranoBuilder plugins, and `ssconverter-web` |
 | [SSPlayerForGodot](https://github.com/cri-middleware/SSPlayerForGodot) | [Issues](https://github.com/cri-middleware/SSPlayerForGodot/issues) | The GDExtension / custom module, SS Importer dock |
-| [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | [Issues](https://github.com/cri-middleware/SSPlayerForFlutter/issues) | `SpriteStudioView`, the Flame adapter, `ssconvert` |
+| [SSPlayerForFlutter](https://github.com/cri-middleware/SSPlayerForFlutter) | [Issues](https://github.com/cri-middleware/SSPlayerForFlutter/issues) | `SpriteStudioAnimation` and `SpriteStudioView`, the Flame adapter, `ssconvert` |
 | [SSPlayerForRenPy](https://github.com/cri-middleware/SSPlayerForRenPy) | [Issues](https://github.com/cri-middleware/SSPlayerForRenPy/issues) | The Ren'Py displayable, auto-import |
 | [SSPlayerForWgpu](https://github.com/cri-middleware/SSPlayerForWgpu) | [Issues](https://github.com/cri-middleware/SSPlayerForWgpu/issues) | The Rust crate and its C / C++ and browser faces, the Bevy adapter |
 | [SSPlayerForReactNative](https://github.com/cri-middleware/SSPlayerForReactNative) | [Issues](https://github.com/cri-middleware/SSPlayerForReactNative/issues) | `<SpriteStudioView>` / `<SpriteStudioScene>`, the native module, Skia rendering |
-| [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | [Issues](https://github.com/cri-middleware/SSConverterGUI/issues) | The desktop app itself (UI, packaging, updates) |
+| [SSConverterGUI](https://github.com/cri-middleware/SSConverterGUI) | [Issues](https://github.com/cri-middleware/SSConverterGUI/issues) | The desktop app itself (UI, file selection, packaging) |
 
 ### 🧭 Not sure which one?
 
@@ -28,7 +28,7 @@ shared core or in the engine-specific layer**:
 | Symptom | Where it belongs |
 |---|---|
 | Conversion produces a wrong or corrupt asset, or crashes - and it reproduces in the GUI, the CLI, **and** the browser tool | **SpriteStudio-SDK** (the conversion engine is shared) |
-| The Converter GUI misbehaves but `ssconverter-cli` converts the same `.sspj` fine | **SSConverterGUI** (a front-end issue) |
+| SSConverter GUI misbehaves but `ssconverter-cli` converts the same `.sspj` fine | **SSConverterGUI** (a front-end issue) |
 | An animation plays wrong the **same way on every player** you tried | **SpriteStudio-SDK** (the playback core is shared) |
 | An animation plays wrong on **one engine only** | that **player's** repository |
 | A part type or blend mode is missing on one engine | check [Player Differences](./overview/player-differences.md) first - it may be a known difference |

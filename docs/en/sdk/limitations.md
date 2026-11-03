@@ -66,9 +66,10 @@ animation fires events (other sources have a default event threshold of `+∞`, 
 source's threshold to let it fire too); and sources of different lengths run on independent
 clocks, so keeping them in step is the player's job.
 
-Instance and Effect parts sit outside mixing. They belong to the `.ssab`, not to one animation, so
-a crossfade on track 0 keeps them running rather than setting them up again, and which animation's
-key drives them across the switch is not blended.
+Instance and Effect parts sit outside mixing. They belong to the `.ssab`'s parts, not to one
+animation, so a crossfade on track 0 keeps them running rather than setting them up again. Their
+keys come from track 0's main animation, and where the outgoing and incoming animations key such a
+part on the same frame, it carries on with the outgoing animation's setting.
 
 ### A mesh (skinned) part cannot be followed directly
 
@@ -85,18 +86,23 @@ because they need the host engine:
 
 | Feature | The runtime provides | The player must implement |
 |---|---|---|
-| **Text parts** | The authored text, plus the glyph atlas for a bitmap-font project. Text also keeps its slot in the draw plan, so it composites by priority alongside every other part | Glyph layout, rasterization for outline fonts, and the draw call - through the host engine's text stack |
-| **Audio** | The play event (file name, exact timing) | Actual sound playback via the engine's audio system |
+| **Text parts** | The authored text, plus the glyph table for a bitmap-font project. Text also keeps its slot in the draw plan, so it composites by priority alongside every other part | Glyph layout, rasterization for outline fonts, and the draw call - through the host engine's text stack |
+| **Audio** | The play event (sound name, play count, exact timing) | Actual sound playback via the engine's audio system |
 
-A text part authored as a **mask** is the exception: it is left out of the draw plan entirely,
-because the runtime has no glyphs with which to write coverage.
+### Text parts do not mask, kern, or reach above U+FFFF
+
+- A text part authored as a **mask** is left out of the draw plan: it draws nothing and does not
+  work as a mask either.
+- **Kerning** is not stored in the `.ssab`.
+- Bitmap-font glyphs are looked up by a 16-bit character code, so **characters above U+FFFF**
+  are not supported.
 
 ### Text and 9-slice parts are not drawn by any player yet
 
 Two part types reach the player intact but have no implementation in **any** official player at
 present. This is not a difference between engines - it is uniform:
 
-- **Text parts** - the runtime supplies the authored string, the bitmap glyph atlas, and the
+- **Text parts** - the runtime supplies the authored string, the bitmap-font glyph table, and the
   part's slot in the draw plan. No player draws the glyphs yet.
 - **9-slice parts** - the runtime builds the entire grid into dedicated buffers (`Nines` batches),
   ready to upload. No player reads those buffers yet, so the part renders as nothing rather than
@@ -115,23 +121,12 @@ The **UV animation attributes** and **cells rotated inside their cellmap** do no
 9-slice parts. The grid is built from the cell rectangle alone, matching what the authoring tool
 does.
 
-### Destination-sampling blend modes assume opaque pixels underneath
-
-`Mul`, `Sub`, `Screen`, `Exclusion`, and `Invert` read the pixels they are drawn over, so they
-match the editor only where those pixels are **opaque** - the case SpriteStudio itself assumes.
-
-**What to do:** give a blend-heavy animation an opaque background layer if exact parity with the
-editor matters.
-
-Which blend modes a given engine can reproduce *at all* is a separate, per-player question - see
-[Player Differences](../overview/player-differences.md).
-
 ## 📦 Shipping & loading
 
-### A `.ssab` whose schema version differs from the runtime does not load
+### A `.ssab` whose schema version differs from the runtime does not load { #schema-version }
 
-`.ssab` and `.ssqb` carry their schema version in the binary, and the runtime **fails the load**
-of a file whose version is not the one it reads. Rust callers and the browser (wasm) face get both
+A `.ssab` carries its schema version in the binary, and the runtime **fails the load** of one
+whose version is not the one it reads. Rust callers and the browser (wasm) API get both
 versions in the error's text; through the C ABI the text is only "Invalid SSAB version", and the
 two numbers are `ss_runtime_ssab_schema_version()` and the pack's own `version` field. Nothing is
 read partially, and an asset built against an older schema does not quietly
@@ -162,13 +157,15 @@ itself. Two constraints follow:
   referenced as an *external instance* is not included - ship those referenced `.ssab` files
   alongside.
 
-### Browsers require WebAssembly SIMD
+### The standard WebAssembly build requires SIMD
 
-The WASM build of the runtime uses **WebAssembly SIMD** instructions and **will not run on
-browsers without SIMD support**. This applies to every player's browser-facing target except the
-RPG Maker MZ plugin, which ships a runtime build without SIMD.
+The runtime's standard WASM build uses **WebAssembly SIMD** instructions and **does not load in
+browsers or runtimes without SIMD support**. For those, the SDK also ships a build without SIMD
+(`runtime-web-nosimd`) with the same JavaScript interface; whether a player's browser target
+falls back to it differs by player.
 
-**What to do:** treat WebAssembly SIMD as a browser requirement for your distribution.
+**What to do:** unless your player falls back to the build without SIMD, treat WebAssembly SIMD
+as a browser requirement for your distribution.
 
 ## ➡️ Next
 

@@ -6,7 +6,7 @@
 !!! tip "エディタで始まる - 最初のフレームまでコードは不要"
     パッケージを入れ、`.sspj` をエディタにドラッグし、コンポーネントを置いてアセットを割り当てるだけです。スクリプト制御や Timeline も使えますが、ここまでには必要ありません。
 
-**1. 何を入れるか** - `jp.co.cri-mw.spritestudio.ssplayer-unity` を、Package Manager から npm（`jp.co.cri-mw` の scoped registry）経由か、[GitHub Releases](https://github.com/cri-middleware/SSPlayerForUnity/releases) の tarball で追加します。URP・BRP の両方に対応します。
+**1. 何を入れるか** - `jp.co.cri-mw.spritestudio.ssplayer-unity` を、Package Manager から npm（`jp.co.cri-mw` の scoped registry）経由か、最新の Release の [`jp.co.cri-mw.spritestudio.ssplayer-unity.tgz`](https://github.com/cri-middleware/SSPlayerForUnity/releases/latest/download/jp.co.cri-mw.spritestudio.ssplayer-unity.tgz) で追加します。URP・BRP の両方に対応します。
 
 **2. `.sspj` -> `.ssab`** - **Window > SpriteStudio > Importer** を開き、`.sspj` をドラッグ&ドロップします。`libssconverter` がパッケージに同梱されているため別途ツールを入れる必要はありません。SpriteStudio で編集したら、アセットのインスペクタの **Reconvert** でその場で更新されます。
 

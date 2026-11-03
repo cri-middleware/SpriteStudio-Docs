@@ -39,7 +39,7 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
 
 1. Open the converter at [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/).
 2. Drop in the folder that contains your `.sspj`, or pick it with **Browse...** (its images and other referenced files are read along with it). The folder must hold exactly one `.sspj`.
-3. Press **⚡ Convert & Download**. The ZIP holds one folder named after the `.sspj`, with the `.ssab` and its textures inside.
+3. Press **⚡ Convert & Download**. The ZIP holds one folder named after the `.sspj`, with the `.ssab` and its textures inside; with **Embedded Assets** on, the folder is `<name>_emb` and the textures are inside the `.ssab`.
 
 !!! info "Versioned by `.ssab` schema"
     ssconverter-web is published **per `.ssab` schema version**, so the URL carries the schema:
@@ -47,7 +47,7 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
     - Latest (auto-redirects): [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)
     - A specific schema, e.g. `v1`: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
 
-    Match the schema to your player's runtime version - when in doubt, use the latest
+    Match the schema to your player's runtime version ([why](../sdk/limitations.md#schema-version)) - when in doubt, use the latest
     (auto-redirecting) build.
 
 ## 🖥️ SSConverter GUI - desktop app
@@ -55,7 +55,9 @@ Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a s
 A Tauri desktop app. No command line. Builds are published for **macOS and Windows** - on Linux,
 take `ssconverter-cli` below instead; the output is the same.
 
-1. Download a build from [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases).
+1. Download the archive for your OS from [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) and
+   unpack it - there is no installer. On Windows, SmartScreen asks on first launch; the
+   [Installation guide](https://cri-middleware.github.io/SSConverterGUI/install/) says what to do.
 2. Launch it and drop a `.sspj` - or a folder of them - onto the window (or pick one with
    **File...** / **Folder...**).
 3. Optionally change the output folder (by default, a folder next to the `.sspj`), then click
@@ -80,7 +82,7 @@ ssconverter-cli project.sspj
 # Choose the output directory
 ssconverter-cli project.sspj -o ./out
 
-# Embed referenced assets (textures, etc.) into the .ssab (one self-contained file, easy to ship)
+# Embed referenced assets (textures, etc.) into the .ssab, written to project_emb/ (one self-contained file, easy to ship)
 ssconverter-cli project.sspj --embedded
 
 # Batch: recursively find every .sspj under these directories and convert them in parallel
@@ -93,6 +95,7 @@ In batch mode each output is written next to its source (`-o` is ignored). Each 
 
 ## ➡️ Next
 
-Whatever you used, the output is the same `.ssab` / `.ssqb`. See [SDK Concepts](../sdk/concepts.md)
-for how the runtime plays it back, or the [Format Specification](../sdk/format-spec.md) for the
-on-disk details.
+Whatever you used, the output is the same `.ssab` / `.ssqb`. Hand the output folder to your
+player - its page says where it goes, and [Choose Your Platform](./choose-your-platform.md) links
+each one. For how the runtime plays it back, see [SDK Concepts](../sdk/concepts.md); for the
+on-disk details, the [Format Specification](../sdk/format-spec.md).

@@ -25,13 +25,13 @@ Player ごとの統合の成熟度は [Player ごとの違い](./player-differen
 | 変換したい環境 | 使用するもの | 詳細 |
 |---|---|---|
 | ウェブ（ブラウザ） | **[SpriteStudio Player for Web](../players/web.md)**（`ssconverter-web`） | [試す](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
-| デスクトップ - GUI | **[SSConverter GUI](../players/converter.md)** | [ドキュメント](https://cri-middleware.github.io/SSConverterGUI/ja/) |
+| デスクトップ - GUI（macOS / Windows） | **[SSConverter GUI](../players/converter.md)** | [ドキュメント](https://cri-middleware.github.io/SSConverterGUI/ja/) |
 | デスクトップ - CLI | **SpriteStudio-SDK**（`ssconverter-cli`） | [使い方](./convert-with-a-standalone-tool.md) |
 
 ## ✅ すべてのプラットフォームに共通
 
 - **変換ステップ**（`.sspj` -> ランタイムアセット `.ssab` / `.ssqb` ＋テクスチャ）はどこでも同じです。パイプラインは
-  [SDK コンセプト](../sdk/concepts.md)、変換方法（Player による自動変換・GUI・CLI・ブラウザ）は
+  [SDK コンセプト](../sdk/concepts.md)、変換方法（Player による変換・GUI・CLI・ブラウザ）は
   [アセットの変換](./conversion.md) を参照してください。
 - 対応機能（ボーン、メッシュ／デフォーム、パーティクル、拡張ブレンド、マスク）は共通コアが担うため、機能セット自体はどこでも同じです。エンジンごとに残る差分は
   [Player ごとの違い](./player-differences.md)、すべての Player に共通する制約は

@@ -3,8 +3,8 @@
 The documentation portal for the **SpriteStudio SDK** and its official players.
 
 [SpriteStudio](https://www.webtech.co.jp/spritestudio/) is a 2D animation tool.
-This portal is the single entry point to every official runtime and tool that plays back
-SpriteStudio animations - all powered by the shared Rust core, **SpriteStudio-SDK**.
+This portal is the single entry point to every official runtime that plays back
+SpriteStudio animations, and to the tools that convert for them - all powered by the shared Rust core, **SpriteStudio-SDK**.
 
 Not sure where to start? See [Choose Your Platform](./overview/choose-your-platform.md),
 or read [how the pieces fit together](./overview/ecosystem.md).
@@ -65,7 +65,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
 
     ---
 
-    Play SpriteStudio animations in Flutter apps via a `SpriteStudioView` widget.
+    Play SpriteStudio animations in Flutter apps via a `SpriteStudioAnimation` widget.
 
     [:octicons-arrow-right-24: Overview](./players/flutter.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForFlutter/) |
@@ -81,7 +81,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
     [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
--   :simple-rust: __wgpu (Rust, C / C++)__
+-   :simple-rust: __wgpu (Rust, C / C++, WebGPU)__
 
     ---
 
@@ -103,7 +103,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
     [Docs](https://cri-middleware.github.io/SSPlayerForReactNative/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
 
--   :material-file-swap: __Converter GUI__
+-   :material-file-swap: __SSConverter GUI__
 
     ---
 

@@ -29,7 +29,7 @@
 
 1. [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) でコンバーターを開きます。
 2. `.sspj` が入ったフォルダをドロップするか、**Browse...** で選択します（画像などの参照ファイルも一緒に読み込まれます）。フォルダに入れる `.sspj` は 1 つだけにしてください。
-3. **⚡ Convert & Download** を押します。ZIP には `.sspj` の名前のフォルダが 1 つ入っていて、その中に `.ssab` とテクスチャがあります。
+3. **⚡ Convert & Download** を押します。ZIP には `.sspj` の名前のフォルダが 1 つ入っていて、その中に `.ssab` とテクスチャがあります。**Embedded Assets** をオンにすると、フォルダは `<名前>_emb` になり、テクスチャは `.ssab` の中に入ります。
 
 !!! info "`.ssab` スキーマ版ごとに公開"
     ssconverter-web は **`.ssab` スキーマのバージョンごと**に公開され、URL にスキーマが含まれます。
@@ -37,14 +37,14 @@
     - 最新版（自動リダイレクト）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)
     - 特定スキーマ版（例 `v1`）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
 
-    Player のランタイム版に合ったスキーマを選んでください。迷ったら最新版を使ってください。
+    Player のランタイム版に合ったスキーマを選んでください（[理由](../sdk/limitations.md#schema-version)）。迷ったら最新版を使ってください。
 
 ## 🖥️ SSConverter GUI - デスクトップアプリ
 
 Tauri 製のデスクトップアプリです。コマンドラインは不要です。配布しているビルドは **macOS と
 Windows** で、Linux では下の `ssconverter-cli` を使ってください（出力は同じです）。
 
-1. [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) からビルドをダウンロードします。
+1. [GitHub Releases](https://github.com/cri-middleware/SSConverterGUI/releases) から OS に合ったアーカイブをダウンロードして展開します（インストーラーはありません）。Windows では初回起動時に SmartScreen の確認が出ます。対処は[インストール](https://cri-middleware.github.io/SSConverterGUI/ja/install/)を参照してください。
 2. アプリを起動し、`.sspj`（または複数の `.sspj` を含むフォルダ）をウィンドウにドロップします（**File...** / **Folder...** からも選べます）。
 3. 必要なら出力フォルダを変更し（既定は `.sspj` の隣のフォルダ）、**Convert** を押します。
 
@@ -62,7 +62,7 @@ ssconverter-cli project.sspj
 # 出力ディレクトリを指定する
 ssconverter-cli project.sspj -o ./out
 
-# テクスチャを含む参照アセットを .ssab に埋め込む（単一ファイルで配布しやすい）
+# テクスチャを含む参照アセットを .ssab に埋め込み、project_emb/ に出力する（単一ファイルで配布しやすい）
 ssconverter-cli project.sspj --embedded
 
 # バッチ: ディレクトリ配下の .sspj を再帰的に探索し、並列で変換する
@@ -74,4 +74,4 @@ ssconverter-cli ./assets/projects ./more_assets
 
 ## ➡️ 次に
 
-どれを使っても出力は同じ `.ssab` / `.ssqb` です。再生の仕組みは [SDK コンセプト](../sdk/concepts.md)、ディスク上の詳細は [フォーマット仕様](../sdk/format-spec.md) を参照してください。
+どれを使っても出力は同じ `.ssab` / `.ssqb` です。出力フォルダは使う Player に渡します。置き場所は各 Player のページにあり、[プラットフォームの選び方](./choose-your-platform.md) から各 Player へ進めます。再生の仕組みは [SDK コンセプト](../sdk/concepts.md)、ディスク上の詳細は [フォーマット仕様](../sdk/format-spec.md) を参照してください。

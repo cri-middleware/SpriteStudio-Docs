@@ -19,13 +19,13 @@ Every site serves two files at its root, and a Markdown copy of every page:
 | [Ren'Py](../players/renpy.md) | [`https://cri-middleware.github.io/SSPlayerForRenPy/llms.txt`](https://cri-middleware.github.io/SSPlayerForRenPy/llms.txt) |
 | [wgpu (Rust, C / C++)](../players/wgpu.md) | [`https://cri-middleware.github.io/SSPlayerForWgpu/llms.txt`](https://cri-middleware.github.io/SSPlayerForWgpu/llms.txt) |
 | [React Native](../players/react-native.md) | [`https://cri-middleware.github.io/SSPlayerForReactNative/llms.txt`](https://cri-middleware.github.io/SSPlayerForReactNative/llms.txt) |
-| [Converter GUI](../players/converter.md) | [`https://cri-middleware.github.io/SSConverterGUI/llms.txt`](https://cri-middleware.github.io/SSConverterGUI/llms.txt) |
+| [SSConverter GUI](../players/converter.md) | [`https://cri-middleware.github.io/SSConverterGUI/llms.txt`](https://cri-middleware.github.io/SSConverterGUI/llms.txt) |
 | [SDK - the Player Porting Guide](../sdk/porting.md) | [`https://cri-middleware.github.io/SpriteStudio-SDK/llms.txt`](https://cri-middleware.github.io/SpriteStudio-SDK/llms.txt) |
 | This portal | [`https://cri-middleware.github.io/SpriteStudio-Docs/llms.txt`](https://cri-middleware.github.io/SpriteStudio-Docs/llms.txt) |
 
 ### 🌐 Languages
 
-For the sites other than Web and React Native, add `ja/` after the repository name to get the Japanese files, for example `https://cri-middleware.github.io/SSPlayerForUnity/ja/llms.txt`. The Web and React Native sites write one pair of English files; each of their Japanese pages has a Markdown copy at the same path under `ja/` with `.md` appended.
+For the sites other than Web and React Native, add `ja/` after the repository name to get the Japanese files, for example `https://cri-middleware.github.io/SSPlayerForUnity/ja/llms.txt`. The Web and React Native sites have English `llms.txt` / `llms-full.txt` only; each of their Japanese pages has a Markdown copy at the same path under `ja/` with `.md` appended.
 
 ## 📦 Docs inside the package
 
@@ -34,7 +34,7 @@ Every player's package carries its documentation for the version you installed, 
 | Player | Where | Agent Skill |
 |---|---|---|
 | Unity | `Library/PackageCache/jp.co.cri-mw.spritestudio.ssplayer-unity@<hash>/Documentation~/`, starting at `en/index.md` (Japanese: `ja/index.md`) | — |
-| Web | `node_modules/@spritestudio/<package>/docs/`, starting at `README.md` | `skills/<package>/` |
+| Web (npm packages) | `node_modules/@spritestudio/<package>/docs/`, starting at `README.md` | `skills/<package>/` |
 | Godot | `addons/spritestudio/`, starting at `README.md` | — |
 | Flutter | `doc/` in `ssplayer_flutter` and in `ssplayer_flame`, in the pub cache (`~/.pub-cache/hosted/pub.dev/<package>-<version>/`), starting at `doc/index.md` | `skills/ssplayer-flutter-docs/`, `skills/ssplayer-flame-docs/` |
 | Ren'Py | `game/spritestudio/`, starting at `README.md` | — |

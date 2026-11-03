@@ -4,15 +4,14 @@ Play SpriteStudio animations in **React Native** apps, on the New Architecture, 
 `<SpriteStudioView>` component.
 
 !!! tip "Code-first - and a development build, not Expo Go"
-    The package compiles into your app's own binary, so **Expo Go cannot run it**. In a managed
-    app that means `npx expo prebuild` then `npx expo run:ios` / `run:android`; a bare app
-    rebuilds its existing native projects. Autolinking picks the package up either way.
+    The package compiles into your app's own binary, so **Expo Go cannot run it**: make a
+    development build with `npx expo prebuild`, then `npx expo run:ios` / `run:android`.
 
 **1. What you install** - `react-native-spritestudio` and its native peers, added with `npx expo install` - see
 [Installation](https://cri-middleware.github.io/SSPlayerForReactNative/setup/install).
 
 **2. `.sspj` -> `.ssab`** - React Native has no editor to host an importer in, so this is a
-host-side step with `ssconverter-web`, [SSConverter GUI](./converter.md) or the SDK's
+host-side step with the browser's [`ssconverter-web`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/), [SSConverter GUI](./converter.md) or the SDK's
 `ssconverter-cli` - see [Converting Assets](../overview/conversion.md). **A pack is a directory, not
 a file**, and Metro bundles only what a `require()` names, so the pack folder ships as a native app
 asset through the package's Expo config plugin.

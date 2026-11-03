@@ -8,7 +8,7 @@ Every official player shares one Rust core, **SpriteStudio-SDK**. A SpriteStudio
 graph LR
     SS[" .sspj / Images<br/>(SpriteStudio) "]
 
-    subgraph SDK ["SpriteStudio-SDK - shared core, embedded in every player"]
+    subgraph SDK ["SpriteStudio-SDK - shared core"]
         CONV(" libssconverter<br/>convert ")
         RT(" libssruntime<br/>play back ")
     end
@@ -24,11 +24,11 @@ graph LR
     class CONV,RT sdk;
 ```
 
-<small>The highlighted **SpriteStudio-SDK** core (`libssconverter` + `libssruntime`) is what
-every player builds on; the dashed hand-off is the generated **`.ssab / .ssqb`** asset. For
+<small>The highlighted **SpriteStudio-SDK** core is what every player builds on - `libssruntime`
+in every player, `libssconverter` in the ones that convert for you; the dashed hand-off is the generated **`.ssab / .ssqb`** asset. For
 the current lineup of players, see [Choose Your Platform](./choose-your-platform.md).</small>
 
-Conversion can happen **automatically, in the player** or via a **standalone tool** - which engines
+Conversion can happen **in the player** or via a **standalone tool** - which engines
 do which, and what each route emits, is in [Converting Assets](./conversion.md).
 
 ## 🧩 The pieces

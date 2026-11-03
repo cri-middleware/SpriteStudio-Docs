@@ -8,9 +8,9 @@ Play back SpriteStudio animations in the **Unity Engine**. Playback runs through
     asset. Scripting and Timeline are there when you want them; nothing above needs them.
 
 **1. What you install** - `jp.co.cri-mw.spritestudio.ssplayer-unity`, through Package Manager from
-npm (a scoped registry for `jp.co.cri-mw`) or as the tarball from
-[GitHub Releases](https://github.com/cri-middleware/SSPlayerForUnity/releases). It runs on both URP and
-BRP.
+npm (a scoped registry for `jp.co.cri-mw`) or as the latest Release's
+[`jp.co.cri-mw.spritestudio.ssplayer-unity.tgz`](https://github.com/cri-middleware/SSPlayerForUnity/releases/latest/download/jp.co.cri-mw.spritestudio.ssplayer-unity.tgz).
+It runs on both URP and BRP.
 
 **2. `.sspj` -> `.ssab`** - open **Window > SpriteStudio > Importer** and drag the `.sspj` in.
 `libssconverter` is bundled with the package, so there is no separate tool to install. After

@@ -28,7 +28,7 @@ Only converting `.sspj`? Pick a standalone tool rather than a player.
 | I want to convert on... | Use | Details |
 |---|---|---|
 | The browser | **[SpriteStudio Player for Web](../players/web.md)** (`ssconverter-web`) | [Try it](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) |
-| The desktop - GUI | **[SSConverter GUI](../players/converter.md)** | [Docs](https://cri-middleware.github.io/SSConverterGUI/) |
+| The desktop - GUI (macOS / Windows) | **[SSConverter GUI](../players/converter.md)** | [Docs](https://cri-middleware.github.io/SSConverterGUI/) |
 | The desktop - CLI | **SpriteStudio-SDK** (`ssconverter-cli`) | [How to run it](./convert-with-a-standalone-tool.md) |
 
 ## ✅ Common to every platform
@@ -36,7 +36,7 @@ Only converting `.sspj`? Pick a standalone tool rather than a player.
 - The **conversion step** (`.sspj` -> the runtime assets `.ssab` / `.ssqb` + textures) is the
   same everywhere - see
   [SDK Concepts](../sdk/concepts.md) for the pipeline, and [Converting Assets](./conversion.md)
-  for every way to convert (automatic in the player, GUI, CLI, or browser).
+  for every way to convert (in the player, GUI, CLI, or browser).
 - Feature coverage (bones, mesh/deform, particles, extended blend, masks) is driven by the
   shared core, so the feature *set* is the same everywhere. What still differs per engine is
   listed in [Player Differences](./player-differences.md); the constraints that apply everywhere are

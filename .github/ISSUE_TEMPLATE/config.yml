@@ -1,5 +1,9 @@
 blank_issues_enabled: false
 contact_links:
+  - name: 🎮 A problem with a player or the SDK / Player・SDK の不具合
+    url: https://cri-middleware.github.io/SpriteStudio-Docs/support/
+    about: Report it in the repository that owns the code; the portal's Support page lists each one. Issues here are for these docs only.
+
   - name: ❓ Question about how to use SpriteStudio / 使い方の質問
     url: https://spritestudio.jp/community/
     about: Implementation advice and tips, in the official community forum. Issues are not for usage questions.

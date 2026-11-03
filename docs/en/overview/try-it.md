@@ -34,7 +34,7 @@ Both Flutter demos run on that player's Web target. The WebGPU demo needs a brow
 supports WebGPU.
 
 **Want to preview your own animation?** The PixiJS, WebGL and WebGPU demos take a dropped folder
-of `.ssab` + `.png`, so convert your `.sspj` first - with the browser converter above, or any of the
+of `.ssab` + `.png` (the PixiJS and WebGL demos also take a single embedded `.ssab`), so convert your `.sspj` first - with the browser converter above, or any of the
 [standalone tools](./convert-with-a-standalone-tool.md).
 [Converting Assets](./conversion.md) walks the whole path. If you don't have a project of your
 own yet, the free [sample data](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) works

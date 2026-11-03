@@ -29,4 +29,4 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 
 Flutter の 2 つのデモは同 Player の Web ターゲットで動作します。WebGPU デモには WebGPU 対応ブラウザが必要です。
 
-**自分のアニメをプレビューしたい場合**、PixiJS・WebGL・WebGPU のデモが受け取るのは `.ssab`＋`.png` のフォルダなので、先に `.sspj` を変換してください。上記のブラウザ版コンバーターでも、[スタンドアロンツール](./convert-with-a-standalone-tool.md) でも構いません。全体の流れは [アセットの変換](./conversion.md) にまとまっています。手元にプロジェクトがない場合は、無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)がそのまま使えます。
+**自分のアニメをプレビューしたい場合**、PixiJS・WebGL・WebGPU のデモが受け取るのは `.ssab`＋`.png` のフォルダ（PixiJS と WebGL のデモは embedded の `.ssab` 1 ファイルも可）なので、先に `.sspj` を変換してください。上記のブラウザ版コンバーターでも、[スタンドアロンツール](./convert-with-a-standalone-tool.md) でも構いません。全体の流れは [アセットの変換](./conversion.md) にまとまっています。手元にプロジェクトがない場合は、無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)がそのまま使えます。
