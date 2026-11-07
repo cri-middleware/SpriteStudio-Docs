@@ -56,7 +56,7 @@ usage () {
   echo ""
   echo "Output: site/ (en) + site/ja/ (ja) -- the exact tree pages.yml uploads. Both"
   echo "builds are --strict, so a broken internal link fails the build here rather than"
-  echo "on a release publish."
+  echo "on a publish."
   echo ""
   echo "Serve both locales from one server, or the language selector points at pages"
   echo "that are not being served."

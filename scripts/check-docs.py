@@ -6,10 +6,11 @@
 --strict fails a broken internal link or anchor, but not a nav entry that names
 a missing page. It says nothing about a page that no nav names, a locale that
 has drifted from the other, an llms.txt index that has lost a page, the lists of
-repositories disagreeing, a link from a sibling's docs into this site that
-lands on no page or on an anchor no heading names with an explicit id, a link
-from this site to a page or demo a sibling's site does not build, or a Japanese
-line break the browser renders as a space. This script checks those.
+repositories disagreeing, a link into a repository that names a branch or a path
+its clone does not have, a link from a sibling's docs into this site that lands
+on no page or on an anchor no heading names with an explicit id, a link from
+this site to a page or demo a sibling's site does not build, or a Japanese line
+break the browser renders as a space. This script checks those.
 
 scripts/build-docs.sh and build-docs.ps1 run it before building, so CI and a
 publish run it too. It needs only the standard library, so any Python 3 on PATH
@@ -84,7 +85,9 @@ def locale_pages(locale):
     pages = set()
     for d, _, files in os.walk(base):
         for name in files:
-            pages.add(os.path.relpath(os.path.join(d, name), base).replace(os.sep, "/"))
+            # Finder leaves a .DS_Store in whichever locale's folder it opened.
+            if not name.startswith("."):
+                pages.add(os.path.relpath(os.path.join(d, name), base).replace(os.sep, "/"))
     return pages
 
 
@@ -256,7 +259,7 @@ def check_repositories():
            f"and each but the SDK has a players/ page (en, ja)")
 
 
-SIBLING_REF = re.compile(r"github\.com/cri-middleware/([A-Za-z0-9_.-]+)/(blob|tree)/([^/\s)>\"'`]+)/([^\s)>\"'`#]*)")
+SIBLING_REF = re.compile(r"github\.com/cri-middleware/([A-Za-z0-9_.-]+)/(blob|tree)/([^/\s)>\"'`#]+)(?:/([^\s)>\"'`#]*))?")
 
 
 def sibling_links():
@@ -264,7 +267,7 @@ def sibling_links():
     for path in tracked("*.md", "*.yml", "*.html"):
         for i, line in enumerate(read(path).split("\n"), 1):
             for m in SIBLING_REF.finditer(line):
-                links.append((path, i) + m.groups())
+                links.append((path, i) + m.groups(""))
     return links
 
 

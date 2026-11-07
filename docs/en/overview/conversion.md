@@ -24,7 +24,8 @@ no standalone converter is involved. Most run it automatically on the editor / d
 so conversion happens in-place - **nothing else to install**. Flutter is the exception: you add
 its converter as a dev dependency and run it yourself.
 
-- **Unity** - [SpriteStudio Player for Unity](../players/unity.md)'s bundled Importer converts on drag & drop.
+- **Unity** - [SpriteStudio Player for Unity](../players/unity.md)'s bundled Importer converts on drag & drop, on Windows and macOS
+  Editors; on a Linux Editor, use [`ssconverter-cli`](./convert-with-a-standalone-tool.md) instead.
 - **Godot** - [SpriteStudio Player for Godot](../players/godot.md)'s SS Importer dock converts on drag & drop.
 - **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md)'s `ssconvert` CLI (dev dependency `ssconverter_dart`)
   converts one `.sspj` under `SpriteStudio_Source/` into your assets per run, by hand or in CI. With Live Reload (dev dependency

@@ -15,7 +15,7 @@
 
 これらのエンジン向けの公式 Player パッケージは、変換ツールとして `libssconverter` を持っているので、スタンドアロンのコンバーターは使いません。ほとんどはエディタなどの開発環境側で自動的に実行されるため、その場で変換できます。**追加インストールは不要**です。Flutter だけは、コンバーターを dev 依存として追加し、自分で実行します。
 
-- **Unity** - [SpriteStudio Player for Unity](../players/unity.md) 付属の Importer がドラッグ&ドロップで変換します。
+- **Unity** - [SpriteStudio Player for Unity](../players/unity.md) 付属の Importer が、Windows と macOS のエディタでドラッグ&ドロップで変換します。Linux のエディタでは [`ssconverter-cli`](./convert-with-a-standalone-tool.md) を使います。
 - **Godot** - [SpriteStudio Player for Godot](../players/godot.md) の SS Importer ドックがドラッグ&ドロップで変換します。
 - **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md) の `ssconvert` CLI（dev 依存の `ssconverter_dart`）が、`SpriteStudio_Source/` 内の `.sspj` を 1 回に 1 つ、手動または CI でアセットへ変換します。ライブリロード（dev 依存の `ssgen_flutter`）を使うと、`sswatch` が保存のたびに再変換し、デバッグ実行中のアプリへ反映します。
 - **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) が起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。

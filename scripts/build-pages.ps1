@@ -65,7 +65,7 @@ function Show-Usage {
     Write-Host ""
     Write-Host "Output: site/ (en) + site/ja/ (ja) -- the exact tree pages.yml uploads. Both"
     Write-Host "builds are --strict, so a broken internal link fails the build here rather than"
-    Write-Host "on a release publish."
+    Write-Host "on a publish."
     Write-Host ""
     Write-Host "Serve both locales from one server, or the language selector points at pages"
     Write-Host "that are not being served."
