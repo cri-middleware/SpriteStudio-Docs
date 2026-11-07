@@ -6,10 +6,11 @@
 --strict fails a broken internal link or anchor, but not a nav entry that names
 a missing page. It says nothing about a page that no nav names, a locale that
 has drifted from the other, an llms.txt index that has lost a page, the lists of
-repositories disagreeing, a link from a sibling's docs into this site that
-lands on no page or on an anchor no heading names with an explicit id, a link
-from this site to a page or demo a sibling's site does not build, or a Japanese
-line break the browser renders as a space. This script checks those.
+repositories disagreeing, a link into a repository that names a branch or a path
+its clone does not have, a link from a sibling's docs into this site that lands
+on no page or on an anchor no heading names with an explicit id, a link from
+this site to a page or demo a sibling's site does not build, or a Japanese line
+break the browser renders as a space. This script checks those.
 
 scripts/build-docs.sh and build-docs.ps1 run it before building, so CI and a
 publish run it too. It needs only the standard library, so any Python 3 on PATH
