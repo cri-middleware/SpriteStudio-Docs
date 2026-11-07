@@ -85,7 +85,9 @@ def locale_pages(locale):
     pages = set()
     for d, _, files in os.walk(base):
         for name in files:
-            pages.add(os.path.relpath(os.path.join(d, name), base).replace(os.sep, "/"))
+            # Finder leaves a .DS_Store in whichever locale's folder it opened.
+            if not name.startswith("."):
+                pages.add(os.path.relpath(os.path.join(d, name), base).replace(os.sep, "/"))
     return pages
 
 
@@ -257,7 +259,7 @@ def check_repositories():
            f"and each but the SDK has a players/ page (en, ja)")
 
 
-SIBLING_REF = re.compile(r"github\.com/cri-middleware/([A-Za-z0-9_.-]+)/(blob|tree)/([^/\s)>\"'`]+)/([^\s)>\"'`#]*)")
+SIBLING_REF = re.compile(r"github\.com/cri-middleware/([A-Za-z0-9_.-]+)/(blob|tree)/([^/\s)>\"'`#]+)(?:/([^\s)>\"'`#]*))?")
 
 
 def sibling_links():
@@ -265,7 +267,7 @@ def sibling_links():
     for path in tracked("*.md", "*.yml", "*.html"):
         for i, line in enumerate(read(path).split("\n"), 1):
             for m in SIBLING_REF.finditer(line):
-                links.append((path, i) + m.groups())
+                links.append((path, i) + m.groups(""))
     return links
 
 
