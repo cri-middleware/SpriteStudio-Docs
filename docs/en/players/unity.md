@@ -14,7 +14,9 @@ It runs on both URP and BRP.
 
 **2. `.sspj` -> `.ssab`** - open **Window > SpriteStudio > Importer** and drag the `.sspj` in.
 `libssconverter` is bundled with the package, so there is no separate tool to install. After
-editing in SpriteStudio, **Reconvert** in the asset's Inspector updates it in place.
+editing in SpriteStudio, **Reconvert** in the asset's Inspector updates it in place. Both convert
+on Windows and macOS Editors; on a Linux Editor, use
+[`ssconverter-cli`](../overview/convert-with-a-standalone-tool.md) instead.
 
 **3. Getting it on screen** - drag the generated `SpriteStudioAnimeAsset` from the Project
 window into the Hierarchy, pick **SpriteStudioPlayer** (world space) or **SpriteStudioGraphic
