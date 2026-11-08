@@ -80,6 +80,39 @@ def tracked(*patterns):
         return sorted(found)
 
 
+_paths = {}
+
+
+def paths_in(clone):
+    """Every file and directory git has in a clone, spelled as git spells it.
+
+    Asked of git rather than the disk: a case-insensitive disk finds a path written
+    with the wrong case, and the disk finds untracked files, and GitHub and Pages
+    serve neither. This repository's own untracked pages count, as in tracked(), and
+    so does a walk of it when it is not a checkout; a sibling's git failing is fatal.
+    """
+    if clone not in _paths:
+        cmd = ["git", "-C", clone, "ls-files", "-z", "--cached"]
+        if clone == ROOT:
+            cmd += ["--others", "--exclude-standard"]
+        try:
+            listed = subprocess.check_output(cmd, stderr=subprocess.PIPE).decode("utf-8").split("\0")[:-1]
+            files = {f for f in listed if os.path.lexists(os.path.join(clone, f))}
+        except (OSError, subprocess.CalledProcessError) as e:
+            if clone != ROOT:
+                sys.exit(f"{APP}: cannot list the files git has in {clone}: {getattr(e, 'stderr', b'').decode().strip() or e}")
+            files = set()
+            for d, dirs, names in os.walk(clone):
+                dirs[:] = [x for x in dirs if x not in (".git", ".venv", "site", ".cache")]
+                files |= {os.path.relpath(os.path.join(d, n), clone).replace(os.sep, "/") for n in names}
+        found = set(files)
+        for f in files:
+            parts = f.split("/")[:-1]
+            found |= {"/".join(parts[:k]) for k in range(1, len(parts) + 1)}
+        _paths[clone] = found
+    return _paths[clone]
+
+
 def locale_pages(locale):
     base = os.path.join(ROOT, "docs", locale)
     pages = set()
@@ -279,7 +312,7 @@ def check_head_links(links):
 
 def check_deep_links(links):
     siblings = os.path.dirname(ROOT)
-    problems, resolved, missing_clone = [], 0, {}
+    problems, resolved, own, missing_clone = [], 0, 0, {}
     for p, i, repo, _, ref, sub in links:
         if ref != "HEAD":
             continue
@@ -287,15 +320,20 @@ def check_deep_links(links):
         if clone != ROOT and not os.path.exists(os.path.join(clone, ".git")):
             missing_clone[repo] = missing_clone.get(repo, 0) + 1
             continue
-        if os.path.exists(os.path.join(clone, sub.rstrip("/"))):
-            resolved += 1
+        if not sub.strip("/") or sub.strip("/") in paths_in(clone):
+            if clone == ROOT:
+                own += 1
+            else:
+                resolved += 1
         else:
-            problems.append(f"{p}:{i}: {repo} has no {sub} in the clone at {clone}")
+            problems.append(f"{p}:{i}: {repo} has no {sub} in git in the clone at {clone}")
     if not resolved and not problems:
-        skipped("deep links", f"no sibling repository is cloned next to this one ({siblings})")
+        mine = f"; links into this repository resolve ({own})" if own else ""
+        skipped("deep links", f"no sibling repository is cloned next to this one ({siblings}){mine}")
         return
     report("deep links", problems,
-           f"{resolved} paths exist in the local clones' working trees, which may not be on the default branch")
+           f"{resolved + own} paths are in git, as spelled, in the local clones, "
+           f"which may not be on the default branch")
     for repo, n in sorted(missing_clone.items()):
         skipped("deep links", f"{n} into {repo}: no clone at {os.path.join(siblings, repo)}")
 
@@ -330,7 +368,7 @@ def check_inbound_links():
                         continue
                     links += 1
                     pages = [f"docs/{loc}/{page}.md", f"docs/{loc}/{page}/index.md"] if page else [f"docs/{loc}/index.md"]
-                    md = next((c for c in pages if os.path.isfile(os.path.join(ROOT, c))), None)
+                    md = next((c for c in pages if c in paths_in(ROOT)), None)
                     if not md:
                         problems.append(f"{repo}/{path}:{i}: links {m.group(0)}, but there is no {pages[0]}")
                         continue
@@ -359,19 +397,19 @@ def sibling_site_has(clone, where):
     candidates += [f"{r}/{page}/index.md" if page else f"{r}/index.md" for r in roots]
     if not page:
         candidates.append("libs/ssruntime/docs/README.ja.md" if loc == "ja" else "libs/ssruntime/docs/README.md")
-    if any(os.path.isfile(os.path.join(clone, c)) for c in candidates):
+    files = paths_in(clone)
+    if any(c in files for c in candidates):
         return True
     if where == "ssconverter" or where.startswith("ssconverter/"):
-        versions = os.path.join(clone, "packages", "ssconverter-web", "versions.json")
-        if not os.path.isfile(versions):
+        versions = "packages/ssconverter-web/versions.json"
+        if versions not in files:
             return False
-        with open(versions, encoding="utf-8") as f:
+        with open(os.path.join(clone, versions), encoding="utf-8") as f:
             schemas = {v["schema"] for v in json.load(f)["versions"]}
         return where == "ssconverter" or where.split("/", 1)[1] in schemas
-    build_sh = os.path.join(clone, "scripts", "build-pages.sh")
-    if not where or not os.path.isfile(build_sh):
+    if not where or "scripts/build-pages.sh" not in files:
         return False
-    with open(build_sh, encoding="utf-8") as f:
+    with open(os.path.join(clone, "scripts", "build-pages.sh"), encoding="utf-8") as f:
         code = "\n".join(l for l in f.read().split("\n") if not l.lstrip().startswith("#"))
     return re.search(rf"(?:\bsite|\$\{{?OUT\}}?)/{re.escape(where)}(?![\w.-])", code) is not None
 
@@ -403,7 +441,7 @@ def check_outbound_links():
         skipped("outbound links", f"no sibling repository is cloned next to this one ({siblings})")
         return
     report("outbound links", problems,
-           f"{resolved} links to sibling sites match a page or demo in the local clones' working trees, "
+           f"{resolved} links to sibling sites match a page or demo in git, as spelled, in the local clones, "
            f"which may not be on the default branch")
     for repo, n in sorted(missing_clone.items()):
         skipped("outbound links", f"{n} into {repo}: no clone at {os.path.join(siblings, repo)}")
@@ -415,6 +453,7 @@ def check_outbound_links():
 JA = re.compile(r"[　-〿぀-ヿ㐀-䶿一-鿿！-･]")
 JA_PUNCT = re.compile(r"[　-〿！-／：-＠［-｀｛-･]")
 BLOCK_START = re.compile(r"^([-*+] |\d+\. |\||#|!!!|\?\?\?|>|```|<)")
+QUOTE = re.compile(r"^\s*(?:>\s?)+")
 LINK_START = re.compile(r"^[*_]*\[")
 LINK_END = re.compile(r"\]\([^()\s]*\)$")
 
@@ -441,12 +480,17 @@ def check_japanese_breaks():
         fence = comment = False
         for i in range(len(lines) - 1):
             a, b = lines[i], lines[i + 1]
-            if a.strip().startswith("```"):
+            qa, qb = QUOTE.match(a), QUOTE.match(b)
+            if a[qa.end():].strip().startswith("```") if qa else a.strip().startswith("```"):
                 fence = not fence
             if "<!--" in a:
                 comment = "-->" not in a.split("<!--", 1)[1]
             elif "-->" in a:
                 comment = False
+            if qa and qb:
+                if qa.group().count(">") != qb.group().count(">"):
+                    continue
+                a, b = a[qa.end():], b[qb.end():]
             if fence or comment or not a.strip() or not b.strip():
                 continue
             if a.strip().startswith(("#", "|", "!!!", "???")) or BLOCK_START.match(b.strip()):
@@ -470,6 +514,10 @@ def check_japanese_breaks():
 
 
 def main(argv):
+    # A console without UTF-8 would otherwise crash on the Japanese in a report, hiding it.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(errors="backslashreplace")
     if any(a in ("-h", "--help", "help") for a in argv):
         print(__doc__.strip())
         return 0
