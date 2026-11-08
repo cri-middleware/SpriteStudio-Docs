@@ -9,26 +9,19 @@
 #   scripts/build-pages.ps1 serve=yes    # ... and serve it on :8000
 #   scripts/build-pages.ps1 prepare=yes  # ... reinstalling the pinned toolchain first
 #
-# The published site here is the documentation and nothing else -- no demo, no
-# examples -- so this is scripts/build-docs.ps1 plus the two things a published
-# tree needs that a docs build on its own does not give you:
+# This is scripts/build-docs.ps1 plus the two things a published tree needs
+# that a docs build on its own does not give you:
 #
-#   1. The toolchain. prepare-docs.ps1 creates .venv and installs the pins from
-#      docs/requirements.txt, which is the step a fresh clone forgets. Here it
-#      runs only when no zensical is found (prepare=auto).
+#   1. The toolchain: prepare-docs.ps1, the step a fresh clone forgets.
 #   2. A server over the whole tree. `zensical serve` builds one locale at a
 #      time, so it cannot show you the header language selector resolving, and
-#      the site it serves is not the site that gets uploaded. One static server
-#      over site/ is what a reader meets.
+#      the site it serves is not the site that gets uploaded.
 #
-# `build-pages` means "build what pages.yml publishes" in every repository in
-# the SpriteStudio family. In the ones whose site carries a playable demo or the
-# API reference it carries them too; here there is nothing else to carry, and the
-# name still points at the same thing.
+# The name is shared across the SpriteStudio family; rename it in every
+# repository or in none.
 #
 # What this does NOT reproduce is the deploy job (actions/deploy-pages) -- there
-# is no local equivalent of publishing. Rerunning is safe; nothing here is
-# incremental.
+# is no local equivalent of publishing.
 $ErrorActionPreference = "Stop"
 
 $APP = Split-Path -Leaf $PSCommandPath
@@ -80,7 +73,6 @@ foreach ($item in $args) {
         if (-not $opts.Contains($key)) {
             Fail "unknown option '$key' (see $APP --help)" 2
         }
-        # Lower-cased where the option is a keyword; venv=/port= are not.
         $opts[$key] = if ($key -in "prepare", "serve") { $value.ToLower() } else { $value }
     } else {
         Fail "unknown argument '$item' (options are key=value; see $APP --help)" 2
@@ -149,8 +141,7 @@ try {
         "no" { }
     }
 
-    # Both locales, English first -- build-docs.ps1 owns that order, because the
-    # English build clears site/ and the Japanese site lives inside it at site/ja.
+    # Both locales, English first -- build-docs.ps1 owns that order.
     Step "build-docs.ps1 venv=$($opts.venv)" { & $buildScript "venv=$($opts.venv)" }
 } finally {
     Pop-Location

@@ -6,9 +6,7 @@
 #   scripts/prepare-docs.ps1           # .venv + docs/requirements.txt
 #   scripts/prepare-docs.ps1 force=yes # discard the venv and build it again
 #
-# This is the whole setup step. The portal has no Node, no submodule and no
-# native toolchain -- one Python environment builds the entire site -- so unlike
-# the player repos there is no download-sdk/build-runtime pair to run first.
+# This is the whole setup step.
 #
 # The pin in docs/requirements.txt is exact; CONTRIBUTING.md says when and how
 # it moves. Rerun this script after it changes -- pip installs the pinned
@@ -70,7 +68,6 @@ foreach ($item in $args) {
         if (-not $opts.Contains($key)) {
             Fail "unknown option '$key' (see $APP --help)" 2
         }
-        # Only the yes/no flag is case-folded; python= and venv= are paths.
         $opts[$key] = if ($key -eq "force") { $value.ToLower() } else { $value }
     } else {
         Fail "unknown argument '$item' (options are key=value; see $APP --help)" 2
@@ -167,9 +164,6 @@ Write-Host ">> installed:"
 # text, which is noise in a two-line version report.
 & $VENV_PY -m pip show zensical 2>$null | Where-Object { $_ -match '^(Name|Version):' }
 
-# Built from the layout that was actually probed above, and with Join-Path's
-# separator, so the hint is copy-pasteable on Windows and on macOS/Linux alike --
-# pwsh runs on all three.
 $serveHint = Join-Path (Join-Path $opts.venv (Split-Path -Leaf $VENV_BIN)) "zensical"
 
 Write-Host ""

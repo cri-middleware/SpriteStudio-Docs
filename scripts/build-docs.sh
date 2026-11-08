@@ -13,13 +13,8 @@
 #      order publishes a site with no Japanese pages at all.
 #   2. --strict, always. mkdocs.base.yml sets strict: true as well; the flag is
 #      spelled out here so the build stays strict if the config ever loses it.
-#   3. What --strict cannot see. scripts/check-docs.py runs first and fails the
-#      build on a page no nav names, the locales or their llms.txt sections
-#      drifting apart, and a Japanese line break that renders as a space.
-#
-# `zensical serve` is deliberately not wrapped: it validates nothing (--strict is
-# accepted and does nothing), it serves one locale at a time, and it is a
-# foreground process with no arguments worth defaulting.
+#   3. What --strict cannot see. scripts/check-docs.py runs first; its --help
+#      lists the checks.
 set -euo pipefail
 
 APP="$(basename "$0")"
@@ -91,8 +86,7 @@ echo "  venv   => $VENV"
 echo ""
 
 # --- preflight ------------------------------------------------------------
-# Same probe as prepare-docs.sh: bin/ everywhere, Scripts/ for a venv built by
-# the Windows launcher.
+# Scripts/ when a Windows Python made the venv, bin/ otherwise.
 VENV_DIR="$ROOT_DIR/$VENV"
 if [ -d "$VENV_DIR/Scripts" ]; then
   VENV_BIN="$VENV_DIR/Scripts"

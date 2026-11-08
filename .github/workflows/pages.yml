@@ -2,16 +2,9 @@ name: Publish docs via GitHub Pages
 
 on:
   # Publishing is manual: production is deployed by running this workflow
-  # (workflow_dispatch), and nothing else triggers it. The sibling player repos
-  # publish on `release: published` + dispatch; this portal cuts no releases, so
-  # dispatch is the whole story here. ci.yml builds the same tree on every pull
-  # request.
+  # (workflow_dispatch), and nothing else triggers it.
   workflow_dispatch:
 
-# Least privilege: the site is published via the Pages deployment API (OIDC),
-# not by pushing to a branch, so no `contents: write` is needed. Only the deploy
-# job gets what that deployment needs (pages: write, id-token: write); the build
-# job runs the repository's scripts and does not need them.
 permissions:
   contents: read
 
@@ -54,46 +47,19 @@ jobs:
           restore-keys: |
             zensical-
 
-      # Both steps below run the same scripts a contributor runs locally, and
-      # ci.yml runs on every pull request, rather than repeating the commands
-      # here. The fewer places the build is spelled out, the better:
-      # scripts/build-docs.sh owns the locale order and the --strict
-      # flag, scripts/build-pages.sh owns the tree this job uploads, and this
-      # workflow just calls them.
-      #
-      # prepare-docs.sh creates .venv and installs the pins from
-      # docs/requirements.txt; build-pages.sh then finds zensical there. (It falls
-      # back to PATH when there is no venv, so a `pip install -r
-      # docs/requirements.txt` step would still work here — but then CI and a
-      # local build would be running different things.) It stays a step of its own so a
-      # dependency failure is legible as one in the run summary, which is also why
-      # build-pages.sh is invoked below with prepare=no.
+      # A step of its own so a dependency failure is legible as one in the run
+      # summary, which is also why build-pages.sh is invoked below with prepare=no.
       - name: Install dependencies
         run: ./scripts/prepare-docs.sh
 
-      # scripts/build-pages.sh is the tree this job uploads. Here that is the two
-      # locale builds and nothing else — the site carries no demo and no examples
-      # — so it runs build-docs.sh and adds only what a working tree needs on top
-      # (the toolchain, and a server to look at the result). It is the same
-      # command in every repository in the family, whatever else that
-      # repository's site carries.
-      #
-      # One build per locale, English first: the English build wipes site/ and
-      # the Japanese site lives inside it at site/ja.
-      #
-      # --strict fails on broken links, so a publish aborts
-      # rather than deploying a site with a dead link.
-      #
       # Every option is spelled out rather than left to the script's defaults:
       # they are chosen for a working tree, and a publish should not change
       # because one of them did.
       - name: Build the Pages tree (docs, both locales, strict validation)
         run: ./scripts/build-pages.sh prepare=no serve=no
 
-      # v4 stopped including dotfiles in the artifact. Nothing here is affected —
-      # a Zensical build emits no hidden files (no .nojekyll either; the artifact
-      # deployment does not run Jekyll) — but if one ever appears, the fix is
-      # `include-hidden-files: true`, not a downgrade.
+      # Dotfiles are left out of the artifact; set include-hidden-files: true if
+      # the build ever emits one.
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:

@@ -2,11 +2,11 @@ name: CI
 
 # The site is all this repository builds, so every pull request builds it the way
 # pages.yml publishes it: both locales, --strict, so a broken link fails the PR.
-# The weekly run builds main, is what writes the caches PRs restore from, and
-# checks the external links.
+# The weekly run builds main, saves the cache PRs restore from, and checks the
+# external links.
 on:
   pull_request:
-    # Unlike the sibling repositories, Markdown is not ignored: it is the content.
+    # Markdown is not ignored: it is the content.
     paths-ignore:
       - '.gitignore'
       - 'LICENSE*'
@@ -71,8 +71,7 @@ jobs:
     name: 🔗 External links
     # The weekly run and a dispatch only: --strict checks the internal links on
     # every pull request, and a site that goes down mid-review is not the pull
-    # request's fault. Links inside code blocks are examples, not links, and
-    # lychee skips them. A 503 is a site saying it is down for now, as a
+    # request's fault. A 503 is a site saying it is down for now, as a
     # maintenance page does, not a broken link, so it is accepted on top of
     # lychee's default.
     if: github.event_name != 'pull_request'
