@@ -36,7 +36,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
 
     Play back SpriteStudio animations in the Unity Engine, accelerated by the Job System.
 
-    [:octicons-arrow-right-24: Overview](./players/unity.md) |
+    :octicons-arrow-right-24: [Overview](./players/unity.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
 
@@ -47,7 +47,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
     A collection of browser players - PixiJS, framework-free WebGL, RPG Maker MZ, TyranoScript,
     TyranoBuilder - plus a client-side converter (ssconverter-web).
 
-    [:octicons-arrow-right-24: Overview](./players/web.md) |
+    :octicons-arrow-right-24: [Overview](./players/web.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
 
@@ -57,7 +57,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
 
     Render SpriteStudio animations natively in Godot - available as both a GDExtension and a custom module.
 
-    [:octicons-arrow-right-24: Overview](./players/godot.md) |
+    :octicons-arrow-right-24: [Overview](./players/godot.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
 
@@ -67,7 +67,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
 
     Play SpriteStudio animations in Flutter apps via a `SpriteStudioAnimation` widget.
 
-    [:octicons-arrow-right-24: Overview](./players/flutter.md) |
+    :octicons-arrow-right-24: [Overview](./players/flutter.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForFlutter/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
 
@@ -77,7 +77,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
 
     Bring SpriteStudio characters into Ren'Py visual novels.
 
-    [:octicons-arrow-right-24: Overview](./players/renpy.md) |
+    :octicons-arrow-right-24: [Overview](./players/renpy.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
@@ -88,7 +88,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
     A player that renders through wgpu, which puts WebGPU, Vulkan, DX12 and Metal behind one
     API - so the same player runs on any of them.
 
-    [:octicons-arrow-right-24: Overview](./players/wgpu.md) |
+    :octicons-arrow-right-24: [Overview](./players/wgpu.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
 
@@ -99,7 +99,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
     Play SpriteStudio animations in React Native apps through a `<SpriteStudioView>`
     component, drawn natively via Skia.
 
-    [:octicons-arrow-right-24: Overview](./players/react-native.md) |
+    :octicons-arrow-right-24: [Overview](./players/react-native.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForReactNative/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
 
@@ -109,7 +109,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
 
     A desktop app for converting `.sspj` projects into runtime-ready assets.
 
-    [:octicons-arrow-right-24: Overview](./players/converter.md) |
+    :octicons-arrow-right-24: [Overview](./players/converter.md) |
     [Docs](https://cri-middleware.github.io/SSConverterGUI/) |
     [GitHub](https://github.com/cri-middleware/SSConverterGUI)
 
@@ -120,7 +120,7 @@ single parts while the animation plays - see [Changing a Character at Runtime](.
     The shared Rust core (`libssruntime` / `libssconverter`) every player builds on.
     Includes a full **Player Porting Guide** for new engines.
 
-    [:octicons-arrow-right-24: Concepts](./sdk/concepts.md) |
+    :octicons-arrow-right-24: [Concepts](./sdk/concepts.md) |
     [Porting](./sdk/porting.md) |
     [Docs](https://cri-middleware.github.io/SpriteStudio-SDK/) |
     [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)

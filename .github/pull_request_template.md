@@ -1,6 +1,5 @@
 <!--
-Thanks for contributing! See CONTRIBUTING.md for the constraints this project works under
-(both locales, claims sourced from the sibling repositories, links into them through `HEAD`).
+Thanks for contributing! See CONTRIBUTING.md for the constraints this project works under.
 CONTRIBUTING.md に本プロジェクトの制約が記載されています。日本語でも英語でも構いません。
 -->
 

@@ -1,15 +1,10 @@
-# Build output (both locales; the ja build writes into site/ja)
 /site/
 /qa/
-# Python
 .venv/
 __pycache__/
 *.pyc
-# Build cache
 .cache/
-# macOS
 .DS_Store
-# Secrets
 *.env
 *.pfx
 

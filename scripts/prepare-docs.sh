@@ -5,9 +5,7 @@
 #   scripts/prepare-docs.sh            # .venv + docs/requirements.txt
 #   scripts/prepare-docs.sh force=yes  # discard the venv and build it again
 #
-# This is the whole setup step. The portal has no Node, no submodule and no
-# native toolchain -- one Python environment builds the entire site -- so unlike
-# the player repos there is no download-sdk/build-runtime pair to run first.
+# This is the whole setup step.
 #
 # The pin in docs/requirements.txt is exact; CONTRIBUTING.md says when and how
 # it moves. Rerun this script after it changes -- pip installs the pinned
@@ -62,7 +60,6 @@ while [ $# -gt 0 ]; do
       case "$key" in
         python) PYTHON="$value" ;;
         venv)   VENV="$value" ;;
-        # Lower-cased, because this one is a yes/no flag rather than a path.
         force)  FORCE="$(printf '%s' "$value" | tr '[:upper:]' '[:lower:]')" ;;
         *)
           echo "$APP: unknown option '$key' (see $APP --help)" >&2
@@ -159,8 +156,6 @@ echo ""
 echo ">> installed:"
 "$VENV_PY" -m pip show zensical 2>/dev/null | grep -E '^(Name|Version):' || true
 
-# Built from the layout probed above rather than assuming bin/, so the hint is
-# right under Git Bash too, where the venv may well be a Scripts/ one.
 SERVE_HINT="$VENV/$(basename "$VENV_BIN")/zensical"
 
 echo ""

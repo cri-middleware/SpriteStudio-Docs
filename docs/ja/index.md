@@ -26,7 +26,7 @@
 
     Unity Engine 上で SpriteStudio アニメーションを再生。Job System で高速動作します。
 
-    [:octicons-arrow-right-24: 概要](./players/unity.md) |
+    :octicons-arrow-right-24: [概要](./players/unity.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForUnity)
 
@@ -36,7 +36,7 @@
 
     ブラウザ向け Player 群（PixiJS・フレームワーク非依存 WebGL・RPG ツクール MZ・TyranoScript・ティラノビルダー）と、クライアントサイド変換ツール（ssconverter-web）のコレクション。
 
-    [:octicons-arrow-right-24: 概要](./players/web.md) |
+    :octicons-arrow-right-24: [概要](./players/web.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWeb)
 
@@ -46,7 +46,7 @@
 
     Godot で SpriteStudio アニメーションをネイティブに描画。GDExtension とカスタムモジュールの両方で提供。
 
-    [:octicons-arrow-right-24: 概要](./players/godot.md) |
+    :octicons-arrow-right-24: [概要](./players/godot.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForGodot)
 
@@ -56,7 +56,7 @@
 
     `SpriteStudioAnimation` ウィジェットで Flutter アプリに SpriteStudio アニメーションを再生。
 
-    [:octicons-arrow-right-24: 概要](./players/flutter.md) |
+    :octicons-arrow-right-24: [概要](./players/flutter.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForFlutter)
 
@@ -66,7 +66,7 @@
 
     Ren'Py 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。
 
-    [:octicons-arrow-right-24: 概要](./players/renpy.md) |
+    :octicons-arrow-right-24: [概要](./players/renpy.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForRenPy)
 
@@ -76,7 +76,7 @@
 
     wgpu で描画する Player。wgpu が WebGPU・Vulkan・DX12・Metal の違いを吸収するため、同じ Player がどのバックエンドでも動きます。
 
-    [:octicons-arrow-right-24: 概要](./players/wgpu.md) |
+    :octicons-arrow-right-24: [概要](./players/wgpu.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForWgpu)
 
@@ -87,7 +87,7 @@
     React Native アプリで SpriteStudio アニメーションを再生します。`<SpriteStudioView>`
     コンポーネントを配置するだけで、描画は Skia 経由でネイティブ側が担当します。
 
-    [:octicons-arrow-right-24: 概要](./players/react-native.md) |
+    :octicons-arrow-right-24: [概要](./players/react-native.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForReactNative/ja/) |
     [GitHub](https://github.com/cri-middleware/SSPlayerForReactNative)
 
@@ -97,7 +97,7 @@
 
     `.sspj` プロジェクトをランタイム用アセットへ変換するデスクトップアプリ。
 
-    [:octicons-arrow-right-24: 概要](./players/converter.md) |
+    :octicons-arrow-right-24: [概要](./players/converter.md) |
     [ドキュメント](https://cri-middleware.github.io/SSConverterGUI/ja/) |
     [GitHub](https://github.com/cri-middleware/SSConverterGUI)
 
@@ -107,7 +107,7 @@
 
     全 Player の基盤となる共通 Rust コア（`libssruntime` / `libssconverter`）。新規エンジン向けの **Player 移植ガイド**を同梱。
 
-    [:octicons-arrow-right-24: コンセプト](./sdk/concepts.md) |
+    :octicons-arrow-right-24: [コンセプト](./sdk/concepts.md) |
     [移植](./sdk/porting.md) |
     [ドキュメント](https://cri-middleware.github.io/SpriteStudio-SDK/ja/) |
     [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)

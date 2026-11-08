@@ -22,12 +22,8 @@ docs/
   en/ , ja/          # ロケールごとに1フォルダー、ロケールごとに1設定ファイル
     assets/          # favicon（ロケールごとにコピーを持ちます）
     index.md         # ランディングページ（製品カード）
-    overview/        # ecosystem, choose-your-platform, player-differences,
-                     #   try-it, conversion, convert-with-a-standalone-tool,
-                     #   motion-blending, ui-integration, runtime-changes,
-                     #   ai-assistants
-    sdk/             # concepts, glossary, format-spec, limitations, porting
-                     #   （横断的な正典）
+    overview/        # 横断的なガイド（Player の選び方から Player 間の違いまで）
+    sdk/             # 横断的な SDK の正典
     players/         # 各 Player のドキュメントへリンクする薄い入口ページ
     support.md
     license.md
@@ -48,7 +44,7 @@ mkdocs.ja.yml                 # 日本語 -> site/ja/
 
 すべてのページは `en/` と `ja/` の**両方**に存在し、各ロケールはそれぞれの設定ファイルからビルドされます。`mkdocs.yml` と `mkdocs.ja.yml` は `mkdocs.base.yml` から共通設定を継承し、差分だけを持ちます — ドキュメントディレクトリ、出力先、サイト URL、言語、そしてその言語で書いたナビゲーションと `llms.txt` の目次です。
 
-サイトの生成には [Zensical](https://zensical.org)（MkDocs + Material for MkDocs の後継。開発チームは同じ）を使用しています。設定ファイルは MkDocs の設定としても有効なままなので、エンジンを比較したい場合は `mkdocs-material` でも同じサイトをビルドできます。
+サイトの生成には [Zensical](https://zensical.org)（MkDocs + Material for MkDocs の後継。開発チームは同じ）を使用しています。
 
 ## 貢献について
 

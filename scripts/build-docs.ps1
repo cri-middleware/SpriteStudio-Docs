@@ -14,13 +14,8 @@
 #      order publishes a site with no Japanese pages at all.
 #   2. --strict, always. mkdocs.base.yml sets strict: true as well; the flag is
 #      spelled out here so the build stays strict if the config ever loses it.
-#   3. What --strict cannot see. scripts/check-docs.py runs first and fails the
-#      build on a page no nav names, the locales or their llms.txt sections
-#      drifting apart, and a Japanese line break that renders as a space.
-#
-# `zensical serve` is deliberately not wrapped: it validates nothing (--strict is
-# accepted and does nothing), it serves one locale at a time, and it is a
-# foreground process with no arguments worth defaulting.
+#   3. What --strict cannot see. scripts/check-docs.py runs first; its --help
+#      lists the checks.
 $ErrorActionPreference = "Stop"
 
 $APP = Split-Path -Leaf $PSCommandPath
@@ -68,7 +63,6 @@ foreach ($item in $args) {
         if (-not $opts.Contains($key)) {
             Fail "unknown option '$key' (see $APP --help)" 2
         }
-        # Only the locale is an enum; venv= is a path.
         $opts[$key] = if ($key -eq "locale") { $value.ToLower() } else { $value }
     } else {
         Fail "unknown argument '$item' (options are key=value; see $APP --help)" 2
@@ -88,7 +82,7 @@ Write-Host "  venv   => $($opts.venv)"
 Write-Host ""
 
 # --- preflight ------------------------------------------------------------
-# Same probe as prepare-docs.ps1: Scripts/ on Windows, bin/ everywhere else.
+# Scripts/ when a Windows Python made the venv, bin/ otherwise.
 $VENV_DIR = Join-Path $ROOT_DIR $opts.venv
 $VENV_BIN = if (Test-Path (Join-Path $VENV_DIR "Scripts")) {
     Join-Path $VENV_DIR "Scripts"
