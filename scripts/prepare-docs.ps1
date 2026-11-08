@@ -48,7 +48,7 @@ function Show-Usage {
     Write-Host "Usage: $APP [options]"
     Write-Host "$APP options:"
     Write-Host "  python=<exe>            Interpreter to create the venv with, Python $MIN_PYTHON or"
-    Write-Host "                          later (default: py)"
+    Write-Host "                          later (default: py, or python3 where there is no py)"
     Write-Host "  venv=<dir>              Virtualenv location, relative to the repo root"
     Write-Host "                          (default: .venv)"
     Write-Host "  force=<yes|no>          Delete an existing venv and recreate it, rather than"

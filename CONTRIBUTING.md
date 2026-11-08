@@ -63,7 +63,7 @@ If you can only write one language confidently, say so in the PR; a maintainer c
 ### Navigation lives in the two locale configs
 There is a `nav:` tree in `mkdocs.yml` (English) and another in `mkdocs.ja.yml` (Japanese). Both use locale-relative paths (`sdk/glossary.md`, no `en/` or `ja/` prefix) and the two must stay identical in structure - only the labels differ, written directly in the language rather than looked up from a translation map. Add a page to one and forget the other, and `scripts/check-docs.py` fails the build. Each locale config also carries that locale's `llms.txt` index, `llmstxt.sections`, written in its language: it names every nav page in nav order, and the same check holds it to that.
 
-Settings shared by both locales live in `mkdocs.base.yml`, which the two inherit. One rule governs what may go where: **a YAML sequence must be defined in exactly one of the three files.** Zensical's `INHERIT` concatenates sequences rather than replacing them, so a `nav` in the base as well as a locale config renders both navigations, one after the other.
+Settings shared by both locales live in `mkdocs.base.yml`, which the two inherit. One rule governs what may go where: **a YAML sequence is defined either in the base or in the locale configs, never in both.** `INHERIT` merges mappings key by key, but a locale config's sequence replaces the base's whole, so the base's entries of a sequence both define silently disappear.
 
 ### Links
 - **Internal links** are relative file paths ending in `.md` (e.g. `../sdk/concepts.md`). `--strict` validates these.
@@ -144,7 +144,7 @@ Windows では実行ファイルは `.\.venv\Scripts\zensical` です。
 ### ナビゲーションは2つのロケール設定に
 `nav:` は `mkdocs.yml`（英語）と `mkdocs.ja.yml`（日本語）にそれぞれあります。どちらもロケール相対のパス（`sdk/glossary.md` のように `en/` や `ja/` を付けない）を使い、構造は完全に一致させてください。異なるのはラベルだけで、翻訳マップを介さず各言語で直接書きます。片方に追加してもう片方を忘れると、`scripts/check-docs.py` がビルドを失敗させます。各ロケールの設定ファイルには、そのロケールの `llms.txt` の目次（`llmstxt.sections`）もその言語で書かれています。nav のすべてのページを nav と同じ順に並べ、同じチェックがそれを確かめます。
 
-両ロケール共通の設定は `mkdocs.base.yml` にあり、2つの設定ファイルがこれを継承します。どこに何を書けるかは1つのルールで決まります — **YAML の配列は3ファイルのうち必ず1つにだけ定義すること。** Zensical の `INHERIT` は配列を置き換えではなく連結するため、base とロケール設定の両方に `nav` を置くと、2つのナビが続けて描画されます。
+両ロケール共通の設定は `mkdocs.base.yml` にあり、2つの設定ファイルがこれを継承します。どこに何を書けるかは1つのルールで決まります — **YAML の配列は base とロケール設定のどちらか一方にだけ定義し、両方には書かないこと。** `INHERIT` はマッピングをキーごとにマージしますが、配列はロケール設定のものが base のものを丸ごと置き換えるため、両方にある配列の base 側の項目は黙って消えます。
 
 ### リンク
 - **内部リンク**は `.md` で終わる相対パス（例: `../sdk/concepts.md`）。`--strict` が検証します。
