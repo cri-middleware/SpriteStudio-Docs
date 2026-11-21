@@ -1,0 +1,13 @@
+{
+  "name": "spritestudio",
+  "displayName": "SpriteStudio",
+  "description": "Drawn 2D character and effect animation, played by free, open-source players in Godot, Unity, the web, Ren'Py, Flutter, React Native and Rust.",
+  "author": {
+    "name": "CRI Middleware Co., Ltd.",
+    "url": "https://cri-middleware.github.io/SpriteStudio-Docs/"
+  },
+  "homepage": "https://cri-middleware.github.io/SpriteStudio-Docs/",
+  "repository": "https://github.com/cri-middleware/SpriteStudio-Docs",
+  "license": "BSD-3-Clause",
+  "keywords": ["spritestudio", "animation", "sprite"]
+}

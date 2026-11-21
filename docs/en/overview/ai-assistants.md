@@ -1,6 +1,26 @@
 # 🤖 Using with AI Assistants
 
-Every official site publishes its documentation as Markdown too, so you can hand it to an AI assistant instead of pasting pages one by one. This page says where the Markdown is, how to point an assistant at it, and how an assistant converts a project.
+Every official site publishes its documentation as Markdown too, so you can hand it to an AI assistant instead of pasting pages one by one. This page covers a plugin that tells an assistant about SpriteStudio, where the Markdown is, how to point an assistant at it, and how an assistant converts a project.
+
+## 🔌 A plugin for your assistant
+
+The SpriteStudio plugin tells a coding assistant when SpriteStudio fits a project and which player to use, and sends it to the pages it needs. It works before any player package is installed; once one is, the documentation inside the package, described below, matches the installed version.
+
+In Claude Code:
+
+```
+/plugin install spritestudio --marketplace cri-middleware/SpriteStudio-Docs
+```
+
+On Claude Code older than 2.1.275, run `/plugin marketplace add cri-middleware/SpriteStudio-Docs` and then `/plugin install spritestudio@spritestudio`. The plugin follows this site's repository. To receive its changes, turn on auto-update for the `spritestudio` marketplace in `/plugin`, or run `claude plugin update spritestudio@spritestudio`.
+
+In the Antigravity CLI:
+
+```
+agy plugin install https://github.com/cri-middleware/SpriteStudio-Docs/tree/main/plugins/spritestudio
+```
+
+Run the same command again to update it.
 
 ## 🔗 What each site serves
 

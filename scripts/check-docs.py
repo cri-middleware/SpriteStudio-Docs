@@ -6,11 +6,12 @@
 --strict fails a broken internal link or anchor, but not a nav entry that names
 a missing page. It says nothing about a page that no nav names, a locale that
 has drifted from the other, an llms.txt index that has lost a page, the lists of
-repositories disagreeing, a link into a repository that names a branch or a path
-its clone does not have, a link from a sibling's docs into this site that lands
-on no page or on an anchor no heading names with an explicit id, a link from
-this site to a page or demo a sibling's site does not build, or a Japanese line
-break the browser renders as a space. This script checks those.
+repositories disagreeing, a link into a repository that names a branch (outside
+a code block, where a command may need one) or a path its clone does not have, a link from a sibling's docs or from the agent plugin
+into this site that lands on no page (or, from a sibling, on an anchor no heading
+names with an explicit id), a link from this site to a page or demo a sibling's
+site does not build, or a Japanese line break the browser renders as a space.
+This script checks those.
 
 scripts/build-docs.sh and build-docs.ps1 run it before building, so CI and a
 publish run it too. It needs only the standard library, so any Python 3 on PATH
@@ -295,26 +296,41 @@ def check_repositories():
 SIBLING_REF = re.compile(r"github\.com/cri-middleware/([A-Za-z0-9_.-]+)/(blob|tree)/([^/\s)>\"'`#]+)(?:/([^\s)>\"'`#]*))?")
 
 
+FENCE = re.compile(r"^\s*(?:>\s?)*```")
+
+
 def sibling_links():
+    """Links into the repositories, each marked whether it sits in a fenced code block.
+
+    A URL in a code block is a command's argument, not a link a reader follows, so it
+    spells whatever ref the command's tool accepts.
+    """
     links = []
     for path in tracked("*.md", "*.yml", "*.html"):
+        fenced = False
         for i, line in enumerate(read(path).split("\n"), 1):
+            if path.endswith(".md") and FENCE.match(line):
+                fenced = not fenced
+                continue
             for m in SIBLING_REF.finditer(line):
-                links.append((path, i) + m.groups(""))
+                links.append((path, i, fenced) + m.groups(""))
     return links
 
 
 def check_head_links(links):
     problems = [f"{p}:{i}: {repo}/{kind}/{ref}/ -- write {kind}/HEAD/, not a branch"
-                for p, i, repo, kind, ref, _ in links if ref != "HEAD"]
-    report("links use HEAD", problems, f"{len(links)} links into repositories go through blob/HEAD or tree/HEAD")
+                for p, i, fenced, repo, kind, ref, _ in links if ref != "HEAD" and not fenced]
+    commands = sum(1 for _, _, fenced, _, _, ref, _ in links if fenced and ref != "HEAD")
+    report("links use HEAD", problems,
+           f"{len(links) - commands} links into repositories go through blob/HEAD or tree/HEAD, "
+           f"and {commands} in code blocks name the branch a command needs")
 
 
 def check_deep_links(links):
     siblings = os.path.dirname(ROOT)
     problems, resolved, own, missing_clone = [], 0, 0, {}
-    for p, i, repo, _, ref, sub in links:
-        if ref != "HEAD":
+    for p, i, fenced, repo, _, ref, sub in links:
+        if ref != "HEAD" and not fenced:
             continue
         clone = ROOT if repo == "SpriteStudio-Docs" else os.path.join(siblings, repo)
         if clone != ROOT and not os.path.exists(os.path.join(clone, ".git")):
@@ -342,6 +358,13 @@ PORTAL_LINK = re.compile(r"cri-middleware\.github\.io/SpriteStudio-Docs/([^\s)>\
 EXPLICIT_ID = re.compile(r"^#{1,6} .*\{[^}]*#([^\s}]+)[^}]*\}\s*$")
 
 
+def portal_page(where):
+    """The Markdown file behind a page of this site, or None, and the file it would most likely be."""
+    loc, page = ("ja", where[3:]) if where == "ja" or where.startswith("ja/") else ("en", where)
+    pages = [f"docs/{loc}/{page}.md", f"docs/{loc}/{page}/index.md"] if page else [f"docs/{loc}/index.md"]
+    return next((c for c in pages if c in paths_in(ROOT)), None), pages[0]
+
+
 def check_inbound_links():
     """What the sibling repositories link to on this site: a page, and an anchor a heading names.
 
@@ -363,14 +386,12 @@ def check_inbound_links():
             for i, line in enumerate(lines, 1):
                 for m in PORTAL_LINK.finditer(line):
                     where, anchor = m.group(1).strip("/"), m.group(2)
-                    loc, page = ("ja", where[3:]) if where == "ja" or where.startswith("ja/") else ("en", where)
-                    if "." in page.rsplit("/", 1)[-1]:
+                    if "." in where.rsplit("/", 1)[-1]:
                         continue
                     links += 1
-                    pages = [f"docs/{loc}/{page}.md", f"docs/{loc}/{page}/index.md"] if page else [f"docs/{loc}/index.md"]
-                    md = next((c for c in pages if c in paths_in(ROOT)), None)
+                    md, likely = portal_page(where)
                     if not md:
-                        problems.append(f"{repo}/{path}:{i}: links {m.group(0)}, but there is no {pages[0]}")
+                        problems.append(f"{repo}/{path}:{i}: links {m.group(0)}, but there is no {likely}")
                         continue
                     if anchor:
                         anchors += 1
@@ -385,6 +406,28 @@ def check_inbound_links():
     report("inbound links", problems,
            f"{links} links from {clones} sibling clones land on a page, and the {anchors} with an anchor "
            f"on a heading's explicit id")
+
+
+def check_plugin_links():
+    """What the agent plugin links to on this site: a page the site builds.
+
+    An installed copy of the plugin is not rebuilt with the site, so a page it names
+    has to keep existing. Links to files the build makes (llms.txt) are left out,
+    and anchors are not checked.
+    """
+    problems, links = [], 0
+    files = [p for p in tracked("plugins/*.md") if p.startswith("plugins/")]
+    for path in files:
+        for i, line in enumerate(read(path).split("\n"), 1):
+            for m in PORTAL_LINK.finditer(line):
+                where = m.group(1).strip("/")
+                if "." in where.rsplit("/", 1)[-1]:
+                    continue
+                links += 1
+                md, likely = portal_page(where)
+                if not md:
+                    problems.append(f"{path}:{i}: links {m.group(0)}, but there is no {likely}")
+    report("plugin links", problems, f"{links} links from {len(files)} plugin files land on a page of this site")
 
 
 SIBLING_SITE_LINK = re.compile(r"cri-middleware\.github\.io/([A-Za-z0-9_.-]+)/([^\s)>\"'`#]*)")
@@ -534,6 +577,7 @@ def main(argv):
     check_head_links(links)
     check_deep_links(links)
     check_inbound_links()
+    check_plugin_links()
     check_outbound_links()
     check_japanese_breaks()
     print(f"{APP}: {'FAILED -- ' + str(failures) + ' check(s)' if failures else 'done'}")
