@@ -52,8 +52,9 @@ repository, so `docs/*/players/` pages stay thin — a short description and lin
     SpriteStudio fits and links to the pages that say the rest, because an installed copy is not
     rebuilt with the site; `scripts/check-docs.py` checks that those links land on a page. Neither its
     `plugin.json` nor `.claude-plugin/marketplace.json` sets `version`: without one, users follow
-    `main`, and with one they receive nothing until it changes. Antigravity installs the plugin from its
-    folder on `main` and converts the Claude Code manifest, so there is no second manifest to keep in step.
+    `main`, and with one they receive nothing until it changes. Codex and Copilot CLI read the
+    `.claude-plugin/` manifests as they are, and Antigravity converts them when it installs the plugin
+    from its folder on `main`, so there is no second manifest to keep in step.
 *   **`sdk/limitations.md` holds one altitude**: four `##` buckets with emoji (playback, what the player
     supplies, rendering, shipping), and every constraint a `###` without one inside a bucket.
     **`overview/player-differences.md` is a one-line-per-player table over one `###` per player**; an
