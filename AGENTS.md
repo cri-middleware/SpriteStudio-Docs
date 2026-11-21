@@ -33,9 +33,9 @@ repository, so `docs/*/players/` pages stay thin — a short description and lin
 
 ## Invariants
 
-*   **Three folders per locale, one nav section each**, one-to-one: `overview/` → 🗺️ Overview, `players/`
-    → 🎮 Players & Tools, `sdk/` → 🛠️ SDK & Development, and the root's `index.md` / `support.md` /
-    `license.md` → ℹ️ Support & License.
+*   **Four folders per locale, one nav section each**, one-to-one: `overview/` → 🗺️ Overview, `players/`
+    → 🎮 Players & Tools, `ai/` → 🤖 AI Assistants, `sdk/` → 🛠️ SDK & Development, and the root's
+    `index.md` / `support.md` / `license.md` → ℹ️ Support & License.
 *   **A `players/` page answers four questions in order**: what you install, how a `.sspj` becomes a
     `.ssab`, how it gets on screen, and where to read next: the player's documentation site, its
     repository, and one page of this portal. An admonition above them names the shape — **editor-first**
@@ -55,6 +55,10 @@ repository, so `docs/*/players/` pages stay thin — a short description and lin
     `main`, and with one they receive nothing until it changes. Codex and Copilot CLI read the
     `.claude-plugin/` manifests as they are, and Antigravity converts them when it installs the plugin
     from its folder on `main`, so there is no second manifest to keep in step.
+*   **A page that moves leaves a redirect, and the redirect stays.** Map the old path to the new one in
+    `redirect_maps` in both configs; `scripts/check-docs.py` checks that the maps match and end on a page.
+    The old URL lives on where no release reaches: installed copies of the plugin, the READMEs at the
+    sibling repositories' release tags, and links from outside.
 *   **`sdk/limitations.md` holds one altitude**: four `##` buckets with emoji (playback, what the player
     supplies, rendering, shipping), and every constraint a `###` without one inside a bucket.
     **`overview/player-differences.md` is a one-line-per-player table over one `###` per player**; an
