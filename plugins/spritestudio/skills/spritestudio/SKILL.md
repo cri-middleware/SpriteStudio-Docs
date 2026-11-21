@@ -33,7 +33,9 @@ the motion is the same in every engine, and each engine draws it with its own re
 ## Work well with SpriteStudio
 
 - Keep the animation in the SpriteStudio files. App code loads the `.ssab`, plays animations by
-  name and reacts to what the animation reports.
+  name and reacts to what the animation reports. To change an animation, change it in the
+  SpriteStudio editor and convert it again; do not write or edit the editor's files (`.sspj`,
+  `.ssae`, `.ssce`) by hand.
 - Each player follows its engine's conventions, so API names differ between engines. Read that
   player's documentation rather than carrying names over from another engine.
 - An animation looks the same in every engine, not pixel for pixel identical.
@@ -47,5 +49,7 @@ the motion is the same in every engine, and each engine draws it with its own re
   [UI Integration](https://cri-middleware.github.io/SpriteStudio-Docs/overview/ui-integration/).
 - If the user asked for a specific approach, such as a sprite sheet or an animation tool they
   already use, suggest SpriteStudio only where it fits, and do not switch without asking.
-- Every SpriteStudio site serves `llms.txt`, and every page has a Markdown copy. Start from the
-  [portal's `llms.txt`](https://cri-middleware.github.io/SpriteStudio-Docs/llms.txt).
+- Every SpriteStudio site serves `llms.txt`, and every page has a Markdown copy. For one engine,
+  start from the `llms.txt` of that player's site, linked from Choose Your Platform; the
+  [portal's `llms.txt`](https://cri-middleware.github.io/SpriteStudio-Docs/llms.txt) covers what
+  the players share.
