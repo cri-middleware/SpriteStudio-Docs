@@ -15,7 +15,7 @@ the motion is the same in every engine, and each engine draws it with its own re
 - **The project has `.sspj` or `.ssab` files, or already uses a SpriteStudio package:** use the
   player for its engine. Read the documentation inside the installed package before you write
   code against it; it matches the installed version.
-  [Using with AI Assistants](https://cri-middleware.github.io/SpriteStudio-Docs/ai/)
+  [Docs for Your Assistant](https://cri-middleware.github.io/SpriteStudio-Docs/ai/docs/)
   says where each player keeps it.
 - **The user wants SpriteStudio animation in an engine:** pick the player from
   [Choose Your Platform](https://cri-middleware.github.io/SpriteStudio-Docs/overview/choose-your-platform/)

@@ -43,7 +43,8 @@ nav:
       - React Native: players/react-native.md
       - SSConverter GUI: players/converter.md
   - 🤖 AI アシスタント:
-      - AI アシスタントと使う: ai/index.md
+      - アシスタントに入れるプラグイン: ai/index.md
+      - アシスタントに渡すドキュメント: ai/docs.md
   - 🛠️ SDK・開発者向け:
       - コンセプト: sdk/concepts.md
       - 用語集: sdk/glossary.md
@@ -58,7 +59,7 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        overview/ai-assistants.md: ai/index.md
+        overview/ai-assistants.md: ai/docs.md
   - llmstxt:
       full_output: llms-full.txt
       markdown_description: |
@@ -85,7 +86,8 @@ plugins:
           - players/react-native.md: "React Native 用 Player。コードで始まる: `<SpriteStudioView>`。Expo Go ではなく development build が必要。"
           - players/converter.md: "`.sspj` プロジェクトを変換するデスクトップアプリ、SSConverter GUI。macOS と Windows 向けのビルドがある。"
         AI アシスタント:
-          - ai/index.md: "AI のコーディングアシスタントと SpriteStudio を使う。Claude Code・Codex・Copilot CLI・Antigravity に SpriteStudio を教えるプラグイン、各サイトの llms.txt、各 Player のパッケージ内のドキュメントと Agent Skill、ssconverter-cli での変換。"
+          - ai/index.md: "どんなプロジェクトに SpriteStudio が合うか、どの Player を使うかを Claude Code・Codex・Copilot CLI・Antigravity に教えるプラグインと、それぞれへの入れ方。"
+          - ai/docs.md: "このドキュメントを AI アシスタントに渡す方法。各サイトの llms.txt、各 Player のパッケージ内のドキュメントと、npm・Flutter のパッケージが持つ Agent Skill、ssconverter-cli での変換。"
         SDK・開発者向け:
           - sdk/concepts.md: "共通コアが提供するもの。変換してから再生するワークフローと、全 Player が共有する機能。"
           - sdk/glossary.md: "SDK と各 Player のドキュメントで使う用語の定義（`.sspj`、`.ssab`、セルマップ、アニメーションパック、パーツ種別）。"
