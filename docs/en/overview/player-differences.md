@@ -39,8 +39,8 @@ the core computes but leaves the player to draw or play - are in
 
 The **uGUI (Canvas) path** trades capability for CanvasRenderer's "1 renderer = 1 mesh + 1
 material": it assumes a **single atlas** (parts from other atlases cannot sample correctly) and
-supports **`Mix` / `Add` only**, collapsing every other blend to `Mix`. It also gives up part
-tracking, per-part shaders and Timeline control. The world path has none of these limits; it draws
+supports **`Mix` / `Add` only**, collapsing every other blend to `Mix`. It also gives up
+SpriteStudio masks, part tracking, per-part shaders and Timeline control. The world path has none of these limits; it draws
 `Mul2` as `Mul` and `Screen2` as `Screen`.
 
 ### Web
