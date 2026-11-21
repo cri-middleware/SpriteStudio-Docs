@@ -48,6 +48,11 @@ repository, so `docs/*/players/` pages stay thin — a short description and lin
     except text and 9-slice parts. `overview/player-differences.md` owns only what differs between players,
     `overview/conversion.md` how project files map onto conversion output, and `sdk/glossary.md` what each
     extension is.
+*   **The agent plugin (`plugins/spritestudio/`) restates no facts.** Its `SKILL.md` says when
+    SpriteStudio fits and links to the pages that say the rest, because an installed copy is not
+    rebuilt with the site; `scripts/check-docs.py` checks that those links land on a page. Neither its
+    `plugin.json` nor `.claude-plugin/marketplace.json` sets `version`: without one, users follow
+    `main`, and with one they receive nothing until it changes.
 *   **`sdk/limitations.md` holds one altitude**: four `##` buckets with emoji (playback, what the player
     supplies, rendering, shipping), and every constraint a `###` without one inside a bucket.
     **`overview/player-differences.md` is a one-line-per-player table over one `###` per player**; an
