@@ -4,23 +4,39 @@ Every official site publishes its documentation as Markdown too, so you can hand
 
 ## 🔌 A plugin for your assistant
 
-The SpriteStudio plugin tells a coding assistant when SpriteStudio fits a project and which player to use, and sends it to the pages it needs. It works before any player package is installed; once one is, the documentation inside the package, described below, matches the installed version.
+The SpriteStudio plugin tells a coding assistant when SpriteStudio fits a project and which player to use, and sends it to the pages it needs. It works before any player package is installed; once one is, the documentation inside the package, described below, matches the installed version. The plugin follows this site's repository. Install it in the assistant you use.
 
-In Claude Code:
+### Claude Code
 
 ```
 /plugin install spritestudio --marketplace cri-middleware/SpriteStudio-Docs
 ```
 
-On Claude Code older than 2.1.275, run `/plugin marketplace add cri-middleware/SpriteStudio-Docs` and then `/plugin install spritestudio@spritestudio`. The plugin follows this site's repository. To receive its changes, turn on auto-update for the `spritestudio` marketplace in `/plugin`, or run `claude plugin update spritestudio@spritestudio`.
+On Claude Code older than 2.1.275, run `/plugin marketplace add cri-middleware/SpriteStudio-Docs` and then `/plugin install spritestudio@spritestudio`. To receive changes, turn on auto-update for the `spritestudio` marketplace in `/plugin`, or run `claude plugin update spritestudio@spritestudio`.
 
-In the Antigravity CLI:
+### Codex
+
+```
+codex plugin marketplace add cri-middleware/SpriteStudio-Docs
+codex plugin add spritestudio@spritestudio
+```
+
+### GitHub Copilot CLI
+
+```
+copilot plugin marketplace add cri-middleware/SpriteStudio-Docs
+copilot plugin install spritestudio@spritestudio
+```
+
+To receive changes, run `copilot plugin update spritestudio`.
+
+### Antigravity CLI
 
 ```
 agy plugin install https://github.com/cri-middleware/SpriteStudio-Docs/tree/main/plugins/spritestudio
 ```
 
-Run the same command again to update it.
+To receive changes, run the same command again.
 
 ## 🔗 What each site serves
 
