@@ -47,7 +47,7 @@ Web と React Native 以外のサイトでは、リポジトリ名のあとに `
 
 npm と Flutter のパッケージは、同じページを [Agent Skill](https://agentskills.io) としても持っています。`SKILL.md` に、そのページが何のためのものかをアシスタント向けに書いたフォルダーです。プロジェクトの skill ディレクトリ（`.claude/skills/`、`.agents/skills/` など）に置かれると、アシスタントは場所を教わらなくてもドキュメントを見つけます。置くのはパッケージマネージャーです。
 
-- **pnpm 12.11 以降**: `pnpm approve <package>` を 1 回実行します。以後のインストールのたびに、直接依存の skill が、ワークスペースのルートにある skill ディレクトリか、`pnpm-workspace.yaml` の `skills.dirs` が指すディレクトリ（無ければ作られます）にリンクされます。pnpm が見分けるコーディングエージェント（Claude Code など）の中で実行すると、ディレクトリが無ければそのエージェントのものが作られます。それ以外の場所（端末や CI）では、承認済みの skill があるのにどちらも無いとインストールが失敗するので、ディレクトリか `skills.dirs` の設定をコミットしてください。
+- **pnpm 12.18 以降**: `pnpm approve` を実行してパッケージを選びます。初回は skill をリンクするディレクトリも尋ねられ、`pnpm-workspace.yaml` の `skills.dirs` に記録されます。以後のインストールのたびに、直接依存の skill がそのディレクトリ（無ければ作られます）にリンクされます。CI を含むほかの環境でも同じようにリンクされるよう、`pnpm-workspace.yaml` をコミットしてください。pnpm が見分けるコーディングエージェント（Claude Code など）の中では、`pnpm approve <package>` は何も尋ねず、インストールでそのエージェントのディレクトリにリンクされます。リンク先のディレクトリが無くてもインストールは成功し、何もリンクされません。
 - **npm、または `nodeLinker: node-modules` の yarn**: `npx skills experimental_sync` で同じようにリンクされます。どのエージェント向けにリンクするかを尋ねられます（`-a claude-code -y` を付けると尋ねられません）。yarn の既定の Plug'n'Play では、読み取る `node_modules` がありません。
 - **Flutter**: `dart run skills@ get --all` で、プロジェクトにあるコーディングエージェントの skill ディレクトリ（`.claude/` など）にコピーされます。まだ無いときは `--agent claude`（ほかに `codex`・`copilot`・`cursor` など）で指定してください。`--all` を付けないと一覧を出すだけです。アップグレードのあとにもう一度実行してください。
 
