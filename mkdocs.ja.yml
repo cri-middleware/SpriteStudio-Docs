@@ -33,7 +33,6 @@ nav:
       - UI 統合: overview/ui-integration.md
       - 実行時の変更: overview/runtime-changes.md
       - Player ごとの違い: overview/player-differences.md
-      - 🤖 AI アシスタントと使う: overview/ai-assistants.md
   - 🎮 Player・ツール:
       - Unity: players/unity.md
       - Web（Player コレクション）: players/web.md
@@ -43,6 +42,9 @@ nav:
       - wgpu（Rust・C / C++・WebGPU）: players/wgpu.md
       - React Native: players/react-native.md
       - SSConverter GUI: players/converter.md
+  - 🤖 AI アシスタント:
+      - アシスタントに入れるプラグイン: ai/index.md
+      - アシスタントに渡すドキュメント: ai/docs.md
   - 🛠️ SDK・開発者向け:
       - コンセプト: sdk/concepts.md
       - 用語集: sdk/glossary.md
@@ -55,7 +57,9 @@ nav:
 
 plugins:
   - search
-  - redirects
+  - redirects:
+      redirect_maps:
+        overview/ai-assistants.md: ai/docs.md
   - llmstxt:
       full_output: llms-full.txt
       markdown_description: |
@@ -72,7 +76,6 @@ plugins:
           - overview/ui-integration.md: "SpriteStudio のアニメーションを UI ツールキットのボタンにする。ラベルで作る状態、絵の上だけのクリック、reduced motion と、対応する Player。"
           - overview/runtime-changes.md: "再生中のキャラクターを変える。パーツへの追従、描画に使うテクスチャの差し替え、パーツ単位の色・セル・表示の上書きと、対応する Player。"
           - overview/player-differences.md: "Player 間で違うことだけ。各エンジンの描画層が再現できる範囲と、各 Player の実装の進み具合。"
-          - overview/ai-assistants.md: "このドキュメントを AI アシスタントに渡す方法。各サイトの llms.txt、各 Player のパッケージ内のドキュメントと、npm・Flutter のパッケージが持つ Agent Skill、ssconverter-cli での変換。"
         Player・ツール:
           - players/unity.md: "Unity 用 Player。エディタで始まる: `.sspj` をエディタにドラッグし、コンポーネントに割り当てる。"
           - players/web.md: "1 つの WebAssembly コアを共有する Web 用 Player 群（PixiJS・WebGL・RPG ツクール MZ・TyranoScript・ティラノビルダー）。"
@@ -82,6 +85,9 @@ plugins:
           - players/wgpu.md: "Rust で書かれた wgpu 用 Player。同じライブラリを C・C++・ブラウザからも使える。"
           - players/react-native.md: "React Native 用 Player。コードで始まる: `<SpriteStudioView>`。Expo Go ではなく development build が必要。"
           - players/converter.md: "`.sspj` プロジェクトを変換するデスクトップアプリ、SSConverter GUI。macOS と Windows 向けのビルドがある。"
+        AI アシスタント:
+          - ai/index.md: "どんなプロジェクトに SpriteStudio が合うか、どの Player を使うかを Claude Code・Codex・Copilot CLI・Antigravity に教えるプラグインと、それぞれへの入れ方。"
+          - ai/docs.md: "このドキュメントを AI アシスタントに渡す方法。各サイトの llms.txt、各 Player のパッケージ内のドキュメントと、npm・Flutter のパッケージが持つ Agent Skill、ssconverter-cli での変換。"
         SDK・開発者向け:
           - sdk/concepts.md: "共通コアが提供するもの。変換してから再生するワークフローと、全 Player が共有する機能。"
           - sdk/glossary.md: "SDK と各 Player のドキュメントで使う用語の定義（`.sspj`、`.ssab`、セルマップ、アニメーションパック、パーツ種別）。"

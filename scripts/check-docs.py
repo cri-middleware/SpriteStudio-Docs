@@ -6,11 +6,13 @@
 --strict fails a broken internal link or anchor, but not a nav entry that names
 a missing page. It says nothing about a page that no nav names, a locale that
 has drifted from the other, an llms.txt index that has lost a page, the lists of
-repositories disagreeing, a link into a repository that names a branch (outside
-a code block, where a command may need one) or a path its clone does not have, a link from a sibling's docs or from the agent plugin
-into this site that lands on no page (or, from a sibling, on an anchor no heading
-names with an explicit id), a link from this site to a page or demo a sibling's
-site does not build, or a Japanese line break the browser renders as a space.
+repositories disagreeing, a redirect that differs between locales or ends on no
+page, a link into a repository that names a branch (outside a code block, where a
+command may need one) or a path its clone does not have, a link from a sibling's
+docs into this site that lands on neither a page nor a redirect to one (or on an
+anchor no heading names with an explicit id), a link from the agent plugin that
+lands on no page, a link from this site to a page or demo a sibling's site does
+not build, or a Japanese line break the browser renders as a space.
 This script checks those.
 
 scripts/build-docs.sh and build-docs.ps1 run it before building, so CI and a
@@ -176,6 +178,24 @@ def llmstxt_pages(config):
     return sections, pages
 
 
+def redirect_maps(config):
+    """{source page: target page} from plugins > redirects > redirect_maps."""
+    maps, inside = {}, None
+    for line in top_level_block(read(config), "plugins"):
+        stripped = line.strip()
+        if stripped == "redirect_maps:":
+            inside = len(line) - len(line.lstrip())
+            continue
+        if inside is None or not stripped:
+            continue
+        if len(line) - len(line.lstrip()) <= inside:
+            break
+        m = re.match(r"^(\S+\.md): (\S+\.md)$", stripped)
+        if m:
+            maps[m.group(1)] = m.group(2)
+    return maps
+
+
 # --- checks -----------------------------------------------------------------
 
 def check_locale_files():
@@ -230,6 +250,29 @@ def check_llmstxt(nav):
         problems.append(f"{counts['en']} llmstxt sections in mkdocs.yml, {counts['ja']} in mkdocs.ja.yml")
     report("llms.txt sections", problems,
            f"each config's llmstxt.sections lists its nav's pages in nav order ({counts['en']} sections)")
+
+
+def check_redirects():
+    """Each redirect ends on a page of its locale, leaves from a page that is gone, and both locales have the same."""
+    problems, maps = [], {loc: redirect_maps(cfg) for loc, cfg in LOCALES.items()}
+    if maps["en"] != maps["ja"]:
+        problems.append(f"redirect_maps differ: {maps['en']} in mkdocs.yml, {maps['ja']} in mkdocs.ja.yml")
+    for loc, cfg in LOCALES.items():
+        for source, target in maps[loc].items():
+            if not os.path.exists(os.path.join(ROOT, "docs", loc, target)):
+                problems.append(f"{cfg}: {source} redirects to docs/{loc}/{target}, which does not exist")
+            if os.path.exists(os.path.join(ROOT, "docs", loc, source)):
+                problems.append(f"{cfg}: {source} redirects, but docs/{loc}/{source} is still a page")
+    report("redirects", problems,
+           f"{len(maps['en'])} redirect{'s' * (len(maps['en']) != 1)}, the same in both configs, each from a page that is gone to one that exists")
+
+
+def redirected(where):
+    """The page a redirect sends a URL path of this site to, or None."""
+    loc, page = ("ja", where[3:]) if where == "ja" or where.startswith("ja/") else ("en", where)
+    maps = redirect_maps(LOCALES[loc])
+    target = next((maps[s] for s in (f"{page}.md", f"{page}/index.md") if s in maps), None)
+    return f"docs/{loc}/{target}" if target and f"docs/{loc}/{target}" in paths_in(ROOT) else None
 
 
 def structure(text):
@@ -369,11 +412,12 @@ def check_inbound_links():
     """What the sibling repositories link to on this site: a page, and an anchor a heading names.
 
     The anchor has to be an explicit id (`{ #id }`) on the heading, so rewording the
-    heading leaves the link where it was. Links to files the build makes (llms.txt)
-    are not pages and are left out.
+    heading leaves the link where it was. A link to a page that moved lands through
+    its redirect, and the summary counts those. Links to files the build makes
+    (llms.txt) are not pages and are left out.
     """
     siblings = os.path.dirname(ROOT)
-    problems, links, anchors, clones = [], 0, 0, 0
+    problems, links, anchors, clones, moved = [], 0, 0, 0, 0
     for repo in sorted(repos_in("docs/en/index.md")):
         clone = os.path.join(siblings, repo)
         if not os.path.exists(os.path.join(clone, ".git")):
@@ -391,6 +435,9 @@ def check_inbound_links():
                     links += 1
                     md, likely = portal_page(where)
                     if not md:
+                        md = redirected(where)
+                        moved += bool(md)
+                    if not md:
                         problems.append(f"{repo}/{path}:{i}: links {m.group(0)}, but there is no {likely}")
                         continue
                     if anchor:
@@ -404,8 +451,8 @@ def check_inbound_links():
         skipped("inbound links", f"no sibling repository is cloned next to this one ({siblings})")
         return
     report("inbound links", problems,
-           f"{links} links from {clones} sibling clones land on a page, and the {anchors} with an anchor "
-           f"on a heading's explicit id")
+           f"{links} links from {clones} sibling clones land on a page ({moved} through a redirect), "
+           f"and the {anchors} with an anchor on a heading's explicit id")
 
 
 def check_plugin_links():
@@ -571,6 +618,7 @@ def main(argv):
     nav = check_nav()
     check_pages_in_nav(nav)
     check_llmstxt(nav)
+    check_redirects()
     check_structure()
     check_repositories()
     links = sibling_links()

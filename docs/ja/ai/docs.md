@@ -1,42 +1,6 @@
-# 🤖 AI アシスタントと使う
+# 📚 アシスタントに渡すドキュメント
 
-公式の各サイトは、ドキュメントを Markdown でも公開しています。ページを 1 枚ずつ貼り付けなくても、AI アシスタントにそのまま渡せます。このページでは、アシスタントに SpriteStudio を教えるプラグイン、Markdown の在り処、アシスタントに場所を知らせる方法、アシスタントがプロジェクトを変換する方法をまとめます。
-
-## 🔌 アシスタントに SpriteStudio を教えるプラグイン
-
-SpriteStudio のプラグインは、どんなプロジェクトに SpriteStudio が合うか、どの Player を使うかをコーディングアシスタントに教え、必要なページへ案内します。Player のパッケージを入れる前から効きます。パッケージを入れた後は、下で説明するパッケージの中のドキュメントが、インストールした版と一致します。プラグインはこのサイトのリポジトリに追従します。使っているアシスタントに入れてください。
-
-### Claude Code
-
-```
-/plugin install spritestudio --marketplace cri-middleware/SpriteStudio-Docs
-```
-
-2.1.275 より前の Claude Code では、`/plugin marketplace add cri-middleware/SpriteStudio-Docs` のあとに `/plugin install spritestudio@spritestudio` を実行します。変更を受け取るには、`/plugin` で `spritestudio` マーケットプレイスの自動更新をオンにするか、`claude plugin update spritestudio@spritestudio` を実行してください。
-
-### Codex
-
-```
-codex plugin marketplace add cri-middleware/SpriteStudio-Docs
-codex plugin add spritestudio@spritestudio
-```
-
-### GitHub Copilot CLI
-
-```
-copilot plugin marketplace add cri-middleware/SpriteStudio-Docs
-copilot plugin install spritestudio@spritestudio
-```
-
-変更を受け取るには、`copilot plugin update spritestudio` を実行します。
-
-### Antigravity CLI
-
-```
-agy plugin install https://github.com/cri-middleware/SpriteStudio-Docs/tree/main/plugins/spritestudio
-```
-
-変更を受け取るには、同じコマンドをもう一度実行します。
+公式の各サイトは、ドキュメントを Markdown でも公開しています。ページを 1 枚ずつ貼り付けなくても、AI アシスタントにそのまま渡せます。このページでは、Markdown の在り処、アシスタントに場所を知らせる方法、アシスタントがプロジェクトを変換する方法をまとめます。Player を選ぶ前からアシスタントに SpriteStudio を教えるには、[プラグイン](index.md) を入れてください。
 
 ## 🔗 各サイトが提供するもの
 
