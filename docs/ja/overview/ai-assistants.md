@@ -1,6 +1,18 @@
 # 🤖 AI アシスタントと使う
 
-公式の各サイトは、ドキュメントを Markdown でも公開しています。ページを 1 枚ずつ貼り付けなくても、AI アシスタントにそのまま渡せます。このページでは、Markdown の在り処と、アシスタントに場所を知らせる方法、アシスタントがプロジェクトを変換する方法をまとめます。
+公式の各サイトは、ドキュメントを Markdown でも公開しています。ページを 1 枚ずつ貼り付けなくても、AI アシスタントにそのまま渡せます。このページでは、アシスタントに SpriteStudio を教えるプラグイン、Markdown の在り処、アシスタントに場所を知らせる方法、アシスタントがプロジェクトを変換する方法をまとめます。
+
+## 🔌 アシスタントに SpriteStudio を教えるプラグイン
+
+SpriteStudio のプラグインは、どんなプロジェクトに SpriteStudio が合うか、どの Player を使うかをコーディングアシスタントに教え、必要なページへ案内します。Player のパッケージを入れる前から効きます。パッケージを入れた後は、下で説明するパッケージの中のドキュメントが、インストールした版と一致します。
+
+Claude Code では次のとおりです。
+
+```
+/plugin install spritestudio --marketplace cri-middleware/SpriteStudio-Docs
+```
+
+2.1.275 より前の Claude Code では、`/plugin marketplace add cri-middleware/SpriteStudio-Docs` のあとに `/plugin install spritestudio@spritestudio` を実行します。プラグインはこのサイトのリポジトリに追従します。変更を受け取るには、`/plugin` で `spritestudio` マーケットプレイスの自動更新をオンにするか、`claude plugin update spritestudio@spritestudio` を実行してください。
 
 ## 🔗 各サイトが提供するもの
 
