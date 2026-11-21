@@ -33,7 +33,6 @@ nav:
       - UI Integration: overview/ui-integration.md
       - Changing at Runtime: overview/runtime-changes.md
       - Player Differences: overview/player-differences.md
-      - 🤖 Using with AI Assistants: overview/ai-assistants.md
   - 🎮 Players & Tools:
       - Unity: players/unity.md
       - Web (Player Collection): players/web.md
@@ -43,6 +42,8 @@ nav:
       - wgpu (Rust, C / C++, WebGPU): players/wgpu.md
       - React Native: players/react-native.md
       - SSConverter GUI: players/converter.md
+  - 🤖 AI Assistants:
+      - Using with AI Assistants: overview/ai-assistants.md
   - 🛠️ SDK & Development:
       - Concepts: sdk/concepts.md
       - Glossary: sdk/glossary.md
@@ -77,7 +78,6 @@ plugins:
           - overview/ui-integration.md: "A SpriteStudio animation as a button in your UI toolkit: states from labels, clicks on the artwork only, reduced motion, and the players that offer it."
           - overview/runtime-changes.md: "Changing a character while it plays: things that follow a part, swapping the textures it draws with, and per-part colour, cell and visibility overrides, with the players that offer each."
           - overview/player-differences.md: "Only what differs between players: what each engine's renderer can reproduce and how far each player has got."
-          - overview/ai-assistants.md: "How to hand these docs to an AI assistant: each site's llms.txt, the docs inside each player's package and the Agent Skill the npm and Flutter packages carry, and converting with ssconverter-cli."
         Players and tools:
           - players/unity.md: "Unity player, editor-first: drag a `.sspj` into the editor and assign it to a component."
           - players/web.md: "Web players (PixiJS, WebGL, RPG Maker MZ, TyranoScript, TyranoBuilder) on one WebAssembly core."
@@ -87,6 +87,8 @@ plugins:
           - players/wgpu.md: "wgpu player in Rust, with C, C++ and browser access to the same library."
           - players/react-native.md: "React Native player, code-first: `<SpriteStudioView>`; needs a development build, not Expo Go."
           - players/converter.md: "SSConverter GUI, a desktop app that converts `.sspj` projects; macOS and Windows builds."
+        AI assistants:
+          - overview/ai-assistants.md: "Using SpriteStudio with an AI coding assistant: the plugin that introduces SpriteStudio to Claude Code, Codex, Copilot CLI and Antigravity, each site's llms.txt, the docs and Agent Skills inside each player's package, and converting with ssconverter-cli."
         SDK and development:
           - sdk/concepts.md: "What the shared core provides: the convert-then-play workflow and the features every player shares."
           - sdk/glossary.md: "Definitions of the terms used across the SDK and every player's docs (`.sspj`, `.ssab`, cellmap, animation pack, part types)."
