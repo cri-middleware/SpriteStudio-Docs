@@ -43,7 +43,7 @@ nav:
       - React Native: players/react-native.md
       - SSConverter GUI: players/converter.md
   - 🤖 AI Assistants:
-      - Using with AI Assistants: overview/ai-assistants.md
+      - Using with AI Assistants: ai/index.md
   - 🛠️ SDK & Development:
       - Concepts: sdk/concepts.md
       - Glossary: sdk/glossary.md
@@ -56,7 +56,9 @@ nav:
 
 plugins:
   - search
-  - redirects
+  - redirects:
+      redirect_maps:
+        overview/ai-assistants.md: ai/index.md
   - llmstxt:
       full_output: llms-full.txt
       markdown_description: |
@@ -88,7 +90,7 @@ plugins:
           - players/react-native.md: "React Native player, code-first: `<SpriteStudioView>`; needs a development build, not Expo Go."
           - players/converter.md: "SSConverter GUI, a desktop app that converts `.sspj` projects; macOS and Windows builds."
         AI assistants:
-          - overview/ai-assistants.md: "Using SpriteStudio with an AI coding assistant: the plugin that introduces SpriteStudio to Claude Code, Codex, Copilot CLI and Antigravity, each site's llms.txt, the docs and Agent Skills inside each player's package, and converting with ssconverter-cli."
+          - ai/index.md: "Using SpriteStudio with an AI coding assistant: the plugin that introduces SpriteStudio to Claude Code, Codex, Copilot CLI and Antigravity, each site's llms.txt, the docs and Agent Skills inside each player's package, and converting with ssconverter-cli."
         SDK and development:
           - sdk/concepts.md: "What the shared core provides: the convert-then-play workflow and the features every player shares."
           - sdk/glossary.md: "Definitions of the terms used across the SDK and every player's docs (`.sspj`, `.ssab`, cellmap, animation pack, part types)."
