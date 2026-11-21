@@ -14,6 +14,14 @@ Claude Code では次のとおりです。
 
 2.1.275 より前の Claude Code では、`/plugin marketplace add cri-middleware/SpriteStudio-Docs` のあとに `/plugin install spritestudio@spritestudio` を実行します。プラグインはこのサイトのリポジトリに追従します。変更を受け取るには、`/plugin` で `spritestudio` マーケットプレイスの自動更新をオンにするか、`claude plugin update spritestudio@spritestudio` を実行してください。
 
+Antigravity の CLI では次のとおりです。
+
+```
+agy plugin install https://github.com/cri-middleware/SpriteStudio-Docs/tree/main/plugins/spritestudio
+```
+
+更新するときは、同じコマンドをもう一度実行します。
+
 ## 🔗 各サイトが提供するもの
 
 どのサイトも、ルートに 2 つのファイルと、全ページの Markdown コピーを置いています。
