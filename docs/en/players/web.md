@@ -51,11 +51,11 @@ The steps, with the folders they use, are in each package's README, linked from 
 **Game-engine integrations** - plugins rather than npm packages: each is a file under **Assets**
 on that plugin's GitHub Release.
 
-| Your environment | Download | Status |
-|---|---|---|
-| RPG Maker MZ | **`ssplayer-rmmz-plugin-<version>.zip`** from the [`@spritestudio/ssplayer-rmmz` Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-rmmz&expanded=true) | beta |
-| TyranoScript - writing `[ss_*]` tags in a scenario yourself | **`ssplayer-tyranoscript-plugin-<version>.zip`** from the [`@spritestudio/ssplayer-tyranoscript` Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranoscript&expanded=true) | beta |
-| TyranoBuilder - placing animations from the component palette, no scenario code | **`ssplayer.tbp`** from the [`@spritestudio/ssplayer-tyranobuilder` Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranobuilder&expanded=true) | beta |
+| Your environment | Download |
+|---|---|
+| RPG Maker MZ | **`ssplayer-rmmz-plugin-<version>.zip`** from the [`@spritestudio/ssplayer-rmmz` Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-rmmz&expanded=true) |
+| TyranoScript - writing `[ss_*]` tags in a scenario yourself | **`ssplayer-tyranoscript-plugin-<version>.zip`** from the [`@spritestudio/ssplayer-tyranoscript` Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranoscript&expanded=true) |
+| TyranoBuilder - placing animations from the component palette, no scenario code | **`ssplayer.tbp`** from the [`@spritestudio/ssplayer-tyranobuilder` Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranobuilder&expanded=true) |
 
 The MZ and TyranoBuilder plugins convert `.sspj` themselves (step 2), so an MZ or TyranoBuilder
 project needs neither of the conversion rows above. `ssplayer.tbp` is the only download a TyranoBuilder

@@ -35,11 +35,11 @@
 
 **ゲームエンジン統合** - npm のパッケージではなくプラグインです。どれも、そのプラグインの GitHub Release の **Assets** にあるファイルです。
 
-| あなたの環境 | ダウンロード | 状態 |
-|---|---|---|
-| RPG ツクール MZ | [`@spritestudio/ssplayer-rmmz` の Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-rmmz&expanded=true) の **`ssplayer-rmmz-plugin-<version>.zip`** | beta |
-| TyranoScript - シナリオに `[ss_*]` タグを自分で書く | [`@spritestudio/ssplayer-tyranoscript` の Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranoscript&expanded=true) の **`ssplayer-tyranoscript-plugin-<version>.zip`** | beta |
-| ティラノビルダー - コンポーネントパレットから配置、シナリオコード不要 | [`@spritestudio/ssplayer-tyranobuilder` の Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranobuilder&expanded=true) の **`ssplayer.tbp`** | beta |
+| あなたの環境 | ダウンロード |
+|---|---|
+| RPG ツクール MZ | [`@spritestudio/ssplayer-rmmz` の Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-rmmz&expanded=true) の **`ssplayer-rmmz-plugin-<version>.zip`** |
+| TyranoScript - シナリオに `[ss_*]` タグを自分で書く | [`@spritestudio/ssplayer-tyranoscript` の Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranoscript&expanded=true) の **`ssplayer-tyranoscript-plugin-<version>.zip`** |
+| ティラノビルダー - コンポーネントパレットから配置、シナリオコード不要 | [`@spritestudio/ssplayer-tyranobuilder` の Release](https://github.com/cri-middleware/SSPlayerForWeb/releases?q=ssplayer-tyranobuilder&expanded=true) の **`ssplayer.tbp`** |
 
 MZ とティラノビルダーのプラグインは `.sspj` を自分で変換する（手順 2）ので、MZ やティラノビルダーのプロジェクトでは、上の変換の表から選ぶ必要はありません。ティラノビルダーのプロジェクトに必要なのは `ssplayer.tbp` だけです。TyranoScript 用プラグインの中身も入っています。
 

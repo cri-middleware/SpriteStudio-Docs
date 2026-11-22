@@ -19,7 +19,7 @@ the core computes but leaves the player to draw or play - are in
 | Player | In short | Details |
 |---|---|---|
 | **[Unity](../players/unity.md)** | The uGUI (Canvas) path carries limits the world path does not | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForUnity/limitations/) |
-| **[Web](../players/web.md)** | `ssplayer-webgl` masks only with a stencil buffer; the framework integrations are beta | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForWeb/limitations) |
+| **[Web](../players/web.md)** | `ssplayer-webgl` masks only with a stencil buffer | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForWeb/limitations) |
 | **[Godot](../players/godot.md)** | Four of the twelve blend modes are honored; the Web export has extra requirements | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForGodot/limitations/) |
 | **[Flutter](../players/flutter.md)** | Two render backends, and the Canvas one costs batching on two blends | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForFlutter/limitations/) |
 | **[Ren'Py](../players/renpy.md)** | A whole-part tint on Mesh parts is approximate, and a save keeps only track 0 | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForRenPy/limitations/) |
@@ -47,8 +47,8 @@ SpriteStudio masks, part tracking, per-part shaders and Timeline control. The wo
 
 **`ssplayer-webgl` masks through the stencil buffer**, so on a context without one no mask can be
 written: parts drawn outside a mask draw unclipped, and parts set to draw only inside a mask are
-not drawn. The framework integrations - **RPG Maker MZ, TyranoScript and TyranoBuilder** - are
-**beta**; on RPG Maker MZ a picture's tint and blend mode do not affect the animation.
+not drawn. On RPG Maker
+MZ, a picture's tint and blend mode do not affect the animation.
 
 In the browser converter `ssconverter-web`, dropping a folder needs the File System Access API,
 so dropping is **Chromium-only**; other browsers pick the folder with **Browse...**.
