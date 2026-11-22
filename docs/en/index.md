@@ -29,7 +29,8 @@ hosted converter, no install.
 
     ---
 
-    Plays SpriteStudio animations in Unity games. Editor-first: no code to reach the first frame.
+    Draws in world space or on a uGUI Canvas, where it can be a button or a toggle. Burst jobs and
+    the SIMD-optimised Rust core build the mesh with no GC allocations.
 
     :octicons-arrow-right-24: [Overview](./players/unity.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
@@ -39,8 +40,9 @@ hosted converter, no install.
 
     ---
 
-    Players for the browser. The npm packages (PixiJS, WebGL) are code-first; the RPG Maker MZ,
-    TyranoScript and TyranoBuilder plugins need no code.
+    Players for every stack, from a dependency-free `<ss-player>` tag to PixiJS, RPG Maker MZ,
+    TyranoScript and TyranoBuilder. Unlike `<video>`, it scales freely and reacts to input.
+    Includes ssconverter-web, which converts right in the browser.
 
     :octicons-arrow-right-24: [Overview](./players/web.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
@@ -50,7 +52,9 @@ hosted converter, no install.
 
     ---
 
-    Plays SpriteStudio animations in Godot games. Editor-first: no code to reach the first frame.
+    `SpriteStudioPlayer2D` is just another node in your scene, and the GDExtension installs
+    without rebuilding the engine. The SIMD-optimised Rust core computes the poses, so even crowded
+    scenes stay smooth.
 
     :octicons-arrow-right-24: [Overview](./players/godot.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
@@ -60,7 +64,8 @@ hosted converter, no install.
 
     ---
 
-    Plays SpriteStudio animations in Flutter apps and Flame games. Code-first.
+    A widget like any other - place, size, transform and clip it - and a Flame component too.
+    Flutter's own renderer draws it: no WebView, no video decoding.
 
     :octicons-arrow-right-24: [Overview](./players/flutter.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForFlutter/) |
@@ -70,7 +75,8 @@ hosted converter, no install.
 
     ---
 
-    Plays SpriteStudio animations in Ren'Py visual novels. Code-first.
+    Use it like any other image with one `show` line, with lip flap that follows your dialogue.
+    A lightweight alternative to video for openings and moving backgrounds.
 
     :octicons-arrow-right-24: [Overview](./players/renpy.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
@@ -80,8 +86,8 @@ hosted converter, no install.
 
     ---
 
-    Plays SpriteStudio animations in Rust and C / C++ apps, in the browser through WebGPU, and in
-    Bevy games. Code-first.
+    One wgpu renderer from Rust and Bevy to C/C++ and the browser. It borrows the host's GPU, so
+    it lives inside any wgpu app, egui and Bevy included.
 
     :octicons-arrow-right-24: [Overview](./players/wgpu.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/) |
@@ -91,7 +97,8 @@ hosted converter, no install.
 
     ---
 
-    Plays SpriteStudio animations in React Native apps. Code-first.
+    An ordinary view, drawn by native code through Skia: no vertices through JavaScript and no
+    React re-render each frame.
 
     :octicons-arrow-right-24: [Overview](./players/react-native.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForReactNative/) |
