@@ -20,7 +20,7 @@
 
     ---
 
-    Unity Engine 上で SpriteStudio アニメーションを再生。Job System で高速動作します。
+    Unity のゲームで SpriteStudio アニメーションを再生します。エディタで始まり、最初のフレームまでコードは要りません。
 
     :octicons-arrow-right-24: [概要](./players/unity.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/ja/) |
@@ -30,7 +30,7 @@
 
     ---
 
-    ブラウザ向け Player 群（PixiJS・フレームワーク非依存 WebGL・RPG ツクール MZ・TyranoScript・ティラノビルダー）と、クライアントサイド変換ツール（ssconverter-web）のコレクション。
+    ブラウザで SpriteStudio アニメーションを再生する Player 群です。npm のパッケージ（PixiJS・WebGL）はコードで始まり、RPG ツクール MZ・TyranoScript・ティラノビルダーのプラグインはコード不要です。
 
     :octicons-arrow-right-24: [概要](./players/web.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/) |
@@ -40,7 +40,7 @@
 
     ---
 
-    Godot で SpriteStudio アニメーションをネイティブに描画。GDExtension とカスタムモジュールの両方で提供。
+    Godot のゲームで SpriteStudio アニメーションを再生します。エディタで始まり、最初のフレームまでコードは要りません。
 
     :octicons-arrow-right-24: [概要](./players/godot.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |
@@ -50,7 +50,7 @@
 
     ---
 
-    `SpriteStudioAnimation` ウィジェットで Flutter アプリに SpriteStudio アニメーションを再生。
+    Flutter アプリと Flame のゲームで SpriteStudio アニメーションを再生します。コードで始まります。
 
     :octicons-arrow-right-24: [概要](./players/flutter.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/) |
@@ -60,7 +60,7 @@
 
     ---
 
-    Ren'Py 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。
+    Ren'Py のビジュアルノベルで SpriteStudio アニメーションを再生します。コードで始まります。
 
     :octicons-arrow-right-24: [概要](./players/renpy.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/ja/) |
@@ -70,7 +70,7 @@
 
     ---
 
-    wgpu で描画する Player。wgpu が WebGPU・Vulkan・DX12・Metal の違いを吸収するため、同じ Player がどのバックエンドでも動きます。
+    Rust・C / C++ のアプリ、ブラウザ（WebGPU）、Bevy のゲームで SpriteStudio アニメーションを再生します。コードで始まります。
 
     :octicons-arrow-right-24: [概要](./players/wgpu.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/) |
@@ -80,8 +80,7 @@
 
     ---
 
-    React Native アプリで SpriteStudio アニメーションを再生します。`<SpriteStudioView>`
-    コンポーネントを配置するだけで、描画は Skia 経由でネイティブ側が担当します。
+    React Native アプリで SpriteStudio アニメーションを再生します。コードで始まります。
 
     :octicons-arrow-right-24: [概要](./players/react-native.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForReactNative/ja/) |

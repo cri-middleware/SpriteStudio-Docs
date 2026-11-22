@@ -29,7 +29,7 @@ hosted converter, no install.
 
     ---
 
-    Play back SpriteStudio animations in the Unity Engine, accelerated by the Job System.
+    Plays SpriteStudio animations in Unity games. Editor-first: no code to reach the first frame.
 
     :octicons-arrow-right-24: [Overview](./players/unity.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
@@ -39,8 +39,8 @@ hosted converter, no install.
 
     ---
 
-    A collection of browser players - PixiJS, framework-free WebGL, RPG Maker MZ, TyranoScript,
-    TyranoBuilder - plus a client-side converter (ssconverter-web).
+    Players for the browser. The npm packages (PixiJS, WebGL) are code-first; the RPG Maker MZ,
+    TyranoScript and TyranoBuilder plugins need no code.
 
     :octicons-arrow-right-24: [Overview](./players/web.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
@@ -50,7 +50,7 @@ hosted converter, no install.
 
     ---
 
-    Render SpriteStudio animations natively in Godot - available as both a GDExtension and a custom module.
+    Plays SpriteStudio animations in Godot games. Editor-first: no code to reach the first frame.
 
     :octicons-arrow-right-24: [Overview](./players/godot.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
@@ -60,7 +60,7 @@ hosted converter, no install.
 
     ---
 
-    Play SpriteStudio animations in Flutter apps via a `SpriteStudioAnimation` widget.
+    Plays SpriteStudio animations in Flutter apps and Flame games. Code-first.
 
     :octicons-arrow-right-24: [Overview](./players/flutter.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForFlutter/) |
@@ -70,7 +70,7 @@ hosted converter, no install.
 
     ---
 
-    Bring SpriteStudio characters into Ren'Py visual novels.
+    Plays SpriteStudio animations in Ren'Py visual novels. Code-first.
 
     :octicons-arrow-right-24: [Overview](./players/renpy.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
@@ -80,8 +80,8 @@ hosted converter, no install.
 
     ---
 
-    A player that renders through wgpu, which puts WebGPU, Vulkan, DX12 and Metal behind one
-    API - so the same player runs on any of them.
+    Plays SpriteStudio animations in Rust and C / C++ apps, in the browser through WebGPU, and in
+    Bevy games. Code-first.
 
     :octicons-arrow-right-24: [Overview](./players/wgpu.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/) |
@@ -91,8 +91,7 @@ hosted converter, no install.
 
     ---
 
-    Play SpriteStudio animations in React Native apps through a `<SpriteStudioView>`
-    component, drawn natively via Skia.
+    Plays SpriteStudio animations in React Native apps. Code-first.
 
     :octicons-arrow-right-24: [Overview](./players/react-native.md) |
     [Docs](https://cri-middleware.github.io/SSPlayerForReactNative/) |
