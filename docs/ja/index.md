@@ -8,11 +8,7 @@
 
 ▶️ まず動かして確かめたい方は [ブラウザで試す](./overview/try-it.md) へ - インストール不要のライブデモとホスト型コンバーターがあります。
 
-🎚️ 1 体のキャラクターで複数のアニメーションをクロスフェードしたり重ねたりでき、どれも個別に作ったままで済みます - [モーションブレンド](./overview/motion-blending.md) をご覧ください。
-
-🔘 UI を作るなら、SpriteStudio のアニメーションを UI ツールキットのボタンにして、どの状態の見た目も SpriteStudio で作れます - [UI 統合](./overview/ui-integration.md) をご覧ください。
-
-🧥 装備・着せ替え・色違いには、再生中にパーツへ物を追従させたり、テクスチャを差し替えたり、パーツ 1 つを上書きしたりできます - [実行時にキャラクターを変える](./overview/runtime-changes.md) をご覧ください。
+✨ 再生のほかに、[モーションブレンド](./overview/motion-blending.md)・[UI 統合](./overview/ui-integration.md)・[実行時にキャラクターを変える](./overview/runtime-changes.md)にも対応しています。
 
 🎨 手元に SpriteStudio プロジェクトがない場合は、CRI Middleware が無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています - キャラクター・エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)にかけられます。
 
