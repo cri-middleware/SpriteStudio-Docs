@@ -43,7 +43,7 @@ Every player's package carries its documentation for the version you installed, 
 
 `Library/` and `node_modules/` are normally gitignored, so a search that respects `.gitignore` skips them; ripgrep needs `--no-ignore`.
 
-### 🧩 As an Agent Skill
+### 🧩 As an Agent Skill { #-as-an-agent-skill }
 
 The npm and Flutter packages also carry those pages as an [Agent Skill](https://agentskills.io): a folder whose `SKILL.md` tells an assistant what the pages are for. Once it is in your project's skill directory (`.claude/skills/`, `.agents/skills/`, and so on), the assistant finds the docs without being told where they are. Your package manager puts it there:
 
