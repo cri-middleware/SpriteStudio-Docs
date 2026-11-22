@@ -111,8 +111,6 @@
 </div>
 
 !!! note "このポータルについて"
-    **Player を使う方**は上のカードから。[プラットフォームの選び方](./overview/choose-your-platform.md)で最適な Player が分かり、各 Player は自身の詳細ドキュメントへリンクします。
-
     **SDK を直接使う方・新しい Player を作る方**は
     [SDK・開発者向け](./sdk/concepts.md) を参照してください。
 

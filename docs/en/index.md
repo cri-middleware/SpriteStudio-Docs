@@ -123,9 +123,6 @@ hosted converter, no install.
 </div>
 
 !!! note "About this portal"
-    **Using a player?** Start above - [Choose Your Platform](./overview/choose-your-platform.md)
-    points you to the right one, and each player links out to its own detailed docs.
-
     **Using the SDK directly, or building a new player?** See
     [SDK & Development](./sdk/concepts.md).
 
