@@ -6,10 +6,11 @@ site; this page just gathers the links.
 
 ## 🔄 Convert in your browser
 
-**[ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)** converts your
-`.sspj` into `.ssab` right in the browser: the whole pipeline runs locally on WebAssembly, so
-nothing is ever uploaded to a server. For the step-by-step walkthrough (and the desktop / CLI
-alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalone-tool.md).
+| Tool | Package | What it does |
+|---|---|---|
+| [ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) | `@spritestudio/ssconverter-core` | Converts your `.sspj` into `.ssab` right in the browser: the whole pipeline runs locally on WebAssembly, so nothing is ever uploaded to a server. |
+
+For the step-by-step walkthrough (and the desktop / CLI alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalone-tool.md).
 
 ## 🎮 Live player demos
 
@@ -25,12 +26,6 @@ alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalo
 | [RPG Maker MZ demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | `@spritestudio/ssplayer-rmmz` | A sample MZ project with SpriteStudio animations in correct Z-order. |
 | [TyranoScript demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/tyranoscript/) | `@spritestudio/ssplayer-tyranoscript` | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
 
-### [SpriteStudio Player for Ren'Py](../players/renpy.md)
-
-| Demo | What it shows |
-|---|---|
-| [Ren'Py demo](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | Bundled SpriteStudio animations running in Ren'Py Web. |
-
 ### [SpriteStudio Player for Flutter](../players/flutter.md)
 
 | Demo | Package | What it shows |
@@ -39,6 +34,12 @@ alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalo
 | [Flame demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | `ssplayer_flame` | The same playback as a `SpriteStudioComponent`, driven by a Flame game loop. |
 
 These demos run on that player's Web target.
+
+### [SpriteStudio Player for Ren'Py](../players/renpy.md)
+
+| Demo | What it shows |
+|---|---|
+| [Ren'Py demo](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | Bundled SpriteStudio animations running in Ren'Py Web. |
 
 ### [SpriteStudio Player for wgpu](../players/wgpu.md)
 

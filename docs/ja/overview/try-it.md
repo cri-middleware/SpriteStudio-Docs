@@ -4,9 +4,11 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 
 ## 🔄 ブラウザで変換する
 
-**[ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)** は `.sspj` を
-`.ssab` に変換します。処理は WebAssembly でローカル（ブラウザ内）だけで完結し、ファイルがサーバーへアップロードされることは一切ありません。手順やデスクトップ／CLI 版については
-[スタンドアロンツールで変換する](./convert-with-a-standalone-tool.md) を参照してください。
+| ツール | パッケージ | 内容 |
+|---|---|---|
+| [ssconverter-web](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) | `@spritestudio/ssconverter-core` | `.sspj` を `.ssab` に変換。処理は WebAssembly でローカル（ブラウザ内）だけで完結し、ファイルがサーバーへアップロードされることは一切ありません。 |
+
+手順やデスクトップ／CLI 版については [スタンドアロンツールで変換する](./convert-with-a-standalone-tool.md) を参照してください。
 
 ## 🎮 ライブ Player デモ
 
@@ -22,12 +24,6 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 | [RPG ツクール MZ デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | `@spritestudio/ssplayer-rmmz` | SpriteStudio アニメを正しい Z 順で表示するサンプル MZ プロジェクト。 |
 | [TyranoScript デモ](https://cri-middleware.github.io/SSPlayerForWeb/examples/tyranoscript/) | `@spritestudio/ssplayer-tyranoscript` | TyranoScript のノベルゲームで、`[ss_*]` タグから SpriteStudio アニメを再生。 |
 
-### [SpriteStudio Player for Ren'Py](../players/renpy.md)
-
-| デモ | 内容 |
-|---|---|
-| [Ren'Py デモ](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |
-
 ### [SpriteStudio Player for Flutter](../players/flutter.md)
 
 | デモ | パッケージ | 内容 |
@@ -36,6 +32,12 @@ SpriteStudio の変換と再生を、**インストール不要・設定なし**
 | [Flame デモ](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | `ssplayer_flame` | 同じ再生を `SpriteStudioComponent` として Flame のゲームループから駆動。 |
 
 これらのデモは同 Player の Web ターゲットで動作します。
+
+### [SpriteStudio Player for Ren'Py](../players/renpy.md)
+
+| デモ | 内容 |
+|---|---|
+| [Ren'Py デモ](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | 同梱の SpriteStudio アニメを Ren'Py Web で再生。 |
 
 ### [SpriteStudio Player for wgpu](../players/wgpu.md)
 
