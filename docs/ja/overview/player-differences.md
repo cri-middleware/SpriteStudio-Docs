@@ -14,7 +14,7 @@ Player に委ねている機能）は [共通の制限事項](../sdk/limitations
 | Player | 一言で言うと | 詳細 |
 |---|---|---|
 | **[Unity](../players/unity.md)** | uGUI（Canvas）パスにのみ、ワールドパスにはない制約がある | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForUnity/ja/limitations/) |
-| **[Web](../players/web.md)** | `ssplayer-webgl` のマスクはステンシルバッファが前提。フレームワーク連携は beta | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForWeb/ja/limitations) |
+| **[Web](../players/web.md)** | `ssplayer-webgl` のマスクはステンシルバッファが前提 | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForWeb/ja/limitations) |
 | **[Godot](../players/godot.md)** | 12 種のブレンドのうち対応は 4 種。Web 書き出しに追加要件 | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForGodot/ja/limitations/) |
 | **[Flutter](../players/flutter.md)** | 描画バックエンドが 2 種類。Canvas では 2 つのブレンドでバッチングが落ちる | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForFlutter/ja/limitations/) |
 | **[Ren'Py](../players/renpy.md)** | メッシュパーツ全体の色はアルファのみの近似。セーブに残るのはトラック 0 だけ | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForRenPy/ja/limitations/) |
@@ -33,7 +33,7 @@ Player に委ねている機能）は [共通の制限事項](../sdk/limitations
 
 ### Web
 
-**`ssplayer-webgl` はステンシルバッファでマスクします**。ステンシルバッファの無いコンテキストではマスクを書き込めないため、マスクの外側に描くパーツはマスクされずに描かれ、マスクの内側にだけ描く設定のパーツは描かれません。フレームワーク連携（**RPG ツクール MZ・TyranoScript・ティラノビルダー**）は **beta** で、RPG ツクール MZ ではピクチャの色調とブレンドモードがアニメーションに影響しません。
+**`ssplayer-webgl` はステンシルバッファでマスクします**。ステンシルバッファの無いコンテキストではマスクを書き込めないため、マスクの外側に描くパーツはマスクされずに描かれ、マスクの内側にだけ描く設定のパーツは描かれません。RPG ツクール MZ では、ピクチャの色調とブレンドモードがアニメーションに影響しません。
 
 ブラウザ版コンバーター `ssconverter-web` でフォルダをドロップするには File System Access API が要るため、ドロップは **Chromium 系ブラウザ限定**です。ほかのブラウザでは **Browse...** でフォルダを選択します。
 
