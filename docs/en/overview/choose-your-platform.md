@@ -5,14 +5,14 @@ column links to its full details.
 
 | I want to ship on... | Use | Details |
 |---|---|---|
-| A Unity game | **[SpriteStudio Player for Unity](../players/unity.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
+| A **Unity** game | **[SpriteStudio Player for Unity](../players/unity.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForUnity/) |
 | The **browser** - PixiJS, WebGL | **[SpriteStudio Player for Web](../players/web.md)** (player collection) | [Docs](https://cri-middleware.github.io/SSPlayerForWeb/) |
 | **RPG Maker MZ** | **[SpriteStudio Player for Web](../players/web.md)** (`ssplayer-rmmz`) | [Docs](https://cri-middleware.github.io/SSPlayerForWeb/usage/rmmz) |
 | A **TyranoScript / TyranoBuilder** visual novel | **[SpriteStudio Player for Web](../players/web.md)** (`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`) | Docs: [TyranoScript](https://cri-middleware.github.io/SSPlayerForWeb/usage/tyrano) / [TyranoBuilder](https://cri-middleware.github.io/SSPlayerForWeb/usage/tyranobuilder) |
-| A Godot game | **[SpriteStudio Player for Godot](../players/godot.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
+| A **Godot** game | **[SpriteStudio Player for Godot](../players/godot.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForGodot/) |
 | A **Flutter** app | **[SpriteStudio Player for Flutter](../players/flutter.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForFlutter/) |
 | A **Flame** game | **[SpriteStudio Player for Flutter](../players/flutter.md)** (`ssplayer_flame`) | [Docs](https://cri-middleware.github.io/SSPlayerForFlutter/guide/flame/) |
-| A Ren'Py visual novel | **[SpriteStudio Player for Ren'Py](../players/renpy.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
+| A **Ren'Py** visual novel | **[SpriteStudio Player for Ren'Py](../players/renpy.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForRenPy/) |
 | The **browser** - WebGPU | **[SpriteStudio Player for wgpu](../players/wgpu.md)** (`@spritestudio/ssplayer-wgpu`) | [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/start/web/) |
 | A **Bevy** game | **[SpriteStudio Player for wgpu](../players/wgpu.md)** (`ssplayer-bevy`) | [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/start/bevy/) |
 | A **Rust** or **C / C++** app with no engine, rendering its own frames | **[SpriteStudio Player for wgpu](../players/wgpu.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/) |
