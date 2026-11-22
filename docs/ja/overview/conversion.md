@@ -11,25 +11,23 @@
 
 ## 🔀 変換の 2 つの方法
 
-### 1. Player が変換 - 外部ツール不要（Unity・Godot・Flutter・Ren'Py・RPG ツクール MZ・ティラノビルダー）
+変換は、Player が行うか、スタンドアロンツールで自分で行うかのどちらかです。Player が変換する場合は、Player のパッケージが `libssconverter` を持っているので、ほかに入れるものはありません（Flutter はコンバーターを dev 依存として追加します）。
 
-これらのエンジン向けの公式 Player パッケージは、変換ツールとして `libssconverter` を持っているので、スタンドアロンのコンバーターは使いません。ほとんどはエディタなどの開発環境側で自動的に実行されるため、その場で変換できます。**追加インストールは不要**です。Flutter だけは、コンバーターを dev 依存として追加し、自分で実行します。
+| 使うもの | 変換するもの | いつ |
+|---|---|---|
+| **Unity** | [SpriteStudio Player for Unity](../players/unity.md) 付属の Importer | Windows と macOS のエディタへドラッグ&ドロップしたとき。Linux のエディタでは [`ssconverter-cli`](./convert-with-a-standalone-tool.md) を使います |
+| **RPG ツクール MZ** | [SpriteStudio Player for Web](../players/web.md) の `ssplayer-rmmz` プラグイン | テストプレイの開始時、タイトルが出る前 |
+| **ティラノビルダー** | [SpriteStudio Player for Web](../players/web.md) の `ssplayer-tyranobuilder` プラグイン | プロジェクトを開いたとき、エディタ内で。変換結果はコンポーネントのドロップダウンに現れます |
+| **Godot** | [SpriteStudio Player for Godot](../players/godot.md) の SS Importer ドック | ドラッグ&ドロップしたとき |
+| **Flutter** | [SpriteStudio Player for Flutter](../players/flutter.md) の `ssconvert` CLI（dev 依存の `ssconverter_dart`） | 手動または CI で実行したとき。1 回に `.sspj` を 1 つ変換します。ライブリロード（dev 依存の `ssgen_flutter`）では、`sswatch` が保存のたびに再変換し、デバッグ実行中のアプリへ反映します |
+| **Ren'Py** | [SpriteStudio Player for Ren'Py](../players/renpy.md) | 起動時（自動インポート） |
+| [SpriteStudio Player for Web](../players/web.md) のレンダラーと TyranoScript プラグイン、[SpriteStudio Player for wgpu](../players/wgpu.md)、[SpriteStudio Player for React Native](../players/react-native.md) | [スタンドアロンツール](./convert-with-a-standalone-tool.md) | 自分で実行したとき |
 
-- **Unity** - [SpriteStudio Player for Unity](../players/unity.md) 付属の Importer が、Windows と macOS のエディタでドラッグ&ドロップで変換します。Linux のエディタでは [`ssconverter-cli`](./convert-with-a-standalone-tool.md) を使います。
-- **Godot** - [SpriteStudio Player for Godot](../players/godot.md) の SS Importer ドックがドラッグ&ドロップで変換します。
-- **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md) の `ssconvert` CLI（dev 依存の `ssconverter_dart`）が、`SpriteStudio_Source/` 内の `.sspj` を 1 回に 1 つ、手動または CI でアセットへ変換します。ライブリロード（dev 依存の `ssgen_flutter`）を使うと、`sswatch` が保存のたびに再変換し、デバッグ実行中のアプリへ反映します。
-- **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) が起動時に自動インポートします（`SpriteStudio_Source/` にソースを配置）。
-- **RPG ツクール MZ** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-rmmz` プラグインが、テストプレイの開始時、タイトルが出る前に変換します（`SpriteStudio_Source/` にソースを配置）。
-- **ティラノビルダー** - [SpriteStudio Player for Web](../players/web.md) の `ssplayer-tyranobuilder` プラグインが、プロジェクトを開いたときにエディタ内で変換します（`SpriteStudio_Source/` にソースを配置）。変換結果はコンポーネントのドロップダウンに現れます。
+RPG ツクール MZ・ティラノビルダー・Flutter・Ren'Py では、ソースを `SpriteStudio_Source/` に置きます。
+
+表に無いエンジンや CI/CD パイプラインでも、スタンドアロンツールで変換します。スタンドアロンツールはデスクトップ GUI・CLI・ブラウザの 3 つで、どれを選び、どう使うかは **[スタンドアロンツールで変換する](./convert-with-a-standalone-tool.md)** で解説します。
 
 各 Player のワークフローは、それぞれのドキュメントで解説しています。[プラットフォームの選び方](./choose-your-platform.md) を参照してください。
-
-### 2. スタンドアロンツール - 自分で変換する
-
-別のエンジン、CI/CD パイプライン、またはインポーターを持たない Player -
-[SpriteStudio Player for Web](../players/web.md) のレンダラーと TyranoScript プラグイン、[SpriteStudio Player for React Native](../players/react-native.md)、[SpriteStudio Player for wgpu](../players/wgpu.md) -
-を使う場合は、変換を代行してくれる Player がないため、3 つのスタンドアロンフロントエンド（デスクトップ GUI・CLI・ブラウザ）のいずれかで変換します。どれを選び、どう使うかは
-**[スタンドアロンツールで変換する](./convert-with-a-standalone-tool.md)** で解説します。
 
 ## 📦 生成されるもの
 

@@ -17,37 +17,28 @@ are defined against that version, and conversion does not upgrade an older proje
 
 ## 🔀 Two ways to convert
 
-### 1. Converted by the player - no external tool (Unity, Godot, Flutter, Ren'Py, RPG Maker MZ, TyranoBuilder)
+Either the player converts for you, or you convert with a standalone tool. A player that
+converts carries `libssconverter` in its package, so there is nothing else to install (Flutter
+adds its converter as a dev dependency).
 
-The official player packages for these engines carry `libssconverter` as a conversion tool, so
-no standalone converter is involved. Most run it automatically on the editor / development side,
-so conversion happens in-place - **nothing else to install**. Flutter is the exception: you add
-its converter as a dev dependency and run it yourself.
+| You use | What converts | When |
+|---|---|---|
+| **Unity** | [SpriteStudio Player for Unity](../players/unity.md)'s bundled Importer | On drag & drop into a Windows or macOS Editor. On a Linux Editor, use [`ssconverter-cli`](./convert-with-a-standalone-tool.md) instead |
+| **RPG Maker MZ** | [SpriteStudio Player for Web](../players/web.md)'s `ssplayer-rmmz` plugin | When a test play starts, before the title appears |
+| **TyranoBuilder** | [SpriteStudio Player for Web](../players/web.md)'s `ssplayer-tyranobuilder` plugin | When the project is opened, inside the editor. The result then appears in the component's dropdowns |
+| **Godot** | [SpriteStudio Player for Godot](../players/godot.md)'s SS Importer dock | On drag & drop |
+| **Flutter** | [SpriteStudio Player for Flutter](../players/flutter.md)'s `ssconvert` CLI (dev dependency `ssconverter_dart`) | When you run it, by hand or in CI - one `.sspj` per run. With Live Reload (dev dependency `ssgen_flutter`), `sswatch` re-converts on save and pushes the result into the running debug app |
+| **Ren'Py** | [SpriteStudio Player for Ren'Py](../players/renpy.md) | On startup (auto-import) |
+| [SpriteStudio Player for Web](../players/web.md)'s renderers and its TyranoScript plugin, [SpriteStudio Player for wgpu](../players/wgpu.md), [SpriteStudio Player for React Native](../players/react-native.md) | A [standalone tool](./convert-with-a-standalone-tool.md) | When you run it |
 
-- **Unity** - [SpriteStudio Player for Unity](../players/unity.md)'s bundled Importer converts on drag & drop, on Windows and macOS
-  Editors; on a Linux Editor, use [`ssconverter-cli`](./convert-with-a-standalone-tool.md) instead.
-- **Godot** - [SpriteStudio Player for Godot](../players/godot.md)'s SS Importer dock converts on drag & drop.
-- **Flutter** - [SpriteStudio Player for Flutter](../players/flutter.md)'s `ssconvert` CLI (dev dependency `ssconverter_dart`)
-  converts one `.sspj` under `SpriteStudio_Source/` into your assets per run, by hand or in CI. With Live Reload (dev dependency
-  `ssgen_flutter`), `sswatch` re-converts on save and pushes the result into the running debug app.
-- **Ren'Py** - [SpriteStudio Player for Ren'Py](../players/renpy.md) auto-imports on startup (drop sources into `SpriteStudio_Source/`).
-- **RPG Maker MZ** - [SpriteStudio Player for Web](../players/web.md)'s `ssplayer-rmmz` plugin converts when a test play
-  starts, before the title appears (drop sources into `SpriteStudio_Source/`).
-- **TyranoBuilder** - [SpriteStudio Player for Web](../players/web.md)'s `ssplayer-tyranobuilder` plugin converts inside the
-  editor when the project is opened (drop sources into `SpriteStudio_Source/`); the result then appears in the
-  component's dropdowns.
+For RPG Maker MZ, TyranoBuilder, Flutter and Ren'Py, drop the sources into `SpriteStudio_Source/`.
+
+On an engine not listed here, or in a CI/CD pipeline, convert with a standalone tool too. There
+are three - a desktop GUI, a CLI and a browser tool - and which one to pick and how to run each is
+covered in **[Converting with a Standalone Tool](./convert-with-a-standalone-tool.md)**.
 
 Each player's own docs walk through its workflow - see
 [Choose Your Platform](./choose-your-platform.md).
-
-### 2. Standalone tools - convert it yourself
-
-On a different engine, in a CI/CD pipeline, or using one of the players that hosts no importer -
-[SpriteStudio Player for Web](../players/web.md)'s renderers and its TyranoScript plugin,
-[SpriteStudio Player for React Native](../players/react-native.md), or [SpriteStudio Player for wgpu](../players/wgpu.md)?
-No player converts for you there, so you convert with one of three standalone front-ends -
-a desktop GUI, a CLI, or a browser tool. Which one to pick and how to run each is covered in
-**[Converting with a Standalone Tool](./convert-with-a-standalone-tool.md)**.
 
 ## 📦 What you get
 
