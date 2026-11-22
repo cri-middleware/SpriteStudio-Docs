@@ -5,15 +5,15 @@
 | 動かしたい対象 | 使用するもの | 詳細 |
 |---|---|---|
 | Unity ゲーム | **[SpriteStudio Player for Unity](../players/unity.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/ja/) |
-| Godot ゲーム | **[SpriteStudio Player for Godot](../players/godot.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |
-| **Flame** 製のゲーム | **[SpriteStudio Player for Flutter](../players/flutter.md)**（`ssplayer_flame`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/guide/flame/) |
-| **Bevy** ゲーム | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`ssplayer-bevy`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/bevy/) |
 | **ブラウザ** - PixiJS・WebGL | **[SpriteStudio Player for Web](../players/web.md)**（Player コレクション） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/) |
-| **ブラウザ** - WebGPU | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/web/) |
 | **RPG ツクール MZ** | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-rmmz`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/rmmz) |
 | **TyranoScript / ティラノビルダー** のビジュアルノベル | **[SpriteStudio Player for Web](../players/web.md)**（`ssplayer-tyranoscript` / `ssplayer-tyranobuilder`） | ドキュメント: [TyranoScript](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyrano) / [ティラノビルダー](https://cri-middleware.github.io/SSPlayerForWeb/ja/usage/tyranobuilder) |
-| Ren'Py ビジュアルノベル | **[SpriteStudio Player for Ren'Py](../players/renpy.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/ja/) |
+| Godot ゲーム | **[SpriteStudio Player for Godot](../players/godot.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |
 | **Flutter** アプリ | **[SpriteStudio Player for Flutter](../players/flutter.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/) |
+| **Flame** 製のゲーム | **[SpriteStudio Player for Flutter](../players/flutter.md)**（`ssplayer_flame`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/guide/flame/) |
+| Ren'Py ビジュアルノベル | **[SpriteStudio Player for Ren'Py](../players/renpy.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/ja/) |
+| **ブラウザ** - WebGPU | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`@spritestudio/ssplayer-wgpu`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/web/) |
+| **Bevy** ゲーム | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`ssplayer-bevy`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/bevy/) |
 | エンジンを使わず自分で描画する **Rust** / **C・C++** アプリケーション | **[SpriteStudio Player for wgpu](../players/wgpu.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/) |
 | **React Native** アプリ | **[SpriteStudio Player for React Native](../players/react-native.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForReactNative/ja/) |
 | 独自の Player・組み込みを作りたい | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |
