@@ -43,7 +43,7 @@ Web と React Native 以外のサイトでは、リポジトリ名のあとに `
 
 `Library/` と `node_modules/` は通常 gitignore されているため、`.gitignore` を尊重する検索では見つかりません。ripgrep なら `--no-ignore` が要ります。
 
-### 🧩 Agent Skill として
+### 🧩 Agent Skill として { #-agent-skill-として }
 
 npm と Flutter のパッケージは、同じページを [Agent Skill](https://agentskills.io) としても持っています。`SKILL.md` に、そのページが何のためのものかをアシスタント向けに書いたフォルダーです。プロジェクトの skill ディレクトリ（`.claude/skills/`、`.agents/skills/` など）に置かれると、アシスタントは場所を教わらなくてもドキュメントを見つけます。置くのはパッケージマネージャーです。
 
