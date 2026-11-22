@@ -13,25 +13,40 @@ alternatives), see [Converting with a Standalone Tool](./convert-with-a-standalo
 
 ## 🎮 Live player demos
 
-| Demo | Player | What it shows |
-|---|---|---|
-| [PixiJS demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A `.ssab` animation in a PixiJS app - **drag & drop a directory of `.ssab` + `.png` files** to preview your own. |
-| [WebGL demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | The framework-free WebGL renderer (`SSSurface`) - **drop a directory of `.ssab` + `.png`** to preview your own. |
-| [Override Layer API demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/override/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | A self-running loop on the Ringo sample: per-part color, visibility and cell overrides, applied one at a time while the animation keeps playing, with the call behind each step on screen - see [Changing a Character at Runtime](./runtime-changes.md). |
-| [PixiJS UI demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/ui.html) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-pixi-ui`) | Two `@pixi/ui` buttons drawn by the Ringo sample, one taking the pointer only on the parts it names - see [UI Integration](./ui-integration.md). |
-| [PixiJS motion blending demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/blend.html) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-pixi`) | Crossfades, an additive overlay and a second track on one character, each on a key, with the state of every track beside the picture - see [Motion Blending](./motion-blending.md). |
-| [WebGL motion blending demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/blend.html) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | The same keyboard-driven tracks with the WebGL renderer. |
-| [`<ss-player>` demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/element.html) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | The framework-free `<ss-player>` Web Component on its own, with a panel to pick the animation and set speed, fit, align and flip. |
-| [Many animations, one context](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/multi.html) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-webgl`) | A page full of `<ss-player>` elements drawn through one shared canvas - past the browser's limit of about a dozen WebGL contexts - with off-screen animations stopped. |
-| [RPG Maker MZ demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-rmmz`) | A sample MZ project with SpriteStudio animations in correct Z-order. |
-| [TyranoScript demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/tyranoscript/) | **[SpriteStudio Player for Web](../players/web.md)** (`@spritestudio/ssplayer-tyranoscript`) | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
-| [Ren'Py demo](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | **[SpriteStudio Player for Ren'Py](../players/renpy.md)** | Bundled SpriteStudio animations running in Ren'Py Web. |
-| [Flutter demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) | **[SpriteStudio Player for Flutter](../players/flutter.md)** (`ssplayer_flutter`) | The `SpriteStudioView` widget in a Flutter web build - every draw kind, over the same `libssruntime` wasm. |
-| [Flame demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | **[SpriteStudio Player for Flutter](../players/flutter.md)** (`ssplayer_flame`) | The same playback as a `SpriteStudioComponent`, driven by a Flame game loop. |
-| [WebGPU demo](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | **[SpriteStudio Player for wgpu](../players/wgpu.md)** (`@spritestudio/ssplayer-wgpu`) | The js API, the `<ss-player-webgpu>` custom element on its own, a page full of them overlapping other content on one `GPUDevice`, and a DOM marker following a part through `partTransform` - **drop a directory of `.ssab` + `.png`** to preview your own. |
+### [SpriteStudio Player for Web](../players/web.md)
 
-Both Flutter demos run on that player's Web target. The WebGPU demo needs a browser that
-supports WebGPU.
+| Demo | Package | What it shows |
+|---|---|---|
+| [PixiJS demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/) | `@spritestudio/ssplayer-pixi` | A `.ssab` animation in a PixiJS app - **drag & drop a directory of `.ssab` + `.png` files** to preview your own. |
+| [WebGL demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/webgl/) | `@spritestudio/ssplayer-webgl` | The framework-free WebGL renderer (`SSSurface`) - **drop a directory of `.ssab` + `.png`** to preview your own. It also links to the `<ss-player>` element and a page of many animations through one context. |
+| [Override Layer API demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/override/) | `@spritestudio/ssplayer-pixi` | A self-running loop on the Ringo sample: per-part color, visibility and cell overrides, applied one at a time while the animation keeps playing, with the call behind each step on screen - see [Changing a Character at Runtime](./runtime-changes.md). |
+| [PixiJS UI demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/ui.html) | `@spritestudio/ssplayer-pixi-ui` | Two `@pixi/ui` buttons drawn by the Ringo sample, one taking the pointer only on the parts it names - see [UI Integration](./ui-integration.md). |
+| [Motion blending demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/pixi/blend.html) | `@spritestudio/ssplayer-pixi` | Crossfades, an additive overlay and a second track on one character, each on a key, with the state of every track beside the picture - see [Motion Blending](./motion-blending.md). |
+| [RPG Maker MZ demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/rmmz/) | `@spritestudio/ssplayer-rmmz` | A sample MZ project with SpriteStudio animations in correct Z-order. |
+| [TyranoScript demo](https://cri-middleware.github.io/SSPlayerForWeb/examples/tyranoscript/) | `@spritestudio/ssplayer-tyranoscript` | SpriteStudio animations in a TyranoScript visual novel, driven by `[ss_*]` tags. |
+
+### [SpriteStudio Player for Ren'Py](../players/renpy.md)
+
+| Demo | What it shows |
+|---|---|
+| [Ren'Py demo](https://cri-middleware.github.io/SSPlayerForRenPy/demo/) | Bundled SpriteStudio animations running in Ren'Py Web. |
+
+### [SpriteStudio Player for Flutter](../players/flutter.md)
+
+| Demo | Package | What it shows |
+|---|---|---|
+| [Flutter demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flutter/) | `ssplayer_flutter` | The `SpriteStudioView` widget in a Flutter web build - every draw kind, over the same `libssruntime` wasm. |
+| [Flame demo](https://cri-middleware.github.io/SSPlayerForFlutter/demo/flame/) | `ssplayer_flame` | The same playback as a `SpriteStudioComponent`, driven by a Flame game loop. |
+
+These demos run on that player's Web target.
+
+### [SpriteStudio Player for wgpu](../players/wgpu.md)
+
+| Demo | Package | What it shows |
+|---|---|---|
+| [WebGPU demo](https://cri-middleware.github.io/SSPlayerForWgpu/demo/) | `@spritestudio/ssplayer-wgpu` | The js API, the `<ss-player-webgpu>` custom element on its own, a page full of them overlapping other content on one `GPUDevice`, and a DOM marker following a part through `partTransform` - **drop a directory of `.ssab` + `.png`** to preview your own. |
+
+It needs a browser that supports WebGPU.
 
 **Want to preview your own animation?** The PixiJS, WebGL and WebGPU demos take a dropped folder
 of `.ssab` + `.png` (the PixiJS and WebGL demos also take a single embedded `.ssab`), so convert your `.sspj` first - with the browser converter above, or any of the
