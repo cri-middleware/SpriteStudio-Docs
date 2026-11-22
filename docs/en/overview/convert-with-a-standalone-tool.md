@@ -1,12 +1,8 @@
 # 🧰 Converting with a Standalone Tool
 
-Some players bundle `libssconverter` and convert by themselves, with no separate tool
-in sight - [Converting Assets](./conversion.md) says which. Targeting anything else means no
-player converts for you, so you run a standalone tool yourself - for example when you:
-
-- play back in the browser with [SpriteStudio Player for Web](../players/web.md)'s renderers or its TyranoScript plugin,
-- integrate your own player, or bring SpriteStudio to a new engine ([Porting a Player](../sdk/porting.md)), or
-- automate conversion in a build or CI/CD pipeline.
+When your player doesn't convert for you (the table in [Converting Assets](./conversion.md) says
+which ones do), on an engine that table doesn't list, or in a build or CI/CD pipeline, you convert
+with one of the standalone tools below.
 
 ## 🧭 Which one should I use?
 
@@ -22,11 +18,9 @@ GUI, `--embedded` on the CLI); not every player reads one, so check
 | Automating a build, CI/CD, or many projects at once | **`ssconverter-cli`** | Scriptable, batch mode |
 
 !!! tip "Not sure? Start in the browser."
-    ssconverter-web is a web
-    app - nothing to install - and runs the conversion in your browser via WebAssembly (wasm),
-    so your files never leave your machine. It's the fastest way to get one `.ssab` and confirm
-    your assets convert cleanly. Move to the GUI or CLI once conversion becomes a repeatable
-    part of your workflow.
+    The quickest way to get one `.ssab` and confirm your assets convert cleanly is ssconverter-web,
+    with nothing to install. Move to the GUI or CLI once conversion becomes a repeatable part of
+    your workflow.
 
 ## 🌐 ssconverter-web - in the browser
 
