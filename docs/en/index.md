@@ -12,14 +12,9 @@ or read [how the pieces fit together](./overview/ecosystem.md).
 ▶️ Prefer to see it first? [Try it in your browser](./overview/try-it.md) - live demos and a
 hosted converter, no install.
 
-🎚️ One character, several animations: crossfade between them and layer one over another, each
-authored on its own - see [Motion Blending](./overview/motion-blending.md).
-
-🔘 Building a UI? A SpriteStudio animation can be a button in your UI toolkit, with every
-state drawn in SpriteStudio - see [UI Integration](./overview/ui-integration.md).
-
-🧥 Equipment, costumes and colour variants: make things follow a part, swap textures and override
-single parts while the animation plays - see [Changing a Character at Runtime](./overview/runtime-changes.md).
+✨ Beyond playback: [Motion Blending](./overview/motion-blending.md),
+[UI Integration](./overview/ui-integration.md) and
+[Changing a Character at Runtime](./overview/runtime-changes.md).
 
 🎨 No SpriteStudio project of your own? CRI Middleware publishes free
 [sample data](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) - complete `.sspj` projects
