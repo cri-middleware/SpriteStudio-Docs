@@ -20,7 +20,7 @@
 
     ---
 
-    Unity Engine 上で SpriteStudio アニメーションを再生。Job System で高速動作します。
+    ワールド空間にも uGUI の Canvas にも描け、Canvas ではボタンやトグルにもなります。Burst ジョブと SIMD で最適化した Rust コアがメッシュを組み、GC アロケーションなしで動きます。
 
     :octicons-arrow-right-24: [概要](./players/unity.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForUnity/ja/) |
@@ -30,7 +30,7 @@
 
     ---
 
-    ブラウザ向け Player 群（PixiJS・フレームワーク非依存 WebGL・RPG ツクール MZ・TyranoScript・ティラノビルダー）と、クライアントサイド変換ツール（ssconverter-web）のコレクション。
+    依存ゼロの `<ss-player>` タグから PixiJS、RPG ツクール MZ・TyranoScript・ティラノビルダーまで、環境に合わせて選べる Player 群です。`<video>` と違って自由に拡大縮小でき、操作にも反応します。ブラウザで完結する変換ツール（ssconverter-web）も入っています。
 
     :octicons-arrow-right-24: [概要](./players/web.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForWeb/ja/) |
@@ -40,7 +40,7 @@
 
     ---
 
-    Godot で SpriteStudio アニメーションをネイティブに描画。GDExtension とカスタムモジュールの両方で提供。
+    `SpriteStudioPlayer2D` をいつものノードとしてシーンに置け、GDExtension ならエンジンを再ビルドせずに入ります。ポーズ計算は SIMD で最適化した Rust コアが担い、大量のキャラクターでも滑らかです。
 
     :octicons-arrow-right-24: [概要](./players/godot.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForGodot/ja/) |
@@ -50,7 +50,7 @@
 
     ---
 
-    `SpriteStudioAnimation` ウィジェットで Flutter アプリに SpriteStudio アニメーションを再生。
+    普通のウィジェットとして配置・変形・クリップでき、Flame のゲームにも載せられます。描画は Flutter 自身のレンダラが行い、WebView も動画のデコードも使いません。
 
     :octicons-arrow-right-24: [概要](./players/flutter.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForFlutter/ja/) |
@@ -60,7 +60,7 @@
 
     ---
 
-    Ren'Py 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。
+    `show` 1 行で普通の画像と同じように使え、セリフに合わせて口パクします。オープニングや動く背景など、動画（ムービー）の軽量な代替にもなります。
 
     :octicons-arrow-right-24: [概要](./players/renpy.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForRenPy/ja/) |
@@ -70,7 +70,7 @@
 
     ---
 
-    wgpu で描画する Player。wgpu が WebGPU・Vulkan・DX12・Metal の違いを吸収するため、同じ Player がどのバックエンドでも動きます。
+    Rust・Bevy から C/C++・ブラウザまで、1 つの wgpu レンダラーで動きます。GPU はホストのものを借りるだけなので、egui や Bevy など既存の wgpu アプリの中に同居できます。
 
     :octicons-arrow-right-24: [概要](./players/wgpu.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/) |
@@ -80,8 +80,7 @@
 
     ---
 
-    React Native アプリで SpriteStudio アニメーションを再生します。`<SpriteStudioView>`
-    コンポーネントを配置するだけで、描画は Skia 経由でネイティブ側が担当します。
+    普通のビューとして使え、描画はネイティブコードが Skia で行います。フレームごとに頂点が JavaScript を通ることも、React が再レンダーすることもありません。
 
     :octicons-arrow-right-24: [概要](./players/react-native.md) |
     [ドキュメント](https://cri-middleware.github.io/SSPlayerForReactNative/ja/) |
