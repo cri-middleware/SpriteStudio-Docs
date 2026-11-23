@@ -6,14 +6,14 @@
 [ブラウザで試す](../overview/try-it.md)。
 
 !!! tip "コードで始まる - 1 つのライブラリに 4 つの Face"
-    どの Face を入れるかで決まるのは書く言語と、**自分のレンダーパスへ描き込めるかどうか**（Rust 側だけの機能）です。C と JavaScript の Face は Rust の API を別名で包んだもので、Bevy アダプターはその上に構築されています。
+    どの Face を入れるかで、書く言語が決まります。C と JavaScript の Face は Rust の API を別名で包んだもので、Bevy アダプターはその上に構築されています。
 
 **1. 何を入れるか** - ホストに合う Face を選びます。
 
 | ホスト | 追加するもの |
 |---|---|
-| **Rust** アプリ | `ssplayer-wgpu` を git 依存として追加します。ビルドに使う SpriteStudio-SDK の submodule も Cargo が取得するので、他のツールは不要です。 |
-| **Bevy** アプリ | 代わりに `ssplayer-bevy` を追加します。Player 本体を引き込み、`SsPlayer` / `SsTransform` / `SsPlayback` の 3 コンポーネントを追加します。 |
+| **Rust** アプリ | `cargo add ssplayer-wgpu`。未リリースの変更を使うならリポジトリを git 依存にします（ビルドに使う SpriteStudio-SDK の submodule も Cargo が取得します）。 |
+| **Bevy** アプリ | 代わりに `cargo add ssplayer-bevy`（git 依存でも可）。Player 本体を引き込み、`SsPlayer` / `SsTransform` / `SsPlayback` の 3 コンポーネントを追加します。 |
 | **C / C++** アプリ | cdylib / staticlib と生成されたヘッダー。Windows と macOS 向けのビルド済みのものが [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases?q=ssplayer-wgpu&expanded=true) に `ssplayer-wgpu-<platform>-<arch>.zip` としてあります。Linux の場合や Windows の DLL が必要な場合は、チェックアウトで `scripts/build.sh` を実行して `bin/` にビルドします。 |
 | **ブラウザ**（WebGPU） | npm パッケージ `@spritestudio/ssplayer-wgpu`。wasm とその上の TypeScript 層で、`<ss-player-webgpu>` カスタム要素は独立したエントリポイントにあります。 |
 
@@ -22,23 +22,13 @@
 **3. どう画面に出すか** - デバイスごとに `SSRenderer` を 1 つ、描画ターゲットごとに `SSScene`
 を 1 つ、そこに任意の数の `SSPlayer` を、ホストが開いたレンダーパスの中で 1 パスで描画します。
 
-C と JavaScript の Face も、呼び出しの形は同じで名前が違うだけですが、構造がひとつ違います。どちらも自分でデバイスを構築して所有し、あなたのパスへは描き込みません（下記）。Bevy アプリではアダプターがこれを代行するので、3 つのコンポーネントを spawn すればキャラクターが Bevy 自身の
-2D パスに入ります。
+Bevy アプリではアダプターがこれを代行するので、3 つのコンポーネントを spawn すればキャラクターが Bevy 自身の 2D パスに入ります。
 
 Face ごとの手順は、README の[インストール](https://github.com/cri-middleware/SSPlayerForWgpu/blob/HEAD/README.ja.md#-インストール)にあります。
 
-## 🔩 どの Face がデバイスを借りるか
+## 🔩 自分のレンダーパスへ描き込む
 
-この Player の設計を決めているのは **borrow モデル**です。Rust の API は wgpu の
-`Device` / `Queue` / `Surface` を所有せず、ホストが所有してフレームごとに貸します。上で、シーンをホストが開いたレンダーパスの中で描画しているのはそのためです。おかげでこの Player は、自作レンダラーでも、既にデバイスを持っているエンジンでも、任意の wgpu
-アプリケーションの中に相乗りでき、特定のホストに縛られません。
-
-**C とブラウザの Face は借りません。** wgpu の型には安定した C 表現がなく、境界を越えて渡せるものが無いためです。C Face は渡されたウィンドウハンドルの上に自分でデバイスを構築して所有し、ブラウザの Face は自前のデバイスと canvas ごとの surface を作ります。どちらもあなたのパスへではなく自分のフレームを描くので、キャラクターを自分のパスへ合成するのは
-Rust 側（直接、またはエンジンアダプター経由）の機能です。C からはシーンを作ったウィンドウかレイヤーにしか描けないので、経路は Player 専用のウィンドウかレイヤー（子ウィンドウ、またはレイヤーツリーに置いた `CAMetalLayer`）で、あなたのパスやテクスチャではありません。
-
-**Bevy** アダプターが小さく収まっているのも borrow モデルのおかげです。アダプターは Bevy が既に所有しているデバイスの上に描くため、キャラクターは 2 つ目のレンダラーを通らず Bevy 自身の
-2D パスに入ります。バージョンは Player 側ではなく Bevy のリリースラインに追従し、一度に
-1 ラインだけを対象とします。Bevy と Player が単一の `wgpu` に解決される必要があり、食い違えば実行時ではなくコンパイルエラーになるためです。どのラインを対象にしているかと、Bevy アプリ側に必要なカメラ設定は、リポジトリに記載があります。
+C とブラウザの Face は自前のデバイスを作って自分のフレームを描くので、キャラクターを自分のレンダーパスへ描き込めるのは Rust だけです（直接、または Bevy のリリースラインに 1 つずつ追従する Bevy アダプター経由）。理由は [borrow モデル](https://cri-middleware.github.io/SSPlayerForWgpu/ja/wgpu/borrow-model/) にあります。
 
 ## ➡️ 次に読む
 

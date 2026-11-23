@@ -7,9 +7,8 @@ Play SpriteStudio animations in **Flutter** apps, backed by `libssruntime`. The
 [Try it in your browser](../overview/try-it.md).
 
 !!! tip "Code-first - and no Rust toolchain"
-    The native core is fetched, not built: `ssruntime_dart`'s native-assets hook downloads the
-    prebuilt `libssruntime` from the pinned SDK release, and the converter downloads
-    `libssconverter` the same way.
+    The native core is fetched, not built: the first build downloads a prebuilt runtime, and the
+    converter does the same.
 
 **1. What you install** - `ssplayer_flutter` from pub.dev (`flutter pub add ssplayer_flutter`),
 which brings `ssruntime_dart` with it, and `ssconverter_dart` as a dev dependency for the
@@ -28,9 +27,8 @@ The steps, with the folders they use, are in the README's [Quick Start](https://
 Alongside the player it ships:
 
 - **A [Flame](https://flame-engine.org/) adapter** - `ssplayer_flame` drops an animation into a Flame game.
-- **Live reload** - add `ssgen_flutter` as a dev dependency and launch the app through its
-  `sswatch --run`, which wraps `flutter run`: a save in SpriteStudio re-converts only the changed
-  project and pushes it into the running debug app.
+- **[Live reload](https://cri-middleware.github.io/SSPlayerForFlutter/guide/live-reload/)** - a save
+  in SpriteStudio re-converts only the changed project and pushes it into the running debug app.
 
 ## ➡️ Read next
 

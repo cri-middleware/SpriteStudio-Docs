@@ -16,9 +16,7 @@
 | **Bevy** ゲーム | **[SpriteStudio Player for wgpu](../players/wgpu.md)**（`ssplayer-bevy`） | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/start/bevy/) |
 | エンジンを使わず自分で描画する **Rust** / **C・C++** アプリケーション | **[SpriteStudio Player for wgpu](../players/wgpu.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForWgpu/ja/) |
 | **React Native** アプリ | **[SpriteStudio Player for React Native](../players/react-native.md)** | [ドキュメント](https://cri-middleware.github.io/SSPlayerForReactNative/ja/) |
-| 独自の Player・組み込みを作りたい | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |
-
-Player ごとの統合の成熟度は [Player ごとの違い](./player-differences.md) と各 Player のページに記載しており、この表では重複して書きません。
+| ここに無いエンジン（独自の Player・組み込みを作る） | **SpriteStudio-SDK** | [Player の移植](../sdk/porting.md) |
 
 `.sspj` の変換だけしたい場合は、Player ではなくスタンドアロンツールを選びます。
 

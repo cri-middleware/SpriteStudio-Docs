@@ -22,21 +22,15 @@ File these in the repository that owns the code. Search existing issues first.
 
 ### 🧭 Not sure which one?
 
-Because every player shares one core, the deciding question is **whether the symptom is in the
-shared core or in the engine-specific layer**:
+Pick by where the problem shows up:
 
-| Symptom | Where it belongs |
+| What you see | Where it belongs |
 |---|---|
-| Conversion produces a wrong or corrupt asset, or crashes - and it reproduces in the GUI, the CLI, **and** the browser tool | **SpriteStudio-SDK** (the conversion engine is shared) |
-| SSConverter GUI misbehaves but `ssconverter-cli` converts the same `.sspj` fine | **SSConverterGUI** (a front-end issue) |
-| An animation plays wrong the **same way on every player** you tried | **SpriteStudio-SDK** (the playback core is shared) |
-| An animation plays wrong on **one engine only** | that **player's** repository |
-| A part type or blend mode is missing on one engine | check [Player Differences](./overview/player-differences.md) first - it may be a known difference |
+| Conversion produces a wrong or corrupt asset, or crashes | **SpriteStudio-SDK** |
+| An animation plays wrong the **same way on every player** you tried | **SpriteStudio-SDK** |
+| An animation plays wrong on **one engine only** | that **player's** repository - check [Player Differences](./overview/player-differences.md) first |
 
-Before filing, it also helps to check [Shared Limitations](./sdk/limitations.md): several
-frequently-reported behaviors (seeking not firing events, reverse playback of
-`independent = true` parts, no audio in reverse) are documented constraints of the shared
-runtime, not bugs.
+Known constraints are listed in [Shared Limitations](./sdk/limitations.md).
 
 ## ❓ How-to questions - community forum
 

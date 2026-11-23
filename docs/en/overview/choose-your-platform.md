@@ -17,11 +17,7 @@ column links to its full details.
 | A **Bevy** game | **[SpriteStudio Player for wgpu](../players/wgpu.md)** (`ssplayer-bevy`) | [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/start/bevy/) |
 | A **Rust** or **C / C++** app with no engine, rendering its own frames | **[SpriteStudio Player for wgpu](../players/wgpu.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForWgpu/) |
 | A **React Native** app | **[SpriteStudio Player for React Native](../players/react-native.md)** | [Docs](https://cri-middleware.github.io/SSPlayerForReactNative/) |
-| Building your own player / integration | **SpriteStudio-SDK** | [Porting a Player](../sdk/porting.md) |
-
-Where a player's integrations are at different stages of maturity, the stage is stated in
-[Player Differences](./player-differences.md) and on that player's own page - it is deliberately not
-repeated here.
+| An engine not listed here - building your own player or integration | **SpriteStudio-SDK** | [Porting a Player](../sdk/porting.md) |
 
 Only converting `.sspj`? Pick a standalone tool rather than a player.
 

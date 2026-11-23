@@ -12,17 +12,15 @@ Play SpriteStudio animations in **React Native** apps, on the New Architecture, 
 
 **2. `.sspj` -> `.ssab`** - React Native has no editor to host an importer in, so this is a
 host-side step with the browser's [`ssconverter-web`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/), [SSConverter GUI](./converter.md) or the SDK's
-`ssconverter-cli` - see [Converting Assets](../overview/conversion.md). **A pack is a directory, not
-a file**, and Metro bundles only what a `require()` names, so the pack folder ships as a native app
-asset through the package's Expo config plugin.
+`ssconverter-cli` - see [Converting Assets](../overview/conversion.md). The pack folder ships as a
+native app asset through the package's Expo config plugin.
 
 **3. Getting it on screen** - a `<SpriteStudioView>` whose `source` names the pack by its path
 inside that asset folder.
 
-Once it is in your tree the native side takes over: both the geometry and the draw happen natively
-through [React Native Skia](https://shopify.github.io/react-native-skia/), so what JavaScript does
-each frame is the same few calls per animation on screen, however complex it is, and no vertex
-crosses into JavaScript. Alongside the view it ships **`<SpriteStudioScene>`**,
+The geometry and the draw run natively through
+[React Native Skia](https://shopify.github.io/react-native-skia/), so what JavaScript does each
+frame is the same few calls per animation on screen, however complex it is. Alongside the view it ships **`<SpriteStudioScene>`**,
 which draws a whole cast through one canvas and one clock.
 
 The steps, with the folders they use, are in the README's [Quick Start](https://github.com/cri-middleware/SSPlayerForReactNative#-quick-start).
