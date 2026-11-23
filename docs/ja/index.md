@@ -8,10 +8,6 @@
 
 ▶️ まず動かして確かめたい方は [ブラウザで試す](./overview/try-it.md) へ - インストール不要のライブデモとホスト型コンバーターがあります。
 
-✨ 再生のほかに、[モーションブレンド](./overview/motion-blending.md)・[UI 統合](./overview/ui-integration.md)・[実行時にキャラクターを変える](./overview/runtime-changes.md)にも対応しています。
-
-🎨 手元に SpriteStudio プロジェクトがない場合は、CRI Middleware が無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています - キャラクター・エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)にかけられます。
-
 ## 🎮 Player・ツール
 
 <div class="grid cards" markdown>
@@ -108,6 +104,10 @@
     [GitHub](https://github.com/cri-middleware/SpriteStudio-SDK)
 
 </div>
+
+✨ 再生のほかに、[モーションブレンド](./overview/motion-blending.md)・[UI 統合](./overview/ui-integration.md)・[実行時にキャラクターを変える](./overview/runtime-changes.md)にも対応しています。
+
+🎨 手元に SpriteStudio プロジェクトがない場合は、CRI Middleware が無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています - キャラクター・エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)にかけられます。
 
 !!! note "このポータルについて"
     **SDK を直接使う方・新しい Player を作る方**は
