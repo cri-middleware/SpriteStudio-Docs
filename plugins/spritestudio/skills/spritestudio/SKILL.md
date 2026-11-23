@@ -5,7 +5,7 @@ description: "SpriteStudio is a tool for 2D animation made from drawn, raster ar
 
 # SpriteStudio
 
-An artist makes the animation in the [SpriteStudio editor](https://www.webtech.co.jp/spritestudio/)
+An artist makes the animation in the [SpriteStudio editor](https://www.webtech.co.jp/eng/spritestudio/)
 as a project: a `.sspj` file with `.ssae` animations and `.ssce` cell maps. A converter turns the
 project into a `.ssab` file, which every SpriteStudio player loads. The players share one core, so
 the motion is the same in every engine, and each engine draws it with its own renderer.

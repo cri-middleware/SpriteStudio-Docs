@@ -16,5 +16,5 @@ the repository you use:
 | SSConverterGUI | [LICENSE](https://github.com/cri-middleware/SSConverterGUI/blob/HEAD/LICENSE.md) |
 
 !!! note
-    SpriteStudio itself is a product of [CRI Middleware Co., Ltd.](https://www.webtech.co.jp/spritestudio/)
+    SpriteStudio itself is a product of [CRI Middleware Co., Ltd.](https://www.webtech.co.jp/eng/spritestudio/)
     and is licensed separately from these players and SDK.
