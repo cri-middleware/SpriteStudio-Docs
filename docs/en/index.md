@@ -2,7 +2,8 @@
 
 The documentation portal for the **SpriteStudio SDK** and its official players.
 
-[SpriteStudio](https://www.webtech.co.jp/spritestudio/) is a 2D animation tool.
+[SpriteStudio](https://www.webtech.co.jp/eng/spritestudio/) is a 2D animation tool: an artist adds bones,
+mesh deformation and effects to their own illustrations to make them move.
 This portal is the single entry point to every official runtime that plays back
 SpriteStudio animations, and to the tools that convert for them - all powered by the shared Rust core, **SpriteStudio-SDK**.
 
@@ -126,7 +127,8 @@ hosted converter, no install.
 🎨 No SpriteStudio project of your own? CRI Middleware publishes free
 [sample data](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) - complete `.sspj` projects
 (characters, effects, UI) you can feed straight into
-[conversion](./overview/conversion.md). (Help Center page, in Japanese.)
+[conversion](./overview/conversion.md). (Help Center page, in Japanese.) To make your own, you use
+SpriteStudio itself - see [its site](https://www.webtech.co.jp/eng/spritestudio/).
 
 !!! note "About this portal"
     **Using the SDK directly, or building a new player?** See

@@ -2,7 +2,7 @@
 
 **SpriteStudio SDK** と公式 Player 群のドキュメントポータルです。
 
-[SpriteStudio](https://www.webtech.co.jp/spritestudio/) は 2D アニメーション制作ツールです。このポータルは、SpriteStudio アニメーションを再生するすべての公式ランタイムと、そのための変換ツールへの入口です。これらはすべて共通の Rust コア **SpriteStudio-SDK** の上に構築されています。
+[SpriteStudio](https://www.webtech.co.jp/spritestudio/) は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。このポータルは、SpriteStudio アニメーションを再生するすべての公式ランタイムと、そのための変換ツールへの入口です。これらはすべて共通の Rust コア **SpriteStudio-SDK** の上に構築されています。
 
 どれを使うか迷ったら [プラットフォームの選び方](./overview/choose-your-platform.md) を、全体像は [エコシステム](./overview/ecosystem.md) をご覧ください。
 
@@ -107,7 +107,7 @@
 
 ✨ 再生のほかに、[モーションブレンド](./overview/motion-blending.md)・[UI 統合](./overview/ui-integration.md)・[実行時にキャラクターを変える](./overview/runtime-changes.md)にも対応しています。
 
-🎨 手元に SpriteStudio プロジェクトがない場合は、CRI Middleware が無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています - キャラクター・エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)にかけられます。
+🎨 手元に SpriteStudio プロジェクトがない場合は、CRI Middleware が無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています - キャラクター・エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)にかけられます。自分のアニメーションを作るには SpriteStudio 本体を使います（[製品サイト](https://www.webtech.co.jp/spritestudio/)）。
 
 !!! note "このポータルについて"
     **SDK を直接使う方・新しい Player を作る方**は
