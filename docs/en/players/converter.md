@@ -10,5 +10,6 @@ Linux use the SDK's `ssconverter-cli`, which is the same `libssconverter` withou
 - **Repository:** <https://github.com/cri-middleware/SSConverterGUI>
 
 It converts rather than plays, so this page has no install, convert and play steps of its own:
-copy the output folder to where your player loads assets from - each player's Quick Start shows where.
+copy the output folder to where your player loads assets from - each player's Quick Start shows where,
+and [Choose Your Platform](../overview/choose-your-platform.md) leads to it.
 For the conversion pipeline these assets feed into, see [SDK Concepts](../sdk/concepts.md).
