@@ -18,7 +18,7 @@ served from the same library.
 |---|---|
 | A **Rust** app | `cargo add ssplayer-wgpu` - or, for changes not released yet, a git dependency on the repository; Cargo also checks out the SpriteStudio-SDK submodule it builds against. |
 | A **Bevy** app | `cargo add ssplayer-bevy` instead (or the same as a git dependency) - it pulls the player in and adds the `SsPlayer` / `SsTransform` / `SsPlayback` components. |
-| A **C or C++** app | A cdylib / staticlib plus a generated header: prebuilt for Windows and macOS as `ssplayer-wgpu-<platform>-<arch>.zip` on [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases?q=ssplayer-wgpu&expanded=true), or - on Linux, or for the Windows DLL - built from a checkout with `scripts/build.sh` into `bin/`. |
+| A **C or C++** app | A cdylib / staticlib plus a generated header: prebuilt for Windows and macOS as `ssplayer-wgpu-<platform>-<arch>.zip` on [GitHub Releases](https://github.com/cri-middleware/SSPlayerForWgpu/releases?expanded=true), or - on Linux, or for the Windows DLL - built from a checkout with `scripts/build.sh` into `bin/`. |
 | The **browser** (WebGPU) | The npm package `@spritestudio/ssplayer-wgpu` - the wasm plus a TypeScript layer, with the `<ss-player-webgpu>` custom element in its own entry point. |
 
 **2. `.sspj` -> `.ssab`** - nothing here hosts an importer and nothing converts at runtime, so
