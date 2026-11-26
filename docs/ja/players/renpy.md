@@ -1,3 +1,7 @@
+---
+description: "Ren'Py のビジュアルノベルで SpriteStudio のアニメーションを再生する。ゲームの起動時に変換され、ほかの画像と同じように表示できる。SpriteStudio は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。"
+---
+
 # 🎭 SpriteStudio Player for Ren'Py
 
 **Ren'Py** 製ビジュアルノベルに SpriteStudio キャラクターを組み込みます。`libssruntime` を基盤としています。

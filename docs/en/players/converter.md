@@ -1,3 +1,7 @@
+---
+description: "SSConverter GUI, a desktop app that converts SpriteStudio projects (.sspj) for the official players. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 🖥️ SSConverter GUI
 
 A **desktop app** (Tauri) that wraps `libssconverter`, so you can convert `.sspj` projects into

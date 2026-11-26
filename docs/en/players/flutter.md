@@ -1,3 +1,7 @@
+---
+description: "Play SpriteStudio animations in Flutter apps and Flame games, with a converter CLI and live reload. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 📱 SpriteStudio Player for Flutter
 
 Play SpriteStudio animations in **Flutter** apps, backed by `libssruntime`. The

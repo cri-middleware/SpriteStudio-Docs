@@ -1,3 +1,7 @@
+---
+description: "Pick the official player that plays SpriteStudio animations in your engine, framework or browser. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 🧭 Choose Your Platform
 
 Pick the one that matches your target runtime. Names link to its overview page here; the right

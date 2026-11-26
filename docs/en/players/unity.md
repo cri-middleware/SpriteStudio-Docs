@@ -1,3 +1,7 @@
+---
+description: "Play SpriteStudio animations in Unity: drop a .sspj on the importer and place a component, with no code. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 🎮 SpriteStudio Player for Unity
 
 Play back SpriteStudio animations in the **Unity Engine**. Playback runs through

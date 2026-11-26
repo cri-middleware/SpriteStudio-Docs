@@ -3,7 +3,7 @@ INHERIT: ./mkdocs.base.yml
 docs_dir: docs/ja
 site_dir: site/ja
 site_url: "https://cri-middleware.github.io/SpriteStudio-Docs/ja/"
-site_description: "SpriteStudio SDK と公式 Player 群のドキュメントポータル"
+site_description: "ゲームエンジン・アプリ・ブラウザで SpriteStudio のアニメーションを再生する公式 Player のドキュメント。SpriteStudio は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。"
 
 theme:
   language: ja

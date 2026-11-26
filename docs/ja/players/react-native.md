@@ -1,3 +1,7 @@
+---
+description: "React Native アプリで SpriteStudio のアニメーションを再生する。React Native Skia でネイティブに描く。SpriteStudio は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。"
+---
+
 # ⚛️ SpriteStudio Player for React Native
 
 **React Native** アプリ（New Architecture）で SpriteStudio アニメーションを再生します。`<SpriteStudioView>` コンポーネントとして配置できます。

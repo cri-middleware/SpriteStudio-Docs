@@ -1,3 +1,7 @@
+---
+description: "WebGL・PixiJS・RPG ツクール MZ・TyranoScript・ティラノビルダーで、ブラウザに SpriteStudio のアニメーションを再生する。SpriteStudio は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。"
+---
+
 # 🌐 SpriteStudio Player for Web
 
 ブラウザで SpriteStudio アニメーションを再生する **Web 用 Player のコレクション**です。共通の WebAssembly コア（`@spritestudio/ssplayer-core`、`libssruntime` を基盤）を共有します。SpriteStudio でスプライトを制作し、`.ssab` に変換したうえで、好みのレンダラーで再生できます。

@@ -1,3 +1,7 @@
+---
+description: "SpriteStudio のプロジェクト（.sspj）を公式 Player 向けに変換するデスクトップアプリ、SSConverter GUI。SpriteStudio は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。"
+---
+
 # 🖥️ SSConverter GUI
 
 `libssconverter` をラップした **デスクトップアプリ**（Tauri）です。CLI を使わずに `.sspj`

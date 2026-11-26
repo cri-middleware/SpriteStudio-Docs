@@ -1,3 +1,7 @@
+---
+description: "SpriteStudio のアニメーションを UI ツールキットのボタンにする方法と、対応する Player。SpriteStudio は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。"
+---
+
 # 🔘 UI 統合
 
 SpriteStudio のアニメーションは、アプリの UI ツールキットのボタンそのものにできます。Unity なら uGUI の `Button`、Godot なら `BaseButton`、Flutter ならいつもの `InkWell` や `ElevatedButton` です。そのツールキットのボタンなので、クリック、キーボードのフォーカス、無効の状態、読み上げはほかのボタンと同じように働き、アニメーションがボタンのいまの状態を見せます。

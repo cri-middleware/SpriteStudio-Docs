@@ -1,3 +1,7 @@
+---
+description: "Make a SpriteStudio animation a button in your UI toolkit, and the players that offer it. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 🔘 UI Integration
 
 A SpriteStudio animation can be a button in your app's own UI toolkit: a uGUI `Button` in Unity, a

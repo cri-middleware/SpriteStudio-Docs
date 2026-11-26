@@ -1,3 +1,7 @@
+---
+description: "Flutter アプリと Flame のゲームで SpriteStudio のアニメーションを再生する。変換 CLI とライブリロード付き。SpriteStudio は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。"
+---
+
 # 📱 SpriteStudio Player for Flutter
 
 **Flutter** アプリで SpriteStudio アニメーションを再生します。`libssruntime` を基盤とし、`SpriteStudioAnimation` ウィジェットが通常のウィジェットと同様に合成されます。

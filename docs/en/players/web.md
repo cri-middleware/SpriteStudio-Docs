@@ -1,3 +1,7 @@
+---
+description: "Play SpriteStudio animations in the browser through WebGL, PixiJS, RPG Maker MZ, TyranoScript and TyranoBuilder. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 🌐 SpriteStudio Player for Web
 
 A **collection of Web players** for SpriteStudio animations in the browser, sharing one
