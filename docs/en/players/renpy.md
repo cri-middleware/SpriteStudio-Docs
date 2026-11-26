@@ -1,3 +1,7 @@
+---
+description: "Play SpriteStudio animations in Ren'Py visual novels: converted when the game launches, then shown like any image. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 🎭 SpriteStudio Player for Ren'Py
 
 Bring SpriteStudio characters into **Ren'Py** visual novels, backed by `libssruntime`.

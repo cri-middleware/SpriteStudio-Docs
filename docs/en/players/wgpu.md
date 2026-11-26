@@ -1,3 +1,7 @@
+---
+description: "Play SpriteStudio animations from Rust with wgpu, with C/C++, browser and Bevy access to the same library. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 🦀 SpriteStudio Player for wgpu
 
 A player for SpriteStudio animations, written in **Rust** and rendering through

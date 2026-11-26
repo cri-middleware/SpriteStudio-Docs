@@ -3,7 +3,7 @@ INHERIT: ./mkdocs.base.yml
 docs_dir: docs/en
 site_dir: site
 site_url: "https://cri-middleware.github.io/SpriteStudio-Docs/"
-site_description: "Documentation portal for the SpriteStudio SDK and its official players"
+site_description: "Official players that play animations from SpriteStudio, a 2D animation tool that adds bones, mesh and effects to illustrations, in game engines, apps and browsers."
 
 theme:
   language: en

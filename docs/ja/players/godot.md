@@ -1,3 +1,7 @@
+---
+description: "Godot 4 で SpriteStudio のアニメーションを再生する。.sspj をエディタに置いてノードを配置するだけで、コードは要らない。SpriteStudio は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。"
+---
+
 # 🕹️ SpriteStudio Player for Godot
 
 **Godot Engine** でネイティブに SpriteStudio アニメーションを描画します。`libssruntime` を基盤としています。

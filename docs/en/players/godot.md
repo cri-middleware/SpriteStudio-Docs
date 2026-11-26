@@ -1,3 +1,7 @@
+---
+description: "Play SpriteStudio animations in Godot 4: drop a .sspj on the editor and place a node, with no code. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 🕹️ SpriteStudio Player for Godot
 
 Renders SpriteStudio animations natively in the **Godot Engine**, backed by `libssruntime`.

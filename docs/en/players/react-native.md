@@ -1,3 +1,7 @@
+---
+description: "Play SpriteStudio animations in React Native apps, drawn natively through React Native Skia. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # ⚛️ SpriteStudio Player for React Native
 
 Play SpriteStudio animations in **React Native** apps, on the New Architecture, through a

@@ -1,3 +1,7 @@
+---
+description: "Unity で SpriteStudio のアニメーションを再生する。.sspj をインポーターに置いてコンポーネントを配置するだけで、コードは要らない。SpriteStudio は、手持ちのイラストにボーン・メッシュ・エフェクトを付けて動かす 2D アニメーションツールです。"
+---
+
 # 🎮 SpriteStudio Player for Unity
 
 **Unity Engine** 上で SpriteStudio アニメーションを再生します。再生は共通 Rust コアの

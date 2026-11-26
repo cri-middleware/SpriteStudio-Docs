@@ -1,3 +1,7 @@
+---
+description: "Play SpriteStudio animations and convert a project in your browser, with nothing to install. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # ▶️ Try It in Your Browser
 
 See SpriteStudio conversion and playback running live - **no install, nothing to set up**.

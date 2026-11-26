@@ -1,3 +1,7 @@
+---
+description: "Crossfade, layer and blend several animations on one SpriteStudio character, and the players that offer it. SpriteStudio adds bones, mesh and effects to 2D illustrations."
+---
+
 # 🎚️ Motion Blending
 
 One character can play several animations at once and move between them without a cut: a walk
