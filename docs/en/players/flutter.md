@@ -10,9 +10,9 @@ Play SpriteStudio animations in **Flutter** apps, backed by `libssruntime`. The
 ▶️ See it first, no install: the widget and Flame demos run in a browser -
 [Try it in your browser](../overview/try-it.md).
 
-!!! tip "Code-first - and no Rust toolchain"
-    The native core is fetched, not built: the first build downloads a prebuilt runtime, and the
-    converter does the same.
+> [!TIP] Code-first - and no Rust toolchain
+> The native core is fetched, not built: the first build downloads a prebuilt runtime, and the
+> converter does the same.
 
 **1. What you install** - `ssplayer_flutter` from pub.dev (`flutter pub add ssplayer_flutter`),
 which brings `ssruntime_dart` with it, and `ssconverter_dart` as a dev dependency for the

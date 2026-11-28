@@ -9,9 +9,9 @@ Bring SpriteStudio characters into **Ren'Py** visual novels, backed by `libssrun
 ▶️ See it first, no install: the bundled animations run in Ren'Py Web -
 [Try it in your browser](../overview/try-it.md).
 
-!!! tip "Code-first - one line of script"
-    A converted pack is already an image, so `show` puts it on screen, and ATL and `Transform`
-    move it like any other image.
+> [!TIP] Code-first - one line of script
+> A converted pack is already an image, so `show` puts it on screen, and ATL and `Transform`
+> move it like any other image.
 
 **1. What you install** - [`SSPlayerForRenPy.zip`](https://github.com/cri-middleware/SSPlayerForRenPy/releases/latest/download/SSPlayerForRenPy.zip),
 from the latest Release. Extract it and

@@ -50,10 +50,10 @@ The English form has no file upload. To send large reproduction data (e.g. a `.s
 use the [Japanese Help Center form](https://www.webtech.co.jp/help/ja/spritestudio7/inquiries/ssplayer_tool/), which
 takes a zip of up to 8 MB.
 
-!!! note "About SpriteStudio itself"
-    Questions about the **editor** (authoring, the SpriteStudio application, licensing of the
-    tool) go to [CRI Middleware](https://www.webtech.co.jp/eng/spritestudio/) through the same form -
-    not to the player repositories. Before asking, the
-    [**SpriteStudio Help Center**](https://www.webtech.co.jp/help/en/spritestudio7/) already
-    covers using the editor: beginners' guide, user guide, tutorial videos, and a
-    reverse-lookup reference.
+> [!NOTE] About SpriteStudio itself
+> Questions about the **editor** (authoring, the SpriteStudio application, licensing of the
+> tool) go to [CRI Middleware](https://www.webtech.co.jp/eng/spritestudio/) through the same form -
+> not to the player repositories. Before asking, the
+> [**SpriteStudio Help Center**](https://www.webtech.co.jp/help/en/spritestudio7/) already
+> covers using the editor: beginners' guide, user guide, tutorial videos, and a
+> reverse-lookup reference.

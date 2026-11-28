@@ -71,7 +71,7 @@ Settings shared by both locales live in `mkdocs.base.yml`, which the two inherit
 
 ### Writing
 - Prefer material that stays true. Version numbers, requirement tables, and other facts that need tracking across every sibling repository age badly in a portal - let each project state those in its own docs, and link out instead.
-- Match the surrounding page: sentence-case headings with a leading emoji, tables for comparisons, and `!!!` admonitions (Material) for notes and warnings.
+- Match the surrounding page: sentence-case headings with a leading emoji, tables for comparisons, and callouts — `> [!TIP] Title` with a `> ` body — for notes and warnings. The site renders a callout as a Material admonition; GitHub, which shows the body of a `!!!` admonition as a code block, shows it as a blockquote whose text and links work.
 - Keep the two locales structurally identical - same headings, same tables, same links - so future edits can be applied to both in one pass.
 
 ---
@@ -152,7 +152,7 @@ Windows では実行ファイルは `.\.venv\Scripts\zensical` です。
 
 ### 書き方
 - 長く正しくあり続ける情報を優先してください。バージョン番号や要件表など、すべての兄弟リポジトリを追跡し続ける必要がある情報はポータルでは古くなりやすいものです。各プロジェクト自身のドキュメントに任せ、こちらからはリンクしてください。
-- 周囲のページに合わせてください。見出しは先頭に絵文字、比較は表、注意書きは Material の `!!!` 記法。
+- 周囲のページに合わせてください。見出しは先頭に絵文字、比較は表、注意書きは callout（`> [!TIP] タイトル` と `> ` で始まる本文）。サイトでは Material の admonition として描かれます。GitHub は `!!!` 記法の本文をコードブロックにしてしまいますが、callout なら本文もリンクもそのまま読める引用になります。
 - 2 つのロケールは構造を同一に保ってください（同じ見出し、同じ表、同じリンク）。以後の編集を一度に両方へ適用できます。
 
 ---

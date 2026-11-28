@@ -9,8 +9,8 @@ description: "Ren'Py のビジュアルノベルで SpriteStudio のアニメー
 ▶️ インストール不要で試せます: 同梱のアニメーションが Ren'Py Web で動きます -
 [ブラウザで試す](../overview/try-it.md)。
 
-!!! tip "コードで始まる - スクリプト 1 行"
-    変換したパックはそのまま画像なので、`show` で画面に出し、ATL や `Transform` で通常の画像と同じように動かせます。
+> [!TIP] コードで始まる - スクリプト 1 行
+> 変換したパックはそのまま画像なので、`show` で画面に出し、ATL や `Transform` で通常の画像と同じように動かせます。
 
 **1. 何を入れるか** - 最新の Release の
 [`SSPlayerForRenPy.zip`](https://github.com/cri-middleware/SSPlayerForRenPy/releases/latest/download/SSPlayerForRenPy.zip)

@@ -9,8 +9,8 @@ description: "Flutter アプリと Flame のゲームで SpriteStudio のアニ�
 ▶️ インストール不要で試せます: ウィジェット版と Flame 版のデモがブラウザで動きます -
 [ブラウザで試す](../overview/try-it.md)。
 
-!!! tip "コードで始まる - Rust ツールチェーンは不要"
-    ネイティブコアはビルドではなく取得されます。最初のビルドでビルド済みのランタイムをダウンロードし、コンバーターも同じように取得します。
+> [!TIP] コードで始まる - Rust ツールチェーンは不要
+> ネイティブコアはビルドではなく取得されます。最初のビルドでビルド済みのランタイムをダウンロードし、コンバーターも同じように取得します。
 
 **1. 何を入れるか** - pub.dev の `ssplayer_flutter` です（`flutter pub add ssplayer_flutter`）。`ssruntime_dart` は一緒に入ります。変換用に、`ssconverter_dart` を dev 依存として追加します（`flutter pub add --dev ssconverter_dart`。[インストール](https://cri-middleware.github.io/SSPlayerForFlutter/ja/guide/install/) を参照）。
 

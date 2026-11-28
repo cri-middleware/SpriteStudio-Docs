@@ -3,9 +3,9 @@
 このページの内容はすべて **共通コア**（`libssruntime` / `libssab`）に由来するため、エンジンを問わず **すべての公式 Player に当てはまります**。各 Player のドキュメントには、その Player に固有の事項のみが記載されています。Player 間の差分は
 [Player ごとの違い](../overview/player-differences.md) を参照してください。
 
-!!! tip "正典の所在"
-    実装レベルの完全な一覧は SDK の Player 移植ガイド（[`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md) -
-    ガイド全体の目次は [`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）にあります。このページはその利用者向け要約です。
+> [!TIP] 正典の所在
+> 実装レベルの完全な一覧は SDK の Player 移植ガイド（[`20_limitations.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.ja.md) -
+> ガイド全体の目次は [`README.ja.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.ja.md)）にあります。このページはその利用者向け要約です。
 
 ## 🎬 再生・タイムライン
 

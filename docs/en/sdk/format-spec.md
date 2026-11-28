@@ -81,8 +81,8 @@ The schemas are defined as FlatBuffers `.fbs` files in the SDK
 See [`libssab`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssab)
 for its features (`default`, `converter`, and `no_std` by turning the default features off) and codegen.
 
-!!! info "Schema versioning"
-    `.ssab` carries a binary `version` field, and tooling such as `ssconverter-web` is
-    published [per schema version](../overview/convert-with-a-standalone-tool.md). Match the converter's schema to
-    your player's runtime version - a file the runtime cannot read at its own version
-    [does not load](./limitations.md).
+> [!INFO] Schema versioning
+> `.ssab` carries a binary `version` field, and tooling such as `ssconverter-web` is
+> published [per schema version](../overview/convert-with-a-standalone-tool.md). Match the converter's schema to
+> your player's runtime version - a file the runtime cannot read at its own version
+> [does not load](./limitations.md).

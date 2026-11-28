@@ -6,9 +6,9 @@ description: "Play SpriteStudio animations in Godot 4: drop a .sspj on the edito
 
 Renders SpriteStudio animations natively in the **Godot Engine**, backed by `libssruntime`.
 
-!!! tip "Editor-first - no code to reach the first frame"
-    Copy the add-on in, drag your `.sspj` onto the editor, add a node and assign the asset.
-    GDScript control is available; nothing above needs it.
+> [!TIP] Editor-first - no code to reach the first frame
+> Copy the add-on in, drag your `.sspj` onto the editor, add a node and assign the asset.
+> GDScript control is available; nothing above needs it.
 
 **1. What you install** - `ssplayer-godot-extension-<Godot version>.zip` from the
 [latest Release](https://github.com/cri-middleware/SSPlayerForGodot/releases/latest)'s Assets; its `addons`

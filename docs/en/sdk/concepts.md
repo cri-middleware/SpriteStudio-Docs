@@ -65,16 +65,16 @@ Because every official player evaluates animations with `libssruntime`, this fea
 - The **Override Layer API** - override a part's color, cell reference, or visibility at runtime;
   what a player lets you change at runtime is on [Changing a Character at Runtime](../overview/runtime-changes.md)
 
-!!! tip "Source of truth"
-    This list follows the SDK's **Player Porting Guide**, whose table of contents
-    ([`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)) links to the page that covers each item.
-    The guide's *Introduction → Limitations*
-    ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)) draws the
-    boundary: two of these - text parts and audio events - are computed as **state only** and still need the player to draw or
-    play them, and several carry constraints - both are summarized in
-    [Shared Limitations](./limitations.md), along with what the core does *not* do. What
-    differs between the players themselves is on
-    [Player Differences](../overview/player-differences.md).
+> [!TIP] Source of truth
+> This list follows the SDK's **Player Porting Guide**, whose table of contents
+> ([`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)) links to the page that covers each item.
+> The guide's *Introduction → Limitations*
+> ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md)) draws the
+> boundary: two of these - text parts and audio events - are computed as **state only** and still need the player to draw or
+> play them, and several carry constraints - both are summarized in
+> [Shared Limitations](./limitations.md), along with what the core does *not* do. What
+> differs between the players themselves is on
+> [Player Differences](../overview/player-differences.md).
 
 ## 📚 Libraries & tools
 

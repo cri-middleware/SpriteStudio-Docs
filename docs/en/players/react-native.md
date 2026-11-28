@@ -7,9 +7,9 @@ description: "Play SpriteStudio animations in React Native apps, drawn natively 
 Play SpriteStudio animations in **React Native** apps, on the New Architecture, through a
 `<SpriteStudioView>` component.
 
-!!! tip "Code-first - and a development build, not Expo Go"
-    The package compiles into your app's own binary, so **Expo Go cannot run it**: make a
-    development build with `npx expo prebuild`, then `npx expo run:ios` / `run:android`.
+> [!TIP] Code-first - and a development build, not Expo Go
+> The package compiles into your app's own binary, so **Expo Go cannot run it**: make a
+> development build with `npx expo prebuild`, then `npx expo run:ios` / `run:android`.
 
 **1. What you install** - `react-native-spritestudio` and its native peers, added with `npx expo install` - see
 [Installation](https://cri-middleware.github.io/SSPlayerForReactNative/setup/install).

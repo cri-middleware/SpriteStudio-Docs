@@ -21,11 +21,11 @@ Player に委ねている機能）は [共通の制限事項](../sdk/limitations
 | **[wgpu](../players/wgpu.md)** | C の Face は自前のウィンドウにだけ描画し、Web の Face は WebGPU 必須。Bevy アダプタが描画するビューは 1 つ | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForWgpu/ja/limitations/) |
 | **[React Native](../players/react-native.md)** | マスクはエフェクトパーツをクリップしない。Web では何も描画されない | [制約と適用範囲](https://cri-middleware.github.io/SSPlayerForReactNative/ja/limitations) |
 
-!!! note "このページの読み方"
-    以下の各節は、その Player 自身の **制約と適用範囲** ページに記載された内容の要約です。制約と適用範囲のページはどの Player も公開しており（上の表からリンクしています）。ここには Player 間で異なる点だけを残しており、すべての項目と個別のケースはそのページにあります。
-
-    *すべての* Player に当てはまることは差分ではないため、ここではなく
-    [共通の制限事項](../sdk/limitations.md) に記載しています。**テキストパーツと 9 スライスパーツがどの Player でもまだ描画されない**ことも、そちらに含まれます。
+> [!NOTE] このページの読み方
+> 以下の各節は、その Player 自身の **制約と適用範囲** ページに記載された内容の要約です。制約と適用範囲のページはどの Player も公開しており（上の表からリンクしています）。ここには Player 間で異なる点だけを残しており、すべての項目と個別のケースはそのページにあります。
+>
+> *すべての* Player に当てはまることは差分ではないため、ここではなく
+> [共通の制限事項](../sdk/limitations.md) に記載しています。**テキストパーツと 9 スライスパーツがどの Player でもまだ描画されない**ことも、そちらに含まれます。
 
 ### Unity
 

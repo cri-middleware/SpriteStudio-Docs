@@ -279,7 +279,8 @@ def structure(text):
     counts = {"headings": 0, "table rows": 0, "code fences": 0, "admonitions": 0}
     fence = False
     for line in text.split("\n"):
-        s = line.strip()
+        # Read inside a callout too: its fences and tables carry a `> ` prefix.
+        s = QUOTE.sub("", line).strip()
         if s.startswith("```"):
             counts["code fences"] += 1
             fence = not fence
@@ -289,7 +290,7 @@ def structure(text):
             counts["headings"] += 1
         elif s.startswith("|"):
             counts["table rows"] += 1
-        elif s.startswith(("!!!", "???")):
+        elif s.startswith("[!"):
             counts["admonitions"] += 1
     return counts
 
@@ -542,7 +543,7 @@ def check_outbound_links():
 # a link they do write one, so a break there is that space.
 JA = re.compile(r"[　-〿぀-ヿ㐀-䶿一-鿿！-･]")
 JA_PUNCT = re.compile(r"[　-〿！-／：-＠［-｀｛-･]")
-BLOCK_START = re.compile(r"^([-*+] |\d+\. |\||#|!!!|\?\?\?|>|```|<)")
+BLOCK_START = re.compile(r"^([-*+] |\d+\. |\||#|>|```|<)")
 QUOTE = re.compile(r"^\s*(?:>\s?)+")
 LINK_START = re.compile(r"^[*_]*\[")
 LINK_END = re.compile(r"\]\([^()\s]*\)$")
@@ -583,7 +584,7 @@ def check_japanese_breaks():
                 a, b = a[qa.end():], b[qb.end():]
             if fence or comment or not a.strip() or not b.strip():
                 continue
-            if a.strip().startswith(("#", "|", "!!!", "???")) or BLOCK_START.match(b.strip()):
+            if a.strip().startswith(("#", "|", "[!")) or BLOCK_START.match(b.strip()):
                 continue
             x, y = rendered_end(a), rendered_start(b)
             if not x or not y:

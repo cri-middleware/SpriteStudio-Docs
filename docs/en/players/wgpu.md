@@ -12,9 +12,9 @@ served from the same library.
 ▶️ See it first, no install: the WebGPU demo runs in a browser -
 [Try it in your browser](../overview/try-it.md).
 
-!!! tip "Code-first - and one library behind four faces"
-    Which face you install decides the language you write. The C and JavaScript faces wrap the
-    Rust API under different names, and the Bevy adapter builds on it.
+> [!TIP] Code-first - and one library behind four faces
+> Which face you install decides the language you write. The C and JavaScript faces wrap the
+> Rust API under different names, and the Bevy adapter builds on it.
 
 **1. What you install** - pick the face that matches your host.
 

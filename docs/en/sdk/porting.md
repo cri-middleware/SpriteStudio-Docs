@@ -4,11 +4,11 @@ Want to run SpriteStudio animations on an engine or platform that doesn't have a
 official player yet? **SpriteStudio-SDK ships a full Player Porting Guide** that walks you
 through building one on top of `libssruntime`.
 
-!!! tip "Where the guide lives"
-    The canonical guide is published on the SDK's documentation site:
-    [**SpriteStudio Player Porting Guide**](https://cri-middleware.github.io/SpriteStudio-SDK/)
-    (source: [`libs/ssruntime/docs/`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
-    in the SDK repository). This page is a map into it - the SDK is the source of truth.
+> [!TIP] Where the guide lives
+> The canonical guide is published on the SDK's documentation site:
+> [**SpriteStudio Player Porting Guide**](https://cri-middleware.github.io/SpriteStudio-SDK/)
+> (source: [`libs/ssruntime/docs/`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)
+> in the SDK repository). This page is a map into it - the SDK is the source of truth.
 
 ## 🧠 Core idea: Brain vs. Body
 
@@ -28,12 +28,12 @@ engine's Body to the shared Brain.
 | **50. Features** | Animation mixing, part overrides, external resources & textures, sequence, audio, editor integration, placement (fit and align), UI integration (hit testing, UI states, reduced motion). |
 | **60. Troubleshooting** | A table from symptom to cause, and link errors. |
 
-!!! note "Verify as you go"
-    The guide recommends checking each stage against the animations in [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj)
-    from the SDK repository - if they match
-    the SpriteStudio editor, that step is done. Every official player is built this way, so any
-    of them makes a good reference - see
-    [Choose Your Platform](../overview/choose-your-platform.md) for the current lineup.
+> [!NOTE] Verify as you go
+> The guide recommends checking each stage against the animations in [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj)
+> from the SDK repository - if they match
+> the SpriteStudio editor, that step is done. Every official player is built this way, so any
+> of them makes a good reference - see
+> [Choose Your Platform](../overview/choose-your-platform.md) for the current lineup.
 
 ## 🚦 Before you start
 

@@ -6,8 +6,8 @@ description: "Godot 4 で SpriteStudio のアニメーションを再生する�
 
 **Godot Engine** でネイティブに SpriteStudio アニメーションを描画します。`libssruntime` を基盤としています。
 
-!!! tip "エディタで始まる - 最初のフレームまでコードは不要"
-    アドオンをコピーし、`.sspj` をエディタにドラッグし、ノードを置いてアセットを割り当てるだけです。GDScript からの制御も可能ですが、ここまでには必要ありません。
+> [!TIP] エディタで始まる - 最初のフレームまでコードは不要
+> アドオンをコピーし、`.sspj` をエディタにドラッグし、ノードを置いてアセットを割り当てるだけです。GDScript からの制御も可能ですが、ここまでには必要ありません。
 
 **1. 何を入れるか** -
 [最新の Release](https://github.com/cri-middleware/SSPlayerForGodot/releases/latest) の Assets にある `ssplayer-godot-extension-<Godot のバージョン>.zip` を取り、中の `addons` フォルダを Godot プロジェクトのルートにコピーします。エンジンの再ビルドは不要です（もう 1 つの形態は、ソースから Godot 本体に組み込むカスタムモジュールです）。

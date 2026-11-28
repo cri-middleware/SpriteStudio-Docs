@@ -17,32 +17,32 @@ GUI, `--embedded` on the CLI); not every player reads one, so check
 | On the desktop, occasional conversions, prefer a UI | **SSConverter GUI** (macOS / Windows) | Drag & drop, no terminal needed |
 | Automating a build, CI/CD, or many projects at once | **`ssconverter-cli`** | Scriptable, batch mode |
 
-!!! tip "Not sure? Start in the browser."
-    The quickest way to get one `.ssab` and confirm your assets convert cleanly is ssconverter-web,
-    with nothing to install. Move to the GUI or CLI once conversion becomes a repeatable part of
-    your workflow.
+> [!TIP] Not sure? Start in the browser.
+> The quickest way to get one `.ssab` and confirm your assets convert cleanly is ssconverter-web,
+> with nothing to install. Move to the GUI or CLI once conversion becomes a repeatable part of
+> your workflow.
 
 ## 🌐 ssconverter-web - in the browser
 
 Converts `.sspj` -> `.ssab` entirely in your browser; nothing is uploaded to a server.
 
-!!! note "Dropping a folder"
-    Dropping a folder relies on the **File System Access API**, so it works only in Chromium-based
-    browsers (**Chrome**, **Edge**, **Opera**). In Firefox and Safari, pick the folder with
-    **Browse...** instead.
+> [!NOTE] Dropping a folder
+> Dropping a folder relies on the **File System Access API**, so it works only in Chromium-based
+> browsers (**Chrome**, **Edge**, **Opera**). In Firefox and Safari, pick the folder with
+> **Browse...** instead.
 
 1. Open the converter at [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/).
 2. Drop in the folder that contains your `.sspj`, or pick it with **Browse...** (its images and other referenced files are read along with it). The folder must hold exactly one `.sspj`.
 3. Press **⚡ Convert & Download**. The ZIP holds one folder named after the `.sspj`, with the `.ssab` and its textures inside; with **Embedded Assets** on, the folder is `<name>_emb` and the textures are inside the `.ssab`.
 
-!!! info "Versioned by `.ssab` schema"
-    ssconverter-web is published **per `.ssab` schema version**, so the URL carries the schema:
-
-    - Latest (auto-redirects): [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)
-    - A specific schema, e.g. `v1`: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
-
-    Match the schema to your player's runtime version ([why](../sdk/limitations.md#schema-version)) - when in doubt, use the latest
-    (auto-redirecting) build.
+> [!INFO] Versioned by `.ssab` schema
+> ssconverter-web is published **per `.ssab` schema version**, so the URL carries the schema:
+>
+> - Latest (auto-redirects): [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)
+> - A specific schema, e.g. `v1`: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
+>
+> Match the schema to your player's runtime version ([why](../sdk/limitations.md#schema-version)) - when in doubt, use the latest
+> (auto-redirecting) build.
 
 ## 🖥️ SSConverter GUI - desktop app
 

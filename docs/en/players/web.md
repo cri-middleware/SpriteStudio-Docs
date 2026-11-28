@@ -10,9 +10,9 @@ art in SpriteStudio, convert to `.ssab`, then play it back through the renderer 
 
 ▶️ See the players running live: [Try it in your browser](../overview/try-it.md).
 
-!!! tip "Code-first for the npm packages - no code in RPG Maker MZ, TyranoScript or TyranoBuilder"
-    The npm packages bundle the WASM core, so you install one and write a few lines. The three
-    game-engine plugins are set up in their editors, with no code.
+> [!TIP] Code-first for the npm packages - no code in RPG Maker MZ, TyranoScript or TyranoBuilder
+> The npm packages bundle the WASM core, so you install one and write a few lines. The three
+> game-engine plugins are set up in their editors, with no code.
 
 **1. What you install** - one renderer package from npm, picked by your environment: see
 [the table below](#pick-by-environment). Each bundles the WASM core, so it is a
