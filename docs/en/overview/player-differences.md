@@ -26,14 +26,14 @@ the core computes but leaves the player to draw or play - are in
 | **[wgpu](../players/wgpu.md)** | The C face draws only to its own window, the web face needs WebGPU, and the Bevy adapter draws one view | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForWgpu/limitations/) |
 | **[React Native](../players/react-native.md)** | Masks do not clip Effect parts, and nothing draws on the web | [Limitations & Scope](https://cri-middleware.github.io/SSPlayerForReactNative/limitations) |
 
-!!! note "How to read this page"
-    Each section below summarizes what that player's own **Limitations & Scope** page states -
-    every player publishes one, linked in the table above. The summary keeps what differs between
-    players; the full list, and every exact case, is on that page.
-
-    Anything true of *every* player - including the fact that **text and 9-slice parts are drawn
-    by none of them yet** - is on [Shared Limitations](../sdk/limitations.md) instead, since it is
-    not a difference.
+> [!NOTE] How to read this page
+> Each section below summarizes what that player's own **Limitations & Scope** page states -
+> every player publishes one, linked in the table above. The summary keeps what differs between
+> players; the full list, and every exact case, is on that page.
+>
+> Anything true of *every* player - including the fact that **text and 9-slice parts are drawn
+> by none of them yet** - is on [Shared Limitations](../sdk/limitations.md) instead, since it is
+> not a difference.
 
 ### Unity
 

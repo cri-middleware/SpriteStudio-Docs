@@ -9,8 +9,8 @@ description: "Rust の wgpu で SpriteStudio のアニメーションを再生�
 ▶️ インストール不要で試せます: WebGPU のデモがブラウザで動きます -
 [ブラウザで試す](../overview/try-it.md)。
 
-!!! tip "コードで始まる - 1 つのライブラリに 4 つの Face"
-    どの Face を入れるかで、書く言語が決まります。C と JavaScript の Face は Rust の API を別名で包んだもので、Bevy アダプターはその上に構築されています。
+> [!TIP] コードで始まる - 1 つのライブラリに 4 つの Face
+> どの Face を入れるかで、書く言語が決まります。C と JavaScript の Face は Rust の API を別名で包んだもので、Bevy アダプターはその上に構築されています。
 
 **1. 何を入れるか** - ホストに合う Face を選びます。
 

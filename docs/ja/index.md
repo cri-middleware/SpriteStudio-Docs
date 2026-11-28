@@ -109,10 +109,10 @@
 
 🎨 手元に SpriteStudio プロジェクトがない場合は、CRI Middleware が無償の[サンプルデータ](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/)を公開しています - キャラクター・エフェクト・UI などの `.sspj` 一式がそろっており、そのまま[変換](./overview/conversion.md)にかけられます。自分のアニメーションを作るには SpriteStudio 本体を使います（[製品サイト](https://www.webtech.co.jp/spritestudio/)）。
 
-!!! note "このポータルについて"
-    **SDK を直接使う方・新しい Player を作る方**は
-    [SDK・開発者向け](./sdk/concepts.md) を参照してください。
-
-    **困ったとき・不具合を見つけたとき**は [サポート](./support.md) へ。報告先のリポジトリや問い合わせ窓口を振り分けています。
-
-    各 Player の詳細ドキュメントはそれぞれのリポジトリで管理されています。このポータルはその入口であり、どの Player にも属さない**横断的な情報**を集約します。
+> [!NOTE] このポータルについて
+> **SDK を直接使う方・新しい Player を作る方**は
+> [SDK・開発者向け](./sdk/concepts.md) を参照してください。
+>
+> **困ったとき・不具合を見つけたとき**は [サポート](./support.md) へ。報告先のリポジトリや問い合わせ窓口を振り分けています。
+>
+> 各 Player の詳細ドキュメントはそれぞれのリポジトリで管理されています。このポータルはその入口であり、どの Player にも属さない**横断的な情報**を集約します。

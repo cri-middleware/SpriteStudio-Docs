@@ -6,8 +6,8 @@ description: "React Native アプリで SpriteStudio のアニメーションを
 
 **React Native** アプリ（New Architecture）で SpriteStudio アニメーションを再生します。`<SpriteStudioView>` コンポーネントとして配置できます。
 
-!!! tip "コードで始まる - Expo Go ではなく development build が必要"
-    このパッケージはアプリ自身のバイナリに組み込まれるため、**Expo Go では動きません**。`npx expo prebuild` のあと `npx expo run:ios` / `run:android` で development build を作ります。
+> [!TIP] コードで始まる - Expo Go ではなく development build が必要
+> このパッケージはアプリ自身のバイナリに組み込まれるため、**Expo Go では動きません**。`npx expo prebuild` のあと `npx expo run:ios` / `run:android` で development build を作ります。
 
 **1. 何を入れるか** - `react-native-spritestudio` とネイティブ側の peer 依存を `npx expo install` で入れます（[インストール](https://cri-middleware.github.io/SSPlayerForReactNative/ja/setup/install) を参照）。
 

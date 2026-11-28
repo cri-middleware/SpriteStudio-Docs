@@ -7,8 +7,8 @@ description: "Unity で SpriteStudio のアニメーションを再生する。.
 **Unity Engine** 上で SpriteStudio アニメーションを再生します。再生は共通 Rust コアの
 `libssruntime` を通じて行われ、Unity の Job System と組み合わせて高いパフォーマンスを発揮します。
 
-!!! tip "エディタで始まる - 最初のフレームまでコードは不要"
-    パッケージを入れ、`.sspj` をエディタにドラッグし、コンポーネントを置いてアセットを割り当てるだけです。スクリプト制御や Timeline も使えますが、ここまでには必要ありません。
+> [!TIP] エディタで始まる - 最初のフレームまでコードは不要
+> パッケージを入れ、`.sspj` をエディタにドラッグし、コンポーネントを置いてアセットを割り当てるだけです。スクリプト制御や Timeline も使えますが、ここまでには必要ありません。
 
 **1. 何を入れるか** - `jp.co.cri-mw.spritestudio.ssplayer-unity` を、Package Manager から npm（`jp.co.cri-mw` の scoped registry）経由か、最新の Release の [`jp.co.cri-mw.spritestudio.ssplayer-unity.tgz`](https://github.com/cri-middleware/SSPlayerForUnity/releases/latest/download/jp.co.cri-mw.spritestudio.ssplayer-unity.tgz) で追加します。URP・BRP の両方に対応します。
 

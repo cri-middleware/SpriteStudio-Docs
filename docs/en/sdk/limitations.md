@@ -4,11 +4,11 @@ Everything on this page comes from the **shared core** (`libssruntime` / `libssa
 applies to **every official player** regardless of engine. Each player's own docs list only what
 is specific to it - for those differences see [Player Differences](../overview/player-differences.md).
 
-!!! tip "Source of truth"
-    The canonical, implementation-level list lives in the SDK's Player Porting Guide
-    ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md) -
-    the guide's own table of contents is [`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)).
-    This page is the user-facing summary.
+> [!TIP] Source of truth
+> The canonical, implementation-level list lives in the SDK's Player Porting Guide
+> ([`20_limitations.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/10_introduction/20_limitations.md) -
+> the guide's own table of contents is [`README.md`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/libs/ssruntime/docs/README.md)).
+> This page is the user-facing summary.
 
 ## 🎬 Playback & timeline
 

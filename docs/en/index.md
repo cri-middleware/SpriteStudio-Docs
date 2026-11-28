@@ -130,12 +130,12 @@ hosted converter, no install.
 [conversion](./overview/conversion.md). (Help Center page, in Japanese.) To make your own, you use
 SpriteStudio itself - see [its site](https://www.webtech.co.jp/eng/spritestudio/).
 
-!!! note "About this portal"
-    **Using the SDK directly, or building a new player?** See
-    [SDK & Development](./sdk/concepts.md).
-
-    **Stuck, or found a bug?** [Support](./support.md) routes you to the right repository or
-    channel.
-
-    Each player keeps its detailed documentation in its own repository; this portal is the
-    entry point plus the **cross-cutting** material that belongs to no single player.
+> [!NOTE] About this portal
+> **Using the SDK directly, or building a new player?** See
+> [SDK & Development](./sdk/concepts.md).
+>
+> **Stuck, or found a bug?** [Support](./support.md) routes you to the right repository or
+> channel.
+>
+> Each player keeps its detailed documentation in its own repository; this portal is the
+> entry point plus the **cross-cutting** material that belongs to no single player.

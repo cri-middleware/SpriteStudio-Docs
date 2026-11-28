@@ -14,6 +14,6 @@
 | SSPlayerForReactNative | [LICENSE](https://github.com/cri-middleware/SSPlayerForReactNative/blob/HEAD/LICENSE.md) |
 | SSConverterGUI | [LICENSE](https://github.com/cri-middleware/SSConverterGUI/blob/HEAD/LICENSE.md) |
 
-!!! note
-    SpriteStudio 本体は [CRI Middleware Co., Ltd.](https://www.webtech.co.jp/spritestudio/)
-    の製品であり、これらの Player・SDK とは別のライセンスで提供されます。
+> [!NOTE]
+> SpriteStudio 本体は [CRI Middleware Co., Ltd.](https://www.webtech.co.jp/spritestudio/)
+> の製品であり、これらの Player・SDK とは別のライセンスで提供されます。

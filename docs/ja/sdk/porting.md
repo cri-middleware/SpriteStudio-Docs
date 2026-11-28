@@ -3,9 +3,9 @@
 公式 Player がまだ無いエンジンやプラットフォームで SpriteStudio アニメーションを動かしたい場合、**SpriteStudio-SDK には本格的な Player 移植ガイドが同梱**されています。`libssruntime`
 の上に自作 Player を実装する手順を一通り解説しています。
 
-!!! tip "ガイドの場所"
-    正式なガイドは SDK のドキュメントサイトで公開しています:
-    [**SpriteStudio Player 移植ガイド**](https://cri-middleware.github.io/SpriteStudio-SDK/ja/)（ソースは SDK リポジトリの [`libs/ssruntime/docs/`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)。各ページに `.ja.md` の日本語版があります）。本ページはそこへの案内であり、最新の正式な情報は SDK 側が基準です。
+> [!TIP] ガイドの場所
+> 正式なガイドは SDK のドキュメントサイトで公開しています:
+> [**SpriteStudio Player 移植ガイド**](https://cri-middleware.github.io/SpriteStudio-SDK/ja/)（ソースは SDK リポジトリの [`libs/ssruntime/docs/`](https://github.com/cri-middleware/SpriteStudio-SDK/tree/HEAD/libs/ssruntime/docs)。各ページに `.ja.md` の日本語版があります）。本ページはそこへの案内であり、最新の正式な情報は SDK 側が基準です。
 
 ## 🧠 中心となる考え方: Brain と Body
 
@@ -23,10 +23,10 @@
 | **50. 機能** | アニメーションミキシング、パーツオーバーライド、外部リソースとテクスチャ、シーケンス、オーディオ、エディタ統合、配置（fit と align）、UI 統合（当たり判定・UI 状態・reduced motion）。 |
 | **60. トラブルシューティング** | 症状から原因を探す表と、リンクのエラー。 |
 
-!!! note "都度検証する"
-    ガイドでは各段階で、SDK リポジトリの [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj) のアニメーションで確かめることを推奨しています。SpriteStudio
-    エディタと同じ見た目になれば、その段階は完了です。公式 Player はいずれもこの方式で作られているので、どれも良い参考例になります。現行のラインナップは
-    [プラットフォームの選び方](../overview/choose-your-platform.md) を参照してください。
+> [!NOTE] 都度検証する
+> ガイドでは各段階で、SDK リポジトリの [`tests/overall/overall.sspj`](https://github.com/cri-middleware/SpriteStudio-SDK/blob/HEAD/tests/overall/overall.sspj) のアニメーションで確かめることを推奨しています。SpriteStudio
+> エディタと同じ見た目になれば、その段階は完了です。公式 Player はいずれもこの方式で作られているので、どれも良い参考例になります。現行のラインナップは
+> [プラットフォームの選び方](../overview/choose-your-platform.md) を参照してください。
 
 ## 🚦 はじめる前に
 

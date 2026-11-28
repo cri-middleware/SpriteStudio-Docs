@@ -12,27 +12,27 @@
 | デスクトップで、たまに変換、GUI がよい | **SSConverter GUI**（macOS / Windows） | ドラッグ&ドロップ、ターミナル不要 |
 | ビルドや CI/CD の自動化、大量に変換 | **`ssconverter-cli`** | スクリプト化・バッチモード |
 
-!!! tip "迷ったらブラウザから"
-    まず 1 つ `.ssab` を作ってアセットが問題なく変換できるか確かめるなら、インストール不要の ssconverter-web が最速です。変換が繰り返しの作業になったら GUI や CLI へ移りましょう。
+> [!TIP] 迷ったらブラウザから
+> まず 1 つ `.ssab` を作ってアセットが問題なく変換できるか確かめるなら、インストール不要の ssconverter-web が最速です。変換が繰り返しの作業になったら GUI や CLI へ移りましょう。
 
 ## 🌐 ssconverter-web - ブラウザで
 
 `.sspj` -> `.ssab` の変換をすべてブラウザ内で行います。サーバーへは何もアップロードされません。
 
-!!! note "フォルダのドロップ"
-    フォルダのドロップは **File System Access API** を使用するため、Chromium 系ブラウザ（**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では **Browse...** でフォルダを選択してください。
+> [!NOTE] フォルダのドロップ
+> フォルダのドロップは **File System Access API** を使用するため、Chromium 系ブラウザ（**Chrome**・**Edge**・**Opera** など）でのみ動作します。Firefox・Safari では **Browse...** でフォルダを選択してください。
 
 1. [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/) でコンバーターを開きます。
 2. `.sspj` が入ったフォルダをドロップするか、**Browse...** で選択します（画像などの参照ファイルも一緒に読み込まれます）。フォルダに入れる `.sspj` は 1 つだけにしてください。
 3. **⚡ Convert & Download** を押します。ZIP には `.sspj` の名前のフォルダが 1 つ入っていて、その中に `.ssab` とテクスチャがあります。**Embedded Assets** をオンにすると、フォルダは `<名前>_emb` になり、テクスチャは `.ssab` の中に入ります。
 
-!!! info "`.ssab` スキーマ版ごとに公開"
-    ssconverter-web は **`.ssab` スキーマのバージョンごと**に公開され、URL にスキーマが含まれます。
-
-    - 最新版（自動リダイレクト）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)
-    - 特定スキーマ版（例 `v1`）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
-
-    Player のランタイム版に合ったスキーマを選んでください（[理由](../sdk/limitations.md#schema-version)）。迷ったら最新版を使ってください。
+> [!INFO] `.ssab` スキーマ版ごとに公開
+> ssconverter-web は **`.ssab` スキーマのバージョンごと**に公開され、URL にスキーマが含まれます。
+>
+> - 最新版（自動リダイレクト）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/)
+> - 特定スキーマ版（例 `v1`）: [`https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/`](https://cri-middleware.github.io/SSPlayerForWeb/ssconverter/v1/)
+>
+> Player のランタイム版に合ったスキーマを選んでください（[理由](../sdk/limitations.md#schema-version)）。迷ったら最新版を使ってください。
 
 ## 🖥️ SSConverter GUI - デスクトップアプリ
 

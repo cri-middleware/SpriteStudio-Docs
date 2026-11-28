@@ -8,12 +8,12 @@ your engine and workflow.
 The input is a project authored in **SpriteStudio 7.6 or later**: the `.ssab` / `.ssqb` formats
 are defined against that version, and conversion does not upgrade an older project to it.
 
-!!! tip "No SpriteStudio project of your own yet?"
-    CRI Middleware publishes free
-    [sample data](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) - complete
-    `.sspj` projects (characters, effects, UI, shaders) you can feed straight into any path
-    below. Each download carries its own readme with the terms of use. (Help Center page, in
-    Japanese.)
+> [!TIP] No SpriteStudio project of your own yet?
+> CRI Middleware publishes free
+> [sample data](https://www.webtech.co.jp/help/ja/spritestudio7/download/sample/) - complete
+> `.sspj` projects (characters, effects, UI, shaders) you can feed straight into any path
+> below. Each download carries its own readme with the terms of use. (Help Center page, in
+> Japanese.)
 
 ## 🔀 Two ways to convert
 
@@ -67,11 +67,11 @@ conversion path you take**.
 See the [Glossary](../sdk/glossary.md) for the terms and the
 [Format Specification](../sdk/format-spec.md) for the design decisions behind the conversion unit.
 
-!!! warning "When you can swap the image alone"
-    Cell positions and sizes are **baked from the `.ssce` into the `.ssab`**. Repainting the artwork
-    is reflected by replacing the image file alone, but if you add, move or resize cells - or change
-    the overall image size - **rebuild the `.ssab` and ship it alongside**. Shipping only the new
-    image renders it against the old cut-out rectangles, so the artwork shifts.
+> [!WARNING] When you can swap the image alone
+> Cell positions and sizes are **baked from the `.ssce` into the `.ssab`**. Repainting the artwork
+> is reflected by replacing the image file alone, but if you add, move or resize cells - or change
+> the overall image size - **rebuild the `.ssab` and ship it alongside**. Shipping only the new
+> image renders it against the old cut-out rectangles, so the artwork shifts.
 
 ### Reference and embedded { #reference-and-embedded }
 
